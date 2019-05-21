@@ -1,0 +1,14 @@
+language: go
+go:
+  - 1.9.x
+  - 1.10.x
+  - tip
+env:
+  global:
+    secure: hhCn/Fh0SYEdaaGJreJSTaM5dHStuGpzY+35kacT5NDHP98eVZCsqAej/s+RiHCionhK/43z9Dh/kqLFbKK3/AdkcgEzu7bLUCZ8nVVgcQjI4tVRNRa/h9qQXyVMe40yp0BSQeNBxXAbSlIhScOjbjIgMTMpCxZK8ARSm+5Hth6QM+lHhbOnebBw4xQlGkepGv+7LHAkEVpBmguNBo2fUSxX0W9CRHIHVhkv4AI3t4mrvzvHDYJNVFkZvD4QgZvOp7vbx7ENAzxdAfMEluaZb7MVigF0DGC03kF5g+Q3RsYPYnuejtMesQ5/fGNvwiXscy/8RcLo372BE0QSRBd537CPvAVu3pDR7+eRYOENew6mkT0qz8gpSXIgpad1cptztb9IQvcoxMHrp/a/bGU1SDcAactPFSByoSzyZ1eV7Z2WHX1JYMXNTB+f0Vg+mmXHl+K3c/qdvKVbRLYYLY4nnR9ej0yV1mpZ5KMu9uwVRwF3mKQEBPpHabpQZoa3UW3BDhFaQv5MAjhvD4NFYxG+4i3X3l7H0BeSGE9iyzIRBQrvMkqEwBbFnsSN68KzVyzUcty20tEIfplOdPEw3PUDy7ay02JaA5DlTtHunZkgQLdwd0QocbFiQJLCSfq9lb/7KUbX31OT8Ibg/FekTq4m/GHRSn6DR37DIaWUBsNzgV8=
+before_install:
+  - openssl aes-256-cbc -K $encrypted_b37b941c20f7_key -iv $encrypted_b37b941c20f7_iv -in .gsa.json.enc -out .gsa.json -d
+  - go get github.com/mattn/goveralls
+script:
+  - go test -v -coverprofile=coverage.out
+  - goveralls -service=travis-ci -coverprofile=coverage.out
