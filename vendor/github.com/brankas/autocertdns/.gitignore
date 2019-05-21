@@ -1,0 +1,12 @@
+/cache/
+/creds/
+
+/autogcdns
+/autogcdns.exe
+
+*.key
+*.pem
+*.json
+
+.*token
+.*.json

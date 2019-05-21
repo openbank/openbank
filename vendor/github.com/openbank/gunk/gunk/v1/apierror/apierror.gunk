@@ -1,0 +1,22 @@
+package apierror
+
+// ErrorType defines the type of the error.
+type ErrorType int
+
+const (
+	_ ErrorType = iota
+	// AccountAlreadyExists is returned when trying to create a duplicate account.
+	AccountAlreadyExists
+)
+
+// APIError defines the error model returned by an API in case something went wrong
+type APIError struct {
+	// Code of the error returned, corresponding to gRPC or HTTP code, depending on your client.
+	Code int32 `pb:"1" json:"code"`
+	// Type is an enum to help handling errors programatically.
+	Type ErrorType `pb:"2" json:"type"`
+	// Message is a human readable message providing more details about the error.
+	Message string `pb:"3" json:"message"`
+	// DocURL is a direct link to the specific error type documentation, when applicable.
+	DocURL string `pb:"4" json:"doc_url"`
+}

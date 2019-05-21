@@ -1,0 +1,196 @@
+package types
+
+// Amount defines a transaction amount.
+type Amount struct {
+	// Cur is the currency of the amount.
+	Cur string `pb:"1" json:"cur"`
+	// Num is the value of the amount.
+	Num string `pb:"2" json:"num"`
+}
+
+// MajorType describes the type of the account.
+type MajorType int
+
+const (
+	_ MajorType = iota
+	// Checking account.
+	Checking
+	// Saving account.
+	Saving
+	// TimeDeposit for a time deposit account.
+	TimeDeposit
+	// CommercialLoan for a business loan account.
+	CommercialLoan
+	// MortgageLoan for a home loan account.
+	MortgageLoan
+	// ConsumerLoan for a consumer loan account.
+	ConsumerLoan
+)
+
+// MajorCategory describes the category of the account.
+type MajorCategory int
+
+const (
+	_ MajorCategory = iota
+	// Dep for deposit category.
+	Dep
+	// Loan for loan category.
+	Loan
+)
+
+// BankCode indicates which bank to use; these should be a list of banks
+// that we are currently integrated with
+// This is the updated list of banks per January 2018
+type BankCode int
+
+const (
+	_ BankCode = iota
+	Mandiri
+	Bca
+	Bni
+	Bri
+	DummyBank
+	Bdo
+	//Bpi
+	Aceh
+	Agris
+	Agroniaga
+	AmarIndonesia
+	Andara
+	Antardaerah
+	AnzIndonesia
+	Arthagraha
+	Artos
+	BangkokIndonesia
+	BarclaysIndonesia
+	BcaSyariah
+	Bi
+	BisnisInternasional
+	BniSyariah
+	BriSyariah
+	Btpn
+	BtpnSyariah
+	Bukopin
+	BukopinSyariah
+	BumiArta
+	CapitalIndonesia
+	CentratamaNasional
+	CtbcIndonesia
+	Danamon
+	Danpac
+	DinarIndonesia
+	Dki
+	DkiSyariah
+	EkonomiRaharja
+	Fama
+	Ganesha
+	Harda
+	IcbcIndonesia
+	InaPerdana
+	IndexSelindo
+	Jabar
+	JabarSyariah
+	JasaJakarta
+	Jatim
+	JatimSyariah
+	KebHana
+	KesejahteraanEkonomi
+	MandiriSyariah
+	MaspionIndonesia
+	Mayapada
+	Maybank
+	MaybankSyariahIndonesia
+	Mayora
+	Mega
+	MegaSyariah
+	MestikaDharma
+	MetroExpress
+	Mitraniaga
+	MizuhoIndonesia
+	MncInternational
+	MuamalatIndonesia
+	MultiArta
+	Mutiara
+	NusantaraParahyangan
+	OcbcNisp
+	OcbcNispSyariah
+	BankOfAmericaIndonesia
+	BankOfChinaIndonesia
+	BankOfIndiaIndonesia
+	Pikko
+	PrimaMaster
+	PundiIndonesia
+	QnbIndonesia
+	RoyalIndonesia
+	SahabatSampoerna
+	SbiIndonesia
+	SinarHarapan
+	Sinarmas
+	Btn
+	BtnSyariah
+	UobIndonesia
+	Victoria
+	VictoriaSyariah
+	WinduKentjana
+	WooriSaudaraIndonesia
+	YudhaBakti
+	BnpParibasIndonesia
+	BpdAcehSyariah
+	BpdBali
+	BpdBengkulu
+	BpdJambi
+	BpdJawaTengah
+	BpdKalimantanBarat
+	BpdKalimantanBaratSyariah
+	BpdKalimantanTengah
+	BpdKalimantanTimur
+	BpdKalimantanTimurSyariah
+	BpdKalimantanSelatan
+	BpdKalimantanSelatanSyariah
+	BpdLampung
+	BpdMaluku
+	BpdNtb
+	BpdNtt
+	BpdPapua
+	BpdRiauKepri
+	BpdSulawesiSelatanBarat
+	BpdSulawesiTengah
+	BpdSulawesiTenggara
+	BpdSulawesiUtara
+	BpdSumateraBarat
+	BpdSumateraBaratSyariah
+	BpdSumateraSelatan
+	BpdSumateraSelatanBabel
+	BpdSumateraSelatanSyariah
+	BpdSumateraSelatanUus
+	BpdSumateraUtara
+	BpdSumateraUtaraSyariah
+	BpdYogyakarta
+	BpdYogyakartaSyariah
+	CimbNiaga
+	CimbNiagaSyariah
+	CitibankIndonesia
+	CommonwealthIndonesia
+	DanamonSyariah
+	DbsIndonesia
+	DeutscheAgIndonesia
+	NobuIndonesia
+	Panin
+	PaninSyariah
+	RaboIndonesia
+	ResonaPerdania
+	StandardCharteredIndonesia
+	SumitomoMitsuiIndonesia
+	BankOfTokyoIndonesia
+	RoyalBankOfScotlandIndonesia
+	Permata
+	PermataSyariah
+	SinarmasSyariah
+	MandiriTaspen
+	Banten
+	Bei
+	ChaseIndonesia
+	CcbIndonesia
+	JtrustIndonesia
+	Transferwise
+)
