@@ -6,6 +6,7 @@ require (
 	brank.as/serviceutil v0.0.0-20190517092411-8de34635e828
 	cloud.google.com/go v0.39.0 // indirect
 	github.com/brankas/envcfg v0.1.0
+	github.com/golang/mock v1.3.1
 	github.com/golang/protobuf v1.3.1
 	github.com/google/go-cmp v0.3.0
 	github.com/google/uuid v1.1.0
@@ -24,6 +25,6 @@ require (
 	golang.org/x/oauth2 v0.0.0-20190517181255-950ef44c6e07 // indirect
 	golang.org/x/sys v0.0.0-20190520201301-c432e742b0af // indirect
 	google.golang.org/appengine v1.6.0 // indirect
-	google.golang.org/genproto v0.0.0-20190516172635-bb713bdc0e52
+	google.golang.org/genproto v0.0.0-20190516172635-bb713bdc0e52 // indirect
 	google.golang.org/grpc v1.20.1
 )
