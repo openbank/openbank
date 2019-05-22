@@ -8,8 +8,6 @@ import (
 	accountspb "github.com/openbank/gunk/gunk/v1/accounts"
 )
 
-const pageSize = 10
-
 type AccountStore struct {
 	data sync.Map
 	keys []string

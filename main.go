@@ -23,6 +23,7 @@ import (
 
 	"github.com/openbank/openbank/services"
 	"github.com/openbank/openbank/services/accounts"
+	"github.com/openbank/openbank/services/transactions"
 	"github.com/openbank/openbank/storage/inmemory"
 )
 
@@ -145,6 +146,7 @@ func setupGRPCServer(creds credentials.TransportCredentials) (*grpc.Server, erro
 	services.RegisterServices(
 		srv,
 		accounts.RegisterService(inmemStorage.AccountStore),
+		transactions.RegisterService(inmemStorage.TransactionStore),
 	)
 
 	return srv, nil
@@ -171,6 +173,7 @@ func setupGRPCGateway() (*runtime.ServeMux, error) {
 		address,
 		options,
 		accounts.RegisterGateway,
+		transactions.RegisterGateway,
 	); err != nil {
 		return nil, err
 	}
