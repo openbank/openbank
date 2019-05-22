@@ -1,0 +1,424 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "transactions",
+    "version": "0.1.0"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/transactions": {
+      "get": {
+        "summary": "List all transactions",
+        "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+        "operationId": "GetTransactions",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/transactionsGetTransactionsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartingIndex",
+            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Transaction"
+        ]
+      },
+      "post": {
+        "summary": "Create a transaction",
+        "description": "Creates a new transaction and returns its id.",
+        "operationId": "CreateTransaction",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/transactionsCreateTransactionResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionsCreateTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Transaction"
+        ]
+      }
+    },
+    "/v1/transactions/{TransactionID}": {
+      "get": {
+        "summary": "Retrieve a transaction",
+        "description": "Retrieves all data from a transaction, selected by the transaction_id you supplied.",
+        "operationId": "GetTransaction",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/transactionsTransaction"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "TransactionID",
+            "description": "TransactionID is the unique identifier of a transaction.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Transaction"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "transactionsBankAccountInfo": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the identifier of the account."
+        },
+        "BankCode": {
+          "$ref": "#/definitions/typesBankCode",
+          "description": "BankCode is code of the bank the account belongs to."
+        },
+        "OwnerName": {
+          "type": "string",
+          "description": "OwnerName is the name of the owner of the account."
+        },
+        "MajorType": {
+          "$ref": "#/definitions/typesMajorType",
+          "description": "MajorType is the type of account."
+        }
+      },
+      "description": "BankAccountInfo holds a lightweight account information."
+    },
+    "transactionsCreateTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "SourceAccountID": {
+          "type": "string",
+          "description": "SourceAccountID is the identifier of the account emitting the transaction."
+        },
+        "DestinationAccountID": {
+          "type": "string",
+          "description": "DestinationAccountID is the identifier of the account receiving the transaction."
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Amount holds the amount value and currency of the transaction."
+        },
+        "Remarks": {
+          "type": "string",
+          "description": "Remarks is an informational note about the transaction."
+        }
+      },
+      "description": "CreateTransactionRequest wraps all required field for a transaction creation."
+    },
+    "transactionsCreateTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string",
+          "description": "TransactionID is the unique identifier of a transaction."
+        }
+      },
+      "description": "CreateTransactionResponse is the response envelope for a transaction creation."
+    },
+    "transactionsGetTransactionsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/transactionsTransaction"
+          },
+          "description": "Result is a list containing up to 20 transactions."
+        },
+        "HasMore": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "HasMore indicates if there are more transactions available."
+        }
+      },
+      "description": "GetTransactionsResponse wraps the list of transactions."
+    },
+    "transactionsStatus": {
+      "type": "string",
+      "enum": [
+        "_",
+        "Success",
+        "Pending",
+        "Rejected"
+      ],
+      "default": "_",
+      "description": "Status defines the status of a transaction.\n\n - Success: Status_Success is the value for a successful transaction.\n - Pending: Status_Pending is the value for a pending transaction.\n - Rejected: Status_Rejected is the value for a rejected transaction."
+    },
+    "transactionsTransaction": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string",
+          "description": "TransactionID is the unique identifier of a transaction."
+        },
+        "SourceAccount": {
+          "$ref": "#/definitions/transactionsBankAccountInfo",
+          "description": "SourceAccount is the account emitting the transaction."
+        },
+        "DestinationAccount": {
+          "$ref": "#/definitions/transactionsBankAccountInfo",
+          "description": "DestinationAccount is the account receiving the transaction."
+        },
+        "Date": {
+          "type": "string",
+          "description": "Date is the date of the transaction."
+        },
+        "Type": {
+          "$ref": "#/definitions/transactionsType",
+          "description": "Type is the type of transaction."
+        },
+        "Status": {
+          "$ref": "#/definitions/transactionsStatus",
+          "description": "Status is the status of the transaction."
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Amount holds the amount value and currency of the transaction."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Description describes the transaction."
+        },
+        "UserID": {
+          "type": "string",
+          "description": "UserID is the identifier of the issuer of the transaction."
+        },
+        "Remarks": {
+          "type": "string",
+          "description": "Remarks is an informational note about the transaction."
+        }
+      },
+      "description": "Transaction holds all details about a transaction."
+    },
+    "transactionsType": {
+      "type": "string",
+      "enum": [
+        "_",
+        "Credit",
+        "Debit"
+      ],
+      "default": "_",
+      "description": "Type defines the type of a transaction.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction."
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    },
+    "typesBankCode": {
+      "type": "string",
+      "enum": [
+        "_",
+        "Mandiri",
+        "Bca",
+        "Bni",
+        "Bri",
+        "DummyBank",
+        "Bdo",
+        "Aceh",
+        "Agris",
+        "Agroniaga",
+        "AmarIndonesia",
+        "Andara",
+        "Antardaerah",
+        "AnzIndonesia",
+        "Arthagraha",
+        "Artos",
+        "BangkokIndonesia",
+        "BarclaysIndonesia",
+        "BcaSyariah",
+        "Bi",
+        "BisnisInternasional",
+        "BniSyariah",
+        "BriSyariah",
+        "Btpn",
+        "BtpnSyariah",
+        "Bukopin",
+        "BukopinSyariah",
+        "BumiArta",
+        "CapitalIndonesia",
+        "CentratamaNasional",
+        "CtbcIndonesia",
+        "Danamon",
+        "Danpac",
+        "DinarIndonesia",
+        "Dki",
+        "DkiSyariah",
+        "EkonomiRaharja",
+        "Fama",
+        "Ganesha",
+        "Harda",
+        "IcbcIndonesia",
+        "InaPerdana",
+        "IndexSelindo",
+        "Jabar",
+        "JabarSyariah",
+        "JasaJakarta",
+        "Jatim",
+        "JatimSyariah",
+        "KebHana",
+        "KesejahteraanEkonomi",
+        "MandiriSyariah",
+        "MaspionIndonesia",
+        "Mayapada",
+        "Maybank",
+        "MaybankSyariahIndonesia",
+        "Mayora",
+        "Mega",
+        "MegaSyariah",
+        "MestikaDharma",
+        "MetroExpress",
+        "Mitraniaga",
+        "MizuhoIndonesia",
+        "MncInternational",
+        "MuamalatIndonesia",
+        "MultiArta",
+        "Mutiara",
+        "NusantaraParahyangan",
+        "OcbcNisp",
+        "OcbcNispSyariah",
+        "BankOfAmericaIndonesia",
+        "BankOfChinaIndonesia",
+        "BankOfIndiaIndonesia",
+        "Pikko",
+        "PrimaMaster",
+        "PundiIndonesia",
+        "QnbIndonesia",
+        "RoyalIndonesia",
+        "SahabatSampoerna",
+        "SbiIndonesia",
+        "SinarHarapan",
+        "Sinarmas",
+        "Btn",
+        "BtnSyariah",
+        "UobIndonesia",
+        "Victoria",
+        "VictoriaSyariah",
+        "WinduKentjana",
+        "WooriSaudaraIndonesia",
+        "YudhaBakti",
+        "BnpParibasIndonesia",
+        "BpdAcehSyariah",
+        "BpdBali",
+        "BpdBengkulu",
+        "BpdJambi",
+        "BpdJawaTengah",
+        "BpdKalimantanBarat",
+        "BpdKalimantanBaratSyariah",
+        "BpdKalimantanTengah",
+        "BpdKalimantanTimur",
+        "BpdKalimantanTimurSyariah",
+        "BpdKalimantanSelatan",
+        "BpdKalimantanSelatanSyariah",
+        "BpdLampung",
+        "BpdMaluku",
+        "BpdNtb",
+        "BpdNtt",
+        "BpdPapua",
+        "BpdRiauKepri",
+        "BpdSulawesiSelatanBarat",
+        "BpdSulawesiTengah",
+        "BpdSulawesiTenggara",
+        "BpdSulawesiUtara",
+        "BpdSumateraBarat",
+        "BpdSumateraBaratSyariah",
+        "BpdSumateraSelatan",
+        "BpdSumateraSelatanBabel",
+        "BpdSumateraSelatanSyariah",
+        "BpdSumateraSelatanUus",
+        "BpdSumateraUtara",
+        "BpdSumateraUtaraSyariah",
+        "BpdYogyakarta",
+        "BpdYogyakartaSyariah",
+        "CimbNiaga",
+        "CimbNiagaSyariah",
+        "CitibankIndonesia",
+        "CommonwealthIndonesia",
+        "DanamonSyariah",
+        "DbsIndonesia",
+        "DeutscheAgIndonesia",
+        "NobuIndonesia",
+        "Panin",
+        "PaninSyariah",
+        "RaboIndonesia",
+        "ResonaPerdania",
+        "StandardCharteredIndonesia",
+        "SumitomoMitsuiIndonesia",
+        "BankOfTokyoIndonesia",
+        "RoyalBankOfScotlandIndonesia",
+        "Permata",
+        "PermataSyariah",
+        "SinarmasSyariah",
+        "MandiriTaspen",
+        "Banten",
+        "Bei",
+        "ChaseIndonesia",
+        "CcbIndonesia",
+        "JtrustIndonesia",
+        "Transferwise"
+      ],
+      "default": "_",
+      "description": "- Aceh: Bpi",
+      "title": "BankCode indicates which bank to use; these should be a list of banks\nthat we are currently integrated with\nThis is the updated list of banks per January 2018"
+    },
+    "typesMajorType": {
+      "type": "string",
+      "enum": [
+        "_",
+        "Checking",
+        "Saving",
+        "TimeDeposit",
+        "CommercialLoan",
+        "MortgageLoan",
+        "ConsumerLoan"
+      ],
+      "default": "_",
+      "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
+    }
+  }
+}
