@@ -21,6 +21,7 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"
 
+	"github.com/openbank/openbank/pkg/apierror"
 	"github.com/openbank/openbank/services"
 	"github.com/openbank/openbank/services/accounts"
 	"github.com/openbank/openbank/services/transactions"
@@ -160,6 +161,8 @@ func setupGRPCGateway() (*runtime.ServeMux, error) {
 	m := &runtime.JSONPb{}
 	mo := runtime.WithMarshalerOption("*", m)
 	mux := runtime.NewServeMux(mo)
+
+	runtime.HTTPError = apierror.CustomHTTPError(config.GetKey("docs.base"))
 
 	options := []grpc.DialOption{grpc.WithTransportCredentials(
 		credentials.NewTLS(&tls.Config{
