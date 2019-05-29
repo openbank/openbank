@@ -2,10 +2,10 @@ package inmemory
 
 import (
 	"context"
-	"fmt"
 	"sync"
 
 	accountspb "github.com/openbank/gunk/gunk/v1/accounts"
+	"github.com/openbank/openbank/storage"
 )
 
 type AccountStore struct {
@@ -25,7 +25,7 @@ func (s *AccountStore) GetAccount(ctx context.Context, id string) (*accountspb.A
 	if a, ok := s.data.Load(id); ok {
 		return a.(*accountspb.Account), nil
 	}
-	return nil, fmt.Errorf("not found")
+	return nil, storage.ErrNotFound
 }
 
 // GetAccounts returns a list of accounts.
@@ -58,7 +58,7 @@ func (s *AccountStore) CreateAccount(ctx context.Context, account *accountspb.Ac
 	// LoadOrStore tries to load or store the key/value.
 	// loaded is true if key is already present in the map.
 	if _, loaded := s.data.LoadOrStore(account.AccountID, account); loaded {
-		return fmt.Errorf("account %s already exists", account.AccountID)
+		return storage.ErrConflict
 	}
 	s.keys = append(s.keys, account.AccountID)
 	return nil
@@ -70,7 +70,7 @@ func (s *AccountStore) UpdateAccount(ctx context.Context, account *accountspb.Ac
 		s.data.Store(account.AccountID, account)
 		return nil
 	}
-	return fmt.Errorf("not found")
+	return storage.ErrNotFound
 }
 
 // DeleteAccount removes an account from the storage.
@@ -84,5 +84,5 @@ func (s *AccountStore) DeleteAccount(ctx context.Context, id string) error {
 		}
 		return nil
 	}
-	return fmt.Errorf("not found")
+	return storage.ErrNotFound
 }
