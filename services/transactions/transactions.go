@@ -9,6 +9,7 @@ import (
 	"google.golang.org/grpc"
 
 	transactionspb "github.com/openbank/gunk/gunk/v1/transactions"
+	"github.com/openbank/openbank/pkg/apierror"
 	"github.com/openbank/openbank/storage"
 )
 
@@ -41,14 +42,21 @@ func RegisterGateway(ctx context.Context, mux *runtime.ServeMux, addr string, op
 
 // GetTransaction retrieves the detail of a transaction, selected by its id.
 func (h *Handler) GetTransaction(ctx context.Context, req *transactionspb.GetTransactionRequest) (*transactionspb.Transaction, error) {
-	return h.store.GetTransaction(ctx, req.GetTransactionID())
+	t, err := h.store.GetTransaction(ctx, req.GetTransactionID())
+	if err != nil {
+		if err == storage.ErrNotFound {
+			return nil, apierror.NotFound("transaction %s not found", req.TransactionID)
+		}
+		return nil, apierror.Internal(err)
+	}
+	return t, nil
 }
 
 // GetTransactions returns a list containing up to 20 transactions.
 func (h *Handler) GetTransactions(ctx context.Context, req *transactionspb.GetTransactionsRequest) (*transactionspb.GetTransactionsResponse, error) {
 	res, hasMore, err := h.store.GetTransactions(ctx, req.GetNextStartingIndex())
 	if err != nil {
-		return nil, err
+		return nil, apierror.Internal(err)
 	}
 	return &transactionspb.GetTransactionsResponse{
 		Result:  res,
@@ -76,7 +84,8 @@ func (h *Handler) CreateTransaction(ctx context.Context, req *transactionspb.Cre
 		Remarks: req.GetRemarks(),
 	}
 	if err := h.store.CreateTransaction(ctx, tr); err != nil {
-		return nil, err
+		// TODO: handle conflict error: add transaction_error_type in openbank/gunk
+		return nil, apierror.Internal(err)
 	}
 	return &transactionspb.CreateTransactionResponse{
 		TransactionID: id,

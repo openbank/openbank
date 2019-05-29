@@ -9,6 +9,8 @@ import (
 	"google.golang.org/grpc"
 
 	accountspb "github.com/openbank/gunk/gunk/v1/accounts"
+	apierrorpb "github.com/openbank/gunk/gunk/v1/apierror"
+	"github.com/openbank/openbank/pkg/apierror"
 	"github.com/openbank/openbank/storage"
 )
 
@@ -41,14 +43,21 @@ func RegisterGateway(ctx context.Context, mux *runtime.ServeMux, addr string, op
 
 // GetAccount retrieves the detail of an account, selected by its id.
 func (h *Handler) GetAccount(ctx context.Context, req *accountspb.GetAccountRequest) (*accountspb.Account, error) {
-	return h.store.GetAccount(ctx, req.AccountID)
+	a, err := h.store.GetAccount(ctx, req.AccountID)
+	if err != nil {
+		if err == storage.ErrNotFound {
+			return nil, apierror.NotFound("account %s not found", req.AccountID)
+		}
+		return nil, apierror.Internal(err)
+	}
+	return a, nil
 }
 
 // GetAccounts returns a list containing up to 20 accounts.
 func (h *Handler) GetAccounts(ctx context.Context, req *accountspb.GetAccountsRequest) (*accountspb.GetAccountsResponse, error) {
 	res, hasMore, err := h.store.GetAccounts(ctx, req.NextStartingIndex)
 	if err != nil {
-		return nil, err
+		return nil, apierror.Internal(err)
 	}
 	return &accountspb.GetAccountsResponse{
 		Result:  res,
@@ -77,7 +86,10 @@ func (h *Handler) CreateAccount(ctx context.Context, req *accountspb.CreateAccou
 		// Minor:            req.Minor,
 	})
 	if err != nil {
-		return nil, err
+		if err == storage.ErrConflict {
+			return nil, apierror.Conflict(apierrorpb.ErrorType_AccountAlreadyExists, "account %s already exists", req.AccountID)
+		}
+		return nil, apierror.Internal(err)
 	}
 	return &accountspb.CreateAccountResponse{
 		AccountID: id,
@@ -92,7 +104,10 @@ func (h *Handler) UpdateAccount(ctx context.Context, req *accountspb.UpdateAccou
 		// Description: req.Description,
 	})
 	if err != nil {
-		return nil, err
+		if err == storage.ErrNotFound {
+			return nil, apierror.NotFound("account %s not found", req.AccountID)
+		}
+		return nil, apierror.Internal(err)
 	}
 	return &empty.Empty{}, nil
 }
@@ -101,7 +116,10 @@ func (h *Handler) UpdateAccount(ctx context.Context, req *accountspb.UpdateAccou
 func (h *Handler) DeleteAccount(ctx context.Context, req *accountspb.DeleteAccountRequest) (*empty.Empty, error) {
 	err := h.store.DeleteAccount(ctx, req.AccountID)
 	if err != nil {
-		return nil, err
+		if err == storage.ErrNotFound {
+			return nil, apierror.NotFound("account %s not found", req.AccountID)
+		}
+		return nil, apierror.Internal(err)
 	}
 	return &empty.Empty{}, nil
 }

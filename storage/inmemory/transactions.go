@@ -2,10 +2,10 @@ package inmemory
 
 import (
 	"context"
-	"fmt"
 	"sync"
 
 	transactionspb "github.com/openbank/gunk/gunk/v1/transactions"
+	"github.com/openbank/openbank/storage"
 )
 
 // TransactionStore ...
@@ -26,7 +26,7 @@ func (s *TransactionStore) GetTransaction(ctx context.Context, id string) (*tran
 	if a, ok := s.data.Load(id); ok {
 		return a.(*transactionspb.Transaction), nil
 	}
-	return nil, fmt.Errorf("not found")
+	return nil, storage.ErrNotFound
 }
 
 // GetTransactions returns a list of transactions.
@@ -59,7 +59,7 @@ func (s *TransactionStore) CreateTransaction(ctx context.Context, transaction *t
 	// LoadOrStore tries to load or store the key/value.
 	// loaded is true if key is already present in the map.
 	if _, loaded := s.data.LoadOrStore(transaction.TransactionID, transaction); loaded {
-		return fmt.Errorf("transaction %s already exists", transaction.TransactionID)
+		return storage.ErrConflict
 	}
 	s.keys = append(s.keys, transaction.TransactionID)
 	return nil
