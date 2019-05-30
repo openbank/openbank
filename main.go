@@ -6,7 +6,6 @@ import (
 	"net"
 	"net/http"
 
-	"brank.as/serviceutil/logging"
 	"github.com/brankas/envcfg"
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_logrus "github.com/grpc-ecosystem/go-grpc-middleware/logging/logrus"
@@ -25,6 +24,7 @@ import (
 	"github.com/openbank/openbank/services"
 	"github.com/openbank/openbank/services/accounts"
 	"github.com/openbank/openbank/services/transactions"
+	"github.com/openbank/openbank/pkg/logging"
 	"github.com/openbank/openbank/storage/inmemory"
 )
 
