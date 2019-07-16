@@ -53,7 +53,7 @@ import (
 	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/openapiv2"
 
-	types "github.com/openbank/gunk/gunk/v1/types"
+	types "github.com/openbank/openbank/v1/types"
 )
 
 // Type defines the type of a transaction.
