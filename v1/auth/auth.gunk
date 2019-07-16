@@ -1,0 +1,131 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Auth API",
+//                 Description: "In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+// }
+package auth
+
+import (
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+)
+
+// GetAuthorizationCodeRequest is the request envelope to retrieve an authorization code.
+type GetAuthorizationCodeRequest struct {
+	// ClientID is your identifier provided during the registration process.
+	ClientID string `pb:"1" json:"client_id"`
+	// RedirectURI must match one of the URLs you have provided during the registration process.
+	RedirectURI string `pb:"2" json:"redirect_uri"`
+}
+
+// Empty is an empty response.
+type Empty struct{}
+
+// GrantType defines the grant type when requesting a token.
+type GrantType int
+
+const (
+	_ GrantType = iota
+	// AuthorizationCode is the grant type used to exchange an authorization code with an access token.
+	AuthorizationCode
+	// RefreshToken is the grant type used to refresh an access token.
+	RefreshToken
+)
+
+// CreateAccessTokenRequest is the request evelope to either exchange an authorization code with an access token or refresh a token.
+type CreateAccessTokenRequest struct {
+	// GrantType is an enum to defines which operation to perform.
+	GrantType GrantType `pb:"1" json:"grant_type"`
+	// Code is the authorization code previously received from the authorization server.
+	Code string `pb:"2" json:"code"`
+	// RedirectURI must match RedirectURI you have provided for the autorization code request.
+	// Required only when GrantType is equal to "authorization_code".
+	RedirectURI string `pb:"3" json:"redirect_uri"`
+	// RefreshToken is the refresh token previously issued to the client.
+	// Required only when GrantType is equal to "refresh_token"
+	RefreshToken string `pb:"4" json:"refresh_token"`
+}
+
+// CreateAccessTokenResponse is the response envelope containing the access token.
+type CreateAccessTokenResponse struct {
+	// AccessToken issued by the authorization server.
+	AccessToken string `pb:"1" json:"access_token"`
+	// TokenType is the type of the token, always "bearer".
+	TokenType string `pb:"2" json:"token_type"`
+	// ExpiresIn is the duration in seconds that the access token remains valid.
+	ExpiresIn int `pb:"3" json:"expires_in"`
+	// RefreshToken is the token to renew an expired access token.
+	RefreshToken string `pb:"4" json:"refresh_token"`
+}
+
+// AuthorizationService provides authorization operations.
+type AuthorizationService interface {
+	// GetAuthorizationCode creates an authorization code.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/auth",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Authorization"},
+	//         Description: "First you need to retrieve an authorization code.",
+	//         Summary:     "Retrieve an authorization code.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	// }
+	GetAuthorizationCode(GetAuthorizationCodeRequest) Empty
+
+	// CreateAccessToken exchanges an authorization code with an access token.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/token",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Authorization"},
+	//         Description: "Then you can exchange the authorization code with an access token. This endpoint is also used to refresh your tokens.",
+	//         Summary:     "Retrieve an access token.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/authCreateAccessTokenResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateAccessToken(CreateAccessTokenRequest) CreateAccessTokenResponse
+}

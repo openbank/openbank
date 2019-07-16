@@ -1,0 +1,250 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Transactions API",
+//                 Description: "Provides create and read operations on the transaction resource.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package transactions
+
+import (
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/gunk/gunk/v1/types"
+)
+
+// Type defines the type of a transaction.
+type Type int
+
+const (
+	_ Type = iota
+	// Credit is the value for a credit transaction.
+	Credit
+	// Debit is the value for a debit transaction.
+	Debit
+)
+
+// Status defines the status of a transaction.
+type Status int
+
+const (
+	_ Status = iota
+	// Success is the value for a successful transaction.
+	Success
+	// Pending is the value for a pending transaction.
+	Pending
+	// Rejected is the value for a rejected transaction.
+	Rejected
+)
+
+// Transaction holds all details about a transaction.
+type Transaction struct {
+	// TransactionID is the unique identifier of a transaction.
+	TransactionID string `pb:"1" json:"transaction_id"`
+	// SourceAccount is the account emitting the transaction.
+	SourceAccount BankAccountInfo `pb:"2" json:"source_account_id"`
+	// DestinationAccount is the account receiving the transaction.
+	DestinationAccount BankAccountInfo `pb:"3" json:"destination_account_id"`
+	// Date is the date of the transaction.
+	Date string `pb:"4" json:"date"`
+	// Type is the type of transaction.
+	Type Type `pb:"5" json:"type"`
+	// Status is the status of the transaction.
+	Status Status `pb:"6" json:"status"`
+	// Amount holds the amount value and currency of the transaction.
+	Amount types.Amount `pb:"7" json:"amount"`
+	// Description describes the transaction.
+	Description string `pb:"8" json:"description"`
+	// UserID is the identifier of the issuer of the transaction.
+	UserID string `pb:"9" json:"user_id"`
+	// Remarks is an informational note about the transaction.
+	Remarks string `pb:"10" json:"remarks"`
+}
+
+// BankAccountInfo holds a lightweight account information.
+type BankAccountInfo struct {
+	// AccountID is the identifier of the account.
+	AccountID string `pb:"1" json:"account_id"`
+	// BankCode is code of the bank the account belongs to.
+	BankCode types.BankCode `pb:"2" json:"bank_code"`
+	// OwnerName is the name of the owner of the account.
+	OwnerName string `pb:"3" json:"owner_name"`
+	// MajorType is the type of account.
+	MajorType types.MajorType `pb:"4" json:"major_type"`
+}
+
+// GetTransactionRequest is the request envelope to get an transaction by its identifier.
+type GetTransactionRequest struct {
+	// TransactionID is the unique identifier of a transaction.
+	TransactionID string `pb:"1" json:"transaction_id"`
+}
+
+// GetTransactionsRequest is the request envelope to get a list of transactions.
+type GetTransactionsRequest struct {
+	// NextStartingIndex is a cursor for pagination. It's a TransactionID that defines
+	// the current place in the total list of Transaction.
+	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+}
+
+// GetTransactionsResponse wraps the list of transactions.
+type GetTransactionsResponse struct {
+	// Result is a list containing up to 20 transactions.
+	Result []Transaction `pb:"1" json:"result"`
+	// HasMore indicates if there are more transactions available.
+	HasMore bool `pb:"2" json:"has_more"`
+}
+
+// CreateTransactionRequest wraps all required field for a transaction creation.
+type CreateTransactionRequest struct {
+	// SourceAccountID is the identifier of the account emitting the transaction.
+	SourceAccountID string `pb:"1" json:"source_account_id"`
+	// DestinationAccountID is the identifier of the account receiving the transaction.
+	DestinationAccountID string `pb:"2" json:"destination_account_id"`
+	// Amount holds the amount value and currency of the transaction.
+	Amount types.Amount `pb:"3" json:"amount"`
+	// Remarks is an informational note about the transaction.
+	Remarks string `pb:"4" json:"remarks"`
+}
+
+// CreateTransactionResponse is the response envelope for a transaction creation.
+type CreateTransactionResponse struct {
+	// TransactionID is the unique identifier of a transaction.
+	TransactionID string `pb:"1" json:"transaction_id"`
+}
+
+// TransactionService provides Transacton operations.
+type TransactionService interface {
+	// GetTransaction retrieves the detail of a transaction, selected by its id.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/transactions/{TransactionID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Transaction"},
+	//         Description: "Retrieves all data from a transaction, selected by the transaction_id you supplied.",
+	//         Summary:     "Retrieve a transaction",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTransaction(GetTransactionRequest) Transaction
+
+	// GetTransactions returns a list containing up to 20 transactions.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/transactions",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Transaction"},
+	//         Description: "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+	//         Summary:     "List all transactions",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTransactions(GetTransactionsRequest) GetTransactionsResponse
+
+	// CreateTransaction creates a new transaction and returns its id.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/transactions",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Transaction"},
+	//         Description: "Creates a new transaction and returns its id.",
+	//         Summary:     "Create a transaction",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Transaction created successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateTransaction(CreateTransactionRequest) CreateTransactionResponse
+}

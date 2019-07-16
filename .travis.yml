@@ -1,0 +1,17 @@
+sudo: false
+
+language: go
+
+go:
+  - 1.12.x
+
+env:
+  - GO111MODULE=on
+
+script:
+  - ./deps.sh
+  - ./gen-gunk.sh
+  # TODO: ensure gunk doesn't generate
+  # a different filedescriptor each time
+  # even when no changes in .gunk
+  # - git diff --exit-code
