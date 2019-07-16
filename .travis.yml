@@ -10,7 +10,7 @@ env:
 
 script:
   - ./deps.sh
-  - ./gen-gunk.sh
+  - gunk generate ./...
   # TODO: ensure gunk doesn't generate
   # a different filedescriptor each time
   # even when no changes in .gunk
