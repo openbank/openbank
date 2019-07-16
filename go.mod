@@ -1,4 +1,4 @@
-module github.com/openbank/gunk
+module github.com/openbank/openbank
 
 go 1.12
 
