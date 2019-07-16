@@ -1,0 +1,378 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Accounts API",
+//                 Description: "Provides CRUD operations on the accounts resource.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package accounts
+
+import (
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// Account holds all details about a bank account.
+type Account struct {
+	// AccountID is the unique identifier of an account.
+	AccountID string `pb:"1" json:"account_id"`
+	// TODO: add comment.
+	Branch string `pb:"2" json:"branch"`
+	// TODO: add comment.
+	BranchName string `pb:"3" json:"branch_name"`
+	// Status is the status of the account.
+	Status string `pb:"4" json:"status"`
+	// TODO: add comment.
+	AccruedInterestAtMaturityDate string `pb:"5" json:"accrued_interest_at_maturity_date"`
+	// TODO: add comment.
+	AmountDue types.Amount `pb:"6" json:"amount_due"`
+	// TODO: add comment.
+	AvailableBalance types.Amount `pb:"7" json:"available_balance"`
+	// TODO: add comment.
+	AvailableCreditLimit string `pb:"8" json:"available_credit_limit"`
+	// TODO: add comment.
+	CheckingInterestRate string `pb:"9" json:"checking_interest_rate"`
+	// ContractDate is the date of the contract initialization.
+	ContractDate string `pb:"10" json:"contract_date"`
+	// CreditLimit is the allowed credit limit.
+	CreditLimit string `pb:"11" json:"credit_limit"`
+	// TODO: add comment.
+	CurrentAccruedInterest string `pb:"12" json:"current_accrued_interest"`
+	// TODO: add comment.
+	CurrentBalance types.Amount `pb:"13" json:"current_balance"`
+	// CurrentTerm is the account validity period.
+	CurrentTerm string `pb:"14" json:"current_term"`
+	// DueDate is the loan maturity date.
+	DueDate string `pb:"15" json:"due_date"`
+	// TODO: add comment.
+	InterestRate string `pb:"16" json:"interest_rate"`
+	// MajorType is the account type.
+	MajorType types.MajorType `pb:"17" json:"major_type"`
+	// MajorCategory is the account category.
+	MajorCategory types.MajorCategory `pb:"18" json:"major_category"`
+	// MaturityDate is the maturity date, format is ISO 8601
+	MaturityDate string `pb:"19" json:"maturity_date"`
+	// TODO: add comment.
+	NextPaymentDueDate string `pb:"20" json:"next_payment_due_date"`
+	// OwnerName is the name of the account's owner.
+	OwnerName string `pb:"21" json:"owner_name"`
+	// TODO: add comment.
+	StartDate string `pb:"22" json:"start_date"`
+}
+
+// GetAccountRequest is the request envelope to get an account by its identifier.
+type GetAccountRequest struct {
+	AccountID string `pb:"1" json:"account_id"`
+}
+
+// GetAccountsRequest is the request envelope to get a list of filtered accounts.
+type GetAccountsRequest struct {
+	// NextStartingIndex is a cursor for pagination. It's an AccountID that defines
+	// the current place in the total list of Accounts.
+	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+}
+
+// GetAccountsResponse wraps the list of accounts.
+type GetAccountsResponse struct {
+	// Result is a list containing up to 20 Accounts.
+	Result []Account `pb:"1" json:"result"`
+	// HasMore indicates if there are more accounts available.
+	HasMore bool `pb:"2" json:"has_more"`
+}
+
+// EntityType describes the type of the entity.
+type EntityType int
+
+const (
+	_ EntityType = iota
+	// Pers is an individual customer.
+	Pers
+	// Org is an organisation customer.
+	Org
+)
+
+// TODO: add comment.
+type AccountRole struct {
+	// TODO: add comment.
+	EntityNumber string `pb:"1" json:"entity_number"`
+	// TODO: add comment.
+	EntityType EntityType `pb:"2" json:"entity_type"`
+	// TODO: add comment.
+	Role string `pb:"3" json:"role"`
+}
+
+// TODO: add comment.
+type DebitTransaction struct {
+	// TODO: add comment.
+	Amount string `pb:"1" json:"amount"`
+	// TODO: add comment.
+	DebitAccount string `pb:"2" json:"debit_account"`
+	// TODO: add comment.
+	ExchangeRate string `pb:"3" json:"exchange_rate"`
+	// TODO: add comment.
+	IsFx bool `pb:"4" json:"is_fx"`
+}
+
+// CreateAccountRequest wraps all required fields for an account creation.
+type CreateAccountRequest struct {
+	// AccountID is the identifier of the account.
+	AccountID string `pb:"1" json:"account_id"`
+	// TODO: add comment.
+	Description string `pb:"2" json:"description"`
+	// TODO: add comment.
+	AccountRoles []AccountRole `pb:"3" json:"account_roles"`
+	// TODO: add comment.
+	Branch string `pb:"4" json:"branch"`
+	// TODO: add comment.
+	Customer string `pb:"5" json:"customer"`
+	// TODO: add comment.
+	DebitTransaction DebitTransaction `pb:"6" json:"debit_transaction"`
+	// TODO: add comment.
+	InterestRate string `pb:"7" json:"interest_rate"`
+	// MajorType is the type of the account.
+	MajorType types.MajorType `pb:"8" json:"major_type"`
+	// TODO: add comment.
+	MaturityDate string `pb:"9" json:"maturity_date"`
+	// TODO: add comment.
+	Minor string `pb:"10" json:"minor"`
+}
+
+// CreateAccountResponse is the response envelope for an account creation.
+type CreateAccountResponse struct {
+	// AccountID is the unique identifier of the newly created account.
+	AccountID string `pb:"1" json:"account_id"`
+	// CreditTransactionNumber is the transaction number of the credited account.
+	CreditTransactionNumber string `pb:"2" json:"credit_transaction_number"`
+	// DebitTransactionNumber is the transaction number of the debited account.
+	DebitTransactionNumber string `pb:"3" json:"debit_transaction_number"`
+	// MajorType is the type of the account.
+	MajorType types.MajorType `pb:"4" json:"major_type"`
+	// TODO: add comment.
+	Minor string `pb:"5" json:"minor"`
+}
+
+// UpdateAccountRequest wraps all fields available for update.
+type UpdateAccountRequest struct {
+	// AccountID is the unique identifier of the account to update.
+	AccountID string `pb:"1" json:"account_id"`
+	// TODO: add comment.
+	Description string `pb:"2" json:"description"`
+}
+
+// DeleteAccountRequest is the request envelope to delete an account.
+type DeleteAccountRequest struct {
+	// AccountID is the unique identifier of the account to delete.
+	AccountID string `pb:"1" json:"account_id"`
+}
+
+// AccountService provides Account operations.
+type AccountService interface {
+	// GetAccount retrieves the detail of an account, selected by its id.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/accounts/{AccountID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Retrieves all data from an account, selected by the account_id you supplied.",
+	//         Summary:     "Retrieve an account",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountsAccount",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAccount(GetAccountRequest) Account
+
+	// GetAccounts returns a list containing up to 20 accounts.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/accounts",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Returns a list containing up to 20 accounts. You can paginate through account by supplying next_starting_index in your subsequents calls. next_starting_index contains the account_id of the last account_id of the current page.",
+	//         Summary:     "List all accounts",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountsGetAccountsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAccounts(GetAccountsRequest) GetAccountsResponse
+
+	// CreateAccount creates a new account and return its id.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/accounts",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Creates a new account",
+	//         Summary:     "Create an account",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountsCreateAccountResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateAccount(CreateAccountRequest) CreateAccountResponse
+
+	// UpdateAccount updates an account.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/accounts/{AccountID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Updates an account with all the fields supplied.",
+	//         Summary:     "Update an account",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Account updated successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateAccount(UpdateAccountRequest)
+
+	// DeleteAccount deletes an account.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/accounts/{AccountID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Permanently delete an account.",
+	//         Summary:     "Delete an account",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Account deleted successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteAccount(DeleteAccountRequest)
+}
