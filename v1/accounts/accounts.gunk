@@ -50,6 +50,8 @@
 package accounts
 
 import (
+	"time"
+
 	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/openapiv2"
 
@@ -60,48 +62,69 @@ import (
 type Account struct {
 	// AccountID is the unique identifier of an account.
 	AccountID string `pb:"1" json:"account_id"`
+
 	// TODO: add comment.
 	Branch string `pb:"2" json:"branch"`
+
 	// TODO: add comment.
 	BranchName string `pb:"3" json:"branch_name"`
+
 	// Status is the status of the account.
 	Status string `pb:"4" json:"status"`
+
 	// TODO: add comment.
-	AccruedInterestAtMaturityDate string `pb:"5" json:"accrued_interest_at_maturity_date"`
+	AccruedInterestAtMaturityDate time.Time `pb:"5" json:"accrued_interest_at_maturity_date"`
+
 	// TODO: add comment.
 	AmountDue types.Amount `pb:"6" json:"amount_due"`
+
 	// TODO: add comment.
 	AvailableBalance types.Amount `pb:"7" json:"available_balance"`
+
 	// TODO: add comment.
 	AvailableCreditLimit string `pb:"8" json:"available_credit_limit"`
+
 	// TODO: add comment.
 	CheckingInterestRate string `pb:"9" json:"checking_interest_rate"`
+
 	// ContractDate is the date of the contract initialization.
-	ContractDate string `pb:"10" json:"contract_date"`
+	ContractDate time.Time `pb:"10" json:"contract_date"`
+
 	// CreditLimit is the allowed credit limit.
 	CreditLimit string `pb:"11" json:"credit_limit"`
+
 	// TODO: add comment.
 	CurrentAccruedInterest string `pb:"12" json:"current_accrued_interest"`
+
 	// TODO: add comment.
 	CurrentBalance types.Amount `pb:"13" json:"current_balance"`
+
 	// CurrentTerm is the account validity period.
 	CurrentTerm string `pb:"14" json:"current_term"`
+
 	// DueDate is the loan maturity date.
-	DueDate string `pb:"15" json:"due_date"`
+	DueDate time.Time `pb:"15" json:"due_date"`
+
 	// TODO: add comment.
 	InterestRate string `pb:"16" json:"interest_rate"`
+
 	// MajorType is the account type.
 	MajorType types.MajorType `pb:"17" json:"major_type"`
+
 	// MajorCategory is the account category.
 	MajorCategory types.MajorCategory `pb:"18" json:"major_category"`
+
 	// MaturityDate is the maturity date, format is ISO 8601
-	MaturityDate string `pb:"19" json:"maturity_date"`
+	MaturityDate time.Time `pb:"19" json:"maturity_date"`
+
 	// TODO: add comment.
-	NextPaymentDueDate string `pb:"20" json:"next_payment_due_date"`
+	NextPaymentDueDate time.Time `pb:"20" json:"next_payment_due_date"`
+
 	// OwnerName is the name of the account's owner.
 	OwnerName string `pb:"21" json:"owner_name"`
+
 	// TODO: add comment.
-	StartDate string `pb:"22" json:"start_date"`
+	StartDate time.Time `pb:"22" json:"start_date"`
 }
 
 // GetAccountRequest is the request envelope to get an account by its identifier.
@@ -120,6 +143,7 @@ type GetAccountsRequest struct {
 type GetAccountsResponse struct {
 	// Result is a list containing up to 20 Accounts.
 	Result []Account `pb:"1" json:"result"`
+
 	// HasMore indicates if there are more accounts available.
 	HasMore bool `pb:"2" json:"has_more"`
 }
@@ -129,8 +153,10 @@ type EntityType int
 
 const (
 	_ EntityType = iota
+
 	// Pers is an individual customer.
 	Pers
+
 	// Org is an organisation customer.
 	Org
 )
@@ -139,8 +165,10 @@ const (
 type AccountRole struct {
 	// TODO: add comment.
 	EntityNumber string `pb:"1" json:"entity_number"`
+
 	// TODO: add comment.
 	EntityType EntityType `pb:"2" json:"entity_type"`
+
 	// TODO: add comment.
 	Role string `pb:"3" json:"role"`
 }
@@ -149,10 +177,13 @@ type AccountRole struct {
 type DebitTransaction struct {
 	// TODO: add comment.
 	Amount string `pb:"1" json:"amount"`
+
 	// TODO: add comment.
 	DebitAccount string `pb:"2" json:"debit_account"`
+
 	// TODO: add comment.
 	ExchangeRate string `pb:"3" json:"exchange_rate"`
+
 	// TODO: add comment.
 	IsFx bool `pb:"4" json:"is_fx"`
 }
@@ -161,22 +192,31 @@ type DebitTransaction struct {
 type CreateAccountRequest struct {
 	// AccountID is the identifier of the account.
 	AccountID string `pb:"1" json:"account_id"`
+
 	// TODO: add comment.
 	Description string `pb:"2" json:"description"`
+
 	// TODO: add comment.
 	AccountRoles []AccountRole `pb:"3" json:"account_roles"`
+
 	// TODO: add comment.
 	Branch string `pb:"4" json:"branch"`
+
 	// TODO: add comment.
 	Customer string `pb:"5" json:"customer"`
+
 	// TODO: add comment.
 	DebitTransaction DebitTransaction `pb:"6" json:"debit_transaction"`
+
 	// TODO: add comment.
 	InterestRate string `pb:"7" json:"interest_rate"`
+
 	// MajorType is the type of the account.
 	MajorType types.MajorType `pb:"8" json:"major_type"`
+
 	// TODO: add comment.
-	MaturityDate string `pb:"9" json:"maturity_date"`
+	MaturityDate time.Time `pb:"9" json:"maturity_date"`
+
 	// TODO: add comment.
 	Minor string `pb:"10" json:"minor"`
 }
@@ -185,12 +225,16 @@ type CreateAccountRequest struct {
 type CreateAccountResponse struct {
 	// AccountID is the unique identifier of the newly created account.
 	AccountID string `pb:"1" json:"account_id"`
+
 	// CreditTransactionNumber is the transaction number of the credited account.
 	CreditTransactionNumber string `pb:"2" json:"credit_transaction_number"`
+
 	// DebitTransactionNumber is the transaction number of the debited account.
 	DebitTransactionNumber string `pb:"3" json:"debit_transaction_number"`
+
 	// MajorType is the type of the account.
 	MajorType types.MajorType `pb:"4" json:"major_type"`
+
 	// TODO: add comment.
 	Minor string `pb:"5" json:"minor"`
 }
@@ -199,6 +243,7 @@ type CreateAccountResponse struct {
 type UpdateAccountRequest struct {
 	// AccountID is the unique identifier of the account to update.
 	AccountID string `pb:"1" json:"account_id"`
+
 	// TODO: add comment.
 	Description string `pb:"2" json:"description"`
 }
