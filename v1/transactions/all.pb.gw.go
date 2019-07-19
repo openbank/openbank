@@ -9,13 +9,13 @@ It translates gRPC into RESTful JSON APIs.
 package transactions
 
 import (
+	"context"
 	"io"
 	"net/http"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/utilities"
-	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
@@ -63,7 +63,10 @@ func request_TransactionService_GetTransactions_0(ctx context.Context, marshaler
 	var protoReq GetTransactionsRequest
 	var metadata runtime.ServerMetadata
 
-	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_TransactionService_GetTransactions_0); err != nil {
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_TransactionService_GetTransactions_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -76,7 +79,11 @@ func request_TransactionService_CreateTransaction_0(ctx context.Context, marshal
 	var protoReq CreateTransactionRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -126,15 +133,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 	mux.Handle("GET", pattern_TransactionService_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -155,15 +153,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 	mux.Handle("GET", pattern_TransactionService_GetTransactions_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -184,15 +173,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 	mux.Handle("POST", pattern_TransactionService_CreateTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -214,11 +194,11 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 }
 
 var (
-	pattern_TransactionService_GetTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "transactions", "TransactionID"}, ""))
+	pattern_TransactionService_GetTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "transactions", "TransactionID"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_TransactionService_GetTransactions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "transactions"}, ""))
+	pattern_TransactionService_GetTransactions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "transactions"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_TransactionService_CreateTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "transactions"}, ""))
+	pattern_TransactionService_CreateTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "transactions"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

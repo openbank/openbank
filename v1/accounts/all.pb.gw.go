@@ -9,13 +9,13 @@ It translates gRPC into RESTful JSON APIs.
 package accounts
 
 import (
+	"context"
 	"io"
 	"net/http"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/utilities"
-	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
@@ -63,7 +63,10 @@ func request_AccountService_GetAccounts_0(ctx context.Context, marshaler runtime
 	var protoReq GetAccountsRequest
 	var metadata runtime.ServerMetadata
 
-	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_AccountService_GetAccounts_0); err != nil {
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_AccountService_GetAccounts_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -76,7 +79,11 @@ func request_AccountService_CreateAccount_0(ctx context.Context, marshaler runti
 	var protoReq CreateAccountRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -89,7 +96,11 @@ func request_AccountService_UpdateAccount_0(ctx context.Context, marshaler runti
 	var protoReq UpdateAccountRequest
 	var metadata runtime.ServerMetadata
 
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -184,15 +195,6 @@ func RegisterAccountServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 	mux.Handle("GET", pattern_AccountService_GetAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -213,15 +215,6 @@ func RegisterAccountServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 	mux.Handle("GET", pattern_AccountService_GetAccounts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -242,15 +235,6 @@ func RegisterAccountServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 	mux.Handle("POST", pattern_AccountService_CreateAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -271,15 +255,6 @@ func RegisterAccountServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 	mux.Handle("PUT", pattern_AccountService_UpdateAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -300,15 +275,6 @@ func RegisterAccountServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 	mux.Handle("DELETE", pattern_AccountService_DeleteAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
-		if cn, ok := w.(http.CloseNotifier); ok {
-			go func(done <-chan struct{}, closed <-chan bool) {
-				select {
-				case <-done:
-				case <-closed:
-					cancel()
-				}
-			}(ctx.Done(), cn.CloseNotify())
-		}
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		rctx, err := runtime.AnnotateContext(ctx, mux, req)
 		if err != nil {
@@ -330,15 +296,15 @@ func RegisterAccountServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_AccountService_GetAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "accounts", "AccountID"}, ""))
+	pattern_AccountService_GetAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "accounts", "AccountID"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_AccountService_GetAccounts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "accounts"}, ""))
+	pattern_AccountService_GetAccounts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "accounts"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_AccountService_CreateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "accounts"}, ""))
+	pattern_AccountService_CreateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "accounts"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_AccountService_UpdateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "accounts", "AccountID"}, ""))
+	pattern_AccountService_UpdateAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "accounts", "AccountID"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_AccountService_DeleteAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "accounts", "AccountID"}, ""))
+	pattern_AccountService_DeleteAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "accounts", "AccountID"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (
