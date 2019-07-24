@@ -1,0 +1,227 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Card API",
+//                 Description: "Provides create and read operations on the card resource.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package card
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// Card holds all details about a card.
+type Card struct {
+	// ID is a unique identifier of a card.
+	ID string `pb:"1" json:"id"`
+
+	// Account is the account id who owns the card.
+	Account string `pb:"2" json:"account"`
+
+	// OwnerName is the owner name of the card.
+	OwnerName string `pb:"3" json:"owner_name"`
+
+	// ContactNumber is the contact number of the card owner.
+	ContactNumber string `pb:"4" json:"contact_number"`
+
+	// FirstName is the first name of card owner.
+	FirstName string `pb:"5" json:"first_name"`
+
+	// LastName is the last name of the card owner.
+	LastName string `pb:"6" json:"last_name"`
+
+	// Expiry is an expiry date of the card.
+	Expiry time.Time `pb:"7" json:"expiry"`
+
+	// Status is the status of the card, such as lock, unlock, active.
+	Status types.CardStatus `pb:"8" json:"status"`
+
+	// AccessStatus is the access status of the card, such as often and rare.
+	AccessStatus types.CardAccessStatus `pb:"9" json:"access_status"`
+}
+
+// GetCardRequest is a request to get card information.
+type GetCardRequest struct {
+	// CardToken is the identifier to get the card information.
+	CardToken string `pb:"1" json:"card_token"`
+}
+
+// UpdateCardStatusRequest is a request to update card status.
+type UpdateCardStatusRequest struct {
+	// CardToken is the identifier to get the card information.
+	CardToken string `pb:"1" json:"card_token"`
+
+	// Status is the status to be updated.
+	Status types.CardStatus `pb:"2" json:"status"`
+}
+
+// UpdateCardAccessStatusRequest is a request to update card access status.
+type UpdateCardAccessStatusRequest struct {
+	// CardToken is the identifier to get the card information.
+	CardToken string `pb:"1" json:"card_token"`
+
+	// AccessStatus is the card access status to be updated.
+	AccessStatus types.CardAccessStatus `pb:"2" json:"access_status"`
+}
+
+// Result is result for update operation.
+type Result struct {
+	// Success is the flag for success operation.
+	Success bool `pb:"1" json:"success"`
+
+	// ErrorCode is the code of the error.
+	ErrorCode string `pb:"2" json:"error_code"`
+
+	// ErrorMessage is the message of the error.
+	ErrorMessage string `pb:"3" json:"error_message"`
+}
+
+// CardService provides Card operations.
+type CardService interface {
+	// GetCard retrieves the detail of a card information, selected by its token.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/card/{CardToken}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Card"},
+	//         Description: "Retrieves all data from a card, selected by the card_token you supplied.",
+	//         Summary:     "Retrieve a card information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCard(GetCardRequest) Card
+
+	// UpdateCardStatus update the card status.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/card/status",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Card", "CardStatus"},
+	//         Description: "Update Card status.",
+	//         Summary:     "Update Card Status.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCardStatus(UpdateCardStatusRequest) Result
+
+	// UpdateCardAccessStatus update the card access status.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/card/access_status",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Card", "AccessStatus"},
+	//         Description: "Update card access status.",
+	//         Summary:     "Update card access status.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCardAccessStatus(UpdateCardAccessStatusRequest) Result
+}

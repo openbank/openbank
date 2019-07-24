@@ -194,3 +194,30 @@ const (
 	JtrustIndonesia
 	Transferwise
 )
+
+type CardStatus int
+
+const(
+	_ CardStatus = iota
+
+	// LOCK is the lock status for a card.
+	LOCK
+
+	// UNLOCK is the unlock status for a card.
+	UNLOCK
+
+	// ACTIVE is the active status for a card.
+	ACTIVE
+)
+
+type CardAccessStatus int
+
+const(
+	_ CardAccessStatus = iota
+
+	// OFTEN is often status of access card.
+	OFTEN
+
+	// RARE is rare status of access card.
+	RARE
+)
