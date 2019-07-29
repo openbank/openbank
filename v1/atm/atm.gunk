@@ -1,0 +1,221 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "ATM API",
+//                 Description: "Provides create and read operations on the ATM resource.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package atm
+
+import (
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+
+// ATM holds all details about a ATM.
+type ATM struct {
+	// ID is a unique identifier of the ATM.
+	ID string `pb:"1" json:"id"`
+
+	// BankID is the bank identifier that owned the ATM
+	BankID string `pb:"2" json:"bank_id"`
+
+	// Name is the name of ATM
+	Name string `pb:"3" json:"name"`
+
+	// Address is the ATM location details
+	Address types.Address `pb:"4" json:"address"`
+
+	// Location is the ATM longitude and latitude
+	Location types.Location `pb:"5" json:"location"`
+
+	// Description is the ATM description
+	Description string `pb:"6" json:"description"`
+
+	// Metadata is the ATM metadata
+	Metadata string `pb:"7" json:"metadata"`
+}
+
+// CreateATMRequest is a request to create an ATM.
+type CreateATMRequest struct {
+	// BankID is the bank identifier that owned the ATM
+	BankID string `pb:"1" json:"bank_id"`
+
+	// Name is the name of ATM
+	Name string `pb:"2" json:"name"`
+
+	// Address is the ATM location details
+	Address types.Address `pb:"3" json:"3"`
+
+	// Location is the ATM longitude and latitude
+	Location types.Location `pb:"4" json:"location"`
+
+	// Description is the ATM description
+	Description string `pb:"5" json:"description"`
+
+	// Metadata is the ATM metadata
+	Metadata string `pb:"6" json:"metadata"`
+}
+
+// CreateATMResponse is a response from CreateATMRequest
+type CreateATMResponse struct {
+	// ATM_ID is a unique identifier of the ATM.
+	ATM_ID string `pb:"1" json:"atm_id"`
+}
+
+// GetATMRequest is a request to get the ATM data.
+type GetATMRequest struct {
+	// ATM_ID is a unique identifier of the ATM.
+	ATM_ID string `pb:"1" json:"atm_id"`
+}
+
+// GetATMsResponse is the response for GetATMs
+type GetATMsResponse struct{
+	// Result is the list of the ATMs.
+	Result []ATM `pb:"1" json:"result"`
+}
+
+// ATMService provides ATM operations.
+type ATMService interface {
+	// GetATM retrieves the detail of an ATM information, selected by its ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/atms/{ATM_ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"ATM"},
+	//         Description: "Retrieves ATM information, selected by the ATM_ID you supplied.",
+	//         Summary:     "Retrieve ATM information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetATM(GetATMRequest) ATM
+
+	// GetATMs get all the available ATMs.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/atms",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"ATMs"},
+	//         Description: "Get All available ATMs.",
+	//         Summary:     "Get All available ATMs.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetATMs() GetATMsResponse
+
+	// CreateATM creates a new ATM and returns its id.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/atms",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"ATM"},
+	//         Description: "Creates a new ATM and returns its id.",
+	//         Summary:     "Create an ATM",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Transaction created successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateATM(CreateATMRequest) CreateATMResponse
+}

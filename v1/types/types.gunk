@@ -698,3 +698,33 @@ const (
 	// RARE is rare status of access card.
 	RARE
 )
+
+// Address hold all details about Address
+type Address struct {
+	// CountryName holds the country name information.
+	CountryName string `pb:"1" json:"country_name"`
+
+	// CityName holds the city name information.
+	CityName string `pb:"2" json:"city_name"`
+
+	// State holds the state information.
+	State string `pb:"3" json:"state"`
+
+	// Street holds the street information.
+	Street string `pb:"4" json:"line_1"`
+
+	// PostalCode holds the postal code information.
+	PostalCode string `pb:"5" json:"postal_code"`
+}
+
+// Location is An object representing a latitude/longitude pair. This is expressed as a pair
+// of doubles representing degrees latitude and degrees longitude.
+// Values must be within normalized ranges.
+// Refer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng.
+type Location struct {
+	// The latitude in degrees. It must be in the range [-90.0, +90.0].
+	Latitude float64 `pb:"1" json:"latitude"`
+
+	// The longitude in degrees. It must be in the range [-180.0, +180.0]
+	Longitude float64 `pb:"2" json:"longitude"`
+}

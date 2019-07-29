@@ -45,7 +45,7 @@
         },
         "parameters": [
           {
-            "name": "FramDate",
+            "name": "FromDate",
             "description": "FromDate is starting date to get the transactions.",
             "in": "query",
             "required": false,

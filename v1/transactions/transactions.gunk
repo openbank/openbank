@@ -144,7 +144,7 @@ type GetTransactionRequest struct {
 // GetTransactionsRequest is the request envelope to get a list of transactions.
 type GetTransactionsRequest struct {
 	// FromDate is starting date to get the transactions.
-	FramDate time.Time `pb:"1" json:"from_date"`
+	FromDate time.Time `pb:"1" json:"from_date"`
 
 	// ToDate is end date to get the transactions.
 	ToDate time.Time `pb:"2" json:"to_date"`
@@ -153,8 +153,8 @@ type GetTransactionsRequest struct {
 	TransactionType Type `pb:"3" json:"transaction_type"`
 
 	// Limit is number of search return of transactions.
-	Limit string `pb:"4" json:"limit"` 
-	
+	Limit string `pb:"4" json:"limit"`
+
 	// NextStartingIndex is a cursor for pagination. It's a TransactionID that defines
 	// the current place in the total list of Transaction.
 	NextStartingIndex string `pb:"5" json:"next_starting_index"`

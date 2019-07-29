@@ -1,0 +1,314 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ATM API",
+    "description": "Provides create and read operations on the ATM resource.",
+    "version": "1.0.0"
+  },
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/atms": {
+      "get": {
+        "summary": "Get All available ATMs.",
+        "description": "Get All available ATMs.",
+        "operationId": "GetATMs",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "ATMs"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create an ATM",
+        "description": "Creates a new ATM and returns its id.",
+        "operationId": "CreateATM",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/atmCreateATMResponse"
+            }
+          },
+          "201": {
+            "description": "Transaction created successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/atmCreateATMRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ATM"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/atms/{ATM_ID}": {
+      "get": {
+        "summary": "Retrieve ATM information",
+        "description": "Retrieves ATM information, selected by the ATM_ID you supplied.",
+        "operationId": "GetATM",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ATM_ID",
+            "description": "ATM_ID is a unique identifier of the ATM.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ATM"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "atmATM": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "ID is a unique identifier of the ATM."
+        },
+        "BankID": {
+          "type": "string",
+          "title": "BankID is the bank identifier that owned the ATM"
+        },
+        "Name": {
+          "type": "string",
+          "title": "Name is the name of ATM"
+        },
+        "Address": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Address is the ATM location details"
+        },
+        "Location": {
+          "$ref": "#/definitions/typesLocation",
+          "title": "Location is the ATM longitude and latitude"
+        },
+        "Description": {
+          "type": "string",
+          "title": "Description is the ATM description"
+        },
+        "Metadata": {
+          "type": "string",
+          "title": "Metadata is the ATM metadata"
+        }
+      },
+      "description": "ATM holds all details about a ATM."
+    },
+    "atmCreateATMRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string",
+          "title": "BankID is the bank identifier that owned the ATM"
+        },
+        "Name": {
+          "type": "string",
+          "title": "Name is the name of ATM"
+        },
+        "Address": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Address is the ATM location details"
+        },
+        "Location": {
+          "$ref": "#/definitions/typesLocation",
+          "title": "Location is the ATM longitude and latitude"
+        },
+        "Description": {
+          "type": "string",
+          "title": "Description is the ATM description"
+        },
+        "Metadata": {
+          "type": "string",
+          "title": "Metadata is the ATM metadata"
+        }
+      },
+      "description": "CreateATMRequest is a request to create an ATM."
+    },
+    "atmCreateATMResponse": {
+      "type": "object",
+      "properties": {
+        "ATM_ID": {
+          "type": "string",
+          "description": "ATM_ID is a unique identifier of the ATM."
+        }
+      },
+      "title": "CreateATMResponse is a response from CreateATMRequest"
+    },
+    "atmGetATMsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/atmATM"
+          },
+          "description": "Result is the list of the ATMs."
+        }
+      },
+      "title": "GetATMsResponse is the response for GetATMs"
+    },
+    "typesAddress": {
+      "type": "object",
+      "properties": {
+        "CountryName": {
+          "type": "string",
+          "description": "CountryName holds the country name information."
+        },
+        "CityName": {
+          "type": "string",
+          "description": "CityName holds the city name information."
+        },
+        "State": {
+          "type": "string",
+          "description": "State holds the state information."
+        },
+        "Street": {
+          "type": "string",
+          "description": "Street holds the street information."
+        },
+        "PostalCode": {
+          "type": "string",
+          "description": "PostalCode holds the postal code information."
+        }
+      },
+      "title": "Address hold all details about Address"
+    },
+    "typesLocation": {
+      "type": "object",
+      "properties": {
+        "Latitude": {
+          "type": "string",
+          "description": "Latitude holds the latitude information."
+        },
+        "Longitude": {
+          "type": "string",
+          "description": "Longitude holds the longitude information."
+        }
+      },
+      "title": "Location holds latitude and longitude information"
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
