@@ -1,0 +1,258 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Card API",
+    "description": "Provides create and read operations on the card resource.",
+    "version": "1.0.0"
+  },
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/card/access_status": {
+      "post": {
+        "summary": "Update card access status.",
+        "description": "Update card access status.",
+        "operationId": "UpdateCardAccessStatus",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Card",
+          "AccessStatus"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/card/status": {
+      "post": {
+        "summary": "Update Card Status.",
+        "description": "Update Card status.",
+        "operationId": "UpdateCardStatus",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Card",
+          "CardStatus"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/card/{CardToken}": {
+      "get": {
+        "summary": "Retrieve a card information",
+        "description": "Retrieves all data from a card, selected by the card_token you supplied.",
+        "operationId": "GetCard",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CardToken",
+            "description": "CardToken is the identifier to get the card information.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Card"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "cardCard": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "ID is a unique identifier of a card."
+        },
+        "Account": {
+          "type": "string",
+          "description": "Account is the account id who owns the card."
+        },
+        "OwnerName": {
+          "type": "string",
+          "description": "OwnerName is the owner name of the card."
+        },
+        "ContactNumber": {
+          "type": "string",
+          "description": "ContactNumber is the contact number of the card owner."
+        },
+        "FirstName": {
+          "type": "string",
+          "description": "FirstName is the first name of card owner."
+        },
+        "LastName": {
+          "type": "string",
+          "description": "LastName is the last name of the card owner."
+        },
+        "Expiry": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expiry is an expiry date of the card."
+        },
+        "Status": {
+          "$ref": "#/definitions/typesCardStatus",
+          "description": "Status is the status of the card, such as lock, unlock, active."
+        },
+        "AccessStatus": {
+          "$ref": "#/definitions/typesCardAccessStatus",
+          "description": "AccessStatus is the access status of the card, such as often and rare."
+        }
+      },
+      "description": "Card holds all details about a card."
+    },
+    "cardResult": {
+      "type": "object",
+      "properties": {
+        "Success": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Success is the flag for success operation."
+        },
+        "ErrorCode": {
+          "type": "string",
+          "description": "ErrorCode is the code of the error."
+        },
+        "ErrorMessage": {
+          "type": "string",
+          "description": "ErrorMessage is the message of the error."
+        }
+      },
+      "description": "Result is result for update operation."
+    },
+    "typesCardAccessStatus": {
+      "type": "string",
+      "enum": [
+        "_",
+        "OFTEN",
+        "RARE"
+      ],
+      "default": "_",
+      "description": " - OFTEN: CardAccessStatus_OFTEN is often status of access card.\n - RARE: CardAccessStatus_RARE is rare status of access card."
+    },
+    "typesCardStatus": {
+      "type": "string",
+      "enum": [
+        "_",
+        "LOCK",
+        "UNLOCK",
+        "ACTIVE"
+      ],
+      "default": "_",
+      "description": " - LOCK: CardStatus_LOCK is the lock status for a card.\n - UNLOCK: CardStatus_UNLOCK is the unlock status for a card.\n - ACTIVE: CardStatus_ACTIVE is the active status for a card."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

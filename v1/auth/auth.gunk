@@ -25,6 +25,9 @@
 //                 "403": openapiv2.Response{
 //                         Description: "Returned when the user does not have permission to access the resource.",
 //                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
 //                 "500": openapiv2.Response{
 //                         Description: "Returned when an unexpected error occured on the server side.",
 //                 },

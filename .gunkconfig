@@ -3,3 +3,5 @@ plugins=grpc
 
 [generate]
 command=protoc-gen-grpc-gateway
+
+[generate swagger]

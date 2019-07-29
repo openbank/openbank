@@ -1,0 +1,314 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Statements API",
+    "description": "Provides CRUD operations on the statements resource.",
+    "version": "1.0.0"
+  },
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/statements/{ID}": {
+      "get": {
+        "summary": "Retrieve a statement",
+        "description": "Retrieves all data from a statement, selected by the statement_id you supplied.",
+        "operationId": "GetStatement",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ID",
+            "description": "ID is the unique identifier of the statement",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Statement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "statementsGetStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/statementsStatement"
+          },
+          "description": "Result is a list containing the statements."
+        },
+        "HasMore": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "HasMore indicates if there are more statements available."
+        }
+      },
+      "description": "GetStatementResponse is the response for get statement."
+    },
+    "statementsStatement": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "ID is the unique identifier of a statement."
+        },
+        "Status": {
+          "$ref": "#/definitions/statementsStatus",
+          "description": "Status is the status of the statement."
+        },
+        "Date": {
+          "type": "string",
+          "description": "Date is the date of the statement."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Description is the description of the statement."
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Amount is the amount if the transcation that writes on the statement."
+        },
+        "Balance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Balance is remaining balance after related transaction."
+        }
+      }
+    },
+    "statementsStatus": {
+      "type": "string",
+      "enum": [
+        "_",
+        "Received",
+        "Pending"
+      ],
+      "default": "_",
+      "description": "Status define the status of a statment.\n\n - Received: Status_Received is the value for a received statment.\n - Pending: Status_Pending is the value for a pending statement."
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    },
+    "typesBankCode": {
+      "type": "string",
+      "enum": [
+        "_",
+        "Mandiri",
+        "Bca",
+        "Bni",
+        "Bri",
+        "DummyBank",
+        "Bdo",
+        "Aceh",
+        "Agris",
+        "Agroniaga",
+        "AmarIndonesia",
+        "Andara",
+        "Antardaerah",
+        "AnzIndonesia",
+        "Arthagraha",
+        "Artos",
+        "BangkokIndonesia",
+        "BarclaysIndonesia",
+        "BcaSyariah",
+        "Bi",
+        "BisnisInternasional",
+        "BniSyariah",
+        "BriSyariah",
+        "Btpn",
+        "BtpnSyariah",
+        "Bukopin",
+        "BukopinSyariah",
+        "BumiArta",
+        "CapitalIndonesia",
+        "CentratamaNasional",
+        "CtbcIndonesia",
+        "Danamon",
+        "Danpac",
+        "DinarIndonesia",
+        "Dki",
+        "DkiSyariah",
+        "EkonomiRaharja",
+        "Fama",
+        "Ganesha",
+        "Harda",
+        "IcbcIndonesia",
+        "InaPerdana",
+        "IndexSelindo",
+        "Jabar",
+        "JabarSyariah",
+        "JasaJakarta",
+        "Jatim",
+        "JatimSyariah",
+        "KebHana",
+        "KesejahteraanEkonomi",
+        "MandiriSyariah",
+        "MaspionIndonesia",
+        "Mayapada",
+        "Maybank",
+        "MaybankSyariahIndonesia",
+        "Mayora",
+        "Mega",
+        "MegaSyariah",
+        "MestikaDharma",
+        "MetroExpress",
+        "Mitraniaga",
+        "MizuhoIndonesia",
+        "MncInternational",
+        "MuamalatIndonesia",
+        "MultiArta",
+        "Mutiara",
+        "NusantaraParahyangan",
+        "OcbcNisp",
+        "OcbcNispSyariah",
+        "BankOfAmericaIndonesia",
+        "BankOfChinaIndonesia",
+        "BankOfIndiaIndonesia",
+        "Pikko",
+        "PrimaMaster",
+        "PundiIndonesia",
+        "QnbIndonesia",
+        "RoyalIndonesia",
+        "SahabatSampoerna",
+        "SbiIndonesia",
+        "SinarHarapan",
+        "Sinarmas",
+        "Btn",
+        "BtnSyariah",
+        "UobIndonesia",
+        "Victoria",
+        "VictoriaSyariah",
+        "WinduKentjana",
+        "WooriSaudaraIndonesia",
+        "YudhaBakti",
+        "BnpParibasIndonesia",
+        "BpdAcehSyariah",
+        "BpdBali",
+        "BpdBengkulu",
+        "BpdJambi",
+        "BpdJawaTengah",
+        "BpdKalimantanBarat",
+        "BpdKalimantanBaratSyariah",
+        "BpdKalimantanTengah",
+        "BpdKalimantanTimur",
+        "BpdKalimantanTimurSyariah",
+        "BpdKalimantanSelatan",
+        "BpdKalimantanSelatanSyariah",
+        "BpdLampung",
+        "BpdMaluku",
+        "BpdNtb",
+        "BpdNtt",
+        "BpdPapua",
+        "BpdRiauKepri",
+        "BpdSulawesiSelatanBarat",
+        "BpdSulawesiTengah",
+        "BpdSulawesiTenggara",
+        "BpdSulawesiUtara",
+        "BpdSumateraBarat",
+        "BpdSumateraBaratSyariah",
+        "BpdSumateraSelatan",
+        "BpdSumateraSelatanBabel",
+        "BpdSumateraSelatanSyariah",
+        "BpdSumateraSelatanUus",
+        "BpdSumateraUtara",
+        "BpdSumateraUtaraSyariah",
+        "BpdYogyakarta",
+        "BpdYogyakartaSyariah",
+        "CimbNiaga",
+        "CimbNiagaSyariah",
+        "CitibankIndonesia",
+        "CommonwealthIndonesia",
+        "DanamonSyariah",
+        "DbsIndonesia",
+        "DeutscheAgIndonesia",
+        "NobuIndonesia",
+        "Panin",
+        "PaninSyariah",
+        "RaboIndonesia",
+        "ResonaPerdania",
+        "StandardCharteredIndonesia",
+        "SumitomoMitsuiIndonesia",
+        "BankOfTokyoIndonesia",
+        "RoyalBankOfScotlandIndonesia",
+        "Permata",
+        "PermataSyariah",
+        "SinarmasSyariah",
+        "MandiriTaspen",
+        "Banten",
+        "Bei",
+        "ChaseIndonesia",
+        "CcbIndonesia",
+        "JtrustIndonesia",
+        "Transferwise"
+      ],
+      "default": "_",
+      "description": "- Aceh: Bpi",
+      "title": "BankCode indicates which bank to use; these should be a list of banks\nthat we are currently integrated with\nThis is the updated list of banks per January 2018"
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to statements resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
