@@ -1,0 +1,479 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Branch API",
+    "description": "Provides create and read operations on the branch resource.",
+    "version": "1.0.0"
+  },
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/branches": {
+      "get": {
+        "summary": "Get All available branch.",
+        "description": "Get All available branch.",
+        "operationId": "GetBranches",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Branches"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates a Branch",
+        "description": "Creates a new branch and returns its id.",
+        "operationId": "CreateBranch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/branchCreateBranchResponse"
+            }
+          },
+          "201": {
+            "description": "Branch created successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/branchCreateBranchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Branch"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/branches/{BranchID}": {
+      "get": {
+        "summary": "Retrieve branch information",
+        "description": "Retrieves branch information, selected by the BranchID you supplied.",
+        "operationId": "GetBranch",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BranchID",
+            "description": "BranchID is the branch unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Branch"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete an branch",
+        "description": "Permanently delete a branch.",
+        "operationId": "DeleteBranch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Branch successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BranchID",
+            "description": "BranchID is the branch unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Branch"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Creates a Branch",
+        "description": "Creates a new branch and returns its id.",
+        "operationId": "UpdateBranch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Branch successfully updated.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BranchID",
+            "description": "BranchID is the branch unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/branchUpdateBranchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Branch",
+          "Update"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "branchBranch": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "ID is a unique identifier of the branch."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier that owned the branch."
+        },
+        "Name": {
+          "type": "string",
+          "description": "Name is the branch name."
+        },
+        "PhoneNumber": {
+          "type": "string",
+          "description": "PhoneNumber is the branch phone number."
+        },
+        "Address": {
+          "$ref": "#/definitions/typesAddress",
+          "description": "Address is the branch address details."
+        },
+        "Location": {
+          "$ref": "#/definitions/typesLocation",
+          "description": "Location is the branch longitude and latitude."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Description is the branch description."
+        },
+        "Metadata": {
+          "type": "string",
+          "description": "Metadata is the branch metadata."
+        }
+      },
+      "description": "Branch holds all details about a Branch."
+    },
+    "branchCreateBranchRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier that owned the branch."
+        },
+        "Name": {
+          "type": "string",
+          "description": "Name is the branch name."
+        },
+        "PhoneNumber": {
+          "type": "string",
+          "description": "PhoneNumber is the branch phone number."
+        },
+        "Address": {
+          "$ref": "#/definitions/typesAddress",
+          "description": "Address is the branch address details."
+        },
+        "Location": {
+          "$ref": "#/definitions/typesLocation",
+          "description": "Location is the branch longitude and latitude."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Description is the branch description."
+        },
+        "Metadata": {
+          "type": "string",
+          "description": "Metadata is the branch metadata."
+        }
+      },
+      "description": "CreateBranchRequest is a request to create a branch."
+    },
+    "branchCreateBranchResponse": {
+      "type": "object",
+      "properties": {
+        "BranchID": {
+          "type": "string",
+          "description": "BranchID is the branch unique identifier."
+        }
+      },
+      "title": "CreateBranchResponse is a response from CreateBranchRequest"
+    },
+    "branchGetBranchesResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/branchBranch"
+          },
+          "description": "Result is the list of the branch."
+        }
+      },
+      "title": "GetBranchesResponse is the response for GetBranches"
+    },
+    "branchUpdateBranchRequest": {
+      "type": "object",
+      "properties": {
+        "BranchID": {
+          "type": "string",
+          "description": "BranchID is the branch unique identifier."
+        },
+        "Name": {
+          "type": "string",
+          "description": "Name is the branch name."
+        },
+        "PhoneNumber": {
+          "type": "string",
+          "description": "PhoneNumber is the branch phone number."
+        },
+        "Address": {
+          "$ref": "#/definitions/typesAddress",
+          "description": "Address is the branch address details."
+        },
+        "Location": {
+          "$ref": "#/definitions/typesLocation",
+          "description": "Location is the branch longitude and latitude."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Description is the branch description."
+        },
+        "Metadata": {
+          "type": "string",
+          "description": "Metadata is the branch metadata."
+        }
+      },
+      "description": "UpdateBranchRequest wraps all fields available for update."
+    },
+    "typesAddress": {
+      "type": "object",
+      "properties": {
+        "CountryName": {
+          "type": "string",
+          "description": "CountryName holds the country name information."
+        },
+        "CityName": {
+          "type": "string",
+          "description": "CityName holds the city name information."
+        },
+        "State": {
+          "type": "string",
+          "description": "State holds the state information."
+        },
+        "Street": {
+          "type": "string",
+          "description": "Street holds the street information."
+        },
+        "PostalCode": {
+          "type": "string",
+          "description": "PostalCode holds the postal code information."
+        }
+      },
+      "title": "Address hold all details about Address"
+    },
+    "typesLocation": {
+      "type": "object",
+      "properties": {
+        "Latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
+        },
+        "Longitude": {
+          "type": "number",
+          "format": "double",
+          "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+        }
+      },
+      "description": "Location is An object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude.\nValues must be within normalized ranges.\nRefer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
