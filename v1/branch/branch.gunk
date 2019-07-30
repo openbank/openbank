@@ -1,0 +1,314 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Branch API",
+//                 Description: "Provides create and read operations on the branch resource.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package branch
+
+import (
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// Branch holds all details about a Branch.
+type Branch struct {
+	// ID is a unique identifier of the branch.
+	ID string `pb:"1" json:"id"`
+
+	// BankID is the bank identifier that owned the branch.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// Name is the branch name.
+	Name string `pb:"3" json:"name"`
+
+	// PhoneNumber is the branch phone number.
+	PhoneNumber string `pb:"4" json:"phone_number"`
+
+	// Address is the branch address details.
+	Address types.Address `pb:"5" json:"address"`
+
+	// Location is the branch longitude and latitude.
+	Location types.Location `pb:"6" json:"location"`
+
+	// Description is the branch description.
+	Description string `pb:"7" json:"description"`
+
+	// Metadata is the branch metadata.
+	Metadata string `pb:"8" json:"metadata"`
+}
+
+// CreateBranchRequest is a request to create a branch.
+type CreateBranchRequest struct {
+	// BankID is the bank identifier that owned the branch.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// Name is the branch name.
+	Name string `pb:"2" json:"name"`
+
+	// PhoneNumber is the branch phone number.
+	PhoneNumber string `pb:"3" json:"phone_number"`
+
+	// Address is the branch address details.
+	Address types.Address `pb:"4" json:"address"`
+
+	// Location is the branch longitude and latitude.
+	Location types.Location `pb:"5" json:"location"`
+
+	// Description is the branch description.
+	Description string `pb:"6" json:"description"`
+
+	// Metadata is the branch metadata.
+	Metadata string `pb:"7" json:"metadata"`
+}
+
+// CreateBranchResponse is a response from CreateBranchRequest
+type CreateBranchResponse struct {
+	// BranchID is the branch unique identifier.
+	BranchID string `pb:"1" json:"branch_id"`
+}
+
+// UpdateBranchRequest wraps all fields available for update.
+type UpdateBranchRequest struct {
+	// BranchID is the branch unique identifier.
+	BranchID string `pb:"1" json:"branch_id"`
+
+	// Name is the branch name.
+	Name string `pb:"2" json:"name"`
+
+	// PhoneNumber is the branch phone number.
+	PhoneNumber string `pb:"3" json:"phone_number"`
+
+	// Address is the branch address details.
+	Address types.Address `pb:"4" json:"address"`
+
+	// Location is the branch longitude and latitude.
+	Location types.Location `pb:"5" json:"location"`
+
+	// Description is the branch description.
+	Description string `pb:"6" json:"description"`
+
+	// Metadata is the branch metadata.
+	Metadata string `pb:"7" json:"metadata"`
+}
+// DeleteBranchRequest is the request envelope to delete a branch.
+type DeleteBranchRequest struct{
+	// BranchID is the branch unique identifier.
+	BranchID string `pb:"1" json:"branch_id"`
+}
+
+// GetBranchRequest is a request to get the branch data.
+type GetBranchRequest struct {
+	// BranchID is the branch unique identifier.
+	BranchID string `pb:"1" json:"branch_id"`
+}
+
+// GetBranchesResponse is the response for GetBranches
+type GetBranchesResponse struct{
+	// Result is the list of the branch.
+	Result []Branch `pb:"1" json:"result"`
+}
+
+// BranchService provides branch operations.
+type BranchService interface {
+	// GetBranch retrieves the detail of a branch information, selected by its ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/branches/{BranchID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Branch"},
+	//         Description: "Retrieves branch information, selected by the BranchID you supplied.",
+	//         Summary:     "Retrieve branch information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetBranch(GetBranchRequest) Branch
+
+	// GetBranches get all the available branch.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/branches",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Branches"},
+	//         Description: "Get All available branch.",
+	//         Summary:     "Get All available branch.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetBranches() GetBranchesResponse
+
+	// CreateBranch creates a new branch and returns its id.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/branches",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Branch"},
+	//         Description: "Creates a new branch and returns its id.",
+	//         Summary:     "Creates a Branch",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Branch created successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateBranch(CreateBranchRequest) CreateBranchResponse
+
+	// UpdateBranch update the branch.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/branches/{BranchID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Branch","Update"},
+	//         Description: "Creates a new branch and returns its id.",
+	//         Summary:     "Creates a Branch",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Branch successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateBranch(UpdateBranchRequest)
+
+	// DeleteBranch deletes a branch.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/branches/{BranchID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Branch"},
+	//         Description: "Permanently delete a branch.",
+	//         Summary:     "Delete an branch",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Branch successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteBranch(DeleteBranchRequest)
+}
