@@ -121,6 +121,52 @@
         ]
       }
     },
+    "/v1/accounts/check": {
+      "post": {
+        "summary": "Check account existension",
+        "description": "Check if account is exist, selected by the account_id you supplied.",
+        "operationId": "CheckAccount",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountsAccount"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Account",
+          "CheckAccount"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
     "/v1/accounts/{AccountID}": {
       "get": {
         "summary": "Retrieve an account",
@@ -208,7 +254,7 @@
         "parameters": [
           {
             "name": "AccountID",
-            "description": "AccountID is the unique identifier of the account to delete.",
+            "description": "AccountID is the account unique identifier.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -276,6 +322,122 @@
         ],
         "tags": [
           "Account"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/accounts/{AccountID}/status": {
+      "get": {
+        "summary": "Retrieve an account status",
+        "description": "Retrieves status of the account, selected by the account_id you supplied.",
+        "operationId": "GetAccountStatus",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountsAccount"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountID",
+            "description": "AccountID is the unique identifier of the account.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Account",
+          "AccountStatus"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update the status of the account",
+        "description": "Updates the status of the account.",
+        "operationId": "UpdateAccountStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "AccountStatus updated successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/accountsUpdateAccountStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Account",
+          "AccountStatus"
         ],
         "security": [
           {
@@ -406,6 +568,24 @@
       },
       "description": "TODO: add comment."
     },
+    "accountsCheckAccountResponse": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account unique identifier."
+        },
+        "BankCode": {
+          "type": "string",
+          "description": "BankCode is the code that related to bank."
+        },
+        "AccountName": {
+          "type": "string",
+          "description": "AccountName is the owner name of the account."
+        }
+      },
+      "description": "CheckAccountResponse is minimum set of information about\naccount existension."
+    },
     "accountsCreateAccountRequest": {
       "type": "object",
       "properties": {
@@ -515,6 +695,29 @@
       "default": "_",
       "description": "EntityType describes the type of the entity.\n\n - Pers: EntityType_Pers is an individual customer.\n - Org: EntityType_Org is an organisation customer."
     },
+    "accountsGetAccountStatusResponse": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account unique identifier."
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EffectiveDate is the date of the request."
+        },
+        "Status": {
+          "type": "string",
+          "description": "Status is the current status of the account."
+        },
+        "StatusDescription": {
+          "type": "string",
+          "description": "StatusDescription describe about the Status."
+        }
+      },
+      "description": "GetAccountStatusResponse tell about the account current status."
+    },
     "accountsGetAccountsResponse": {
       "type": "object",
       "properties": {
@@ -546,6 +749,21 @@
         }
       },
       "description": "UpdateAccountRequest wraps all fields available for update."
+    },
+    "accountsUpdateAccountStatusRequest": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account unique identifier."
+        },
+        "Status": {
+          "type": "string",
+          "description": "TODO: Change the string parameters into type\nonce the status of the account is identified.",
+          "title": "Status it the status to be updated"
+        }
+      },
+      "description": "UpdateAccountStatusRequest is the request envelope to update\nthe account status."
     },
     "typesAmount": {
       "type": "object",

@@ -248,10 +248,60 @@ type UpdateAccountRequest struct {
 	Description string `pb:"2" json:"description"`
 }
 
+// UpdateAccountStatusRequest is the request envelope to update
+// the account status.
+type UpdateAccountStatusRequest struct{
+	// AccountID is the account unique identifier.
+	AccountID string `pb:"1" json:"account_id"`
+
+	// Status is the status to be updated
+	Status string `pb:"2" json:"status"`
+}
+
+// GetAccountStatusRequest is the request to get the account current status.
+type GetAccountStatusRequest struct{
+	// AccountID is the unique identifier of the account.
+	AccountID string `pb:"1" json:"account_id"`
+}
+
+// GetAccountStatusResponse tell about the account current status.
+type GetAccountStatusResponse struct{
+	// AccountID is the account unique identifier.
+	AccountID string `pb:"1" json:"account_id"`
+
+	// EffectiveDate is the date of the request.
+	EffectiveDate time.Time `pb:"2" json:"effetive_date"`
+
+	// Status is the current status of the account.
+	Status string `pb:"3" json:"status"`
+
+	// StatusDescription describe about the Status.
+	StatusDescription string `pb:"4" json:"status_description"`
+}
+
 // DeleteAccountRequest is the request envelope to delete an account.
 type DeleteAccountRequest struct {
-	// AccountID is the unique identifier of the account to delete.
+	// AccountID is the account unique identifier.
 	AccountID string `pb:"1" json:"account_id"`
+}
+
+// CheckAccountRequest is the request to get the information
+// whether the account exists or not.
+type CheckAccountRequest struct{
+	// AccountID is the account unique identifier.
+	AccountID string `pb:"1" json:"account_id"`
+}
+
+// CheckAccountResponse is the response for check account.
+type CheckAccountResponse struct{
+	// AccountID is the account unique identifier.
+	AccountID string `pb:"1" json:"account_id"`
+
+	// BankCode is the code that is related to bank.
+	BankCode string `pb:"2" json:"bank_code"`
+
+	// AccountName is the owner name of the account.
+	AccountName string `pb:"3" json:"account_name"`
 }
 
 // AccountService provides Account operations.
@@ -420,4 +470,109 @@ type AccountService interface {
 	//         },
 	// }
 	DeleteAccount(DeleteAccountRequest)
+
+	// GetAccountStatus retrieves the status of an account, selected by its id.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/accounts/{AccountID}/status",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account","AccountStatus"},
+	//         Description: "Retrieves status of the account, selected by the account_id you supplied.",
+	//         Summary:     "Retrieve an account status",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountsAccount",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAccountStatus(GetAccountStatusRequest) GetAccountStatusResponse
+
+
+	// UpdateAccountStatus updates an account status.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/accounts/{AccountID}/status",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account", "AccountStatus"},
+	//         Description: "Updates the status of the account.",
+	//         Summary:     "Update the status of the account",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "AccountStatus updated successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateAccountStatus(UpdateAccountStatusRequest)
+
+	// CheckAccount check if account is exists and return the owner name. Selected by AccountID.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/accounts/check",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account","CheckAccount"},
+	//         Description: "Check whether account is exists, selected by the account_id you supplied.",
+	//         Summary:     "Check whether account exists or not",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountsAccount",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CheckAccount(CheckAccountRequest) CheckAccountResponse
 }
