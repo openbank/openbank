@@ -196,6 +196,63 @@ type CreateTransactionResponse struct {
 	CratedAt string `pb:"2" json:"created_at"`
 }
 
+// TFAType is available type of TFA.
+type TFAType int
+
+const(
+	_ TFAType = iota
+
+	// SMS Message.
+	SMS
+
+	// SAFEKEY Application.
+	SAFEKEY
+)
+
+// ApprovePaymentRequest wraps all request to request approval
+// of pending transaction.
+type ApprovePaymentRequest struct{
+	// TransactionID is the transaction unique identifier.
+	TransactionID string `pb:"1" json:"transaction_id"`
+
+	// Approve is Boolean value of approval action.
+	Approve bool `pb:"2" json:"approve"`
+
+	// TFAType is type to receive OTP authentication code.
+	TFAType TFAType `pb:"3" json:"tfa_type"`
+}
+
+// ApprovePaymentResponse response for approve payment request.
+type ApprovePaymentResponse struct{
+	// AuthorizationID is the executable code is obtained from
+	// the payment feedback result
+	AuthorizationID string `pb:"1" json:"authorization_id"`
+
+	// SMSCode is the OTP code used for testing.
+	SMSCode int64 `pb:"2" json:"sms_code"`
+}
+
+// TFARequest is request to get two factor authentication.
+type TFARequest struct{
+	// TransactionID is transaction / payment identification code requires approval.
+	TransactionID string `pb:"1" json:"transaction_id"`
+
+	// Code is 2-digit authentication code is sent via SMS.
+	Code string `pb:"2" json:"code"`
+
+	// AuthorizationID is the executable code is obtained from the payment feedback result.
+	AuthorizationID string `pb:"3" json:"authorization_id"`
+
+	// TFAType is type to receive OTP authentication code.
+	TFAType TFAType `pb:"4" json:"tfa_type"`
+}
+
+// TFAResponse is the response for TFARequest
+type TFAResponse struct{
+	// TraceNumber is the transaction reference code.
+	TraceNumber string `pb:"1" json:"trace_number"`
+}
+
 // TransactionService provides Transacton operations.
 type TransactionService interface {
 	// GetTransaction retrieves the detail of a transaction, selected by its id.
@@ -288,4 +345,65 @@ type TransactionService interface {
 	//         },
 	// }
 	CreateTransaction(CreateTransactionRequest) CreateTransactionResponse
+
+	// ApprovePayment approves a pending transaction.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/transactions/approval",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"AppproveTransaction","Transaction"},
+	//         Description: "Approves a pending transaction.",
+	//         Summary:     "Approves a pending transaction.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Transaction successfully approved.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	ApprovePayment(ApprovePaymentRequest) ApprovePaymentResponse
+
+	// TFA does 2fa verification for a approved transaction.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/transactions/confirmation",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Transaction"},
+	//         Description: "Authorization allows execution of transactions with 2-layer authentication (two factor authentication).",
+	//         Summary:     "Authorize the transaction",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Transaction authorized.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	TFA(TFARequest) TFAResponse
+
 }

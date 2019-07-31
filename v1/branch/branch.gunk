@@ -64,7 +64,7 @@ type Branch struct {
 	// ID is a unique identifier of the branch.
 	ID string `pb:"1" json:"id"`
 
-	// BankID is the bank identifier that owned the branch.
+	// BankID is the bank identifier of the branch owner.
 	BankID string `pb:"2" json:"bank_id"`
 
 	// Name is the branch name.
@@ -88,7 +88,7 @@ type Branch struct {
 
 // CreateBranchRequest is a request to create a branch.
 type CreateBranchRequest struct {
-	// BankID is the bank identifier that owned the branch.
+	// BankID is the bank identifier of the branch owner.
 	BankID string `pb:"1" json:"bank_id"`
 
 	// Name is the branch name.

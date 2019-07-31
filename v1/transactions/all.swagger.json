@@ -153,6 +153,105 @@
         ]
       }
     },
+    "/v1/transactions/approval": {
+      "post": {
+        "summary": "Approves a pending transaction.",
+        "description": "Approves a pending transaction.",
+        "operationId": "ApprovePayment",
+        "responses": {
+          "200": {
+            "description": "Transaction successfully approved.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionsApprovePaymentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AppproveTransaction",
+          "Transaction"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/transactions/confirmation": {
+      "post": {
+        "summary": "Authorize the transaction",
+        "description": "Authorization allows execution of transactions with 2-layer authentication (two factor authentication).",
+        "operationId": "TFA",
+        "responses": {
+          "200": {
+            "description": "Transaction authorized.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionsTFARequest"
+            }
+          }
+        ],
+        "tags": [
+          "Transaction"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
     "/v1/transactions/{TransactionID}": {
       "get": {
         "summary": "Retrieve a transaction",
@@ -207,6 +306,40 @@
     }
   },
   "definitions": {
+    "transactionsApprovePaymentRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string",
+          "description": "TransactionID is the transaction unique identifier."
+        },
+        "Approve": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Approve is Boolean value of approval action."
+        },
+        "TFAType": {
+          "$ref": "#/definitions/transactionsTFAType",
+          "description": "TFAType is type to receive OTP authentication code."
+        }
+      },
+      "description": "ApprovePaymentRequest wraps all request to request approval\nof pending transaction."
+    },
+    "transactionsApprovePaymentResponse": {
+      "type": "object",
+      "properties": {
+        "AuthorizationID": {
+          "type": "string",
+          "title": "AuthorizationID is the executable code is obtained from\nthe payment feedback result"
+        },
+        "SMSCode": {
+          "type": "string",
+          "format": "int64",
+          "description": "SMSCode is the OTP code used for testing."
+        }
+      },
+      "description": "ApprovePaymentResponse response for approve payment request."
+    },
     "transactionsBankAccountInfo": {
       "type": "object",
       "properties": {
@@ -297,6 +430,48 @@
       ],
       "default": "_",
       "description": "Status defines the status of a transaction.\n\n - Success: Status_Success is the value for a successful transaction.\n - Pending: Status_Pending is the value for a pending transaction.\n - Rejected: Status_Rejected is the value for a rejected transaction."
+    },
+    "transactionsTFARequest": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string",
+          "description": "TransactionID is transaction / payment identification code requires approval."
+        },
+        "Code": {
+          "type": "string",
+          "description": "Code is 2-digit authentication code is sent via SMS."
+        },
+        "AuthorizationID": {
+          "type": "string",
+          "description": "AuthorizationID is the executable code is obtained from the payment feedback result."
+        },
+        "TFAType": {
+          "$ref": "#/definitions/transactionsTFAType",
+          "description": "TFAType is type to receive OTP authentication code."
+        }
+      },
+      "description": "TFARequest is request to get two factor authentication."
+    },
+    "transactionsTFAResponse": {
+      "type": "object",
+      "properties": {
+        "TraceNumber": {
+          "type": "string",
+          "description": "TraceNumber is the transaction reference code."
+        }
+      },
+      "title": "TFAResponse is the response for TFARequest"
+    },
+    "transactionsTFAType": {
+      "type": "string",
+      "enum": [
+        "_",
+        "SMS",
+        "SAFEKEY"
+      ],
+      "default": "_",
+      "description": "TFAType is available type of TFA.\n\n - SMS: TFAType_SMS Message.\n - SAFEKEY: TFAType_SAFEKEY Application."
     },
     "transactionsTransaction": {
       "type": "object",
