@@ -123,8 +123,8 @@
     },
     "/v1/accounts/check": {
       "post": {
-        "summary": "Check account existension",
-        "description": "Check if account is exist, selected by the account_id you supplied.",
+        "summary": "Check whether account exists or not",
+        "description": "Check whether account is exists, selected by the account_id you supplied.",
         "operationId": "CheckAccount",
         "responses": {
           "200": {
@@ -577,14 +577,14 @@
         },
         "BankCode": {
           "type": "string",
-          "description": "BankCode is the code that related to bank."
+          "description": "BankCode is the code that is related to bank."
         },
         "AccountName": {
           "type": "string",
           "description": "AccountName is the owner name of the account."
         }
       },
-      "description": "CheckAccountResponse is minimum set of information about\naccount existension."
+      "description": "CheckAccountResponse is the response for check account."
     },
     "accountsCreateAccountRequest": {
       "type": "object",
@@ -688,11 +688,11 @@
     "accountsEntityType": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownEntityType",
         "Pers",
         "Org"
       ],
-      "default": "_",
+      "default": "UnknownEntityType",
       "description": "EntityType describes the type of the entity.\n\n - Pers: EntityType_Pers is an individual customer.\n - Org: EntityType_Org is an organisation customer."
     },
     "accountsGetAccountStatusResponse": {
@@ -759,8 +759,7 @@
         },
         "Status": {
           "type": "string",
-          "description": "TODO: Change the string parameters into type\nonce the status of the account is identified.",
-          "title": "Status it the status to be updated"
+          "title": "Status is the status to be updated"
         }
       },
       "description": "UpdateAccountStatusRequest is the request envelope to update\nthe account status."
@@ -782,17 +781,17 @@
     "typesMajorCategory": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownMajorCategory",
         "Dep",
         "Loan"
       ],
-      "default": "_",
+      "default": "UnknownMajorCategory",
       "description": "MajorCategory describes the category of the account.\n\n - Dep: MajorCategory_Dep for deposit category.\n - Loan: MajorCategory_Loan for loan category."
     },
     "typesMajorType": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownMajorType",
         "Checking",
         "Saving",
         "TimeDeposit",
@@ -800,7 +799,7 @@
         "MortgageLoan",
         "ConsumerLoan"
       ],
-      "default": "_",
+      "default": "UnknownMajorType",
       "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
     }
   },

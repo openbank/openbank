@@ -67,11 +67,11 @@
             "required": false,
             "type": "string",
             "enum": [
-              "_",
+              "UnknownType",
               "Credit",
               "Debit"
             ],
-            "default": "_"
+            "default": "UnknownType"
           },
           {
             "name": "Limit",
@@ -423,12 +423,12 @@
     "transactionsStatus": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownStatus",
         "Success",
         "Pending",
         "Rejected"
       ],
-      "default": "_",
+      "default": "UnknownStatus",
       "description": "Status defines the status of a transaction.\n\n - Success: Status_Success is the value for a successful transaction.\n - Pending: Status_Pending is the value for a pending transaction.\n - Rejected: Status_Rejected is the value for a rejected transaction."
     },
     "transactionsTFARequest": {
@@ -523,11 +523,11 @@
     "transactionsType": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownType",
         "Credit",
         "Debit"
       ],
-      "default": "_",
+      "default": "UnknownType",
       "description": "Type defines the type of a transaction.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction."
     },
     "typesAmount": {
@@ -547,7 +547,7 @@
     "typesBankCode": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownBankCode",
         "Mandiri",
         "Bca",
         "Bni",
@@ -696,14 +696,14 @@
         "JtrustIndonesia",
         "Transferwise"
       ],
-      "default": "_",
+      "default": "UnknownBankCode",
       "description": "- Aceh: Bpi",
       "title": "BankCode indicates which bank to use; these should be a list of banks\nthat we are currently integrated with\nThis is the updated list of banks per January 2018"
     },
     "typesMajorType": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownMajorType",
         "Checking",
         "Saving",
         "TimeDeposit",
@@ -711,7 +711,7 @@
         "MortgageLoan",
         "ConsumerLoan"
       ],
-      "default": "_",
+      "default": "UnknownMajorType",
       "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
     }
   },

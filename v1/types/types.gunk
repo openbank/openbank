@@ -12,7 +12,7 @@ type Amount struct {
 type MajorType int
 
 const (
-	_ MajorType = iota
+	UnknownMajorType MajorType = iota
 	// Checking account.
 	Checking
 	// Saving account.
@@ -31,7 +31,7 @@ const (
 type MajorCategory int
 
 const (
-	_ MajorCategory = iota
+	UnknownMajorCategory MajorCategory = iota
 	// Dep for deposit category.
 	Dep
 	// Loan for loan category.
@@ -44,7 +44,7 @@ const (
 type BankCode int
 
 const (
-	_ BankCode = iota
+	UnknownBankCode BankCode = iota
 	Mandiri
 	Bca
 	Bni
@@ -195,508 +195,31 @@ const (
 	Transferwise
 )
 
-// Currency following format specified on ISO 4217
-// avoid naming collision
-type CurrencyISO4217 int
-
-const (
-	_ CurrencyISO4217 = iota
-
-	// Afghanistan
-	AFN
-
-	// Aland Islands; Andorra; Austria; Belgium; Cyprus; Estonia; Europe; Finland;
-	// France; France, Metropolitan; French Guiana; French Southern Territories;
-	// Germany; Greece; Guadeloupe; Ireland; Italy; Kosovo; Latvia; Lithuania;
-	// Luxembourg; Malta; Martinique; Mayotte; Monaco; Montenegro; Netherlands;
-	// Portugal; Reunion; Saint Barthelemy; San Marino; Slovakia; Slovenia; Spain;
-	// St. Pierre and Miquelon; Vatican City State
-	EUR
-
-	// Albania
-	ALL
-
-	// Algeria
-	DZD
-
-	// American Samoa; Barbados; British Indian Ocean Territory; East Timor;
-	// Ecuador; El Salvador; Guam; Haiti; Marshall Islands; Micronesia,
-	// Federated States o; Northern Mariana Islands; Palau; Panama; Puerto Rico;
-	// Timor-Leste; Turks and Caicos Islands; United States;
-	// United States minor outlying islands; Virgin Islands (British);
-	// Virgin Islands (U.S.); Zimbabwe
-	USD
-
-	// Angola
-	AOA
-
-	// Anguilla; Antigua and Barbuda; Dominica; Grenada; Montserrat;
-	// Saint Kitts and Nevis; Saint Lucia; Saint Vincent and the Grenadin
-	XCD
-
-	// Argentina
-	ARS
-
-	// Armenia
-	AMD
-
-	// Aruba
-	AWG
-
-	// Australia; Christmas Island; Cocos (Keeling) Islands;
-	// Heard and Mc Donald Islands; Kiribati; Nauru; Norfolk Island; Tuvalu
-	AUD
-
-	// Azerbaijan
-	AZN
-
-	// Bahamas
-	BSD
-
-	// Bahrain
-	BHD
-
-	// Bangladesh
-	BDT
-
-	// Belarus
-	BYR
-
-	// Belize
-	BZD
-
-	// Benin; Burkina Faso; Guinea-Bissau; Ivory Coast; Mali; Niger;
-	// Senegal; Togo
-	XOF
-
-	// Bermuda
-	BMD
-
-	// Bhutan
-	BTN
-
-	// Bolivia
-	BOV
-
-	// Bosnia and Herzegovina
-	BAM
-
-	// Botswana
-	BWP
-
-	// Bouvet Island; Norway; Svalbard and Jan Mayen Islands
-	NOK
-
-	// Brazil
-	BRL
-
-	// Brunei Darussalam; Singapore
-	SGD
-
-	// Bulgaria
-	BGN
-
-	// Burundi
-	BIF
-
-	// Cambodia
-	KHR
-
-	// Cameroon; Central African Republic; Chad; Congo; Equatorial Guinea; Gabon
-	XAF
-
-	// Canada
-	CAD
-
-	// Cape Verde
-	CVE
-
-	// Cayman Islands
-	KYD
-
-	// Chile
-	CLP
-
-	// China
-	CNY
-
-	// Colombia
-	COP
-
-	// Comoros
-	KMF
-
-	// Congo, The Democratic Republic
-	CDF
-
-	// Cook Islands; New Zealand; Niue; Pitcairn; Tokelau
-	NZD
-
-	// Costa Rica
-	CRC
-
-	// Croatia (Hrvatska)
-	HRK
-
-	// Cuba
-	CUC
-
-	// Czech Republic
-	CZK
-
-	// Denmark; Faroe Islands; Greenland
-	DKK
-
-	// Djibouti
-	DJF
-
-	// Dominican Republic
-	DOP
-
-	// Egypt
-	EGP
-
-	// Eritrea
-	ERN
-
-	// Ethiopia
-	ETB
-
-	// Falkland Islands (Malvinas)
-	FKP
-
-	// Fiji
-	FJD
-
-	// French Polynesia; New Caledonia; Wallis and Futuna Islands
-	XPF
-
-	// Gambia
-	GMD
-
-	// Georgia
-	GEL
-
-	// Ghana
-	GHS
-
-	// Gibraltar
-	GIP
-
-	// Guatemala
-	GTQ
-
-	// Guernsey; South Georgia South Sandwich Islands; United Kingdom
-	GBP
-
-	// Guinea
-	GNF
-
-	// Guyana
-	GYD
-
-	// Honduras
-	HNL
-
-	// Hong Kong; Macau
-	HKD
-
-	// Hungary
-	HUF
-
-	// Iceland
-	ISK
-
-	// India
-	INR
-
-	// Indonesia
-	IDR
-
-	// Iran (Islamic Republic of)
-	IRR
-
-	// Iraq
-	IQD
-
-	// Isle of Man
-	IMP
-
-	// Israel
-	ILS
-
-	// Jamaica
-	JMD
-
-	// Japan
-	JPY
-
-	// Jersey
-	JEP
-
-	// Jordan
-	JOD
-
-	// Kazakhstan
-	KZT
-
-	// Kenya
-	KES
-
-	// Korea, Democratic People's Rep
-	KPW
-
-	// Korea, Republic of
-	KRW
-
-	// Kuwait
-	KWD
-
-	// Kyrgyzstan
-	KGS
-
-	// Lao People's Democratic Republ
-	LAK
-
-	// Lebanon
-	LBP
-
-	// Lesotho
-	LSL
-
-	// Liberia
-	LRD
-
-	// Libyan Arab Jamahiriya
-	LYD
-
-	// Liechtenstein; Switzerland
-	CHF
-
-	// Macedonia
-	MKD
-
-	// Madagascar
-	MGA
-
-	// Malawi
-	MWK
-
-	// Malaysia
-	MYR
-
-	// Maldives
-	MVR
-
-	// Mauritania
-	MRO
-
-	// Mauritius
-	MUR
-
-	// Mexico
-	MXN
-
-	// Moldova, Republic of
-	MDL
-
-	// Mongolia
-	MNT
-
-	// Morocco; Western Sahara
-	MAD
-
-	// Mozambique
-	MZN
-
-	// Myanmar
-	MMK
-
-	// Namibia
-	NAD
-
-	// Nepal
-	NPR
-
-	// Netherlands Antilles; Saint Martin
-	ANG
-
-	// Nicaragua
-	NIO
-
-	// Nigeria
-	NGN
-
-	// Oman
-	OMR
-
-	// Pakistan
-	PKR
-
-	// Papua New Guinea
-	PGK
-
-	// Paraguay
-	PYG
-
-	// Peru
-	PEN
-
-	// Philippines
-	PHP
-
-	// Poland
-	PLN
-
-	// Qatar
-	QAR
-
-	// Romania
-	RON
-
-	// Russian Federation
-	RUB
-
-	// Rwanda
-	RWF
-
-	// Samoa
-	WST
-
-	// Sao Tome and Principe
-	STD
-
-	// Saudi Arabia
-	SAR
-
-	// Serbia
-	RSD
-
-	// Seychelles
-	SCR
-
-	// Sierra Leone
-	SLL
-
-	// Solomon Islands
-	SBD
-
-	// Somalia
-	SOS
-
-	// South Africa
-	ZAR
-
-	// South Sudan
-	SSP
-
-	// Sri Lanka
-	LKR
-
-	// St. Helena
-	SHP
-
-	// Sudan
-	SDG
-
-	// Suriname
-	SRD
-
-	// Swaziland
-	SZL
-
-	// Sweden
-	SEK
-
-	// Syrian Arab Republic
-	SYP
-
-	// Taiwan
-	TWD
-
-	// Tajikistan
-	TJS
-
-	// Tanzania, United Republic of
-	TZS
-
-	// Thailand
-	THB
-
-	// Tonga
-	TOP
-
-	// Trinidad and Tobago
-	TTD
-
-	// Tunisia
-	TND
-
-	// Turkey
-	TRY
-
-	// Turkmenistan
-	TMT
-
-	// Uganda
-	UGX
-
-	// Ukraine
-	UAH
-
-	// United Arab Emirates
-	ARE
-
-	// Uruguay
-	UYU
-
-	// Uzbekistan
-	UZS
-
-	// Vanuatu
-	VUV
-
-	// Venezuela
-	VEF
-
-	// Vietnam
-	VND
-
-	// Yemen
-	YER
-
-	// Zaire
-	ZRN
-
-	// Zambia
-	ZMW
-)
-
 type CardStatus int
 
 const (
-	_ CardStatus = iota
+	UnknownCardStatus CardStatus = iota
 
-	// LOCK is the lock status for a card.
-	LOCK
+	// Lock is the lock status for a card.
+	Lock
 
-	// UNLOCK is the unlock status for a card.
-	UNLOCK
+	// Unlock is the unlock status for a card.
+	Unlock
 
-	// ACTIVE is the active status for a card.
-	ACTIVE
+	// Active is the active status for a card.
+	Active
 )
 
 type CardAccessStatus int
 
 const (
-	_ CardAccessStatus = iota
+	UnknownCardAccessStatus CardAccessStatus = iota
 
-	// OFTEN is often status of access card.
-	OFTEN
+	// Often indicates a card is used often.
+	Often
 
-	// RARE is rare status of access card.
-	RARE
+	// Rare indicates a card is used rarely.
+	Rare
 )
 
 // Address hold all details about Address

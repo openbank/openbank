@@ -120,11 +120,11 @@
     "statementsStatus": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownStatus",
         "Received",
         "Pending"
       ],
-      "default": "_",
+      "default": "UnknownStatus",
       "description": "Status define the status of a statment.\n\n - Received: Status_Received is the value for a received statment.\n - Pending: Status_Pending is the value for a pending statement."
     },
     "typesAmount": {
@@ -144,7 +144,7 @@
     "typesBankCode": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownBankCode",
         "Mandiri",
         "Bca",
         "Bni",
@@ -293,7 +293,7 @@
         "JtrustIndonesia",
         "Transferwise"
       ],
-      "default": "_",
+      "default": "UnknownBankCode",
       "description": "- Aceh: Bpi",
       "title": "BankCode indicates which bank to use; these should be a list of banks\nthat we are currently integrated with\nThis is the updated list of banks per January 2018"
     }

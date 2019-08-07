@@ -287,15 +287,17 @@
       "type": "object",
       "properties": {
         "Latitude": {
-          "type": "string",
-          "description": "Latitude holds the latitude information."
+          "type": "number",
+          "format": "double",
+          "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
         "Longitude": {
-          "type": "string",
-          "description": "Longitude holds the longitude information."
+          "type": "number",
+          "format": "double",
+          "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"
         }
       },
-      "title": "Location holds latitude and longitude information"
+      "description": "Location is An object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude.\nValues must be within normalized ranges.\nRefer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
     }
   },
   "securityDefinitions": {

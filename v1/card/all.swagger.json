@@ -223,23 +223,23 @@
     "typesCardAccessStatus": {
       "type": "string",
       "enum": [
-        "_",
-        "OFTEN",
-        "RARE"
+        "UnknownCardAccessStatus",
+        "Often",
+        "Rare"
       ],
-      "default": "_",
-      "description": " - OFTEN: CardAccessStatus_OFTEN is often status of access card.\n - RARE: CardAccessStatus_RARE is rare status of access card."
+      "default": "UnknownCardAccessStatus",
+      "description": " - Often: CardAccessStatus_Often indicates a card is used often.\n - Rare: CardAccessStatus_Rare indicates a card is used rarely."
     },
     "typesCardStatus": {
       "type": "string",
       "enum": [
-        "_",
-        "LOCK",
-        "UNLOCK",
-        "ACTIVE"
+        "UnknownCardStatus",
+        "Lock",
+        "Unlock",
+        "Active"
       ],
-      "default": "_",
-      "description": " - LOCK: CardStatus_LOCK is the lock status for a card.\n - UNLOCK: CardStatus_UNLOCK is the unlock status for a card.\n - ACTIVE: CardStatus_ACTIVE is the active status for a card."
+      "default": "UnknownCardStatus",
+      "description": " - Lock: CardStatus_Lock is the lock status for a card.\n - Unlock: CardStatus_Unlock is the unlock status for a card.\n - Active: CardStatus_Active is the active status for a card."
     }
   },
   "securityDefinitions": {
