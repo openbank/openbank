@@ -60,7 +60,7 @@ import(
 type Status int
 
 const(
-	_ Status = iota
+	UnknownStatus Status = iota
 	// Received is the value for a received statment.
 	Received
 	// Pending is the value for a pending statement.

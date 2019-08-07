@@ -4,7 +4,7 @@ package apierror
 type ErrorType int
 
 const (
-	_ ErrorType = iota
+	UnknownErrorType ErrorType = iota
 	// AccountAlreadyExists is returned when trying to create a duplicate account.
 	AccountAlreadyExists
 )

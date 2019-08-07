@@ -55,7 +55,7 @@ type Empty struct{}
 type GrantType int
 
 const (
-	_ GrantType = iota
+	UnknownGrantType GrantType = iota
 	// AuthorizationCode is the grant type used to exchange an authorization code with an access token.
 	AuthorizationCode
 	// RefreshToken is the grant type used to refresh an access token.

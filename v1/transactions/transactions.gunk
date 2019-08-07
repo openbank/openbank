@@ -62,7 +62,7 @@ import (
 type Type int
 
 const (
-	_ Type = iota
+	UnknownType Type = iota
 
 	// Credit is the value for a credit transaction.
 	Credit
@@ -75,7 +75,7 @@ const (
 type Status int
 
 const (
-	_ Status = iota
+	UnknownStatus Status = iota
 
 	// Success is the value for a successful transaction.
 	Success

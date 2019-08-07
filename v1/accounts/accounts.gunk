@@ -152,7 +152,7 @@ type GetAccountsResponse struct {
 type EntityType int
 
 const (
-	_ EntityType = iota
+	UnknownEntityType EntityType = iota
 
 	// Pers is an individual customer.
 	Pers

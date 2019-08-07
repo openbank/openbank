@@ -176,11 +176,11 @@
     "authGrantType": {
       "type": "string",
       "enum": [
-        "_",
+        "UnknownGrantType",
         "AuthorizationCode",
         "RefreshToken"
       ],
-      "default": "_",
+      "default": "UnknownGrantType",
       "description": "GrantType defines the grant type when requesting a token.\n\n - AuthorizationCode: GrantType_AuthorizationCode is the grant type used to exchange an authorization code with an access token.\n - RefreshToken: GrantType_RefreshToken is the grant type used to refresh an access token."
     }
   }

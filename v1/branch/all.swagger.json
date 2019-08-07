@@ -300,7 +300,7 @@
         },
         "BankID": {
           "type": "string",
-          "description": "BankID is the bank identifier that owned the branch."
+          "description": "BankID is the bank identifier of the branch owner."
         },
         "Name": {
           "type": "string",
@@ -334,7 +334,7 @@
       "properties": {
         "BankID": {
           "type": "string",
-          "description": "BankID is the bank identifier that owned the branch."
+          "description": "BankID is the bank identifier of the branch owner."
         },
         "Name": {
           "type": "string",
