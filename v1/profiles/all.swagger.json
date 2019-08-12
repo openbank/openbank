@@ -1,0 +1,329 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Profile API",
+    "description": "Provides CRUD operations on the Profile resource.",
+    "version": "1.0.0"
+  },
+  "basePath": "/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/profile": {
+      "get": {
+        "summary": "Query profile information",
+        "description": "Returns an array of values containing up to 20 records of account information. \u003cbr\u003e \u003cbr\u003e Can query more records by paging value in query (paginate NextStartIndex)",
+        "operationId": "GetProfile",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/profilesProfile"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartIndex",
+            "description": "Value of next page query (paginate).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Profile"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/profile/card": {
+      "get": {
+        "summary": "Query profile card information",
+        "description": "Returns an array of values containing up to 20 records of account information. \u003cbr\u003e \u003cbr\u003e Can query more records by paging value in query (paginate NextStartIndex)",
+        "operationId": "GetProfileCard",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/profilesProfileCard"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartIndex",
+            "description": "Value of next page query (paginate).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ProfileCard"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "accountsAccount": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the unique identifier of an account."
+        },
+        "Branch": {
+          "type": "string",
+          "description": "TODO: add comment."
+        },
+        "BranchName": {
+          "type": "string",
+          "description": "TODO: add comment."
+        },
+        "Status": {
+          "type": "string",
+          "description": "Status is the status of the account."
+        },
+        "AccruedInterestAtMaturityDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "TODO: add comment."
+        },
+        "AmountDue": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "TODO: add comment."
+        },
+        "AvailableBalance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "TODO: add comment."
+        },
+        "AvailableCreditLimit": {
+          "type": "string",
+          "description": "TODO: add comment."
+        },
+        "CheckingInterestRate": {
+          "type": "string",
+          "description": "TODO: add comment."
+        },
+        "ContractDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ContractDate is the date of the contract initialization."
+        },
+        "CreditLimit": {
+          "type": "string",
+          "description": "CreditLimit is the allowed credit limit."
+        },
+        "CurrentAccruedInterest": {
+          "type": "string",
+          "description": "TODO: add comment."
+        },
+        "CurrentBalance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "TODO: add comment."
+        },
+        "CurrentTerm": {
+          "type": "string",
+          "description": "CurrentTerm is the account validity period."
+        },
+        "DueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "DueDate is the loan maturity date."
+        },
+        "InterestRate": {
+          "type": "string",
+          "description": "TODO: add comment."
+        },
+        "MajorType": {
+          "$ref": "#/definitions/typesMajorType",
+          "description": "MajorType is the account type."
+        },
+        "MajorCategory": {
+          "$ref": "#/definitions/typesMajorCategory",
+          "description": "MajorCategory is the account category."
+        },
+        "MaturityDate": {
+          "type": "string",
+          "format": "date-time",
+          "title": "MaturityDate is the maturity date, format is ISO 8601"
+        },
+        "NextPaymentDueDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "TODO: add comment."
+        },
+        "OwnerName": {
+          "type": "string",
+          "description": "OwnerName is the name of the account's owner."
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "TODO: add comment."
+        }
+      },
+      "description": "Account holds all details about a bank account."
+    },
+    "profilesGetProfileCardsResponse": {
+      "type": "object",
+      "properties": {
+        "Cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/profilesProfileCard"
+          }
+        }
+      }
+    },
+    "profilesGetProfileResponse": {
+      "type": "object",
+      "properties": {
+        "Accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountsAccount"
+          }
+        }
+      },
+      "title": "GetProfileResponse"
+    },
+    "profilesProfileCard": {
+      "type": "object",
+      "properties": {
+        "CardToken": {
+          "type": "string",
+          "title": "Card Number"
+        },
+        "Category": {
+          "type": "string",
+          "title": "Card Type"
+        },
+        "LastFour": {
+          "type": "string",
+          "title": "The last 4 digits of the card"
+        },
+        "OwnerName": {
+          "type": "string",
+          "title": "Account Name"
+        },
+        "Type": {
+          "type": "string",
+          "title": "Account Type"
+        }
+      }
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    },
+    "typesMajorCategory": {
+      "type": "string",
+      "enum": [
+        "UnknownMajorCategory",
+        "Dep",
+        "Loan"
+      ],
+      "default": "UnknownMajorCategory",
+      "description": "MajorCategory describes the category of the account.\n\n - Dep: MajorCategory_Dep for deposit category.\n - Loan: MajorCategory_Loan for loan category."
+    },
+    "typesMajorType": {
+      "type": "string",
+      "enum": [
+        "UnknownMajorType",
+        "Checking",
+        "Saving",
+        "TimeDeposit",
+        "CommercialLoan",
+        "MortgageLoan",
+        "ConsumerLoan"
+      ],
+      "default": "UnknownMajorType",
+      "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
