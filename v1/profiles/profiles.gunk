@@ -1,0 +1,173 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Profile API",
+//                 Description: "Provides CRUD operations on the Profile resource.",
+//                 Version:     "1.0.0",
+//         },
+//         BasePath: "/v1",
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package profiles
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+	accounts "github.com/openbank/openbank/v1/accounts"
+)
+
+// GetProfileRequest
+type GetProfileRequest struct {
+	// Value of next page query (paginate)
+	NextStartIndex string `pb:"1" json:"next_start_index"`
+}
+
+// GetProfileResponse
+type GetProfileResponse struct { 
+	Accounts []accounts.Account `pb:"1" json:"accounts"`
+}
+
+type GetProfileCardsRequest struct { 
+	// Value of next page query (paginate)
+	NextStartIndex string `pb:"1" json:"next_start_index"`
+}
+
+type GetProfileCardsResponse struct { 
+	Cards []ProfileCard `pb:"1" json:"cards"`
+}
+
+type ProfileCard struct {
+	// Card Number 
+	CardToken string `pb:"1" json:"card_token"`
+
+	// Card Type
+	Category string `pb:"2" json:"category"`
+
+	// The last 4 digits of the card
+	LastFour string `pb:"3" json:"last_four"`
+
+	// Account Name
+	OwnerName string `pb:"4" json:"owner_name"`
+
+	// Account Type
+	Type string `pb:"5" json:"type"`
+}
+
+type ProfileService interface {
+	// GetProfile retrieves a user profile.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/profile",
+	// }
+	// +gunk openapiv2.Operation {
+	//         Tags:        []string{"Profile"},
+	//         Description: "Returns an array of values containing up to 20 records of account information. <br> <br> Can query more records by paging value in query (paginate NextStartIndex)",
+	//         Summary:     "Query profile information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/profilesProfile",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProfile(GetProfileRequest) GetProfileResponse
+
+	// GetProfileCard retrieves all user cards.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/profile/card",
+	// }
+	// +gunk openapiv2.Operation {
+	//         Tags:        []string{"ProfileCard"},
+	//         Description: "Returns an array of values containing up to 20 records of account information. <br> <br> Can query more records by paging value in query (paginate NextStartIndex)",
+	//         Summary:     "Query profile card information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/profilesProfileCard",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProfileCard(GetProfileCardsRequest) GetProfileCardsResponse
+}
