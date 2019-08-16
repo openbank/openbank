@@ -5,7 +5,6 @@
 //                 Description: "Provides create and read operations on the card resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -66,10 +65,10 @@ type Card struct {
 	// ID is a unique identifier of a card.
 	ID string `pb:"1" json:"id"`
 
-	// Account is the account id who owns the card.
+	// Account is the ID of the account associated with the card.
 	Account string `pb:"2" json:"account"`
 
-	// OwnerName is the owner name of the card.
+	// OwnerName is the name of the card owner.
 	OwnerName string `pb:"3" json:"owner_name"`
 
 	// ContactNumber is the contact number of the card owner.
@@ -84,40 +83,40 @@ type Card struct {
 	// Expiry is an expiry date of the card.
 	Expiry time.Time `pb:"7" json:"expiry"`
 
-	// Status is the status of the card, such as lock, unlock, active.
+	// Status is the status of the card.
 	Status types.CardStatus `pb:"8" json:"status"`
 
-	// AccessStatus is the access status of the card, such as often and rare.
+	// AccessStatus is the access status of the card.
 	AccessStatus types.CardAccessStatus `pb:"9" json:"access_status"`
 }
 
-// GetCardRequest is a request to get card information.
+// GetCardRequest is the request envelope to retrieve card information.
 type GetCardRequest struct {
 	// CardToken is the identifier to get the card information.
 	CardToken string `pb:"1" json:"card_token"`
 }
 
-// UpdateCardStatusRequest is a request to update card status.
+// UpdateCardStatusRequest is the request envelope to update card status.
 type UpdateCardStatusRequest struct {
 	// CardToken is the identifier to get the card information.
 	CardToken string `pb:"1" json:"card_token"`
 
-	// Status is the status to be updated.
+	// Status is the new card status.
 	Status types.CardStatus `pb:"2" json:"status"`
 }
 
-// UpdateCardAccessStatusRequest is a request to update card access status.
+// UpdateCardAccessStatusRequest is the request envelope to update card access status.
 type UpdateCardAccessStatusRequest struct {
 	// CardToken is the identifier to get the card information.
 	CardToken string `pb:"1" json:"card_token"`
 
-	// AccessStatus is the card access status to be updated.
+	// AccessStatus is the new card access status.
 	AccessStatus types.CardAccessStatus `pb:"2" json:"access_status"`
 }
 
-// Result is result for update operation.
+// Result is result of the update operation.
 type Result struct {
-	// Success is the flag for success operation.
+	// Success is a boolean indicating the success of the operation.
 	Success bool `pb:"1" json:"success"`
 
 	// ErrorCode is the code of the error.
@@ -138,10 +137,15 @@ type CardService interface {
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Card"},
 	//         Description: "Retrieves all data from a card, selected by the card_token you supplied.",
-	//         Summary:     "Retrieve a card information",
+	//         Summary:     "Retrieve card information",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/cardCard",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -168,9 +172,9 @@ type CardService interface {
 	//         Path:   "/v1/card/status",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Card", "CardStatus"},
+	//         Tags:        []string{"Card"},
 	//         Description: "Update Card status.",
-	//         Summary:     "Update Card Status.",
+	//         Summary:     "Update card status",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
@@ -200,12 +204,17 @@ type CardService interface {
 	//         Path:   "/v1/card/access_status",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Card", "AccessStatus"},
+	//         Tags:        []string{"Card"},
 	//         Description: "Update card access status.",
-	//         Summary:     "Update card access status.",
+	//         Summary:     "Update card access status",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/cardResult",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",

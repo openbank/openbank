@@ -178,6 +178,5 @@ type StatementService interface {
 	//                 },
 	//         },
 	// }
-
 	GetStatements(GetStatementsRequest) GetStatementsResponse
 }
