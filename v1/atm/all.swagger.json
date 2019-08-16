@@ -5,7 +5,6 @@
     "description": "Provides create and read operations on the ATM resource.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -18,13 +17,15 @@
   "paths": {
     "/v1/atms": {
       "get": {
-        "summary": "Get All available ATMs.",
-        "description": "Get All available ATMs.",
+        "summary": "Retrieve all available ATMs",
+        "description": "Retrieves information regarding all the available ATMs.",
         "operationId": "GetATMs",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/atmGetATMsResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -71,7 +72,9 @@
           },
           "201": {
             "description": "Transaction created successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/atmCreateATMResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -118,13 +121,15 @@
     },
     "/v1/atms/{ATM_ID}": {
       "get": {
-        "summary": "Retrieve ATM information",
-        "description": "Retrieves ATM information, selected by the ATM_ID you supplied.",
+        "summary": "Retrieve an ATM",
+        "description": "Retrieves information regarding a specific ATM, selected by the supplied ID.",
         "operationId": "GetATM",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/atmATM"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -175,34 +180,34 @@
       "properties": {
         "ID": {
           "type": "string",
-          "description": "ID is a unique identifier of the ATM."
+          "description": "ID is the unique identifier of an ATM."
         },
         "BankID": {
           "type": "string",
-          "title": "BankID is the bank identifier that owned the ATM"
+          "description": "BankID is the identifier of the bank associated with the ATM."
         },
         "Name": {
           "type": "string",
-          "title": "Name is the name of ATM"
+          "description": "Name is the name of ATM."
         },
         "Address": {
           "$ref": "#/definitions/typesAddress",
-          "title": "Address is the ATM location details"
+          "description": "Address is the ATM's address."
         },
         "Location": {
           "$ref": "#/definitions/typesLocation",
-          "title": "Location is the ATM longitude and latitude"
+          "description": "Location is the ATM longitude and latitude."
         },
         "Description": {
           "type": "string",
-          "title": "Description is the ATM description"
+          "description": "Description is the ATM's description."
         },
         "Metadata": {
           "type": "string",
-          "title": "Metadata is the ATM metadata"
+          "description": "Metadata is the ATM's metadata."
         }
       },
-      "description": "ATM holds all details about a ATM."
+      "description": "ATM holds all details about an ATM."
     },
     "atmCreateATMRequest": {
       "type": "object",
@@ -213,23 +218,23 @@
         },
         "Name": {
           "type": "string",
-          "title": "Name is the name of ATM"
+          "description": "BankID is the identifier of the bank associated with the ATM."
         },
         "Address": {
           "$ref": "#/definitions/typesAddress",
-          "title": "Address is the ATM location details"
+          "description": "Address is the ATM's address."
         },
         "Location": {
           "$ref": "#/definitions/typesLocation",
-          "title": "Location is the ATM longitude and latitude"
+          "title": "Location is the ATM's longitude and latitude"
         },
         "Description": {
           "type": "string",
-          "title": "Description is the ATM description"
+          "description": "Description is the ATM's description."
         },
         "Metadata": {
           "type": "string",
-          "title": "Metadata is the ATM metadata"
+          "description": "Metadata is the ATM's metadata."
         }
       },
       "description": "CreateATMRequest is a request to create an ATM."
@@ -239,10 +244,10 @@
       "properties": {
         "ATM_ID": {
           "type": "string",
-          "description": "ATM_ID is a unique identifier of the ATM."
+          "description": "ATM_ID is the unique identifier of the ATM."
         }
       },
-      "title": "CreateATMResponse is a response from CreateATMRequest"
+      "description": "CreateATMResponse is the response envelope for creating an ATM."
     },
     "atmGetATMsResponse": {
       "type": "object",
@@ -255,7 +260,7 @@
           "description": "Result is the list of the ATMs."
         }
       },
-      "title": "GetATMsResponse is the response for GetATMs"
+      "description": "GetATMsResponse is the response envelope for retrieving ATM information."
     },
     "typesAddress": {
       "type": "object",

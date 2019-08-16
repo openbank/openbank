@@ -5,7 +5,6 @@
     "description": "Provides CRUD operations on the statements resource.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -19,12 +18,14 @@
     "/v1/statements/{ID}": {
       "get": {
         "summary": "Retrieve a statement",
-        "description": "Retrieves all data from a statement, selected by the statement_id you supplied.",
+        "description": "GetStatement retrieves a specific statement, specified by its ID.",
         "operationId": "GetStatement",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/statementsStatement"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -86,7 +87,7 @@
           "description": "HasMore indicates if there are more statements available."
         }
       },
-      "description": "GetStatementResponse is the response for get statement."
+      "title": "GetStatementResponse is the response envelope for retrieving"
     },
     "statementsStatement": {
       "type": "object",
@@ -115,7 +116,8 @@
           "$ref": "#/definitions/typesAmount",
           "description": "Balance is remaining balance after related transaction."
         }
-      }
+      },
+      "description": "Statement holds details regarding a customer's statement."
     },
     "statementsStatus": {
       "type": "string",

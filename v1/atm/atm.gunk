@@ -5,7 +5,6 @@
 //                 Description: "Provides create and read operations on the ATM resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -59,28 +58,27 @@ import (
 	types "github.com/openbank/openbank/v1/types"
 )
 
-
-// ATM holds all details about a ATM.
+// ATM holds all details about an ATM.
 type ATM struct {
-	// ID is a unique identifier of the ATM.
+	// ID is the unique identifier of an ATM.
 	ID string `pb:"1" json:"id"`
 
-	// BankID is the bank identifier that owned the ATM
+	// BankID is the identifier of the bank associated with the ATM.
 	BankID string `pb:"2" json:"bank_id"`
 
-	// Name is the name of ATM
+	// Name is the name of ATM.
 	Name string `pb:"3" json:"name"`
 
-	// Address is the ATM location details
+	// Address is the ATM's address.
 	Address types.Address `pb:"4" json:"address"`
 
-	// Location is the ATM longitude and latitude
+	// Location is the ATM longitude and latitude.
 	Location types.Location `pb:"5" json:"location"`
 
-	// Description is the ATM description
+	// Description is the ATM's description.
 	Description string `pb:"6" json:"description"`
 
-	// Metadata is the ATM metadata
+	// Metadata is the ATM's metadata.
 	Metadata string `pb:"7" json:"metadata"`
 }
 
@@ -89,43 +87,43 @@ type CreateATMRequest struct {
 	// BankID is the bank identifier that owned the ATM
 	BankID string `pb:"1" json:"bank_id"`
 
-	// Name is the name of ATM
+	// BankID is the identifier of the bank associated with the ATM.
 	Name string `pb:"2" json:"name"`
 
-	// Address is the ATM location details
+	// Address is the ATM's address.
 	Address types.Address `pb:"3" json:"3"`
 
-	// Location is the ATM longitude and latitude
+	// Location is the ATM's longitude and latitude
 	Location types.Location `pb:"4" json:"location"`
 
-	// Description is the ATM description
+	// Description is the ATM's description.
 	Description string `pb:"5" json:"description"`
 
-	// Metadata is the ATM metadata
+	// Metadata is the ATM's metadata.
 	Metadata string `pb:"6" json:"metadata"`
 }
 
-// CreateATMResponse is a response from CreateATMRequest
+// CreateATMResponse is the response envelope for creating an ATM.
 type CreateATMResponse struct {
-	// ATM_ID is a unique identifier of the ATM.
+	// ATM_ID is the unique identifier of the ATM.
 	ATM_ID string `pb:"1" json:"atm_id"`
 }
 
-// GetATMRequest is a request to get the ATM data.
+// GetATMRequest is the request envelope for retrieving a specific ATM's information.
 type GetATMRequest struct {
 	// ATM_ID is a unique identifier of the ATM.
 	ATM_ID string `pb:"1" json:"atm_id"`
 }
 
-// GetATMsResponse is the response for GetATMs
-type GetATMsResponse struct{
+// GetATMsResponse is the response envelope for retrieving ATM information.
+type GetATMsResponse struct {
 	// Result is the list of the ATMs.
 	Result []ATM `pb:"1" json:"result"`
 }
 
 // ATMService provides ATM operations.
 type ATMService interface {
-	// GetATM retrieves the detail of an ATM information, selected by its ID.
+	// GetATM retrieves the details regarding an specific ATM.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
@@ -133,11 +131,16 @@ type ATMService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"ATM"},
-	//         Description: "Retrieves ATM information, selected by the ATM_ID you supplied.",
-	//         Summary:     "Retrieve ATM information",
+	//         Description: "Retrieves information regarding a specific ATM, selected by the supplied ID.",
+	//         Summary:     "Retrieve an ATM",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/atmATM",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -157,7 +160,7 @@ type ATMService interface {
 	// }
 	GetATM(GetATMRequest) ATM
 
-	// GetATMs get all the available ATMs.
+	// GetATMs retrieves information regarding all the available ATMs.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
@@ -165,11 +168,16 @@ type ATMService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"ATMs"},
-	//         Description: "Get All available ATMs.",
-	//         Summary:     "Get All available ATMs.",
+	//         Description: "Retrieves information regarding all the available ATMs.",
+	//         Summary:     "Retrieve all available ATMs",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/atmGetATMsResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -203,6 +211,11 @@ type ATMService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "201": openapiv2.Response{
 	//                         Description: "Transaction created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/atmCreateATMResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{

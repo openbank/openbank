@@ -5,7 +5,6 @@
 //                 Description: "Provides CRUD operations on the statements resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -49,7 +48,7 @@
 // }
 package statements
 
-import(
+import (
 	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/openapiv2"
 
@@ -59,7 +58,7 @@ import(
 // Status define the status of a statment.
 type Status int
 
-const(
+const (
 	UnknownStatus Status = iota
 	// Received is the value for a received statment.
 	Received
@@ -67,7 +66,8 @@ const(
 	Pending
 )
 
-type Statement struct{
+// Statement holds details regarding a customer's statement.
+type Statement struct {
 	// ID is the unique identifier of a statement.
 	ID string `pb:"1" json:"id"`
 	// Status is the status of the statement.
@@ -82,14 +82,14 @@ type Statement struct{
 	Balance types.Amount `pb:"6" json:"balance"`
 }
 
-// GetStatementRequest is the request to get statement by its identifier
-type GetStatementRequest struct{
+// GetStatementRequest is the request envelope to retrieve a statement.
+type GetStatementRequest struct {
 	// ID is the unique identifier of the statement
 	ID string `pb:"1" json:"id"`
 }
 
-// GetStatementsequest is the request to list of statements.
-type GetStatementsRequest struct{
+// GetStatementsRequest is the request envelope to retrieve several statements.
+type GetStatementsRequest struct {
 	// BankCode is a bank code to get related statement.
 	BankCode types.BankCode `pb:"1" json:"bank_code"`
 	// PeriodDays is statement period to be query.
@@ -98,17 +98,17 @@ type GetStatementsRequest struct{
 	Status Status `pb:"3" json:"status"`
 }
 
-// GetStatementResponse is the response for get statement.
-type GetStatementsResponse struct{
+// GetStatementResponse is the response envelope for retrieving
+type GetStatementsResponse struct {
 	// Result is a list containing the statements.
 	Result []Statement `pb:"1" json:"result"`
 	// HasMore indicates if there are more statements available.
 	HasMore bool `pb:"2" json:"has_more"`
 }
 
-// StatementService provides Statement operations.
+// StatementService provides statement-related operations.
 type StatementService interface {
-	// GetStatement retrieve the detail of a statement, selected by its id.
+	// GetStatement retrieves a specific statement, specified by its ID.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
@@ -116,11 +116,16 @@ type StatementService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Statement"},
-	//         Description: "Retrieves all data from a statement, selected by the statement_id you supplied.",
+	//         Description: "GetStatement retrieves a specific statement, specified by its ID.",
 	//         Summary:     "Retrieve a statement",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/statementsStatement",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -139,8 +144,9 @@ type StatementService interface {
 	//         },
 	// }
 	GetStatement(GetStatementRequest) Statement
+
 	// GetStatements return a list containing up to 20 statements.
-	
+
 	// +gunk http.Match{
 	//	Method: "GET",
 	//	Path: "/v1/statements",
@@ -148,11 +154,16 @@ type StatementService interface {
 
 	// +gunk openapiv2.Operation{
 	//	Tags: []string{"Statement"},
-	//	Description: "Returns a list containing up to 20 statements. You can paginate through statements by supplying next_starting_index in your subsequents calls. next_starting_index contains the statement_id of the last statement_id of the current page."
-	//	Summary: "List all statements",
+	//	Description: "Returns a list containing up to 20 statements. `next_starting_index` can be specified for pagination.",
+	//	Summary: "Retrieve multiple statements",
 	//	Responses: map[string]openapiv2.Response{
 	//		"200": openapiv2.Response{
 	//			Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/statementsGetStatementsResponse",
+	//                                 },
+	//                         },
 	//		},
 	//	},
 	//	Security: []openapiv2.SecurityRequirement{

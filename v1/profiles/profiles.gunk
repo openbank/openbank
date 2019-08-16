@@ -5,7 +5,6 @@
 //                 Description: "Provides CRUD operations on the Profile resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -55,64 +54,69 @@ import (
 	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/openapiv2"
 
-	types "github.com/openbank/openbank/v1/types"
 	accounts "github.com/openbank/openbank/v1/accounts"
+	types "github.com/openbank/openbank/v1/types"
 )
 
-// GetProfileRequest
+// GetProfileRequest is the request envelope for retrieving customer profiles.
 type GetProfileRequest struct {
-	// Value of next page query (paginate)
+	// NextStartingIndex is a cursor for pagination. It's a ProfileID that defines
+	// the current place in the total list of profiles.
 	NextStartIndex string `pb:"1" json:"next_start_index"`
 }
 
-// GetProfileResponse
-type GetProfileResponse struct { 
+// GetProfileResponse is the response envelope for retrieving customer profiles.
+type GetProfileResponse struct {
 	Accounts []accounts.Account `pb:"1" json:"accounts"`
 }
 
-type GetProfileCardsRequest struct { 
-	// Value of next page query (paginate)
+// GetProfileCardsRequest is the request envelope for retrieving customer cards.
+type GetProfileCardsRequest struct {
+	// NextStartingIndex is a cursor for pagination. It's an ProfileID that defines
+	// the current place in the total list of profiles.
 	NextStartIndex string `pb:"1" json:"next_start_index"`
 }
 
-type GetProfileCardsResponse struct { 
+// GetProfileCardsResponse is the response envelope for retrieving customer cards.
+type GetProfileCardsResponse struct {
 	Cards []ProfileCard `pb:"1" json:"cards"`
 }
 
+// ProfileCard holds details about a customer's credit card.
 type ProfileCard struct {
-	// Card Number 
+	// CardToken is the card number.
 	CardToken string `pb:"1" json:"card_token"`
 
-	// Card Type
+	// Category is the card type.
 	Category string `pb:"2" json:"category"`
 
-	// The last 4 digits of the card
+	// LastFour is the last four digits of the card.
 	LastFour string `pb:"3" json:"last_four"`
 
-	// Account Name
+	// OwnerName is the name of the card's owner.
 	OwnerName string `pb:"4" json:"owner_name"`
 
-	// Account Type
+	// Type is the type of the account associated with the card.
 	Type string `pb:"5" json:"type"`
 }
 
 type ProfileService interface {
-	// GetProfile retrieves a user profile.
+	// GetProfile retrieves user profiles.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
-	//         Path:   "/v1/profile",
+	//         Path:   "/v1/profiles",
 	// }
-	// +gunk openapiv2.Operation {
+	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Profile"},
-	//         Description: "Returns an array of values containing up to 20 records of account information. <br> <br> Can query more records by paging value in query (paginate NextStartIndex)",
-	//         Summary:     "Query profile information",
+	//         Description: "Returns an array of values containing up to 20 records of profile information. `next_starting_index` can be specified for pagination.",
+	//         Summary:     "Query profiles",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/profilesProfile",
+	//                                         Ref: "#/definitions/profilesGetProfileResponse",
 	//                                 },
 	//                         },
 	//                 },
@@ -134,22 +138,22 @@ type ProfileService interface {
 	// }
 	GetProfile(GetProfileRequest) GetProfileResponse
 
-	// GetProfileCard retrieves all user cards.
+	// GetProfileCard retrieves cards.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
-	//         Path:   "/v1/profile/card",
+	//         Path:   "/v1/profiles/card",
 	// }
-	// +gunk openapiv2.Operation {
-	//         Tags:        []string{"ProfileCard"},
-	//         Description: "Returns an array of values containing up to 20 records of account information. <br> <br> Can query more records by paging value in query (paginate NextStartIndex)",
-	//         Summary:     "Query profile card information",
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Profile"},
+	//         Description: "Returns an array of values containing up to 20 records of card information. `next_starting_index` can be specified for pagination.",
+	//         Summary:     "Query cards",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/profilesProfileCard",
+	//                                         Ref: "#/definitions/profilesGetProfileCardsResponse",
 	//                                 },
 	//                         },
 	//                 },

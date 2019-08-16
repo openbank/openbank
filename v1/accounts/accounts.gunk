@@ -5,7 +5,6 @@
 //                 Description: "Provides CRUD operations on the accounts resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -63,10 +62,10 @@ type Account struct {
 	// AccountID is the unique identifier of an account.
 	AccountID string `pb:"1" json:"account_id"`
 
-	// TODO: add comment.
+	// Branch is the branch code for the branch associated with the account.
 	Branch string `pb:"2" json:"branch"`
 
-	// TODO: add comment.
+	// BranchName is the long-form name of the branch associated with the account.
 	BranchName string `pb:"3" json:"branch_name"`
 
 	// Status is the status of the account.
@@ -78,13 +77,13 @@ type Account struct {
 	// TODO: add comment.
 	AmountDue types.Amount `pb:"6" json:"amount_due"`
 
-	// TODO: add comment.
+	// AvailableBalance is the available balance of the account.
 	AvailableBalance types.Amount `pb:"7" json:"available_balance"`
 
-	// TODO: add comment.
+	// AvailableCreditLimit is the available credit limit for the account.
 	AvailableCreditLimit string `pb:"8" json:"available_credit_limit"`
 
-	// TODO: add comment.
+	// CheckingInterestRate is the interest rate of the account if it is a checking account.
 	CheckingInterestRate string `pb:"9" json:"checking_interest_rate"`
 
 	// ContractDate is the date of the contract initialization.
@@ -96,7 +95,7 @@ type Account struct {
 	// TODO: add comment.
 	CurrentAccruedInterest string `pb:"12" json:"current_accrued_interest"`
 
-	// TODO: add comment.
+	// CurrentBalance is the current balance of the account.
 	CurrentBalance types.Amount `pb:"13" json:"current_balance"`
 
 	// CurrentTerm is the account validity period.
@@ -105,7 +104,7 @@ type Account struct {
 	// DueDate is the loan maturity date.
 	DueDate time.Time `pb:"15" json:"due_date"`
 
-	// TODO: add comment.
+	// InterestRate is the interest rate for the account.
 	InterestRate string `pb:"16" json:"interest_rate"`
 
 	// MajorType is the account type.
@@ -173,22 +172,22 @@ type AccountRole struct {
 	Role string `pb:"3" json:"role"`
 }
 
-// TODO: add comment.
+// DebitTransaction represents a debit transaction instance.
 type DebitTransaction struct {
-	// TODO: add comment.
+	// Amount is the amount debited.
 	Amount string `pb:"1" json:"amount"`
 
-	// TODO: add comment.
+	// DebitAccount is the account number to debit from.
 	DebitAccount string `pb:"2" json:"debit_account"`
 
-	// TODO: add comment.
+	// Exchange rate is the exchange rate for the transaction (if applicable).
 	ExchangeRate string `pb:"3" json:"exchange_rate"`
 
-	// TODO: add comment.
+	// IsFx is a boolean indicating whether the transaction required foreign exchange.
 	IsFx bool `pb:"4" json:"is_fx"`
 }
 
-// CreateAccountRequest wraps all required fields for an account creation.
+// CreateAccountRequest wraps all required fields for account creation.
 type CreateAccountRequest struct {
 	// AccountID is the identifier of the account.
 	AccountID string `pb:"1" json:"account_id"`
@@ -199,7 +198,7 @@ type CreateAccountRequest struct {
 	// TODO: add comment.
 	AccountRoles []AccountRole `pb:"3" json:"account_roles"`
 
-	// TODO: add comment.
+	// Branch is the branch code of the associated branch.
 	Branch string `pb:"4" json:"branch"`
 
 	// TODO: add comment.
@@ -221,7 +220,7 @@ type CreateAccountRequest struct {
 	Minor string `pb:"10" json:"minor"`
 }
 
-// CreateAccountResponse is the response envelope for an account creation.
+// CreateAccountResponse is the response envelope for account creation.
 type CreateAccountResponse struct {
 	// AccountID is the unique identifier of the newly created account.
 	AccountID string `pb:"1" json:"account_id"`
@@ -239,7 +238,7 @@ type CreateAccountResponse struct {
 	Minor string `pb:"5" json:"minor"`
 }
 
-// UpdateAccountRequest wraps all fields available for update.
+// UpdateAccountRequest is the request envelope to update an account.
 type UpdateAccountRequest struct {
 	// AccountID is the unique identifier of the account to update.
 	AccountID string `pb:"1" json:"account_id"`
@@ -250,7 +249,7 @@ type UpdateAccountRequest struct {
 
 // UpdateAccountStatusRequest is the request envelope to update
 // the account status.
-type UpdateAccountStatusRequest struct{
+type UpdateAccountStatusRequest struct {
 	// AccountID is the account unique identifier.
 	AccountID string `pb:"1" json:"account_id"`
 
@@ -258,14 +257,14 @@ type UpdateAccountStatusRequest struct{
 	Status string `pb:"2" json:"status"`
 }
 
-// GetAccountStatusRequest is the request to get the account current status.
-type GetAccountStatusRequest struct{
+// GetAccountStatusRequest is the request envelope to get an account's current status.
+type GetAccountStatusRequest struct {
 	// AccountID is the unique identifier of the account.
 	AccountID string `pb:"1" json:"account_id"`
 }
 
-// GetAccountStatusResponse tell about the account current status.
-type GetAccountStatusResponse struct{
+// GetAccountStatusResponse is the response envelope for requesting an account's status.
+type GetAccountStatusResponse struct {
 	// AccountID is the account unique identifier.
 	AccountID string `pb:"1" json:"account_id"`
 
@@ -285,15 +284,14 @@ type DeleteAccountRequest struct {
 	AccountID string `pb:"1" json:"account_id"`
 }
 
-// CheckAccountRequest is the request to get the information
-// whether the account exists or not.
-type CheckAccountRequest struct{
+// CheckAccountRequest is the request envelope to verify an account's existence.
+type CheckAccountRequest struct {
 	// AccountID is the account unique identifier.
 	AccountID string `pb:"1" json:"account_id"`
 }
 
-// CheckAccountResponse is the response for check account.
-type CheckAccountResponse struct{
+// CheckAccountResponse is the response envelope for verifying an account's existence.
+type CheckAccountResponse struct {
 	// AccountID is the account unique identifier.
 	AccountID string `pb:"1" json:"account_id"`
 
@@ -304,7 +302,7 @@ type CheckAccountResponse struct{
 	AccountName string `pb:"3" json:"account_name"`
 }
 
-// AccountService provides Account operations.
+// AccountService provides Account-related operations.
 type AccountService interface {
 	// GetAccount retrieves the detail of an account, selected by its id.
 	//
@@ -314,7 +312,7 @@ type AccountService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Account"},
-	//         Description: "Retrieves all data from an account, selected by the account_id you supplied.",
+	//         Description: "Retrieves all data from an account selected by the supplied account_id.",
 	//         Summary:     "Retrieve an account",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
@@ -351,7 +349,7 @@ type AccountService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Account"},
-	//         Description: "Returns a list containing up to 20 accounts. You can paginate through account by supplying next_starting_index in your subsequents calls. next_starting_index contains the account_id of the last account_id of the current page.",
+	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
 	//         Summary:     "List all accounts",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
@@ -478,15 +476,15 @@ type AccountService interface {
 	//         Path:   "/v1/accounts/{AccountID}/status",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Account","AccountStatus"},
+	//         Tags:        []string{"Account"},
 	//         Description: "Retrieves status of the account, selected by the account_id you supplied.",
-	//         Summary:     "Retrieve an account status",
+	//         Summary:     "Retrieve an account's status",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/accountsAccount",
+	//                                         Ref: "#/definitions/accountsGetAccountStatusResponse",
 	//                                 },
 	//                         },
 	//                 },
@@ -508,7 +506,6 @@ type AccountService interface {
 	// }
 	GetAccountStatus(GetAccountStatusRequest) GetAccountStatusResponse
 
-
 	// UpdateAccountStatus updates an account status.
 	//
 	// +gunk http.Match{
@@ -517,9 +514,9 @@ type AccountService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Account", "AccountStatus"},
-	//         Description: "Updates the status of the account.",
-	//         Summary:     "Update the status of the account",
+	//         Tags:        []string{"Account"},
+	//         Description: "Updates the status of an account.",
+	//         Summary:     "Update an account status",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "AccountStatus updated successfully.",
@@ -539,22 +536,22 @@ type AccountService interface {
 	// }
 	UpdateAccountStatus(UpdateAccountStatusRequest)
 
-	// CheckAccount check if account is exists and return the owner name. Selected by AccountID.
+	// CheckAccount checks if an account with the specific ID exists, returning the account owner's name if it does.
 	//
 	// +gunk http.Match{
 	//         Method: "POST",
 	//         Path:   "/v1/accounts/check",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Account","CheckAccount"},
-	//         Description: "Check whether account is exists, selected by the account_id you supplied.",
-	//         Summary:     "Check whether account exists or not",
+	//         Tags:        []string{"Account"},
+	//         Description: "Verify whether or not an account exists.",
+	//         Summary:     "Verify account existence",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/accountsAccount",
+	//                                         Ref: "#/definitions/accountsCheckAccountResponse",
 	//                                 },
 	//                         },
 	//                 },
