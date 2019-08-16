@@ -167,7 +167,7 @@ type ATMService interface {
 	//         Path:   "/v1/atms",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"ATMs"},
+	//         Tags:        []string{"ATM"},
 	//         Description: "Retrieves information regarding all the available ATMs.",
 	//         Summary:     "Retrieve all available ATMs",
 	//         Responses: map[string]openapiv2.Response{

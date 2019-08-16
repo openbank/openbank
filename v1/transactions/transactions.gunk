@@ -5,7 +5,6 @@
 //                 Description: "Provides create and read operations on the transaction resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -120,7 +119,7 @@ type Transaction struct {
 	Remarks string `pb:"10" json:"remarks"`
 }
 
-// BankAccountInfo holds a lightweight account information.
+// BankAccountInfo holds lightweight account information.
 type BankAccountInfo struct {
 	// AccountID is the identifier of the account.
 	AccountID string `pb:"1" json:"account_id"`
@@ -160,7 +159,7 @@ type GetTransactionsRequest struct {
 	NextStartingIndex string `pb:"5" json:"next_starting_index"`
 }
 
-// GetTransactionsResponse wraps the list of transactions.
+// GetTransactionsResponse is the response envelope for retrieving a list of transactions.
 type GetTransactionsResponse struct {
 	// Result is a list containing up to 20 transactions.
 	Result []Transaction `pb:"1" json:"result"`
@@ -172,7 +171,7 @@ type GetTransactionsResponse struct {
 	LastRunningBalance types.Amount `pb:"3" json:"last_running_balance"`
 }
 
-// CreateTransactionRequest wraps all required field for a transaction creation.
+// CreateTransactionRequest is the request envelope for creating a transaction.
 type CreateTransactionRequest struct {
 	// SourceAccountID is the identifier of the account emitting the transaction.
 	SourceAccountID string `pb:"1" json:"source_account_id"`
@@ -199,7 +198,7 @@ type CreateTransactionResponse struct {
 // TFAType is available type of TFA.
 type TFAType int
 
-const(
+const (
 	_ TFAType = iota
 
 	// SMS Message.
@@ -209,9 +208,8 @@ const(
 	SAFEKEY
 )
 
-// ApprovePaymentRequest wraps all request to request approval
-// of pending transaction.
-type ApprovePaymentRequest struct{
+// ApprovePaymentRequest is the request envelope to approve a pending transaction.
+type ApprovePaymentRequest struct {
 	// TransactionID is the transaction unique identifier.
 	TransactionID string `pb:"1" json:"transaction_id"`
 
@@ -222,8 +220,8 @@ type ApprovePaymentRequest struct{
 	TFAType TFAType `pb:"3" json:"tfa_type"`
 }
 
-// ApprovePaymentResponse response for approve payment request.
-type ApprovePaymentResponse struct{
+// ApprovePaymentResponse is the response envelope for approving a pending transaction.
+type ApprovePaymentResponse struct {
 	// AuthorizationID is the executable code is obtained from
 	// the payment feedback result
 	AuthorizationID string `pb:"1" json:"authorization_id"`
@@ -232,8 +230,8 @@ type ApprovePaymentResponse struct{
 	SMSCode int64 `pb:"2" json:"sms_code"`
 }
 
-// TFARequest is request to get two factor authentication.
-type TFARequest struct{
+// TFARequest is request envelope for conducting 2FA.
+type TFARequest struct {
 	// TransactionID is transaction / payment identification code requires approval.
 	TransactionID string `pb:"1" json:"transaction_id"`
 
@@ -247,8 +245,8 @@ type TFARequest struct{
 	TFAType TFAType `pb:"4" json:"tfa_type"`
 }
 
-// TFAResponse is the response for TFARequest
-type TFAResponse struct{
+// TFAResponse is the response envelope for a 2FA request.
+type TFAResponse struct {
 	// TraceNumber is the transaction reference code.
 	TraceNumber string `pb:"1" json:"trace_number"`
 }
@@ -330,6 +328,11 @@ type TransactionService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "201": openapiv2.Response{
 	//                         Description: "Transaction created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsCreateTransactionResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -354,12 +357,17 @@ type TransactionService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"AppproveTransaction","Transaction"},
-	//         Description: "Approves a pending transaction.",
-	//         Summary:     "Approves a pending transaction.",
+	//         Tags:        []string{"Transaction"},
+	//         Description: "Approve a pending transaction.",
+	//         Summary:     "Approve a pending transaction",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Transaction successfully approved.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsApprovePaymentResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -376,7 +384,7 @@ type TransactionService interface {
 	// }
 	ApprovePayment(ApprovePaymentRequest) ApprovePaymentResponse
 
-	// TFA does 2fa verification for a approved transaction.
+	// TFA does 2FA verification for an approved transaction.
 	//
 	// +gunk http.Match{
 	//         Method: "POST",
@@ -385,11 +393,16 @@ type TransactionService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Transaction"},
-	//         Description: "Authorization allows execution of transactions with 2-layer authentication (two factor authentication).",
-	//         Summary:     "Authorize the transaction",
+	//         Description: "Authorization allows execution of transactions with 2-factor authentication (2FA).",
+	//         Summary:     "Authorize a transaction with 2FA",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Transaction authorized.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsTFAResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -405,5 +418,4 @@ type TransactionService interface {
 	//         },
 	// }
 	TFA(TFARequest) TFAResponse
-
 }

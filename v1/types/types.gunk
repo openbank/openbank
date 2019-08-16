@@ -51,7 +51,7 @@ const (
 	Bri
 	DummyBank
 	Bdo
-	//Bpi
+	Bpi
 	Aceh
 	Agris
 	Agroniaga
