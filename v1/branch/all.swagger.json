@@ -5,7 +5,6 @@
     "description": "Provides create and read operations on the branch resource.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -18,13 +17,15 @@
   "paths": {
     "/v1/branches": {
       "get": {
-        "summary": "Get All available branch.",
-        "description": "Get All available branch.",
+        "summary": "Retrieve all available branches",
+        "description": "Retrieve information regarding all available branches.",
         "operationId": "GetBranches",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/branchGetBranchesResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -59,7 +60,7 @@
         ]
       },
       "post": {
-        "summary": "Creates a Branch",
+        "summary": "Create a branch",
         "description": "Creates a new branch and returns its id.",
         "operationId": "CreateBranch",
         "responses": {
@@ -71,7 +72,9 @@
           },
           "201": {
             "description": "Branch created successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/branchCreateBranchResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -119,12 +122,14 @@
     "/v1/branches/{BranchID}": {
       "get": {
         "summary": "Retrieve branch information",
-        "description": "Retrieves branch information, selected by the BranchID you supplied.",
+        "description": "Retrieve information about the branch specified by the ID",
         "operationId": "GetBranch",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/branchBranch"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -168,7 +173,7 @@
         ]
       },
       "delete": {
-        "summary": "Delete an branch",
+        "summary": "Delete a branch",
         "description": "Permanently delete a branch.",
         "operationId": "DeleteBranch",
         "responses": {
@@ -224,8 +229,8 @@
         ]
       },
       "put": {
-        "summary": "Creates a Branch",
-        "description": "Creates a new branch and returns its id.",
+        "summary": "Update a branch",
+        "description": "Updates a branch's information",
         "operationId": "UpdateBranch",
         "responses": {
           "200": {
@@ -277,8 +282,7 @@
           }
         ],
         "tags": [
-          "Branch",
-          "Update"
+          "Branch"
         ],
         "security": [
           {
@@ -296,11 +300,11 @@
       "properties": {
         "ID": {
           "type": "string",
-          "description": "ID is a unique identifier of the branch."
+          "description": "ID is the unique identifier of the branch."
         },
         "BankID": {
           "type": "string",
-          "description": "BankID is the bank identifier of the branch owner."
+          "description": "BankID is an identifier for the bank the branch is associated with."
         },
         "Name": {
           "type": "string",
@@ -308,33 +312,33 @@
         },
         "PhoneNumber": {
           "type": "string",
-          "description": "PhoneNumber is the branch phone number."
+          "description": "PhoneNumber is the branch's phone number."
         },
         "Address": {
           "$ref": "#/definitions/typesAddress",
-          "description": "Address is the branch address details."
+          "description": "Address is the branch's address."
         },
         "Location": {
           "$ref": "#/definitions/typesLocation",
-          "description": "Location is the branch longitude and latitude."
+          "description": "Location is the branch's longitude and latitude."
         },
         "Description": {
           "type": "string",
-          "description": "Description is the branch description."
+          "description": "Description is the branch's description."
         },
         "Metadata": {
           "type": "string",
-          "description": "Metadata is the branch metadata."
+          "description": "Metadata is the branch's metadata."
         }
       },
-      "description": "Branch holds all details about a Branch."
+      "description": "Branch holds all details about a branch."
     },
     "branchCreateBranchRequest": {
       "type": "object",
       "properties": {
         "BankID": {
           "type": "string",
-          "description": "BankID is the bank identifier of the branch owner."
+          "description": "BankID is an identifier for the bank the branch is associated with."
         },
         "Name": {
           "type": "string",
@@ -342,26 +346,26 @@
         },
         "PhoneNumber": {
           "type": "string",
-          "description": "PhoneNumber is the branch phone number."
+          "description": "PhoneNumber is the branch's phone number."
         },
         "Address": {
           "$ref": "#/definitions/typesAddress",
-          "description": "Address is the branch address details."
+          "description": "Address is the branch's address."
         },
         "Location": {
           "$ref": "#/definitions/typesLocation",
-          "description": "Location is the branch longitude and latitude."
+          "description": "Location is the branch's longitude and latitude."
         },
         "Description": {
           "type": "string",
-          "description": "Description is the branch description."
+          "description": "Description is the branch's description."
         },
         "Metadata": {
           "type": "string",
-          "description": "Metadata is the branch metadata."
+          "description": "Metadata is the branch's metadata."
         }
       },
-      "description": "CreateBranchRequest is a request to create a branch."
+      "description": "CreateBranchRequest is a request envelope to create a branch."
     },
     "branchCreateBranchResponse": {
       "type": "object",
@@ -371,7 +375,7 @@
           "description": "BranchID is the branch unique identifier."
         }
       },
-      "title": "CreateBranchResponse is a response from CreateBranchRequest"
+      "description": "CreateBranchResponse is a response envelope for creating a branch."
     },
     "branchGetBranchesResponse": {
       "type": "object",
@@ -418,7 +422,7 @@
           "description": "Metadata is the branch metadata."
         }
       },
-      "description": "UpdateBranchRequest wraps all fields available for update."
+      "description": "UpdateBranchRequest is the request envelope to update a branch."
     },
     "typesAddress": {
       "type": "object",

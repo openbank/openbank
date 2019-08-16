@@ -5,7 +5,6 @@
     "description": "Provides CRUD operations on the accounts resource.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -19,7 +18,7 @@
     "/v1/accounts": {
       "get": {
         "summary": "List all accounts",
-        "description": "Returns a list containing up to 20 accounts. You can paginate through account by supplying next_starting_index in your subsequents calls. next_starting_index contains the account_id of the last account_id of the current page.",
+        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
         "operationId": "GetAccounts",
         "responses": {
           "200": {
@@ -123,14 +122,14 @@
     },
     "/v1/accounts/check": {
       "post": {
-        "summary": "Check whether account exists or not",
-        "description": "Check whether account is exists, selected by the account_id you supplied.",
+        "summary": "Verify account existence",
+        "description": "Verify whether or not an account exists.",
         "operationId": "CheckAccount",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/accountsAccount"
+              "$ref": "#/definitions/accountsCheckAccountResponse"
             }
           },
           "400": {
@@ -155,8 +154,7 @@
           }
         },
         "tags": [
-          "Account",
-          "CheckAccount"
+          "Account"
         ],
         "security": [
           {
@@ -170,7 +168,7 @@
     "/v1/accounts/{AccountID}": {
       "get": {
         "summary": "Retrieve an account",
-        "description": "Retrieves all data from an account, selected by the account_id you supplied.",
+        "description": "Retrieves all data from an account selected by the supplied account_id.",
         "operationId": "GetAccount",
         "responses": {
           "200": {
@@ -334,14 +332,14 @@
     },
     "/v1/accounts/{AccountID}/status": {
       "get": {
-        "summary": "Retrieve an account status",
+        "summary": "Retrieve an account's status",
         "description": "Retrieves status of the account, selected by the account_id you supplied.",
         "operationId": "GetAccountStatus",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/accountsAccount"
+              "$ref": "#/definitions/accountsGetAccountStatusResponse"
             }
           },
           "400": {
@@ -375,8 +373,7 @@
           }
         ],
         "tags": [
-          "Account",
-          "AccountStatus"
+          "Account"
         ],
         "security": [
           {
@@ -387,8 +384,8 @@
         ]
       },
       "put": {
-        "summary": "Update the status of the account",
-        "description": "Updates the status of the account.",
+        "summary": "Update an account status",
+        "description": "Updates the status of an account.",
         "operationId": "UpdateAccountStatus",
         "responses": {
           "200": {
@@ -436,8 +433,7 @@
           }
         ],
         "tags": [
-          "Account",
-          "AccountStatus"
+          "Account"
         ],
         "security": [
           {
@@ -459,11 +455,11 @@
         },
         "Branch": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "Branch is the branch code for the branch associated with the account."
         },
         "BranchName": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "BranchName is the long-form name of the branch associated with the account."
         },
         "Status": {
           "type": "string",
@@ -480,15 +476,15 @@
         },
         "AvailableBalance": {
           "$ref": "#/definitions/typesAmount",
-          "description": "TODO: add comment."
+          "description": "AvailableBalance is the available balance of the account."
         },
         "AvailableCreditLimit": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "AvailableCreditLimit is the available credit limit for the account."
         },
         "CheckingInterestRate": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "CheckingInterestRate is the interest rate of the account if it is a checking account."
         },
         "ContractDate": {
           "type": "string",
@@ -505,7 +501,7 @@
         },
         "CurrentBalance": {
           "$ref": "#/definitions/typesAmount",
-          "description": "TODO: add comment."
+          "description": "CurrentBalance is the current balance of the account."
         },
         "CurrentTerm": {
           "type": "string",
@@ -518,7 +514,7 @@
         },
         "InterestRate": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "InterestRate is the interest rate for the account."
         },
         "MajorType": {
           "$ref": "#/definitions/typesMajorType",
@@ -584,7 +580,7 @@
           "description": "AccountName is the owner name of the account."
         }
       },
-      "description": "CheckAccountResponse is the response for check account."
+      "description": "CheckAccountResponse is the response envelope for verifying an account's existence."
     },
     "accountsCreateAccountRequest": {
       "type": "object",
@@ -606,7 +602,7 @@
         },
         "Branch": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "Branch is the branch code of the associated branch."
         },
         "Customer": {
           "type": "string",
@@ -634,7 +630,7 @@
           "description": "TODO: add comment."
         }
       },
-      "description": "CreateAccountRequest wraps all required fields for an account creation."
+      "description": "CreateAccountRequest wraps all required fields for account creation."
     },
     "accountsCreateAccountResponse": {
       "type": "object",
@@ -660,30 +656,30 @@
           "description": "TODO: add comment."
         }
       },
-      "description": "CreateAccountResponse is the response envelope for an account creation."
+      "description": "CreateAccountResponse is the response envelope for account creation."
     },
     "accountsDebitTransaction": {
       "type": "object",
       "properties": {
         "Amount": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "Amount is the amount debited."
         },
         "DebitAccount": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "DebitAccount is the account number to debit from."
         },
         "ExchangeRate": {
           "type": "string",
-          "description": "TODO: add comment."
+          "description": "Exchange rate is the exchange rate for the transaction (if applicable)."
         },
         "IsFx": {
           "type": "boolean",
           "format": "boolean",
-          "description": "TODO: add comment."
+          "description": "IsFx is a boolean indicating whether the transaction required foreign exchange."
         }
       },
-      "description": "TODO: add comment."
+      "description": "DebitTransaction represents a debit transaction instance."
     },
     "accountsEntityType": {
       "type": "string",
@@ -716,7 +712,7 @@
           "description": "StatusDescription describe about the Status."
         }
       },
-      "description": "GetAccountStatusResponse tell about the account current status."
+      "description": "GetAccountStatusResponse is the response envelope for requesting an account's status."
     },
     "accountsGetAccountsResponse": {
       "type": "object",
@@ -748,7 +744,7 @@
           "description": "TODO: add comment."
         }
       },
-      "description": "UpdateAccountRequest wraps all fields available for update."
+      "description": "UpdateAccountRequest is the request envelope to update an account."
     },
     "accountsUpdateAccountStatusRequest": {
       "type": "object",

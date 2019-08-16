@@ -5,7 +5,6 @@
 //                 Description: "Provides create and read operations on the branch resource.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -59,64 +58,64 @@ import (
 	types "github.com/openbank/openbank/v1/types"
 )
 
-// Branch holds all details about a Branch.
+// Branch holds all details about a branch.
 type Branch struct {
-	// ID is a unique identifier of the branch.
+	// ID is the unique identifier of the branch.
 	ID string `pb:"1" json:"id"`
 
-	// BankID is the bank identifier of the branch owner.
+	// BankID is an identifier for the bank the branch is associated with.
 	BankID string `pb:"2" json:"bank_id"`
 
 	// Name is the branch name.
 	Name string `pb:"3" json:"name"`
 
-	// PhoneNumber is the branch phone number.
+	// PhoneNumber is the branch's phone number.
 	PhoneNumber string `pb:"4" json:"phone_number"`
 
-	// Address is the branch address details.
+	// Address is the branch's address.
 	Address types.Address `pb:"5" json:"address"`
 
-	// Location is the branch longitude and latitude.
+	// Location is the branch's longitude and latitude.
 	Location types.Location `pb:"6" json:"location"`
 
-	// Description is the branch description.
+	// Description is the branch's description.
 	Description string `pb:"7" json:"description"`
 
-	// Metadata is the branch metadata.
+	// Metadata is the branch's metadata.
 	Metadata string `pb:"8" json:"metadata"`
 }
 
-// CreateBranchRequest is a request to create a branch.
+// CreateBranchRequest is a request envelope to create a branch.
 type CreateBranchRequest struct {
-	// BankID is the bank identifier of the branch owner.
+	// BankID is an identifier for the bank the branch is associated with.
 	BankID string `pb:"1" json:"bank_id"`
 
 	// Name is the branch name.
 	Name string `pb:"2" json:"name"`
 
-	// PhoneNumber is the branch phone number.
+	// PhoneNumber is the branch's phone number.
 	PhoneNumber string `pb:"3" json:"phone_number"`
 
-	// Address is the branch address details.
+	// Address is the branch's address.
 	Address types.Address `pb:"4" json:"address"`
 
-	// Location is the branch longitude and latitude.
+	// Location is the branch's longitude and latitude.
 	Location types.Location `pb:"5" json:"location"`
 
-	// Description is the branch description.
+	// Description is the branch's description.
 	Description string `pb:"6" json:"description"`
 
-	// Metadata is the branch metadata.
+	// Metadata is the branch's metadata.
 	Metadata string `pb:"7" json:"metadata"`
 }
 
-// CreateBranchResponse is a response from CreateBranchRequest
+// CreateBranchResponse is a response envelope for creating a branch.
 type CreateBranchResponse struct {
 	// BranchID is the branch unique identifier.
 	BranchID string `pb:"1" json:"branch_id"`
 }
 
-// UpdateBranchRequest wraps all fields available for update.
+// UpdateBranchRequest is the request envelope to update a branch.
 type UpdateBranchRequest struct {
 	// BranchID is the branch unique identifier.
 	BranchID string `pb:"1" json:"branch_id"`
@@ -139,27 +138,28 @@ type UpdateBranchRequest struct {
 	// Metadata is the branch metadata.
 	Metadata string `pb:"7" json:"metadata"`
 }
+
 // DeleteBranchRequest is the request envelope to delete a branch.
-type DeleteBranchRequest struct{
+type DeleteBranchRequest struct {
 	// BranchID is the branch unique identifier.
 	BranchID string `pb:"1" json:"branch_id"`
 }
 
-// GetBranchRequest is a request to get the branch data.
+// GetBranchRequest is the request envelope to get the branch data.
 type GetBranchRequest struct {
 	// BranchID is the branch unique identifier.
 	BranchID string `pb:"1" json:"branch_id"`
 }
 
 // GetBranchesResponse is the response for GetBranches
-type GetBranchesResponse struct{
+type GetBranchesResponse struct {
 	// Result is the list of the branch.
 	Result []Branch `pb:"1" json:"result"`
 }
 
-// BranchService provides branch operations.
+// BranchService provides branch-related operations.
 type BranchService interface {
-	// GetBranch retrieves the detail of a branch information, selected by its ID.
+	// GetBranch retrieves the details of a specific branch information, selected by its ID.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
@@ -167,11 +167,16 @@ type BranchService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Branch"},
-	//         Description: "Retrieves branch information, selected by the BranchID you supplied.",
+	//         Description: "Retrieve information about the branch specified by the ID",
 	//         Summary:     "Retrieve branch information",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/branchBranch",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -199,11 +204,16 @@ type BranchService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Branches"},
-	//         Description: "Get All available branch.",
-	//         Summary:     "Get All available branch.",
+	//         Description: "Retrieve information regarding all available branches.",
+	//         Summary:     "Retrieve all available branches",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/branchGetBranchesResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -233,10 +243,15 @@ type BranchService interface {
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Branch"},
 	//         Description: "Creates a new branch and returns its id.",
-	//         Summary:     "Creates a Branch",
+	//         Summary:     "Create a branch",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "201": openapiv2.Response{
 	//                         Description: "Branch created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/branchCreateBranchResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -253,7 +268,7 @@ type BranchService interface {
 	// }
 	CreateBranch(CreateBranchRequest) CreateBranchResponse
 
-	// UpdateBranch update the branch.
+	// UpdateBranch updates a branch.
 	//
 	// +gunk http.Match{
 	//         Method: "PUT",
@@ -261,9 +276,9 @@ type BranchService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Branch","Update"},
-	//         Description: "Creates a new branch and returns its id.",
-	//         Summary:     "Creates a Branch",
+	//         Tags:        []string{"Branch"},
+	//         Description: "Updates a branch's information",
+	//         Summary:     "Update a branch",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "Branch successfully updated.",
@@ -292,7 +307,7 @@ type BranchService interface {
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Branch"},
 	//         Description: "Permanently delete a branch.",
-	//         Summary:     "Delete an branch",
+	//         Summary:     "Delete a branch",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "Branch successfully deleted.",

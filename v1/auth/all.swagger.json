@@ -5,7 +5,6 @@
     "description": "In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -18,13 +17,15 @@
   "paths": {
     "/v1/auth": {
       "get": {
-        "summary": "Retrieve an authorization code.",
+        "summary": "Retrieve an authorization code",
         "description": "First you need to retrieve an authorization code.",
         "operationId": "GetAuthorizationCode",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/authEmpty"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -50,14 +51,14 @@
         "parameters": [
           {
             "name": "ClientID",
-            "description": "ClientID is your identifier provided during the registration process.",
+            "description": "ClientID is the identifier provided during the registration process.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
             "name": "RedirectURI",
-            "description": "RedirectURI must match one of the URLs you have provided during the registration process.",
+            "description": "RedirectURI must match one of the URLs provided during the registration process.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -70,7 +71,7 @@
     },
     "/v1/token": {
       "post": {
-        "summary": "Retrieve an access token.",
+        "summary": "Create an access token",
         "description": "Then you can exchange the authorization code with an access token. This endpoint is also used to refresh your tokens.",
         "operationId": "CreateAccessToken",
         "responses": {
@@ -129,7 +130,7 @@
       "properties": {
         "GrantType": {
           "$ref": "#/definitions/authGrantType",
-          "description": "GrantType is an enum to defines which operation to perform."
+          "description": "GrantType is an enum to define which operation to perform."
         },
         "Code": {
           "type": "string",
@@ -137,7 +138,7 @@
         },
         "RedirectURI": {
           "type": "string",
-          "description": "RedirectURI must match RedirectURI you have provided for the autorization code request.\nRequired only when GrantType is equal to \"authorization_code\"."
+          "description": "RedirectURI must match RedirectURI provided for the autorization code request.\nRequired only when GrantType is equal to \"authorization_code\"."
         },
         "RefreshToken": {
           "type": "string",
@@ -155,12 +156,12 @@
         },
         "TokenType": {
           "type": "string",
-          "description": "TokenType is the type of the token, always \"bearer\"."
+          "description": "TokenType is the type of the token (which is always \"bearer\")."
         },
         "ExpiresIn": {
           "type": "integer",
           "format": "int32",
-          "description": "ExpiresIn is the duration in seconds that the access token remains valid."
+          "description": "ExpiresIn is the duration in seconds that the access token will remain valid."
         },
         "RefreshToken": {
           "type": "string",

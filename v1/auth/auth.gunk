@@ -5,7 +5,6 @@
 //                 Description: "In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token.",
 //                 Version:     "1.0.0",
 //         },
-//         BasePath: "/v1",
 //         Schemes: []openapiv2.SwaggerScheme{
 //                 openapiv2.HTTPS,
 //         },
@@ -42,9 +41,9 @@ import (
 
 // GetAuthorizationCodeRequest is the request envelope to retrieve an authorization code.
 type GetAuthorizationCodeRequest struct {
-	// ClientID is your identifier provided during the registration process.
+	// ClientID is the identifier provided during the registration process.
 	ClientID string `pb:"1" json:"client_id"`
-	// RedirectURI must match one of the URLs you have provided during the registration process.
+	// RedirectURI must match one of the URLs provided during the registration process.
 	RedirectURI string `pb:"2" json:"redirect_uri"`
 }
 
@@ -64,11 +63,11 @@ const (
 
 // CreateAccessTokenRequest is the request evelope to either exchange an authorization code with an access token or refresh a token.
 type CreateAccessTokenRequest struct {
-	// GrantType is an enum to defines which operation to perform.
+	// GrantType is an enum to define which operation to perform.
 	GrantType GrantType `pb:"1" json:"grant_type"`
 	// Code is the authorization code previously received from the authorization server.
 	Code string `pb:"2" json:"code"`
-	// RedirectURI must match RedirectURI you have provided for the autorization code request.
+	// RedirectURI must match RedirectURI provided for the autorization code request.
 	// Required only when GrantType is equal to "authorization_code".
 	RedirectURI string `pb:"3" json:"redirect_uri"`
 	// RefreshToken is the refresh token previously issued to the client.
@@ -80,9 +79,9 @@ type CreateAccessTokenRequest struct {
 type CreateAccessTokenResponse struct {
 	// AccessToken issued by the authorization server.
 	AccessToken string `pb:"1" json:"access_token"`
-	// TokenType is the type of the token, always "bearer".
+	// TokenType is the type of the token (which is always "bearer").
 	TokenType string `pb:"2" json:"token_type"`
-	// ExpiresIn is the duration in seconds that the access token remains valid.
+	// ExpiresIn is the duration in seconds that the access token will remain valid.
 	ExpiresIn int `pb:"3" json:"expires_in"`
 	// RefreshToken is the token to renew an expired access token.
 	RefreshToken string `pb:"4" json:"refresh_token"`
@@ -99,10 +98,15 @@ type AuthorizationService interface {
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Authorization"},
 	//         Description: "First you need to retrieve an authorization code.",
-	//         Summary:     "Retrieve an authorization code.",
+	//         Summary:     "Retrieve an authorization code",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/authEmpty",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	// }
@@ -118,7 +122,7 @@ type AuthorizationService interface {
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Authorization"},
 	//         Description: "Then you can exchange the authorization code with an access token. This endpoint is also used to refresh your tokens.",
-	//         Summary:     "Retrieve an access token.",
+	//         Summary:     "Create an access token",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "201": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
