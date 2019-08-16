@@ -5,7 +5,6 @@
     "description": "Provides create and read operations on the transaction resource.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -112,7 +111,9 @@
           },
           "201": {
             "description": "Transaction created successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionsCreateTransactionResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -155,13 +156,15 @@
     },
     "/v1/transactions/approval": {
       "post": {
-        "summary": "Approves a pending transaction.",
-        "description": "Approves a pending transaction.",
+        "summary": "Approve a pending transaction",
+        "description": "Approve a pending transaction.",
         "operationId": "ApprovePayment",
         "responses": {
           "200": {
             "description": "Transaction successfully approved.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionsApprovePaymentResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -191,7 +194,6 @@
           }
         ],
         "tags": [
-          "AppproveTransaction",
           "Transaction"
         ],
         "security": [
@@ -205,13 +207,15 @@
     },
     "/v1/transactions/confirmation": {
       "post": {
-        "summary": "Authorize the transaction",
-        "description": "Authorization allows execution of transactions with 2-layer authentication (two factor authentication).",
+        "summary": "Authorize a transaction with 2FA",
+        "description": "Authorization allows execution of transactions with 2-factor authentication (2FA).",
         "operationId": "TFA",
         "responses": {
           "200": {
             "description": "Transaction authorized.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionsTFAResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -323,7 +327,7 @@
           "description": "TFAType is type to receive OTP authentication code."
         }
       },
-      "description": "ApprovePaymentRequest wraps all request to request approval\nof pending transaction."
+      "description": "ApprovePaymentRequest is the request envelope to approve a pending transaction."
     },
     "transactionsApprovePaymentResponse": {
       "type": "object",
@@ -338,7 +342,7 @@
           "description": "SMSCode is the OTP code used for testing."
         }
       },
-      "description": "ApprovePaymentResponse response for approve payment request."
+      "description": "ApprovePaymentResponse is the response envelope for approving a pending transaction."
     },
     "transactionsBankAccountInfo": {
       "type": "object",
@@ -360,7 +364,7 @@
           "description": "MajorType is the type of account."
         }
       },
-      "description": "BankAccountInfo holds a lightweight account information."
+      "description": "BankAccountInfo holds lightweight account information."
     },
     "transactionsCreateTransactionRequest": {
       "type": "object",
@@ -382,7 +386,7 @@
           "description": "Remarks is an informational note about the transaction."
         }
       },
-      "description": "CreateTransactionRequest wraps all required field for a transaction creation."
+      "description": "CreateTransactionRequest is the request envelope for creating a transaction."
     },
     "transactionsCreateTransactionResponse": {
       "type": "object",
@@ -418,7 +422,7 @@
           "description": "LastRunningBalance is current balance for related account."
         }
       },
-      "description": "GetTransactionsResponse wraps the list of transactions."
+      "description": "GetTransactionsResponse is the response envelope for retrieving a list of transactions."
     },
     "transactionsStatus": {
       "type": "string",
@@ -451,7 +455,7 @@
           "description": "TFAType is type to receive OTP authentication code."
         }
       },
-      "description": "TFARequest is request to get two factor authentication."
+      "description": "TFARequest is request envelope for conducting 2FA."
     },
     "transactionsTFAResponse": {
       "type": "object",
@@ -461,7 +465,7 @@
           "description": "TraceNumber is the transaction reference code."
         }
       },
-      "title": "TFAResponse is the response for TFARequest"
+      "description": "TFAResponse is the response envelope for a 2FA request."
     },
     "transactionsTFAType": {
       "type": "string",
@@ -554,6 +558,7 @@
         "Bri",
         "DummyBank",
         "Bdo",
+        "Bpi",
         "Aceh",
         "Agris",
         "Agroniaga",
@@ -697,7 +702,6 @@
         "Transferwise"
       ],
       "default": "UnknownBankCode",
-      "description": "- Aceh: Bpi",
       "title": "BankCode indicates which bank to use; these should be a list of banks\nthat we are currently integrated with\nThis is the updated list of banks per January 2018"
     },
     "typesMajorType": {

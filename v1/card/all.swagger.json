@@ -5,7 +5,6 @@
     "description": "Provides create and read operations on the card resource.",
     "version": "1.0.0"
   },
-  "basePath": "/v1",
   "schemes": [
     "https"
   ],
@@ -18,13 +17,15 @@
   "paths": {
     "/v1/card/access_status": {
       "post": {
-        "summary": "Update card access status.",
+        "summary": "Update card access status",
         "description": "Update card access status.",
         "operationId": "UpdateCardAccessStatus",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/cardResult"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -48,8 +49,7 @@
           }
         },
         "tags": [
-          "Card",
-          "AccessStatus"
+          "Card"
         ],
         "security": [
           {
@@ -62,7 +62,7 @@
     },
     "/v1/card/status": {
       "post": {
-        "summary": "Update Card Status.",
+        "summary": "Update card status",
         "description": "Update Card status.",
         "operationId": "UpdateCardStatus",
         "responses": {
@@ -92,8 +92,7 @@
           }
         },
         "tags": [
-          "Card",
-          "CardStatus"
+          "Card"
         ],
         "security": [
           {
@@ -106,13 +105,15 @@
     },
     "/v1/card/{CardToken}": {
       "get": {
-        "summary": "Retrieve a card information",
+        "summary": "Retrieve card information",
         "description": "Retrieves all data from a card, selected by the card_token you supplied.",
         "operationId": "GetCard",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/cardCard"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -167,11 +168,11 @@
         },
         "Account": {
           "type": "string",
-          "description": "Account is the account id who owns the card."
+          "description": "Account is the ID of the account associated with the card."
         },
         "OwnerName": {
           "type": "string",
-          "description": "OwnerName is the owner name of the card."
+          "description": "OwnerName is the name of the card owner."
         },
         "ContactNumber": {
           "type": "string",
@@ -192,11 +193,11 @@
         },
         "Status": {
           "$ref": "#/definitions/typesCardStatus",
-          "description": "Status is the status of the card, such as lock, unlock, active."
+          "description": "Status is the status of the card."
         },
         "AccessStatus": {
           "$ref": "#/definitions/typesCardAccessStatus",
-          "description": "AccessStatus is the access status of the card, such as often and rare."
+          "description": "AccessStatus is the access status of the card."
         }
       },
       "description": "Card holds all details about a card."
@@ -207,7 +208,7 @@
         "Success": {
           "type": "boolean",
           "format": "boolean",
-          "description": "Success is the flag for success operation."
+          "description": "Success is a boolean indicating the success of the operation."
         },
         "ErrorCode": {
           "type": "string",
@@ -218,7 +219,7 @@
           "description": "ErrorMessage is the message of the error."
         }
       },
-      "description": "Result is result for update operation."
+      "description": "Result is result of the update operation."
     },
     "typesCardAccessStatus": {
       "type": "string",

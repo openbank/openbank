@@ -155,7 +155,7 @@
         },
         "AvailableBalance": {
           "$ref": "#/definitions/typesAmount",
-          "description": "Available balance is the available balance of the account."
+          "description": "AvailableBalance is the available balance of the account."
         },
         "AvailableCreditLimit": {
           "type": "string",
