@@ -203,7 +203,7 @@ type BranchService interface {
 	//         Path:   "/v1/branches",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Branches"},
+	//         Tags:        []string{"Branch"},
 	//         Description: "Retrieve information regarding all available branches.",
 	//         Summary:     "Retrieve all available branches",
 	//         Responses: map[string]openapiv2.Response{
