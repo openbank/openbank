@@ -251,3 +251,50 @@ type Location struct {
 	// The longitude in degrees. It must be in the range [-180.0, +180.0]
 	Longitude float64 `pb:"2" json:"longitude"`
 }
+
+// Structure of account information
+type ProfileAccountInfo struct {
+
+	// Bank code
+	BankCode BankCode `pb:"1" json:"bank_code"`
+
+	// Account identifier
+	AccountID string `pb:"2" json:"account_id"`
+
+	// Account identifier
+	ProfileID string `pb:"3" json:"profile_id"`
+}
+
+// Structure of customer profile information
+type Profile struct {
+
+	// ProfileID is the unique identifier of a profile.
+	ProfileID string `pb:"1" json:"profile_id"`
+
+	// Account name
+	Name string `pb:"2" json:"name"`
+
+	// Language code used
+	Language string `pb:"3" json:"language"`
+
+	// User country code (VN, US, ID, SG, ...).
+	Country string `pb:"4" json:"country"`
+
+	// User email address
+	Email string `pb:"5" json:"email"`
+
+	// User email address
+	Phone string `pb:"6" json:"phone"`
+
+	// User profile photo url
+	Photo string `pb:"7" json:"photo"`
+
+	// Title
+	Title string `pb:"8" json:"title"`
+
+	// Permanent address
+	PermanentAddress Address `pb:"9" json:"permanent_address"`
+
+	// Contact address
+	ContactAddress Address `pb:"10" json:"contact_address"`
+}
