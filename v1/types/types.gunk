@@ -271,30 +271,39 @@ type Profile struct {
 	// ProfileID is the unique identifier of a profile.
 	ProfileID string `pb:"1" json:"profile_id"`
 
-	// Account name
-	Name string `pb:"2" json:"name"`
+	// Full name
+	FullName string `pb:"2" json:"fullname"`
+
+	// User name
+	UserName string `pb:"3" json:"username"`
+
+	// Birth date
+	BirthDate string `pb:"4" json:"birthdate"`
 
 	// Language code used
-	Language string `pb:"3" json:"language"`
+	Language string `pb:"5" json:"language"`
 
 	// User country code (VN, US, ID, SG, ...).
-	Country string `pb:"4" json:"country"`
+	Country string `pb:"6" json:"country"`
 
 	// User email address
-	Email string `pb:"5" json:"email"`
+	Email string `pb:"7" json:"email"`
 
-	// User email address
-	Phone string `pb:"6" json:"phone"`
+	// True if email is verified, otherwise False
+	EmailVefified bool `pb:"8" json:"email_verified"`
+
+	// Mobile number
+	Mobile string `pb:"9" json:"mobile"`
 
 	// User profile photo url
-	Photo string `pb:"7" json:"photo"`
+	Photo string `pb:"10" json:"photo"`
 
 	// Title
-	Title string `pb:"8" json:"title"`
+	Title string `pb:"11" json:"title"`
 
 	// Permanent address
-	PermanentAddress Address `pb:"9" json:"permanent_address"`
+	PermanentAddress Address `pb:"12" json:"permanent_address"`
 
 	// Contact address
-	ContactAddress Address `pb:"10" json:"contact_address"`
+	ContactAddress Address `pb:"13" json:"contact_address"`
 }
