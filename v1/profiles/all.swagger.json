@@ -18,7 +18,7 @@
     "/v1/profiles": {
       "get": {
         "summary": "Query profiles",
-        "description": "Returns an array of values containing up to 20 records of profile information. `next_starting_index` can be specified for pagination.",
+        "description": "Returns the profile and associated accounts",
         "operationId": "GetProfile",
         "responses": {
           "200": {
@@ -50,8 +50,7 @@
         },
         "parameters": [
           {
-            "name": "NextStartIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's a ProfileID that defines\nthe current place in the total list of profiles.",
+            "name": "ProfileID",
             "in": "query",
             "required": false,
             "type": "string"
@@ -72,7 +71,7 @@
     "/v1/profiles/card": {
       "get": {
         "summary": "Query cards",
-        "description": "Returns an array of values containing up to 20 records of card information. `next_starting_index` can be specified for pagination.",
+        "description": "Returns an array of ProfileCard associated with the account for the profile based on profile identifier",
         "operationId": "GetProfileCard",
         "responses": {
           "200": {
@@ -104,8 +103,7 @@
         },
         "parameters": [
           {
-            "name": "NextStartIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's an ProfileID that defines\nthe current place in the total list of profiles.",
+            "name": "ProfileID",
             "in": "query",
             "required": false,
             "type": "string"
@@ -235,11 +233,14 @@
           }
         }
       },
-      "description": "GetProfileCardsResponse is the response envelope for retrieving customer cards."
+      "description": "GetProfileCardsResponse is the response message for retrieving customer cards."
     },
     "profilesGetProfileResponse": {
       "type": "object",
       "properties": {
+        "Profile": {
+          "$ref": "#/definitions/typesProfile"
+        },
         "Accounts": {
           "type": "array",
           "items": {
@@ -247,7 +248,7 @@
           }
         }
       },
-      "description": "GetProfileResponse is the response envelope for retrieving customer profiles."
+      "description": "GetProfileResponse is the response message for retrieving customer profiles."
     },
     "profilesProfileCard": {
       "type": "object",
@@ -274,6 +275,32 @@
         }
       },
       "description": "ProfileCard holds details about a customer's credit card."
+    },
+    "typesAddress": {
+      "type": "object",
+      "properties": {
+        "CountryName": {
+          "type": "string",
+          "description": "CountryName holds the country name information."
+        },
+        "CityName": {
+          "type": "string",
+          "description": "CityName holds the city name information."
+        },
+        "State": {
+          "type": "string",
+          "description": "State holds the state information."
+        },
+        "Street": {
+          "type": "string",
+          "description": "Street holds the street information."
+        },
+        "PostalCode": {
+          "type": "string",
+          "description": "PostalCode holds the postal code information."
+        }
+      },
+      "title": "Address hold all details about Address"
     },
     "typesAmount": {
       "type": "object",
@@ -312,6 +339,65 @@
       ],
       "default": "UnknownMajorType",
       "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
+    },
+    "typesProfile": {
+      "type": "object",
+      "properties": {
+        "ProfileID": {
+          "type": "string",
+          "description": "ProfileID is the unique identifier of a profile."
+        },
+        "FullName": {
+          "type": "string",
+          "title": "Full name"
+        },
+        "UserName": {
+          "type": "string",
+          "title": "User name"
+        },
+        "BirthDate": {
+          "type": "string",
+          "title": "Birth date"
+        },
+        "Language": {
+          "type": "string",
+          "title": "Language code used"
+        },
+        "Country": {
+          "type": "string",
+          "description": "User country code (VN, US, ID, SG, ...)."
+        },
+        "Email": {
+          "type": "string",
+          "title": "User email address"
+        },
+        "EmailVefified": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "True if email is verified, otherwise False"
+        },
+        "Mobile": {
+          "type": "string",
+          "title": "Mobile number"
+        },
+        "Photo": {
+          "type": "string",
+          "title": "User profile photo url"
+        },
+        "Title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "PermanentAddress": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Permanent address"
+        },
+        "ContactAddress": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Contact address"
+        }
+      },
+      "title": "Structure of customer profile information"
     }
   },
   "securityDefinitions": {

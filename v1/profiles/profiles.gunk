@@ -58,26 +58,23 @@ import (
 	types "github.com/openbank/openbank/v1/types"
 )
 
-// GetProfileRequest is the request envelope for retrieving customer profiles.
+// GetProfileRequest is the request message for retrieving customer profiles.
 type GetProfileRequest struct {
-	// NextStartingIndex is a cursor for pagination. It's a ProfileID that defines
-	// the current place in the total list of profiles.
-	NextStartIndex string `pb:"1" json:"next_start_index"`
+	ProfileID string `pb:"1" json:"profile_id"`
 }
 
-// GetProfileResponse is the response envelope for retrieving customer profiles.
+// GetProfileResponse is the response message for retrieving customer profiles.
 type GetProfileResponse struct {
-	Accounts []accounts.Account `pb:"1" json:"accounts"`
+	Profile types.Profile `pb:"1" json:"profile"`
+	Accounts []accounts.Account `pb:"2" json:"accounts"` 
 }
 
-// GetProfileCardsRequest is the request envelope for retrieving customer cards.
+// GetProfileCardsRequest is the request message for retrieving customer cards.
 type GetProfileCardsRequest struct {
-	// NextStartingIndex is a cursor for pagination. It's an ProfileID that defines
-	// the current place in the total list of profiles.
-	NextStartIndex string `pb:"1" json:"next_start_index"`
+	ProfileID string `pb:"1" json:"profile_id"`
 }
 
-// GetProfileCardsResponse is the response envelope for retrieving customer cards.
+// GetProfileCardsResponse is the response message for retrieving customer cards.
 type GetProfileCardsResponse struct {
 	Cards []ProfileCard `pb:"1" json:"cards"`
 }
@@ -109,7 +106,7 @@ type ProfileService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Profile"},
-	//         Description: "Returns an array of values containing up to 20 records of profile information. `next_starting_index` can be specified for pagination.",
+	//         Description: "Returns the profile and associated accounts",
 	//         Summary:     "Query profiles",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
@@ -146,7 +143,7 @@ type ProfileService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Profile"},
-	//         Description: "Returns an array of values containing up to 20 records of card information. `next_starting_index` can be specified for pagination.",
+	//         Description: "Returns an array of ProfileCard associated with the account for the profile based on profile identifier",
 	//         Summary:     "Query cards",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
