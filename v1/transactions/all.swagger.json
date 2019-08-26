@@ -15,6 +15,97 @@
     "application/json"
   ],
   "paths": {
+    "/v1/accounts/{AccountID}/transactions": {
+      "get": {
+        "summary": "List all transactions for given account id",
+        "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+        "operationId": "GetTransactionsByAccount",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountID",
+            "description": "AccountID is the unique identifier of an account.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "description": "FromDate is starting date to get the transactions.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "ToDate",
+            "description": "ToDate is end date to get the transactions.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "TransactionType",
+            "description": "TransactionType is a type of transaction, debit or credit.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UnknownType",
+              "Credit",
+              "Debit"
+            ],
+            "default": "UnknownType"
+          },
+          {
+            "name": "Limit",
+            "description": "Limit is number of search return of transactions.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "NextStartingIndex",
+            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Transaction"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
     "/v1/transactions": {
       "get": {
         "summary": "List all transactions",
@@ -149,97 +240,6 @@
           {
             "OAuth2": [
               "write"
-            ]
-          }
-        ]
-      }
-    },
-    "/v1/transactions/account": {
-      "get": {
-        "summary": "List all transactions for given account id",
-        "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
-        "operationId": "GetTransactionsByAccount",
-        "responses": {
-          "200": {
-            "description": "Request executed successfully.",
-            "schema": {}
-          },
-          "400": {
-            "description": "Returned when the request body is malformatted or does not match the expected request.",
-            "schema": {}
-          },
-          "401": {
-            "description": "Returned when the request does not contains the user's credentials.",
-            "schema": {}
-          },
-          "403": {
-            "description": "Returned when the user does not have permission to access the resource.",
-            "schema": {}
-          },
-          "500": {
-            "description": "Returned when an unexpected error occured on the server side.",
-            "schema": {}
-          }
-        },
-        "parameters": [
-          {
-            "name": "AccountID",
-            "description": "AccountID is the unique identifier of an account.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "description": "FromDate is starting date to get the transactions.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          },
-          {
-            "name": "ToDate",
-            "description": "ToDate is end date to get the transactions.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          },
-          {
-            "name": "TransactionType",
-            "description": "TransactionType is a type of transaction, debit or credit.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UnknownType",
-              "Credit",
-              "Debit"
-            ],
-            "default": "UnknownType"
-          },
-          {
-            "name": "Limit",
-            "description": "Limit is number of search return of transactions.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "Transaction"
-        ],
-        "security": [
-          {
-            "OAuth2": [
-              "read"
             ]
           }
         ]

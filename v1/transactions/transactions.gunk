@@ -353,7 +353,7 @@ type TransactionService interface {
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
-	//         Path:   "/v1/transactions/account",
+	//         Path:   "/v1/accounts/{AccountID}/transactions",
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Transaction"},
