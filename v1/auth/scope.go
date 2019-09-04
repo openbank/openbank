@@ -52,14 +52,21 @@ const (
 	Scope_ProfileDelete = "https://auth.bnk.to/profile.delete"
 
 	// BranchCreate scope for the branch create operation.
-	Scoce_BranchCreate = "https://auth.bnk.to/branch.create"
+	Scope_BranchCreate = "https://auth.bnk.to/branch.create"
 
 	// BranchRead scope for the branch read operation.
-	Scoce_BranchRead = "https://auth.bnk.to/branch.read"
+	Scope_BranchRead = "https://auth.bnk.to/branch.read"
 
 	// BranchUpdate scope for the branch update operation.
-	Scoce_BranchUpdate = "https://auth.bnk.to/branch.update"
+	Scope_BranchUpdate = "https://auth.bnk.to/branch.update"
 
-	// BranchDelete scope fot the branch delete operation.
-	Scoce_BranchDelete = "https://auth.bnk.to/branch.delete"
+	// BranchDelete scope for the branch delete operation.
+	Scope_BranchDelete = "https://auth.bnk.to/branch.delete"
+
+	// Fastcheckout Scopes
+	// Scope_FcoWrite scope for create fco transaction request.
+	Scope_FcoWrite = "https://auth.bnk.to/fco.write"
+
+	// Scope_FcoRead scope for read fco transactions.
+	Scope_FcoRead = "https://auth.bnk.to/fco.read"
 )
