@@ -10,6 +10,8 @@ import (
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -407,6 +409,17 @@ type AuthorizationServiceServer interface {
 	GetAuthorizationCode(context.Context, *GetAuthorizationCodeRequest) (*Empty, error)
 	// CreateAccessToken exchanges an authorization code with an access token.
 	CreateAccessToken(context.Context, *CreateAccessTokenRequest) (*CreateAccessTokenResponse, error)
+}
+
+// UnimplementedAuthorizationServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedAuthorizationServiceServer struct {
+}
+
+func (*UnimplementedAuthorizationServiceServer) GetAuthorizationCode(ctx context.Context, req *GetAuthorizationCodeRequest) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAuthorizationCode not implemented")
+}
+func (*UnimplementedAuthorizationServiceServer) CreateAccessToken(ctx context.Context, req *CreateAccessTokenRequest) (*CreateAccessTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAccessToken not implemented")
 }
 
 func RegisterAuthorizationServiceServer(s *grpc.Server, srv AuthorizationServiceServer) {

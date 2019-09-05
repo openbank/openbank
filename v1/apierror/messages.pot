@@ -1,0 +1,41 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "APIError defines the error model returned by an API in case something went wrong"
+msgstr ""
+
+msgid "Annex"
+msgstr ""
+
+msgid "Code of the error returned, corresponding to gRPC or HTTP code, depending on your client."
+msgstr ""
+
+msgid "DocURL is a direct link to the specific error type documentation, when applicable."
+msgstr ""
+
+msgid "ErrorType defines the type of the error."
+msgstr ""
+
+msgid "ErrorType_AccountAlreadyExists is returned when trying to create a duplicate account."
+msgstr ""
+
+msgid "Message is a human readable message providing more details about the error."
+msgstr ""
+
+msgid "Type is an enum to help handling errors programatically."
+msgstr ""

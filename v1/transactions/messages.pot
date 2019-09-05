@@ -1,0 +1,242 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "AccountID is the identifier of the account."
+msgstr ""
+
+msgid "AccountID is the unique identifier of an account."
+msgstr ""
+
+msgid "Amount holds the amount value and currency of the transaction."
+msgstr ""
+
+msgid "Annex"
+msgstr ""
+
+msgid "Approve a pending transaction"
+msgstr ""
+
+msgid "Approve a pending transaction."
+msgstr ""
+
+msgid "Approve is Boolean value of approval action."
+msgstr ""
+
+msgid "Authorization allows execution of transactions with 2-factor authentication (2FA)."
+msgstr ""
+
+msgid "AuthorizationID is the executable code is obtained from the payment feedback result."
+msgstr ""
+
+msgid "AuthorizationID is the executable code is obtained fromthe payment feedback result"
+msgstr ""
+
+msgid "Authorize a transaction with 2FA"
+msgstr ""
+
+msgid "BankCode is code of the bank the account belongs to."
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Code is 2-digit authentication code is sent via SMS."
+msgstr ""
+
+msgid "Create a transaction"
+msgstr ""
+
+msgid "CreatedAt is the transaction created date."
+msgstr ""
+
+msgid "Creates a new transaction and returns its id."
+msgstr ""
+
+msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Date is the date of the transaction."
+msgstr ""
+
+msgid "Description describes the transaction."
+msgstr ""
+
+msgid "DestinationAccount is the account receiving the transaction."
+msgstr ""
+
+msgid "DestinationAccountID is the identifier of the account receiving the transaction."
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "HasMore indicates if there are more transactions available."
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "LastRunningBalance is current balance for related account."
+msgstr ""
+
+msgid "List all transactions"
+msgstr ""
+
+msgid "List all transactions for given account id"
+msgstr ""
+
+msgid "MajorType is the type of account."
+msgstr ""
+
+msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "OwnerName is the name of the owner of the account."
+msgstr ""
+
+msgid "Provides create and read operations on the transaction resource."
+msgstr ""
+
+msgid "Query Parameters"
+msgstr ""
+
+msgid "Remarks is an informational note about the transaction."
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Result is a list containing up to 20 transactions."
+msgstr ""
+
+msgid "Retrieve a transaction"
+msgstr ""
+
+msgid "Retrieves all data from a transaction, selected by the transaction_id you supplied."
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page."
+msgstr ""
+
+msgid "SMSCode is the OTP code used for testing."
+msgstr ""
+
+msgid "SourceAccount is the account emitting the transaction."
+msgstr ""
+
+msgid "SourceAccountID is the identifier of the account emitting the transaction."
+msgstr ""
+
+msgid "Status defines the status of a transaction."
+msgstr ""
+
+msgid "Status is the status of the transaction."
+msgstr ""
+
+msgid "Status_Pending is the value for a pending transaction."
+msgstr ""
+
+msgid "Status_Rejected is the value for a rejected transaction."
+msgstr ""
+
+msgid "Status_Success is the value for a successful transaction."
+msgstr ""
+
+msgid "TFAType is available type of TFA."
+msgstr ""
+
+msgid "TFAType is type to receive OTP authentication code."
+msgstr ""
+
+msgid "TFAType_SAFEKEY Application."
+msgstr ""
+
+msgid "TFAType_SMS Message."
+msgstr ""
+
+msgid "TraceNumber is the transaction reference code."
+msgstr ""
+
+msgid "Transaction authorized."
+msgstr ""
+
+msgid "Transaction created successfully."
+msgstr ""
+
+msgid "Transaction successfully approved."
+msgstr ""
+
+msgid "TransactionID is the transaction unique identifier."
+msgstr ""
+
+msgid "TransactionID is the unique identifier of a transaction."
+msgstr ""
+
+msgid "TransactionID is transaction / payment identification code requires approval."
+msgstr ""
+
+msgid "Transactions API"
+msgstr ""
+
+msgid "Type defines the type of a transaction."
+msgstr ""
+
+msgid "Type is the type of transaction."
+msgstr ""
+
+msgid "Type_Credit is the value for a credit transaction."
+msgstr ""
+
+msgid "Type_Debit is the value for a debit transaction."
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "UserID is the identifier of the issuer of the transaction."
+msgstr ""
