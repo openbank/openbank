@@ -468,9 +468,9 @@
           "$ref": "#/definitions/typesOfflineUserInfo",
           "description": "SourceOfflineUser is the contact information for an offline user."
         },
-        "DestinationAccountID": {
-          "type": "string",
-          "description": "DestinationAccountID is the identifier of the account receiving the transaction."
+        "DestinationAccount": {
+          "$ref": "#/definitions/transactionsBankAccountInfo",
+          "description": "DestinationAccount is the account receiving the transaction."
         },
         "DestinationOfflineUser": {
           "$ref": "#/definitions/typesOfflineUserInfo",

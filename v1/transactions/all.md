@@ -80,7 +80,12 @@ curl -X POST \
 				"longitude": "double"
 			}
 		},
-		"destination_account_id": "string",
+		"destination_account": {
+			"account_id": "string",
+			"bank_code": "BankCode",
+			"owner_name": "string",
+			"major_type": "MajorType"
+		},
 		"destination_offline_user": {
 			"user_id": "string",
 			"first_name": "string",
@@ -105,14 +110,14 @@ curl -X POST \
 
 ### Body Parameters
 
-| Name                   | Type            | Description                                                                      |
-|------------------------|-----------------|----------------------------------------------------------------------------------|
-| SourceAccountID        | string          | SourceAccountID is the identifier of the account emitting the transaction.       |
-| SourceOfflineUser      | OfflineUserInfo | SourceOfflineUser is the contact information for an offline user.                |
-| DestinationAccountID   | string          | DestinationAccountID is the identifier of the account receiving the transaction. |
-| DestinationOfflineUser | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user.           |
-| Amount                 | Amount          | Amount holds the amount value and currency of the transaction.                   |
-| Remarks                | string          | Remarks is an informational note about the transaction.                          |
+| Name                   | Type            | Description                                                                |
+|------------------------|-----------------|----------------------------------------------------------------------------|
+| SourceAccountID        | string          | SourceAccountID is the identifier of the account emitting the transaction. |
+| SourceOfflineUser      | OfflineUserInfo | SourceOfflineUser is the contact information for an offline user.          |
+| DestinationAccount     | BankAccountInfo | DestinationAccount is the account receiving the transaction.               |
+| DestinationOfflineUser | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user.     |
+| Amount                 | Amount          | Amount holds the amount value and currency of the transaction.             |
+| Remarks                | string          | Remarks is an informational note about the transaction.                    |
 
 ##### Objects
 
@@ -126,6 +131,15 @@ curl -X POST \
 | LastName   | string   | LastName or last names (space separated) of the person     |
 | MobileNo   | string   | MobileNo contact of the person                             |
 | Location   | Location | Location is the physical location of the interaction.      |
+
+###### BankAccountInfo
+
+| Name      | Type      | Description                                          |
+|-----------|-----------|------------------------------------------------------|
+| AccountID | string    | AccountID is the identifier of the account.          |
+| BankCode  | BankCode  | BankCode is code of the bank the account belongs to. |
+| OwnerName | string    | OwnerName is the name of the owner of the account.   |
+| MajorType | MajorType | MajorType is the type of account.                    |
 
 ###### Amount
 
@@ -234,13 +248,13 @@ Example:
 ```json
 {
   "transaction_id": "string",
-  "source_account_id": {
+  "source_account": {
     "account_id": "string",
     "bank_code": "BankCode",
     "owner_name": "string",
     "major_type": "MajorType"
   },
-  "destination_account_id": {
+  "destination_account": {
     "account_id": "string",
     "bank_code": "BankCode",
     "owner_name": "string",
@@ -342,13 +356,13 @@ Example:
   "result": [
     {
       "transaction_id": "string",
-      "source_account_id": {
+      "source_account": {
         "account_id": "string",
         "bank_code": "BankCode",
         "owner_name": "string",
         "major_type": "MajorType"
       },
-      "destination_account_id": {
+      "destination_account": {
         "account_id": "string",
         "bank_code": "BankCode",
         "owner_name": "string",
@@ -464,13 +478,13 @@ Example:
   "result": [
     {
       "transaction_id": "string",
-      "source_account_id": {
+      "source_account": {
         "account_id": "string",
         "bank_code": "BankCode",
         "owner_name": "string",
         "major_type": "MajorType"
       },
-      "destination_account_id": {
+      "destination_account": {
         "account_id": "string",
         "bank_code": "BankCode",
         "owner_name": "string",
