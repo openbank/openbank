@@ -92,10 +92,10 @@ type Transaction struct {
 	TransactionID string `pb:"1" json:"transaction_id"`
 
 	// SourceAccount is the account emitting the transaction.
-	SourceAccount BankAccountInfo `pb:"2" json:"source_account_id"`
+	SourceAccount BankAccountInfo `pb:"2" json:"source_account"`
 
 	// DestinationAccount is the account receiving the transaction.
-	DestinationAccount BankAccountInfo `pb:"3" json:"destination_account_id"`
+	DestinationAccount BankAccountInfo `pb:"3" json:"destination_account"`
 
 	// Date is the date of the transaction.
 	Date time.Time `pb:"4" json:"date"`
@@ -215,8 +215,8 @@ type CreateTransactionRequest struct {
 	// SourceOfflineUser is the contact information for an offline user.
 	SourceOfflineUser types.OfflineUserInfo `pb:"5" json:"source_offline_user"`
 
-	// DestinationAccountID is the identifier of the account receiving the transaction.
-	DestinationAccountID string `pb:"2" json:"destination_account_id"`
+	// DestinationAccount is the account receiving the transaction.
+	DestinationAccount BankAccountInfo `pb:"2" json:"destination_account"`
 
 	// DestinationOfflineUser is the contact information for an offline user.
 	DestinationOfflineUser types.OfflineUserInfo `pb:"6" json:"destination_offline_user"`
