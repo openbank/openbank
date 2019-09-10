@@ -252,6 +252,26 @@ type Location struct {
 	Longitude float64 `pb:"2" json:"longitude"`
 }
 
+type OfflineUserInfo struct {
+	// UserID
+	UserID string `pb:"1" json:"user_id"`
+
+	// FirstName of the person
+	FirstName string `pb:"2" json:"first_name"`
+
+	// MiddleName or middle names (space separated) of the person
+	MiddleName string `pb:"3" json:"middle_name"`
+
+	// LastName or last names (space separated) of the person
+	LastName string `pb:"4" json:"last_name"`
+
+	// MobileNo contact of the person
+	MobileNo string `pb:"5" json:"mobile_no"`
+
+	// Location is the physical location of the interaction.
+	Location Location `pb:"6" json:"location"`
+}
+
 // Structure of account information
 type ProfileAccountInfo struct {
 

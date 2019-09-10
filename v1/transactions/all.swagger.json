@@ -464,9 +464,17 @@
           "type": "string",
           "description": "SourceAccountID is the identifier of the account emitting the transaction."
         },
+        "SourceOfflineUser": {
+          "$ref": "#/definitions/typesOfflineUserInfo",
+          "description": "SourceOfflineUser is the contact information for an offline user."
+        },
         "DestinationAccountID": {
           "type": "string",
           "description": "DestinationAccountID is the identifier of the account receiving the transaction."
+        },
+        "DestinationOfflineUser": {
+          "$ref": "#/definitions/typesOfflineUserInfo",
+          "description": "DestinationOfflineUser is the contact information for an offline user."
         },
         "Amount": {
           "$ref": "#/definitions/typesAmount",
@@ -477,7 +485,7 @@
           "description": "Remarks is an informational note about the transaction."
         }
       },
-      "description": "CreateTransactionRequest is the request message for creating a transaction."
+      "description": "CreateTransactionRequest is the request message for creating a transaction.\nOnly one of SourceOfflineUser and DestinationOfflineUser can be used to create a transaction."
     },
     "transactionsCreateTransactionResponse": {
       "type": "object",
@@ -817,6 +825,22 @@
       "default": "UnknownBankCode",
       "title": "BankCode indicates which bank to use; these should be a list of banks\nthat we are currently integrated with\nThis is the updated list of banks per January 2018"
     },
+    "typesLocation": {
+      "type": "object",
+      "properties": {
+        "Latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
+        },
+        "Longitude": {
+          "type": "number",
+          "format": "double",
+          "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+        }
+      },
+      "description": "Location is An object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude.\nValues must be within normalized ranges.\nRefer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
+    },
     "typesMajorType": {
       "type": "string",
       "enum": [
@@ -830,6 +854,35 @@
       ],
       "default": "UnknownMajorType",
       "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
+    },
+    "typesOfflineUserInfo": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string",
+          "title": "UserID"
+        },
+        "FirstName": {
+          "type": "string",
+          "title": "FirstName of the person"
+        },
+        "MiddleName": {
+          "type": "string",
+          "title": "MiddleName or middle names (space separated) of the person"
+        },
+        "LastName": {
+          "type": "string",
+          "title": "LastName or last names (space separated) of the person"
+        },
+        "MobileNo": {
+          "type": "string",
+          "title": "MobileNo contact of the person"
+        },
+        "Location": {
+          "$ref": "#/definitions/typesLocation",
+          "description": "Location is the physical location of the interaction."
+        }
+      }
     }
   },
   "securityDefinitions": {

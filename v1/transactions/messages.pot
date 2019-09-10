@@ -85,6 +85,12 @@ msgstr ""
 msgid "DestinationAccountID is the identifier of the account receiving the transaction."
 msgstr ""
 
+msgid "DestinationOfflineUser is the contact information for an offline user."
+msgstr ""
+
+msgid "FirstName of the person"
+msgstr ""
+
 msgid "HTTP Request"
 msgstr ""
 
@@ -92,6 +98,9 @@ msgid "HasMore indicates if there are more transactions available."
 msgstr ""
 
 msgid "Host"
+msgstr ""
+
+msgid "LastName or last names (space separated) of the person"
 msgstr ""
 
 msgid "LastRunningBalance is current balance for related account."
@@ -103,7 +112,16 @@ msgstr ""
 msgid "List all transactions for given account id"
 msgstr ""
 
+msgid "Location is the physical location of the interaction."
+msgstr ""
+
 msgid "MajorType is the type of account."
+msgstr ""
+
+msgid "MiddleName or middle names (space separated) of the person"
+msgstr ""
+
+msgid "MobileNo contact of the person"
 msgstr ""
 
 msgid "Num is the value of the amount."
@@ -172,6 +190,9 @@ msgstr ""
 msgid "SourceAccountID is the identifier of the account emitting the transaction."
 msgstr ""
 
+msgid "SourceOfflineUser is the contact information for an offline user."
+msgstr ""
+
 msgid "Status defines the status of a transaction."
 msgstr ""
 
@@ -197,6 +218,12 @@ msgid "TFAType_SAFEKEY Application."
 msgstr ""
 
 msgid "TFAType_SMS Message."
+msgstr ""
+
+msgid "The latitude in degrees. It must be in the range [-90.0, +90.0]."
+msgstr ""
+
+msgid "The longitude in degrees. It must be in the range [-180.0, +180.0]"
 msgstr ""
 
 msgid "TraceNumber is the transaction reference code."
@@ -236,6 +263,9 @@ msgid "Type_Debit is the value for a debit transaction."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "UserID"
 msgstr ""
 
 msgid "UserID is the identifier of the issuer of the transaction."

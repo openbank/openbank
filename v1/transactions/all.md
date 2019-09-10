@@ -69,7 +69,29 @@ curl -X POST \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"source_account_id": "string",
+		"source_offline_user": {
+			"user_id": "string",
+			"first_name": "string",
+			"middle_name": "string",
+			"last_name": "string",
+			"mobile_no": "string",
+			"location": {
+				"latitude": "double",
+				"longitude": "double"
+			}
+		},
 		"destination_account_id": "string",
+		"destination_offline_user": {
+			"user_id": "string",
+			"first_name": "string",
+			"middle_name": "string",
+			"last_name": "string",
+			"mobile_no": "string",
+			"location": {
+				"latitude": "double",
+				"longitude": "double"
+			}
+		},
 		"amount": {
 			"cur": "string",
 			"num": "string"
@@ -83,14 +105,27 @@ curl -X POST \
 
 ### Body Parameters
 
-| Name                 | Type   | Description                                                                      |
-|----------------------|--------|----------------------------------------------------------------------------------|
-| SourceAccountID      | string | SourceAccountID is the identifier of the account emitting the transaction.       |
-| DestinationAccountID | string | DestinationAccountID is the identifier of the account receiving the transaction. |
-| Amount               | Amount | Amount holds the amount value and currency of the transaction.                   |
-| Remarks              | string | Remarks is an informational note about the transaction.                          |
+| Name                   | Type            | Description                                                                      |
+|------------------------|-----------------|----------------------------------------------------------------------------------|
+| SourceAccountID        | string          | SourceAccountID is the identifier of the account emitting the transaction.       |
+| SourceOfflineUser      | OfflineUserInfo | SourceOfflineUser is the contact information for an offline user.                |
+| DestinationAccountID   | string          | DestinationAccountID is the identifier of the account receiving the transaction. |
+| DestinationOfflineUser | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user.           |
+| Amount                 | Amount          | Amount holds the amount value and currency of the transaction.                   |
+| Remarks                | string          | Remarks is an informational note about the transaction.                          |
 
 ##### Objects
+
+###### OfflineUserInfo
+
+| Name       | Type     | Description                                                |
+|------------|----------|------------------------------------------------------------|
+| UserID     | string   | UserID                                                     |
+| FirstName  | string   | FirstName of the person                                    |
+| MiddleName | string   | MiddleName or middle names (space separated) of the person |
+| LastName   | string   | LastName or last names (space separated) of the person     |
+| MobileNo   | string   | MobileNo contact of the person                             |
+| Location   | Location | Location is the physical location of the interaction.      |
 
 ###### Amount
 
@@ -98,6 +133,13 @@ curl -X POST \
 |------|--------|------------------------------------|
 | Cur  | string | Cur is the currency of the amount. |
 | Num  | string | Num is the value of the amount.    |
+
+###### Location
+
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses
 

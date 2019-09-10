@@ -30,6 +30,17 @@ Location is An object representing a latitude/longitude pair. This is expressed 
 | Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
 | Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
+##  OfflineUserInfo
+
+| Name       | Type     | Description                                                |
+|------------|----------|------------------------------------------------------------|
+| UserID     | string   | UserID                                                     |
+| FirstName  | string   | FirstName of the person                                    |
+| MiddleName | string   | MiddleName or middle names (space separated) of the person |
+| LastName   | string   | LastName or last names (space separated) of the person     |
+| MobileNo   | string   | MobileNo contact of the person                             |
+| Location   | Location | Location is the physical location of the interaction.      |
+
 ##  Profile
 
 Structure of customer profile information
