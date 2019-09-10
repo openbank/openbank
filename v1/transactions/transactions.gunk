@@ -207,12 +207,19 @@ type GetTransactionsByAccountResponse struct {
 }
 
 // CreateTransactionRequest is the request message for creating a transaction.
+// Only one of SourceOfflineUser and DestinationOfflineUser can be used to create a transaction.
 type CreateTransactionRequest struct {
 	// SourceAccountID is the identifier of the account emitting the transaction.
 	SourceAccountID string `pb:"1" json:"source_account_id"`
 
+	// SourceOfflineUser is the contact information for an offline user.
+	SourceOfflineUser types.OfflineUserInfo `pb:"5" json:"source_offline_user"`
+
 	// DestinationAccountID is the identifier of the account receiving the transaction.
 	DestinationAccountID string `pb:"2" json:"destination_account_id"`
+
+	// DestinationOfflineUser is the contact information for an offline user.
+	DestinationOfflineUser types.OfflineUserInfo `pb:"6" json:"destination_offline_user"`
 
 	// Amount holds the amount value and currency of the transaction.
 	Amount types.Amount `pb:"3" json:"amount"`

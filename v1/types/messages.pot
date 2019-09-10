@@ -64,13 +64,22 @@ msgstr ""
 msgid "Cur is the currency of the amount."
 msgstr ""
 
+msgid "FirstName of the person"
+msgstr ""
+
 msgid "Full name"
 msgstr ""
 
 msgid "Language code used"
 msgstr ""
 
+msgid "LastName or last names (space separated) of the person"
+msgstr ""
+
 msgid "Location is An object representing a latitude/longitude pair. This is expressed as a pairof doubles representing degrees latitude and degrees longitude.Values must be within normalized ranges.Refer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
+msgstr ""
+
+msgid "Location is the physical location of the interaction."
 msgstr ""
 
 msgid "MajorCategory describes the category of the account."
@@ -103,7 +112,13 @@ msgstr ""
 msgid "MajorType_TimeDeposit for a time deposit account."
 msgstr ""
 
+msgid "MiddleName or middle names (space separated) of the person"
+msgstr ""
+
 msgid "Mobile number"
+msgstr ""
+
+msgid "MobileNo contact of the person"
 msgstr ""
 
 msgid "Num is the value of the amount."
@@ -152,4 +167,7 @@ msgid "User name"
 msgstr ""
 
 msgid "User profile photo url"
+msgstr ""
+
+msgid "UserID"
 msgstr ""
