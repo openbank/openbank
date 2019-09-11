@@ -609,9 +609,17 @@
           "$ref": "#/definitions/transactionsBankAccountInfo",
           "description": "SourceAccount is the account emitting the transaction."
         },
+        "SourceOfflineUser": {
+          "$ref": "#/definitions/typesOfflineUserInfo",
+          "description": "SourceOfflineUser is the contact information for an offline user."
+        },
         "DestinationAccount": {
           "$ref": "#/definitions/transactionsBankAccountInfo",
           "description": "DestinationAccount is the account receiving the transaction."
+        },
+        "DestinationOfflineUser": {
+          "$ref": "#/definitions/typesOfflineUserInfo",
+          "description": "DestinationOfflineUser is the contact information for an offline user."
         },
         "Date": {
           "type": "string",

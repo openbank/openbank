@@ -205,18 +205,20 @@ curl -X GET \
 
 #### Response body
 
-| Name               | Type            | Description                                                    |
-|--------------------|-----------------|----------------------------------------------------------------|
-| TransactionID      | string          | TransactionID is the unique identifier of a transaction.       |
-| SourceAccount      | BankAccountInfo | SourceAccount is the account emitting the transaction.         |
-| DestinationAccount | BankAccountInfo | DestinationAccount is the account receiving the transaction.   |
-| Date               | Timestamp       | Date is the date of the transaction.                           |
-| Type               | Type            | Type is the type of transaction.                               |
-| Status             | Status          | Status is the status of the transaction.                       |
-| Amount             | Amount          | Amount holds the amount value and currency of the transaction. |
-| Description        | string          | Description describes the transaction.                         |
-| UserID             | string          | UserID is the identifier of the issuer of the transaction.     |
-| Remarks            | string          | Remarks is an informational note about the transaction.        |
+| Name                   | Type            | Description                                                            |
+|------------------------|-----------------|------------------------------------------------------------------------|
+| TransactionID          | string          | TransactionID is the unique identifier of a transaction.               |
+| SourceAccount          | BankAccountInfo | SourceAccount is the account emitting the transaction.                 |
+| SourceOfflineUser      | OfflineUserInfo | SourceOfflineUser is the contact information for an offline user.      |
+| DestinationAccount     | BankAccountInfo | DestinationAccount is the account receiving the transaction.           |
+| DestinationOfflineUser | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user. |
+| Date                   | Timestamp       | Date is the date of the transaction.                                   |
+| Type                   | Type            | Type is the type of transaction.                                       |
+| Status                 | Status          | Status is the status of the transaction.                               |
+| Amount                 | Amount          | Amount holds the amount value and currency of the transaction.         |
+| Description            | string          | Description describes the transaction.                                 |
+| UserID                 | string          | UserID is the identifier of the issuer of the transaction.             |
+| Remarks                | string          | Remarks is an informational note about the transaction.                |
 
 ##### Objects
 
@@ -228,6 +230,17 @@ curl -X GET \
 | BankCode  | BankCode  | BankCode is code of the bank the account belongs to. |
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
+
+###### OfflineUserInfo
+
+| Name       | Type     | Description                                                |
+|------------|----------|------------------------------------------------------------|
+| UserID     | string   | UserID                                                     |
+| FirstName  | string   | FirstName of the person                                    |
+| MiddleName | string   | MiddleName or middle names (space separated) of the person |
+| LastName   | string   | LastName or last names (space separated) of the person     |
+| MobileNo   | string   | MobileNo contact of the person                             |
+| Location   | Location | Location is the physical location of the interaction.      |
 
 ###### Timestamp
 
@@ -243,6 +256,13 @@ curl -X GET \
 | Cur  | string | Cur is the currency of the amount. |
 | Num  | string | Num is the value of the amount.    |
 
+###### Location
+
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+
 Example:
 
 ```json
@@ -254,11 +274,33 @@ Example:
     "owner_name": "string",
     "major_type": "MajorType"
   },
+  "source_offline_user": {
+    "user_id": "string",
+    "first_name": "string",
+    "middle_name": "string",
+    "last_name": "string",
+    "mobile_no": "string",
+    "location": {
+      "latitude": "double",
+      "longitude": "double"
+    }
+  },
   "destination_account": {
     "account_id": "string",
     "bank_code": "BankCode",
     "owner_name": "string",
     "major_type": "MajorType"
+  },
+  "destination_offline_user": {
+    "user_id": "string",
+    "first_name": "string",
+    "middle_name": "string",
+    "last_name": "string",
+    "mobile_no": "string",
+    "location": {
+      "latitude": "double",
+      "longitude": "double"
+    }
   },
   "date": {
     "seconds": "int64",
@@ -313,18 +355,20 @@ curl -X GET \
 
 ###### Transaction
 
-| Name               | Type            | Description                                                    |
-|--------------------|-----------------|----------------------------------------------------------------|
-| TransactionID      | string          | TransactionID is the unique identifier of a transaction.       |
-| SourceAccount      | BankAccountInfo | SourceAccount is the account emitting the transaction.         |
-| DestinationAccount | BankAccountInfo | DestinationAccount is the account receiving the transaction.   |
-| Date               | Timestamp       | Date is the date of the transaction.                           |
-| Type               | Type            | Type is the type of transaction.                               |
-| Status             | Status          | Status is the status of the transaction.                       |
-| Amount             | Amount          | Amount holds the amount value and currency of the transaction. |
-| Description        | string          | Description describes the transaction.                         |
-| UserID             | string          | UserID is the identifier of the issuer of the transaction.     |
-| Remarks            | string          | Remarks is an informational note about the transaction.        |
+| Name                   | Type            | Description                                                            |
+|------------------------|-----------------|------------------------------------------------------------------------|
+| TransactionID          | string          | TransactionID is the unique identifier of a transaction.               |
+| SourceAccount          | BankAccountInfo | SourceAccount is the account emitting the transaction.                 |
+| SourceOfflineUser      | OfflineUserInfo | SourceOfflineUser is the contact information for an offline user.      |
+| DestinationAccount     | BankAccountInfo | DestinationAccount is the account receiving the transaction.           |
+| DestinationOfflineUser | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user. |
+| Date                   | Timestamp       | Date is the date of the transaction.                                   |
+| Type                   | Type            | Type is the type of transaction.                                       |
+| Status                 | Status          | Status is the status of the transaction.                               |
+| Amount                 | Amount          | Amount holds the amount value and currency of the transaction.         |
+| Description            | string          | Description describes the transaction.                                 |
+| UserID                 | string          | UserID is the identifier of the issuer of the transaction.             |
+| Remarks                | string          | Remarks is an informational note about the transaction.                |
 
 ###### Amount
 
@@ -342,12 +386,30 @@ curl -X GET \
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
 
+###### OfflineUserInfo
+
+| Name       | Type     | Description                                                |
+|------------|----------|------------------------------------------------------------|
+| UserID     | string   | UserID                                                     |
+| FirstName  | string   | FirstName of the person                                    |
+| MiddleName | string   | MiddleName or middle names (space separated) of the person |
+| LastName   | string   | LastName or last names (space separated) of the person     |
+| MobileNo   | string   | MobileNo contact of the person                             |
+| Location   | Location | Location is the physical location of the interaction.      |
+
 ###### Timestamp
 
 | Name    | Type  | Description |
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
+
+###### Location
+
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -362,11 +424,33 @@ Example:
         "owner_name": "string",
         "major_type": "MajorType"
       },
+      "source_offline_user": {
+        "user_id": "string",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "mobile_no": "string",
+        "location": {
+          "latitude": "double",
+          "longitude": "double"
+        }
+      },
       "destination_account": {
         "account_id": "string",
         "bank_code": "BankCode",
         "owner_name": "string",
         "major_type": "MajorType"
+      },
+      "destination_offline_user": {
+        "user_id": "string",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "mobile_no": "string",
+        "location": {
+          "latitude": "double",
+          "longitude": "double"
+        }
       },
       "date": {
         "seconds": "int64",
@@ -435,18 +519,20 @@ curl -X GET \
 
 ###### Transaction
 
-| Name               | Type            | Description                                                    |
-|--------------------|-----------------|----------------------------------------------------------------|
-| TransactionID      | string          | TransactionID is the unique identifier of a transaction.       |
-| SourceAccount      | BankAccountInfo | SourceAccount is the account emitting the transaction.         |
-| DestinationAccount | BankAccountInfo | DestinationAccount is the account receiving the transaction.   |
-| Date               | Timestamp       | Date is the date of the transaction.                           |
-| Type               | Type            | Type is the type of transaction.                               |
-| Status             | Status          | Status is the status of the transaction.                       |
-| Amount             | Amount          | Amount holds the amount value and currency of the transaction. |
-| Description        | string          | Description describes the transaction.                         |
-| UserID             | string          | UserID is the identifier of the issuer of the transaction.     |
-| Remarks            | string          | Remarks is an informational note about the transaction.        |
+| Name                   | Type            | Description                                                            |
+|------------------------|-----------------|------------------------------------------------------------------------|
+| TransactionID          | string          | TransactionID is the unique identifier of a transaction.               |
+| SourceAccount          | BankAccountInfo | SourceAccount is the account emitting the transaction.                 |
+| SourceOfflineUser      | OfflineUserInfo | SourceOfflineUser is the contact information for an offline user.      |
+| DestinationAccount     | BankAccountInfo | DestinationAccount is the account receiving the transaction.           |
+| DestinationOfflineUser | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user. |
+| Date                   | Timestamp       | Date is the date of the transaction.                                   |
+| Type                   | Type            | Type is the type of transaction.                                       |
+| Status                 | Status          | Status is the status of the transaction.                               |
+| Amount                 | Amount          | Amount holds the amount value and currency of the transaction.         |
+| Description            | string          | Description describes the transaction.                                 |
+| UserID                 | string          | UserID is the identifier of the issuer of the transaction.             |
+| Remarks                | string          | Remarks is an informational note about the transaction.                |
 
 ###### Amount
 
@@ -464,12 +550,30 @@ curl -X GET \
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
 
+###### OfflineUserInfo
+
+| Name       | Type     | Description                                                |
+|------------|----------|------------------------------------------------------------|
+| UserID     | string   | UserID                                                     |
+| FirstName  | string   | FirstName of the person                                    |
+| MiddleName | string   | MiddleName or middle names (space separated) of the person |
+| LastName   | string   | LastName or last names (space separated) of the person     |
+| MobileNo   | string   | MobileNo contact of the person                             |
+| Location   | Location | Location is the physical location of the interaction.      |
+
 ###### Timestamp
 
 | Name    | Type  | Description |
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
+
+###### Location
+
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -484,11 +588,33 @@ Example:
         "owner_name": "string",
         "major_type": "MajorType"
       },
+      "source_offline_user": {
+        "user_id": "string",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "mobile_no": "string",
+        "location": {
+          "latitude": "double",
+          "longitude": "double"
+        }
+      },
       "destination_account": {
         "account_id": "string",
         "bank_code": "BankCode",
         "owner_name": "string",
         "major_type": "MajorType"
+      },
+      "destination_offline_user": {
+        "user_id": "string",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "mobile_no": "string",
+        "location": {
+          "latitude": "double",
+          "longitude": "double"
+        }
       },
       "date": {
         "seconds": "int64",
