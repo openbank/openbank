@@ -31,9 +31,6 @@ msgstr ""
 msgid "Bank code"
 msgstr ""
 
-msgid "BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018"
-msgstr ""
-
 msgid "Birth date"
 msgstr ""
 
@@ -62,6 +59,9 @@ msgid "CountryName holds the country name information."
 msgstr ""
 
 msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "DEPRECIATED: BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018"
 msgstr ""
 
 msgid "FirstName of the person"

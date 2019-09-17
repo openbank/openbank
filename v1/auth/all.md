@@ -1,10 +1,14 @@
+
 # Auth API v1.0.0
 
 In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create an access token
 
@@ -117,3 +121,4 @@ GrantType defines the grant type when requesting a token.
 | UnknownGrantType  |                                                                                                            |
 | AuthorizationCode | GrantType_AuthorizationCode is the grant type used to exchange an authorization code with an access token. |
 | RefreshToken      | GrantType_RefreshToken is the grant type used to refresh an access token.                                  |
+

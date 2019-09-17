@@ -1,10 +1,14 @@
+
 # Statements API v1.0.0
 
 Provides CRUD operations on the statements resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Retrieve a statement
 
@@ -87,3 +91,4 @@ Status define the status of a statment.
 | UnknownStatus |                                                       |
 | Received      | Status_Received is the value for a received statment. |
 | Pending       | Status_Pending is the value for a pending statement.  |
+

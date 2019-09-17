@@ -1,10 +1,14 @@
+
 # Transactions API v1.0.0
 
 Provides create and read operations on the transaction resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Approve a pending transaction
 
@@ -82,7 +86,7 @@ curl -X POST \
 		},
 		"destination_account": {
 			"account_id": "string",
-			"bank_code": "BankCode",
+			"bank_code": "string",
 			"owner_name": "string",
 			"major_type": "MajorType"
 		},
@@ -137,7 +141,7 @@ curl -X POST \
 | Name      | Type      | Description                                          |
 |-----------|-----------|------------------------------------------------------|
 | AccountID | string    | AccountID is the identifier of the account.          |
-| BankCode  | BankCode  | BankCode is code of the bank the account belongs to. |
+| BankCode  | string    | BankCode is code of the bank the account belongs to. |
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
 
@@ -227,7 +231,7 @@ curl -X GET \
 | Name      | Type      | Description                                          |
 |-----------|-----------|------------------------------------------------------|
 | AccountID | string    | AccountID is the identifier of the account.          |
-| BankCode  | BankCode  | BankCode is code of the bank the account belongs to. |
+| BankCode  | string    | BankCode is code of the bank the account belongs to. |
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
 
@@ -270,7 +274,7 @@ Example:
   "transaction_id": "string",
   "source_account": {
     "account_id": "string",
-    "bank_code": "BankCode",
+    "bank_code": "string",
     "owner_name": "string",
     "major_type": "MajorType"
   },
@@ -287,7 +291,7 @@ Example:
   },
   "destination_account": {
     "account_id": "string",
-    "bank_code": "BankCode",
+    "bank_code": "string",
     "owner_name": "string",
     "major_type": "MajorType"
   },
@@ -382,7 +386,7 @@ curl -X GET \
 | Name      | Type      | Description                                          |
 |-----------|-----------|------------------------------------------------------|
 | AccountID | string    | AccountID is the identifier of the account.          |
-| BankCode  | BankCode  | BankCode is code of the bank the account belongs to. |
+| BankCode  | string    | BankCode is code of the bank the account belongs to. |
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
 
@@ -420,7 +424,7 @@ Example:
       "transaction_id": "string",
       "source_account": {
         "account_id": "string",
-        "bank_code": "BankCode",
+        "bank_code": "string",
         "owner_name": "string",
         "major_type": "MajorType"
       },
@@ -437,7 +441,7 @@ Example:
       },
       "destination_account": {
         "account_id": "string",
-        "bank_code": "BankCode",
+        "bank_code": "string",
         "owner_name": "string",
         "major_type": "MajorType"
       },
@@ -546,7 +550,7 @@ curl -X GET \
 | Name      | Type      | Description                                          |
 |-----------|-----------|------------------------------------------------------|
 | AccountID | string    | AccountID is the identifier of the account.          |
-| BankCode  | BankCode  | BankCode is code of the bank the account belongs to. |
+| BankCode  | string    | BankCode is code of the bank the account belongs to. |
 | OwnerName | string    | OwnerName is the name of the owner of the account.   |
 | MajorType | MajorType | MajorType is the type of account.                    |
 
@@ -584,7 +588,7 @@ Example:
       "transaction_id": "string",
       "source_account": {
         "account_id": "string",
-        "bank_code": "BankCode",
+        "bank_code": "string",
         "owner_name": "string",
         "major_type": "MajorType"
       },
@@ -601,7 +605,7 @@ Example:
       },
       "destination_account": {
         "account_id": "string",
-        "bank_code": "BankCode",
+        "bank_code": "string",
         "owner_name": "string",
         "major_type": "MajorType"
       },
@@ -734,3 +738,4 @@ Type defines the type of a transaction.
 | UnknownType |                                                    |
 | Credit      | Type_Credit is the value for a credit transaction. |
 | Debit       | Type_Debit is the value for a debit transaction.   |
+

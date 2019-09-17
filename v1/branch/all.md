@@ -1,10 +1,14 @@
+
 # Branch API v1.0.0
 
 Provides create and read operations on the branch resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create a branch
 
@@ -386,3 +390,4 @@ curl -X PUT \
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
+

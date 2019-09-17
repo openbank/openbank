@@ -1,10 +1,14 @@
+
 # Profile API v1.0.0
 
 Provides CRUD operations on the Profile resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Query profiles
 
@@ -256,3 +260,4 @@ Example:
 | 401    | Returned when the request does not contains the user's credentials.                    |
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 500    | Returned when an unexpected error occured on the server side.                          |
+

@@ -1,10 +1,14 @@
+
 # Accounts API v1.0.0
 
 Provides CRUD operations on the accounts resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Verify account existence
 
@@ -650,3 +654,4 @@ EntityType describes the type of the entity.
 | UnknownEntityType |                                             |
 | Pers              | EntityType_Pers is an individual customer.  |
 | Org               | EntityType_Org is an organisation customer. |
+

@@ -1,10 +1,14 @@
+
 # Card API v1.0.0
 
 Provides create and read operations on the card resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Retrieve card information
 
@@ -171,3 +175,4 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
+

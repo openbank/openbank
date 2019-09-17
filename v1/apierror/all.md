@@ -1,3 +1,4 @@
+
 # Annex
 
 ##  APIError
@@ -19,3 +20,4 @@ ErrorType defines the type of the error.
 |----------------------|---------------------------------------------------------------------------------------|
 | UnknownErrorType     |                                                                                       |
 | AccountAlreadyExists | ErrorType_AccountAlreadyExists is returned when trying to create a duplicate account. |
+
