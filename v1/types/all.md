@@ -65,15 +65,15 @@ Structure of customer profile information
 
 Structure of account information
 
-| Name      | Type     | Description        |
-|-----------|----------|--------------------|
-| BankCode  | BankCode | Bank code          |
-| AccountID | string   | Account identifier |
-| ProfileID | string   | Account identifier |
+| Name      | Type   | Description        |
+|-----------|--------|--------------------|
+| BankCode  | string | Bank code          |
+| AccountID | string | Account identifier |
+| ProfileID | string | Account identifier |
 
 ##  BankCode
 
-BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018
+DEPRECIATED: BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018
 
 | Value                        | Description |
 |------------------------------|-------------|
