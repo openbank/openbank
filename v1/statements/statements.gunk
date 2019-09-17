@@ -91,7 +91,7 @@ type GetStatementRequest struct {
 // GetStatementsRequest is the request envelope to retrieve several statements.
 type GetStatementsRequest struct {
 	// BankCode is a bank code to get related statement.
-	BankCode types.BankCode `pb:"1" json:"bank_code"`
+	BankCode string `pb:"1" json:"bank_code"`
 	// PeriodDays is statement period to be query.
 	PeriodDays int `pb:"2" json:"period_days"`
 	// Status is status of the statement to be query.

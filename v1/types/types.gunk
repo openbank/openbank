@@ -38,7 +38,7 @@ const (
 	Loan
 )
 
-// BankCode indicates which bank to use; these should be a list of banks
+// DEPRECIATED: BankCode indicates which bank to use; these should be a list of banks
 // that we are currently integrated with
 // This is the updated list of banks per January 2018
 type BankCode int
@@ -276,7 +276,7 @@ type OfflineUserInfo struct {
 type ProfileAccountInfo struct {
 
 	// Bank code
-	BankCode BankCode `pb:"1" json:"bank_code"`
+	BankCode string `pb:"1" json:"bank_code"`
 
 	// Account identifier
 	AccountID string `pb:"2" json:"account_id"`
