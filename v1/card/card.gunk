@@ -24,9 +24,6 @@
 //                 "403": openapiv2.Response{
 //                         Description: "Returned when the user does not have permission to access the resource.",
 //                 },
-//                 "404": openapiv2.Response{
-//                         Description: "Returned when the resource is not found.",
-//                 },
 //                 "500": openapiv2.Response{
 //                         Description: "Returned when an unexpected error occured on the server side.",
 //                 },
@@ -90,6 +87,15 @@ type Card struct {
 	AccessStatus types.CardAccessStatus `pb:"9" json:"access_status"`
 }
 
+// CardAttribute hold all detail about card attribute
+type CardAttribute struct {
+	ID     string `pb:"1" json:"id"`
+	CardID string `pb:"2" json:"card_id"`
+	Name   string `pb:"3" json:"name"`
+	Type   string `pb:"4" json:"type"`
+	Value  string `pb:"5" json:"value"`
+}
+
 // GetCardRequest is the request envelope to retrieve card information.
 type GetCardRequest struct {
 	// CardToken is the identifier to get the card information.
@@ -126,8 +132,123 @@ type Result struct {
 	ErrorMessage string `pb:"3" json:"error_message"`
 }
 
+// CreateCardRequest is the request data to create new card
+type CreateCardRequest struct {
+	// Account is the ID of the account associated with the card.
+	AccountID string `pb:"1" json:"account_id"`
+
+	// ContactNumber is the contact number of the card owner.
+	ContactNumber string `pb:"2" json:"contact_number"`
+
+	// FirstName is the first name of card owner.
+	FirstName string `pb:"3" json:"first_name"`
+
+	// LastName is the last name of the card owner.
+	LastName string `pb:"4" json:"last_name"`
+}
+
+// CreateCardResponse is the response for CreateCardRequest
+type CreateCardResponse struct {
+	CardID string `pb:"1" json:"card_id"`
+	Expiry string `pb:"2" json:"expiry"`
+}
+
+type CreateCardAttributeRequest struct {
+	CardID string `pb:"1" json:"card_id"`
+	Name   string `pb:"2" json:"name"`
+	Type   string `pb:"3" json:"type"`
+	Value  string `pb:"4" json:"value"`
+}
+
+type CreateCardAttributeResponse struct {
+	AttributeID string `pb:"1" json:"attribute_id"`
+	CardID      string `pb:"2" json:"card_id"`
+}
+
+type DeleteCardRequest struct {
+	CardID string `pb:"1" json:"card_id"`
+}
+
+type GetUserCardsRequest struct {
+	UserID string `pb:"1" json:"user_id"`
+}
+
+type GetUserCardsResponse struct {
+	Result []Card `pb:"1" json:"result"`
+}
+
 // CardService provides Card operations.
 type CardService interface {
+	// CreateCard create card by information supplied from the user
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/card",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Card"},
+	//         Description: "Create new card",
+	//         Summary:     "Create new card",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Card Created",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/cardCreateCardResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCard(CreateCardRequest) CreateCardResponse
+
+	// CreateCardAttribute create card attribute for the card. Each Card Attribute is linked to its Card by CARD_ID
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/card/attribute",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"CardAttribute"},
+	//         Description: "Create new card attribute",
+	//         Summary:     "Create new card attribute",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Card Attribute Created",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/cardCreateCardAttributeResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCardAttribute(CreateCardAttributeRequest) CreateCardAttributeResponse
+
 	// GetCard retrieves the detail of a card information, selected by its token.
 	//
 	// +gunk http.Match{
@@ -165,19 +286,24 @@ type CardService interface {
 	// }
 	GetCard(GetCardRequest) Card
 
-	// UpdateCardStatus update the card status.
+	// GetUserCards retrieves the detail of a cards information for the specific user, selected by user_id.
 	//
 	// +gunk http.Match{
-	//         Method: "POST",
-	//         Path:   "/v1/card/status",
+	//         Method: "GET",
+	//         Path:   "/v1/card/user/{UserID}",
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Card"},
-	//         Description: "Update Card status.",
-	//         Summary:     "Update card status",
+	//         Description: "Retrieves all available cards for specific user, selected by the user_id",
+	//         Summary:     "Retrieves all available cards",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/cardGetUserCardsResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -195,18 +321,19 @@ type CardService interface {
 	//                 },
 	//         },
 	// }
-	UpdateCardStatus(UpdateCardStatusRequest) Result
+	GetUserCards(GetUserCardsRequest) GetUserCardsResponse
 
-	// UpdateCardAccessStatus update the card access status.
+	// UpdateCardStatus update the card status.
 	//
 	// +gunk http.Match{
-	//         Method: "POST",
-	//         Path:   "/v1/card/access_status",
+	//         Method: "PUT",
+	//         Path:   "/v1/card/status/{CardToken}",
+	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Card"},
-	//         Description: "Update card access status.",
-	//         Summary:     "Update card access status",
+	//         Description: "Update Card status.",
+	//         Summary:     "Update card status",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
@@ -225,7 +352,45 @@ type CardService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCardStatus(UpdateCardStatusRequest) Result
+
+	// UpdateCardAccessStatus update the card access status.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/card/access_status/{CardToken}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Card"},
+	//         Description: "Update card access status.",
+	//         Summary:     "Update card access status.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/cardResult",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -233,4 +398,33 @@ type CardService interface {
 	//         },
 	// }
 	UpdateCardAccessStatus(UpdateCardAccessStatusRequest) Result
+
+	// DeleteCard deletes a card
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/card/{CardID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Card"},
+	//         Description: "Permanently delete a card.",
+	//         Summary:     "Delete a card",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Card successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteCard(DeleteCardRequest)
 }

@@ -19,19 +19,43 @@ msgstr  "Project-Id-Version: %s\n"
 msgid "AccessStatus is the access status of the card."
 msgstr ""
 
+msgid "AccessStatus is the new card access status."
+msgstr ""
+
 msgid "Account is the ID of the account associated with the card."
 msgstr ""
 
 msgid "Base Path"
 msgstr ""
 
+msgid "Body Parameters"
+msgstr ""
+
 msgid "Card API"
+msgstr ""
+
+msgid "Card Attribute Created"
+msgstr ""
+
+msgid "Card Created"
+msgstr ""
+
+msgid "Card successfully deleted."
 msgstr ""
 
 msgid "CardToken is the identifier to get the card information."
 msgstr ""
 
 msgid "ContactNumber is the contact number of the card owner."
+msgstr ""
+
+msgid "Create new card"
+msgstr ""
+
+msgid "Create new card attribute"
+msgstr ""
+
+msgid "Delete a card"
 msgstr ""
 
 msgid "ErrorCode is the code of the error."
@@ -64,6 +88,9 @@ msgstr ""
 msgid "OwnerName is the name of the card owner."
 msgstr ""
 
+msgid "Permanently delete a card."
+msgstr ""
+
 msgid "Provides create and read operations on the card resource."
 msgstr ""
 
@@ -85,6 +112,12 @@ msgstr ""
 msgid "Retrieve card information"
 msgstr ""
 
+msgid "Retrieves all available cards"
+msgstr ""
+
+msgid "Retrieves all available cards for specific user, selected by the user_id"
+msgstr ""
+
 msgid "Retrieves all data from a card, selected by the card_token you supplied."
 msgstr ""
 
@@ -103,6 +136,9 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
+msgid "Status is the new card status."
+msgstr ""
+
 msgid "Status is the status of the card."
 msgstr ""
 
@@ -113,9 +149,6 @@ msgid "USE_YOUR_TOKEN"
 msgstr ""
 
 msgid "Update Card status."
-msgstr ""
-
-msgid "Update card access status"
 msgstr ""
 
 msgid "Update card access status."

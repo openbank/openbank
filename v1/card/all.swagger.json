@@ -15,9 +15,66 @@
     "application/json"
   ],
   "paths": {
-    "/v1/card/access_status": {
+    "/v1/card": {
       "post": {
-        "summary": "Update card access status",
+        "summary": "Create new card",
+        "description": "Create new card",
+        "operationId": "CreateCard",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cardCreateCardResponse"
+            }
+          },
+          "201": {
+            "description": "Card Created",
+            "schema": {
+              "$ref": "#/definitions/cardCreateCardResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cardCreateCardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Card"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/card/access_status/{CardToken}": {
+      "put": {
+        "summary": "Update card access status.",
         "description": "Update card access status.",
         "operationId": "UpdateCardAccessStatus",
         "responses": {
@@ -48,27 +105,103 @@
             "schema": {}
           }
         },
+        "parameters": [
+          {
+            "name": "CardToken",
+            "description": "CardToken is the identifier to get the card information.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cardUpdateCardAccessStatusRequest"
+            }
+          }
+        ],
         "tags": [
           "Card"
         ],
         "security": [
           {
             "OAuth2": [
-              "read"
+              "write"
             ]
           }
         ]
       }
     },
-    "/v1/card/status": {
+    "/v1/card/attribute": {
       "post": {
+        "summary": "Create new card attribute",
+        "description": "Create new card attribute",
+        "operationId": "CreateCardAttribute",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/cardCreateCardAttributeResponse"
+            }
+          },
+          "201": {
+            "description": "Card Attribute Created",
+            "schema": {
+              "$ref": "#/definitions/cardCreateCardAttributeResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cardCreateCardAttributeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CardAttribute"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/card/status/{CardToken}": {
+      "put": {
         "summary": "Update card status",
         "description": "Update Card status.",
         "operationId": "UpdateCardStatus",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/cardResult"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -91,6 +224,76 @@
             "schema": {}
           }
         },
+        "parameters": [
+          {
+            "name": "CardToken",
+            "description": "CardToken is the identifier to get the card information.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/cardUpdateCardStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Card"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/card/user/{UserID}": {
+      "get": {
+        "summary": "Retrieves all available cards",
+        "description": "Retrieves all available cards for specific user, selected by the user_id",
+        "operationId": "GetUserCards",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/cardGetUserCardsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "UserID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "tags": [
           "Card"
         ],
@@ -98,6 +301,59 @@
           {
             "OAuth2": [
               "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/card/{CardID}": {
+      "delete": {
+        "summary": "Delete a card",
+        "description": "Permanently delete a card.",
+        "operationId": "DeleteCard",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Card successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CardID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Card"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
             ]
           }
         ]
@@ -202,6 +458,79 @@
       },
       "description": "Card holds all details about a card."
     },
+    "cardCreateCardAttributeRequest": {
+      "type": "object",
+      "properties": {
+        "CardID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "cardCreateCardAttributeResponse": {
+      "type": "object",
+      "properties": {
+        "AttributeID": {
+          "type": "string"
+        },
+        "CardID": {
+          "type": "string"
+        }
+      }
+    },
+    "cardCreateCardRequest": {
+      "type": "object",
+      "properties": {
+        "AccountID": {
+          "type": "string",
+          "description": "Account is the ID of the account associated with the card."
+        },
+        "ContactNumber": {
+          "type": "string",
+          "description": "ContactNumber is the contact number of the card owner."
+        },
+        "FirstName": {
+          "type": "string",
+          "description": "FirstName is the first name of card owner."
+        },
+        "LastName": {
+          "type": "string",
+          "description": "LastName is the last name of the card owner."
+        }
+      },
+      "title": "CreateCardRequest is the request data to create new card"
+    },
+    "cardCreateCardResponse": {
+      "type": "object",
+      "properties": {
+        "CardID": {
+          "type": "string"
+        },
+        "Expiry": {
+          "type": "string"
+        }
+      },
+      "title": "CreateCardResponse is the response for CreateCardRequest"
+    },
+    "cardGetUserCardsResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cardCard"
+          }
+        }
+      }
+    },
     "cardResult": {
       "type": "object",
       "properties": {
@@ -220,6 +549,34 @@
         }
       },
       "description": "Result is result of the update operation."
+    },
+    "cardUpdateCardAccessStatusRequest": {
+      "type": "object",
+      "properties": {
+        "CardToken": {
+          "type": "string",
+          "description": "CardToken is the identifier to get the card information."
+        },
+        "AccessStatus": {
+          "$ref": "#/definitions/typesCardAccessStatus",
+          "description": "AccessStatus is the new card access status."
+        }
+      },
+      "description": "UpdateCardAccessStatusRequest is the request envelope to update card access status."
+    },
+    "cardUpdateCardStatusRequest": {
+      "type": "object",
+      "properties": {
+        "CardToken": {
+          "type": "string",
+          "description": "CardToken is the identifier to get the card information."
+        },
+        "Status": {
+          "$ref": "#/definitions/typesCardStatus",
+          "description": "Status is the new card status."
+        }
+      },
+      "description": "UpdateCardStatusRequest is the request envelope to update card status."
     },
     "typesCardAccessStatus": {
       "type": "string",
