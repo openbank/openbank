@@ -1,0 +1,516 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Bank API",
+    "description": "Provides create and read operations on the bank resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks": {
+      "get": {
+        "summary": "Retrieve all available banks",
+        "description": "Retrieve information regarding all available banks.",
+        "operationId": "GetBanks",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/bankGetBanksResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Bank"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a bank",
+        "description": "Creates a new bank and returns its id.",
+        "operationId": "CreateBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/bankBank"
+            }
+          },
+          "201": {
+            "description": "Bank created successfully.",
+            "schema": {
+              "$ref": "#/definitions/bankBank"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/bankCreateBankRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Bank"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a bank",
+        "description": "Updates a bank's information",
+        "operationId": "UpdateBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/bankBank"
+            }
+          },
+          "204": {
+            "description": "Bank successfully updated.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/bankUpdateBankRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Bank"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/transaction-types": {
+      "post": {
+        "summary": "Create a new transaction type at a bank",
+        "description": "Creates a new transaction type at a bank and returns its transaction type response.",
+        "operationId": "CreateTranscationTypeAtBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/bankTransactionType"
+            }
+          },
+          "201": {
+            "description": "TransactionType created successfully.",
+            "schema": {
+              "$ref": "#/definitions/bankTransactionType"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/bankCreateTransactionTypeAtBankRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Bank"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{ID}": {
+      "get": {
+        "summary": "Retrieve bank information",
+        "description": "Retrieve information about the bank specified by the ID",
+        "operationId": "GetBank",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/bankBank"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ID",
+            "description": "ID is the bank unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "FullName",
+            "description": "FullName is the full name of the bank.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ShortName",
+            "description": "ShortName is the short name of the bank.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "WebsiteURL",
+            "description": "WebsiteURL is the url for the bank's website.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Bank"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a bank",
+        "description": "Permanently delete a bank.",
+        "operationId": "DeleteBank",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Bank successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ID",
+            "description": "ID is the bank unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Bank"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "bankBank": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "ID is an identifier for the bank."
+        },
+        "FullName": {
+          "type": "string",
+          "description": "FullName is the full name of the bank."
+        },
+        "ShortName": {
+          "type": "string",
+          "description": "ShortName is the short name of the bank."
+        },
+        "LogoURL": {
+          "type": "string",
+          "description": "LogoURL is the url for the bank's logo."
+        },
+        "WebsiteURL": {
+          "type": "string",
+          "description": "WebsiteURL is the url for the bank's website."
+        },
+        "SwiftBIC": {
+          "type": "string",
+          "description": "SwiftBIC is the SWIFT bank identifier code."
+        },
+        "NationalIdentifier": {
+          "type": "string",
+          "description": "NationalIdentifier is the national identifier code."
+        },
+        "BankRouting": {
+          "$ref": "#/definitions/bankBankRouting",
+          "description": "BankRouting is the routing information for the bank."
+        }
+      },
+      "description": "Bank holds all details about a bank."
+    },
+    "bankBankRouting": {
+      "type": "object",
+      "properties": {
+        "Scheme": {
+          "type": "string",
+          "description": "Scheme is the routing scheme."
+        },
+        "Address": {
+          "type": "string",
+          "description": "Address is the routing address."
+        }
+      },
+      "description": "BankRouting holds all the details about a bank routing."
+    },
+    "bankCreateBankRequest": {
+      "type": "object",
+      "properties": {
+        "Bank": {
+          "$ref": "#/definitions/bankBank",
+          "description": "Bank is the related information about a bank."
+        }
+      },
+      "description": "CreateBankRequest is a request envelope to create a bank."
+    },
+    "bankCreateTransactionTypeAtBankRequest": {
+      "type": "object",
+      "properties": {
+        "TransactionType": {
+          "$ref": "#/definitions/bankTransactionType",
+          "description": "TransactionType is the related information about a transaction type at a bank."
+        }
+      },
+      "description": "CreateTransactionTypeAtBankRequest is the request envelope to create a new\ntransaction type."
+    },
+    "bankGetBanksResponse": {
+      "type": "object",
+      "properties": {
+        "Banks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bankBank"
+          },
+          "description": "Banks is the list of the banks."
+        }
+      },
+      "title": "GetBanksResponse is the response for GetBanks"
+    },
+    "bankTransactionType": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "description": "ID is an identifier for the transaction type."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is an identifier for the bank for the particular transaction type."
+        },
+        "ShortCode": {
+          "type": "string",
+          "description": "ShortCode is the short code of the transaction type."
+        },
+        "Summary": {
+          "type": "string",
+          "description": "Summary is the summary of the trasnaction type."
+        },
+        "Description": {
+          "type": "string",
+          "description": "Description is the description of the transaction type."
+        },
+        "Currency": {
+          "type": "string",
+          "description": "Currency is the currency of the transaction type."
+        },
+        "Amount": {
+          "type": "string",
+          "description": "Amount is the amount of the transaction type."
+        }
+      },
+      "description": "TransactionType is holds the information about transaction type at a bank."
+    },
+    "bankUpdateBankRequest": {
+      "type": "object",
+      "properties": {
+        "Bank": {
+          "$ref": "#/definitions/bankBank",
+          "description": "Bank is the related information about a bank."
+        }
+      },
+      "description": "UpdateBankRequest is the request envelope to update a bank."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

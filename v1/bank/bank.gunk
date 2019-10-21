@@ -1,0 +1,372 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Bank API",
+//                 Description: "Provides create and read operations on the bank resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package bank
+
+import (
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// BankRouting holds all the details about a bank routing.
+type BankRouting struct {
+	// Scheme is the routing scheme.
+	Scheme string `pb:"1" json:"scheme"`
+
+	// Address is the routing address.
+	Address string `pb:"2" json:"address"`
+}
+
+// Bank holds all details about a bank.
+type Bank struct {
+	// ID is an identifier for the bank.
+	ID string `pb:"1" json:"id"`
+
+	// FullName is the full name of the bank.
+	FullName string `pb:"2" json:"full_name"`
+
+	// ShortName is the short name of the bank.
+	ShortName string `pb:"3" json:"short_name"`
+
+	// LogoURL is the url for the bank's logo.
+	LogoURL string `pb:"4" json:"logo_url"`
+
+	// WebsiteURL is the url for the bank's website.
+	WebsiteURL string `pb:"5" json:"website_url"`
+
+	// SwiftBIC is the SWIFT bank identifier code.
+	SwiftBIC string `pb:"6" json:"swift_bic"`
+
+	// NationalIdentifier is the national identifier code.
+	NationalIdentifier string `pb:"7" json:"national_identifier"`
+
+	// BankRouting is the routing information for the bank.
+	BankRouting BankRouting `pb:"8" json:"bank_routing"`
+}
+
+// TransactionType is holds the information about transaction type at a bank.
+type TransactionType struct {
+	// ID is an identifier for the transaction type.
+	ID string `pb:"1" json:"id"`
+
+	// BankID is an identifier for the bank for the particular transaction type.
+	BankID string `pb:"2" json:"bankId"`
+
+	// ShortCode is the short code of the transaction type.
+	ShortCode string `pb:"3" json:"short_code"`
+
+	// Summary is the summary of the trasnaction type.
+	Summary string `pb:"4" json:"summary"`
+
+	// Description is the description of the transaction type.
+	Description string `pb:"5" json:"description"`
+
+	// Currency is the currency of the transaction type.
+	Currency string `pb:"6" json:"currency"`
+
+	// Amount is the amount of the transaction type.
+	Amount string `pb:"7" json:"amount"`
+}
+
+// CreateBankRequest is a request envelope to create a bank.
+type CreateBankRequest struct {
+	// Bank is the related information about a bank.
+	Bank Bank `pb:"1" json:"bank"`
+}
+
+// UpdateBankRequest is the request envelope to update a bank.
+type UpdateBankRequest struct {
+	// Bank is the related information about a bank.
+	Bank Bank `pb:"1" json:"bank"`
+}
+
+// DeleteBankRequest is the request envelope to delete a bank.
+type DeleteBankRequest struct {
+	// ID is the bank unique identifier.
+	ID string `pb:"1" json:"id"`
+}
+
+// GetBankRequest is the request envelope to get the bank data.
+type GetBankRequest struct {
+	// ID is the bank unique identifier.
+	ID string `pb:"1" json:"id"`
+
+	// FullName is the full name of the bank.
+	FullName string `pb:"2" json:"full_name"`
+
+	// ShortName is the short name of the bank.
+	ShortName string `pb:"3" json:"short_name"`
+
+	// WebsiteURL is the url for the bank's website.
+	WebsiteURL string `pb:"4" json:"website_url"`
+}
+
+// GetBanksResponse is the response for GetBanks
+type GetBanksResponse struct {
+	// Banks is the list of the banks.
+	Banks []Bank `pb:"1" json:"banks"`
+}
+
+// CreateTransactionTypeAtBankRequest is the request envelope to create a new
+// transaction type.
+type CreateTransactionTypeAtBankRequest struct {
+	// TransactionType is the related information about a transaction type at a bank.
+	TransactionType TransactionType `pb:"1" json:"transaction_type"`
+}
+
+// BankService provides bank-related operations.
+type BankService interface {
+	// GetBank retrieves the details of a specific bank information, selected by its ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Bank"},
+	//         Description: "Retrieve information about the bank specified by the ID",
+	//         Summary:     "Retrieve bank information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/bankBank",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetBank(GetBankRequest) Bank
+
+	// GetBanks get all the available bank.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Bank"},
+	//         Description: "Retrieve information regarding all available banks.",
+	//         Summary:     "Retrieve all available banks",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/bankGetBanksResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetBanks() GetBanksResponse
+
+	// CreateBank creates a new bank and returns its bank response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Bank"},
+	//         Description: "Creates a new bank and returns its id.",
+	//         Summary:     "Create a bank",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Bank created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/bankBank",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateBank(CreateBankRequest) Bank
+
+	// UpdateBank updates a bank.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Bank"},
+	//         Description: "Updates a bank's information",
+	//         Summary:     "Update a bank",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Bank successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateBank(UpdateBankRequest) Bank
+
+	// DeleteBank deletes a bank.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Bank"},
+	//         Description: "Permanently delete a bank.",
+	//         Summary:     "Delete a bank",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Bank successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteBank(DeleteBankRequest)
+
+	// CreateTransactionTypeAtBank creates a new transaction type at a bank and
+	// returns its transaction type response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/transaction-types",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Bank"},
+	//         Description: "Creates a new transaction type at a bank and returns its transaction type response.",
+	//         Summary:     "Create a new transaction type at a bank",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "TransactionType created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/bankTransactionType",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateTranscationTypeAtBank(CreateTransactionTypeAtBankRequest) TransactionType
+}
