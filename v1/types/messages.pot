@@ -34,6 +34,9 @@ msgstr ""
 msgid "Birth date"
 msgstr ""
 
+msgid "Branch Identifier"
+msgstr ""
+
 msgid "CardAccessStatus_Often indicates a card is used often."
 msgstr ""
 
@@ -58,16 +61,40 @@ msgstr ""
 msgid "CountryName holds the country name information."
 msgstr ""
 
+msgid "Credit Limit"
+msgstr ""
+
+msgid "Credit rating"
+msgstr ""
+
 msgid "Cur is the currency of the amount."
 msgstr ""
 
+msgid "Current employment status"
+msgstr ""
+
 msgid "DEPRECIATED: BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018"
+msgstr ""
+
+msgid "Date of birth of dependents"
+msgstr ""
+
+msgid "Date when the face image was added/updated"
+msgstr ""
+
+msgid "Face image of the customer"
 msgstr ""
 
 msgid "FirstName of the person"
 msgstr ""
 
 msgid "Full name"
+msgstr ""
+
+msgid "Highest education such as bachelor, masters etc"
+msgstr ""
+
+msgid "Know Your Customer status"
 msgstr ""
 
 msgid "Language code used"
@@ -121,7 +148,13 @@ msgstr ""
 msgid "MobileNo contact of the person"
 msgstr ""
 
+msgid "Name suffix"
+msgstr ""
+
 msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Number of dependents"
 msgstr ""
 
 msgid "Permanent address"
@@ -133,6 +166,9 @@ msgstr ""
 msgid "ProfileID is the unique identifier of a profile."
 msgstr ""
 
+msgid "RelationshipStatus. Ex: Single | Married"
+msgstr ""
+
 msgid "State holds the state information."
 msgstr ""
 
@@ -140,6 +176,9 @@ msgid "Street holds the street information."
 msgstr ""
 
 msgid "Structure of account information"
+msgstr ""
+
+msgid "Structure of credit rating information"
 msgstr ""
 
 msgid "Structure of customer profile information"
@@ -170,4 +209,7 @@ msgid "User profile photo url"
 msgstr ""
 
 msgid "UserID"
+msgstr ""
+
+msgid "profile number"
 msgstr ""
