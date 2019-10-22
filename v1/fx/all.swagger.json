@@ -1,0 +1,263 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "FX API",
+    "description": "Provides create and read operations on the foreign exchange resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/fx": {
+      "post": {
+        "summary": "Create a foreign exchange quote",
+        "description": "Creates a new foreign exchange quote and returns it.",
+        "operationId": "CreateFX",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/fxFX"
+            }
+          },
+          "201": {
+            "description": "Foreign Exchange created successfully.",
+            "schema": {
+              "$ref": "#/definitions/fxFX"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/fxCreateFXRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FX"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a foreign exchange quote",
+        "description": "Updates a foreign exchange quote",
+        "operationId": "UpdateFX",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Foreign Exchange successfully updated.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/fxUpdateFXRequest"
+            }
+          }
+        ],
+        "tags": [
+          "FX"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/fx/{FromCurrencyCode}/{ToCurrencyCode}": {
+      "get": {
+        "summary": "Retrieve exchange rate between two currencies",
+        "description": "Retrieve the exchange rate from a currency to another",
+        "operationId": "GetCurrentFXRate",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/fxFX"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "FromCurrencyCode",
+            "description": "FromCurrencyCode is the currency to transfer from.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ToCurrencyCode",
+            "description": "ToCurrencyCode is the currency that we are transferring to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "FX"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "fxCreateFXRequest": {
+      "type": "object",
+      "properties": {
+        "FX": {
+          "$ref": "#/definitions/fxFX",
+          "description": "FX is the foreign exchange information to create."
+        }
+      },
+      "description": "CreateFXRequest is a request envelope to create a foreign exchange quote."
+    },
+    "fxFX": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string",
+          "description": "BankID is an identifier for the bank on this fx transaction."
+        },
+        "FromCurrencyCode": {
+          "type": "string",
+          "description": "FromCurrencyCode is the currency to transfer from."
+        },
+        "ToCurrencyCode": {
+          "type": "string",
+          "description": "ToCurrencyCode is the currency that we are transferring to."
+        },
+        "Rate": {
+          "type": "string",
+          "description": "Rate is the exchange rate of the foreign exchange."
+        },
+        "InverseRate": {
+          "type": "string",
+          "description": "InverseRate is the inverse of the exchange rate of the foreign exchange."
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "description": "EffectiveDate is the effective date of the foreign exchange quote."
+        }
+      },
+      "description": "FX holds all the details about a foreign exchange object."
+    },
+    "fxUpdateFXRequest": {
+      "type": "object",
+      "properties": {
+        "FX": {
+          "$ref": "#/definitions/fxFX",
+          "description": "FX is the foreign exchange information to update."
+        }
+      },
+      "description": "UpdateFXRequest is a request envelope to update a foreign exchange quote."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
