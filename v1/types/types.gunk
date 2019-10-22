@@ -1,5 +1,9 @@
 package types
 
+import (
+	"time"
+)
+
 // Amount defines a transaction amount.
 type Amount struct {
 	// Cur is the currency of the amount.
@@ -285,6 +289,12 @@ type ProfileAccountInfo struct {
 	ProfileID string `pb:"3" json:"profile_id"`
 }
 
+// Structure of credit rating information
+type CreditRating struct {
+	Rating string `pb:"1" json:"rating"`
+	Source string `pb:"2" json:"source"`
+}
+
 // Structure of customer profile information
 type Profile struct {
 
@@ -326,4 +336,43 @@ type Profile struct {
 
 	// Contact address
 	ContactAddress Address `pb:"13" json:"contact_address"`
+
+	// profile number
+	ProfileNUmber string `pb:"14" json:"profile_number"`
+
+	// Face image of the customer
+	FaceImageUrl string `pb:"15" json:"face_image_url"`
+
+	// Date when the face image was added/updated
+	FaceImageDate string `pb:"16" json:"face_image_date"`
+
+	// RelationshipStatus. Ex: Single | Married
+	RelationshipStatus string `pb:"17" json:"relationship_status"`
+
+	// Number of dependents
+	Dependents int `pb:"18" json:"dependents"`
+
+	// Date of birth of dependents
+	DobOfDependents []time.Time `pb:"19" json:"dob_of_dependents"`
+
+	// Credit rating
+	CreditRating CreditRating `pb:"20" json:"credit_rating"`
+
+	// Credit Limit
+	CreditLimit Amount `pb:"21" json:"credit_limit"`
+
+	// Highest education such as bachelor, masters etc
+	HighestEducationAttained string `pb:"22" json:"highest_education_attained"`
+
+	// Current employment status
+	EmploymentStatus string `pb:"23" json:"employment_status"`
+
+	// Know Your Customer status
+	KycStatus bool `pb:"24" json:"kyc_status"`
+
+	// Branch Identifier
+	BranchID string `pb:"25" json:"branchId"`
+
+	// Name suffix
+	NameSuffix string `pb:"26" json:"nameSuffix"`
 }
