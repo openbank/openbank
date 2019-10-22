@@ -1,0 +1,292 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Account Application API",
+//                 Description: "Provides create and read operations on the account application resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package accountapplications
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// Entity type defines the type of account application
+type AccountApplicationStatus int
+
+const (
+	UnknownApplicationStatus AccountApplicationStatus = iota
+
+	// Account application is created
+	Requested
+
+	// Account application is accepted
+	Accepted
+)
+
+// Structure of user information
+type User struct {
+
+	// User identifier used to login
+	UserID string `pb:"1" json:"user_id"`
+
+	// Email of the user
+	Email string `pb:"2" json:"email"`
+
+	// Display name of the user
+	Username string `pb:"3" json:"username"`
+}
+
+// Structure of account application
+type AccountApplication struct {
+	ID                string                   `pb:"1" json:"id"`
+	ProductCode       string                   `pb:"2" json:"product_code"`
+	UserID            string                   `pb:"3" json:"user_id"`
+	CustomerProfileID string                   `pb:"4" json:"customer_profile_id"`
+	DateOfApplication time.Time                `pb:"5" json:"date_of_application"`
+	Status            AccountApplicationStatus `pb:"6" json:"status"`
+}
+
+// CreateAccountApplicationRequest is a request mesasge to create account application
+type CreateAccountApplicationRequest struct {
+	ProductCode string `pb:"1" json:"product_code"`
+	UserID      string `pb:"2" json:"user_id"`
+	ProfileID   string `pb:"3" json:"profile_id"`
+}
+
+// CreateAccountApplicationResponse is a response message for create account application
+type CreateAccountApplicationResponse struct {
+	ID                string                   `pb:"1" json:"id"`
+	ProductCode       string                   `pb:"2" json:"product_code"`
+	User              User                     `pb:"3" json:"user"`
+	CustomerProfile   types.Profile            `pb:"4" json:"customer_profile"`
+	DateOfApplication time.Time                `pb:"5" json:"date_of_application"`
+	Status            AccountApplicationStatus `pb:"6" json:"status"`
+}
+
+// Structure of credit rating information
+type CreditRating struct {
+
+	// Rating about the applicant credit history
+	Rating string `pb:"1" json:"rating"`
+
+	// The company who provided the credit history
+	Source string `pb:"2" json:"source"`
+}
+
+// GetAccountApplicationpRequest is the request envelope to get an account application by its identifier.
+type GetAccountApplicationRequest struct {
+	ID string `pb:"1" json:"id"`
+}
+
+// GetAccountApplicationsRequest is the request envelope to get a list of filtered account applications.
+type GetAccountApplicationsRequest struct {
+	// NextStartingIndex is a cursor for pagination.
+	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+}
+
+// GetAccountApplicationsResponse wraps the list of account applications.
+type GetAccountApplicationsResponse struct {
+	// Result is a list containing up to 20 Accounts.
+	Result []AccountApplication `pb:"1" json:"result"`
+
+	// HasMore indicates if there are more accounts available.
+	HasMore bool `pb:"2" json:"has_more"`
+}
+
+// UpdateAccountApplicationStatusRequest is the request envelope to update an account application status.
+type UpdateAccountApplicationStatusRequest struct {
+	// ID is the unique identifier of the account application to update.
+	ID string `pb:"1" json:"id"`
+
+	// Status of the account application
+	Status AccountApplicationStatus `pb:"2" json:"status"`
+}
+
+// AccountApplicationService provides Account application related operations.
+type AccountApplicationService interface {
+	// CreateAccountApplication creates a new account application
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/account-applications",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"AccountApplication"},
+	//         Description: "Creates a new account application",
+	//         Summary:     "Create an account application",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account application created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountapplicationsCreateAccountApplicationResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateAccountApplication(CreateAccountApplicationRequest) AccountApplication
+
+	// GetAccountApplication retrieves the details of an account application, selected by its id.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/account-applications/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Retrieves all data from an account application selected by the supplied account_application_id.",
+	//         Summary:     "Retrieve an account application",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountapplicationsAccountApplication",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAccountApplication(GetAccountApplicationRequest) AccountApplication
+
+	// GetAccountApplications returns a list containing up to 20 accounts.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/account-applications",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"AccountApplication"},
+	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+	//         Summary:     "List all accounts",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountapplicationsGetAccountApplicationsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAccountApplications(GetAccountApplicationsRequest) GetAccountApplicationsResponse
+
+	// UpdateAccountApplication status updates the status.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/account-applications/{ID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"AccountApplication"},
+	//         Description: "Updates an account application with the given status",
+	//         Summary:     "Update an account application",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Account Application status updated successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateAccountApplicationStatus(UpdateAccountApplicationStatusRequest)
+}
