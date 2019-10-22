@@ -1,0 +1,233 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Account Application API"
+msgstr ""
+
+msgid "Account Application status updated successfully."
+msgstr ""
+
+msgid "Account application created successfully."
+msgstr ""
+
+msgid "Account application is accepted"
+msgstr ""
+
+msgid "Account application is created"
+msgstr ""
+
+msgid "Annex"
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Birth date"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Branch Identifier"
+msgstr ""
+
+msgid "CityName holds the city name information."
+msgstr ""
+
+msgid "Contact address"
+msgstr ""
+
+msgid "CountryName holds the country name information."
+msgstr ""
+
+msgid "Create an account application"
+msgstr ""
+
+msgid "Creates a new account application"
+msgstr ""
+
+msgid "Credit Limit"
+msgstr ""
+
+msgid "Credit rating"
+msgstr ""
+
+msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Current employment status"
+msgstr ""
+
+msgid "Date of birth of dependents"
+msgstr ""
+
+msgid "Date when the face image was added/updated"
+msgstr ""
+
+msgid "Display name of the user"
+msgstr ""
+
+msgid "Email of the user"
+msgstr ""
+
+msgid "Entity type defines the type of account application"
+msgstr ""
+
+msgid "Face image of the customer"
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "HasMore indicates if there are more accounts available."
+msgstr ""
+
+msgid "Highest education such as bachelor, masters etc"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "ID is the unique identifier of the account application to update."
+msgstr ""
+
+msgid "Know Your Customer status"
+msgstr ""
+
+msgid "Language code used"
+msgstr ""
+
+msgid "List all accounts"
+msgstr ""
+
+msgid "Mobile number"
+msgstr ""
+
+msgid "Name suffix"
+msgstr ""
+
+msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Number of dependents"
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "Permanent address"
+msgstr ""
+
+msgid "PostalCode holds the postal code information."
+msgstr ""
+
+msgid "ProfileID is the unique identifier of a profile."
+msgstr ""
+
+msgid "Provides create and read operations on the account application resource."
+msgstr ""
+
+msgid "Query Parameters"
+msgstr ""
+
+msgid "RelationshipStatus. Ex: Single | Married"
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Result is a list containing up to 20 Accounts."
+msgstr ""
+
+msgid "Retrieve an account application"
+msgstr ""
+
+msgid "Retrieves all data from an account application selected by the supplied account_application_id."
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination."
+msgstr ""
+
+msgid "State holds the state information."
+msgstr ""
+
+msgid "Status of the account application"
+msgstr ""
+
+msgid "Street holds the street information."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "True if email is verified, otherwise False"
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "Update an account application"
+msgstr ""
+
+msgid "Updates an account application with the given status"
+msgstr ""
+
+msgid "User country code (VN, US, ID, SG, ...)."
+msgstr ""
+
+msgid "User email address"
+msgstr ""
+
+msgid "User identifier used to login"
+msgstr ""
+
+msgid "User name"
+msgstr ""
+
+msgid "User profile photo url"
+msgstr ""
+
+msgid "profile number"
+msgstr ""
