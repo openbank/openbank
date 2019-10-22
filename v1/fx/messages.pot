@@ -1,0 +1,119 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "BankID is an identifier for the bank on this fx transaction."
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Create a foreign exchange quote"
+msgstr ""
+
+msgid "Creates a new foreign exchange quote and returns it."
+msgstr ""
+
+msgid "EffectiveDate is the effective date of the foreign exchange quote."
+msgstr ""
+
+msgid "FX API"
+msgstr ""
+
+msgid "FX is the foreign exchange information to create."
+msgstr ""
+
+msgid "FX is the foreign exchange information to update."
+msgstr ""
+
+msgid "Foreign Exchange created successfully."
+msgstr ""
+
+msgid "Foreign Exchange successfully updated."
+msgstr ""
+
+msgid "FromCurrencyCode is the currency to transfer from."
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "InverseRate is the inverse of the exchange rate of the foreign exchange."
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "Provides create and read operations on the foreign exchange resource."
+msgstr ""
+
+msgid "Query Parameters"
+msgstr ""
+
+msgid "Rate is the exchange rate of the foreign exchange."
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Retrieve exchange rate between two currencies"
+msgstr ""
+
+msgid "Retrieve the exchange rate from a currency to another"
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "ToCurrencyCode is the currency that we are transferring to."
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "Update a foreign exchange quote"
+msgstr ""
+
+msgid "Updates a foreign exchange quote"
+msgstr ""
