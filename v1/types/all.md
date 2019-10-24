@@ -1,12 +1,5 @@
 # Annex
 
-##  Timestamp
-
-| Name    | Type  | Description |
-|---------|-------|-------------|
-| seconds | int64 |             |
-| nanos   | int32 |             |
-
 ##  Address
 
 Address hold all details about Address
@@ -27,15 +20,6 @@ Amount defines a transaction amount.
 |------|--------|------------------------------------|
 | Cur  | string | Cur is the currency of the amount. |
 | Num  | string | Num is the value of the amount.    |
-
-##  CreditRating
-
-Structure of credit rating information
-
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
 
 ##  Location
 
@@ -61,34 +45,21 @@ Location is An object representing a latitude/longitude pair. This is expressed 
 
 Structure of customer profile information
 
-| Name                     | Type         | Description                                      |
-|--------------------------|--------------|--------------------------------------------------|
-| ProfileID                | string       | ProfileID is the unique identifier of a profile. |
-| FullName                 | string       | Full name                                        |
-| UserName                 | string       | User name                                        |
-| BirthDate                | string       | Birth date                                       |
-| Language                 | string       | Language code used                               |
-| Country                  | string       | User country code (VN, US, ID, SG, ...).         |
-| Email                    | string       | User email address                               |
-| EmailVefified            | bool         | True if email is verified, otherwise False       |
-| Mobile                   | string       | Mobile number                                    |
-| Photo                    | string       | User profile photo url                           |
-| Title                    | string       | Title                                            |
-| PermanentAddress         | Address      | Permanent address                                |
-| ContactAddress           | Address      | Contact address                                  |
-| ProfileNUmber            | string       | profile number                                   |
-| FaceImageUrl             | string       | Face image of the customer                       |
-| FaceImageDate            | string       | Date when the face image was added/updated       |
-| RelationshipStatus       | string       | RelationshipStatus. Ex: Single                   |
-| Dependents               | int32        | Number of dependents                             |
-| DobOfDependents          | []Timestamp  | Date of birth of dependents                      |
-| CreditRating             | CreditRating | Credit rating                                    |
-| CreditLimit              | Amount       | Credit Limit                                     |
-| HighestEducationAttained | string       | Highest education such as bachelor, masters etc  |
-| EmploymentStatus         | string       | Current employment status                        |
-| KycStatus                | bool         | Know Your Customer status                        |
-| BranchID                 | string       | Branch Identifier                                |
-| NameSuffix               | string       | Name suffix                                      |
+| Name             | Type    | Description                                      |
+|------------------|---------|--------------------------------------------------|
+| ProfileID        | string  | ProfileID is the unique identifier of a profile. |
+| FullName         | string  | Full name                                        |
+| UserName         | string  | User name                                        |
+| BirthDate        | string  | Birth date                                       |
+| Language         | string  | Language code used                               |
+| Country          | string  | User country code (VN, US, ID, SG, ...).         |
+| Email            | string  | User email address                               |
+| EmailVefified    | bool    | True if email is verified, otherwise False       |
+| Mobile           | string  | Mobile number                                    |
+| Photo            | string  | User profile photo url                           |
+| Title            | string  | Title                                            |
+| PermanentAddress | Address | Permanent address                                |
+| ContactAddress   | Address | Contact address                                  |
 
 ##  ProfileAccountInfo
 
