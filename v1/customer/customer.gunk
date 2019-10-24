@@ -1,0 +1,151 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Customer API",
+//                 Description: "Provides create and read operations on the customer resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package customer
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type FaceImage struct {
+	URL  string    `pb:"1" json:"url"`
+	Date time.Time `pb:"2" json:"date"`
+}
+
+type CreditRating struct {
+	Rating string `pb:"1" json:"rating"`
+	Source string `pb:"2" json:"source"`
+}
+
+type Customer struct {
+	ID                       string       `pb:"1" json:"id"`
+	BankID                   string       `pb:"2" json:"bank_id"`
+	CustomerNumber           string       `pb:"3" json:"customer_number"`
+	LegalName                string       `pb:"4" json:"legal_name"`
+	PhoneNumber              string       `pb:"5" json:"phone_number"`
+	Email                    string       `pb:"6" json:"email"`
+	FaceImage                FaceImage    `pb:"7" json:"face_image"`
+	DateOfBirth              time.Time    `pb:"8" json:"date_of_birth"`
+	RelationshipStatus       string       `pb:"9" json:"relationship_status"`
+	CreditRating             CreditRating `pb:"10" json:"credit_rating"`
+	CreditLimit              types.Amount `pb:"11" json:"credit_limit"`
+	HighestEducationAttained string       `pb:"12" json:"highest_educational_attained"`
+	EmploymentStatus         string       `pb:"13" json:"employment_status"`
+	KYCStatus                bool         `pb:"14" json:"kyc_status"`
+	LastOKDate               time.Time    `pb:"15" json:"last_ok_data"`
+	Title                    string       `pb:"16" json:"title"`
+	BranchID                 string       `pb:"17" json:"branch_id"`
+}
+
+type CreateCustomerRequest struct {
+	BankID                   string       `pb:"1" json:"bank_id"`
+	LegalName                string       `pb:"2" json:"legal_name"`
+	MobilePhoneNumber        string       `pb:"3" json:"mobile_phone_number"`
+	Email                    string       `pb:"4" json:"email"`
+	FaceImage                FaceImage    `pb:"5" json:"face_image"`
+	DateOfBirth              time.Time    `pb:"6" json:"date_of_birth"`
+	RelationshipStatus       string       `pb:"7" json:"relationship_status"`
+	DobOfDependents          []time.Time  `pb:"8" json:"dob_of_dependents"`
+	CreditRating             CreditRating `pb:"9" json:"credit_rating"`
+	CreditLimit              types.Amount `pb:"10" json:"credit_limit"`
+	HighestEducationAttained string       `pb:"11" json:"highest_education_attained"`
+	EmploymentStatus         string       `pb:"12" json:"employment_status"`
+	LastOKDate               time.Time    `pb:"13" json:"last_ok_date"`
+	Title                    string       `pb:"14" json:"title"`
+	BranchID                 string       `pb:"15" json:"branchId"`
+}
+
+type CreateCustomerResponse struct {
+	CustomerID string `pb:"1" json:"customer_id"`
+	BankID     string `pb:"2" json:"bank_id"`
+}
+
+type CustomerService interface {
+	// CreateCustomer creates a new customer
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/customers",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"AccountApplication"},
+	//         Description: "Creates a new customer",
+	//         Summary:     "Create a customer",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account application created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerCreateCustomerResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCustomer(CreateCustomerRequest) CreateCustomerResponse
+}
