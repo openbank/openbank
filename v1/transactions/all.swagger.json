@@ -135,6 +135,20 @@
         },
         "parameters": [
           {
+            "name": "UserID",
+            "description": "UserID is the main identifier of the user.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the identifier of the user's selected account.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "FromDate",
             "description": "FromDate is starting date to get the transactions.",
             "in": "query",

@@ -148,6 +148,12 @@ type GetTransactionRequest struct {
 
 // GetTransactionsRequest is the request message to get a list of transactions.
 type GetTransactionsRequest struct {
+	// UserID is the main identifier of the user
+	UserID string `pb:"6" json:"user_id"`
+
+	// AccountID is the identifier of the user's selected account
+	AccountID string `pb:"7" json:"account_id"`
+
 	// FromDate is starting date to get the transactions.
 	FromDate time.Time `pb:"1" json:"from_date"`
 
