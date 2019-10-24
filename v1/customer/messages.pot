@@ -1,0 +1,80 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Account application created successfully."
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Create a customer"
+msgstr ""
+
+msgid "Creates a new customer"
+msgstr ""
+
+msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Customer API"
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "Provides create and read operations on the customer resource."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""

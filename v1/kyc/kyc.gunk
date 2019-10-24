@@ -1,0 +1,506 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "KYC API",
+//                 Description: "Provides create and read operations on the KYC resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package kyc
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type AddKYCCheckRequest struct {
+	KYCCheckID     string    `pb:"1" json:"kyc_check_id"`
+	CustomerID     string    `pb:"2" json:"customer_id"`
+	CustomerNumber string    `pb:"3" json:"customer_number"`
+	Date           time.Time `pb:"4" json:"date"`
+	How            string    `pb:"5" json:"how"`
+	StaffUserID    string    `pb:"6" json:"staff_user_id"`
+	StaffName      string    `pb:"7" json:"staff_name"`
+	Satisfied      bool      `pb:"8" json:"satisfied"`
+	Comments       string    `pb:"9" json:"comments"`
+}
+
+type AddKYCCheckResponse struct {
+	BankID         string    `pb:"1" json:"bank_id"`
+	CustomerID     string    `pb:"2" json:"customer_id"`
+	ID             string    `pb:"3" json:"id"`
+	CustomerNumber string    `pb:"4" json:"customer_number"`
+	Date           time.Time `pb:"5" json:"date"`
+	How            string    `pb:"6" json:"how"`
+	StaffUserID    string    `pb:"7" json:"staff_user_id"`
+	StaffName      string    `pb:"8" json:"staff_name"`
+	Satisfied      bool      `pb:"9" json:"satisfied"`
+	Comments       string    `pb:"10" json:"comments"`
+}
+
+type AddKYCDocumentRequest struct {
+	KYCDocumentID  string    `pb:"1" json:"kyc_document_id"`
+	CustomerID     string    `pb:"2" json:"customer_id"`
+	CustomerNumber string    `pb:"3" json:"customer_number"`
+	Type           string    `pb:"4" json:"type"`
+	Number         string    `pb:"5" json:"number"`
+	IssueDate      time.Time `pb:"6" json:"issue_date"`
+	IssuePlace     string    `pb:"7" json:"issue_place"`
+	ExpiryDate     time.Time `pb:"8" json:"expiry_date"`
+}
+
+type AddKYCDocumentResponse struct {
+	BankID         string    `pb:"1" json:"bank_id"`
+	CustomerID     string    `pb:"2" json:"customer_id"`
+	ID             string    `pb:"3" json:"id"`
+	CustomerNumber string    `pb:"4" json:"customer_number"`
+	Type           string    `pb:"5" json:"type"`
+	Number         string    `pb:"6" json:"number"`
+	IssueDate      time.Time `pb:"7" json:"issue_date"`
+	IssuePlace     string    `pb:"8" json:"issue_place"`
+	ExpiryDate     time.Time `pb:"9" json:"expiry_date"`
+}
+
+type AddKYCMediaRequest struct {
+	KYCMediaID             string    `pb:"1" json:"kyc_media_id"`
+	CustomerID             string    `pb:"2" json:"customer_id"`
+	CustomerNumber         string    `pb:"3" json:"customer_number"`
+	Type                   string    `pb:"4" json:"type"`
+	URL                    string    `pb:"5" json:"url"`
+	Date                   time.Time `pb:"6" json:"date"`
+	RelatesToKycDocumentID string    `pb:"7" json:"relates_to_kyc_document_id"`
+	RelatesToKycCheckID    string    `pb:"8" json:"relates_to_kyc_check_id"`
+}
+
+type AddKYCMediaResponse struct {
+	BankID                 string    `pb:"1" json:"bank_id"`
+	CustomerID             string    `pb:"2" json:"customer_id"`
+	ID                     string    `pb:"3" json:"id"`
+	CustomerNumber         string    `pb:"4" json:"customer_number"`
+	Type                   string    `pb:"5" json:"type"`
+	URL                    string    `pb:"6" json:"url"`
+	Date                   time.Time `pb:"7" json:"date"`
+	RelatesToKycDocumentID string    `pb:"8" json:"relates_to_kyc_document_id"`
+	RelatesToKycCheckID    string    `pb:"9" json:"relates_to_kyc_check_id"`
+}
+
+type AddKYCStatusRequest struct {
+	CustomerID     string    `pb:"1" json:"customer_id"`
+	CustomerNumber string    `pb:"2" json:"customer_number"`
+	Ok             bool      `pb:"3" json:"ok"`
+	Date           time.Time `pb:"4" json:"date"`
+}
+
+type AddKYCStatusResponse struct {
+	CustomerID     string    `pb:"1" json:"customer_id"`
+	CustomerNumber string    `pb:"2" json:"customer_number"`
+	Ok             bool      `pb:"3" json:"ok"`
+	Date           time.Time `pb:"4" json:"date"`
+}
+
+type Check struct {
+	BankID         string    `pb:"1" json:"bank_id"`
+	CustomerID     string    `pb:"2" json:"customer_id"`
+	ID             string    `pb:"3" json:"id"`
+	CustomerNumber string    `pb:"4" json:"customer_number"`
+	Date           time.Time `pb:"5" json:"date"`
+	How            string    `pb:"6" json:"how"`
+	StaffUserID    string    `pb:"7" json:"staff_user_id"`
+	StaffName      string    `pb:"8" json:"staff_name"`
+	Satisfied      bool      `pb:"9" json:"satisfied"`
+	Comments       string    `pb:"10" json:"comments"`
+}
+
+type Document struct {
+	BankID         string    `pb:"1" json:"bank_id"`
+	CustomerID     string    `pb:"2" json:"customer_id"`
+	ID             string    `pb:"3" json:"id"`
+	CustomerNumber string    `pb:"4" json:"customer_number"`
+	Type           string    `pb:"5" json:"type"`
+	Number         string    `pb:"6" json:"number"`
+	IssueDate      time.Time `pb:"7" json:"issue_date"`
+	IssuePlace     string    `pb:"8" json:"issue_place"`
+	ExpiryDate     time.Time `pb:"9" json:"expiry_date"`
+}
+
+type Status struct {
+	CustomerID     string    `pb:"1" json:"customer_id"`
+	CustomerNumber string    `pb:"2" json:"customer_number"`
+	Ok             bool      `pb:"3" json:"ok"`
+	Date           time.Time `pb:"4" json:"date"`
+}
+
+type Media struct {
+	BankID                 string    `pb:"1" json:"bank_id"`
+	CustomerID             string    `pb:"2" json:"customer_id"`
+	ID                     string    `pb:"3" json:"id"`
+	CustomerNumber         string    `pb:"4" json:"customer_number"`
+	Type                   string    `pb:"5" json:"type"`
+	URL                    string    `pb:"6" json:"url"`
+	Date                   time.Time `pb:"7" json:"date"`
+	RelatesToKycDocumentID string    `pb:"8" json:"relates_to_kyc_document_id"`
+	RelatesToKycCheckID    string    `pb:"9" json:"relates_to_kyc_check_id"`
+}
+
+type GetCustomerKYCCheckRequest struct {
+	CustomerID string `pb:"1" json:"customer_id"`
+}
+
+type GetCustomerKYCCheckResponse struct {
+	Checks []Check `pb:"1" json:"checks"`
+}
+
+type GetCustomerKYCDocumentRequest struct {
+	CustomerID string `pb:"1" json:"customer_id"`
+}
+
+type GetCustomerKYCDocumentResponse struct {
+	Documents []Document `pb:"1" json:"documents"`
+}
+
+type GetCustomerKYCStatusRequest struct {
+	CustomerID string `pb:"1" json:"customer_id"`
+}
+
+type GetCustomerKYCStatusResponse struct {
+	Statuses []Status `pb:"1" json:"statuses"`
+}
+
+type GetKYCMediaRequest struct {
+	CustomerID string `pb:"1" json:"customer_id"`
+}
+
+type GetKYCMediaResponse struct {
+	Medias []Media `pb:"1" json:"medias"`
+}
+
+// KYCService provides KYC operations.
+type KYCService interface {
+	// AddKYCCheck Add a KYC check for the customer specified by CUSTOMER_ID.
+	// KYC Checks store details of checks on a customer made by the KYC team, their comments and a satisfied status.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_check/{KYCCheckID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Add KYC check for the customer specified",
+	//         Summary:     "Add KYC check",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "KYC check added successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycAddKYCCheckResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddKYCCheck(AddKYCCheckRequest) AddKYCCheckResponse
+
+	// AddKYCDocument Add a KYC document for the customer specified by CUSTOMER_ID.
+	// KYC Documents contain the document type (e.g. passport), place of issue, expiry etc.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_check/{KYCDocumentID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Add KYC document for the customer specified",
+	//         Summary:     "Add KYC document",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "KYC Document added successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycAddKYCDocumentResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddKYCDocument(AddKYCDocumentRequest) AddKYCDocumentResponse
+
+	// AddKYCMedia Add some KYC media for the customer specified by CUSTOMER_ID.
+	// KYC Media resources relate to KYC Documents and KYC Checks and contain media urls for scans of passports, utility bills etc.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_check/{KYCMediaID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Add KYC media for the customer specified",
+	//         Summary:     "Add KYC media",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "KYC Media added successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycAddKYCDocumentResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddKYCMedia(AddKYCMediaRequest) AddKYCMediaResponse
+
+	// AddKYCStatus Add a kyc_status for the customer specified by CUSTOMER_ID.
+	// KYC Status is a timeline of the KYC status of the customer
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_statuses",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Add KYC status for the customer specified",
+	//         Summary:     "Add KYC status",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "KYC status added successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycAddKYCStatusResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddKYCStatus(AddKYCStatusRequest) AddKYCStatusResponse
+
+	// GetCustomerKYCCheck Get KYC checks for the Customer specified by CUSTOMER_ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_checks",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Get Customer KYC check fot the customer",
+	//         Summary:     "Get Customer KYC check",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycGetCustomerKYCCheckResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerKYCCheck(GetCustomerKYCCheckRequest) GetCustomerKYCCheckResponse
+
+	// GetCustomerKYCDocuments Get KYC (know your customer) documents for a customer specified by CUSTOMER_ID
+	// Get a list of documents that affirm the identity of the customer Passport, driving licence etc.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_documents",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Get Customer KYC documents fot the customer",
+	//         Summary:     "Get Customer KYC documents",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycGetCustomerKYCDocumentResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerKYCDocument(GetCustomerKYCDocumentRequest) GetCustomerKYCDocumentResponse
+
+	// GetCustomerKYCStatuses Get the KYC statuses for a customer specified by CUSTOMER_ID over time.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_statuses",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Get Customer KYC statuses fot the customer",
+	//         Summary:     "Get Customer KYC statuses",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycGetCustomerKYCStatusResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerKYCStatus(GetCustomerKYCStatusRequest) GetCustomerKYCStatusResponse
+
+	// GetKYCMedia Get KYC media (scans, pictures, videos) that affirms the identity of the customer.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/customers/{CustomerID}/kyc_media",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"KYC"},
+	//         Description: "Get Customer KYC media fot the customer",
+	//         Summary:     "Get Customer KYC media",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/kycGetKYCMediaResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetKYCMedia(GetKYCMediaRequest) GetKYCMediaResponse
+}

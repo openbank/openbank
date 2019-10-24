@@ -1,0 +1,958 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "KYC API",
+    "description": "Provides create and read operations on the KYC resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/customers/{CustomerID}/kyc_check/{KYCCheckID}": {
+      "put": {
+        "summary": "Add KYC check",
+        "description": "Add KYC check for the customer specified",
+        "operationId": "AddKYCCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCCheckResponse"
+            }
+          },
+          "201": {
+            "description": "KYC check added successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCCheckResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "KYCCheckID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCCheckRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/kyc_check/{KYCDocumentID}": {
+      "put": {
+        "summary": "Add KYC document",
+        "description": "Add KYC document for the customer specified",
+        "operationId": "AddKYCDocument",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCDocumentResponse"
+            }
+          },
+          "201": {
+            "description": "KYC Document added successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCDocumentResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "KYCDocumentID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCDocumentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/kyc_check/{KYCMediaID}": {
+      "put": {
+        "summary": "Add KYC media",
+        "description": "Add KYC media for the customer specified",
+        "operationId": "AddKYCMedia",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCMediaResponse"
+            }
+          },
+          "201": {
+            "description": "KYC Media added successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCDocumentResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "KYCMediaID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCMediaRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/kyc_checks": {
+      "get": {
+        "summary": "Get Customer KYC check",
+        "description": "Get Customer KYC check fot the customer",
+        "operationId": "GetCustomerKYCCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycGetCustomerKYCCheckResponse"
+            }
+          },
+          "201": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycGetCustomerKYCCheckResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/kyc_documents": {
+      "get": {
+        "summary": "Get Customer KYC documents",
+        "description": "Get Customer KYC documents fot the customer",
+        "operationId": "GetCustomerKYCDocument",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycGetCustomerKYCDocumentResponse"
+            }
+          },
+          "201": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycGetCustomerKYCDocumentResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/kyc_media": {
+      "get": {
+        "summary": "Get Customer KYC media",
+        "description": "Get Customer KYC media fot the customer",
+        "operationId": "GetKYCMedia",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycGetKYCMediaResponse"
+            }
+          },
+          "201": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycGetKYCMediaResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/kyc_statuses": {
+      "get": {
+        "summary": "Get Customer KYC statuses",
+        "description": "Get Customer KYC statuses fot the customer",
+        "operationId": "GetCustomerKYCStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycGetCustomerKYCStatusResponse"
+            }
+          },
+          "201": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycGetCustomerKYCStatusResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Add KYC status",
+        "description": "Add KYC status for the customer specified",
+        "operationId": "AddKYCStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCStatusResponse"
+            }
+          },
+          "201": {
+            "description": "KYC status added successfully.",
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCStatusResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/kycAddKYCStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "KYC"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "kycAddKYCCheckRequest": {
+      "type": "object",
+      "properties": {
+        "KYCCheckID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "How": {
+          "type": "string"
+        },
+        "StaffUserID": {
+          "type": "string"
+        },
+        "StaffName": {
+          "type": "string"
+        },
+        "Satisfied": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Comments": {
+          "type": "string"
+        }
+      }
+    },
+    "kycAddKYCCheckResponse": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "How": {
+          "type": "string"
+        },
+        "StaffUserID": {
+          "type": "string"
+        },
+        "StaffName": {
+          "type": "string"
+        },
+        "Satisfied": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Comments": {
+          "type": "string"
+        }
+      }
+    },
+    "kycAddKYCDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "KYCDocumentID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "IssueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "IssuePlace": {
+          "type": "string"
+        },
+        "ExpiryDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "kycAddKYCDocumentResponse": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "IssueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "IssuePlace": {
+          "type": "string"
+        },
+        "ExpiryDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "kycAddKYCMediaRequest": {
+      "type": "object",
+      "properties": {
+        "KYCMediaID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "RelatesToKycDocumentID": {
+          "type": "string"
+        },
+        "RelatesToKycCheckID": {
+          "type": "string"
+        }
+      }
+    },
+    "kycAddKYCMediaResponse": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "RelatesToKycDocumentID": {
+          "type": "string"
+        },
+        "RelatesToKycCheckID": {
+          "type": "string"
+        }
+      }
+    },
+    "kycAddKYCStatusRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Ok": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "kycAddKYCStatusResponse": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Ok": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "kycCheck": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "How": {
+          "type": "string"
+        },
+        "StaffUserID": {
+          "type": "string"
+        },
+        "StaffName": {
+          "type": "string"
+        },
+        "Satisfied": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Comments": {
+          "type": "string"
+        }
+      }
+    },
+    "kycDocument": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "IssueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "IssuePlace": {
+          "type": "string"
+        },
+        "ExpiryDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "kycGetCustomerKYCCheckResponse": {
+      "type": "object",
+      "properties": {
+        "Checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/kycCheck"
+          }
+        }
+      }
+    },
+    "kycGetCustomerKYCDocumentResponse": {
+      "type": "object",
+      "properties": {
+        "Documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/kycDocument"
+          }
+        }
+      }
+    },
+    "kycGetCustomerKYCStatusResponse": {
+      "type": "object",
+      "properties": {
+        "Statuses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/kycStatus"
+          }
+        }
+      }
+    },
+    "kycGetKYCMediaResponse": {
+      "type": "object",
+      "properties": {
+        "Medias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/kycMedia"
+          }
+        }
+      }
+    },
+    "kycMedia": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "RelatesToKycDocumentID": {
+          "type": "string"
+        },
+        "RelatesToKycCheckID": {
+          "type": "string"
+        }
+      }
+    },
+    "kycStatus": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Ok": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
