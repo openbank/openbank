@@ -113,7 +113,120 @@ type CreateCustomerResponse struct {
 	BankID     string `pb:"2" json:"bank_id"`
 }
 
+type AddAddressToCustomerRequest struct {
+	CustomerID  string   `pb:"1" json:"customer_id"`
+	Line1       string   `pb:"2" json:"line_1"`
+	Line2       string   `pb:"3" json:"line_2"`
+	Line3       string   `pb:"4" json:"line_3"`
+	City        string   `pb:"5" json:"city"`
+	County      string   `pb:"6" json:"county"`
+	State       string   `pb:"7" json:"state"`
+	Postcode    string   `pb:"8" json:"postcode"`
+	CountryCode string   `pb:"9" json:"country_code"`
+	Tags        []string `pb:"10" json:"tags"`
+	Status      string   `pb:"11" json:"status"`
+}
+
+type AddAddressToCustomerResponse struct {
+	CustomerAddressID string    `pb:"1" json:"customer_address_id"`
+	CustomerID        string    `pb:"2" json:"customer_id"`
+	Line1             string    `pb:"3" json:"line_1"`
+	Line2             string    `pb:"4" json:"line_2"`
+	Line3             string    `pb:"5" json:"line_3"`
+	City              string    `pb:"6" json:"city"`
+	County            string    `pb:"7" json:"county"`
+	State             string    `pb:"8" json:"state"`
+	Postcode          string    `pb:"9" json:"postcode"`
+	CountryCode       string    `pb:"10" json:"country_code"`
+	Tags              []string  `pb:"11" json:"tags"`
+	Status            string    `pb:"12" json:"status"`
+	InsertDate        time.Time `pb:"13" json:"insert_date"`
+}
+
+type AddSocialMediaHandleRequest struct {
+	CustomerID     string    `pb:"1" json:"customer_id"`
+	CustomerNumber string    `pb:"2" json:"customer_number"`
+	Type           string    `pb:"3" json:"type"`
+	Handle         string    `pb:"4" json:"handle"`
+	DateAdded      time.Time `pb:"5" json:"date_added"`
+	DateActivated  time.Time `pb:"6" json:"date_activated"`
+}
+
+type AddSocialMediaHandleResponse struct {
+	Success string `pb:"1" json:"success"`
+}
+
 type CustomerService interface {
+	// AddAddressToCustomer Add an Address to the Customer specified by CUSTOMER_ID.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/customers/{CustomerID}/address",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customers"},
+	//         Description: "Add address to the customer.",
+	//         Summary:     "Add address to the customer.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account application created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerAddAddressToCustomerResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddAddressToCustomer(AddAddressToCustomerRequest) AddAddressToCustomerResponse
+
+	// AddSocialMediaHandle Add a social media handle for the customer specified by CUSTOMER_ID.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/customers/{CustomerID}/social_media_handles",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customers"},
+	//         Description: "Add social media handle for the customer",
+	//         Summary:     "Add social media handle",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Social media added successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerAddSocialMediaHandleResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddSocialMediaHandle(AddSocialMediaHandleRequest) AddSocialMediaHandleResponse
+
 	// CreateCustomer creates a new customer
 	//
 	// +gunk http.Match{

@@ -75,9 +75,265 @@
           }
         ]
       }
+    },
+    "/v1/customers/{CustomerID}/address": {
+      "post": {
+        "summary": "Add address to the customer.",
+        "description": "Add address to the customer.",
+        "operationId": "AddAddressToCustomer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/customerAddAddressToCustomerResponse"
+            }
+          },
+          "201": {
+            "description": "Account application created successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerAddAddressToCustomerResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerAddAddressToCustomerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customers"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/customers/{CustomerID}/social_media_handles": {
+      "post": {
+        "summary": "Add social media handle",
+        "description": "Add social media handle for the customer",
+        "operationId": "AddSocialMediaHandle",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/customerAddSocialMediaHandleResponse"
+            }
+          },
+          "201": {
+            "description": "Social media added successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerAddSocialMediaHandleResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerAddSocialMediaHandleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customers"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
     }
   },
   "definitions": {
+    "customerAddAddressToCustomerRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "type": "string"
+        },
+        "Line1": {
+          "type": "string"
+        },
+        "Line2": {
+          "type": "string"
+        },
+        "Line3": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "County": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Postcode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "Tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        }
+      }
+    },
+    "customerAddAddressToCustomerResponse": {
+      "type": "object",
+      "properties": {
+        "CustomerAddressID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "Line1": {
+          "type": "string"
+        },
+        "Line2": {
+          "type": "string"
+        },
+        "Line3": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "County": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Postcode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "Tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        },
+        "InsertDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "customerAddSocialMediaHandleRequest": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Handle": {
+          "type": "string"
+        },
+        "DateAdded": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "DateActivated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "customerAddSocialMediaHandleResponse": {
+      "type": "object",
+      "properties": {
+        "Success": {
+          "type": "string"
+        }
+      }
+    },
     "customerCreateCustomerRequest": {
       "type": "object",
       "properties": {
