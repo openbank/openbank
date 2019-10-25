@@ -19,6 +19,15 @@ msgstr  "Project-Id-Version: %s\n"
 msgid "Account application created successfully."
 msgstr ""
 
+msgid "Add address to the customer."
+msgstr ""
+
+msgid "Add social media handle"
+msgstr ""
+
+msgid "Add social media handle for the customer"
+msgstr ""
+
 msgid "Base Path"
 msgstr ""
 
@@ -52,6 +61,9 @@ msgstr ""
 msgid "Provides create and read operations on the customer resource."
 msgstr ""
 
+msgid "Query Parameters"
+msgstr ""
+
 msgid "Response body"
 msgstr ""
 
@@ -74,6 +86,9 @@ msgid "Returned when the resource is not found."
 msgstr ""
 
 msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Social media added successfully."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"
