@@ -1,0 +1,594 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Counterpart API",
+    "description": "Provides CRUD operations on the counter part resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/accounts/{AccountID}/otheraccounts": {
+      "get": {
+        "summary": "Retrieve all other account with account id",
+        "description": "Retrieves all other accounts (counter party) for an account id",
+        "operationId": "GetOtherAccounts",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartyGetOtherAccountsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Account"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/accounts/{AccountID}/otheraccounts/{OtherAccountID}": {
+      "get": {
+        "summary": "Retrieve an account with other account id",
+        "description": "Retrieves other account (counter party) by other account id",
+        "operationId": "GetOtherAccountByID",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartyGetOtherAccountByIDResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Account"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/counterparties": {
+      "get": {
+        "summary": "List all accounts",
+        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+        "operationId": "GetCounterParties",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartyGetCounterPartiesResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartingIndex",
+            "description": "NextStartingIndex is a cursor for pagination.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "CounterParty"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/counterparty": {
+      "post": {
+        "summary": "Create an counter party",
+        "description": "Creates a new counter party",
+        "operationId": "CreateCounterParty",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartyCreateCounterPartyResponse"
+            }
+          },
+          "201": {
+            "description": "Counter Party created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartyCreateCounterPartyResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartyCreateCounterPartyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "CounterParty"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/counterparty/{ID}": {
+      "get": {
+        "summary": "Retrieve an counter party",
+        "description": "Retrieves all data from an counter party selected by the supplied counter_party_id.",
+        "operationId": "GetCounterParty",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartyCounterParty"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "CounterParty"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "counterpartyAccountRoutings": {
+      "type": "object",
+      "properties": {
+        "Scheme": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartyBankRouting": {
+      "type": "object",
+      "properties": {
+        "Scheme": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartyBespoke": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string",
+          "title": "any info-key you want to add to this counerparty"
+        },
+        "Value": {
+          "type": "string",
+          "title": "any info-value you want to add to this counerparty"
+        }
+      },
+      "title": "Structure of Bespoke"
+    },
+    "counterpartyCounterParty": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "title": "The human readable name (e.g. John Bravo)"
+        },
+        "Description": {
+          "type": "string",
+          "title": "The description of the about counter party"
+        },
+        "OtherAccountRoutingScheme": {
+          "type": "string",
+          "title": "Account routing schme such as AccountId or AccountNumber or any   strings"
+        },
+        "OtherAccountRoutingAddress": {
+          "type": "string",
+          "title": "Account routing address is a valid account identifier"
+        },
+        "OtherAccountSecondaryRoutingScheme": {
+          "type": "string",
+          "title": "Account secondary routing address such as IBan"
+        },
+        "OtherAccountSecondaryRoutingAddress": {
+          "type": "string",
+          "description": "IBan it should be unique for each counterparty."
+        },
+        "OtherBankRoutingScheme": {
+          "type": "string",
+          "title": "Bank routing scheme such as bankId or bankCode or any   strings"
+        },
+        "OtherBankRoutingAddress": {
+          "type": "string",
+          "title": "Bank routing address such as eg: testsandbox, must be valid sandbox bankIds"
+        },
+        "OtherBranchRoutingScheme": {
+          "type": "string",
+          "title": "Branch routing scheme such as branchId or any other strings"
+        },
+        "OtherBranchRoutingAddress": {
+          "type": "string",
+          "title": "Branch routing address like branch-id-765 or you can leave it empty"
+        },
+        "IsBeneficiary": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Must be set to true in order to send payments to this counterparty"
+        },
+        "Bespoke": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartyBespoke"
+          },
+          "description": "It support list of key-value, you can add it to the counterarty."
+        },
+        "Metadata": {
+          "$ref": "#/definitions/counterpartyMetadata",
+          "title": "Metadata about the counter party"
+        }
+      },
+      "title": "Structure of counter part"
+    },
+    "counterpartyCreateCounterPartyRequest": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "OtherAccountRoutingScheme": {
+          "type": "string"
+        },
+        "OtherAccountRoutingAddress": {
+          "type": "string"
+        },
+        "OtherAccountSecondaryRoutingScheme": {
+          "type": "string"
+        },
+        "OtherAccountSecondaryRoutingAddress": {
+          "type": "string"
+        },
+        "OtherBankRoutingScheme": {
+          "type": "string"
+        },
+        "OtherBankRoutingAddress": {
+          "type": "string"
+        },
+        "OtherBranchRoutingScheme": {
+          "type": "string"
+        },
+        "OtherBranchRoutingAddress": {
+          "type": "string"
+        },
+        "IsBeneficiary": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Bespoke": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartyBespoke"
+          }
+        }
+      },
+      "title": "CreateCounterPartyRequest is a request mesasge to create counterparty"
+    },
+    "counterpartyCreateCounterPartyResponse": {
+      "type": "object",
+      "properties": {
+        "CounterParty": {
+          "$ref": "#/definitions/counterpartyCounterParty"
+        },
+        "Metadata": {
+          "$ref": "#/definitions/counterpartyMetadata"
+        },
+        "PhysicalLocation": {
+          "$ref": "#/definitions/typesLocation"
+        },
+        "PrivateAlias": {
+          "type": "string"
+        }
+      },
+      "title": "CreateCounterPartyResponse is a response message for create counter party request"
+    },
+    "counterpartyGetCounterPartiesResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartyCounterParty"
+          },
+          "description": "Result is a list containing up to 20 Counter parties."
+        },
+        "HasMore": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "HasMore indicates if there are more accounts available."
+        }
+      },
+      "description": "GetCounterPartiesResponse wraps the list of counter parties."
+    },
+    "counterpartyGetOtherAccountByIDResponse": {
+      "type": "object",
+      "properties": {
+        "OtherAccount": {
+          "$ref": "#/definitions/counterpartyOtherAccount"
+        }
+      }
+    },
+    "counterpartyGetOtherAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "OtherAccounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartyOtherAccount"
+          }
+        }
+      }
+    },
+    "counterpartyHolder": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "IsAlias": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "counterpartyMetadata": {
+      "type": "object",
+      "properties": {
+        "PublicAlias": {
+          "type": "string"
+        },
+        "MoreInfo": {
+          "type": "string"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "ImageURL": {
+          "type": "string"
+        },
+        "OpenCorporatesURL": {
+          "type": "string"
+        },
+        "CorporateLocation": {
+          "$ref": "#/definitions/typesLocation"
+        },
+        "PhysicalLocation": {
+          "$ref": "#/definitions/typesLocation"
+        },
+        "PrivateAlias": {
+          "type": "string"
+        }
+      },
+      "title": "Structure of Metadata"
+    },
+    "counterpartyOtherAccount": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Holder": {
+          "$ref": "#/definitions/counterpartyHolder"
+        },
+        "BankRouting": {
+          "$ref": "#/definitions/counterpartyBankRouting"
+        },
+        "AccountRoutings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartyAccountRoutings"
+          }
+        },
+        "Metadata": {
+          "$ref": "#/definitions/counterpartyMetadata"
+        }
+      }
+    },
+    "typesLocation": {
+      "type": "object",
+      "properties": {
+        "Latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
+        },
+        "Longitude": {
+          "type": "number",
+          "format": "double",
+          "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+        }
+      },
+      "description": "Location is An object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude.\nValues must be within normalized ranges.\nRefer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

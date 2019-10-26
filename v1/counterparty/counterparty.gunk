@@ -1,0 +1,406 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Counterpart API",
+//                 Description: "Provides CRUD operations on the counter part resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package counterparty
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// Entity type defines the type of counterparty
+type TransactionRequestType int
+
+const (
+	UnknownTransactionRequestType TransactionRequestType = iota
+
+	// Counter party type
+	COUNTERPARTY
+
+	// SEPA transaction type
+	SEPA
+)
+
+// Structure of counter part
+type CounterParty struct {
+	// The human readable name (e.g. John Bravo)
+	Name string `pb:"1" json:"name"`
+
+	// The description of the about counter party
+	Description string `pb:"2" json:"description"`
+
+	// Account routing schme such as AccountId or AccountNumber or any   strings
+	OtherAccountRoutingScheme string `pb:"3" json:"other_account_routing_scheme"`
+
+	// Account routing address is a valid account identifier
+	OtherAccountRoutingAddress string `pb:"4" json:"other_account_routing_address"`
+
+	//  Account secondary routing address such as IBan
+	OtherAccountSecondaryRoutingScheme string `pb:"5" json:"other_account_secondary_routing_scheme"`
+
+	// IBan it should be unique for each counterparty.
+	OtherAccountSecondaryRoutingAddress string `pb:"6" json:"other_account_secondary_routing_address"`
+
+	// Bank routing scheme such as bankId or bankCode or any   strings
+	OtherBankRoutingScheme string `pb:"7" json:"other_bank_routing_scheme"`
+
+	// Bank routing address such as eg: testsandbox, must be valid sandbox bankIds
+	OtherBankRoutingAddress string `pb:"8" json:"other_bank_routing_address"`
+
+	// Branch routing scheme such as branchId or any other strings
+	OtherBranchRoutingScheme string `pb:"9" json:"other_branch_routing_scheme"`
+
+	// Branch routing address like branch-id-765 or you can leave it empty
+	OtherBranchRoutingAddress string `pb:"10" json:"other_branch_routing_address"`
+
+	// Must be set to true in order to send payments to this counterparty
+	IsBeneficiary bool `pb:"11" json:"is_beneficiary"`
+
+	// It support list of key-value, you can add it to the counterarty.
+	Bespoke []Bespoke `pb:"12" json:"bespoke"`
+
+	// Metadata about the counter party
+	Metadata Metadata `pb:"13" json:"metadata"`
+}
+
+// Structure of Bespoke
+type Bespoke struct {
+	// any info-key you want to add to this counerparty
+	Key string `pb:"1" json:"key"`
+
+	// any info-value you want to add to this counerparty
+	Value string `pb:"2" json:"value"`
+}
+
+// Structure of Metadata
+type Metadata struct {
+	PublicAlias       string         `pb:"1" json:"public_alias"`
+	MoreInfo          string         `pb:"2" json:"more_info"`
+	URL               string         `pb:"3" json:"url"`
+	ImageURL          string         `pb:"4" json:"image_url"`
+	OpenCorporatesURL string         `pb:"5" json:"open_corporates_url"`
+	CorporateLocation types.Location `pb:"6" json:"corporate_location"`
+	PhysicalLocation  types.Location `pb:"7" json:"physical_location"`
+	PrivateAlias      string         `pb:"8" json:"private_alias"`
+}
+
+// CreateCounterPartyRequest is a request mesasge to create counterparty
+type CreateCounterPartyRequest struct {
+	Name                                string    `pb:"1" json:"name"`
+	Description                         string    `pb:"2" json:"description"`
+	OtherAccountRoutingScheme           string    `pb:"3" json:"other_account_routing_scheme"`
+	OtherAccountRoutingAddress          string    `pb:"4" json:"other_account_routing_address"`
+	OtherAccountSecondaryRoutingScheme  string    `pb:"5" json:"other_account_secondary_routing_scheme"`
+	OtherAccountSecondaryRoutingAddress string    `pb:"6" json:"other_account_secondary_routing_address"`
+	OtherBankRoutingScheme              string    `pb:"7" json:"other_bank_routing_scheme"`
+	OtherBankRoutingAddress             string    `pb:"8" json:"other_bank_routing_address"`
+	OtherBranchRoutingScheme            string    `pb:"9" json:"other_branch_routing_scheme"`
+	OtherBranchRoutingAddress           string    `pb:"10" json:"other_branch_routing_address"`
+	IsBeneficiary                       bool      `pb:"11" json:"is_beneficiary"`
+	Bespoke                             []Bespoke `pb:"12" json:"bespoke"`
+}
+
+// CreateCounterPartyResponse is a response message for create counter party request
+type CreateCounterPartyResponse struct {
+	CounterParty     CounterParty   `pb:"1" json:"counter_party"`
+	Metadata         Metadata       `pb:"2" json:"metadata"`
+	PhysicalLocation types.Location `pb:"3" json:"physical_location"`
+	PrivateAlias     string         `pb:"4" json:"private_alias"`
+}
+
+// GetCounterPartyRequest is the request envelope to get an counter party by its identifier.
+type GetCounterPartyRequest struct {
+	ID string `pb:"1" json:"id"`
+}
+
+// GetCounterPartiesRequest is the request envelope to get a list of filtered counter parties.
+type GetCounterPartiesRequest struct {
+	// NextStartingIndex is a cursor for pagination.
+	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+}
+
+// GetCounterPartiesResponse wraps the list of counter parties.
+type GetCounterPartiesResponse struct {
+	// Result is a list containing up to 20 Counter parties.
+	Result []CounterParty `pb:"1" json:"result"`
+
+	// HasMore indicates if there are more accounts available.
+	HasMore bool `pb:"2" json:"has_more"`
+}
+
+type GetOtherAccountByIDRequest struct {
+	AccountID      string `pb:"1" json:"account_id"`
+	OtherAccountID string `pb:"2" json:"other_account_id"`
+}
+
+type GetOtherAccountByIDResponse struct {
+	OtherAccount OtherAccount `pb:"1" json:"other_account"`
+}
+
+type OtherAccount struct {
+	ID              string            `pb:"1" json:"id"`
+	Holder          Holder            `pb:"2" json:"holder"`
+	BankRouting     BankRouting       `pb:"3" json:"bank_routing"`
+	AccountRoutings []AccountRoutings `pb:"4" json:"account_routings"`
+	Metadata        Metadata          `pb:"5" json:"metadata"`
+}
+
+type GetOtherAccountsRequest struct {
+	AccountID string `pb:"1" json:"account_id"`
+}
+
+type GetOtherAccountsResponse struct {
+	OtherAccounts []OtherAccount `pb:"1" json:"other_accounts"`
+}
+
+type Holder struct {
+	Name    string `pb:"1" json:"name"`
+	IsAlias bool   `pb:"2" json:"is_alias"`
+}
+type BankRouting struct {
+	Scheme  string `pb:"1" json:"scheme"`
+	Address string `pb:"2" json:"address"`
+}
+type AccountRoutings struct {
+	Scheme  string `pb:"1" json:"scheme"`
+	Address string `pb:"2" json:"address"`
+}
+type User struct {
+	ID          string `pb:"1" json:"id"`
+	DisplayName string `pb:"2" json:"display_name"`
+}
+
+// CounterPartyService provides counter party related operations.
+type CounterPartyService interface {
+	// CreateCounterParty creates a new counter party
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/counterparty",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"CounterParty"},
+	//         Description: "Creates a new counter party",
+	//         Summary:     "Create an counter party",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Counter Party created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartyCreateCounterPartyResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCounterParty(CreateCounterPartyRequest) CreateCounterPartyResponse
+
+	// GetCounterPart retrieves the details of an counter party, selected by its id.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/counterparty/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"CounterParty"},
+	//         Description: "Retrieves all data from an counter party selected by the supplied counter_party_id.",
+	//         Summary:     "Retrieve an counter party",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartyCounterParty",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCounterParty(GetCounterPartyRequest) CounterParty
+
+	// GetCounterParties returns a list containing up to 20 counter parties.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/counterparties",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"CounterParty"},
+	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+	//         Summary:     "List all accounts",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartyGetCounterPartiesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCounterParties(GetCounterPartiesRequest) GetCounterPartiesResponse
+
+	// GetOtherAccountByID returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/accounts/{AccountID}/otheraccounts/{OtherAccountID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Retrieves other account (counter party) by other account id",
+	//         Summary:     "Retrieve an account with other account id",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartyGetOtherAccountByIDResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetOtherAccountByID(GetOtherAccountByIDRequest) GetOtherAccountByIDResponse
+
+	// GetOtherAccounts returns data about all the other Account that has shared at least one transaction with ACCOUNT_ID
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/accounts/{AccountID}/otheraccounts",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Account"},
+	//         Description: "Retrieves all other accounts (counter party) for an account id",
+	//         Summary:     "Retrieve all other account with account id",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartyGetOtherAccountsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetOtherAccounts(GetOtherAccountsRequest) GetOtherAccountsResponse
+}
