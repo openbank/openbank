@@ -7,6 +7,7 @@ import (
 	context "context"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
+	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	types "github.com/openbank/openbank/v1/types"
@@ -859,6 +860,1715 @@ func (m *AddSocialMediaHandleResponse) GetSuccess() string {
 	return ""
 }
 
+type CreateCreditLimitOrderRequest struct {
+	BankID                          string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID                      string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	RequestedCurrentRateAmount1     string   `protobuf:"bytes,3,opt,name=RequestedCurrentRateAmount1,json=requested_current_rate_amount1,proto3" json:"RequestedCurrentRateAmount1,omitempty"`
+	RequestedCurrentRateAmount2     string   `protobuf:"bytes,4,opt,name=RequestedCurrentRateAmount2,json=requested_current_rate_amount2,proto3" json:"RequestedCurrentRateAmount2,omitempty"`
+	RequestedCurrentValidEndDate    string   `protobuf:"bytes,5,opt,name=RequestedCurrentValidEndDate,json=requested_current_valid_end_date,proto3" json:"RequestedCurrentValidEndDate,omitempty"`
+	CurrentCreditDocumentation      string   `protobuf:"bytes,6,opt,name=CurrentCreditDocumentation,json=current_credit_documentation,proto3" json:"CurrentCreditDocumentation,omitempty"`
+	TemporaryRequestedCurrentAmount string   `protobuf:"bytes,7,opt,name=TemporaryRequestedCurrentAmount,json=temporary_requested_current_amount,proto3" json:"TemporaryRequestedCurrentAmount,omitempty"`
+	RequestedTemporaryValidEndDate  string   `protobuf:"bytes,8,opt,name=RequestedTemporaryValidEndDate,json=requested_temporary_valid_end_date,proto3" json:"RequestedTemporaryValidEndDate,omitempty"`
+	TemporaryCreditDocumentation    string   `protobuf:"bytes,9,opt,name=TemporaryCreditDocumentation,json=temporary_credit_documentation,proto3" json:"TemporaryCreditDocumentation,omitempty"`
+	XXX_NoUnkeyedLiteral            struct{} `json:"-"`
+	XXX_unrecognized                []byte   `json:"-"`
+	XXX_sizecache                   int32    `json:"-"`
+}
+
+func (m *CreateCreditLimitOrderRequest) Reset()         { *m = CreateCreditLimitOrderRequest{} }
+func (m *CreateCreditLimitOrderRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateCreditLimitOrderRequest) ProtoMessage()    {}
+func (*CreateCreditLimitOrderRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{9}
+}
+
+func (m *CreateCreditLimitOrderRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateCreditLimitOrderRequest.Unmarshal(m, b)
+}
+func (m *CreateCreditLimitOrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateCreditLimitOrderRequest.Marshal(b, m, deterministic)
+}
+func (m *CreateCreditLimitOrderRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateCreditLimitOrderRequest.Merge(m, src)
+}
+func (m *CreateCreditLimitOrderRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateCreditLimitOrderRequest.Size(m)
+}
+func (m *CreateCreditLimitOrderRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateCreditLimitOrderRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateCreditLimitOrderRequest proto.InternalMessageInfo
+
+func (m *CreateCreditLimitOrderRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetRequestedCurrentRateAmount1() string {
+	if m != nil {
+		return m.RequestedCurrentRateAmount1
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetRequestedCurrentRateAmount2() string {
+	if m != nil {
+		return m.RequestedCurrentRateAmount2
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetRequestedCurrentValidEndDate() string {
+	if m != nil {
+		return m.RequestedCurrentValidEndDate
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetCurrentCreditDocumentation() string {
+	if m != nil {
+		return m.CurrentCreditDocumentation
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetTemporaryRequestedCurrentAmount() string {
+	if m != nil {
+		return m.TemporaryRequestedCurrentAmount
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetRequestedTemporaryValidEndDate() string {
+	if m != nil {
+		return m.RequestedTemporaryValidEndDate
+	}
+	return ""
+}
+
+func (m *CreateCreditLimitOrderRequest) GetTemporaryCreditDocumentation() string {
+	if m != nil {
+		return m.TemporaryCreditDocumentation
+	}
+	return ""
+}
+
+type CreateCreditLimitOrderResponse struct {
+	CreditLimitOrderID   string   `protobuf:"bytes,1,opt,name=CreditLimitOrderID,json=credit_limit_order_id,proto3" json:"CreditLimitOrderID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateCreditLimitOrderResponse) Reset()         { *m = CreateCreditLimitOrderResponse{} }
+func (m *CreateCreditLimitOrderResponse) String() string { return proto.CompactTextString(m) }
+func (*CreateCreditLimitOrderResponse) ProtoMessage()    {}
+func (*CreateCreditLimitOrderResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{10}
+}
+
+func (m *CreateCreditLimitOrderResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateCreditLimitOrderResponse.Unmarshal(m, b)
+}
+func (m *CreateCreditLimitOrderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateCreditLimitOrderResponse.Marshal(b, m, deterministic)
+}
+func (m *CreateCreditLimitOrderResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateCreditLimitOrderResponse.Merge(m, src)
+}
+func (m *CreateCreditLimitOrderResponse) XXX_Size() int {
+	return xxx_messageInfo_CreateCreditLimitOrderResponse.Size(m)
+}
+func (m *CreateCreditLimitOrderResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateCreditLimitOrderResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateCreditLimitOrderResponse proto.InternalMessageInfo
+
+func (m *CreateCreditLimitOrderResponse) GetCreditLimitOrderID() string {
+	if m != nil {
+		return m.CreditLimitOrderID
+	}
+	return ""
+}
+
+type CreateUserCustomerLinkRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	UserID               string   `protobuf:"bytes,2,opt,name=UserID,json=user_id,proto3" json:"UserID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,3,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreateUserCustomerLinkRequest) Reset()         { *m = CreateUserCustomerLinkRequest{} }
+func (m *CreateUserCustomerLinkRequest) String() string { return proto.CompactTextString(m) }
+func (*CreateUserCustomerLinkRequest) ProtoMessage()    {}
+func (*CreateUserCustomerLinkRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{11}
+}
+
+func (m *CreateUserCustomerLinkRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateUserCustomerLinkRequest.Unmarshal(m, b)
+}
+func (m *CreateUserCustomerLinkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateUserCustomerLinkRequest.Marshal(b, m, deterministic)
+}
+func (m *CreateUserCustomerLinkRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateUserCustomerLinkRequest.Merge(m, src)
+}
+func (m *CreateUserCustomerLinkRequest) XXX_Size() int {
+	return xxx_messageInfo_CreateUserCustomerLinkRequest.Size(m)
+}
+func (m *CreateUserCustomerLinkRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateUserCustomerLinkRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateUserCustomerLinkRequest proto.InternalMessageInfo
+
+func (m *CreateUserCustomerLinkRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *CreateUserCustomerLinkRequest) GetUserID() string {
+	if m != nil {
+		return m.UserID
+	}
+	return ""
+}
+
+func (m *CreateUserCustomerLinkRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type CreateUserCustomerLinkResponse struct {
+	UserCustomerLinkID   string               `protobuf:"bytes,1,opt,name=UserCustomerLinkID,json=user_customer_link_id,proto3" json:"UserCustomerLinkID,omitempty"`
+	CustomerID           string               `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	UserID               string               `protobuf:"bytes,3,opt,name=UserID,json=user_id,proto3" json:"UserID,omitempty"`
+	DateInserted         *timestamp.Timestamp `protobuf:"bytes,4,opt,name=DateInserted,json=date_inserted,proto3" json:"DateInserted,omitempty"`
+	IsActive             bool                 `protobuf:"varint,5,opt,name=IsActive,json=is_active,proto3" json:"IsActive,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *CreateUserCustomerLinkResponse) Reset()         { *m = CreateUserCustomerLinkResponse{} }
+func (m *CreateUserCustomerLinkResponse) String() string { return proto.CompactTextString(m) }
+func (*CreateUserCustomerLinkResponse) ProtoMessage()    {}
+func (*CreateUserCustomerLinkResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{12}
+}
+
+func (m *CreateUserCustomerLinkResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreateUserCustomerLinkResponse.Unmarshal(m, b)
+}
+func (m *CreateUserCustomerLinkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreateUserCustomerLinkResponse.Marshal(b, m, deterministic)
+}
+func (m *CreateUserCustomerLinkResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreateUserCustomerLinkResponse.Merge(m, src)
+}
+func (m *CreateUserCustomerLinkResponse) XXX_Size() int {
+	return xxx_messageInfo_CreateUserCustomerLinkResponse.Size(m)
+}
+func (m *CreateUserCustomerLinkResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreateUserCustomerLinkResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreateUserCustomerLinkResponse proto.InternalMessageInfo
+
+func (m *CreateUserCustomerLinkResponse) GetUserCustomerLinkID() string {
+	if m != nil {
+		return m.UserCustomerLinkID
+	}
+	return ""
+}
+
+func (m *CreateUserCustomerLinkResponse) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *CreateUserCustomerLinkResponse) GetUserID() string {
+	if m != nil {
+		return m.UserID
+	}
+	return ""
+}
+
+func (m *CreateUserCustomerLinkResponse) GetDateInserted() *timestamp.Timestamp {
+	if m != nil {
+		return m.DateInserted
+	}
+	return nil
+}
+
+func (m *CreateUserCustomerLinkResponse) GetIsActive() bool {
+	if m != nil {
+		return m.IsActive
+	}
+	return false
+}
+
+type DeleteCustomerAddressRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	CustomerAddressID    string   `protobuf:"bytes,3,opt,name=CustomerAddressID,json=customer_address_id,proto3" json:"CustomerAddressID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteCustomerAddressRequest) Reset()         { *m = DeleteCustomerAddressRequest{} }
+func (m *DeleteCustomerAddressRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteCustomerAddressRequest) ProtoMessage()    {}
+func (*DeleteCustomerAddressRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{13}
+}
+
+func (m *DeleteCustomerAddressRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteCustomerAddressRequest.Unmarshal(m, b)
+}
+func (m *DeleteCustomerAddressRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteCustomerAddressRequest.Marshal(b, m, deterministic)
+}
+func (m *DeleteCustomerAddressRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteCustomerAddressRequest.Merge(m, src)
+}
+func (m *DeleteCustomerAddressRequest) XXX_Size() int {
+	return xxx_messageInfo_DeleteCustomerAddressRequest.Size(m)
+}
+func (m *DeleteCustomerAddressRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteCustomerAddressRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteCustomerAddressRequest proto.InternalMessageInfo
+
+func (m *DeleteCustomerAddressRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *DeleteCustomerAddressRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *DeleteCustomerAddressRequest) GetCustomerAddressID() string {
+	if m != nil {
+		return m.CustomerAddressID
+	}
+	return ""
+}
+
+type DeleteTaxResidenceRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	TaxResidenceID       string   `protobuf:"bytes,3,opt,name=TaxResidenceID,json=tax_residence_id,proto3" json:"TaxResidenceID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteTaxResidenceRequest) Reset()         { *m = DeleteTaxResidenceRequest{} }
+func (m *DeleteTaxResidenceRequest) String() string { return proto.CompactTextString(m) }
+func (*DeleteTaxResidenceRequest) ProtoMessage()    {}
+func (*DeleteTaxResidenceRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{14}
+}
+
+func (m *DeleteTaxResidenceRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteTaxResidenceRequest.Unmarshal(m, b)
+}
+func (m *DeleteTaxResidenceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteTaxResidenceRequest.Marshal(b, m, deterministic)
+}
+func (m *DeleteTaxResidenceRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteTaxResidenceRequest.Merge(m, src)
+}
+func (m *DeleteTaxResidenceRequest) XXX_Size() int {
+	return xxx_messageInfo_DeleteTaxResidenceRequest.Size(m)
+}
+func (m *DeleteTaxResidenceRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteTaxResidenceRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteTaxResidenceRequest proto.InternalMessageInfo
+
+func (m *DeleteTaxResidenceRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *DeleteTaxResidenceRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *DeleteTaxResidenceRequest) GetTaxResidenceID() string {
+	if m != nil {
+		return m.TaxResidenceID
+	}
+	return ""
+}
+
+type CRMEvent struct {
+	ID                   string               `protobuf:"bytes,1,opt,name=ID,json=id,proto3" json:"ID,omitempty"`
+	BankID               string               `protobuf:"bytes,2,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerName         string               `protobuf:"bytes,3,opt,name=CustomerName,json=customer_name,proto3" json:"CustomerName,omitempty"`
+	CustomerNumber       string               `protobuf:"bytes,4,opt,name=CustomerNumber,json=customer_number,proto3" json:"CustomerNumber,omitempty"`
+	Category             string               `protobuf:"bytes,5,opt,name=Category,json=category,proto3" json:"Category,omitempty"`
+	Detail               string               `protobuf:"bytes,6,opt,name=Detail,json=detail,proto3" json:"Detail,omitempty"`
+	Channel              string               `protobuf:"bytes,7,opt,name=Channel,json=channel,proto3" json:"Channel,omitempty"`
+	ScheduledDate        *timestamp.Timestamp `protobuf:"bytes,8,opt,name=ScheduledDate,json=scheduled_date,proto3" json:"ScheduledDate,omitempty"`
+	ActualDate           *timestamp.Timestamp `protobuf:"bytes,9,opt,name=ActualDate,json=actual_date,proto3" json:"ActualDate,omitempty"`
+	Result               string               `protobuf:"bytes,10,opt,name=Result,json=result,proto3" json:"Result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *CRMEvent) Reset()         { *m = CRMEvent{} }
+func (m *CRMEvent) String() string { return proto.CompactTextString(m) }
+func (*CRMEvent) ProtoMessage()    {}
+func (*CRMEvent) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{15}
+}
+
+func (m *CRMEvent) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CRMEvent.Unmarshal(m, b)
+}
+func (m *CRMEvent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CRMEvent.Marshal(b, m, deterministic)
+}
+func (m *CRMEvent) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CRMEvent.Merge(m, src)
+}
+func (m *CRMEvent) XXX_Size() int {
+	return xxx_messageInfo_CRMEvent.Size(m)
+}
+func (m *CRMEvent) XXX_DiscardUnknown() {
+	xxx_messageInfo_CRMEvent.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CRMEvent proto.InternalMessageInfo
+
+func (m *CRMEvent) GetID() string {
+	if m != nil {
+		return m.ID
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetCustomerName() string {
+	if m != nil {
+		return m.CustomerName
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetCustomerNumber() string {
+	if m != nil {
+		return m.CustomerNumber
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetCategory() string {
+	if m != nil {
+		return m.Category
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetDetail() string {
+	if m != nil {
+		return m.Detail
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetChannel() string {
+	if m != nil {
+		return m.Channel
+	}
+	return ""
+}
+
+func (m *CRMEvent) GetScheduledDate() *timestamp.Timestamp {
+	if m != nil {
+		return m.ScheduledDate
+	}
+	return nil
+}
+
+func (m *CRMEvent) GetActualDate() *timestamp.Timestamp {
+	if m != nil {
+		return m.ActualDate
+	}
+	return nil
+}
+
+func (m *CRMEvent) GetResult() string {
+	if m != nil {
+		return m.Result
+	}
+	return ""
+}
+
+type GetCRMEventsRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCRMEventsRequest) Reset()         { *m = GetCRMEventsRequest{} }
+func (m *GetCRMEventsRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCRMEventsRequest) ProtoMessage()    {}
+func (*GetCRMEventsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{16}
+}
+
+func (m *GetCRMEventsRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCRMEventsRequest.Unmarshal(m, b)
+}
+func (m *GetCRMEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCRMEventsRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCRMEventsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCRMEventsRequest.Merge(m, src)
+}
+func (m *GetCRMEventsRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCRMEventsRequest.Size(m)
+}
+func (m *GetCRMEventsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCRMEventsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCRMEventsRequest proto.InternalMessageInfo
+
+func (m *GetCRMEventsRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+type GetCRMEventsResponse struct {
+	CRMEvents            []*CRMEvent `protobuf:"bytes,1,rep,name=CRMEvents,json=crm_events,proto3" json:"CRMEvents,omitempty"`
+	HasMore              bool        `protobuf:"varint,2,opt,name=HasMore,json=has_more,proto3" json:"HasMore,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GetCRMEventsResponse) Reset()         { *m = GetCRMEventsResponse{} }
+func (m *GetCRMEventsResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCRMEventsResponse) ProtoMessage()    {}
+func (*GetCRMEventsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{17}
+}
+
+func (m *GetCRMEventsResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCRMEventsResponse.Unmarshal(m, b)
+}
+func (m *GetCRMEventsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCRMEventsResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCRMEventsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCRMEventsResponse.Merge(m, src)
+}
+func (m *GetCRMEventsResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCRMEventsResponse.Size(m)
+}
+func (m *GetCRMEventsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCRMEventsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCRMEventsResponse proto.InternalMessageInfo
+
+func (m *GetCRMEventsResponse) GetCRMEvents() []*CRMEvent {
+	if m != nil {
+		return m.CRMEvents
+	}
+	return nil
+}
+
+func (m *GetCRMEventsResponse) GetHasMore() bool {
+	if m != nil {
+		return m.HasMore
+	}
+	return false
+}
+
+type CreditLimitOrder struct {
+	RankAmount1          string   `protobuf:"bytes,1,opt,name=RankAmount1,json=rank_amount_1,proto3" json:"RankAmount1,omitempty"`
+	NominalInterest1     string   `protobuf:"bytes,2,opt,name=NominalInterest1,json=nominal_interest_1,proto3" json:"NominalInterest1,omitempty"`
+	RankAmount2          string   `protobuf:"bytes,3,opt,name=RankAmount2,json=rank_amount_2,proto3" json:"RankAmount2,omitempty"`
+	NominalInterest2     string   `protobuf:"bytes,4,opt,name=NominalInterest2,json=nominal_interest_2,proto3" json:"NominalInterest2,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CreditLimitOrder) Reset()         { *m = CreditLimitOrder{} }
+func (m *CreditLimitOrder) String() string { return proto.CompactTextString(m) }
+func (*CreditLimitOrder) ProtoMessage()    {}
+func (*CreditLimitOrder) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{18}
+}
+
+func (m *CreditLimitOrder) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CreditLimitOrder.Unmarshal(m, b)
+}
+func (m *CreditLimitOrder) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CreditLimitOrder.Marshal(b, m, deterministic)
+}
+func (m *CreditLimitOrder) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CreditLimitOrder.Merge(m, src)
+}
+func (m *CreditLimitOrder) XXX_Size() int {
+	return xxx_messageInfo_CreditLimitOrder.Size(m)
+}
+func (m *CreditLimitOrder) XXX_DiscardUnknown() {
+	xxx_messageInfo_CreditLimitOrder.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CreditLimitOrder proto.InternalMessageInfo
+
+func (m *CreditLimitOrder) GetRankAmount1() string {
+	if m != nil {
+		return m.RankAmount1
+	}
+	return ""
+}
+
+func (m *CreditLimitOrder) GetNominalInterest1() string {
+	if m != nil {
+		return m.NominalInterest1
+	}
+	return ""
+}
+
+func (m *CreditLimitOrder) GetRankAmount2() string {
+	if m != nil {
+		return m.RankAmount2
+	}
+	return ""
+}
+
+func (m *CreditLimitOrder) GetNominalInterest2() string {
+	if m != nil {
+		return m.NominalInterest2
+	}
+	return ""
+}
+
+type GetCreditLimitOrderByIDRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	RequestID            string   `protobuf:"bytes,3,opt,name=RequestID,json=request_id,proto3" json:"RequestID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCreditLimitOrderByIDRequest) Reset()         { *m = GetCreditLimitOrderByIDRequest{} }
+func (m *GetCreditLimitOrderByIDRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCreditLimitOrderByIDRequest) ProtoMessage()    {}
+func (*GetCreditLimitOrderByIDRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{19}
+}
+
+func (m *GetCreditLimitOrderByIDRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCreditLimitOrderByIDRequest.Unmarshal(m, b)
+}
+func (m *GetCreditLimitOrderByIDRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCreditLimitOrderByIDRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCreditLimitOrderByIDRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCreditLimitOrderByIDRequest.Merge(m, src)
+}
+func (m *GetCreditLimitOrderByIDRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCreditLimitOrderByIDRequest.Size(m)
+}
+func (m *GetCreditLimitOrderByIDRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCreditLimitOrderByIDRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCreditLimitOrderByIDRequest proto.InternalMessageInfo
+
+func (m *GetCreditLimitOrderByIDRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetCreditLimitOrderByIDRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *GetCreditLimitOrderByIDRequest) GetRequestID() string {
+	if m != nil {
+		return m.RequestID
+	}
+	return ""
+}
+
+type GetCreditLimitOrderByIDResponse struct {
+	CreditLimitOrder     *CreditLimitOrder `protobuf:"bytes,1,opt,name=CreditLimitOrder,json=credit_limit_order,proto3" json:"CreditLimitOrder,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+
+func (m *GetCreditLimitOrderByIDResponse) Reset()         { *m = GetCreditLimitOrderByIDResponse{} }
+func (m *GetCreditLimitOrderByIDResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCreditLimitOrderByIDResponse) ProtoMessage()    {}
+func (*GetCreditLimitOrderByIDResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{20}
+}
+
+func (m *GetCreditLimitOrderByIDResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCreditLimitOrderByIDResponse.Unmarshal(m, b)
+}
+func (m *GetCreditLimitOrderByIDResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCreditLimitOrderByIDResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCreditLimitOrderByIDResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCreditLimitOrderByIDResponse.Merge(m, src)
+}
+func (m *GetCreditLimitOrderByIDResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCreditLimitOrderByIDResponse.Size(m)
+}
+func (m *GetCreditLimitOrderByIDResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCreditLimitOrderByIDResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCreditLimitOrderByIDResponse proto.InternalMessageInfo
+
+func (m *GetCreditLimitOrderByIDResponse) GetCreditLimitOrder() *CreditLimitOrder {
+	if m != nil {
+		return m.CreditLimitOrder
+	}
+	return nil
+}
+
+type GetCreditLimitOrderRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCreditLimitOrderRequest) Reset()         { *m = GetCreditLimitOrderRequest{} }
+func (m *GetCreditLimitOrderRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCreditLimitOrderRequest) ProtoMessage()    {}
+func (*GetCreditLimitOrderRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{21}
+}
+
+func (m *GetCreditLimitOrderRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCreditLimitOrderRequest.Unmarshal(m, b)
+}
+func (m *GetCreditLimitOrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCreditLimitOrderRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCreditLimitOrderRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCreditLimitOrderRequest.Merge(m, src)
+}
+func (m *GetCreditLimitOrderRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCreditLimitOrderRequest.Size(m)
+}
+func (m *GetCreditLimitOrderRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCreditLimitOrderRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCreditLimitOrderRequest proto.InternalMessageInfo
+
+func (m *GetCreditLimitOrderRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetCreditLimitOrderRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type GetCreditLimitOrderResponse struct {
+	Result               []*CreditLimitOrder `protobuf:"bytes,1,rep,name=Result,json=result,proto3" json:"Result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
+}
+
+func (m *GetCreditLimitOrderResponse) Reset()         { *m = GetCreditLimitOrderResponse{} }
+func (m *GetCreditLimitOrderResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCreditLimitOrderResponse) ProtoMessage()    {}
+func (*GetCreditLimitOrderResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{22}
+}
+
+func (m *GetCreditLimitOrderResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCreditLimitOrderResponse.Unmarshal(m, b)
+}
+func (m *GetCreditLimitOrderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCreditLimitOrderResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCreditLimitOrderResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCreditLimitOrderResponse.Merge(m, src)
+}
+func (m *GetCreditLimitOrderResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCreditLimitOrderResponse.Size(m)
+}
+func (m *GetCreditLimitOrderResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCreditLimitOrderResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCreditLimitOrderResponse proto.InternalMessageInfo
+
+func (m *GetCreditLimitOrderResponse) GetResult() []*CreditLimitOrder {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
+type Address struct {
+	CustomerAddressID    string               `protobuf:"bytes,1,opt,name=CustomerAddressID,json=customer_address_id,proto3" json:"CustomerAddressID,omitempty"`
+	CustomerID           string               `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	Line1                string               `protobuf:"bytes,3,opt,name=Line1,json=line_1,proto3" json:"Line1,omitempty"`
+	Line2                string               `protobuf:"bytes,4,opt,name=Line2,json=line_2,proto3" json:"Line2,omitempty"`
+	Line3                string               `protobuf:"bytes,5,opt,name=Line3,json=line_3,proto3" json:"Line3,omitempty"`
+	City                 string               `protobuf:"bytes,6,opt,name=City,json=city,proto3" json:"City,omitempty"`
+	County               string               `protobuf:"bytes,7,opt,name=County,json=county,proto3" json:"County,omitempty"`
+	State                string               `protobuf:"bytes,8,opt,name=State,json=state,proto3" json:"State,omitempty"`
+	Postcode             string               `protobuf:"bytes,9,opt,name=Postcode,json=postcode,proto3" json:"Postcode,omitempty"`
+	CountryCode          string               `protobuf:"bytes,10,opt,name=CountryCode,json=country_code,proto3" json:"CountryCode,omitempty"`
+	Tags                 []string             `protobuf:"bytes,11,rep,name=Tags,json=tags,proto3" json:"Tags,omitempty"`
+	Status               string               `protobuf:"bytes,12,opt,name=Status,json=status,proto3" json:"Status,omitempty"`
+	InsertDate           *timestamp.Timestamp `protobuf:"bytes,13,opt,name=InsertDate,json=insert_date,proto3" json:"InsertDate,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *Address) Reset()         { *m = Address{} }
+func (m *Address) String() string { return proto.CompactTextString(m) }
+func (*Address) ProtoMessage()    {}
+func (*Address) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{23}
+}
+
+func (m *Address) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Address.Unmarshal(m, b)
+}
+func (m *Address) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Address.Marshal(b, m, deterministic)
+}
+func (m *Address) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Address.Merge(m, src)
+}
+func (m *Address) XXX_Size() int {
+	return xxx_messageInfo_Address.Size(m)
+}
+func (m *Address) XXX_DiscardUnknown() {
+	xxx_messageInfo_Address.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Address proto.InternalMessageInfo
+
+func (m *Address) GetCustomerAddressID() string {
+	if m != nil {
+		return m.CustomerAddressID
+	}
+	return ""
+}
+
+func (m *Address) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *Address) GetLine1() string {
+	if m != nil {
+		return m.Line1
+	}
+	return ""
+}
+
+func (m *Address) GetLine2() string {
+	if m != nil {
+		return m.Line2
+	}
+	return ""
+}
+
+func (m *Address) GetLine3() string {
+	if m != nil {
+		return m.Line3
+	}
+	return ""
+}
+
+func (m *Address) GetCity() string {
+	if m != nil {
+		return m.City
+	}
+	return ""
+}
+
+func (m *Address) GetCounty() string {
+	if m != nil {
+		return m.County
+	}
+	return ""
+}
+
+func (m *Address) GetState() string {
+	if m != nil {
+		return m.State
+	}
+	return ""
+}
+
+func (m *Address) GetPostcode() string {
+	if m != nil {
+		return m.Postcode
+	}
+	return ""
+}
+
+func (m *Address) GetCountryCode() string {
+	if m != nil {
+		return m.CountryCode
+	}
+	return ""
+}
+
+func (m *Address) GetTags() []string {
+	if m != nil {
+		return m.Tags
+	}
+	return nil
+}
+
+func (m *Address) GetStatus() string {
+	if m != nil {
+		return m.Status
+	}
+	return ""
+}
+
+func (m *Address) GetInsertDate() *timestamp.Timestamp {
+	if m != nil {
+		return m.InsertDate
+	}
+	return nil
+}
+
+type GetCustomerAddressesRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomerAddressesRequest) Reset()         { *m = GetCustomerAddressesRequest{} }
+func (m *GetCustomerAddressesRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCustomerAddressesRequest) ProtoMessage()    {}
+func (*GetCustomerAddressesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{24}
+}
+
+func (m *GetCustomerAddressesRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomerAddressesRequest.Unmarshal(m, b)
+}
+func (m *GetCustomerAddressesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomerAddressesRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCustomerAddressesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomerAddressesRequest.Merge(m, src)
+}
+func (m *GetCustomerAddressesRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCustomerAddressesRequest.Size(m)
+}
+func (m *GetCustomerAddressesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomerAddressesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomerAddressesRequest proto.InternalMessageInfo
+
+func (m *GetCustomerAddressesRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetCustomerAddressesRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type GetCustomerAddressesResponse struct {
+	Addresses            []*Address `protobuf:"bytes,1,rep,name=Addresses,json=addresses,proto3" json:"Addresses,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *GetCustomerAddressesResponse) Reset()         { *m = GetCustomerAddressesResponse{} }
+func (m *GetCustomerAddressesResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCustomerAddressesResponse) ProtoMessage()    {}
+func (*GetCustomerAddressesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{25}
+}
+
+func (m *GetCustomerAddressesResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomerAddressesResponse.Unmarshal(m, b)
+}
+func (m *GetCustomerAddressesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomerAddressesResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCustomerAddressesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomerAddressesResponse.Merge(m, src)
+}
+func (m *GetCustomerAddressesResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCustomerAddressesResponse.Size(m)
+}
+func (m *GetCustomerAddressesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomerAddressesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomerAddressesResponse proto.InternalMessageInfo
+
+func (m *GetCustomerAddressesResponse) GetAddresses() []*Address {
+	if m != nil {
+		return m.Addresses
+	}
+	return nil
+}
+
+type Check struct {
+	CustomerNumber       string               `protobuf:"bytes,1,opt,name=CustomerNumber,json=customer_number,proto3" json:"CustomerNumber,omitempty"`
+	Type                 string               `protobuf:"bytes,2,opt,name=Type,json=type,proto3" json:"Type,omitempty"`
+	Handle               string               `protobuf:"bytes,3,opt,name=Handle,json=handle,proto3" json:"Handle,omitempty"`
+	DateAdded            *timestamp.Timestamp `protobuf:"bytes,4,opt,name=DateAdded,json=date_added,proto3" json:"DateAdded,omitempty"`
+	DateActivated        *timestamp.Timestamp `protobuf:"bytes,5,opt,name=DateActivated,json=date_activated,proto3" json:"DateActivated,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *Check) Reset()         { *m = Check{} }
+func (m *Check) String() string { return proto.CompactTextString(m) }
+func (*Check) ProtoMessage()    {}
+func (*Check) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{26}
+}
+
+func (m *Check) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Check.Unmarshal(m, b)
+}
+func (m *Check) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Check.Marshal(b, m, deterministic)
+}
+func (m *Check) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Check.Merge(m, src)
+}
+func (m *Check) XXX_Size() int {
+	return xxx_messageInfo_Check.Size(m)
+}
+func (m *Check) XXX_DiscardUnknown() {
+	xxx_messageInfo_Check.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Check proto.InternalMessageInfo
+
+func (m *Check) GetCustomerNumber() string {
+	if m != nil {
+		return m.CustomerNumber
+	}
+	return ""
+}
+
+func (m *Check) GetType() string {
+	if m != nil {
+		return m.Type
+	}
+	return ""
+}
+
+func (m *Check) GetHandle() string {
+	if m != nil {
+		return m.Handle
+	}
+	return ""
+}
+
+func (m *Check) GetDateAdded() *timestamp.Timestamp {
+	if m != nil {
+		return m.DateAdded
+	}
+	return nil
+}
+
+func (m *Check) GetDateActivated() *timestamp.Timestamp {
+	if m != nil {
+		return m.DateActivated
+	}
+	return nil
+}
+
+type GetCustomerSocialMediaHandlesRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomerSocialMediaHandlesRequest) Reset()         { *m = GetCustomerSocialMediaHandlesRequest{} }
+func (m *GetCustomerSocialMediaHandlesRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCustomerSocialMediaHandlesRequest) ProtoMessage()    {}
+func (*GetCustomerSocialMediaHandlesRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{27}
+}
+
+func (m *GetCustomerSocialMediaHandlesRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Unmarshal(m, b)
+}
+func (m *GetCustomerSocialMediaHandlesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCustomerSocialMediaHandlesRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Merge(m, src)
+}
+func (m *GetCustomerSocialMediaHandlesRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Size(m)
+}
+func (m *GetCustomerSocialMediaHandlesRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomerSocialMediaHandlesRequest proto.InternalMessageInfo
+
+func (m *GetCustomerSocialMediaHandlesRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetCustomerSocialMediaHandlesRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type GetCustomerSocialMediaHandlesResponse struct {
+	Checks               []*Check `protobuf:"bytes,1,rep,name=Checks,json=checks,proto3" json:"Checks,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomerSocialMediaHandlesResponse) Reset()         { *m = GetCustomerSocialMediaHandlesResponse{} }
+func (m *GetCustomerSocialMediaHandlesResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCustomerSocialMediaHandlesResponse) ProtoMessage()    {}
+func (*GetCustomerSocialMediaHandlesResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{28}
+}
+
+func (m *GetCustomerSocialMediaHandlesResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Unmarshal(m, b)
+}
+func (m *GetCustomerSocialMediaHandlesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCustomerSocialMediaHandlesResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Merge(m, src)
+}
+func (m *GetCustomerSocialMediaHandlesResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Size(m)
+}
+func (m *GetCustomerSocialMediaHandlesResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomerSocialMediaHandlesResponse proto.InternalMessageInfo
+
+func (m *GetCustomerSocialMediaHandlesResponse) GetChecks() []*Check {
+	if m != nil {
+		return m.Checks
+	}
+	return nil
+}
+
+type GetCustomerByCustomerIDRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomerByCustomerIDRequest) Reset()         { *m = GetCustomerByCustomerIDRequest{} }
+func (m *GetCustomerByCustomerIDRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCustomerByCustomerIDRequest) ProtoMessage()    {}
+func (*GetCustomerByCustomerIDRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{29}
+}
+
+func (m *GetCustomerByCustomerIDRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomerByCustomerIDRequest.Unmarshal(m, b)
+}
+func (m *GetCustomerByCustomerIDRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomerByCustomerIDRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCustomerByCustomerIDRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomerByCustomerIDRequest.Merge(m, src)
+}
+func (m *GetCustomerByCustomerIDRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCustomerByCustomerIDRequest.Size(m)
+}
+func (m *GetCustomerByCustomerIDRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomerByCustomerIDRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomerByCustomerIDRequest proto.InternalMessageInfo
+
+func (m *GetCustomerByCustomerIDRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetCustomerByCustomerIDRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type GetCustomerByCustomerNumberRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	CustomerNumber       string   `protobuf:"bytes,3,opt,name=CustomerNumber,json=customer_number,proto3" json:"CustomerNumber,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomerByCustomerNumberRequest) Reset()         { *m = GetCustomerByCustomerNumberRequest{} }
+func (m *GetCustomerByCustomerNumberRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCustomerByCustomerNumberRequest) ProtoMessage()    {}
+func (*GetCustomerByCustomerNumberRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{30}
+}
+
+func (m *GetCustomerByCustomerNumberRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomerByCustomerNumberRequest.Unmarshal(m, b)
+}
+func (m *GetCustomerByCustomerNumberRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomerByCustomerNumberRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCustomerByCustomerNumberRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomerByCustomerNumberRequest.Merge(m, src)
+}
+func (m *GetCustomerByCustomerNumberRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCustomerByCustomerNumberRequest.Size(m)
+}
+func (m *GetCustomerByCustomerNumberRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomerByCustomerNumberRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomerByCustomerNumberRequest proto.InternalMessageInfo
+
+func (m *GetCustomerByCustomerNumberRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetCustomerByCustomerNumberRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+func (m *GetCustomerByCustomerNumberRequest) GetCustomerNumber() string {
+	if m != nil {
+		return m.CustomerNumber
+	}
+	return ""
+}
+
+type GetCustomersForCurrentUserRequest struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomersForCurrentUserRequest) Reset()         { *m = GetCustomersForCurrentUserRequest{} }
+func (m *GetCustomersForCurrentUserRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCustomersForCurrentUserRequest) ProtoMessage()    {}
+func (*GetCustomersForCurrentUserRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{31}
+}
+
+func (m *GetCustomersForCurrentUserRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomersForCurrentUserRequest.Unmarshal(m, b)
+}
+func (m *GetCustomersForCurrentUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomersForCurrentUserRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCustomersForCurrentUserRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomersForCurrentUserRequest.Merge(m, src)
+}
+func (m *GetCustomersForCurrentUserRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCustomersForCurrentUserRequest.Size(m)
+}
+func (m *GetCustomersForCurrentUserRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomersForCurrentUserRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomersForCurrentUserRequest proto.InternalMessageInfo
+
+type GetCustomersForCurrentUserResponse struct {
+	Customers            []*Customer `protobuf:"bytes,1,rep,name=Customers,json=customers,proto3" json:"Customers,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GetCustomersForCurrentUserResponse) Reset()         { *m = GetCustomersForCurrentUserResponse{} }
+func (m *GetCustomersForCurrentUserResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCustomersForCurrentUserResponse) ProtoMessage()    {}
+func (*GetCustomersForCurrentUserResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{32}
+}
+
+func (m *GetCustomersForCurrentUserResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomersForCurrentUserResponse.Unmarshal(m, b)
+}
+func (m *GetCustomersForCurrentUserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomersForCurrentUserResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCustomersForCurrentUserResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomersForCurrentUserResponse.Merge(m, src)
+}
+func (m *GetCustomersForCurrentUserResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCustomersForCurrentUserResponse.Size(m)
+}
+func (m *GetCustomersForCurrentUserResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomersForCurrentUserResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomersForCurrentUserResponse proto.InternalMessageInfo
+
+func (m *GetCustomersForCurrentUserResponse) GetCustomers() []*Customer {
+	if m != nil {
+		return m.Customers
+	}
+	return nil
+}
+
+type GetCustomersForCurrentUserAtBankRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetCustomersForCurrentUserAtBankRequest) Reset() {
+	*m = GetCustomersForCurrentUserAtBankRequest{}
+}
+func (m *GetCustomersForCurrentUserAtBankRequest) String() string { return proto.CompactTextString(m) }
+func (*GetCustomersForCurrentUserAtBankRequest) ProtoMessage()    {}
+func (*GetCustomersForCurrentUserAtBankRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{33}
+}
+
+func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Unmarshal(m, b)
+}
+func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Marshal(b, m, deterministic)
+}
+func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Merge(m, src)
+}
+func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Size() int {
+	return xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Size(m)
+}
+func (m *GetCustomersForCurrentUserAtBankRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest proto.InternalMessageInfo
+
+func (m *GetCustomersForCurrentUserAtBankRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+type GetCustomersForCurrentUserAtBankResponse struct {
+	Customers            []*Customer `protobuf:"bytes,1,rep,name=Customers,json=customers,proto3" json:"Customers,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GetCustomersForCurrentUserAtBankResponse) Reset() {
+	*m = GetCustomersForCurrentUserAtBankResponse{}
+}
+func (m *GetCustomersForCurrentUserAtBankResponse) String() string { return proto.CompactTextString(m) }
+func (*GetCustomersForCurrentUserAtBankResponse) ProtoMessage()    {}
+func (*GetCustomersForCurrentUserAtBankResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{34}
+}
+
+func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Unmarshal(m, b)
+}
+func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Marshal(b, m, deterministic)
+}
+func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Merge(m, src)
+}
+func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Size() int {
+	return xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Size(m)
+}
+func (m *GetCustomersForCurrentUserAtBankResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse proto.InternalMessageInfo
+
+func (m *GetCustomersForCurrentUserAtBankResponse) GetCustomers() []*Customer {
+	if m != nil {
+		return m.Customers
+	}
+	return nil
+}
+
+type GetFirehoseCustomerRequest struct {
+	BankID               string               `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	SortDirection        types.SortDirection  `protobuf:"varint,2,opt,name=SortDirection,json=sort_direction,proto3,enum=types.SortDirection" json:"SortDirection,omitempty"`
+	Limit                int32                `protobuf:"varint,3,opt,name=Limit,json=limit,proto3" json:"Limit,omitempty"`
+	Offset               int32                `protobuf:"varint,4,opt,name=Offset,json=offset,proto3" json:"Offset,omitempty"`
+	FromDate             *timestamp.Timestamp `protobuf:"bytes,5,opt,name=FromDate,json=from_date,proto3" json:"FromDate,omitempty"`
+	ToDate               *timestamp.Timestamp `protobuf:"bytes,6,opt,name=ToDate,json=to_date,proto3" json:"ToDate,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+
+func (m *GetFirehoseCustomerRequest) Reset()         { *m = GetFirehoseCustomerRequest{} }
+func (m *GetFirehoseCustomerRequest) String() string { return proto.CompactTextString(m) }
+func (*GetFirehoseCustomerRequest) ProtoMessage()    {}
+func (*GetFirehoseCustomerRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{35}
+}
+
+func (m *GetFirehoseCustomerRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetFirehoseCustomerRequest.Unmarshal(m, b)
+}
+func (m *GetFirehoseCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetFirehoseCustomerRequest.Marshal(b, m, deterministic)
+}
+func (m *GetFirehoseCustomerRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetFirehoseCustomerRequest.Merge(m, src)
+}
+func (m *GetFirehoseCustomerRequest) XXX_Size() int {
+	return xxx_messageInfo_GetFirehoseCustomerRequest.Size(m)
+}
+func (m *GetFirehoseCustomerRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetFirehoseCustomerRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetFirehoseCustomerRequest proto.InternalMessageInfo
+
+func (m *GetFirehoseCustomerRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetFirehoseCustomerRequest) GetSortDirection() types.SortDirection {
+	if m != nil {
+		return m.SortDirection
+	}
+	return types.SortDirection_UnknownSortDirection
+}
+
+func (m *GetFirehoseCustomerRequest) GetLimit() int32 {
+	if m != nil {
+		return m.Limit
+	}
+	return 0
+}
+
+func (m *GetFirehoseCustomerRequest) GetOffset() int32 {
+	if m != nil {
+		return m.Offset
+	}
+	return 0
+}
+
+func (m *GetFirehoseCustomerRequest) GetFromDate() *timestamp.Timestamp {
+	if m != nil {
+		return m.FromDate
+	}
+	return nil
+}
+
+func (m *GetFirehoseCustomerRequest) GetToDate() *timestamp.Timestamp {
+	if m != nil {
+		return m.ToDate
+	}
+	return nil
+}
+
+type GetFirehoseCustomerResponse struct {
+	Customers            []*Customer `protobuf:"bytes,1,rep,name=Customers,json=customers,proto3" json:"Customers,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *GetFirehoseCustomerResponse) Reset()         { *m = GetFirehoseCustomerResponse{} }
+func (m *GetFirehoseCustomerResponse) String() string { return proto.CompactTextString(m) }
+func (*GetFirehoseCustomerResponse) ProtoMessage()    {}
+func (*GetFirehoseCustomerResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{36}
+}
+
+func (m *GetFirehoseCustomerResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetFirehoseCustomerResponse.Unmarshal(m, b)
+}
+func (m *GetFirehoseCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetFirehoseCustomerResponse.Marshal(b, m, deterministic)
+}
+func (m *GetFirehoseCustomerResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetFirehoseCustomerResponse.Merge(m, src)
+}
+func (m *GetFirehoseCustomerResponse) XXX_Size() int {
+	return xxx_messageInfo_GetFirehoseCustomerResponse.Size(m)
+}
+func (m *GetFirehoseCustomerResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetFirehoseCustomerResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetFirehoseCustomerResponse proto.InternalMessageInfo
+
+func (m *GetFirehoseCustomerResponse) GetCustomers() []*Customer {
+	if m != nil {
+		return m.Customers
+	}
+	return nil
+}
+
+type TaxResidence struct {
+	Domain               string   `protobuf:"bytes,1,opt,name=Domain,json=domain,proto3" json:"Domain,omitempty"`
+	TaxNumber            string   `protobuf:"bytes,2,opt,name=TaxNumber,json=tax_number,proto3" json:"TaxNumber,omitempty"`
+	TaxResidenceID       string   `protobuf:"bytes,3,opt,name=TaxResidenceID,json=tax_residence_id,proto3" json:"TaxResidenceID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *TaxResidence) Reset()         { *m = TaxResidence{} }
+func (m *TaxResidence) String() string { return proto.CompactTextString(m) }
+func (*TaxResidence) ProtoMessage()    {}
+func (*TaxResidence) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{37}
+}
+
+func (m *TaxResidence) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_TaxResidence.Unmarshal(m, b)
+}
+func (m *TaxResidence) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_TaxResidence.Marshal(b, m, deterministic)
+}
+func (m *TaxResidence) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TaxResidence.Merge(m, src)
+}
+func (m *TaxResidence) XXX_Size() int {
+	return xxx_messageInfo_TaxResidence.Size(m)
+}
+func (m *TaxResidence) XXX_DiscardUnknown() {
+	xxx_messageInfo_TaxResidence.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_TaxResidence proto.InternalMessageInfo
+
+func (m *TaxResidence) GetDomain() string {
+	if m != nil {
+		return m.Domain
+	}
+	return ""
+}
+
+func (m *TaxResidence) GetTaxNumber() string {
+	if m != nil {
+		return m.TaxNumber
+	}
+	return ""
+}
+
+func (m *TaxResidence) GetTaxResidenceID() string {
+	if m != nil {
+		return m.TaxResidenceID
+	}
+	return ""
+}
+
+type GetTaxResidenceOfCustomerRequest struct {
+	BankID               string   `protobuf:"bytes,1,opt,name=BankID,json=bank_id,proto3" json:"BankID,omitempty"`
+	CustomerID           string   `protobuf:"bytes,2,opt,name=CustomerID,json=customer_id,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetTaxResidenceOfCustomerRequest) Reset()         { *m = GetTaxResidenceOfCustomerRequest{} }
+func (m *GetTaxResidenceOfCustomerRequest) String() string { return proto.CompactTextString(m) }
+func (*GetTaxResidenceOfCustomerRequest) ProtoMessage()    {}
+func (*GetTaxResidenceOfCustomerRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{38}
+}
+
+func (m *GetTaxResidenceOfCustomerRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Unmarshal(m, b)
+}
+func (m *GetTaxResidenceOfCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Marshal(b, m, deterministic)
+}
+func (m *GetTaxResidenceOfCustomerRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Merge(m, src)
+}
+func (m *GetTaxResidenceOfCustomerRequest) XXX_Size() int {
+	return xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Size(m)
+}
+func (m *GetTaxResidenceOfCustomerRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetTaxResidenceOfCustomerRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetTaxResidenceOfCustomerRequest proto.InternalMessageInfo
+
+func (m *GetTaxResidenceOfCustomerRequest) GetBankID() string {
+	if m != nil {
+		return m.BankID
+	}
+	return ""
+}
+
+func (m *GetTaxResidenceOfCustomerRequest) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type GetTaxResidenceOfCustomerResponse struct {
+	Result               []*TaxResidence `protobuf:"bytes,1,rep,name=Result,json=result,proto3" json:"Result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
+}
+
+func (m *GetTaxResidenceOfCustomerResponse) Reset()         { *m = GetTaxResidenceOfCustomerResponse{} }
+func (m *GetTaxResidenceOfCustomerResponse) String() string { return proto.CompactTextString(m) }
+func (*GetTaxResidenceOfCustomerResponse) ProtoMessage()    {}
+func (*GetTaxResidenceOfCustomerResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_738180ea6f18b813, []int{39}
+}
+
+func (m *GetTaxResidenceOfCustomerResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Unmarshal(m, b)
+}
+func (m *GetTaxResidenceOfCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Marshal(b, m, deterministic)
+}
+func (m *GetTaxResidenceOfCustomerResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Merge(m, src)
+}
+func (m *GetTaxResidenceOfCustomerResponse) XXX_Size() int {
+	return xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Size(m)
+}
+func (m *GetTaxResidenceOfCustomerResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetTaxResidenceOfCustomerResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetTaxResidenceOfCustomerResponse proto.InternalMessageInfo
+
+func (m *GetTaxResidenceOfCustomerResponse) GetResult() []*TaxResidence {
+	if m != nil {
+		return m.Result
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*FaceImage)(nil), "customer.FaceImage")
 	proto.RegisterType((*CreditRating)(nil), "customer.CreditRating")
@@ -869,6 +2579,37 @@ func init() {
 	proto.RegisterType((*AddAddressToCustomerResponse)(nil), "customer.AddAddressToCustomerResponse")
 	proto.RegisterType((*AddSocialMediaHandleRequest)(nil), "customer.AddSocialMediaHandleRequest")
 	proto.RegisterType((*AddSocialMediaHandleResponse)(nil), "customer.AddSocialMediaHandleResponse")
+	proto.RegisterType((*CreateCreditLimitOrderRequest)(nil), "customer.CreateCreditLimitOrderRequest")
+	proto.RegisterType((*CreateCreditLimitOrderResponse)(nil), "customer.CreateCreditLimitOrderResponse")
+	proto.RegisterType((*CreateUserCustomerLinkRequest)(nil), "customer.CreateUserCustomerLinkRequest")
+	proto.RegisterType((*CreateUserCustomerLinkResponse)(nil), "customer.CreateUserCustomerLinkResponse")
+	proto.RegisterType((*DeleteCustomerAddressRequest)(nil), "customer.DeleteCustomerAddressRequest")
+	proto.RegisterType((*DeleteTaxResidenceRequest)(nil), "customer.DeleteTaxResidenceRequest")
+	proto.RegisterType((*CRMEvent)(nil), "customer.CRMEvent")
+	proto.RegisterType((*GetCRMEventsRequest)(nil), "customer.GetCRMEventsRequest")
+	proto.RegisterType((*GetCRMEventsResponse)(nil), "customer.GetCRMEventsResponse")
+	proto.RegisterType((*CreditLimitOrder)(nil), "customer.CreditLimitOrder")
+	proto.RegisterType((*GetCreditLimitOrderByIDRequest)(nil), "customer.GetCreditLimitOrderByIDRequest")
+	proto.RegisterType((*GetCreditLimitOrderByIDResponse)(nil), "customer.GetCreditLimitOrderByIDResponse")
+	proto.RegisterType((*GetCreditLimitOrderRequest)(nil), "customer.GetCreditLimitOrderRequest")
+	proto.RegisterType((*GetCreditLimitOrderResponse)(nil), "customer.GetCreditLimitOrderResponse")
+	proto.RegisterType((*Address)(nil), "customer.Address")
+	proto.RegisterType((*GetCustomerAddressesRequest)(nil), "customer.GetCustomerAddressesRequest")
+	proto.RegisterType((*GetCustomerAddressesResponse)(nil), "customer.GetCustomerAddressesResponse")
+	proto.RegisterType((*Check)(nil), "customer.Check")
+	proto.RegisterType((*GetCustomerSocialMediaHandlesRequest)(nil), "customer.GetCustomerSocialMediaHandlesRequest")
+	proto.RegisterType((*GetCustomerSocialMediaHandlesResponse)(nil), "customer.GetCustomerSocialMediaHandlesResponse")
+	proto.RegisterType((*GetCustomerByCustomerIDRequest)(nil), "customer.GetCustomerByCustomerIDRequest")
+	proto.RegisterType((*GetCustomerByCustomerNumberRequest)(nil), "customer.GetCustomerByCustomerNumberRequest")
+	proto.RegisterType((*GetCustomersForCurrentUserRequest)(nil), "customer.GetCustomersForCurrentUserRequest")
+	proto.RegisterType((*GetCustomersForCurrentUserResponse)(nil), "customer.GetCustomersForCurrentUserResponse")
+	proto.RegisterType((*GetCustomersForCurrentUserAtBankRequest)(nil), "customer.GetCustomersForCurrentUserAtBankRequest")
+	proto.RegisterType((*GetCustomersForCurrentUserAtBankResponse)(nil), "customer.GetCustomersForCurrentUserAtBankResponse")
+	proto.RegisterType((*GetFirehoseCustomerRequest)(nil), "customer.GetFirehoseCustomerRequest")
+	proto.RegisterType((*GetFirehoseCustomerResponse)(nil), "customer.GetFirehoseCustomerResponse")
+	proto.RegisterType((*TaxResidence)(nil), "customer.TaxResidence")
+	proto.RegisterType((*GetTaxResidenceOfCustomerRequest)(nil), "customer.GetTaxResidenceOfCustomerRequest")
+	proto.RegisterType((*GetTaxResidenceOfCustomerResponse)(nil), "customer.GetTaxResidenceOfCustomerResponse")
 }
 
 func init() {
@@ -876,127 +2617,258 @@ func init() {
 }
 
 var fileDescriptor_738180ea6f18b813 = []byte{
-	// 1909 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x58, 0xcd, 0x6f, 0x23, 0x49,
-	0x15, 0x77, 0xfb, 0x2b, 0x76, 0x39, 0x99, 0x4c, 0x2a, 0xb0, 0x58, 0x26, 0xda, 0x2d, 0xb2, 0xb0,
-	0x93, 0x19, 0x76, 0xda, 0x8e, 0x33, 0x80, 0x14, 0x58, 0x90, 0xf3, 0xb1, 0x93, 0xcc, 0x66, 0x76,
-	0x22, 0x27, 0x20, 0x18, 0x09, 0x5a, 0xe5, 0xee, 0xb2, 0x5d, 0x9b, 0xee, 0xae, 0xa6, 0xaa, 0x3a,
-	0xc1, 0x20, 0x24, 0xc4, 0x01, 0x8d, 0x38, 0xad, 0x06, 0x2e, 0xfc, 0x23, 0x2b, 0x84, 0x38, 0x71,
-	0x40, 0x1c, 0x91, 0xb8, 0x70, 0x40, 0x48, 0x48, 0x5c, 0x10, 0x70, 0x45, 0xdc, 0x40, 0x55, 0xdd,
-	0xed, 0x8f, 0x74, 0x3b, 0x1f, 0xb3, 0x7b, 0x9a, 0x4c, 0xbf, 0x5f, 0xbd, 0x7a, 0xf5, 0xfb, 0xbd,
-	0x5f, 0xd7, 0x73, 0x83, 0xf6, 0x80, 0xca, 0x61, 0xd8, 0x33, 0x6d, 0xe6, 0x35, 0x59, 0x40, 0xfc,
-	0x1e, 0xf6, 0xcf, 0x26, 0x7f, 0x9c, 0x6f, 0x36, 0xed, 0x50, 0x48, 0xe6, 0x11, 0xde, 0xc4, 0xae,
-	0x6b, 0x06, 0x9c, 0x49, 0x06, 0x2b, 0xc9, 0xb3, 0xc6, 0x1b, 0x03, 0xc6, 0x06, 0x2e, 0x69, 0xea,
-	0xe7, 0xbd, 0xb0, 0xdf, 0x94, 0xd4, 0x23, 0x42, 0x62, 0x2f, 0x88, 0xa0, 0x8d, 0xb5, 0x18, 0x80,
-	0x03, 0xda, 0xc4, 0xbe, 0xcf, 0x24, 0x96, 0x94, 0xf9, 0x22, 0x8e, 0xbe, 0xad, 0xff, 0xb1, 0x1f,
-	0x0e, 0x88, 0xff, 0x50, 0x5c, 0xe0, 0xc1, 0x80, 0xf0, 0x26, 0x0b, 0x34, 0x22, 0x03, 0xdd, 0xbc,
-	0xae, 0x54, 0x39, 0x0a, 0x88, 0x98, 0xd4, 0xb9, 0xee, 0x81, 0xea, 0xbb, 0xd8, 0x26, 0x87, 0x1e,
-	0x1e, 0x10, 0xb8, 0x06, 0x0a, 0xdf, 0xec, 0x1e, 0xd5, 0x0d, 0x64, 0x6c, 0x54, 0x77, 0x40, 0x25,
-	0x57, 0xcf, 0x6d, 0xe4, 0x5a, 0xb9, 0xe3, 0x5c, 0xb7, 0x10, 0x72, 0x17, 0x6e, 0x83, 0xe2, 0x1e,
-	0x96, 0xa4, 0x9e, 0x47, 0xc6, 0x46, 0xad, 0xdd, 0x30, 0xa3, 0xb2, 0xcd, 0xe4, 0x5c, 0xe6, 0x69,
-	0x72, 0xae, 0x99, 0xa5, 0x45, 0x07, 0x4b, 0xb2, 0x5d, 0xae, 0xe4, 0xee, 0xe6, 0xea, 0xb9, 0xf5,
-	0xef, 0x81, 0xc5, 0x5d, 0x4e, 0x1c, 0x2a, 0xbb, 0x58, 0x52, 0x7f, 0x00, 0xd7, 0x41, 0x39, 0xfa,
-	0x2b, 0x63, 0xd3, 0x32, 0x1f, 0x63, 0x4e, 0x58, 0xc8, 0xed, 0x68, 0xe7, 0x4b, 0x18, 0xa1, 0x23,
-	0xe3, 0xfc, 0xbf, 0x5a, 0x00, 0x95, 0xdd, 0x98, 0x79, 0xd8, 0x00, 0xf9, 0xc3, 0xbd, 0x8c, 0xc4,
-	0x79, 0xea, 0xc0, 0x37, 0x41, 0x79, 0x07, 0xfb, 0x67, 0x87, 0x7b, 0x19, 0x49, 0x17, 0x14, 0x59,
-	0x16, 0x75, 0xe0, 0x16, 0xb8, 0x93, 0x24, 0x7b, 0x3f, 0xf4, 0x7a, 0x84, 0xd7, 0x0b, 0x29, 0xf0,
-	0x72, 0x22, 0xb4, 0xe5, 0x6b, 0x08, 0xbc, 0x0f, 0xaa, 0x47, 0x64, 0x80, 0xdd, 0xf7, 0xb1, 0x47,
-	0xea, 0xc5, 0x14, 0x1e, 0xb8, 0x2a, 0x68, 0xf9, 0xd8, 0x23, 0xf0, 0x21, 0xa8, 0x1d, 0x0f, 0x99,
-	0x4f, 0xe2, 0xe4, 0xa5, 0x14, 0x78, 0x31, 0x50, 0xe1, 0x24, 0x33, 0x02, 0xa5, 0x7d, 0x0f, 0x53,
-	0xb7, 0x5e, 0x4e, 0x01, 0x4b, 0x44, 0x05, 0xe0, 0xd7, 0xa7, 0xd4, 0xac, 0x2f, 0x68, 0x9d, 0x56,
-	0xcd, 0xa4, 0x40, 0x73, 0x1c, 0x9a, 0x2d, 0xa8, 0x8f, 0x6d, 0x62, 0x51, 0xdd, 0x00, 0x4f, 0x40,
-	0x4d, 0x49, 0xfc, 0xac, 0xbf, 0x43, 0xb9, 0x1c, 0xd6, 0x2b, 0xb7, 0x52, 0x7a, 0x49, 0x29, 0x6d,
-	0xb1, 0xbe, 0xd5, 0x53, 0x8b, 0xe1, 0x57, 0x01, 0xec, 0x12, 0x37, 0xea, 0xce, 0x21, 0x0d, 0x4e,
-	0x24, 0x96, 0xa1, 0xa8, 0x57, 0x53, 0xa5, 0xaf, 0xf2, 0x29, 0x94, 0x25, 0x34, 0x0c, 0x3e, 0x9e,
-	0xed, 0x93, 0x3a, 0xd0, 0x95, 0xbc, 0x36, 0x39, 0xcb, 0x74, 0x74, 0xb6, 0x0a, 0x5b, 0x47, 0xac,
-	0xb8, 0x79, 0xbe, 0x06, 0x6a, 0x11, 0xf4, 0x88, 0x7a, 0x54, 0xd6, 0x6b, 0x3a, 0xcf, 0x92, 0xa9,
-	0x6d, 0x60, 0x76, 0x3c, 0x16, 0xfa, 0x72, 0x96, 0xf1, 0x78, 0xb9, 0xab, 0xe0, 0xf0, 0x09, 0xa8,
-	0x1f, 0xd0, 0xc1, 0x90, 0x08, 0xb9, 0xef, 0x84, 0xb6, 0xae, 0xb2, 0x23, 0x25, 0xa6, 0x3e, 0x71,
-	0xea, 0x8b, 0xa9, 0x93, 0xac, 0x0d, 0x23, 0xac, 0x45, 0x12, 0x30, 0x76, 0x2d, 0x1c, 0xe3, 0xe1,
-	0x57, 0xc0, 0xdd, 0x7d, 0x2f, 0x70, 0xd9, 0xc8, 0x23, 0xbe, 0x8c, 0xd9, 0x58, 0x4a, 0xe5, 0x58,
-	0x21, 0x63, 0x4c, 0xc2, 0xc5, 0x7d, 0x50, 0x7d, 0xef, 0x3b, 0xbb, 0xf1, 0x8a, 0x3b, 0xc8, 0xd8,
-	0xa8, 0xcc, 0xea, 0x77, 0x36, 0xb2, 0x13, 0xe8, 0x01, 0x00, 0x47, 0x58, 0xc8, 0x67, 0xef, 0x69,
-	0xa3, 0x2e, 0xdf, 0x4a, 0xbe, 0x45, 0x17, 0x0b, 0x69, 0xb1, 0x33, 0xcb, 0xc1, 0x12, 0xab, 0x5e,
-	0x3b, 0xa5, 0xd2, 0x25, 0xf5, 0xbb, 0xe9, 0x5e, 0x93, 0x2a, 0x00, 0xef, 0x81, 0xca, 0x0e, 0xc7,
-	0xbe, 0x3d, 0x3c, 0xdc, 0xab, 0xaf, 0xa4, 0x40, 0xd5, 0x9e, 0x8e, 0x59, 0xd4, 0x19, 0x7b, 0xf3,
-	0xc5, 0x02, 0xf8, 0xf4, 0x2e, 0x27, 0x58, 0x92, 0xc4, 0x54, 0x5d, 0xf2, 0xfd, 0x90, 0x08, 0x39,
-	0x65, 0x46, 0x63, 0xbe, 0x19, 0x67, 0x7c, 0x95, 0xbf, 0xd2, 0x57, 0xdb, 0x60, 0xe5, 0x29, 0xeb,
-	0x51, 0x97, 0x4c, 0xbb, 0x2b, 0x6d, 0xdd, 0x55, 0x4f, 0x83, 0xac, 0x6c, 0x93, 0x15, 0x6f, 0x64,
-	0xb2, 0xd2, 0xc7, 0x36, 0x59, 0xf9, 0x93, 0x37, 0xd9, 0xc2, 0xcd, 0x4c, 0xd6, 0x05, 0xcb, 0x7b,
-	0xac, 0xf7, 0xac, 0xbf, 0x47, 0x02, 0xe2, 0x3b, 0xc4, 0x97, 0xa2, 0x5e, 0x41, 0x85, 0x5b, 0x14,
-	0xb3, 0xe2, 0xb0, 0x9e, 0xaa, 0xc5, 0x19, 0x27, 0x48, 0x19, 0xb7, 0xfa, 0x09, 0x19, 0x17, 0xdc,
-	0xce, 0xb8, 0x07, 0x57, 0x18, 0xb7, 0x96, 0x62, 0xa7, 0x91, 0x32, 0xee, 0xd5, 0xb6, 0x5d, 0xbc,
-	0x89, 0x6d, 0x67, 0xbd, 0xb8, 0xf4, 0xca, 0x5e, 0x24, 0x13, 0x2f, 0xde, 0x99, 0xe7, 0xc5, 0xb7,
-	0xa6, 0xbc, 0xb8, 0x9c, 0x02, 0x55, 0x22, 0x2f, 0x1e, 0x4e, 0xac, 0xc8, 0xc1, 0x6b, 0x97, 0x9d,
-	0x28, 0x02, 0xe6, 0x0b, 0x02, 0xbf, 0x08, 0x40, 0xf2, 0x2c, 0xd3, 0x8e, 0xb5, 0xf1, 0x75, 0x77,
-	0xc3, 0x4b, 0x74, 0xbc, 0xe7, 0x6f, 0x0b, 0xe0, 0xb3, 0x1d, 0xc7, 0xe9, 0x38, 0x0e, 0x27, 0x42,
-	0x9c, 0xb2, 0xcb, 0x2f, 0x81, 0x5b, 0xed, 0xfc, 0x39, 0x50, 0x3a, 0xa2, 0x3e, 0xd9, 0xcc, 0x1a,
-	0x09, 0x5c, 0xea, 0x13, 0x6b, 0x33, 0x81, 0xb4, 0x33, 0x8c, 0x1f, 0x41, 0xda, 0x09, 0x64, 0x2b,
-	0xc3, 0xeb, 0x11, 0x64, 0x0b, 0xbe, 0x0e, 0x8a, 0xbb, 0x54, 0x8e, 0x32, 0xee, 0xe6, 0xa2, 0x4d,
-	0xe5, 0x48, 0x0d, 0x27, 0xbb, 0xaa, 0x17, 0x47, 0x19, 0x97, 0x72, 0xd9, 0xd6, 0x11, 0xa5, 0x9f,
-	0x6a, 0x1c, 0x92, 0xe1, 0xcb, 0x92, 0x6a, 0x16, 0xad, 0xdf, 0x31, 0x13, 0xd2, 0x66, 0x0e, 0xd1,
-	0x97, 0xee, 0x25, 0xfd, 0x82, 0x38, 0xa6, 0x06, 0x06, 0xbd, 0x1b, 0x1f, 0xed, 0x2a, 0x68, 0xfa,
-	0x32, 0x5d, 0xb4, 0xa3, 0xb0, 0xa5, 0xe1, 0xaf, 0x83, 0xe2, 0x29, 0x1e, 0x88, 0x3a, 0x40, 0x85,
-	0xcb, 0xc5, 0x4b, 0x3c, 0x10, 0x7a, 0xb2, 0x8a, 0x3a, 0xba, 0x96, 0x31, 0x59, 0xe9, 0xc8, 0x58,
-	0xbe, 0xdf, 0x15, 0xc1, 0x5a, 0xb6, 0x7c, 0x71, 0xe7, 0x6c, 0x83, 0x95, 0xe4, 0x59, 0x0c, 0xca,
-	0x94, 0x71, 0x75, 0x2c, 0x23, 0x8e, 0x50, 0x4a, 0xce, 0x59, 0xed, 0xf3, 0x37, 0xd4, 0xbe, 0x70,
-	0xbd, 0xf6, 0xc5, 0xeb, 0xb5, 0x2f, 0x5d, 0xab, 0x7d, 0xf9, 0x5a, 0xed, 0x17, 0xae, 0xd7, 0xbe,
-	0x72, 0x13, 0xed, 0xab, 0x37, 0xd7, 0x1e, 0xdc, 0x50, 0xfb, 0xda, 0xb5, 0xda, 0x2f, 0xce, 0xd3,
-	0x1e, 0x3e, 0x06, 0xe0, 0xd0, 0x17, 0x84, 0xcb, 0x57, 0x78, 0x85, 0xd5, 0xa8, 0x5e, 0x69, 0xcd,
-	0x8c, 0xff, 0x7f, 0xcb, 0xeb, 0x77, 0xc0, 0x09, 0xb3, 0x29, 0x76, 0x9f, 0x12, 0x87, 0xe2, 0x03,
-	0xec, 0x3b, 0x2e, 0x79, 0xa5, 0x77, 0x40, 0x7a, 0x3a, 0xcf, 0x5f, 0x3f, 0x9d, 0x2b, 0x5a, 0x46,
-	0x01, 0xc9, 0xe8, 0x9d, 0xa2, 0xba, 0x5a, 0x14, 0x2d, 0x51, 0x49, 0x59, 0xad, 0x33, 0xd4, 0x11,
-	0xb8, 0x0f, 0xaa, 0x8a, 0x90, 0x8e, 0xe3, 0x10, 0x27, 0x1e, 0x00, 0x6e, 0xca, 0x0a, 0xd0, 0xd7,
-	0x37, 0x56, 0x2b, 0xe1, 0x53, 0xb0, 0xa4, 0xd3, 0xd8, 0x92, 0x9e, 0x63, 0x49, 0x9c, 0x5b, 0x4e,
-	0x02, 0x77, 0xa2, 0x54, 0xc9, 0xea, 0x31, 0xc7, 0x47, 0xda, 0xa7, 0x19, 0x14, 0xc7, 0x3e, 0xfd,
-	0x3c, 0x58, 0x38, 0x09, 0x6d, 0x9b, 0x08, 0x91, 0x35, 0x6d, 0x89, 0x28, 0x94, 0x64, 0x6b, 0x7f,
-	0x54, 0x01, 0xcb, 0x09, 0xcb, 0x27, 0x84, 0x9f, 0x53, 0x9b, 0xc0, 0x7f, 0xe6, 0xc1, 0xa7, 0xb2,
-	0x5e, 0x05, 0xf0, 0x0b, 0x93, 0x6b, 0xfe, 0x8a, 0x37, 0x7d, 0xe3, 0xad, 0xeb, 0x60, 0x51, 0xa5,
-	0xeb, 0xff, 0x33, 0x5e, 0x76, 0xfe, 0x60, 0x80, 0x6a, 0x12, 0x10, 0x50, 0x9d, 0x0c, 0xc5, 0xef,
-	0x0d, 0x24, 0x19, 0x92, 0x43, 0x82, 0xc6, 0xb9, 0x1a, 0x57, 0x46, 0x9f, 0x7c, 0x00, 0x0a, 0xed,
-	0xd6, 0x26, 0xb4, 0xc1, 0xfd, 0x8e, 0xad, 0x9d, 0x82, 0x70, 0x10, 0xb8, 0x34, 0xba, 0xef, 0x91,
-	0xad, 0xaf, 0x43, 0x07, 0xc5, 0xe7, 0xef, 0x87, 0xae, 0x3b, 0x32, 0xe1, 0x97, 0xc1, 0xa3, 0x46,
-	0xfb, 0xcd, 0xa6, 0x43, 0xfa, 0xd4, 0xa7, 0xd1, 0x6f, 0x6e, 0x7b, 0xf2, 0x8e, 0x9b, 0x5b, 0x79,
-	0x6f, 0x15, 0xac, 0x80, 0xf2, 0xb3, 0x4e, 0x28, 0x87, 0x6d, 0xb8, 0x00, 0x4a, 0x17, 0x9c, 0x4a,
-	0xf2, 0xd3, 0x3f, 0xfd, 0xfd, 0x17, 0xf9, 0x7b, 0xdb, 0xc6, 0x83, 0xf5, 0xf5, 0xe9, 0x6f, 0x06,
-	0xa2, 0xf9, 0xa3, 0x49, 0xcb, 0xff, 0xb8, 0x19, 0x97, 0xff, 0x22, 0x9f, 0xfb, 0x30, 0xaf, 0x45,
-	0x81, 0xff, 0x89, 0xd8, 0x4e, 0x09, 0x7a, 0x89, 0xed, 0x79, 0x9e, 0xba, 0xc4, 0xf6, 0xdc, 0xbe,
-	0x58, 0xff, 0x79, 0xfe, 0x65, 0xe7, 0xf7, 0x33, 0x6c, 0x7f, 0x46, 0xf1, 0x29, 0xf4, 0x02, 0xe4,
-	0xa9, 0x15, 0x28, 0x32, 0x40, 0x63, 0x63, 0x4e, 0x00, 0xf5, 0x19, 0x9f, 0x61, 0xfd, 0x09, 0x8e,
-	0x48, 0x7f, 0x0e, 0xd0, 0xc9, 0x34, 0x5c, 0x1b, 0xe0, 0x56, 0x5c, 0xcf, 0xad, 0x7b, 0x3e, 0xd7,
-	0x8f, 0x14, 0xd7, 0xcd, 0x2b, 0xb8, 0x8e, 0x4e, 0x60, 0xe9, 0x92, 0xac, 0xe8, 0x04, 0xd3, 0xc4,
-	0x7f, 0x94, 0x07, 0x77, 0x66, 0xa7, 0x24, 0xf8, 0xc6, 0xcc, 0x1c, 0x9b, 0xfe, 0x25, 0xd3, 0x40,
-	0xf3, 0x01, 0x31, 0xcd, 0x7f, 0x31, 0x5e, 0x76, 0x7e, 0x63, 0x00, 0x18, 0x37, 0x61, 0x67, 0xd2,
-	0x83, 0x70, 0x25, 0x5a, 0x82, 0xf0, 0x98, 0xbf, 0x46, 0x3c, 0xa6, 0x09, 0x84, 0x91, 0x4f, 0x2e,
-	0x26, 0xbc, 0x3a, 0x11, 0xaf, 0xdf, 0xbd, 0x4d, 0x33, 0xb7, 0x80, 0xd9, 0x78, 0x3b, 0x9b, 0xe0,
-	0xec, 0x5a, 0xe7, 0x53, 0x0b, 0x15, 0xb5, 0x4b, 0x33, 0xd4, 0x4e, 0x88, 0x6b, 0x14, 0x5e, 0xe4,
-	0x73, 0x3b, 0xbf, 0x2c, 0xbf, 0xec, 0xfc, 0xbb, 0x04, 0x0a, 0x6d, 0xb3, 0x05, 0x4f, 0xc1, 0x62,
-	0x92, 0x1b, 0x75, 0x8e, 0x0f, 0xe1, 0x3b, 0xc7, 0x9c, 0x9d, 0x53, 0x87, 0x88, 0xb8, 0x52, 0x84,
-	0x7d, 0x07, 0x71, 0x82, 0x1d, 0xc4, 0x02, 0xc2, 0xa3, 0xdf, 0x29, 0x88, 0xf9, 0x33, 0xad, 0x84,
-	0x38, 0x89, 0xbe, 0xf5, 0x98, 0xed, 0xd2, 0xa6, 0xd9, 0x32, 0x5b, 0x0f, 0x8c, 0x7c, 0xfb, 0xee,
-	0xd4, 0xa9, 0x9b, 0x1f, 0x08, 0xe6, 0x6f, 0xa7, 0x9e, 0x74, 0x8f, 0x40, 0xe1, 0x51, 0x6b, 0x13,
-	0xee, 0x83, 0xdd, 0x2e, 0x91, 0x21, 0xf7, 0x89, 0x83, 0x2e, 0x86, 0x24, 0x4a, 0xce, 0x23, 0xd9,
-	0x90, 0xc3, 0x88, 0x40, 0x3e, 0x93, 0xc8, 0x66, 0xbe, 0x9a, 0xfb, 0x85, 0x8e, 0x86, 0x82, 0xf0,
-	0x7b, 0xba, 0x46, 0xf5, 0xdb, 0x86, 0x62, 0x57, 0x98, 0xdd, 0x63, 0x95, 0x6d, 0x0b, 0x1e, 0x82,
-	0xc7, 0xe9, 0x6c, 0x0a, 0x3f, 0x49, 0x35, 0xc4, 0xe7, 0x04, 0x05, 0x84, 0x7b, 0x54, 0x08, 0x25,
-	0x8a, 0x64, 0x08, 0x6b, 0x39, 0xe2, 0x9d, 0xe3, 0xd3, 0x74, 0x37, 0x55, 0xc6, 0x47, 0xf0, 0x01,
-	0xd8, 0xc8, 0xaa, 0x2f, 0x42, 0x21, 0x1a, 0xe5, 0xec, 0xb3, 0xd0, 0x77, 0xcc, 0xee, 0xbb, 0xa0,
-	0xf0, 0xa5, 0x56, 0x0b, 0x7e, 0x03, 0xbc, 0x33, 0xbb, 0x04, 0xfb, 0x28, 0xf4, 0xc9, 0x0f, 0x02,
-	0x62, 0x2b, 0xf5, 0x09, 0xe7, 0x8c, 0x23, 0x66, 0xdb, 0x21, 0x27, 0x4e, 0x42, 0xa7, 0x20, 0xfc,
-	0x9c, 0x70, 0x24, 0xa8, 0x43, 0xcc, 0xae, 0xa5, 0xb6, 0x6e, 0xc1, 0x6f, 0x83, 0x6f, 0xcd, 0xa7,
-	0xa6, 0xc7, 0x9c, 0x91, 0xda, 0xde, 0xc3, 0x6e, 0x9f, 0x71, 0x0f, 0x4b, 0x95, 0x9a, 0x4d, 0x9d,
-	0xd3, 0xc3, 0xd2, 0x1e, 0xea, 0x25, 0xe3, 0x9d, 0xe3, 0xb5, 0xe6, 0xf3, 0x7f, 0x19, 0xe0, 0x1f,
-	0xc6, 0xb8, 0x85, 0xfe, 0x6a, 0x54, 0x0a, 0xf0, 0x67, 0x46, 0x27, 0x66, 0x81, 0x21, 0xc9, 0xb1,
-	0x2f, 0xd4, 0x0d, 0xa6, 0xf4, 0x4e, 0xce, 0x2a, 0xd4, 0x6e, 0x9c, 0x08, 0xc9, 0xa9, 0x4e, 0xa6,
-	0x78, 0x0b, 0xe5, 0x50, 0x29, 0x60, 0xeb, 0xae, 0x56, 0x34, 0x0b, 0x13, 0x9d, 0x0e, 0xc9, 0x74,
-	0x40, 0x51, 0x1c, 0x70, 0xa6, 0x53, 0xf7, 0x99, 0xeb, 0xb2, 0x8b, 0x88, 0x68, 0xb5, 0x35, 0xe3,
-	0xf4, 0x87, 0x11, 0x42, 0x8d, 0x4e, 0xa8, 0xef, 0xb2, 0x0b, 0x73, 0xa3, 0xd8, 0xae, 0xa8, 0x06,
-	0x56, 0x29, 0xb6, 0xab, 0xfa, 0xd3, 0x28, 0x3b, 0x23, 0xfe, 0xce, 0x36, 0x68, 0x80, 0xa2, 0xea,
-	0x45, 0x08, 0x1f, 0x73, 0xec, 0x4b, 0x11, 0x35, 0x66, 0x24, 0x1d, 0x58, 0x8b, 0x5d, 0x00, 0x57,
-	0xe3, 0xa0, 0xfe, 0x5f, 0x1c, 0x3d, 0x30, 0x8e, 0x73, 0xcf, 0xc7, 0x1f, 0x7e, 0x7f, 0x62, 0xe4,
-	0x5e, 0x18, 0xb9, 0x0f, 0x8d, 0xdc, 0xaf, 0x8d, 0xdc, 0x9f, 0x8d, 0xdc, 0x7f, 0x8d, 0xdc, 0x1f,
-	0xf3, 0xb9, 0x5e, 0x59, 0xdf, 0xea, 0x5b, 0xff, 0x0f, 0x00, 0x00, 0xff, 0xff, 0x25, 0x41, 0x7a,
-	0xc6, 0x54, 0x16, 0x00, 0x00,
+	// 4008 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x7c, 0x5b, 0x6c, 0x1c, 0x59,
+	0x5a, 0x7f, 0x57, 0xb7, 0xdd, 0xb6, 0x8f, 0x9d, 0xdb, 0xc9, 0x5c, 0x7a, 0x2a, 0x8e, 0x53, 0xe3,
+	0x4c, 0x12, 0xe7, 0xd6, 0x6d, 0x77, 0xb2, 0xf3, 0x1f, 0x65, 0x76, 0x66, 0xb6, 0xdd, 0x4e, 0x1c,
+	0x7b, 0x9c, 0x89, 0xd5, 0xf1, 0xce, 0x1f, 0x46, 0x82, 0xd6, 0x71, 0xd5, 0x69, 0x77, 0x8d, 0xab,
+	0xab, 0x9a, 0xaa, 0xd3, 0x4e, 0x7a, 0x87, 0x11, 0x0b, 0x42, 0x4b, 0x84, 0x90, 0x76, 0x65, 0xe0,
+	0x01, 0x10, 0x97, 0x17, 0x24, 0x24, 0x58, 0x21, 0x04, 0x0f, 0x2b, 0x40, 0x62, 0xb5, 0x5a, 0xa1,
+	0x7d, 0x01, 0x21, 0x96, 0x87, 0x79, 0x5a, 0x69, 0x01, 0x71, 0xd1, 0x02, 0x12, 0x2f, 0x08, 0x89,
+	0x07, 0xd0, 0xb9, 0xd4, 0xfd, 0x54, 0x5f, 0x6c, 0x67, 0x9f, 0xf6, 0x69, 0x32, 0xfd, 0x7d, 0xe7,
+	0x3b, 0xdf, 0xf9, 0x7d, 0xd7, 0xf3, 0x9d, 0x4a, 0x40, 0x75, 0xcf, 0x24, 0xed, 0xde, 0x6e, 0x59,
+	0x77, 0x3a, 0x15, 0xa7, 0x8b, 0xed, 0x5d, 0x64, 0xef, 0x87, 0x7f, 0x38, 0x58, 0xa9, 0xe8, 0x3d,
+	0x8f, 0x38, 0x1d, 0xec, 0x56, 0x90, 0x65, 0x95, 0xbb, 0xae, 0x43, 0x1c, 0x38, 0xed, 0xff, 0xa6,
+	0x5e, 0xda, 0x73, 0x9c, 0x3d, 0x0b, 0x57, 0xd8, 0xef, 0xbb, 0xbd, 0x56, 0x85, 0x98, 0x1d, 0xec,
+	0x11, 0xd4, 0xe9, 0x72, 0x56, 0x75, 0x5e, 0x30, 0xa0, 0xae, 0x59, 0x41, 0xb6, 0xed, 0x10, 0x44,
+	0x4c, 0xc7, 0xf6, 0x04, 0xf5, 0x16, 0xfb, 0x8f, 0x7e, 0x7b, 0x0f, 0xdb, 0xb7, 0xbd, 0xa7, 0x68,
+	0x6f, 0x0f, 0xbb, 0x15, 0xa7, 0xcb, 0x38, 0x24, 0xdc, 0x17, 0x92, 0x9b, 0xe1, 0x4e, 0x97, 0xf4,
+	0x05, 0xb1, 0x32, 0xec, 0x1c, 0xa4, 0xdf, 0xc5, 0x5e, 0x78, 0x88, 0xc5, 0x0e, 0x98, 0x79, 0x80,
+	0x74, 0xbc, 0xd1, 0x41, 0x7b, 0x18, 0xce, 0x83, 0xc2, 0x17, 0x1b, 0x5b, 0x25, 0x45, 0x53, 0x96,
+	0x66, 0x56, 0xc1, 0x74, 0xae, 0x94, 0x5b, 0xca, 0x2d, 0xe7, 0xb6, 0x73, 0x8d, 0x42, 0xcf, 0xb5,
+	0xe0, 0x3d, 0x30, 0xb1, 0x86, 0x08, 0x2e, 0xe5, 0x35, 0x65, 0x69, 0xb6, 0xaa, 0x96, 0xb9, 0x1e,
+	0x65, 0x5f, 0x8f, 0xf2, 0x8e, 0x7f, 0xe8, 0xd8, 0xd2, 0x09, 0x03, 0x11, 0x7c, 0xaf, 0x38, 0x9d,
+	0x3b, 0x9b, 0x2b, 0xe5, 0x16, 0x7f, 0x12, 0xcc, 0xd5, 0x5d, 0x6c, 0x98, 0xa4, 0x81, 0x88, 0x69,
+	0xef, 0xc1, 0x45, 0x50, 0xe4, 0x7f, 0x92, 0x6c, 0x5a, 0x74, 0x03, 0x9e, 0x27, 0x4e, 0xcf, 0xd5,
+	0xf9, 0xce, 0x09, 0x1e, 0x8f, 0x51, 0x02, 0xf9, 0xbf, 0x36, 0x05, 0xa6, 0xeb, 0xc2, 0x2c, 0x50,
+	0x05, 0xf9, 0x8d, 0x35, 0x89, 0xe0, 0xbc, 0x69, 0xc0, 0xcb, 0xa0, 0xb8, 0x8a, 0xec, 0xfd, 0x8d,
+	0x35, 0x89, 0xd0, 0x29, 0x0a, 0x56, 0xd3, 0x34, 0xe0, 0x1d, 0x70, 0xda, 0x17, 0xf6, 0x41, 0xaf,
+	0xb3, 0x8b, 0xdd, 0x52, 0x21, 0xc5, 0x7c, 0xc6, 0xf7, 0x82, 0xa6, 0xcd, 0x58, 0xe0, 0x75, 0x30,
+	0xb3, 0x85, 0xf7, 0x90, 0xf5, 0x01, 0xea, 0xe0, 0xd2, 0x44, 0x8a, 0x1f, 0x58, 0x94, 0xd8, 0xb4,
+	0x51, 0x07, 0xc3, 0xdb, 0x60, 0x76, 0xbb, 0xed, 0xd8, 0x58, 0x08, 0x9f, 0x4c, 0x31, 0xcf, 0x75,
+	0x29, 0xd9, 0x97, 0xac, 0x81, 0xc9, 0xfb, 0x1d, 0x64, 0x5a, 0xa5, 0x62, 0x8a, 0x71, 0x12, 0x53,
+	0x02, 0x7c, 0x37, 0x62, 0xcd, 0xd2, 0x14, 0xb3, 0xd3, 0xf9, 0xb2, 0xaf, 0x60, 0x39, 0x20, 0xc5,
+	0x15, 0x6a, 0x21, 0x1d, 0x37, 0x4d, 0xe6, 0x00, 0x9b, 0x60, 0x96, 0x9a, 0xf8, 0x71, 0x6b, 0xd5,
+	0x74, 0x49, 0xbb, 0x34, 0x3d, 0x96, 0xa5, 0x4f, 0x51, 0x4b, 0x37, 0x9d, 0x56, 0x73, 0x97, 0x2e,
+	0x86, 0x6f, 0x03, 0xd8, 0xc0, 0x16, 0x77, 0xdd, 0xb6, 0xd9, 0x7d, 0x42, 0x10, 0xe9, 0x79, 0xa5,
+	0x99, 0x94, 0xea, 0xe7, 0xdd, 0x08, 0x57, 0xd3, 0x63, 0x6c, 0x70, 0x3d, 0xee, 0x27, 0x25, 0xc0,
+	0x34, 0x79, 0x25, 0x3c, 0x4b, 0x94, 0x1a, 0xd7, 0x42, 0x67, 0x94, 0xa6, 0x70, 0x9e, 0xcf, 0x83,
+	0x59, 0xce, 0xba, 0x65, 0x76, 0x4c, 0x52, 0x9a, 0x65, 0x72, 0x4e, 0x95, 0x59, 0x18, 0x94, 0x6b,
+	0x1d, 0xa7, 0x67, 0x93, 0x38, 0xe2, 0x62, 0xb9, 0x45, 0xd9, 0xe1, 0x26, 0x28, 0x3d, 0x34, 0xf7,
+	0xda, 0xd8, 0x23, 0xf7, 0x8d, 0x9e, 0xce, 0xb4, 0xac, 0x11, 0x82, 0x4c, 0x1b, 0x1b, 0xa5, 0xb9,
+	0xd4, 0x49, 0xe6, 0xdb, 0x9c, 0xb7, 0x89, 0x7d, 0x66, 0x64, 0x35, 0x91, 0xe0, 0x87, 0xff, 0x0f,
+	0x9c, 0xbd, 0xdf, 0xe9, 0x5a, 0x4e, 0xbf, 0x83, 0x6d, 0x22, 0xd0, 0x38, 0x95, 0x92, 0x71, 0x0e,
+	0x07, 0x3c, 0x3e, 0x16, 0xd7, 0xc1, 0xcc, 0xfb, 0x3f, 0x5e, 0x17, 0x2b, 0x4e, 0x6b, 0xca, 0xd2,
+	0x74, 0xdc, 0x7e, 0xfb, 0x7d, 0xdd, 0x67, 0x7d, 0x08, 0xc0, 0x16, 0xf2, 0xc8, 0xe3, 0xf7, 0x59,
+	0xa0, 0x9e, 0x19, 0xcb, 0x7c, 0x73, 0x16, 0xf2, 0x48, 0xd3, 0xd9, 0x6f, 0x1a, 0x88, 0x20, 0xea,
+	0x6b, 0x3b, 0x26, 0xb1, 0x70, 0xe9, 0x6c, 0xda, 0xd7, 0x08, 0x25, 0xc0, 0x6b, 0x60, 0x7a, 0xd5,
+	0x45, 0xb6, 0xde, 0xde, 0x58, 0x2b, 0x9d, 0x4b, 0x31, 0xcd, 0xec, 0x32, 0x5a, 0xd3, 0x34, 0x82,
+	0xd8, 0x7c, 0x3e, 0x05, 0x5e, 0xae, 0xbb, 0x18, 0x11, 0xec, 0x07, 0x55, 0x03, 0xff, 0x54, 0x0f,
+	0x7b, 0x24, 0x12, 0x8c, 0x4a, 0x76, 0x30, 0xc6, 0xe2, 0x2a, 0x3f, 0x30, 0xae, 0xee, 0x81, 0x73,
+	0x8f, 0x9c, 0x5d, 0xd3, 0xc2, 0xd1, 0xe8, 0x4a, 0x87, 0xee, 0xf9, 0x0e, 0x63, 0x6a, 0xca, 0x83,
+	0x6c, 0x62, 0xa4, 0x20, 0x9b, 0x3c, 0x76, 0x90, 0x15, 0x4f, 0x3e, 0xc8, 0xa6, 0x46, 0x0b, 0xb2,
+	0x06, 0x38, 0xb3, 0xe6, 0xec, 0x3e, 0x6e, 0xad, 0xe1, 0x2e, 0xb6, 0x0d, 0x6c, 0x13, 0xaf, 0x34,
+	0xad, 0x15, 0xc6, 0x50, 0xe6, 0x9c, 0xe1, 0xec, 0x52, 0x5d, 0x8c, 0x40, 0x40, 0x2a, 0x70, 0x67,
+	0x4e, 0x28, 0x70, 0xc1, 0x78, 0x81, 0xfb, 0x70, 0x40, 0xe0, 0xce, 0xa6, 0xd0, 0x51, 0x53, 0x81,
+	0x3b, 0x38, 0x6c, 0xe7, 0x46, 0x09, 0xdb, 0x78, 0x2c, 0x9e, 0x3a, 0x72, 0x2c, 0xe2, 0x30, 0x16,
+	0x4f, 0x67, 0xc5, 0xe2, 0xd5, 0x48, 0x2c, 0x9e, 0x49, 0x31, 0x4d, 0xf3, 0x58, 0xdc, 0x08, 0x43,
+	0xd1, 0x05, 0xaf, 0x24, 0x23, 0xd1, 0xeb, 0x3a, 0xb6, 0x87, 0xe1, 0x4d, 0x00, 0xfc, 0xdf, 0xa4,
+	0xe1, 0x38, 0x1b, 0x94, 0xbb, 0x11, 0x8b, 0x68, 0xb0, 0xe7, 0x9f, 0x17, 0xc0, 0x85, 0x9a, 0x61,
+	0xd4, 0x0c, 0xc3, 0xc5, 0x9e, 0xb7, 0xe3, 0x24, 0x93, 0xc0, 0x58, 0x3b, 0xbf, 0x0e, 0x26, 0xb7,
+	0x4c, 0x1b, 0xaf, 0xc8, 0x5a, 0x02, 0xcb, 0xb4, 0x71, 0x73, 0xc5, 0x67, 0xa9, 0x4a, 0x02, 0x9f,
+	0xb3, 0x54, 0x7d, 0x96, 0x3b, 0x92, 0x58, 0xe7, 0x2c, 0x77, 0xe0, 0x02, 0x98, 0xa8, 0x9b, 0xa4,
+	0x2f, 0xa9, 0xcd, 0x13, 0xba, 0x49, 0xfa, 0xb4, 0x39, 0xa9, 0x53, 0x5f, 0xec, 0x4b, 0x8a, 0x72,
+	0x51, 0x67, 0x14, 0x6a, 0x3f, 0xea, 0x38, 0x58, 0x12, 0x97, 0x93, 0xd4, 0x59, 0x98, 0xfd, 0xb6,
+	0x1d, 0x8f, 0xe8, 0x8e, 0x81, 0x59, 0xd1, 0x4d, 0xd8, 0xaf, 0x2b, 0x68, 0xb4, 0x61, 0x60, 0xbb,
+	0xb9, 0xfd, 0x3a, 0x65, 0x4d, 0x17, 0xd3, 0x39, 0x9d, 0x93, 0x9b, 0x8c, 0x7d, 0x01, 0x4c, 0xec,
+	0xa0, 0x3d, 0xaf, 0x04, 0xb4, 0x42, 0x52, 0x79, 0x82, 0xf6, 0x3c, 0xd6, 0x59, 0x71, 0x8f, 0x9e,
+	0x95, 0x74, 0x56, 0x8c, 0x12, 0x98, 0xef, 0x5b, 0x13, 0x60, 0x5e, 0x6e, 0x3e, 0xe1, 0x39, 0xf7,
+	0xc0, 0x39, 0xff, 0x37, 0xc1, 0x24, 0x35, 0xe3, 0xf9, 0xc0, 0x8c, 0x88, 0x73, 0x51, 0x73, 0xc6,
+	0x6d, 0x9f, 0x1f, 0xd1, 0xf6, 0x85, 0xe1, 0xb6, 0x9f, 0x18, 0x6e, 0xfb, 0xc9, 0xa1, 0xb6, 0x2f,
+	0x0e, 0xb5, 0xfd, 0xd4, 0x70, 0xdb, 0x4f, 0x8f, 0x62, 0xfb, 0x99, 0xd1, 0x6d, 0x0f, 0x46, 0xb4,
+	0xfd, 0xec, 0x50, 0xdb, 0xcf, 0x65, 0xd9, 0x1e, 0xae, 0x03, 0xb0, 0x61, 0x7b, 0xd8, 0x25, 0x47,
+	0x48, 0x61, 0xb3, 0x26, 0x5b, 0xd9, 0x8c, 0xb5, 0xff, 0xdf, 0xcf, 0xb3, 0x1c, 0xf0, 0xc4, 0xd1,
+	0x4d, 0x64, 0x3d, 0xc2, 0x86, 0x89, 0x1e, 0x22, 0xdb, 0xb0, 0xf0, 0x91, 0x72, 0x40, 0xba, 0x3b,
+	0xcf, 0x0f, 0xef, 0xce, 0x29, 0x2c, 0xfd, 0x2e, 0x96, 0xf8, 0xce, 0x04, 0x2d, 0x2d, 0x14, 0x16,
+	0xae, 0x92, 0xcc, 0x75, 0xda, 0x8c, 0x02, 0xef, 0x83, 0x19, 0x0a, 0x48, 0xcd, 0x30, 0xb0, 0x21,
+	0x1a, 0x80, 0x51, 0x51, 0x01, 0xac, 0x7c, 0x23, 0xba, 0x12, 0x3e, 0x02, 0xa7, 0x98, 0x18, 0x9d,
+	0x98, 0x07, 0x88, 0x60, 0x63, 0xcc, 0x4e, 0xe0, 0x34, 0x17, 0xe5, 0xaf, 0x0e, 0x30, 0xde, 0x62,
+	0x71, 0x2a, 0x81, 0x58, 0xc4, 0xe9, 0x1b, 0x60, 0xea, 0x49, 0x4f, 0xd7, 0xb1, 0xe7, 0xc9, 0xba,
+	0x2d, 0x8f, 0x93, 0x02, 0x69, 0xdf, 0x9c, 0x04, 0x17, 0x45, 0xa9, 0x08, 0xab, 0xf1, 0x63, 0xd7,
+	0x18, 0xb3, 0x79, 0x1b, 0x2b, 0xc0, 0x1f, 0x83, 0x0b, 0x42, 0x38, 0x36, 0xea, 0x3d, 0xd7, 0xc5,
+	0x36, 0xed, 0x17, 0x30, 0x2f, 0xfa, 0xb2, 0xb0, 0x5f, 0x70, 0x7d, 0xf6, 0xa6, 0xce, 0xf9, 0x69,
+	0x17, 0x81, 0x9b, 0x88, 0xaf, 0x18, 0x2c, 0x50, 0x96, 0x24, 0x06, 0x0b, 0xac, 0xc2, 0x06, 0x98,
+	0x4f, 0x0a, 0xfc, 0x10, 0x59, 0xa6, 0x71, 0xdf, 0x36, 0x58, 0xa8, 0xa4, 0x73, 0x8a, 0x96, 0x96,
+	0x78, 0x40, 0x57, 0x34, 0xb1, 0x6d, 0xf0, 0x2a, 0xbf, 0x05, 0x54, 0x21, 0x8a, 0x23, 0xbd, 0xe6,
+	0xe8, 0x3d, 0xda, 0x4f, 0xb0, 0x7e, 0x44, 0x92, 0x83, 0xe6, 0x7d, 0x39, 0xa2, 0xf1, 0x31, 0xa2,
+	0xfc, 0xf0, 0xff, 0x83, 0x4b, 0x3b, 0xb8, 0xd3, 0x75, 0x5c, 0xe4, 0xf6, 0x93, 0xaa, 0xf2, 0x73,
+	0x4b, 0x92, 0xd6, 0x22, 0xf1, 0x97, 0x34, 0xd3, 0xea, 0xf2, 0xb3, 0xc3, 0x0f, 0xc1, 0x42, 0x20,
+	0x2f, 0xd8, 0x21, 0x76, 0xf8, 0x74, 0xa6, 0x5b, 0x0c, 0xa5, 0x85, 0x3b, 0x24, 0x8e, 0xbf, 0x0d,
+	0xe6, 0x03, 0x71, 0x32, 0x00, 0xd2, 0xa9, 0x71, 0x21, 0x94, 0x25, 0x83, 0x20, 0x70, 0xe1, 0x3d,
+	0xb0, 0x90, 0xe5, 0xc1, 0x22, 0x24, 0xde, 0x01, 0x30, 0x49, 0x93, 0xba, 0xf3, 0xcb, 0xd1, 0x1e,
+	0xb3, 0xe9, 0x50, 0xbe, 0x68, 0x87, 0xf3, 0x5b, 0x8a, 0x1f, 0x2b, 0x5f, 0xf4, 0xb0, 0xeb, 0xfb,
+	0xfb, 0x96, 0x69, 0xef, 0x8f, 0x15, 0x2b, 0x97, 0x41, 0x91, 0xae, 0x97, 0x77, 0x55, 0x3d, 0x8f,
+	0xc7, 0x48, 0x3c, 0xa0, 0x0a, 0x03, 0x03, 0x2a, 0x50, 0xf0, 0x0f, 0xf3, 0x3e, 0x14, 0x69, 0x05,
+	0x43, 0x28, 0x92, 0x34, 0x39, 0x14, 0x4c, 0x91, 0x60, 0x13, 0xcb, 0x3c, 0x42, 0x9c, 0x87, 0x07,
+	0x2d, 0x64, 0x1f, 0xf4, 0x7d, 0x30, 0x47, 0xbd, 0x8a, 0xd7, 0x21, 0x6c, 0xb0, 0x60, 0x1d, 0xf7,
+	0xba, 0x64, 0x8a, 0xc5, 0xf4, 0xce, 0xba, 0xe1, 0xb1, 0x84, 0xcb, 0x63, 0x34, 0x7e, 0x93, 0x9e,
+	0x31, 0x3d, 0x9e, 0x4f, 0xc3, 0x82, 0xf5, 0x27, 0x0a, 0x98, 0x5f, 0xc3, 0x16, 0x0e, 0x3b, 0x65,
+	0xd1, 0xdb, 0xbc, 0xb8, 0xec, 0x27, 0xed, 0xa3, 0x0a, 0x23, 0xf5, 0x51, 0x81, 0xda, 0xbf, 0xaf,
+	0x80, 0xd7, 0xb8, 0xda, 0x3b, 0xe8, 0x59, 0x03, 0x7b, 0xa6, 0x81, 0x6d, 0x1d, 0xbf, 0x38, 0x9d,
+	0xef, 0x82, 0xd3, 0xd1, 0x8d, 0xa4, 0x0a, 0x9f, 0x25, 0xe8, 0x59, 0xd3, 0xf5, 0x59, 0xa2, 0xda,
+	0xfe, 0x73, 0x01, 0x4c, 0xd7, 0x1b, 0x8f, 0xee, 0x1f, 0x60, 0x9b, 0x1c, 0x7f, 0x68, 0x57, 0x01,
+	0x73, 0x41, 0x5b, 0x80, 0x3a, 0xb2, 0x4a, 0x7f, 0x2a, 0x6c, 0x0a, 0x50, 0x07, 0x4b, 0xfa, 0x88,
+	0x89, 0xe1, 0x7d, 0xc4, 0x55, 0x30, 0x5d, 0x47, 0x04, 0xef, 0x39, 0xae, 0xec, 0x6e, 0x30, 0xad,
+	0x0b, 0x1a, 0xed, 0x27, 0xd6, 0x30, 0x91, 0x0f, 0xed, 0x8a, 0x06, 0xa3, 0xd0, 0x8a, 0x5c, 0x6f,
+	0x23, 0xdb, 0xc6, 0x96, 0x24, 0x27, 0x4f, 0xe9, 0x9c, 0x44, 0xdb, 0x85, 0x27, 0x7a, 0x1b, 0x1b,
+	0x3d, 0x0b, 0x87, 0x79, 0x76, 0x8c, 0x76, 0xc1, 0xf3, 0x17, 0xf3, 0x7c, 0xbb, 0x0e, 0x40, 0x4d,
+	0x27, 0x3d, 0x64, 0x31, 0x59, 0x33, 0xe3, 0xf5, 0x76, 0x88, 0xad, 0xe4, 0x82, 0x16, 0x41, 0xb1,
+	0x81, 0xbd, 0x9e, 0x45, 0x24, 0x2d, 0x69, 0xd1, 0x65, 0x94, 0xc0, 0xd2, 0xab, 0xe0, 0xfc, 0x3a,
+	0x26, 0xbe, 0xad, 0xc7, 0x0a, 0xa2, 0x40, 0xc6, 0xcf, 0x2b, 0xe0, 0xa5, 0xb8, 0x90, 0x20, 0x75,
+	0xcd, 0x04, 0x3f, 0x96, 0x14, 0x36, 0xc8, 0x80, 0x91, 0xb9, 0x83, 0x20, 0xc5, 0xdb, 0x31, 0xdd,
+	0xed, 0x34, 0x31, 0x5b, 0x01, 0xaf, 0x80, 0xa9, 0x87, 0xc8, 0x7b, 0xe4, 0xb8, 0x7c, 0xba, 0x14,
+	0x4f, 0x0d, 0xd3, 0x6d, 0xe4, 0x35, 0x3b, 0x8e, 0x1b, 0x66, 0x86, 0xff, 0x50, 0xc0, 0xd9, 0x64,
+	0xd1, 0x80, 0x65, 0x30, 0xdb, 0x40, 0xf6, 0xbe, 0xdf, 0xa9, 0xa4, 0x4f, 0x73, 0xca, 0xa5, 0xa7,
+	0xe1, 0xa5, 0xb4, 0xb9, 0x02, 0xdf, 0x02, 0x67, 0x3f, 0x70, 0x3a, 0xa6, 0x8d, 0xac, 0x0d, 0x9b,
+	0x60, 0x17, 0x7b, 0x44, 0x76, 0xa3, 0x85, 0x36, 0xe7, 0x69, 0x9a, 0x82, 0xa9, 0xb9, 0x12, 0xdf,
+	0x49, 0x76, 0xc7, 0x8d, 0xed, 0x54, 0x95, 0xec, 0x24, 0xeb, 0x7b, 0xd2, 0x3b, 0x55, 0x83, 0x03,
+	0xff, 0xae, 0x02, 0x16, 0x28, 0xee, 0x89, 0x33, 0xaf, 0xf6, 0x37, 0xd6, 0x5e, 0x5c, 0x62, 0xb9,
+	0x0e, 0x66, 0x84, 0x70, 0x69, 0x4e, 0x01, 0xa2, 0xb1, 0x88, 0xfa, 0xc7, 0xcf, 0x80, 0x4b, 0x99,
+	0x6a, 0x0a, 0x4f, 0xd9, 0x49, 0x9b, 0x8e, 0x69, 0x4c, 0x23, 0x20, 0x31, 0xa8, 0x8a, 0x48, 0x88,
+	0x01, 0x95, 0xee, 0x04, 0x02, 0x05, 0x0e, 0x80, 0x2a, 0x51, 0xe0, 0x85, 0x61, 0x14, 0xec, 0x8b,
+	0xc1, 0x05, 0xe9, 0xbe, 0xe2, 0xd0, 0xef, 0x06, 0x71, 0xaa, 0x88, 0x21, 0xdf, 0x68, 0x47, 0x4d,
+	0xc6, 0xf0, 0xd7, 0x27, 0xc0, 0x94, 0x28, 0x4c, 0x3f, 0xba, 0xf3, 0xff, 0xe8, 0xce, 0x3f, 0xf4,
+	0xce, 0xff, 0x94, 0xbb, 0x65, 0xdc, 0x4d, 0xb0, 0xf7, 0xe2, 0xe3, 0x41, 0x07, 0xf3, 0xf2, 0x8d,
+	0x45, 0x40, 0xbc, 0x0d, 0x66, 0x82, 0x1f, 0x45, 0x4c, 0x9c, 0x0b, 0x63, 0x42, 0x90, 0xe2, 0x0d,
+	0x22, 0xf2, 0xf9, 0xc3, 0x9e, 0x3f, 0x0f, 0x26, 0xeb, 0x6d, 0xac, 0xef, 0x4b, 0xda, 0x08, 0x65,
+	0xf4, 0x71, 0x44, 0x7e, 0xe8, 0x38, 0xa2, 0x30, 0xda, 0x38, 0x62, 0xe2, 0xe4, 0xc6, 0x11, 0x93,
+	0x27, 0x32, 0x8e, 0xf8, 0xb2, 0x02, 0xde, 0x88, 0x98, 0x21, 0x35, 0x97, 0xf8, 0x21, 0x38, 0x82,
+	0x01, 0xae, 0x0c, 0xd1, 0x40, 0x78, 0xc4, 0x1d, 0x50, 0x64, 0xb6, 0xf4, 0xdd, 0xe1, 0x4c, 0x24,
+	0x45, 0xd2, 0xdf, 0x13, 0xd1, 0xce, 0x58, 0x83, 0x5d, 0xbe, 0xc4, 0xcb, 0xa3, 0x58, 0xb0, 0xda,
+	0x0f, 0xf5, 0x7c, 0xf1, 0x27, 0xfc, 0x63, 0x05, 0x2c, 0x4a, 0x37, 0xe7, 0x9e, 0xf8, 0xe2, 0xea,
+	0xf3, 0x51, 0x5e, 0xc8, 0x03, 0xad, 0x6f, 0x82, 0xd7, 0x23, 0x4a, 0x7b, 0x0f, 0x1c, 0x57, 0x0c,
+	0x28, 0xe8, 0xad, 0x50, 0xe8, 0x1c, 0x30, 0x7f, 0x1c, 0x3b, 0x61, 0x8a, 0x59, 0x58, 0xf0, 0xf3,
+	0x60, 0x26, 0x60, 0x91, 0xf4, 0x80, 0x3e, 0x3e, 0xb1, 0xa0, 0xf6, 0xc9, 0xa1, 0x29, 0x3f, 0x04,
+	0xd7, 0xb2, 0xf7, 0xaa, 0x11, 0x8a, 0xe1, 0x91, 0x5a, 0xd7, 0x2e, 0x58, 0x1a, 0x2e, 0xf7, 0x44,
+	0x4f, 0xf2, 0xbd, 0x3c, 0x6b, 0x46, 0x1e, 0x98, 0x2e, 0x6e, 0x3b, 0xde, 0xd1, 0x1e, 0x5e, 0xd7,
+	0xc1, 0xa9, 0x27, 0x8e, 0x4b, 0xd6, 0x4c, 0x17, 0xeb, 0x6c, 0x14, 0x43, 0x7d, 0xe2, 0x74, 0xf5,
+	0x25, 0xf1, 0x16, 0x17, 0xa3, 0x25, 0xae, 0x1c, 0x0e, 0x2d, 0x06, 0x3e, 0x8d, 0xd6, 0x45, 0xfe,
+	0x98, 0x47, 0x7d, 0x64, 0x32, 0x5e, 0x17, 0xf9, 0xb3, 0xdd, 0x22, 0x28, 0x3e, 0x6e, 0xb5, 0x3c,
+	0x4c, 0x58, 0x1e, 0x8b, 0xb3, 0x14, 0x1d, 0x46, 0x81, 0x75, 0x30, 0xfd, 0xc0, 0x75, 0x3a, 0xc1,
+	0x9c, 0x6d, 0xf4, 0x14, 0x35, 0xd3, 0x72, 0x9d, 0x0e, 0xbf, 0xb4, 0xbc, 0x07, 0x8a, 0x3b, 0x0e,
+	0x13, 0x31, 0xde, 0xd0, 0x75, 0x8a, 0x38, 0xf1, 0xea, 0xa6, 0xb3, 0xea, 0x96, 0xc6, 0xf7, 0x44,
+	0xad, 0xf8, 0x1b, 0x0a, 0x98, 0x8b, 0xde, 0xaf, 0xd9, 0xad, 0xd2, 0xe9, 0x20, 0xd3, 0x96, 0x7d,
+	0x36, 0x63, 0x30, 0x0a, 0x6d, 0x9d, 0x77, 0xd0, 0xb3, 0xcc, 0xc9, 0x38, 0xa0, 0xd7, 0x71, 0x51,
+	0x85, 0x8e, 0x77, 0x7d, 0xff, 0x69, 0xa0, 0xad, 0x63, 0x12, 0x15, 0xf0, 0xb8, 0x75, 0x24, 0x47,
+	0x3b, 0x52, 0xea, 0xdb, 0x63, 0x49, 0x24, 0x6b, 0xf7, 0xe0, 0x6d, 0x2a, 0xde, 0xfb, 0x46, 0xde,
+	0xa3, 0xa3, 0x2b, 0x07, 0xf5, 0xbd, 0xd5, 0xc3, 0x65, 0x70, 0x26, 0xa8, 0x21, 0xd8, 0x3d, 0x30,
+	0x75, 0x0c, 0x7f, 0x90, 0x07, 0x2f, 0xc9, 0x1e, 0xc5, 0xe0, 0x95, 0x58, 0x23, 0x91, 0xf5, 0xe6,
+	0xa9, 0x5e, 0x1d, 0xc6, 0xc6, 0xf5, 0x5f, 0xfc, 0x5f, 0xe5, 0xb0, 0xf6, 0x1d, 0x25, 0xe2, 0x4b,
+	0x70, 0xbe, 0x66, 0x18, 0x9a, 0x68, 0x47, 0x34, 0xe2, 0x68, 0xa4, 0x8d, 0xb5, 0x40, 0x96, 0x3a,
+	0x90, 0xba, 0xf9, 0x31, 0x28, 0x54, 0x97, 0x57, 0xa0, 0x0e, 0xae, 0xd7, 0x74, 0xd6, 0x3f, 0x6a,
+	0xa8, 0xdb, 0xb5, 0x4c, 0xfe, 0xf2, 0xad, 0xe9, 0x6c, 0x40, 0x68, 0x68, 0xe2, 0x25, 0xa0, 0xd5,
+	0xb3, 0xac, 0x7e, 0x19, 0xbe, 0x09, 0xee, 0xaa, 0xd5, 0xcb, 0x15, 0x03, 0xb7, 0x4c, 0xdb, 0xe4,
+	0x9f, 0xa6, 0xe9, 0x61, 0x67, 0x95, 0xa9, 0xf9, 0xee, 0x79, 0x70, 0x0e, 0x14, 0x1f, 0xd7, 0x7a,
+	0xa4, 0x5d, 0x85, 0x53, 0x60, 0xf2, 0xa9, 0x6b, 0x12, 0xfc, 0x73, 0xdf, 0xfd, 0xc7, 0x5f, 0xce,
+	0x5f, 0xbb, 0xa7, 0xdc, 0x58, 0x5c, 0x8c, 0x7e, 0x5a, 0xe7, 0x55, 0x3e, 0x09, 0xcd, 0xff, 0x69,
+	0x45, 0xa8, 0xff, 0x3c, 0x9f, 0xfb, 0x5a, 0x9e, 0xd9, 0x04, 0xfe, 0x17, 0x47, 0x3b, 0x55, 0xc0,
+	0x13, 0x68, 0x67, 0xbd, 0x2e, 0x25, 0xd0, 0xce, 0x7c, 0x21, 0x59, 0xfc, 0xc5, 0xfc, 0x61, 0xed,
+	0x2f, 0x63, 0x68, 0xbf, 0x4a, 0xf1, 0xf4, 0xd8, 0x02, 0xad, 0x43, 0x57, 0x68, 0xbc, 0xf7, 0x52,
+	0x97, 0x32, 0x08, 0x5a, 0xcb, 0x71, 0x63, 0xa8, 0x6f, 0x22, 0x0e, 0xfa, 0x47, 0x40, 0x7b, 0x12,
+	0x65, 0x67, 0xbd, 0xd7, 0x58, 0x58, 0x67, 0xea, 0x9d, 0x8d, 0xf5, 0x5d, 0x8a, 0x75, 0x65, 0x00,
+	0xd6, 0xfc, 0x04, 0x4d, 0xa6, 0x52, 0x93, 0x9f, 0x20, 0x0a, 0xfc, 0xd7, 0xf3, 0xe0, 0x74, 0xfc,
+	0x7b, 0x01, 0x78, 0x29, 0x76, 0x7b, 0x4c, 0x7f, 0xd3, 0xa3, 0x6a, 0xd9, 0x0c, 0x02, 0xe6, 0xef,
+	0x2a, 0x87, 0xb5, 0x3f, 0x8a, 0xc1, 0x7c, 0x8e, 0x73, 0x6a, 0x28, 0x80, 0x4d, 0x15, 0xdf, 0x29,
+	0x78, 0x1a, 0xd2, 0x6c, 0xfc, 0x34, 0x84, 0xd3, 0xe0, 0x70, 0xfe, 0xc4, 0x38, 0x3e, 0xbc, 0x0c,
+	0xca, 0xea, 0x2d, 0x39, 0xae, 0x72, 0x15, 0xb3, 0x11, 0x85, 0x14, 0xd1, 0x53, 0x31, 0x44, 0x23,
+	0x78, 0xfd, 0x41, 0x21, 0xf8, 0xbe, 0x22, 0x39, 0x21, 0xba, 0x96, 0x82, 0x45, 0x3e, 0x27, 0x50,
+	0x97, 0x86, 0x33, 0x0a, 0x1c, 0xff, 0x34, 0x7f, 0x58, 0xfb, 0xa7, 0x18, 0x8e, 0xaf, 0x09, 0x1c,
+	0xf9, 0x90, 0x42, 0x63, 0xb5, 0x55, 0x63, 0x43, 0x0a, 0xf5, 0x6d, 0x41, 0xaa, 0xa7, 0x48, 0x29,
+	0x97, 0xd5, 0x1c, 0x5b, 0xf3, 0xba, 0x58, 0x37, 0x5b, 0xa6, 0xae, 0xd1, 0x1c, 0xbd, 0x69, 0x71,
+	0xd0, 0xf1, 0x38, 0xa0, 0xbf, 0x05, 0xde, 0x54, 0xef, 0x0e, 0x04, 0x3d, 0xe3, 0x5c, 0xd9, 0xe0,
+	0xaf, 0x51, 0xf0, 0xdf, 0xa3, 0xe0, 0x53, 0xad, 0xbc, 0xca, 0x27, 0xbc, 0xb4, 0x7c, 0x9a, 0xe5,
+	0xdd, 0xd1, 0x59, 0x4d, 0x45, 0x4c, 0x8c, 0xa2, 0xe6, 0xfa, 0xcf, 0xbc, 0x6f, 0xae, 0xe4, 0xd3,
+	0x47, 0xda, 0x5c, 0x19, 0x2f, 0x3b, 0x69, 0x73, 0x65, 0xbd, 0xb0, 0xb0, 0x5c, 0xfe, 0x6d, 0xa9,
+	0xb9, 0x7a, 0x1e, 0x76, 0x43, 0xf4, 0x2d, 0xd3, 0xde, 0x57, 0x19, 0xc9, 0x95, 0x91, 0x5e, 0x8c,
+	0x31, 0xb2, 0xb4, 0xce, 0x36, 0xc6, 0x4d, 0x6a, 0x8c, 0xab, 0x12, 0x63, 0xa4, 0x1f, 0x88, 0xa2,
+	0x98, 0x7f, 0x3b, 0x0f, 0x5e, 0x96, 0x3e, 0xac, 0xc0, 0x48, 0x96, 0x1e, 0xf4, 0xf2, 0xa2, 0xbe,
+	0x92, 0x6a, 0xd9, 0xee, 0x77, 0xba, 0xa4, 0xbf, 0xf8, 0x2f, 0xca, 0x61, 0xed, 0xab, 0x4a, 0xe4,
+	0x33, 0xe0, 0x57, 0xb9, 0x98, 0x10, 0x3e, 0x51, 0x59, 0xd4, 0x37, 0xb6, 0xb1, 0xdb, 0x41, 0x36,
+	0xb6, 0x89, 0xd5, 0xd7, 0x0c, 0x39, 0x53, 0x79, 0xb3, 0x42, 0x71, 0xbe, 0x0b, 0x97, 0xc0, 0xd5,
+	0x7a, 0x82, 0x16, 0x03, 0x57, 0x08, 0x30, 0xca, 0xd9, 0x50, 0x6d, 0xdc, 0x58, 0x1f, 0xdd, 0x69,
+	0x83, 0x51, 0x43, 0xf8, 0x73, 0x30, 0x62, 0xfb, 0xd4, 0x07, 0x12, 0x7e, 0x23, 0x0f, 0x60, 0xfa,
+	0xa1, 0x07, 0x5e, 0x4e, 0x62, 0x28, 0x79, 0x06, 0xca, 0x04, 0xf0, 0xef, 0x95, 0xc3, 0xda, 0x57,
+	0xa2, 0x00, 0xbe, 0x24, 0x00, 0x24, 0xe8, 0x99, 0x16, 0x74, 0x80, 0xea, 0xeb, 0x12, 0xf4, 0x62,
+	0x1c, 0xe5, 0xcd, 0x5b, 0x1c, 0xba, 0x2b, 0xe0, 0xf2, 0x4e, 0x94, 0x30, 0x2e, 0x6e, 0x5b, 0x37,
+	0x36, 0x47, 0xc7, 0x2d, 0xda, 0xa6, 0x9a, 0x14, 0xbd, 0x78, 0x67, 0x1b, 0x42, 0xf7, 0xd5, 0x3c,
+	0x98, 0x8b, 0xbe, 0x23, 0xc0, 0x8b, 0x21, 0x68, 0x92, 0x47, 0x0a, 0x75, 0x21, 0x8b, 0x2c, 0xe2,
+	0xfa, 0xcf, 0x94, 0xc3, 0xda, 0x2f, 0x45, 0x61, 0x3b, 0xbf, 0x65, 0x7a, 0x44, 0x43, 0x96, 0xa5,
+	0xd5, 0x1b, 0x8f, 0x34, 0xfe, 0xca, 0xa0, 0x96, 0x1b, 0x98, 0xf4, 0x5c, 0x9b, 0xd6, 0x33, 0x8b,
+	0x92, 0x75, 0xc7, 0x26, 0xc8, 0xb4, 0x4d, 0x7b, 0x4f, 0xeb, 0x75, 0x69, 0xab, 0x56, 0x5d, 0xd6,
+	0x74, 0xb7, 0x23, 0xd8, 0xcb, 0x9b, 0xd7, 0x28, 0x84, 0xcb, 0x50, 0x0b, 0x5e, 0xdd, 0x35, 0xfc,
+	0x0c, 0xeb, 0xbd, 0x54, 0x68, 0xef, 0x42, 0x70, 0x36, 0x40, 0xaf, 0x08, 0x26, 0x5c, 0x8c, 0x0c,
+	0x06, 0xde, 0x25, 0x78, 0x51, 0x06, 0x9e, 0xdb, 0xb9, 0xcd, 0xb7, 0x88, 0xc4, 0xe4, 0x67, 0x79,
+	0xf0, 0x6a, 0xc6, 0xe8, 0x1c, 0x2e, 0xc5, 0x4f, 0x9f, 0xfd, 0x08, 0xa0, 0x5e, 0x1f, 0x81, 0x53,
+	0x40, 0xf6, 0x0f, 0xca, 0x61, 0xed, 0x17, 0xa2, 0x90, 0xcd, 0xaf, 0x63, 0x22, 0xa9, 0x5a, 0xda,
+	0x6e, 0x5f, 0x33, 0x0d, 0x55, 0xf3, 0xb1, 0xab, 0x67, 0x70, 0x1c, 0x1f, 0xad, 0x2d, 0xb8, 0x79,
+	0xbc, 0xba, 0x52, 0xf9, 0x24, 0x78, 0xaf, 0xf8, 0x34, 0x02, 0xed, 0xdf, 0xe5, 0xf9, 0xcb, 0x57,
+	0xb2, 0x1d, 0x78, 0x63, 0x20, 0x58, 0x3e, 0xa4, 0x57, 0x86, 0x70, 0x09, 0x38, 0x7f, 0xa0, 0x1c,
+	0xd6, 0x7e, 0x3d, 0x0a, 0xe7, 0x85, 0xc0, 0x03, 0x25, 0x9d, 0xc0, 0xdd, 0x11, 0x3c, 0x31, 0xb9,
+	0xd5, 0x09, 0xf8, 0x63, 0x0d, 0x9e, 0x60, 0xe5, 0xfe, 0xeb, 0x3c, 0x7f, 0x0b, 0x4c, 0xce, 0x78,
+	0x61, 0x02, 0xb1, 0x8c, 0xe1, 0x73, 0xf4, 0x46, 0x30, 0x68, 0x54, 0xcc, 0x52, 0xe2, 0x6f, 0xc6,
+	0x1c, 0x35, 0x44, 0x36, 0x52, 0x14, 0xc4, 0x32, 0xf5, 0xcd, 0x51, 0x82, 0x3c, 0x51, 0x4c, 0xf0,
+	0x49, 0x04, 0xfb, 0xe7, 0xe0, 0x9d, 0x23, 0x54, 0x98, 0x08, 0xa0, 0xcf, 0x0b, 0xe0, 0xe2, 0xc0,
+	0x59, 0x29, 0x2c, 0x4b, 0x21, 0xcb, 0x1c, 0xeb, 0xaa, 0x95, 0x91, 0xf9, 0x05, 0xd6, 0x3f, 0x9b,
+	0x67, 0xd7, 0x82, 0x10, 0xeb, 0xab, 0x69, 0xac, 0x25, 0x37, 0x2e, 0x4f, 0xfd, 0xc2, 0x38, 0xa8,
+	0xcb, 0x24, 0x1c, 0x1f, 0xff, 0x2f, 0xc0, 0x77, 0x47, 0xc7, 0x7f, 0xc8, 0xa5, 0xeb, 0x77, 0x44,
+	0x36, 0x96, 0x0c, 0x94, 0x93, 0xd9, 0x38, 0x7b, 0xe6, 0xac, 0x4a, 0xa6, 0x4d, 0x8b, 0xdf, 0x4a,
+	0xa6, 0x5d, 0x48, 0xd3, 0x6e, 0xd0, 0xdd, 0xac, 0xf6, 0xb5, 0x8d, 0x35, 0xf5, 0x86, 0x8f, 0x66,
+	0xec, 0x4a, 0x60, 0x20, 0x82, 0xb4, 0x5d, 0xe4, 0x61, 0x83, 0xde, 0x0e, 0x4c, 0x72, 0xcd, 0x3b,
+	0x91, 0xb4, 0x7b, 0x13, 0x5e, 0x1f, 0x19, 0xb7, 0x08, 0x44, 0xdf, 0xcf, 0xc7, 0xde, 0x96, 0x92,
+	0x63, 0x6f, 0x78, 0x6b, 0x08, 0x4c, 0xb1, 0xe9, 0xb8, 0x14, 0xaa, 0xff, 0x51, 0x0e, 0x6b, 0xbf,
+	0x1d, 0x85, 0x6a, 0x21, 0x09, 0x55, 0x5c, 0x56, 0x18, 0xfa, 0x03, 0x60, 0x8b, 0x91, 0xf8, 0x08,
+	0xee, 0x87, 0x5d, 0xb9, 0xc4, 0x9f, 0x6f, 0xf3, 0xdd, 0x43, 0x22, 0x3f, 0x45, 0x14, 0xe3, 0x6f,
+	0xf2, 0x09, 0x72, 0xc6, 0xd0, 0x1a, 0xde, 0x94, 0x42, 0x2c, 0x9f, 0xe5, 0xab, 0xb7, 0x46, 0x63,
+	0x16, 0x89, 0x80, 0xba, 0xe9, 0xaf, 0x46, 0xb1, 0xbf, 0xcc, 0xba, 0x03, 0x7f, 0x15, 0x07, 0x95,
+	0x5e, 0x5a, 0xc5, 0x17, 0x8a, 0xec, 0x92, 0xa4, 0x5e, 0x8b, 0x1b, 0x20, 0xa4, 0x24, 0x56, 0x1e,
+	0x1f, 0xf1, 0x8b, 0xf0, 0x02, 0x45, 0x9c, 0xca, 0xa6, 0xd7, 0x28, 0xb6, 0x93, 0x74, 0x1c, 0xf0,
+	0x59, 0x9e, 0x4d, 0x48, 0x07, 0xce, 0xfd, 0xe1, 0xca, 0x28, 0xd8, 0xc4, 0xde, 0x1e, 0xd4, 0xea,
+	0x38, 0x4b, 0x04, 0xa8, 0xdf, 0x49, 0xf6, 0x08, 0x17, 0x25, 0xa0, 0xee, 0xf6, 0xd9, 0x7d, 0x9f,
+	0xf6, 0x5c, 0xd5, 0x11, 0xe1, 0x0c, 0xd6, 0x6c, 0xac, 0x1d, 0x1f, 0xd9, 0x05, 0x38, 0x3f, 0xc8,
+	0x97, 0x23, 0xd0, 0xfe, 0x1e, 0xef, 0xab, 0x92, 0xf3, 0xf7, 0x44, 0x5f, 0x95, 0xf1, 0xfc, 0x91,
+	0xe8, 0xab, 0xb2, 0x86, 0xf8, 0x8b, 0x7f, 0xa1, 0x1c, 0xd6, 0x9e, 0x47, 0x31, 0x2b, 0x71, 0x50,
+	0xc2, 0x20, 0x6e, 0x89, 0xa5, 0xea, 0x95, 0x28, 0x5c, 0xac, 0x0a, 0x39, 0xad, 0x34, 0xdb, 0xf1,
+	0x11, 0xba, 0x06, 0xaf, 0x48, 0x10, 0xf2, 0xe5, 0x4b, 0xa1, 0xfa, 0xab, 0x3c, 0x78, 0x2d, 0x73,
+	0x52, 0x0e, 0x6f, 0xc4, 0xa0, 0x18, 0x38, 0xcc, 0x57, 0x6f, 0x8e, 0xc4, 0x2b, 0xc0, 0xfb, 0xdb,
+	0x24, 0x78, 0x09, 0x87, 0x4b, 0xdc, 0xd7, 0xc2, 0x26, 0x9f, 0x22, 0xc8, 0x1c, 0x2d, 0xc1, 0x71,
+	0x7c, 0xf0, 0xee, 0xc1, 0xb7, 0xc6, 0xba, 0x4f, 0xde, 0x0e, 0x6e, 0xae, 0x11, 0x3c, 0xd5, 0xc2,
+	0xf3, 0x7c, 0x6e, 0xf5, 0x57, 0x8a, 0x87, 0xb5, 0x7f, 0x9f, 0x04, 0x85, 0x6a, 0x79, 0x19, 0xee,
+	0x84, 0x1f, 0x1e, 0x6a, 0xb5, 0xed, 0x0d, 0xf8, 0xce, 0xb6, 0xeb, 0x1c, 0x98, 0x06, 0xf6, 0xc4,
+	0x30, 0x46, 0x43, 0xb6, 0xa1, 0x51, 0x25, 0x34, 0xa7, 0x8b, 0x5d, 0xfe, 0xb7, 0xf1, 0x52, 0xe5,
+	0xc0, 0xc5, 0xfc, 0x6f, 0x34, 0x97, 0xab, 0x93, 0x2b, 0xe5, 0xe5, 0xf2, 0xf2, 0x0d, 0x25, 0x5f,
+	0x3d, 0x1b, 0x19, 0xec, 0x54, 0x3e, 0xf6, 0x1c, 0xfb, 0x5e, 0xea, 0x97, 0xc6, 0x36, 0x28, 0xdc,
+	0x5d, 0xbe, 0x03, 0x37, 0xc0, 0x3a, 0xc7, 0x0f, 0x1b, 0xda, 0xd3, 0x36, 0xb6, 0x43, 0x14, 0x0d,
+	0x07, 0x7b, 0x9a, 0xed, 0x10, 0xad, 0x8d, 0x0e, 0xb0, 0xd6, 0xc5, 0x6e, 0xc7, 0xf4, 0x3c, 0x93,
+	0x6e, 0xef, 0x68, 0x88, 0xa1, 0xc6, 0x78, 0x83, 0xfd, 0x1b, 0x2b, 0x54, 0xe2, 0x5d, 0x78, 0x03,
+	0x2c, 0xa5, 0x25, 0xfa, 0x5c, 0x9a, 0xc9, 0x65, 0xb6, 0x9c, 0x9e, 0x6d, 0x94, 0x1b, 0x0f, 0x40,
+	0xe1, 0x73, 0xcb, 0xcb, 0xf0, 0x3d, 0xf0, 0x4e, 0x7c, 0x09, 0xb2, 0xb5, 0x9e, 0x8d, 0x9f, 0x75,
+	0xb1, 0x4e, 0x8d, 0x84, 0x5d, 0xd7, 0x71, 0x35, 0x47, 0xd7, 0x7b, 0x6e, 0x58, 0x0f, 0x3d, 0xec,
+	0x1e, 0xd0, 0xb6, 0xcc, 0x34, 0x70, 0xb9, 0xd1, 0xa4, 0x5b, 0x2f, 0xc3, 0x1f, 0x03, 0x1f, 0xca,
+	0xb6, 0xe6, 0x36, 0xdf, 0x75, 0x8c, 0x3e, 0xdd, 0xbe, 0x83, 0xac, 0x96, 0xe3, 0x76, 0x10, 0xa1,
+	0xa2, 0x9d, 0xc8, 0x39, 0x3b, 0x88, 0xe8, 0x6d, 0xb6, 0x24, 0xd8, 0x59, 0xac, 0x2d, 0x37, 0xb6,
+	0xe8, 0x06, 0x2b, 0xf0, 0x3e, 0xa8, 0x67, 0x6f, 0x10, 0x08, 0x12, 0x7d, 0x64, 0xe8, 0x91, 0xd7,
+	0x98, 0x45, 0x0d, 0x6c, 0x13, 0x13, 0x59, 0x5e, 0xf9, 0xa3, 0x7f, 0x53, 0xc0, 0xbf, 0x2a, 0x81,
+	0xa7, 0x7d, 0x4f, 0x99, 0x2e, 0xc0, 0xaf, 0x28, 0x35, 0x81, 0xa9, 0xa3, 0x11, 0x17, 0xd9, 0x1e,
+	0xd2, 0xb9, 0xbd, 0x7d, 0xe4, 0x3c, 0xaa, 0xbb, 0x8b, 0x3d, 0xe2, 0x9a, 0x4c, 0x35, 0x6a, 0x85,
+	0x1e, 0x69, 0x53, 0x99, 0x3a, 0x1b, 0xdc, 0xb1, 0xb2, 0x52, 0xd6, 0x76, 0xda, 0x38, 0x4a, 0xa0,
+	0x06, 0xeb, 0xba, 0x0e, 0x13, 0xdd, 0x72, 0x2c, 0xcb, 0x79, 0xca, 0xd5, 0xa2, 0x5b, 0x3b, 0xae,
+	0xf9, 0x25, 0xce, 0x51, 0x77, 0x0c, 0xac, 0xb5, 0x2c, 0xe7, 0x69, 0x79, 0x69, 0xa2, 0x3a, 0x4d,
+	0x7d, 0x9d, 0x8a, 0xb8, 0x37, 0xc3, 0xfe, 0x01, 0x00, 0x67, 0x1f, 0xdb, 0xab, 0xf7, 0x80, 0xca,
+	0x03, 0x02, 0xc2, 0x75, 0x17, 0xd9, 0xc4, 0xe3, 0x8e, 0xc9, 0x1d, 0x01, 0xcc, 0x8b, 0xe9, 0x0b,
+	0x3c, 0x2f, 0x88, 0xec, 0xff, 0x04, 0xf5, 0xa1, 0xb2, 0x9d, 0xfb, 0x28, 0xf8, 0xb7, 0x0f, 0xbe,
+	0xac, 0xe4, 0x9e, 0x2b, 0xb9, 0xaf, 0x29, 0xb9, 0x6f, 0x28, 0xb9, 0xcf, 0x94, 0xdc, 0x7f, 0x2b,
+	0xb9, 0xbf, 0xc9, 0xe7, 0x76, 0x8b, 0x6c, 0xa4, 0x74, 0xe7, 0xff, 0x02, 0x00, 0x00, 0xff, 0xff,
+	0x8b, 0x14, 0x16, 0xf1, 0x57, 0x41, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1017,6 +2889,36 @@ type CustomerServiceClient interface {
 	AddSocialMediaHandle(ctx context.Context, in *AddSocialMediaHandleRequest, opts ...grpc.CallOption) (*AddSocialMediaHandleResponse, error)
 	// CreateCustomer creates a new customer
 	CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error)
+	// CreateCreditLimitOrder creates a new customer
+	CreateCreditLimitOrder(ctx context.Context, in *CreateCreditLimitOrderRequest, opts ...grpc.CallOption) (*CreateCreditLimitOrderResponse, error)
+	// CreateUserCustomerLink creates a new user customer link.
+	CreateUserCustomerLink(ctx context.Context, in *CreateUserCustomerLinkRequest, opts ...grpc.CallOption) (*CreateUserCustomerLinkResponse, error)
+	// DeleteCustomerAddress delete the customer address.
+	DeleteCustomerAddress(ctx context.Context, in *DeleteCustomerAddressRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	// DeleteTaxResidence delete the tax residence.
+	DeleteTaxResidence(ctx context.Context, in *DeleteTaxResidenceRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	// GetCRMEvents returns a list containing up to 20 crm events.
+	GetCRMEvents(ctx context.Context, in *GetCRMEventsRequest, opts ...grpc.CallOption) (*GetCRMEventsResponse, error)
+	// GetCreditLimitOrderByID
+	GetCreditLimitOrderByID(ctx context.Context, in *GetCreditLimitOrderByIDRequest, opts ...grpc.CallOption) (*GetCreditLimitOrderByIDResponse, error)
+	// GetCreditLimitOrder
+	GetCreditLimitOrder(ctx context.Context, in *GetCreditLimitOrderRequest, opts ...grpc.CallOption) (*GetCreditLimitOrderResponse, error)
+	// GetCustomerAddresses
+	GetCustomerAddresses(ctx context.Context, in *GetCustomerAddressesRequest, opts ...grpc.CallOption) (*GetCustomerAddressesResponse, error)
+	// GetCustomerSocialMediaHandles
+	GetCustomerSocialMediaHandles(ctx context.Context, in *GetCustomerSocialMediaHandlesRequest, opts ...grpc.CallOption) (*GetCustomerSocialMediaHandlesResponse, error)
+	// GetCustomerByCustomerID
+	GetCustomerByCustomerID(ctx context.Context, in *GetCustomerByCustomerIDRequest, opts ...grpc.CallOption) (*Customer, error)
+	// GetCustomerByCustomerNumber
+	GetCustomerByCustomerNumber(ctx context.Context, in *GetCustomerByCustomerNumberRequest, opts ...grpc.CallOption) (*Customer, error)
+	// GetCustomerForCurrentUser
+	GetCustomersForCurrentUser(ctx context.Context, in *GetCustomersForCurrentUserRequest, opts ...grpc.CallOption) (*GetCustomersForCurrentUserResponse, error)
+	// GetCustomerForCurrentUserAtBank
+	GetCustomersForCurrentUserAtBank(ctx context.Context, in *GetCustomersForCurrentUserAtBankRequest, opts ...grpc.CallOption) (*GetCustomersForCurrentUserAtBankResponse, error)
+	// GetFirehoseCustomer
+	GetFirehoseCustomer(ctx context.Context, in *GetFirehoseCustomerRequest, opts ...grpc.CallOption) (*GetFirehoseCustomerResponse, error)
+	// GetTaxResidenceOfCustomer
+	GetTaxResidenceOfCustomer(ctx context.Context, in *GetTaxResidenceOfCustomerRequest, opts ...grpc.CallOption) (*GetTaxResidenceOfCustomerResponse, error)
 }
 
 type customerServiceClient struct {
@@ -1054,6 +2956,141 @@ func (c *customerServiceClient) CreateCustomer(ctx context.Context, in *CreateCu
 	return out, nil
 }
 
+func (c *customerServiceClient) CreateCreditLimitOrder(ctx context.Context, in *CreateCreditLimitOrderRequest, opts ...grpc.CallOption) (*CreateCreditLimitOrderResponse, error) {
+	out := new(CreateCreditLimitOrderResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/CreateCreditLimitOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) CreateUserCustomerLink(ctx context.Context, in *CreateUserCustomerLinkRequest, opts ...grpc.CallOption) (*CreateUserCustomerLinkResponse, error) {
+	out := new(CreateUserCustomerLinkResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/CreateUserCustomerLink", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) DeleteCustomerAddress(ctx context.Context, in *DeleteCustomerAddressRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+	out := new(empty.Empty)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/DeleteCustomerAddress", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) DeleteTaxResidence(ctx context.Context, in *DeleteTaxResidenceRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+	out := new(empty.Empty)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/DeleteTaxResidence", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCRMEvents(ctx context.Context, in *GetCRMEventsRequest, opts ...grpc.CallOption) (*GetCRMEventsResponse, error) {
+	out := new(GetCRMEventsResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCRMEvents", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCreditLimitOrderByID(ctx context.Context, in *GetCreditLimitOrderByIDRequest, opts ...grpc.CallOption) (*GetCreditLimitOrderByIDResponse, error) {
+	out := new(GetCreditLimitOrderByIDResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCreditLimitOrderByID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCreditLimitOrder(ctx context.Context, in *GetCreditLimitOrderRequest, opts ...grpc.CallOption) (*GetCreditLimitOrderResponse, error) {
+	out := new(GetCreditLimitOrderResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCreditLimitOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCustomerAddresses(ctx context.Context, in *GetCustomerAddressesRequest, opts ...grpc.CallOption) (*GetCustomerAddressesResponse, error) {
+	out := new(GetCustomerAddressesResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCustomerAddresses", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCustomerSocialMediaHandles(ctx context.Context, in *GetCustomerSocialMediaHandlesRequest, opts ...grpc.CallOption) (*GetCustomerSocialMediaHandlesResponse, error) {
+	out := new(GetCustomerSocialMediaHandlesResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCustomerSocialMediaHandles", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCustomerByCustomerID(ctx context.Context, in *GetCustomerByCustomerIDRequest, opts ...grpc.CallOption) (*Customer, error) {
+	out := new(Customer)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCustomerByCustomerID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCustomerByCustomerNumber(ctx context.Context, in *GetCustomerByCustomerNumberRequest, opts ...grpc.CallOption) (*Customer, error) {
+	out := new(Customer)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCustomerByCustomerNumber", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCustomersForCurrentUser(ctx context.Context, in *GetCustomersForCurrentUserRequest, opts ...grpc.CallOption) (*GetCustomersForCurrentUserResponse, error) {
+	out := new(GetCustomersForCurrentUserResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCustomersForCurrentUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetCustomersForCurrentUserAtBank(ctx context.Context, in *GetCustomersForCurrentUserAtBankRequest, opts ...grpc.CallOption) (*GetCustomersForCurrentUserAtBankResponse, error) {
+	out := new(GetCustomersForCurrentUserAtBankResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetCustomersForCurrentUserAtBank", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetFirehoseCustomer(ctx context.Context, in *GetFirehoseCustomerRequest, opts ...grpc.CallOption) (*GetFirehoseCustomerResponse, error) {
+	out := new(GetFirehoseCustomerResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetFirehoseCustomer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *customerServiceClient) GetTaxResidenceOfCustomer(ctx context.Context, in *GetTaxResidenceOfCustomerRequest, opts ...grpc.CallOption) (*GetTaxResidenceOfCustomerResponse, error) {
+	out := new(GetTaxResidenceOfCustomerResponse)
+	err := c.cc.Invoke(ctx, "/customer.CustomerService/GetTaxResidenceOfCustomer", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CustomerServiceServer is the server API for CustomerService service.
 type CustomerServiceServer interface {
 	// AddAddressToCustomer Add an Address to the Customer specified by CUSTOMER_ID.
@@ -1062,6 +3099,36 @@ type CustomerServiceServer interface {
 	AddSocialMediaHandle(context.Context, *AddSocialMediaHandleRequest) (*AddSocialMediaHandleResponse, error)
 	// CreateCustomer creates a new customer
 	CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error)
+	// CreateCreditLimitOrder creates a new customer
+	CreateCreditLimitOrder(context.Context, *CreateCreditLimitOrderRequest) (*CreateCreditLimitOrderResponse, error)
+	// CreateUserCustomerLink creates a new user customer link.
+	CreateUserCustomerLink(context.Context, *CreateUserCustomerLinkRequest) (*CreateUserCustomerLinkResponse, error)
+	// DeleteCustomerAddress delete the customer address.
+	DeleteCustomerAddress(context.Context, *DeleteCustomerAddressRequest) (*empty.Empty, error)
+	// DeleteTaxResidence delete the tax residence.
+	DeleteTaxResidence(context.Context, *DeleteTaxResidenceRequest) (*empty.Empty, error)
+	// GetCRMEvents returns a list containing up to 20 crm events.
+	GetCRMEvents(context.Context, *GetCRMEventsRequest) (*GetCRMEventsResponse, error)
+	// GetCreditLimitOrderByID
+	GetCreditLimitOrderByID(context.Context, *GetCreditLimitOrderByIDRequest) (*GetCreditLimitOrderByIDResponse, error)
+	// GetCreditLimitOrder
+	GetCreditLimitOrder(context.Context, *GetCreditLimitOrderRequest) (*GetCreditLimitOrderResponse, error)
+	// GetCustomerAddresses
+	GetCustomerAddresses(context.Context, *GetCustomerAddressesRequest) (*GetCustomerAddressesResponse, error)
+	// GetCustomerSocialMediaHandles
+	GetCustomerSocialMediaHandles(context.Context, *GetCustomerSocialMediaHandlesRequest) (*GetCustomerSocialMediaHandlesResponse, error)
+	// GetCustomerByCustomerID
+	GetCustomerByCustomerID(context.Context, *GetCustomerByCustomerIDRequest) (*Customer, error)
+	// GetCustomerByCustomerNumber
+	GetCustomerByCustomerNumber(context.Context, *GetCustomerByCustomerNumberRequest) (*Customer, error)
+	// GetCustomerForCurrentUser
+	GetCustomersForCurrentUser(context.Context, *GetCustomersForCurrentUserRequest) (*GetCustomersForCurrentUserResponse, error)
+	// GetCustomerForCurrentUserAtBank
+	GetCustomersForCurrentUserAtBank(context.Context, *GetCustomersForCurrentUserAtBankRequest) (*GetCustomersForCurrentUserAtBankResponse, error)
+	// GetFirehoseCustomer
+	GetFirehoseCustomer(context.Context, *GetFirehoseCustomerRequest) (*GetFirehoseCustomerResponse, error)
+	// GetTaxResidenceOfCustomer
+	GetTaxResidenceOfCustomer(context.Context, *GetTaxResidenceOfCustomerRequest) (*GetTaxResidenceOfCustomerResponse, error)
 }
 
 // UnimplementedCustomerServiceServer can be embedded to have forward compatible implementations.
@@ -1076,6 +3143,51 @@ func (*UnimplementedCustomerServiceServer) AddSocialMediaHandle(ctx context.Cont
 }
 func (*UnimplementedCustomerServiceServer) CreateCustomer(ctx context.Context, req *CreateCustomerRequest) (*CreateCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCustomer not implemented")
+}
+func (*UnimplementedCustomerServiceServer) CreateCreditLimitOrder(ctx context.Context, req *CreateCreditLimitOrderRequest) (*CreateCreditLimitOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateCreditLimitOrder not implemented")
+}
+func (*UnimplementedCustomerServiceServer) CreateUserCustomerLink(ctx context.Context, req *CreateUserCustomerLinkRequest) (*CreateUserCustomerLinkResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserCustomerLink not implemented")
+}
+func (*UnimplementedCustomerServiceServer) DeleteCustomerAddress(ctx context.Context, req *DeleteCustomerAddressRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCustomerAddress not implemented")
+}
+func (*UnimplementedCustomerServiceServer) DeleteTaxResidence(ctx context.Context, req *DeleteTaxResidenceRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteTaxResidence not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCRMEvents(ctx context.Context, req *GetCRMEventsRequest) (*GetCRMEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCRMEvents not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCreditLimitOrderByID(ctx context.Context, req *GetCreditLimitOrderByIDRequest) (*GetCreditLimitOrderByIDResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCreditLimitOrderByID not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCreditLimitOrder(ctx context.Context, req *GetCreditLimitOrderRequest) (*GetCreditLimitOrderResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCreditLimitOrder not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCustomerAddresses(ctx context.Context, req *GetCustomerAddressesRequest) (*GetCustomerAddressesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerAddresses not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCustomerSocialMediaHandles(ctx context.Context, req *GetCustomerSocialMediaHandlesRequest) (*GetCustomerSocialMediaHandlesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerSocialMediaHandles not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCustomerByCustomerID(ctx context.Context, req *GetCustomerByCustomerIDRequest) (*Customer, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerByCustomerID not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCustomerByCustomerNumber(ctx context.Context, req *GetCustomerByCustomerNumberRequest) (*Customer, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerByCustomerNumber not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCustomersForCurrentUser(ctx context.Context, req *GetCustomersForCurrentUserRequest) (*GetCustomersForCurrentUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomersForCurrentUser not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetCustomersForCurrentUserAtBank(ctx context.Context, req *GetCustomersForCurrentUserAtBankRequest) (*GetCustomersForCurrentUserAtBankResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomersForCurrentUserAtBank not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetFirehoseCustomer(ctx context.Context, req *GetFirehoseCustomerRequest) (*GetFirehoseCustomerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFirehoseCustomer not implemented")
+}
+func (*UnimplementedCustomerServiceServer) GetTaxResidenceOfCustomer(ctx context.Context, req *GetTaxResidenceOfCustomerRequest) (*GetTaxResidenceOfCustomerResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTaxResidenceOfCustomer not implemented")
 }
 
 func RegisterCustomerServiceServer(s *grpc.Server, srv CustomerServiceServer) {
@@ -1136,6 +3248,276 @@ func _CustomerService_CreateCustomer_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CustomerService_CreateCreditLimitOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCreditLimitOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).CreateCreditLimitOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/CreateCreditLimitOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).CreateCreditLimitOrder(ctx, req.(*CreateCreditLimitOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_CreateUserCustomerLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserCustomerLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).CreateUserCustomerLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/CreateUserCustomerLink",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).CreateUserCustomerLink(ctx, req.(*CreateUserCustomerLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_DeleteCustomerAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteCustomerAddressRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).DeleteCustomerAddress(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/DeleteCustomerAddress",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).DeleteCustomerAddress(ctx, req.(*DeleteCustomerAddressRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_DeleteTaxResidence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTaxResidenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).DeleteTaxResidence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/DeleteTaxResidence",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).DeleteTaxResidence(ctx, req.(*DeleteTaxResidenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCRMEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCRMEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCRMEvents(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCRMEvents",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCRMEvents(ctx, req.(*GetCRMEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCreditLimitOrderByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCreditLimitOrderByIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCreditLimitOrderByID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCreditLimitOrderByID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCreditLimitOrderByID(ctx, req.(*GetCreditLimitOrderByIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCreditLimitOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCreditLimitOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCreditLimitOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCreditLimitOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCreditLimitOrder(ctx, req.(*GetCreditLimitOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCustomerAddresses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomerAddressesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCustomerAddresses(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCustomerAddresses",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCustomerAddresses(ctx, req.(*GetCustomerAddressesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCustomerSocialMediaHandles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomerSocialMediaHandlesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCustomerSocialMediaHandles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCustomerSocialMediaHandles",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCustomerSocialMediaHandles(ctx, req.(*GetCustomerSocialMediaHandlesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCustomerByCustomerID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomerByCustomerIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCustomerByCustomerID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCustomerByCustomerID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCustomerByCustomerID(ctx, req.(*GetCustomerByCustomerIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCustomerByCustomerNumber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomerByCustomerNumberRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCustomerByCustomerNumber(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCustomerByCustomerNumber",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCustomerByCustomerNumber(ctx, req.(*GetCustomerByCustomerNumberRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCustomersForCurrentUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomersForCurrentUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCustomersForCurrentUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCustomersForCurrentUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCustomersForCurrentUser(ctx, req.(*GetCustomersForCurrentUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetCustomersForCurrentUserAtBank_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCustomersForCurrentUserAtBankRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetCustomersForCurrentUserAtBank(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetCustomersForCurrentUserAtBank",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetCustomersForCurrentUserAtBank(ctx, req.(*GetCustomersForCurrentUserAtBankRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetFirehoseCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFirehoseCustomerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetFirehoseCustomer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetFirehoseCustomer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetFirehoseCustomer(ctx, req.(*GetFirehoseCustomerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CustomerService_GetTaxResidenceOfCustomer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTaxResidenceOfCustomerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CustomerServiceServer).GetTaxResidenceOfCustomer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/customer.CustomerService/GetTaxResidenceOfCustomer",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CustomerServiceServer).GetTaxResidenceOfCustomer(ctx, req.(*GetTaxResidenceOfCustomerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _CustomerService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "customer.CustomerService",
 	HandlerType: (*CustomerServiceServer)(nil),
@@ -1151,6 +3533,66 @@ var _CustomerService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCustomer",
 			Handler:    _CustomerService_CreateCustomer_Handler,
+		},
+		{
+			MethodName: "CreateCreditLimitOrder",
+			Handler:    _CustomerService_CreateCreditLimitOrder_Handler,
+		},
+		{
+			MethodName: "CreateUserCustomerLink",
+			Handler:    _CustomerService_CreateUserCustomerLink_Handler,
+		},
+		{
+			MethodName: "DeleteCustomerAddress",
+			Handler:    _CustomerService_DeleteCustomerAddress_Handler,
+		},
+		{
+			MethodName: "DeleteTaxResidence",
+			Handler:    _CustomerService_DeleteTaxResidence_Handler,
+		},
+		{
+			MethodName: "GetCRMEvents",
+			Handler:    _CustomerService_GetCRMEvents_Handler,
+		},
+		{
+			MethodName: "GetCreditLimitOrderByID",
+			Handler:    _CustomerService_GetCreditLimitOrderByID_Handler,
+		},
+		{
+			MethodName: "GetCreditLimitOrder",
+			Handler:    _CustomerService_GetCreditLimitOrder_Handler,
+		},
+		{
+			MethodName: "GetCustomerAddresses",
+			Handler:    _CustomerService_GetCustomerAddresses_Handler,
+		},
+		{
+			MethodName: "GetCustomerSocialMediaHandles",
+			Handler:    _CustomerService_GetCustomerSocialMediaHandles_Handler,
+		},
+		{
+			MethodName: "GetCustomerByCustomerID",
+			Handler:    _CustomerService_GetCustomerByCustomerID_Handler,
+		},
+		{
+			MethodName: "GetCustomerByCustomerNumber",
+			Handler:    _CustomerService_GetCustomerByCustomerNumber_Handler,
+		},
+		{
+			MethodName: "GetCustomersForCurrentUser",
+			Handler:    _CustomerService_GetCustomersForCurrentUser_Handler,
+		},
+		{
+			MethodName: "GetCustomersForCurrentUserAtBank",
+			Handler:    _CustomerService_GetCustomersForCurrentUserAtBank_Handler,
+		},
+		{
+			MethodName: "GetFirehoseCustomer",
+			Handler:    _CustomerService_GetFirehoseCustomer_Handler,
+		},
+		{
+			MethodName: "GetTaxResidenceOfCustomer",
+			Handler:    _CustomerService_GetTaxResidenceOfCustomer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

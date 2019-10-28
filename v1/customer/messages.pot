@@ -34,7 +34,19 @@ msgstr ""
 msgid "Body Parameters"
 msgstr ""
 
+msgid "Creare user customer link"
+msgstr ""
+
+msgid "Create Credit limit order for the customer on specific bank"
+msgstr ""
+
 msgid "Create a customer"
+msgstr ""
+
+msgid "Create credit limit order"
+msgstr ""
+
+msgid "Create user customer link"
 msgstr ""
 
 msgid "Creates a new customer"
@@ -46,10 +58,49 @@ msgstr ""
 msgid "Customer API"
 msgstr ""
 
+msgid "Customer address successfully deleted."
+msgstr ""
+
+msgid "Delete customer address"
+msgstr ""
+
+msgid "Delete tax residence"
+msgstr ""
+
+msgid "Get Customer By CustomerNumber"
+msgstr ""
+
+msgid "Get Customer By ID"
+msgstr ""
+
+msgid "Get credit limit order by id"
+msgstr ""
+
+msgid "Get customers data by bank id"
+msgstr ""
+
+msgid "Get customers data for current user"
+msgstr ""
+
+msgid "Get customers tax_residencies"
+msgstr ""
+
 msgid "HTTP Request"
 msgstr ""
 
 msgid "Host"
+msgstr ""
+
+msgid "List all CRM events"
+msgstr ""
+
+msgid "List all credit limit order"
+msgstr ""
+
+msgid "List all customer adddresses"
+msgstr ""
+
+msgid "List all customer social media handles"
 msgstr ""
 
 msgid "Num is the value of the amount."
@@ -58,10 +109,19 @@ msgstr ""
 msgid "Objects"
 msgstr ""
 
+msgid "Permanently delete customer address."
+msgstr ""
+
+msgid "Permanently delete tax residence."
+msgstr ""
+
 msgid "Provides create and read operations on the customer resource."
 msgstr ""
 
 msgid "Query Parameters"
+msgstr ""
+
+msgid "Request executed successfully."
 msgstr ""
 
 msgid "Response body"
@@ -71,6 +131,9 @@ msgid "Response codes"
 msgstr ""
 
 msgid "Responses"
+msgstr ""
+
+msgid "Return customer firehose"
 msgstr ""
 
 msgid "Returned when an unexpected error occured on the server side."
@@ -88,7 +151,43 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
+msgid "Returns Credit limit order by id"
+msgstr ""
+
+msgid "Returns a list containing up to 20 CreditLimitOrder."
+msgstr ""
+
+msgid "Returns a list containing up to 20 crm events."
+msgstr ""
+
+msgid "Returns a list containing up to 20 customer addresses."
+msgstr ""
+
+msgid "Returns a list containing up to 20 customer social media handles"
+msgstr ""
+
+msgid "Returns the current user customers data"
+msgstr ""
+
+msgid "Returns the current user customers data by bank ID"
+msgstr ""
+
+msgid "Returns the customer data based on it's id"
+msgstr ""
+
+msgid "Returns the customer data based on the customer number"
+msgstr ""
+
+msgid "Returns the list of customer firehose"
+msgstr ""
+
+msgid "Returns the user tax_residencies"
+msgstr ""
+
 msgid "Social media added successfully."
+msgstr ""
+
+msgid "Tax residence successfully deleted."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"

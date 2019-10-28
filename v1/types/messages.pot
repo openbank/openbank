@@ -169,6 +169,12 @@ msgstr ""
 msgid "RelationshipStatus. Ex: Single | Married"
 msgstr ""
 
+msgid "SortDirection_ASC indicates ascending sort."
+msgstr ""
+
+msgid "SortDirection_DESC indicates descending sort."
+msgstr ""
+
 msgid "State holds the state information."
 msgstr ""
 
