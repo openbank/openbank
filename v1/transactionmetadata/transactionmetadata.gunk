@@ -1,0 +1,1380 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Transaction Metadata API",
+//                 Description: "Provides the access and availability to the transaction metadata API.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package transactionmetadata
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type User struct {
+	// ID is the user identifier.
+	ID string `pb:"1" json:"id"`
+
+	// Provider is the provider of the user.
+	Provider string `pb:"2" json:"provider"`
+
+	// DisplayName is the user's display name.
+	DisplayName string `pb:"3" json:"display_name"`
+}
+
+type Tag struct {
+	// ID is the tag identifier.
+	ID string `pb:"1" json:"id"`
+
+	// Value is the tag content/value.
+	Value string `pb:"2" json:"value"`
+
+	// Date is the date the tag is created/updated.
+	Date time.Time `pb:"3" json:"date"`
+
+	// User is the user information.
+	User User `pb:"4" json:"user"`
+}
+
+type Image struct {
+	// ID is the image identifier.
+	ID string `pb:"1" json:"id"`
+
+	// Label is the label of the image.
+	Label string `pb:"2" json:"label"`
+
+	// URL is the image URL.
+	URL string `pb:"3" json:"url"`
+
+	// Date is the date the image is created/updated.
+	Date time.Time `pb:"4" json:"date"`
+
+	// User is the user information.
+	User User `pb:"5" json:"user"`
+}
+
+type Comment struct {
+	// ID is the image identifier.
+	ID string `pb:"1" json:"id"`
+
+	// Value is the comment content/value.
+	Value string `pb:"2" json:"value"`
+
+	// Date is the date the tag is created/updated.
+	Date time.Time `pb:"3" json:"date"`
+
+	// User is the user information.
+	User User `pb:"4" json:"user"`
+}
+
+type Narrative struct {
+	// Narrative is the content of the narrative.
+	Narrative string `pb:"1" json:"narrative"`
+}
+
+type WhereTag struct {
+	// Location is the latitude and longitude information of the tag.
+	Location types.Location `pb:"1" json:"location"`
+
+	// Date is the date the geo information is created/updated.
+	Date time.Time `pb:"2" json:"date"`
+
+	// User is the user information.
+	User User `pb:"3" json:"user"`
+}
+
+type CreateTagRequest struct {
+	// Tag is the tag metadata made on a transaction.
+	Tag Tag `pb:"1" json:"tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type UpdateTagRequest struct {
+	// Tag is the tag metadata made on a transaction.
+	Tag Tag `pb:"1" json:"tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type DeleteTagRequest struct {
+	// ID is the tag id that will be deleted.
+	ID string `pb:"1" json:"tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetTagRequest struct {
+	// ID is the tag unique identifier.
+	ID string `pb:"1" json:"tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetTagsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"3" json:"transaction_id"`
+}
+
+type GetTagsResponse struct {
+	// Tags is the list of tags.
+	Tags []Tag `pb:"1" json:"tags"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type CreateImageRequest struct {
+	// Image is the image metadata made on a transaction.
+	Image Image `pb:"1" json:"image"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type UpdateImageRequest struct {
+	// Image is the image metadata made on a transaction.
+	Image Image `pb:"1" json:"image"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type DeleteImageRequest struct {
+	// ID is the image id that will be deleted.
+	ID string `pb:"1" json:"image"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetImageRequest struct {
+	// ID is the image unique identifier.
+	ID string `pb:"1" json:"image"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetImagesRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"3" json:"transaction_id"`
+}
+
+type GetImagesResponse struct {
+	// Images is the list of images.
+	Images []Image `pb:"1" json:"images"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type CreateCommentRequest struct {
+	// Comment is the comment metadata made on a transaction.
+	Comment Comment `pb:"1" json:"comment"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type UpdateCommentRequest struct {
+	// Comment is the comment metadata made on a transaction.
+	Comment Comment `pb:"1" json:"comment"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type DeleteCommentRequest struct {
+	// ID is the comment id that will be deleted.
+	ID string `pb:"1" json:"comment"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetCommentRequest struct {
+	// ID is the comment unique identifier.
+	ID string `pb:"1" json:"comment"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetCommentsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"3" json:"transaction_id"`
+}
+
+type GetCommentsResponse struct {
+	// Comments is the list of comments.
+	Comments []Comment `pb:"1" json:"comments"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type CreateNarrativeRequest struct {
+	// Narrative is the narrative metadata made on a transaction.
+	Narrative Narrative `pb:"1" json:"narrative"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type UpdateNarrativeRequest struct {
+	// Narrative is the narrative metadata made on a transaction.
+	Narrative Narrative `pb:"1" json:"narrative"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type DeleteNarrativeRequest struct {
+	// ID is the narrative id that will be deleted.
+	ID string `pb:"1" json:"narrative"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetNarrativeRequest struct {
+	// ID is the narrative unique identifier.
+	ID string `pb:"1" json:"narrative"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetNarrativesRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"3" json:"transaction_id"`
+}
+
+type GetNarrativesResponse struct {
+	// Narratives is the list of narratives.
+	Narratives []Narrative `pb:"1" json:"narratives"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type CreateWhereTagRequest struct {
+	// WhereTag is the where tag metadata made on a transaction.
+	WhereTag WhereTag `pb:"1" json:"where_tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type UpdateWhereTagRequest struct {
+	// WhereTag is the where tag metadata made on a transaction.
+	WhereTag WhereTag `pb:"1" json:"where_tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type DeleteWhereTagRequest struct {
+	// ID is the where tag id that will be deleted.
+	ID string `pb:"1" json:"where_tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetWhereTagRequest struct {
+	// ID is the where tag unique identifier.
+	ID string `pb:"1" json:"where_tag"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type GetWhereTagsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"3" json:"transaction_id"`
+}
+
+type GetWhereTagsResponse struct {
+	// WhereTags is the list of where tags.
+	WhereTags []WhereTag `pb:"1" json:"where_tags"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// TransactionID is the transaction identifier.
+	TransactionID string `pb:"4" json:"transaction_id"`
+}
+
+type TransactionMetadataService interface {
+	// CreateTag creates a new tag and returns its tag response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Tag"},
+	//         Description: "Creates a new tag and returns the object.",
+	//         Summary:     "Create a tag",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Tag created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataTag",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateTag(CreateTagRequest) Tag
+
+	// GetTag retrieves a tag.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Tag"},
+	//         Description: "Retrieve information about the tag specified by the ID",
+	//         Summary:     "Retrieve tag information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataTag",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTag(GetTagRequest) Tag
+
+	// GetTags retrieves all tags.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Tag"},
+	//         Description: "Retrieve information regarding all available tags.",
+	//         Summary:     "Retrieve all available tags",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataGetTagsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTags(GetTagsRequest) GetTagsResponse
+
+	// UpdateTag updates the tag.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Tag"},
+	//         Description: "Updates a tag's information",
+	//         Summary:     "Update a tag",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Tag successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateTag(UpdateTagRequest) Tag
+
+	// DeleteTag deletes the tag.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Tag"},
+	//         Description: "Permanently delete a tag.",
+	//         Summary:     "Delete a tag",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Tag successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteTag(DeleteTagRequest)
+
+	// CreateImage creates a new image and returns its image response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Image"},
+	//         Description: "Creates a new image and returns the object.",
+	//         Summary:     "Create a image",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Image created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataImage",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateImage(CreateImageRequest) Image
+
+	// GetImage retrieves a image.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Image"},
+	//         Description: "Retrieve information about the image specified by the ID",
+	//         Summary:     "Retrieve image information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataImage",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetImage(GetImageRequest) Image
+
+	// GetImages retrieves all images.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Image"},
+	//         Description: "Retrieve information regarding all available images.",
+	//         Summary:     "Retrieve all available images",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataGetImagesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetImages(GetImagesRequest) GetImagesResponse
+
+	// UpdateImage updates the image.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Image"},
+	//         Description: "Updates a image's information",
+	//         Summary:     "Update a image",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Image successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateImage(UpdateImageRequest) Image
+
+	// DeleteImage deletes the image.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Image"},
+	//         Description: "Permanently delete a image.",
+	//         Summary:     "Delete a image",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Image successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteImage(DeleteImageRequest)
+
+	// CreateComment creates a new comment and returns its comment response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Comment"},
+	//         Description: "Creates a new comment and returns the object.",
+	//         Summary:     "Create a comment",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Comment created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataComment",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateComment(CreateCommentRequest) Comment
+
+	// GetComment retrieves a comment.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Comment"},
+	//         Description: "Retrieve information about the comment specified by the ID",
+	//         Summary:     "Retrieve comment information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataComment",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetComment(GetCommentRequest) Comment
+
+	// GetComments retrieves all comments.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Comment"},
+	//         Description: "Retrieve information regarding all available comments.",
+	//         Summary:     "Retrieve all available comments",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataGetCommentsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetComments(GetCommentsRequest) GetCommentsResponse
+
+	// UpdateComment updates the comment.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Comment"},
+	//         Description: "Updates a comment's information",
+	//         Summary:     "Update a comment",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Comment successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateComment(UpdateCommentRequest) Comment
+
+	// DeleteComment deletes the comment.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Comment"},
+	//         Description: "Permanently delete a comment.",
+	//         Summary:     "Delete a comment",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Comment successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteComment(DeleteCommentRequest)
+
+	// CreateNarrative creates a new narrative and returns its narrative response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Narrative"},
+	//         Description: "Creates a new narrative and returns the object.",
+	//         Summary:     "Create a narrative",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Narrative created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataNarrative",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateNarrative(CreateNarrativeRequest) Narrative
+
+	// GetNarrative retrieves a narrative.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Narrative"},
+	//         Description: "Retrieve information about the narrative specified by the ID",
+	//         Summary:     "Retrieve narrative information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataNarrative",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetNarrative(GetNarrativeRequest) Narrative
+
+	// GetNarratives retrieves all narratives.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Narrative"},
+	//         Description: "Retrieve information regarding all available narratives.",
+	//         Summary:     "Retrieve all available narratives",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataGetNarrativesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetNarratives(GetNarrativesRequest) GetNarrativesResponse
+
+	// UpdateNarrative updates the narrative.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Narrative"},
+	//         Description: "Updates a narrative's information",
+	//         Summary:     "Update a narrative",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Narrative successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateNarrative(UpdateNarrativeRequest) Narrative
+
+	// DeleteNarrative deletes the narrative.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Narrative"},
+	//         Description: "Permanently delete a narrative.",
+	//         Summary:     "Delete a narrative",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Narrative successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteNarrative(DeleteNarrativeRequest)
+
+	// CreateWhereTag creates a new where tag and returns its where tag response.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"WhereTag"},
+	//         Description: "Creates a new where tag and returns the object.",
+	//         Summary:     "Create a where tag",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "WhereTag created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataWhereTag",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateWhereTag(CreateWhereTagRequest) WhereTag
+
+	// GetWhereTag retrieves a where tag.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"WhereTag"},
+	//         Description: "Retrieve information about the where tag specified by the ID",
+	//         Summary:     "Retrieve where tag information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataWhereTag",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetWhereTag(GetWhereTagRequest) WhereTag
+
+	// GetWhereTags retrieves all where tags.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"WhereTag"},
+	//         Description: "Retrieve information regarding all available where tags.",
+	//         Summary:     "Retrieve all available where tags",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataGetWhereTagsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetWhereTags(GetWhereTagsRequest) GetWhereTagsResponse
+
+	// UpdateWhereTag updates the where tag.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"WhereTag"},
+	//         Description: "Updates a where tag's information",
+	//         Summary:     "Update a where tag",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "WhereTag successfully updated.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateWhereTag(UpdateWhereTagRequest) WhereTag
+
+	// DeleteWhereTag deletes the where tag.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"WhereTag"},
+	//         Description: "Permanently delete a where tag.",
+	//         Summary:     "Delete a where tag",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "WhereTag successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteWhereTag(DeleteWhereTagRequest)
+}

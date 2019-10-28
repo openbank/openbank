@@ -1,0 +1,386 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "AccountID is the account identifier."
+msgstr ""
+
+msgid "BankID is the bank identifier."
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Comment created successfully."
+msgstr ""
+
+msgid "Comment is the comment metadata made on a transaction."
+msgstr ""
+
+msgid "Comment successfully deleted."
+msgstr ""
+
+msgid "Comment successfully updated."
+msgstr ""
+
+msgid "Comments is the list of comments."
+msgstr ""
+
+msgid "Create a comment"
+msgstr ""
+
+msgid "Create a image"
+msgstr ""
+
+msgid "Create a narrative"
+msgstr ""
+
+msgid "Create a tag"
+msgstr ""
+
+msgid "Create a where tag"
+msgstr ""
+
+msgid "Creates a new comment and returns the object."
+msgstr ""
+
+msgid "Creates a new image and returns the object."
+msgstr ""
+
+msgid "Creates a new narrative and returns the object."
+msgstr ""
+
+msgid "Creates a new tag and returns the object."
+msgstr ""
+
+msgid "Creates a new where tag and returns the object."
+msgstr ""
+
+msgid "Date is the date the geo information is created/updated."
+msgstr ""
+
+msgid "Date is the date the image is created/updated."
+msgstr ""
+
+msgid "Date is the date the tag is created/updated."
+msgstr ""
+
+msgid "Delete a comment"
+msgstr ""
+
+msgid "Delete a image"
+msgstr ""
+
+msgid "Delete a narrative"
+msgstr ""
+
+msgid "Delete a tag"
+msgstr ""
+
+msgid "Delete a where tag"
+msgstr ""
+
+msgid "DisplayName is the user's display name."
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "ID is the comment id that will be deleted."
+msgstr ""
+
+msgid "ID is the comment unique identifier."
+msgstr ""
+
+msgid "ID is the image id that will be deleted."
+msgstr ""
+
+msgid "ID is the image identifier."
+msgstr ""
+
+msgid "ID is the image unique identifier."
+msgstr ""
+
+msgid "ID is the narrative id that will be deleted."
+msgstr ""
+
+msgid "ID is the narrative unique identifier."
+msgstr ""
+
+msgid "ID is the tag id that will be deleted."
+msgstr ""
+
+msgid "ID is the tag identifier."
+msgstr ""
+
+msgid "ID is the tag unique identifier."
+msgstr ""
+
+msgid "ID is the user identifier."
+msgstr ""
+
+msgid "ID is the where tag id that will be deleted."
+msgstr ""
+
+msgid "ID is the where tag unique identifier."
+msgstr ""
+
+msgid "Image created successfully."
+msgstr ""
+
+msgid "Image is the image metadata made on a transaction."
+msgstr ""
+
+msgid "Image successfully deleted."
+msgstr ""
+
+msgid "Image successfully updated."
+msgstr ""
+
+msgid "Images is the list of images."
+msgstr ""
+
+msgid "Label is the label of the image."
+msgstr ""
+
+msgid "Location is the latitude and longitude information of the tag."
+msgstr ""
+
+msgid "Narrative created successfully."
+msgstr ""
+
+msgid "Narrative is the content of the narrative."
+msgstr ""
+
+msgid "Narrative is the narrative metadata made on a transaction."
+msgstr ""
+
+msgid "Narrative successfully deleted."
+msgstr ""
+
+msgid "Narrative successfully updated."
+msgstr ""
+
+msgid "Narratives is the list of narratives."
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "Permanently delete a comment."
+msgstr ""
+
+msgid "Permanently delete a image."
+msgstr ""
+
+msgid "Permanently delete a narrative."
+msgstr ""
+
+msgid "Permanently delete a tag."
+msgstr ""
+
+msgid "Permanently delete a where tag."
+msgstr ""
+
+msgid "Provider is the provider of the user."
+msgstr ""
+
+msgid "Provides the access and availability to the transaction metadata API."
+msgstr ""
+
+msgid "Query Parameters"
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Retrieve all available comments"
+msgstr ""
+
+msgid "Retrieve all available images"
+msgstr ""
+
+msgid "Retrieve all available narratives"
+msgstr ""
+
+msgid "Retrieve all available tags"
+msgstr ""
+
+msgid "Retrieve all available where tags"
+msgstr ""
+
+msgid "Retrieve comment information"
+msgstr ""
+
+msgid "Retrieve image information"
+msgstr ""
+
+msgid "Retrieve information about the comment specified by the ID"
+msgstr ""
+
+msgid "Retrieve information about the image specified by the ID"
+msgstr ""
+
+msgid "Retrieve information about the narrative specified by the ID"
+msgstr ""
+
+msgid "Retrieve information about the tag specified by the ID"
+msgstr ""
+
+msgid "Retrieve information about the where tag specified by the ID"
+msgstr ""
+
+msgid "Retrieve information regarding all available comments."
+msgstr ""
+
+msgid "Retrieve information regarding all available images."
+msgstr ""
+
+msgid "Retrieve information regarding all available narratives."
+msgstr ""
+
+msgid "Retrieve information regarding all available tags."
+msgstr ""
+
+msgid "Retrieve information regarding all available where tags."
+msgstr ""
+
+msgid "Retrieve narrative information"
+msgstr ""
+
+msgid "Retrieve tag information"
+msgstr ""
+
+msgid "Retrieve where tag information"
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Tag created successfully."
+msgstr ""
+
+msgid "Tag is the tag metadata made on a transaction."
+msgstr ""
+
+msgid "Tag successfully deleted."
+msgstr ""
+
+msgid "Tag successfully updated."
+msgstr ""
+
+msgid "Tags is the list of tags."
+msgstr ""
+
+msgid "The latitude in degrees. It must be in the range [-90.0, +90.0]."
+msgstr ""
+
+msgid "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+msgstr ""
+
+msgid "Transaction Metadata API"
+msgstr ""
+
+msgid "TransactionID is the transaction identifier."
+msgstr ""
+
+msgid "URL is the image URL."
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "Update a comment"
+msgstr ""
+
+msgid "Update a image"
+msgstr ""
+
+msgid "Update a narrative"
+msgstr ""
+
+msgid "Update a tag"
+msgstr ""
+
+msgid "Update a where tag"
+msgstr ""
+
+msgid "Updates a comment's information"
+msgstr ""
+
+msgid "Updates a image's information"
+msgstr ""
+
+msgid "Updates a narrative's information"
+msgstr ""
+
+msgid "Updates a tag's information"
+msgstr ""
+
+msgid "Updates a where tag's information"
+msgstr ""
+
+msgid "User is the user information."
+msgstr ""
+
+msgid "Value is the comment content/value."
+msgstr ""
+
+msgid "Value is the tag content/value."
+msgstr ""
+
+msgid "WhereTag created successfully."
+msgstr ""
+
+msgid "WhereTag is the where tag metadata made on a transaction."
+msgstr ""
+
+msgid "WhereTag successfully deleted."
+msgstr ""
+
+msgid "WhereTag successfully updated."
+msgstr ""
+
+msgid "WhereTags is the list of where tags."
+msgstr ""
