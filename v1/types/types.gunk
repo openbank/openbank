@@ -226,6 +226,18 @@ const (
 	Rare
 )
 
+type SortDirection int
+
+const (
+	UnknownSortDirection SortDirection = iota
+
+	// ASC indicates ascending sort.
+	ASC
+
+	// DESC indicates descending sort.
+	DESC
+)
+
 // Address hold all details about Address
 type Address struct {
 	// CountryName holds the country name information.

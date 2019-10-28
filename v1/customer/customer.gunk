@@ -156,6 +156,191 @@ type AddSocialMediaHandleResponse struct {
 	Success string `pb:"1" json:"success"`
 }
 
+type CreateCreditLimitOrderRequest struct {
+	BankID                          string `pb:"1" json:"bank_id"`
+	CustomerID                      string `pb:"2" json:"customer_id"`
+	RequestedCurrentRateAmount1     string `pb:"3" json:"requested_current_rate_amount1"`
+	RequestedCurrentRateAmount2     string `pb:"4" json:"requested_current_rate_amount2"`
+	RequestedCurrentValidEndDate    string `pb:"5" json:"requested_current_valid_end_date"`
+	CurrentCreditDocumentation      string `pb:"6" json:"current_credit_documentation"`
+	TemporaryRequestedCurrentAmount string `pb:"7" json:"temporary_requested_current_amount"`
+	RequestedTemporaryValidEndDate  string `pb:"8" json:"requested_temporary_valid_end_date"`
+	TemporaryCreditDocumentation    string `pb:"9" json:"temporary_credit_documentation"`
+}
+
+type CreateCreditLimitOrderResponse struct {
+	CreditLimitOrderID string `pb:"1" json:"credit_limit_order_id"`
+}
+
+type CreateUserCustomerLinkRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	UserID     string `pb:"2" json:"user_id"`
+	CustomerID string `pb:"3" json:"customer_id"`
+}
+
+type CreateUserCustomerLinkResponse struct {
+	UserCustomerLinkID string    `pb:"1" json:"user_customer_link_id"`
+	CustomerID         string    `pb:"2" json:"customer_id"`
+	UserID             string    `pb:"3" json:"user_id"`
+	DateInserted       time.Time `pb:"4" json:"date_inserted"`
+	IsActive           bool      `pb:"5" json:"is_active"`
+}
+
+type DeleteCustomerAddressRequest struct {
+	BankID            string `pb:"1" json:"bank_id"`
+	CustomerID        string `pb:"2" json:"customer_id"`
+	CustomerAddressID string `pb:"3" json:"customer_address_id"`
+}
+
+type DeleteTaxResidenceRequest struct {
+	BankID         string `pb:"1" json:"bank_id"`
+	CustomerID     string `pb:"2" json:"customer_id"`
+	TaxResidenceID string `pb:"3" json:"tax_residence_id"`
+}
+
+type CRMEvent struct {
+	ID             string    `pb:"1" json:"id"`
+	BankID         string    `pb:"2" json:"bank_id"`
+	CustomerName   string    `pb:"3" json:"customer_name"`
+	CustomerNumber string    `pb:"4" json:"customer_number"`
+	Category       string    `pb:"5" json:"category"`
+	Detail         string    `pb:"6" json:"detail"`
+	Channel        string    `pb:"7" json:"channel"`
+	ScheduledDate  time.Time `pb:"8" json:"scheduled_date"`
+	ActualDate     time.Time `pb:"9" json:"actual_date"`
+	Result         string    `pb:"10" json:"result"`
+}
+
+type GetCRMEventsRequest struct {
+	BankID string `pb:"1" json:"bank_id"`
+}
+
+type GetCRMEventsResponse struct {
+	CRMEvents []CRMEvent `pb:"1" json:"crm_events"`
+	HasMore   bool       `pb:"2" json:"has_more"`
+}
+
+type CreditLimitOrder struct {
+	RankAmount1      string `pb:"1" json:"rank_amount_1"`
+	NominalInterest1 string `pb:"2" json:"nominal_interest_1"`
+	RankAmount2      string `pb:"3" json:"rank_amount_2"`
+	NominalInterest2 string `pb:"4" json:"nominal_interest_2"`
+}
+
+type GetCreditLimitOrderByIDRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+	RequestID  string `pb:"3" json:"request_id"`
+}
+
+type GetCreditLimitOrderByIDResponse struct {
+	CreditLimitOrder CreditLimitOrder `pb:"1" json:"credit_limit_order"`
+}
+
+type GetCreditLimitOrderRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+}
+
+type GetCreditLimitOrderResponse struct {
+	Result []CreditLimitOrder `pb:"1" json:"result"`
+}
+
+type Address struct {
+	CustomerAddressID string    `pb:"1" json:"customer_address_id"`
+	CustomerID        string    `pb:"2" json:"customer_id"`
+	Line1             string    `pb:"3" json:"line_1"`
+	Line2             string    `pb:"4" json:"line_2"`
+	Line3             string    `pb:"5" json:"line_3"`
+	City              string    `pb:"6" json:"city"`
+	County            string    `pb:"7" json:"county"`
+	State             string    `pb:"8" json:"state"`
+	Postcode          string    `pb:"9" json:"postcode"`
+	CountryCode       string    `pb:"10" json:"country_code"`
+	Tags              []string  `pb:"11" json:"tags"`
+	Status            string    `pb:"12" json:"status"`
+	InsertDate        time.Time `pb:"13" json:"insert_date"`
+}
+
+type GetCustomerAddressesRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+}
+
+type GetCustomerAddressesResponse struct {
+	Addresses []Address `pb:"1" json:"addresses"`
+}
+
+type Check struct {
+	CustomerNumber string    `pb:"1" json:"customer_number"`
+	Type           string    `pb:"2" json:"type"`
+	Handle         string    `pb:"3" json:"handle"`
+	DateAdded      time.Time `pb:"4" json:"date_added"`
+	DateActivated  time.Time `pb:"5" json:"date_activated"`
+}
+type GetCustomerSocialMediaHandlesRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+}
+
+type GetCustomerSocialMediaHandlesResponse struct {
+	Checks []Check `pb:"1" json:"checks"`
+}
+
+type GetCustomerByCustomerIDRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+}
+
+type GetCustomerByCustomerNumberRequest struct {
+	BankID         string `pb:"1" json:"bank_id"`
+	CustomerID     string `pb:"2" json:"customer_id"`
+	CustomerNumber string `pb:"3" json:"customer_number"`
+}
+
+type GetCustomersForCurrentUserRequest struct {
+}
+
+type GetCustomersForCurrentUserResponse struct {
+	Customers []Customer `pb:"1" json:"customers"`
+}
+
+type GetCustomersForCurrentUserAtBankRequest struct {
+	BankID string `pb:"1" json:"bank_id"`
+}
+
+type GetCustomersForCurrentUserAtBankResponse struct {
+	Customers []Customer `pb:"1" json:"customers"`
+}
+
+type GetFirehoseCustomerRequest struct {
+	BankID        string              `pb:"1" json:"bank_id"`
+	SortDirection types.SortDirection `pb:"2" json:"sort_direction"`
+	Limit         int                 `pb:"3" json:"limit"`
+	Offset        int                 `pb:"4" json:"offset"`
+	FromDate      time.Time           `pb:"5" json:"from_date"`
+	ToDate        time.Time           `pb:"6" json:"to_date"`
+}
+
+type GetFirehoseCustomerResponse struct {
+	Customers []Customer `pb:"1" json:"customers"`
+}
+
+type TaxResidence struct {
+	Domain         string `pb:"1" json:"domain"`
+	TaxNumber      string `pb:"2" json:"tax_number"`
+	TaxResidenceID string `pb:"3" json:"tax_residence_id"`
+}
+
+type GetTaxResidenceOfCustomerRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+}
+
+type GetTaxResidenceOfCustomerResponse struct {
+	Result []TaxResidence `pb:"1" json:"result"`
+}
+
 type CustomerService interface {
 	// AddAddressToCustomer Add an Address to the Customer specified by CUSTOMER_ID.
 	//
@@ -235,7 +420,7 @@ type CustomerService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"AccountApplication"},
+	//         Tags:        []string{"Customers"},
 	//         Description: "Creates a new customer",
 	//         Summary:     "Create a customer",
 	//         Responses: map[string]openapiv2.Response{
@@ -261,4 +446,451 @@ type CustomerService interface {
 	//         },
 	// }
 	CreateCustomer(CreateCustomerRequest) CreateCustomerResponse
+
+	// CreateCreditLimitOrder creates a new customer
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customers"},
+	//         Description: "Create Credit limit order for the customer on specific bank",
+	//         Summary:     "Create credit limit order",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account application created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerCreateCreditLimitOrderResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCreditLimitOrder(CreateCreditLimitOrderRequest) CreateCreditLimitOrderResponse
+
+	// CreateUserCustomerLink creates a new user customer link.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/user_customer_links",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customers"},
+	//         Description: "Creare user customer link",
+	//         Summary:     "Create user customer link",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account application created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerCreateUserCustomerLinkResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateUserCustomerLink(CreateUserCustomerLinkRequest) CreateUserCustomerLinkResponse
+
+	// DeleteCustomerAddress delete the customer address.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Permanently delete customer address.",
+	//         Summary:     "Delete customer address",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Customer address successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteCustomerAddress(DeleteCustomerAddressRequest)
+
+	// DeleteTaxResidence delete the tax residence.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Permanently delete tax residence.",
+	//         Summary:     "Delete tax residence",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Tax residence successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteTaxResidence(DeleteTaxResidenceRequest)
+
+	// GetCRMEvents returns a list containing up to 20 crm events.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/crm-events",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns a list containing up to 20 crm events.",
+	//         Summary:     "List all CRM events",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCRMEvents(GetCRMEventsRequest) GetCRMEventsResponse
+
+	// GetCreditLimitOrderByID
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns Credit limit order by id",
+	//         Summary:     "Get credit limit order by id",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCreditLimitOrderByID(GetCreditLimitOrderByIDRequest) GetCreditLimitOrderByIDResponse
+
+	// GetCreditLimitOrder
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns a list containing up to 20 CreditLimitOrder.",
+	//         Summary:     "List all credit limit order",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCreditLimitOrder(GetCreditLimitOrderRequest) GetCreditLimitOrderResponse
+
+	// GetCustomerAddresses
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/addresses",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns a list containing up to 20 customer addresses.",
+	//         Summary:     "List all customer adddresses",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerAddresses(GetCustomerAddressesRequest) GetCustomerAddressesResponse
+
+	// GetCustomerSocialMediaHandles
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/social_media_handles",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns a list containing up to 20 customer social media handles",
+	//         Summary:     "List all customer social media handles",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerSocialMediaHandles(GetCustomerSocialMediaHandlesRequest) GetCustomerSocialMediaHandlesResponse
+
+	// GetCustomerByCustomerID
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns the customer data based on it's id",
+	//         Summary:     "Get Customer By ID",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerByCustomerID(GetCustomerByCustomerIDRequest) Customer
+
+	// GetCustomerByCustomerNumber
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns the customer data based on the customer number",
+	//         Summary:     "Get Customer By CustomerNumber",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomerByCustomerNumber(GetCustomerByCustomerNumberRequest) Customer
+
+	// GetCustomerForCurrentUser
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/users/current/customers",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns the current user customers data",
+	//         Summary:     "Get customers data for current user",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomersForCurrentUser(GetCustomersForCurrentUserRequest) GetCustomersForCurrentUserResponse
+
+	// GetCustomerForCurrentUserAtBank
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns the current user customers data by bank ID",
+	//         Summary:     "Get customers data by bank id",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCustomersForCurrentUserAtBank(GetCustomersForCurrentUserAtBankRequest) GetCustomersForCurrentUserAtBankResponse
+
+	// GetFirehoseCustomer
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/firehose/customers",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns the list of customer firehose",
+	//         Summary:     "Return customer firehose",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetFirehoseCustomer(GetFirehoseCustomerRequest) GetFirehoseCustomerResponse
+
+	// GetTaxResidenceOfCustomer
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/tax-residences",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Returns the user tax_residencies",
+	//         Summary:     "Get customers tax_residencies",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTaxResidenceOfCustomer(GetTaxResidenceOfCustomerRequest) GetTaxResidenceOfCustomerResponse
 }

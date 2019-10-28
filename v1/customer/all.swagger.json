@@ -15,6 +15,887 @@
     "application/json"
   ],
   "paths": {
+    "/v1/banks/{BankID}/crm-events": {
+      "get": {
+        "summary": "List all CRM events",
+        "description": "Returns a list containing up to 20 crm events.",
+        "operationId": "GetCRMEvents",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers": {
+      "get": {
+        "summary": "Get customers data by bank id",
+        "description": "Returns the current user customers data by bank ID",
+        "operationId": "GetCustomersForCurrentUserAtBank",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}": {
+      "get": {
+        "summary": "Get Customer By ID",
+        "description": "Returns the customer data based on it's id",
+        "operationId": "GetCustomerByCustomerID",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/addresses": {
+      "get": {
+        "summary": "List all customer adddresses",
+        "description": "Returns a list containing up to 20 customer addresses.",
+        "operationId": "GetCustomerAddresses",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}": {
+      "delete": {
+        "summary": "Delete customer address",
+        "description": "Permanently delete customer address.",
+        "operationId": "DeleteCustomerAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Customer address successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerAddressID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}": {
+      "get": {
+        "summary": "Get credit limit order by id",
+        "description": "Returns Credit limit order by id",
+        "operationId": "GetCreditLimitOrderByID",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "RequestID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests": {
+      "get": {
+        "summary": "List all credit limit order",
+        "description": "Returns a list containing up to 20 CreditLimitOrder.",
+        "operationId": "GetCreditLimitOrder",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create credit limit order",
+        "description": "Create Credit limit order for the customer on specific bank",
+        "operationId": "CreateCreditLimitOrder",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/customerCreateCreditLimitOrderResponse"
+            }
+          },
+          "201": {
+            "description": "Account application created successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerCreateCreditLimitOrderResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerCreateCreditLimitOrderRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customers"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber}": {
+      "get": {
+        "summary": "Get Customer By CustomerNumber",
+        "description": "Returns the customer data based on the customer number",
+        "operationId": "GetCustomerByCustomerNumber",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerNumber",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/social_media_handles": {
+      "get": {
+        "summary": "List all customer social media handles",
+        "description": "Returns a list containing up to 20 customer social media handles",
+        "operationId": "GetCustomerSocialMediaHandles",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/tax-residences": {
+      "get": {
+        "summary": "Get customers tax_residencies",
+        "description": "Returns the user tax_residencies",
+        "operationId": "GetTaxResidenceOfCustomer",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID}": {
+      "delete": {
+        "summary": "Delete tax residence",
+        "description": "Permanently delete tax residence.",
+        "operationId": "DeleteTaxResidence",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Tax residence successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "TaxResidenceID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/firehose/customers": {
+      "get": {
+        "summary": "Return customer firehose",
+        "description": "Returns the list of customer firehose",
+        "operationId": "GetFirehoseCustomer",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "SortDirection",
+            "description": " - ASC: SortDirection_ASC indicates ascending sort.\n - DESC: SortDirection_DESC indicates descending sort.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UnknownSortDirection",
+              "ASC",
+              "DESC"
+            ],
+            "default": "UnknownSortDirection"
+          },
+          {
+            "name": "Limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "Offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/user_customer_links": {
+      "post": {
+        "summary": "Create user customer link",
+        "description": "Creare user customer link",
+        "operationId": "CreateUserCustomerLink",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/customerCreateUserCustomerLinkResponse"
+            }
+          },
+          "201": {
+            "description": "Account application created successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerCreateUserCustomerLinkResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerCreateUserCustomerLinkRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customers"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
     "/v1/customers": {
       "post": {
         "summary": "Create a customer",
@@ -65,7 +946,7 @@
           }
         ],
         "tags": [
-          "AccountApplication"
+          "Customers"
         ],
         "security": [
           {
@@ -209,6 +1090,49 @@
           }
         ]
       }
+    },
+    "/v1/users/current/customers": {
+      "get": {
+        "summary": "Get customers data for current user",
+        "description": "Returns the current user customers data",
+        "operationId": "GetCustomersForCurrentUser",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
     }
   },
   "definitions": {
@@ -334,6 +1258,153 @@
         }
       }
     },
+    "customerAddress": {
+      "type": "object",
+      "properties": {
+        "CustomerAddressID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "Line1": {
+          "type": "string"
+        },
+        "Line2": {
+          "type": "string"
+        },
+        "Line3": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "County": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Postcode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "Tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        },
+        "InsertDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "customerCRMEvent": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerName": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Category": {
+          "type": "string"
+        },
+        "Detail": {
+          "type": "string"
+        },
+        "Channel": {
+          "type": "string"
+        },
+        "ScheduledDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ActualDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Result": {
+          "type": "string"
+        }
+      }
+    },
+    "customerCheck": {
+      "type": "object",
+      "properties": {
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Handle": {
+          "type": "string"
+        },
+        "DateAdded": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "DateActivated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "customerCreateCreditLimitOrderRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "RequestedCurrentRateAmount1": {
+          "type": "string"
+        },
+        "RequestedCurrentRateAmount2": {
+          "type": "string"
+        },
+        "RequestedCurrentValidEndDate": {
+          "type": "string"
+        },
+        "CurrentCreditDocumentation": {
+          "type": "string"
+        },
+        "TemporaryRequestedCurrentAmount": {
+          "type": "string"
+        },
+        "RequestedTemporaryValidEndDate": {
+          "type": "string"
+        },
+        "TemporaryCreditDocumentation": {
+          "type": "string"
+        }
+      }
+    },
+    "customerCreateCreditLimitOrderResponse": {
+      "type": "object",
+      "properties": {
+        "CreditLimitOrderID": {
+          "type": "string"
+        }
+      }
+    },
     "customerCreateCustomerRequest": {
       "type": "object",
       "properties": {
@@ -401,6 +1472,59 @@
         }
       }
     },
+    "customerCreateUserCustomerLinkRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        }
+      }
+    },
+    "customerCreateUserCustomerLinkResponse": {
+      "type": "object",
+      "properties": {
+        "UserCustomerLinkID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        },
+        "DateInserted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "IsActive": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "customerCreditLimitOrder": {
+      "type": "object",
+      "properties": {
+        "RankAmount1": {
+          "type": "string"
+        },
+        "NominalInterest1": {
+          "type": "string"
+        },
+        "RankAmount2": {
+          "type": "string"
+        },
+        "NominalInterest2": {
+          "type": "string"
+        }
+      }
+    },
     "customerCreditRating": {
       "type": "object",
       "properties": {
@@ -408,6 +1532,65 @@
           "type": "string"
         },
         "Source": {
+          "type": "string"
+        }
+      }
+    },
+    "customerCustomer": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        },
+        "LegalName": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "FaceImage": {
+          "$ref": "#/definitions/customerFaceImage"
+        },
+        "DateOfBirth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "RelationshipStatus": {
+          "type": "string"
+        },
+        "CreditRating": {
+          "$ref": "#/definitions/customerCreditRating"
+        },
+        "CreditLimit": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "HighestEducationAttained": {
+          "type": "string"
+        },
+        "EmploymentStatus": {
+          "type": "string"
+        },
+        "KYCStatus": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "LastOKDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "BranchID": {
           "type": "string"
         }
       }
@@ -424,6 +1607,120 @@
         }
       }
     },
+    "customerGetCRMEventsResponse": {
+      "type": "object",
+      "properties": {
+        "CRMEvents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerCRMEvent"
+          }
+        },
+        "HasMore": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "customerGetCreditLimitOrderByIDResponse": {
+      "type": "object",
+      "properties": {
+        "CreditLimitOrder": {
+          "$ref": "#/definitions/customerCreditLimitOrder"
+        }
+      }
+    },
+    "customerGetCreditLimitOrderResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerCreditLimitOrder"
+          }
+        }
+      }
+    },
+    "customerGetCustomerAddressesResponse": {
+      "type": "object",
+      "properties": {
+        "Addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerAddress"
+          }
+        }
+      }
+    },
+    "customerGetCustomerSocialMediaHandlesResponse": {
+      "type": "object",
+      "properties": {
+        "Checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerCheck"
+          }
+        }
+      }
+    },
+    "customerGetCustomersForCurrentUserAtBankResponse": {
+      "type": "object",
+      "properties": {
+        "Customers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerCustomer"
+          }
+        }
+      }
+    },
+    "customerGetCustomersForCurrentUserResponse": {
+      "type": "object",
+      "properties": {
+        "Customers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerCustomer"
+          }
+        }
+      }
+    },
+    "customerGetFirehoseCustomerResponse": {
+      "type": "object",
+      "properties": {
+        "Customers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerCustomer"
+          }
+        }
+      }
+    },
+    "customerGetTaxResidenceOfCustomerResponse": {
+      "type": "object",
+      "properties": {
+        "Result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/customerTaxResidence"
+          }
+        }
+      }
+    },
+    "customerTaxResidence": {
+      "type": "object",
+      "properties": {
+        "Domain": {
+          "type": "string"
+        },
+        "TaxNumber": {
+          "type": "string"
+        },
+        "TaxResidenceID": {
+          "type": "string"
+        }
+      }
+    },
     "typesAmount": {
       "type": "object",
       "properties": {
@@ -437,6 +1734,16 @@
         }
       },
       "description": "Amount defines a transaction amount."
+    },
+    "typesSortDirection": {
+      "type": "string",
+      "enum": [
+        "UnknownSortDirection",
+        "ASC",
+        "DESC"
+      ],
+      "default": "UnknownSortDirection",
+      "description": " - ASC: SortDirection_ASC indicates ascending sort.\n - DESC: SortDirection_DESC indicates descending sort."
     }
   },
   "securityDefinitions": {

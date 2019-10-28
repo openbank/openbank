@@ -296,3 +296,11 @@ MajorType describes the type of the account.
 | CommercialLoan   | MajorType_CommercialLoan for a business loan account. |
 | MortgageLoan     | MajorType_MortgageLoan for a home loan account.       |
 | ConsumerLoan     | MajorType_ConsumerLoan for a consumer loan account.   |
+
+##  SortDirection
+
+| Value                | Description                                   |
+|----------------------|-----------------------------------------------|
+| UnknownSortDirection |                                               |
+| ASC                  | SortDirection_ASC indicates ascending sort.   |
+| DESC                 | SortDirection_DESC indicates descending sort. |
