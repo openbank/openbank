@@ -546,7 +546,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Tag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Creates a new tag and returns the object.",
 	//         Summary:     "Create a tag",
 	//         Responses: map[string]openapiv2.Response{
@@ -580,7 +580,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Tag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information about the tag specified by the ID",
 	//         Summary:     "Retrieve tag information",
 	//         Responses: map[string]openapiv2.Response{
@@ -617,7 +617,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Tag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information regarding all available tags.",
 	//         Summary:     "Retrieve all available tags",
 	//         Responses: map[string]openapiv2.Response{
@@ -655,7 +655,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Tag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Updates a tag's information",
 	//         Summary:     "Update a tag",
 	//         Responses: map[string]openapiv2.Response{
@@ -684,7 +684,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Tag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Permanently delete a tag.",
 	//         Summary:     "Delete a tag",
 	//         Responses: map[string]openapiv2.Response{
@@ -714,7 +714,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Image"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Creates a new image and returns the object.",
 	//         Summary:     "Create a image",
 	//         Responses: map[string]openapiv2.Response{
@@ -748,7 +748,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Image"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information about the image specified by the ID",
 	//         Summary:     "Retrieve image information",
 	//         Responses: map[string]openapiv2.Response{
@@ -785,7 +785,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Image"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information regarding all available images.",
 	//         Summary:     "Retrieve all available images",
 	//         Responses: map[string]openapiv2.Response{
@@ -823,7 +823,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Image"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Updates a image's information",
 	//         Summary:     "Update a image",
 	//         Responses: map[string]openapiv2.Response{
@@ -852,7 +852,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Image"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Permanently delete a image.",
 	//         Summary:     "Delete a image",
 	//         Responses: map[string]openapiv2.Response{
@@ -882,7 +882,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Comment"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Creates a new comment and returns the object.",
 	//         Summary:     "Create a comment",
 	//         Responses: map[string]openapiv2.Response{
@@ -916,7 +916,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Comment"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information about the comment specified by the ID",
 	//         Summary:     "Retrieve comment information",
 	//         Responses: map[string]openapiv2.Response{
@@ -953,7 +953,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Comment"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information regarding all available comments.",
 	//         Summary:     "Retrieve all available comments",
 	//         Responses: map[string]openapiv2.Response{
@@ -991,7 +991,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Comment"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Updates a comment's information",
 	//         Summary:     "Update a comment",
 	//         Responses: map[string]openapiv2.Response{
@@ -1020,7 +1020,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Comment"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Permanently delete a comment.",
 	//         Summary:     "Delete a comment",
 	//         Responses: map[string]openapiv2.Response{
@@ -1050,7 +1050,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Narrative"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Creates a new narrative and returns the object.",
 	//         Summary:     "Create a narrative",
 	//         Responses: map[string]openapiv2.Response{
@@ -1084,7 +1084,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Narrative"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information about the narrative specified by the ID",
 	//         Summary:     "Retrieve narrative information",
 	//         Responses: map[string]openapiv2.Response{
@@ -1121,7 +1121,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Narrative"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information regarding all available narratives.",
 	//         Summary:     "Retrieve all available narratives",
 	//         Responses: map[string]openapiv2.Response{
@@ -1159,7 +1159,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Narrative"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Updates a narrative's information",
 	//         Summary:     "Update a narrative",
 	//         Responses: map[string]openapiv2.Response{
@@ -1188,7 +1188,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Narrative"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Permanently delete a narrative.",
 	//         Summary:     "Delete a narrative",
 	//         Responses: map[string]openapiv2.Response{
@@ -1218,7 +1218,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"WhereTag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Creates a new where tag and returns the object.",
 	//         Summary:     "Create a where tag",
 	//         Responses: map[string]openapiv2.Response{
@@ -1252,7 +1252,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"WhereTag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information about the where tag specified by the ID",
 	//         Summary:     "Retrieve where tag information",
 	//         Responses: map[string]openapiv2.Response{
@@ -1289,7 +1289,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"WhereTag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Retrieve information regarding all available where tags.",
 	//         Summary:     "Retrieve all available where tags",
 	//         Responses: map[string]openapiv2.Response{
@@ -1327,7 +1327,7 @@ type TransactionMetadataService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"WhereTag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Updates a where tag's information",
 	//         Summary:     "Update a where tag",
 	//         Responses: map[string]openapiv2.Response{
@@ -1356,7 +1356,7 @@ type TransactionMetadataService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"WhereTag"},
+	//         Tags:        []string{"Transaction Metadata"},
 	//         Description: "Permanently delete a where tag.",
 	//         Summary:     "Delete a where tag",
 	//         Responses: map[string]openapiv2.Response{
