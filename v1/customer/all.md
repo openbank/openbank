@@ -2455,7 +2455,7 @@ curl -X PUT \
 		"customer_id": "string",
 		"legal_name": "string",
 		"date_of_birth": "string",
-		"": "string"
+		"title": "string"
 	}'
 ```
 {{snippet updatecustomeridentity []}}

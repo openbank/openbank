@@ -307,7 +307,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerAddressResult"
+              "$ref": "#/definitions/customerUpdateCustomerAddressResponse"
             }
           },
           "400": {
@@ -380,7 +380,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerBranchResult"
+              "$ref": "#/definitions/customerUpdateCustomerBranchResponse"
             }
           },
           "400": {
@@ -447,7 +447,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerCreditLimitResult"
+              "$ref": "#/definitions/customerUpdateCustomerCreditLimitResponse"
             }
           },
           "400": {
@@ -514,7 +514,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerCreditRatingAndSourceResult"
+              "$ref": "#/definitions/customerUpdateCustomerCreditRatingAndSourceResponse"
             }
           },
           "400": {
@@ -752,7 +752,7 @@
           }
         ],
         "tags": [
-          "Customers"
+          "Customer"
         ],
         "security": [
           {
@@ -835,7 +835,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerDataResult"
+              "$ref": "#/definitions/customerUpdateCustomerDataResponse"
             }
           },
           "400": {
@@ -902,7 +902,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerEmailResult"
+              "$ref": "#/definitions/customerUpdateCustomerEmailResponse"
             }
           },
           "400": {
@@ -969,7 +969,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerIdentityResult"
+              "$ref": "#/definitions/customerUpdateCustomerIdentityResponse"
             }
           },
           "400": {
@@ -1036,7 +1036,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerMobileNumberResult"
+              "$ref": "#/definitions/customerUpdateCustomerMobileNumberResponse"
             }
           },
           "400": {
@@ -1103,7 +1103,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerNumberResult"
+              "$ref": "#/definitions/customerUpdateCustomerNumberResponse"
             }
           },
           "400": {
@@ -1492,7 +1492,7 @@
           }
         ],
         "tags": [
-          "Customers"
+          "Customer"
         ],
         "security": [
           {
@@ -1553,7 +1553,7 @@
           }
         ],
         "tags": [
-          "Customers"
+          "Customer"
         ],
         "security": [
           {
@@ -1620,7 +1620,7 @@
           }
         ],
         "tags": [
-          "Customers"
+          "Customer"
         ],
         "security": [
           {
@@ -1687,7 +1687,7 @@
           }
         ],
         "tags": [
-          "Customers"
+          "Customer"
         ],
         "security": [
           {
