@@ -89,6 +89,9 @@ Structure of customer profile information
 | KycStatus                | bool         | Know Your Customer status                        |
 | BranchID                 | string       | Branch Identifier                                |
 | NameSuffix               | string       | Name suffix                                      |
+| FirstName                | string       | FirstName of the user profile                    |
+| MiddleName               | string       | MiddleName of the user profile                   |
+| LastName                 | string       | LastName of the user profile                     |
 
 ##  ProfileAccountInfo
 

@@ -309,7 +309,6 @@ type CreditRating struct {
 
 // Structure of customer profile information
 type Profile struct {
-
 	// ProfileID is the unique identifier of a profile.
 	ProfileID string `pb:"1" json:"profile_id"`
 
@@ -387,4 +386,13 @@ type Profile struct {
 
 	// Name suffix
 	NameSuffix string `pb:"26" json:"nameSuffix"`
+
+	// FirstName of the person
+	FirstName string `pb:"27" json:"first_name"`
+
+	// MiddleName or middle names (space separated) of the person
+	MiddleName string `pb:"28" json:"middle_name"`
+
+	// LastName or last names (space separated) of the person
+	LastName string `pb:"29" json:"last_name"`
 }
