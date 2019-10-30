@@ -1332,7 +1332,7 @@ type CustomerService interface {
 	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/customerUpdateCustomerDataResponse",
+	//                                         Ref: "#/definitions/customerUpdateCustomerOtherDataResponse",
 	//                                 },
 	//                         },
 	//                 },

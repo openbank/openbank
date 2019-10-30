@@ -835,7 +835,7 @@
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/customerUpdateCustomerDataResponse"
+              "$ref": "#/definitions/customerUpdateCustomerOtherDataResponse"
             }
           },
           "400": {
