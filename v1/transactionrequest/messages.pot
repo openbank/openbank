@@ -1,0 +1,152 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "A Historic Transaction has been imported successfully."
+msgstr ""
+
+msgid "Account OTP Transaction request created successfully."
+msgstr ""
+
+msgid "Account Transaction request created successfully."
+msgstr ""
+
+msgid "Answer the transaction reqeust challenge"
+msgstr ""
+
+msgid "Answer the transaction request challenge"
+msgstr ""
+
+msgid "Answered the transaction request challenge"
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Counter Party Transaction request created successfully."
+msgstr ""
+
+msgid "Create an account otp transaction request"
+msgstr ""
+
+msgid "Create an account transaction request"
+msgstr ""
+
+msgid "Create an counter party transaction request"
+msgstr ""
+
+msgid "Create an free form transaction request"
+msgstr ""
+
+msgid "Create an sepa transaction request"
+msgstr ""
+
+msgid "Creates a new account otp transaction request"
+msgstr ""
+
+msgid "Creates a new account transaction request"
+msgstr ""
+
+msgid "Creates a new counter party transaction request"
+msgstr ""
+
+msgid "Creates a new free form transaction request"
+msgstr ""
+
+msgid "Creates a new sepa transaction request"
+msgstr ""
+
+msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Free Form Transaction request created successfully."
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Import a historic transaction"
+msgstr ""
+
+msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "Provides CRUD operations on the transaction request resource."
+msgstr ""
+
+msgid "Query Parameters"
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Retrieve transaction requests"
+msgstr ""
+
+msgid "Retrieve transaction types"
+msgstr ""
+
+msgid "Retrieves list of transaction request types"
+msgstr ""
+
+msgid "Retrieves list of transaction request types for an account_id"
+msgstr ""
+
+msgid "Retrieves list of transaction requests for an account_id"
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "SEPA Transaction request created successfully."
+msgstr ""
+
+msgid "Transacton Request API"
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""

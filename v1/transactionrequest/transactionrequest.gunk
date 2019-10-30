@@ -1,0 +1,659 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Transacton Request API",
+//                 Description: "Provides CRUD operations on the transaction request resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package transactionrequest
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type TransactionRequest struct {
+	BankID      string       `pb:"1" json:"bank_id"`
+	AccountID   string       `pb:"2" json:"account_id"`
+	To          BankAccount  `pb:"3" json:"to_bank"`
+	Amount      types.Amount `pb:"4" json:"amount"`
+	Description string       `pb:"5" json:"description"`
+}
+
+type BankAccount struct {
+	BankID    string `pb:"1" json:"bank_id"`
+	AccountID string `pb:"2" json:"account_id"`
+}
+
+type TransactionResponse struct {
+	ID             string      `pb:"1" json:"id"`
+	Type           string      `pb:"2" json:"type"`
+	From           BankAccount `pb:"3" json:"from"`
+	Details        Details     `pb:"4" json:"details"`
+	TransactionIds []string    `pb:"5" json:"transaction_ids"`
+	Status         string      `pb:"6" json:"status"`
+	StartDate      time.Time   `pb:"7" json:"start_date"`
+	EndDate        time.Time   `pb:"8" json:"end_date"`
+	Challenge      Challenge   `pb:"9" json:"challenge"`
+	Charge         Charge      `pb:"10" json:"charge"`
+}
+
+type ToSepa struct {
+	Iban string `pb:"1" json:"iban"`
+}
+
+type ToCounterparty struct {
+	CounterpartyID string `pb:"1" json:"counterparty_id"`
+}
+
+type ToTransferToPhone struct {
+	Amount      types.Amount `pb:"1" json:"amount"`
+	Description string       `pb:"2" json:"description"`
+	Message     string       `pb:"3" json:"message"`
+	From        FromPhone    `pb:"4" json:"from"`
+	To          ToPhone      `pb:"5" json:"to"`
+}
+
+type FromPhone struct {
+	MobilePhoneNumber string `pb:"1" json:"mobile_phone_number"`
+	Nickname          string `pb:"2" json:"nickname"`
+}
+
+type ToPhone struct {
+	MobilePhoneNumber string `pb:"1" json:"mobile_phone_number"`
+}
+
+type KycDocument struct {
+	Type   string `pb:"1" json:"type"`
+	Number string `pb:"2" json:"number"`
+}
+
+type To struct {
+	LegalName         string      `pb:"1" json:"legal_name"`
+	DateOfBirth       string      `pb:"2" json:"date_of_birth"`
+	MobilePhoneNumber string      `pb:"3" json:"mobile_phone_number"`
+	KycDocument       KycDocument `pb:"4" json:"kyc_document"`
+}
+
+type ToTransferToAtm struct {
+	Amount      types.Amount `pb:"1" json:"amount"`
+	Description string       `pb:"2" json:"description"`
+	Message     string       `pb:"3" json:"message"`
+	From        FromPhone    `pb:"4" json:"from"`
+	To          ToPhone      `pb:"5" json:"to"`
+}
+
+type Account struct {
+	Number string `pb:"1" json:"number"`
+	Iban   string `pb:"2" json:"iban"`
+}
+
+type ToAccount struct {
+	Name         string  `pb:"1" json:"name"`
+	BankCode     string  `pb:"2" json:"bank_code"`
+	BranchNumber string  `pb:"3" json:"branch_number"`
+	Account      Account `pb:"4" json:"account"`
+}
+
+type ToTransferToAccount struct {
+	Amount       types.Amount `pb:"1" json:"amount"`
+	Description  string       `pb:"2" json:"description"`
+	TransferType string       `pb:"3" json:"transfer_type"`
+	FutureDate   string       `pb:"4" json:"future_date"`
+	To           To           `pb:"5" json:"to"`
+}
+
+type DebtorAccount struct {
+	Iban string `pb:"1" json:"iban"`
+}
+
+type CreditorAccount struct {
+	Iban string `pb:"1" json:"iban"`
+}
+
+type ToSepaCreditTransfers struct {
+	DebtorAccount    DebtorAccount   `pb:"1" json:"debtor_account"`
+	InstructedAmount types.Amount    `pb:"2" json:"instructed_amount"`
+	CreditorAccount  CreditorAccount `pb:"3" json:"creditor_account"`
+	CreditorName     string          `pb:"4" json:"creditor_name"`
+}
+
+type Details struct {
+	ToSandboxTan          BankAccount           `pb:"1" json:"to_sandbox_tan"`
+	ToSepa                ToSepa                `pb:"2" json:"to_sepa"`
+	ToCounterparty        ToCounterparty        `pb:"3" json:"to_counterparty"`
+	ToTransferToPhone     ToTransferToPhone     `pb:"4" json:"to_transfer_to_phone"`
+	ToTransferToAtm       ToTransferToAtm       `pb:"5" json:"to_transfer_to_atm"`
+	ToTransferToAccount   ToTransferToAccount   `pb:"6" json:"to_transfer_to_account"`
+	ToSepaCreditTransfers ToSepaCreditTransfers `pb:"7" json:"to_sepa_credit_transfers"`
+	Amount                types.Amount          `pb:"8" json:"amount"`
+	Description           string                `pb:"9" json:"description"`
+}
+
+type Challenge struct {
+	ID              string `pb:"1" json:"id"`
+	AllowedAttempts int    `pb:"2" json:"allowed_attempts"`
+	ChallengeType   string `pb:"3" json:"challenge_type"`
+}
+
+type Charge struct {
+	Summary string       `pb:"1" json:"summary"`
+	Amount  types.Amount `pb:"2" json:"amount"`
+}
+
+type CounterPartyTransactionRequest struct {
+	BankID       string         `pb:"1" json:"bank_id"`
+	AccountID    string         `pb:"2" json:"account_id"`
+	To           ToCounterparty `pb:"3" json:"to"`
+	Amount       types.Amount   `pb:"4" json:"amount"`
+	Description  string         `pb:"5" json:"description"`
+	ChargePolicy string         `pb:"6" json:"charge_policy"`
+	FutureDate   string         `pb:"7" json:"future_date"`
+}
+
+type FreeFormTransactionRequest struct {
+	BankID      string       `pb:"1" json:"bank_id"`
+	AccountID   string       `pb:"2" json:"account_id"`
+	Amount      types.Amount `pb:"3" json:"amount"`
+	Description string       `pb:"4" json:"description"`
+}
+
+type SEPATransactionRequest struct {
+	BankID       string       `pb:"1" json:"bank_id"`
+	AccountID    string       `pb:"2" json:"account_id"`
+	Amount       types.Amount `pb:"3" json:"amount"`
+	To           ToSepa       `pb:"4" json:"to"`
+	Description  string       `pb:"5" json:"description"`
+	ChargePolicy string       `pb:"6" json:"charge_policy"`
+	FutureDate   string       `pb:"7" json:"future_date"`
+}
+
+type GetTransactionRequestTypesRequest struct {
+	BankID    string `pb:"1" json:"bank_id"`
+	AccountID string `pb:"2" json:"account_id"`
+}
+
+type GetTransactionRequestTypesResponse struct {
+	TransactionRequestTypes []TransactionRequestType `pb:"1" json:"transaction_request_types"`
+}
+
+type TransactionRequestType struct {
+	Value  string `pb:"1" json:"value"`
+	Charge Charge `pb:"2" json:"charge"`
+}
+
+type GetTransactionRequestsRequest struct {
+	BankID    string `pb:"1" json:"bank_id"`
+	AccountID string `pb:"2" json:"account_id"`
+}
+
+type GetTransactionRequestsResponse struct {
+	TransactionRequestsWithCharges []TransactionRequestsWithCharges `pb:"1" json:"transaction_requests_with_charges"`
+}
+
+type TransactionRequestsWithCharges struct {
+	ID             string    `pb:"1" json:"id"`
+	Type           string    `pb:"2" json:"type"`
+	From           FromPhone `pb:"3" json:"from"`
+	Details        Details   `pb:"4" json:"details"`
+	TransactionIds []string  `pb:"5" json:"transaction_ids"`
+	Status         string    `pb:"6" json:"status"`
+	StartDate      time.Time `pb:"7" json:"start_date"`
+	EndDate        time.Time `pb:"8" json:"end_date"`
+	Challenge      Challenge `pb:"9" json:"challenge"`
+	Charge         Charge    `pb:"10" json:"charge"`
+}
+
+type GetSupportedTransactionRequestTypesRequest struct {
+	BankID string `pb:"1" json:"bank_id"`
+}
+
+type GetSupportedTransactionRequestTypesResponse struct {
+	TransactionRequestTypes []TransactionRequestType `pb:"1" json:"transaction_request_types"`
+}
+
+type AnswerTransactionRequestChallengeRequest struct {
+	BankID                 string `pb:"1" json:"bank_id"`
+	AccountID              string `pb:"2" json:"account_id"`
+	TransactionRequestType string `pb:"3" json:"transaction_request_type"`
+	TransactionRequestID   string `pb:"4" json:"transaction_request_id"`
+	ID                     string `pb:"5" json:"id"`
+	Answer                 string `pb:"6" json:"answer"`
+}
+
+type AnswerTransactionRequestChallengeResponse struct {
+	ID             string           `pb:"1" json:"id"`
+	Type           string           `pb:"2" json:"type"`
+	From           BankAccount      `pb:"3" json:"from"`
+	Details        ChallengeDetails `pb:"4" json:"details"`
+	TransactionIds string           `pb:"5" json:"transaction_ids"`
+	Status         string           `pb:"6" json:"status"`
+	StartDate      time.Time        `pb:"7" json:"start_date"`
+	EndDate        time.Time        `pb:"8" json:"end_date"`
+	Challenge      Challenge        `pb:"9" json:"challenge"`
+	Charge         Charge           `pb:"10" json:"charge"`
+}
+
+type ChallengeDetails struct {
+	To          BankAccount  `pb:"1" json:"to"`
+	Amount      types.Amount `pb:"2" json:"amount"`
+	Description string       `pb:"3" json:"description"`
+}
+
+type HistoricTransaction struct {
+	From                   BankAccount  `pb:"1" json:"from"`
+	To                     BankAccount  `pb:"2" json:"to"`
+	Amount                 types.Amount `pb:"3" json:"amount"`
+	Description            string       `pb:"4" json:"description"`
+	Posted                 time.Time    `pb:"5" json:"posted"`
+	Completed              time.Time    `pb:"6" json:"completed"`
+	TransactionRequestType string       `pb:"7" json:"transaction_request_type"`
+	ChargePolicy           string       `pb:"8" json:"charge_policy"`
+}
+
+// TransactionRequestService provides transaction request related operations.
+type TransactionRequestService interface {
+	// AnswerTransactionRequestChallenge sends the answer to the challenge for transaction request
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Answer the transaction request challenge",
+	//         Summary:     "Answer the transaction reqeust challenge",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Answered the transaction request challenge",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestAnswerTransactionRequestChallengeResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AnswerTransactionRequestChallenge(AnswerTransactionRequestChallengeRequest) AnswerTransactionRequestChallengeResponse
+
+	// CreateAccountTransaction creates a new account transaction request
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Creates a new account transaction request",
+	//         Summary:     "Create an account transaction request",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account Transaction request created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestTransactionResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateAccountTransaction(TransactionRequest) TransactionResponse
+
+	// CreateAccountOTPTransaction creates a new account otp transaction request
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Creates a new account otp transaction request",
+	//         Summary:     "Create an account otp transaction request",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Account OTP Transaction request created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestTransactionResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateAccountOTPTransaction(TransactionRequest) TransactionResponse
+
+	// CreateCounterPartyTransaction creates a counter party transaction request
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Creates a new counter party transaction request",
+	//         Summary:     "Create an counter party transaction request",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Counter Party Transaction request created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestTransactionResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCounterPartyTransaction(CounterPartyTransactionRequest) TransactionResponse
+
+	// CreateFreeFormTransaction creates a free form transaction request
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Creates a new free form transaction request",
+	//         Summary:     "Create an free form transaction request",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Free Form Transaction request created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestTransactionResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateFreeFormTransaction(FreeFormTransactionRequest) TransactionResponse
+
+	// CreateSEPATransaction creates a SEPA transaction request
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Creates a new sepa transaction request",
+	//         Summary:     "Create an sepa transaction request",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "SEPA Transaction request created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestTransactionResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateSEPATransaction(SEPATransactionRequest) TransactionResponse
+
+	// GetTransactionRequestTypes retrieves the list of transaction request types
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Retrieves list of transaction request types for an account_id",
+	//         Summary:     "Retrieve transaction types",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestGetTransactionRequestTypesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTransactionRequestTypes(GetTransactionRequestTypesRequest) GetTransactionRequestTypesResponse
+
+	// GetSupportedTransactionRequestTypes retrieves the list of supported transaction request types
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/transaction-request-types",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Retrieves list of transaction request types",
+	//         Summary:     "Retrieve transaction types",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestGetSupportedTransactionRequestTypesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetSupportedTransactionRequestTypes(GetSupportedTransactionRequestTypesRequest) GetSupportedTransactionRequestTypesResponse
+
+	// GetTransactionRequests retrieves the list of transaction request for an account
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactionrequests",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Retrieves list of transaction requests for an account_id",
+	//         Summary:     "Retrieve transaction requests",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestGetTransactionRequestsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetTransactionRequests(GetTransactionRequestsRequest) GetTransactionRequestsResponse
+
+	// SaveHistoricTransaction imports a transaction
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/transactionrequest/import",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"TransactionRequest"},
+	//         Description: "Import a historic transaction",
+	//         Summary:     "Import a historic transaction",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "A Historic Transaction has been imported successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionrequestHistoricTransaction",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	SaveHistoricTransaction(HistoricTransaction) HistoricTransaction
+}
