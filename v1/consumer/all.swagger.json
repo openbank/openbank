@@ -1,0 +1,632 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Card API",
+    "description": "Provides create and read operations on the card resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/management/consumers": {
+      "get": {
+        "summary": "Get consumers",
+        "description": "Returns all consumers data up to 20 consumers data.",
+        "operationId": "GetConsumers",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerGetConsumersResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/management/consumers/{ConsumerID}": {
+      "get": {
+        "summary": "Get consumer",
+        "description": "Returns consumer data by it's ID",
+        "operationId": "GetConsumer",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerGetConsumerResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ConsumerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Set consumer enable or disable.",
+        "description": "Set enable or disable consumer",
+        "operationId": "EnableOrDisableConsumer",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerEnableOrDisableConsumerResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ConsumerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consumerEnableOrDisableConsumerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/management/consumers/{ConsumerID}/consumer/call-limits": {
+      "get": {
+        "summary": "Get consumer call lists",
+        "description": "Returns a list up to 20 consumer call limits data.",
+        "operationId": "GetConsumerCallLimits",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerGetConsumerCallLimitsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ConsumerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Set consumer call limits.",
+        "description": "Set consumer call limits.",
+        "operationId": "SetConsumerCallsLimit",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerSetConsumerCallsLimitResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ConsumerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consumerSetConsumerCallsLimitRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/management/consumers/{ConsumerID}/consumer/redirect_url": {
+      "put": {
+        "summary": "Set consumer redirect url.",
+        "description": "Set consumer redirect url.",
+        "operationId": "UpdateConsumerRedirectURL",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerUpdateConsumerRedirectURLResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "ConsumerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consumerUpdateConsumerRedirectURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/management/users/current/consumers": {
+      "get": {
+        "summary": "Get consumers for logged in user",
+        "description": "Returns all consumers for logged in user data up to 20 consumers data.",
+        "operationId": "GetConsumersForLoggedInUser",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consumerGetConsumersForLoggedInUserResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Consumer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "consumerConsumer": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "AppName": {
+          "type": "string"
+        },
+        "AppType": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "DeveloperEmail": {
+          "type": "string"
+        },
+        "RedirectURL": {
+          "type": "string"
+        },
+        "CreatedByUserID": {
+          "type": "string"
+        },
+        "CreatedByUser": {
+          "$ref": "#/definitions/consumerCreateByUser"
+        },
+        "Enabled": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "consumerCreateByUser": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "ProviderID": {
+          "type": "string"
+        },
+        "Provider": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "consumerCurrentState": {
+      "type": "object",
+      "properties": {
+        "PerSecond": {
+          "$ref": "#/definitions/consumerState"
+        },
+        "PerHour": {
+          "$ref": "#/definitions/consumerState"
+        },
+        "PerDay": {
+          "$ref": "#/definitions/consumerState"
+        },
+        "PerWeek": {
+          "$ref": "#/definitions/consumerState"
+        },
+        "PerMonth": {
+          "$ref": "#/definitions/consumerState"
+        },
+        "PerYear": {
+          "$ref": "#/definitions/consumerState"
+        }
+      }
+    },
+    "consumerEnableOrDisableConsumerRequest": {
+      "type": "object",
+      "properties": {
+        "ConsumerID": {
+          "type": "string"
+        },
+        "Enable": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "consumerEnableOrDisableConsumerResponse": {
+      "type": "object",
+      "properties": {
+        "Enable": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "consumerGetConsumerCallLimitsResponse": {
+      "type": "object",
+      "properties": {
+        "PerSecondCallLimit": {
+          "type": "string"
+        },
+        "PerMinuteCallLimit": {
+          "type": "string"
+        },
+        "PerHourCallLimit": {
+          "type": "string"
+        },
+        "PerDayCallLimit": {
+          "type": "string"
+        },
+        "PerWeekCallLimit": {
+          "type": "string"
+        },
+        "PerMonthCallLimit": {
+          "type": "string"
+        },
+        "CurrentState": {
+          "$ref": "#/definitions/consumerCurrentState"
+        }
+      }
+    },
+    "consumerGetConsumerResponse": {
+      "type": "object",
+      "properties": {
+        "Consumer": {
+          "$ref": "#/definitions/consumerConsumer"
+        }
+      }
+    },
+    "consumerGetConsumersForLoggedInUserResponse": {
+      "type": "object",
+      "properties": {
+        "Consumers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/consumerConsumer"
+          }
+        }
+      }
+    },
+    "consumerGetConsumersResponse": {
+      "type": "object",
+      "properties": {
+        "Consumers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/consumerConsumer"
+          }
+        }
+      }
+    },
+    "consumerSetConsumerCallsLimitRequest": {
+      "type": "object",
+      "properties": {
+        "ConsumerID": {
+          "type": "string"
+        },
+        "PerSecondCallLimit": {
+          "type": "string"
+        },
+        "PerMinuteCallLimit": {
+          "type": "string"
+        },
+        "PerHourCallLimit": {
+          "type": "string"
+        },
+        "PerDayCallLimit": {
+          "type": "string"
+        },
+        "PerWeekCallLimit": {
+          "type": "string"
+        },
+        "PerMonthCallLimit": {
+          "type": "string"
+        }
+      }
+    },
+    "consumerSetConsumerCallsLimitResponse": {
+      "type": "object",
+      "properties": {
+        "PerSecondCallLimit": {
+          "type": "string"
+        },
+        "PerMinuteCallLimit": {
+          "type": "string"
+        },
+        "PerHourCallLimit": {
+          "type": "string"
+        },
+        "PerDayCallLimit": {
+          "type": "string"
+        },
+        "PerWeekCallLimit": {
+          "type": "string"
+        },
+        "PerMonthCallLimit": {
+          "type": "string"
+        }
+      }
+    },
+    "consumerState": {
+      "type": "object",
+      "properties": {
+        "CallsMade": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ResetInSeconds": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "consumerUpdateConsumerRedirectURLRequest": {
+      "type": "object",
+      "properties": {
+        "ConsumerID": {
+          "type": "string"
+        },
+        "RedirectURL": {
+          "type": "string"
+        }
+      }
+    },
+    "consumerUpdateConsumerRedirectURLResponse": {
+      "type": "object",
+      "properties": {
+        "Consumer": {
+          "$ref": "#/definitions/consumerConsumer"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

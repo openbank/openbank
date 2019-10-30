@@ -1,0 +1,413 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Card API",
+//                 Description: "Provides create and read operations on the card resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package consumer
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type CreateByUser struct {
+	UserID     string `pb:"1" json:"user_id"`
+	Email      string `pb:"2" json:"email"`
+	ProviderID string `pb:"3" json:"provider_id"`
+	Provider   string `pb:"4" json:"provider"`
+	Username   string `pb:"5" json:"username"`
+}
+
+type Consumer struct {
+	ID              int          `pb:"1" json:"id"`
+	AppName         string       `pb:"2" json:"app_name"`
+	AppType         string       `pb:"3" json:"app_type"`
+	Description     string       `pb:"4" json:"description"`
+	DeveloperEmail  string       `pb:"5" json:"developer_email"`
+	RedirectURL     string       `pb:"6" json:"redirect_url"`
+	CreatedByUserID string       `pb:"7" json:"created_by_user_id"`
+	CreatedByUser   CreateByUser `pb:"8" json:"created_by_user"`
+	Enabled         bool         `pb:"9" json:"enabled"`
+	Created         time.Time    `pb:"10" json:"created"`
+}
+
+type EnableOrDisableConsumerRequest struct {
+	ConsumerID string `pb:"1" json:"consumer_id"`
+	Enable     bool   `pb:"2" json:"enable"`
+}
+
+type EnableOrDisableConsumerResponse struct {
+	Enable bool `pb:"1" json:"enable"`
+}
+
+type State struct {
+	CallsMade      int `pb:"1" json:"calls_made"`
+	ResetInSeconds int `pb:"2" json:"reset_in_seconds"`
+}
+
+type CurrentState struct {
+	PerSecond State `pb:"1" json:"per_second"`
+	PerHour   State `pb:"2" json:"per_hour"`
+	PerDay    State `pb:"3" json:"per_day"`
+	PerWeek   State `pb:"4" json:"per_week"`
+	PerMonth  State `pb:"5" json:"per_month"`
+	PerYear   State `pb:"6" json:"per_year"`
+}
+
+type GetConsumerCallLimitsRequest struct {
+	ConsumerID string `pb:"1" json:"consumer_id"`
+}
+
+type GetConsumerCallLimitsResponse struct {
+	PerSecondCallLimit string       `pb:"1" json:"per_second_call_limit"`
+	PerMinuteCallLimit string       `pb:"2" json:"per_minute_call_limit"`
+	PerHourCallLimit   string       `pb:"3" json:"per_hour_call_limit"`
+	PerDayCallLimit    string       `pb:"4" json:"per_day_call_limit"`
+	PerWeekCallLimit   string       `pb:"5" json:"per_week_call_limit"`
+	PerMonthCallLimit  string       `pb:"6" json:"per_month_call_limit"`
+	CurrentState       CurrentState `pb:"7" json:"current_state"`
+}
+
+type GetConsumerRequest struct {
+	ConsumerID string `pb:"1" json:"consumer_id"`
+}
+
+type GetConsumerResponse struct {
+	Consumer Consumer `pb:"1" json:"consumer"`
+}
+
+type GetConsumersResponse struct {
+	Consumers []Consumer `pb:"1" json:"consumers"`
+}
+
+type GetConsumersForLoggedInUserResponse struct {
+	Consumers []Consumer `pb:"1" json:"consumers"`
+}
+
+type SetConsumerCallsLimitRequest struct {
+	ConsumerID         string `pb:"1" json:"consumer_id"`
+	PerSecondCallLimit string `pb:"2" json:"per_second_call_limit"`
+	PerMinuteCallLimit string `pb:"3" json:"per_minute_call_limit"`
+	PerHourCallLimit   string `pb:"4" json:"per_hour_call_limit"`
+	PerDayCallLimit    string `pb:"5" json:"per_day_call_limit"`
+	PerWeekCallLimit   string `pb:"6" json:"per_week_call_limit"`
+	PerMonthCallLimit  string `pb:"7" json:"per_month_call_limit"`
+}
+
+type SetConsumerCallsLimitResponse struct {
+	PerSecondCallLimit string `pb:"1" json:"per_second_call_limit"`
+	PerMinuteCallLimit string `pb:"2" json:"per_minute_call_limit"`
+	PerHourCallLimit   string `pb:"3" json:"per_hour_call_limit"`
+	PerDayCallLimit    string `pb:"4" json:"per_day_call_limit"`
+	PerWeekCallLimit   string `pb:"5" json:"per_week_call_limit"`
+	PerMonthCallLimit  string `pb:"6" json:"per_month_call_limit"`
+}
+
+type UpdateConsumerRedirectURLRequest struct {
+	ConsumerID  string `pb:"1" json:"consumer_id"`
+	RedirectURL string `pb:"2" json:"redirect_url"`
+}
+
+type UpdateConsumerRedirectURLResponse struct {
+	Consumer Consumer `pb:"1" json:"consumer"`
+}
+
+// ConsumerService provices consumer operations.
+type ConsumerService interface {
+	// EnableOrDisableConsumer
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/management/consumers/{ConsumerID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Set enable or disable consumer",
+	//         Summary:     "Set consumer enable or disable.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerEnableOrDisableConsumerResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	EnableOrDisableConsumer(EnableOrDisableConsumerRequest) EnableOrDisableConsumerResponse
+
+	// GetConsumerCallLimits
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/management/consumers/{ConsumerID}/consumer/call-limits",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Returns a list up to 20 consumer call limits data.",
+	//         Summary:     "Get consumer call lists",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerGetConsumerCallLimitsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetConsumerCallLimits(GetConsumerCallLimitsRequest) GetConsumerCallLimitsResponse
+
+	// GetConsumer
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/management/consumers/{ConsumerID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Returns consumer data by it's ID",
+	//         Summary:     "Get consumer",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerGetConsumerResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetConsumer(GetConsumerRequest) GetConsumerResponse
+
+	// GetConsumers
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/management/consumers",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Returns all consumers data up to 20 consumers data.",
+	//         Summary:     "Get consumers",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerGetConsumersResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetConsumers() GetConsumersResponse
+
+	// GetConsumers
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/management/users/current/consumers",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Returns all consumers for logged in user data up to 20 consumers data.",
+	//         Summary:     "Get consumers for logged in user",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerGetConsumersForLoggedInUserResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetConsumersForLoggedInUser() GetConsumersForLoggedInUserResponse
+
+	// SetConsumerCallsLimit
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/management/consumers/{ConsumerID}/consumer/call-limits",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Set consumer call limits.",
+	//         Summary:     "Set consumer call limits.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerSetConsumerCallsLimitResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	SetConsumerCallsLimit(SetConsumerCallsLimitRequest) SetConsumerCallsLimitResponse
+
+	// UpdateConsumerRedirectURL
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/management/consumers/{ConsumerID}/consumer/redirect_url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Consumer"},
+	//         Description: "Set consumer redirect url.",
+	//         Summary:     "Set consumer redirect url.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/consumerUpdateConsumerRedirectURLResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateConsumerRedirectURL(UpdateConsumerRedirectURLRequest) UpdateConsumerRedirectURLResponse
+}
