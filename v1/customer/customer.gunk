@@ -341,6 +341,124 @@ type GetTaxResidenceOfCustomerResponse struct {
 	Result []TaxResidence `pb:"1" json:"result"`
 }
 
+type UpdateCustomerAddressRequest struct {
+	BankID            string   `pb:"1" json:"bank_id"`
+	CustomerID        string   `pb:"2" json:"customer_id"`
+	CustomerAddressID string   `pb:"3" json:"customer_address_id"`
+	Line1             string   `pb:"4" json:"line_1"`
+	Line2             string   `pb:"5" json:"line_2"`
+	Line3             string   `pb:"6" json:"line_3"`
+	City              string   `pb:"7" json:"city"`
+	County            string   `pb:"8" json:"county"`
+	State             string   `pb:"9" json:"state"`
+	Postcode          string   `pb:"10" json:"postcode"`
+	CountryCode       string   `pb:"11" json:"country_code"`
+	Tags              []string `pb:"12" json:"tags"`
+	Status            string   `pb:"13" json:"status"`
+}
+
+type UpdateCustomerAddressResponse struct {
+	CustomerAddressID string    `pb:"1" json:"customer_address_id"`
+	CustomerID        string    `pb:"2" json:"customer_id"`
+	Line1             string    `pb:"3" json:"line_1"`
+	Line2             string    `pb:"4" json:"line_2"`
+	Line3             string    `pb:"5" json:"line_3"`
+	City              string    `pb:"6" json:"city"`
+	County            string    `pb:"7" json:"county"`
+	State             string    `pb:"8" json:"state"`
+	Postcode          string    `pb:"9" json:"postcode"`
+	CountryCode       string    `pb:"10" json:"country_code"`
+	Tags              []string  `pb:"11" json:"tags"`
+	Status            string    `pb:"12" json:"status"`
+	InsertDate        time.Time `pb:"13" json:"insert_date"`
+}
+
+type UpdateCustomerBranchRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+	BranchID   string `pb:"3" json:"branch_id"`
+}
+
+type UpdateCustomerBranchResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerCreditLimitRequest struct {
+	BankID      string       `pb:"1" json:"bank_id"`
+	CustomerID  string       `pb:"2" json:"customer_id"`
+	CreditLimit types.Amount `pb:"3" json:"credit_limit"`
+}
+
+type UpdateCustomerCreditLimitResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerCreditRatingAndSourceRequest struct {
+	BankID       string       `pb:"1" json:"bank_id"`
+	CustomerID   string       `pb:"2" json:"customer_id"`
+	CreditRating CreditRating `pb:"3" json:"credit_rating"`
+}
+
+type UpdateCustomerCreditRatingAndSourceResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerEmailRequest struct {
+	BankID     string `pb:"1" json:"bank_id"`
+	CustomerID string `pb:"2" json:"customer_id"`
+	Email      string `pb:"3" json:"email"`
+}
+
+type UpdateCustomerEmailResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerIdentityRequest struct {
+	BankID      string `pb:"1" json:"bank_id"`
+	CustomerID  string `pb:"2" json:"customer_id"`
+	LegalName   string `pb:"3" json:"legal_name"`
+	DateOfBirth string `pb:"4" json:"date_of_birth"`
+	Title       string `pb:"5" json:"title"`
+}
+
+type UpdateCustomerIdentityResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerMobileNumberRequest struct {
+	BankID            string `pb:"1" json:"bank_id"`
+	CustomerID        string `pb:"2" json:"customer_id"`
+	MobilePhoneNumber string `pb:"3" json:"mobile_phone_number"`
+}
+
+type UpdateCustomerMobileNumberResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerNumberRequest struct {
+	BankID         string `pb:"1" json:"bank_id"`
+	CustomerID     string `pb:"2" json:"customer_id"`
+	CustomerNumber string `pb:"3" json:"customer_number"`
+}
+
+type UpdateCustomerNumberResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
+type UpdateCustomerOtherDataRequest struct {
+	BankID                   string    `pb:"1" json:"bank_id"`
+	CustomerID               string    `pb:"2" json:"customer_id"`
+	FaceImage                FaceImage `pb:"3" json:"face_image"`
+	RelationshipStatus       string    `pb:"4" json:"relationship_status"`
+	Dependants               int       `pb:"5" json:"dependants"`
+	HighestEducationAttained string    `pb:"6" json:"highest_education_attained"`
+	EmploymentStatus         string    `pb:"7" json:"employment_status"`
+}
+
+type UpdateCustomerOtherDataResponse struct {
+	Customer Customer `pb:"1" json:"customer"`
+}
+
 type CustomerService interface {
 	// AddAddressToCustomer Add an Address to the Customer specified by CUSTOMER_ID.
 	//
@@ -350,7 +468,7 @@ type CustomerService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Customers"},
+	//         Tags:        []string{"Customer"},
 	//         Description: "Add address to the customer.",
 	//         Summary:     "Add address to the customer.",
 	//         Responses: map[string]openapiv2.Response{
@@ -385,7 +503,7 @@ type CustomerService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Customers"},
+	//         Tags:        []string{"Customer"},
 	//         Description: "Add social media handle for the customer",
 	//         Summary:     "Add social media handle",
 	//         Responses: map[string]openapiv2.Response{
@@ -420,7 +538,7 @@ type CustomerService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Customers"},
+	//         Tags:        []string{"Customer"},
 	//         Description: "Creates a new customer",
 	//         Summary:     "Create a customer",
 	//         Responses: map[string]openapiv2.Response{
@@ -455,7 +573,7 @@ type CustomerService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Customers"},
+	//         Tags:        []string{"Customer"},
 	//         Description: "Create Credit limit order for the customer on specific bank",
 	//         Summary:     "Create credit limit order",
 	//         Responses: map[string]openapiv2.Response{
@@ -490,7 +608,7 @@ type CustomerService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Customers"},
+	//         Tags:        []string{"Customer"},
 	//         Description: "Creare user customer link",
 	//         Summary:     "Create user customer link",
 	//         Responses: map[string]openapiv2.Response{
@@ -893,4 +1011,346 @@ type CustomerService interface {
 	//         },
 	// }
 	GetTaxResidenceOfCustomer(GetTaxResidenceOfCustomerRequest) GetTaxResidenceOfCustomerResponse
+
+	// UpdateCustomerAddress
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer addresses information.",
+	//         Summary:     "Update customer addresses.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerAddressResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerAddress(UpdateCustomerAddressRequest) UpdateCustomerAddressResponse
+
+	// UpdateCustomerBranch.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/branch",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer branch information.",
+	//         Summary:     "Update customer branch.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerBranchResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerBranch(UpdateCustomerBranchRequest) UpdateCustomerBranchResponse
+
+	// UpdateCustomerCreditLimit.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/credit-limit",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer credit limit information.",
+	//         Summary:     "Update customer credit limit.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerCreditLimitResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerCreditLimit(UpdateCustomerCreditLimitRequest) UpdateCustomerCreditLimitResponse
+
+	// UpdateCustomerCreditRatingAndSource.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer credit rating and source information.",
+	//         Summary:     "Update customer credut rating and source.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerCreditRatingAndSourceResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerCreditRatingAndSource(UpdateCustomerCreditRatingAndSourceRequest) UpdateCustomerCreditRatingAndSourceResponse
+
+	// UpdateCustomerEmail.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/email",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer email information.",
+	//         Summary:     "Update customer email.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerEmailResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerEmail(UpdateCustomerEmailRequest) UpdateCustomerEmailResponse
+
+	// UpdateCustomerIdentity.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/identity",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer identity information.",
+	//         Summary:     "Update customer identity.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerIdentityResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerIdentity(UpdateCustomerIdentityRequest) UpdateCustomerIdentityResponse
+
+	// UpdateCustomerMobileNumber.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/mobile-number",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer mobile number information.",
+	//         Summary:     "Update customer mobile number.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerMobileNumberResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerMobileNumber(UpdateCustomerMobileNumberRequest) UpdateCustomerMobileNumberResponse
+
+	// UpdateCustomerNumber.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/number",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer number information.",
+	//         Summary:     "Update customer number.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerNumberResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerNumber(UpdateCustomerNumberRequest) UpdateCustomerNumberResponse
+
+	// UpdateCustomerOtherData.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/customers/{CustomerID}/data",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Customer"},
+	//         Description: "Update customer data information.",
+	//         Summary:     "Update customer data.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerUpdateCustomerDataResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCustomerOtherData(UpdateCustomerOtherDataRequest) UpdateCustomerOtherDataResponse
 }
