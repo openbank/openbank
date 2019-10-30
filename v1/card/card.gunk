@@ -222,7 +222,7 @@ type CardService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"CardAttribute"},
+	//         Tags:        []string{"Card"},
 	//         Description: "Create new card attribute",
 	//         Summary:     "Create new card attribute",
 	//         Responses: map[string]openapiv2.Response{
