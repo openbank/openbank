@@ -1,0 +1,1273 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Transacton Request API",
+    "description": "Provides CRUD operations on the transaction request resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types": {
+      "get": {
+        "summary": "Retrieve transaction types",
+        "description": "Retrieves list of transaction request types for an account_id",
+        "operationId": "GetTransactionRequestTypes",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestGetTransactionRequestTypesResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest": {
+      "post": {
+        "summary": "Create an account transaction request",
+        "description": "Creates a new account transaction request",
+        "operationId": "CreateAccountTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "201": {
+            "description": "Account Transaction request created successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest": {
+      "post": {
+        "summary": "Create an account otp transaction request",
+        "description": "Creates a new account otp transaction request",
+        "operationId": "CreateAccountOTPTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "201": {
+            "description": "Account OTP Transaction request created successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest": {
+      "post": {
+        "summary": "Create an counter party transaction request",
+        "description": "Creates a new counter party transaction request",
+        "operationId": "CreateCounterPartyTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "201": {
+            "description": "Counter Party Transaction request created successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestCounterPartyTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest": {
+      "post": {
+        "summary": "Create an free form transaction request",
+        "description": "Creates a new free form transaction request",
+        "operationId": "CreateFreeFormTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "201": {
+            "description": "Free Form Transaction request created successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestFreeFormTransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest": {
+      "post": {
+        "summary": "Create an sepa transaction request",
+        "description": "Creates a new sepa transaction request",
+        "operationId": "CreateSEPATransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "201": {
+            "description": "SEPA Transaction request created successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestTransactionResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestSEPATransactionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge": {
+      "post": {
+        "summary": "Answer the transaction reqeust challenge",
+        "description": "Answer the transaction request challenge",
+        "operationId": "AnswerTransactionRequestChallenge",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestAnswerTransactionRequestChallengeResponse"
+            }
+          },
+          "201": {
+            "description": "Answered the transaction request challenge",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestAnswerTransactionRequestChallengeResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "TransactionRequestType",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "TransactionRequestID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestAnswerTransactionRequestChallengeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/transactionrequests": {
+      "get": {
+        "summary": "Retrieve transaction requests",
+        "description": "Retrieves list of transaction requests for an account_id",
+        "operationId": "GetTransactionRequests",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestGetTransactionRequestsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/transaction-request-types": {
+      "get": {
+        "summary": "Retrieve transaction types",
+        "description": "Retrieves list of transaction request types",
+        "operationId": "GetSupportedTransactionRequestTypes",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestGetSupportedTransactionRequestTypesResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/transactionrequest/import": {
+      "post": {
+        "summary": "Import a historic transaction",
+        "description": "Import a historic transaction",
+        "operationId": "SaveHistoricTransaction",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestHistoricTransaction"
+            }
+          },
+          "201": {
+            "description": "A Historic Transaction has been imported successfully.",
+            "schema": {
+              "$ref": "#/definitions/transactionrequestHistoricTransaction"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionrequestHistoricTransaction"
+            }
+          }
+        ],
+        "tags": [
+          "TransactionRequest"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "transactionrequestAnswerTransactionRequestChallengeRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "TransactionRequestType": {
+          "type": "string"
+        },
+        "TransactionRequestID": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "Answer": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestAnswerTransactionRequestChallengeResponse": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "From": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "Details": {
+          "$ref": "#/definitions/transactionrequestChallengeDetails"
+        },
+        "TransactionIds": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Challenge": {
+          "$ref": "#/definitions/transactionrequestChallenge"
+        },
+        "Charge": {
+          "$ref": "#/definitions/transactionrequestCharge"
+        }
+      }
+    },
+    "transactionrequestBankAccount": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestChallenge": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "AllowedAttempts": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ChallengeType": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestChallengeDetails": {
+      "type": "object",
+      "properties": {
+        "To": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestCharge": {
+      "type": "object",
+      "properties": {
+        "Summary": {
+          "type": "string"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        }
+      }
+    },
+    "transactionrequestCounterPartyTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestToCounterparty"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ChargePolicy": {
+          "type": "string"
+        },
+        "FutureDate": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestCreditorAccount": {
+      "type": "object",
+      "properties": {
+        "Iban": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestDebtorAccount": {
+      "type": "object",
+      "properties": {
+        "Iban": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestDetails": {
+      "type": "object",
+      "properties": {
+        "ToSandboxTan": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "ToSepa": {
+          "$ref": "#/definitions/transactionrequestToSepa"
+        },
+        "ToCounterparty": {
+          "$ref": "#/definitions/transactionrequestToCounterparty"
+        },
+        "ToTransferToPhone": {
+          "$ref": "#/definitions/transactionrequestToTransferToPhone"
+        },
+        "ToTransferToAtm": {
+          "$ref": "#/definitions/transactionrequestToTransferToAtm"
+        },
+        "ToTransferToAccount": {
+          "$ref": "#/definitions/transactionrequestToTransferToAccount"
+        },
+        "ToSepaCreditTransfers": {
+          "$ref": "#/definitions/transactionrequestToSepaCreditTransfers"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestFreeFormTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestFromPhone": {
+      "type": "object",
+      "properties": {
+        "MobilePhoneNumber": {
+          "type": "string"
+        },
+        "Nickname": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestGetSupportedTransactionRequestTypesResponse": {
+      "type": "object",
+      "properties": {
+        "TransactionRequestTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/transactionrequestTransactionRequestType"
+          }
+        }
+      }
+    },
+    "transactionrequestGetTransactionRequestTypesResponse": {
+      "type": "object",
+      "properties": {
+        "TransactionRequestTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/transactionrequestTransactionRequestType"
+          }
+        }
+      }
+    },
+    "transactionrequestGetTransactionRequestsResponse": {
+      "type": "object",
+      "properties": {
+        "TransactionRequestsWithCharges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/transactionrequestTransactionRequestsWithCharges"
+          }
+        }
+      }
+    },
+    "transactionrequestHistoricTransaction": {
+      "type": "object",
+      "properties": {
+        "From": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Posted": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Completed": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "TransactionRequestType": {
+          "type": "string"
+        },
+        "ChargePolicy": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestKycDocument": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestSEPATransactionRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestToSepa"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ChargePolicy": {
+          "type": "string"
+        },
+        "FutureDate": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestTo": {
+      "type": "object",
+      "properties": {
+        "LegalName": {
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "type": "string"
+        },
+        "MobilePhoneNumber": {
+          "type": "string"
+        },
+        "KycDocument": {
+          "$ref": "#/definitions/transactionrequestKycDocument"
+        }
+      }
+    },
+    "transactionrequestToCounterparty": {
+      "type": "object",
+      "properties": {
+        "CounterpartyID": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestToPhone": {
+      "type": "object",
+      "properties": {
+        "MobilePhoneNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestToSepa": {
+      "type": "object",
+      "properties": {
+        "Iban": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestToSepaCreditTransfers": {
+      "type": "object",
+      "properties": {
+        "DebtorAccount": {
+          "$ref": "#/definitions/transactionrequestDebtorAccount"
+        },
+        "InstructedAmount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "CreditorAccount": {
+          "$ref": "#/definitions/transactionrequestCreditorAccount"
+        },
+        "CreditorName": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestToTransferToAccount": {
+      "type": "object",
+      "properties": {
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "TransferType": {
+          "type": "string"
+        },
+        "FutureDate": {
+          "type": "string"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestTo"
+        }
+      }
+    },
+    "transactionrequestToTransferToAtm": {
+      "type": "object",
+      "properties": {
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "From": {
+          "$ref": "#/definitions/transactionrequestFromPhone"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestToPhone"
+        }
+      }
+    },
+    "transactionrequestToTransferToPhone": {
+      "type": "object",
+      "properties": {
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "From": {
+          "$ref": "#/definitions/transactionrequestFromPhone"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestToPhone"
+        }
+      }
+    },
+    "transactionrequestTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "AccountID": {
+          "type": "string"
+        },
+        "To": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "Amount": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "transactionrequestTransactionRequestType": {
+      "type": "object",
+      "properties": {
+        "Value": {
+          "type": "string"
+        },
+        "Charge": {
+          "$ref": "#/definitions/transactionrequestCharge"
+        }
+      }
+    },
+    "transactionrequestTransactionRequestsWithCharges": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "From": {
+          "$ref": "#/definitions/transactionrequestFromPhone"
+        },
+        "Details": {
+          "$ref": "#/definitions/transactionrequestDetails"
+        },
+        "TransactionIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Challenge": {
+          "$ref": "#/definitions/transactionrequestChallenge"
+        },
+        "Charge": {
+          "$ref": "#/definitions/transactionrequestCharge"
+        }
+      }
+    },
+    "transactionrequestTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "From": {
+          "$ref": "#/definitions/transactionrequestBankAccount"
+        },
+        "Details": {
+          "$ref": "#/definitions/transactionrequestDetails"
+        },
+        "TransactionIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Challenge": {
+          "$ref": "#/definitions/transactionrequestChallenge"
+        },
+        "Charge": {
+          "$ref": "#/definitions/transactionrequestCharge"
+        }
+      }
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
