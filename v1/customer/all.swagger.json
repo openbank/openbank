@@ -298,6 +298,278 @@
             ]
           }
         ]
+      },
+      "put": {
+        "summary": "Update customer addresses.",
+        "description": "Update customer addresses information.",
+        "operationId": "UpdateCustomerAddress",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerAddressResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerAddressID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/branch": {
+      "put": {
+        "summary": "Update customer branch.",
+        "description": "Update customer branch information.",
+        "operationId": "UpdateCustomerBranch",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerBranchResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerBranchRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/credit-limit": {
+      "put": {
+        "summary": "Update customer credit limit.",
+        "description": "Update customer credit limit information.",
+        "operationId": "UpdateCustomerCreditLimit",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerCreditLimitResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerCreditLimitRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source": {
+      "put": {
+        "summary": "Update customer credut rating and source.",
+        "description": "Update customer credit rating and source information.",
+        "operationId": "UpdateCustomerCreditRatingAndSource",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerCreditRatingAndSourceResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerCreditRatingAndSourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
       }
     },
     "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}": {
@@ -549,6 +821,341 @@
           {
             "OAuth2": [
               "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/data": {
+      "put": {
+        "summary": "Update customer data.",
+        "description": "Update customer data information.",
+        "operationId": "UpdateCustomerOtherData",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerDataResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerOtherDataRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/email": {
+      "put": {
+        "summary": "Update customer email.",
+        "description": "Update customer email information.",
+        "operationId": "UpdateCustomerEmail",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerEmailResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/identity": {
+      "put": {
+        "summary": "Update customer identity.",
+        "description": "Update customer identity information.",
+        "operationId": "UpdateCustomerIdentity",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerIdentityResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerIdentityRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/mobile-number": {
+      "put": {
+        "summary": "Update customer mobile number.",
+        "description": "Update customer mobile number information.",
+        "operationId": "UpdateCustomerMobileNumber",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerMobileNumberResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerMobileNumberRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/customers/{CustomerID}/number": {
+      "put": {
+        "summary": "Update customer number.",
+        "description": "Update customer number information.",
+        "operationId": "UpdateCustomerNumber",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerNumberResult"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customerUpdateCustomerNumberRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
             ]
           }
         ]
@@ -1718,6 +2325,296 @@
         },
         "TaxResidenceID": {
           "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerAddressRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerAddressID": {
+          "type": "string"
+        },
+        "Line1": {
+          "type": "string"
+        },
+        "Line2": {
+          "type": "string"
+        },
+        "Line3": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "County": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Postcode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "Tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerAddressResponse": {
+      "type": "object",
+      "properties": {
+        "CustomerAddressID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "Line1": {
+          "type": "string"
+        },
+        "Line2": {
+          "type": "string"
+        },
+        "Line3": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "County": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Postcode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "Tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Status": {
+          "type": "string"
+        },
+        "InsertDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "customerUpdateCustomerBranchRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "BranchID": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerBranchResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerCreditLimitRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CreditLimit": {
+          "$ref": "#/definitions/typesAmount"
+        }
+      }
+    },
+    "customerUpdateCustomerCreditLimitResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerCreditRatingAndSourceRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CreditRating": {
+          "$ref": "#/definitions/customerCreditRating"
+        }
+      }
+    },
+    "customerUpdateCustomerCreditRatingAndSourceResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerEmailRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerEmailResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerIdentityRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "LegalName": {
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerIdentityResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerMobileNumberRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "MobilePhoneNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerMobileNumberResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerNumberRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerNumberResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "customerUpdateCustomerOtherDataRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "FaceImage": {
+          "$ref": "#/definitions/customerFaceImage"
+        },
+        "RelationshipStatus": {
+          "type": "string"
+        },
+        "Dependants": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "HighestEducationAttained": {
+          "type": "string"
+        },
+        "EmploymentStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "customerUpdateCustomerOtherDataResponse": {
+      "type": "object",
+      "properties": {
+        "Customer": {
+          "$ref": "#/definitions/customerCustomer"
         }
       }
     },

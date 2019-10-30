@@ -192,3 +192,57 @@ msgstr ""
 
 msgid "USE_YOUR_TOKEN"
 msgstr ""
+
+msgid "Update customer addresses information."
+msgstr ""
+
+msgid "Update customer addresses."
+msgstr ""
+
+msgid "Update customer branch information."
+msgstr ""
+
+msgid "Update customer branch."
+msgstr ""
+
+msgid "Update customer credit limit information."
+msgstr ""
+
+msgid "Update customer credit limit."
+msgstr ""
+
+msgid "Update customer credit rating and source information."
+msgstr ""
+
+msgid "Update customer credut rating and source."
+msgstr ""
+
+msgid "Update customer data information."
+msgstr ""
+
+msgid "Update customer data."
+msgstr ""
+
+msgid "Update customer email information."
+msgstr ""
+
+msgid "Update customer email."
+msgstr ""
+
+msgid "Update customer identity information."
+msgstr ""
+
+msgid "Update customer identity."
+msgstr ""
+
+msgid "Update customer mobile number information."
+msgstr ""
+
+msgid "Update customer mobile number."
+msgstr ""
+
+msgid "Update customer number information."
+msgstr ""
+
+msgid "Update customer number."
+msgstr ""

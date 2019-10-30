@@ -1698,3 +1698,1380 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer addresses.
+
+Update customer addresses information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID} \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"customer_address_id": "string",
+		"line_1": "string",
+		"line_2": "string",
+		"line_3": "string",
+		"city": "string",
+		"county": "string",
+		"state": "string",
+		"postcode": "string",
+		"country_code": "string",
+		"tags": "[]string",
+		"status": "string"
+	}'
+```
+{{snippet updatecustomeraddress []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
+
+### Query Parameters
+
+| Name              | Type   | Description |
+|-------------------|--------|-------------|
+| BankID            | string |             |
+| CustomerID        | string |             |
+| CustomerAddressID | string |             |
+
+### Body Parameters
+
+| Name              | Type     | Description |
+|-------------------|----------|-------------|
+| BankID            | string   |             |
+| CustomerID        | string   |             |
+| CustomerAddressID | string   |             |
+| Line1             | string   |             |
+| Line2             | string   |             |
+| Line3             | string   |             |
+| City              | string   |             |
+| County            | string   |             |
+| State             | string   |             |
+| Postcode          | string   |             |
+| CountryCode       | string   |             |
+| Tags              | []string |             |
+| Status            | string   |             |
+
+### Responses
+
+#### Response body
+
+| Name              | Type      | Description |
+|-------------------|-----------|-------------|
+| CustomerAddressID | string    |             |
+| CustomerID        | string    |             |
+| Line1             | string    |             |
+| Line2             | string    |             |
+| Line3             | string    |             |
+| City              | string    |             |
+| County            | string    |             |
+| State             | string    |             |
+| Postcode          | string    |             |
+| CountryCode       | string    |             |
+| Tags              | []string  |             |
+| Status            | string    |             |
+| InsertDate        | Timestamp |             |
+
+##### Objects
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+Example:
+
+```json
+{
+  "customer_address_id": "string",
+  "customer_id": "string",
+  "line_1": "string",
+  "line_2": "string",
+  "line_3": "string",
+  "city": "string",
+  "county": "string",
+  "state": "string",
+  "postcode": "string",
+  "country_code": "string",
+  "tags": "[]string",
+  "status": "string",
+  "insert_date": {
+    "seconds": "int64",
+    "nanos": "int32"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer branch.
+
+Update customer branch information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/branch \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"branch_id": "string"
+	}'
+```
+{{snippet updatecustomerbranch []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/branch`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+| BranchID   | string |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer credit limit.
+
+Update customer credit limit information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/credit-limit \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"credit_limit": {
+			"cur": "string",
+			"num": "string"
+		}
+	}'
+```
+{{snippet updatecustomercredit_limit []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/credit-limit`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| BankID      | string |             |
+| CustomerID  | string |             |
+| CreditLimit | Amount |             |
+
+##### Objects
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer credut rating and source.
+
+Update customer credit rating and source information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"credit_rating": {
+			"rating": "string",
+			"source": "string"
+		}
+	}'
+```
+{{snippet updatecustomercreditratingand_source []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name         | Type         | Description |
+|--------------|--------------|-------------|
+| BankID       | string       |             |
+| CustomerID   | string       |             |
+| CreditRating | CreditRating |             |
+
+##### Objects
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer email.
+
+Update customer email information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/email \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"email": "string"
+	}'
+```
+{{snippet updatecustomeremail []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/email`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+| Email      | string |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer identity.
+
+Update customer identity information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/identity \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"legal_name": "string",
+		"date_of_birth": "string",
+		"": "string"
+	}'
+```
+{{snippet updatecustomeridentity []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/identity`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| BankID      | string |             |
+| CustomerID  | string |             |
+| LegalName   | string |             |
+| DateOfBirth | string |             |
+| Title       | string |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer mobile number.
+
+Update customer mobile number information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/mobile-number \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"mobile_phone_number": "string"
+	}'
+```
+{{snippet updatecustomermobile_number []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/mobile-number`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name              | Type   | Description |
+|-------------------|--------|-------------|
+| BankID            | string |             |
+| CustomerID        | string |             |
+| MobilePhoneNumber | string |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer number.
+
+Update customer number information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/number \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"customer_number": "string"
+	}'
+```
+{{snippet updatecustomernumber []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/number`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| BankID         | string |             |
+| CustomerID     | string |             |
+| CustomerNumber | string |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
+## Update customer data.
+
+Update customer data information.
+
+```sh
+curl -X PUT \
+	/v1/banks/{BankID}/customers/{CustomerID}/data \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"bank_id": "string",
+		"customer_id": "string",
+		"face_image": {
+			"url": "string",
+			"date": {
+				"seconds": "int64",
+				"nanos": "int32"
+			}
+		},
+		"relationship_status": "string",
+		"dependants": "int32",
+		"highest_education_attained": "string",
+		"employment_status": "string"
+	}'
+```
+{{snippet updatecustomerother_data []}}
+
+### HTTP Request
+
+`PUT /v1/banks/{BankID}/customers/{CustomerID}/data`
+
+### Query Parameters
+
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| BankID     | string |             |
+| CustomerID | string |             |
+
+### Body Parameters
+
+| Name                     | Type      | Description |
+|--------------------------|-----------|-------------|
+| BankID                   | string    |             |
+| CustomerID               | string    |             |
+| FaceImage                | FaceImage |             |
+| RelationshipStatus       | string    |             |
+| Dependants               | int32     |             |
+| HighestEducationAttained | string    |             |
+| EmploymentStatus         | string    |             |
+
+##### Objects
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+### Responses
+
+#### Response body
+
+| Name     | Type     | Description |
+|----------|----------|-------------|
+| Customer | Customer |             |
+
+##### Objects
+
+###### Customer
+
+| Name                     | Type         | Description |
+|--------------------------|--------------|-------------|
+| ID                       | string       |             |
+| BankID                   | string       |             |
+| CustomerNumber           | string       |             |
+| LegalName                | string       |             |
+| PhoneNumber              | string       |             |
+| Email                    | string       |             |
+| FaceImage                | FaceImage    |             |
+| DateOfBirth              | Timestamp    |             |
+| RelationshipStatus       | string       |             |
+| CreditRating             | CreditRating |             |
+| CreditLimit              | Amount       |             |
+| HighestEducationAttained | string       |             |
+| EmploymentStatus         | string       |             |
+| KYCStatus                | bool         |             |
+| LastOKDate               | Timestamp    |             |
+| Title                    | string       |             |
+| BranchID                 | string       |             |
+
+###### FaceImage
+
+| Name | Type      | Description |
+|------|-----------|-------------|
+| URL  | string    |             |
+| Date | Timestamp |             |
+
+###### Timestamp
+
+| Name    | Type  | Description |
+|---------|-------|-------------|
+| seconds | int64 |             |
+| nanos   | int32 |             |
+
+###### CreditRating
+
+| Name   | Type   | Description |
+|--------|--------|-------------|
+| Rating | string |             |
+| Source | string |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
+Example:
+
+```json
+{
+  "customer": {
+    "id": "string",
+    "bank_id": "string",
+    "customer_number": "string",
+    "legal_name": "string",
+    "phone_number": "string",
+    "email": "string",
+    "face_image": {
+      "url": "string",
+      "date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      }
+    },
+    "date_of_birth": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "relationship_status": "string",
+    "credit_rating": {
+      "rating": "string",
+      "source": "string"
+    },
+    "credit_limit": {
+      "cur": "string",
+      "num": "string"
+    },
+    "highest_educational_attained": "string",
+    "employment_status": "string",
+    "kyc_status": "bool",
+    "last_ok_data": {
+      "seconds": "int64",
+      "nanos": "int32"
+    },
+    "title": "string",
+    "branch_id": "string"
+  }
+}
+```
+#### Response codes
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Request executed successfully.                                                         |
+| 404    | Returned when the resource is not found.                                               |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
