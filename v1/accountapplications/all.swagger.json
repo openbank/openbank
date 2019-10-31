@@ -58,7 +58,7 @@
           }
         ],
         "tags": [
-          "AccountApplication"
+          "Account Application"
         ],
         "security": [
           {
@@ -117,7 +117,7 @@
           }
         ],
         "tags": [
-          "AccountApplication"
+          "Account Application"
         ],
         "security": [
           {
@@ -234,7 +234,7 @@
           }
         ],
         "tags": [
-          "AccountApplication"
+          "Account Application"
         ],
         "security": [
           {
@@ -538,6 +538,18 @@
         "NameSuffix": {
           "type": "string",
           "title": "Name suffix"
+        },
+        "FirstName": {
+          "type": "string",
+          "title": "FirstName of the person"
+        },
+        "MiddleName": {
+          "type": "string",
+          "title": "MiddleName or middle names (space separated) of the person"
+        },
+        "LastName": {
+          "type": "string",
+          "title": "LastName or last names (space separated) of the person"
         }
       },
       "title": "Structure of customer profile information"

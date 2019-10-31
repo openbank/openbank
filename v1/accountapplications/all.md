@@ -2,12 +2,9 @@
 
 Provides create and read operations on the account application resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Create an account application
 
@@ -62,34 +59,37 @@ curl -X POST \
 
 ###### Profile
 
-| Name                     | Type         | Description                                      |
-|--------------------------|--------------|--------------------------------------------------|
-| ProfileID                | string       | ProfileID is the unique identifier of a profile. |
-| FullName                 | string       | Full name                                        |
-| UserName                 | string       | User name                                        |
-| BirthDate                | string       | Birth date                                       |
-| Language                 | string       | Language code used                               |
-| Country                  | string       | User country code (VN, US, ID, SG, ...).         |
-| Email                    | string       | User email address                               |
-| EmailVefified            | bool         | True if email is verified, otherwise False       |
-| Mobile                   | string       | Mobile number                                    |
-| Photo                    | string       | User profile photo url                           |
-| Title                    | string       | Title                                            |
-| PermanentAddress         | Address      | Permanent address                                |
-| ContactAddress           | Address      | Contact address                                  |
-| ProfileNUmber            | string       | profile number                                   |
-| FaceImageUrl             | string       | Face image of the customer                       |
-| FaceImageDate            | string       | Date when the face image was added/updated       |
-| RelationshipStatus       | string       | RelationshipStatus. Ex: Single                   |
-| Dependents               | int32        | Number of dependents                             |
-| DobOfDependents          | []Timestamp  | Date of birth of dependents                      |
-| CreditRating             | CreditRating | Credit rating                                    |
-| CreditLimit              | Amount       | Credit Limit                                     |
-| HighestEducationAttained | string       | Highest education such as bachelor, masters etc  |
-| EmploymentStatus         | string       | Current employment status                        |
-| KycStatus                | bool         | Know Your Customer status                        |
-| BranchID                 | string       | Branch Identifier                                |
-| NameSuffix               | string       | Name suffix                                      |
+| Name                     | Type         | Description                                                |
+|--------------------------|--------------|------------------------------------------------------------|
+| ProfileID                | string       | ProfileID is the unique identifier of a profile.           |
+| FullName                 | string       | Full name                                                  |
+| UserName                 | string       | User name                                                  |
+| BirthDate                | string       | Birth date                                                 |
+| Language                 | string       | Language code used                                         |
+| Country                  | string       | User country code (VN, US, ID, SG, ...).                   |
+| Email                    | string       | User email address                                         |
+| EmailVefified            | bool         | True if email is verified, otherwise False                 |
+| Mobile                   | string       | Mobile number                                              |
+| Photo                    | string       | User profile photo url                                     |
+| Title                    | string       | Title                                                      |
+| PermanentAddress         | Address      | Permanent address                                          |
+| ContactAddress           | Address      | Contact address                                            |
+| ProfileNUmber            | string       | profile number                                             |
+| FaceImageUrl             | string       | Face image of the customer                                 |
+| FaceImageDate            | string       | Date when the face image was added/updated                 |
+| RelationshipStatus       | string       | RelationshipStatus. Ex: Single                             |
+| Dependents               | int32        | Number of dependents                                       |
+| DobOfDependents          | []Timestamp  | Date of birth of dependents                                |
+| CreditRating             | CreditRating | Credit rating                                              |
+| CreditLimit              | Amount       | Credit Limit                                               |
+| HighestEducationAttained | string       | Highest education such as bachelor, masters etc            |
+| EmploymentStatus         | string       | Current employment status                                  |
+| KycStatus                | bool         | Know Your Customer status                                  |
+| BranchID                 | string       | Branch Identifier                                          |
+| NameSuffix               | string       | Name suffix                                                |
+| FirstName                | string       | FirstName of the person                                    |
+| MiddleName               | string       | MiddleName or middle names (space separated) of the person |
+| LastName                 | string       | LastName or last names (space separated) of the person     |
 
 ###### Timestamp
 
@@ -182,7 +182,10 @@ Example:
     "employment_status": "string",
     "kyc_status": "bool",
     "branchId": "string",
-    "nameSuffix": "string"
+    "nameSuffix": "string",
+    "first_name": "string",
+    "middle_name": "string",
+    "last_name": "string"
   },
   "date_of_application": {
     "seconds": "int64",

@@ -160,7 +160,7 @@ type AccountApplicationService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"AccountApplication"},
+	//         Tags:        []string{"Account Application"},
 	//         Description: "Creates a new account application",
 	//         Summary:     "Create an account application",
 	//         Responses: map[string]openapiv2.Response{
@@ -231,7 +231,7 @@ type AccountApplicationService interface {
 	//         Path:   "/v1/account-applications",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"AccountApplication"},
+	//         Tags:        []string{"Account Application"},
 	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
 	//         Summary:     "List all accounts",
 	//         Responses: map[string]openapiv2.Response{
@@ -266,7 +266,7 @@ type AccountApplicationService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"AccountApplication"},
+	//         Tags:        []string{"Account Application"},
 	//         Description: "Updates an account application with the given status",
 	//         Summary:     "Update an account application",
 	//         Responses: map[string]openapiv2.Response{
