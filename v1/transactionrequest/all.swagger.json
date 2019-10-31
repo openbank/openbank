@@ -63,7 +63,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -136,7 +136,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -209,7 +209,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -282,7 +282,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -355,7 +355,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -428,7 +428,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -513,7 +513,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -572,7 +572,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -625,7 +625,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {
@@ -686,7 +686,7 @@
           }
         ],
         "tags": [
-          "TransactionRequest"
+          "Transaction Request"
         ],
         "security": [
           {

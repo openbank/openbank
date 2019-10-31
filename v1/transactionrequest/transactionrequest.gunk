@@ -309,7 +309,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Answer the transaction request challenge",
 	//         Summary:     "Answer the transaction reqeust challenge",
 	//         Responses: map[string]openapiv2.Response{
@@ -344,7 +344,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Creates a new account transaction request",
 	//         Summary:     "Create an account transaction request",
 	//         Responses: map[string]openapiv2.Response{
@@ -379,7 +379,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Creates a new account otp transaction request",
 	//         Summary:     "Create an account otp transaction request",
 	//         Responses: map[string]openapiv2.Response{
@@ -414,7 +414,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Creates a new counter party transaction request",
 	//         Summary:     "Create an counter party transaction request",
 	//         Responses: map[string]openapiv2.Response{
@@ -449,7 +449,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Creates a new free form transaction request",
 	//         Summary:     "Create an free form transaction request",
 	//         Responses: map[string]openapiv2.Response{
@@ -484,7 +484,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Creates a new sepa transaction request",
 	//         Summary:     "Create an sepa transaction request",
 	//         Responses: map[string]openapiv2.Response{
@@ -518,7 +518,7 @@ type TransactionRequestService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Retrieves list of transaction request types for an account_id",
 	//         Summary:     "Retrieve transaction types",
 	//         Responses: map[string]openapiv2.Response{
@@ -555,7 +555,7 @@ type TransactionRequestService interface {
 	//         Path:   "/v1/banks/{BankID}/transaction-request-types",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Retrieves list of transaction request types",
 	//         Summary:     "Retrieve transaction types",
 	//         Responses: map[string]openapiv2.Response{
@@ -592,7 +592,7 @@ type TransactionRequestService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/transactionrequests",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Retrieves list of transaction requests for an account_id",
 	//         Summary:     "Retrieve transaction requests",
 	//         Responses: map[string]openapiv2.Response{
@@ -630,7 +630,7 @@ type TransactionRequestService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"TransactionRequest"},
+	//         Tags:        []string{"Transaction Request"},
 	//         Description: "Import a historic transaction",
 	//         Summary:     "Import a historic transaction",
 	//         Responses: map[string]openapiv2.Response{
