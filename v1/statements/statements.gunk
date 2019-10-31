@@ -24,6 +24,9 @@
 //                 "403": openapiv2.Response{
 //                         Description: "Returned when the user does not have permission to access the resource.",
 //                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
 //                 "500": openapiv2.Response{
 //                         Description: "Returned when an unexpected error occured on the server side.",
 //                 },
@@ -153,20 +156,20 @@ type StatementService interface {
 	// }
 
 	// +gunk openapiv2.Operation{
-	//	Tags: []string{"Statement"},
-	//	Description: "Returns a list containing up to 20 statements. `next_starting_index` can be specified for pagination.",
-	//	Summary: "Retrieve multiple statements",
-	//	Responses: map[string]openapiv2.Response{
-	//		"200": openapiv2.Response{
-	//			Description: "Request executed successfully.",
+	//         Tags:        []string{"Statement"},
+	//         Description: "Returns a list containing up to 20 statements. `next_starting_index` can be specified for pagination.",
+	//         Summary:     "Retrieve multiple statements",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
 	//                                         Ref: "#/definitions/statementsGetStatementsResponse",
 	//                                 },
 	//                         },
-	//		},
-	//	},
-	//	Security: []openapiv2.SecurityRequirement{
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
 	//                 {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{

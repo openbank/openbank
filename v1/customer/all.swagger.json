@@ -23,7 +23,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCRMEventsResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -74,7 +76,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCustomersForCurrentUserAtBankResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -125,7 +129,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerCustomer"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -182,7 +188,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCustomerAddressesResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -580,7 +588,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCreditLimitOrderByIDResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -643,7 +653,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCreditLimitOrderResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -771,7 +783,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerCustomer"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -1169,7 +1183,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCustomerSocialMediaHandlesResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -1226,7 +1242,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetTaxResidenceOfCustomerResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -1352,7 +1370,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetFirehoseCustomerResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -1706,7 +1726,9 @@
         "responses": {
           "200": {
             "description": "Request executed successfully.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/customerGetCustomersForCurrentUserResponse"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",

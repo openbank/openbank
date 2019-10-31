@@ -661,6 +661,11 @@ type TransactionMetadataService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "Tag successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataTag",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -829,6 +834,11 @@ type TransactionMetadataService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "Image successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataImage",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -997,6 +1007,11 @@ type TransactionMetadataService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "Comment successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataComment",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -1165,6 +1180,11 @@ type TransactionMetadataService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "Narrative successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataNarrative",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -1333,6 +1353,11 @@ type TransactionMetadataService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "204": openapiv2.Response{
 	//                         Description: "WhereTag successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionmetadataWhereTag",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{

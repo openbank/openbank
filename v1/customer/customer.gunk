@@ -706,6 +706,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCRMEventsResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -735,6 +740,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCreditLimitOrderByIDResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -764,6 +774,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCreditLimitOrderResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -793,6 +808,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCustomerAddressesResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -822,6 +842,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCustomerSocialMediaHandlesResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -851,6 +876,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerCustomer",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -880,6 +910,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerCustomer",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -909,6 +944,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCustomersForCurrentUserResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -938,6 +978,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetCustomersForCurrentUserAtBankResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -967,6 +1012,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetFirehoseCustomerResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -996,6 +1046,11 @@ type CustomerService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/customerGetTaxResidenceOfCustomerResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{

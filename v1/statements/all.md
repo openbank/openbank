@@ -74,6 +74,7 @@ Example:
 | 400    | Returned when the request body is malformatted or does not match the expected request. |
 | 401    | Returned when the request does not contains the user's credentials.                    |
 | 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
 ## Annex

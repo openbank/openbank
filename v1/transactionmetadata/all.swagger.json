@@ -254,7 +254,9 @@
           },
           "204": {
             "description": "Comment successfully updated.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionmetadataComment"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -559,7 +561,9 @@
           },
           "204": {
             "description": "Image successfully updated.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionmetadataImage"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -785,7 +789,9 @@
           },
           "204": {
             "description": "Narrative successfully updated.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionmetadataNarrative"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -1090,7 +1096,9 @@
           },
           "204": {
             "description": "Tag successfully updated.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionmetadataTag"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
@@ -1468,7 +1476,9 @@
           },
           "204": {
             "description": "WhereTag successfully updated.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/transactionmetadataWhereTag"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",
