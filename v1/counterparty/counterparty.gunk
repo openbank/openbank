@@ -232,7 +232,7 @@ type CounterPartyService interface {
 	//         Body:   "*",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"CounterParty"},
+	//         Tags:        []string{"Counterparty"},
 	//         Description: "Creates a new counter party",
 	//         Summary:     "Create an counter party",
 	//         Responses: map[string]openapiv2.Response{
@@ -266,7 +266,7 @@ type CounterPartyService interface {
 	//         Path:   "/v1/counterparty/{ID}",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"CounterParty"},
+	//         Tags:        []string{"Counterparty"},
 	//         Description: "Retrieves all data from an counter party selected by the supplied counter_party_id.",
 	//         Summary:     "Retrieve an counter party",
 	//         Responses: map[string]openapiv2.Response{
@@ -303,7 +303,7 @@ type CounterPartyService interface {
 	//         Path:   "/v1/counterparties",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"CounterParty"},
+	//         Tags:        []string{"Counterparty"},
 	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
 	//         Summary:     "List all accounts",
 	//         Responses: map[string]openapiv2.Response{

@@ -2,12 +2,9 @@
 
 Provides CRUD operations on the counter part resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Create an counter party
 
