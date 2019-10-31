@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Card API",
-    "description": "Provides create and read operations on the card resource.",
+    "title": "Consumer API",
+    "description": "Provides create and read operations on the consumer resource.",
     "version": "1.0.0"
   },
   "schemes": [
@@ -37,6 +37,10 @@
           },
           "403": {
             "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
             "schema": {}
           },
           "500": {
@@ -78,6 +82,10 @@
           },
           "403": {
             "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
             "schema": {}
           },
           "500": {
@@ -186,6 +194,10 @@
           },
           "403": {
             "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
             "schema": {}
           },
           "500": {
@@ -355,6 +367,10 @@
           },
           "403": {
             "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
             "schema": {}
           },
           "500": {

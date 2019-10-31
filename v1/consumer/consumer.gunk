@@ -1,8 +1,8 @@
 // +gunk openapiv2.Swagger{
 //         Swagger: "2.0",
 //         Info: openapiv2.Info{
-//                 Title:       "Card API",
-//                 Description: "Provides create and read operations on the card resource.",
+//                 Title:       "Consumer API",
+//                 Description: "Provides create and read operations on the consumer resource.",
 //                 Version:     "1.0.0",
 //         },
 //         Schemes: []openapiv2.SwaggerScheme{
@@ -23,6 +23,9 @@
 //                 },
 //                 "403": openapiv2.Response{
 //                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
 //                 },
 //                 "500": openapiv2.Response{
 //                         Description: "Returned when an unexpected error occured on the server side.",

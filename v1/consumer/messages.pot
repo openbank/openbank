@@ -22,7 +22,7 @@ msgstr ""
 msgid "Body Parameters"
 msgstr ""
 
-msgid "Card API"
+msgid "Consumer API"
 msgstr ""
 
 msgid "Get consumer"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Objects"
 msgstr ""
 
-msgid "Provides create and read operations on the card resource."
+msgid "Provides create and read operations on the consumer resource."
 msgstr ""
 
 msgid "Query Parameters"
