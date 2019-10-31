@@ -131,7 +131,9 @@
           },
           "204": {
             "description": "Bank successfully updated.",
-            "schema": {}
+            "schema": {
+              "$ref": "#/definitions/bankBank"
+            }
           },
           "400": {
             "description": "Returned when the request body is malformatted or does not match the expected request.",

@@ -24,6 +24,9 @@
 //                 "403": openapiv2.Response{
 //                         Description: "Returned when the user does not have permission to access the resource.",
 //                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
 //                 "500": openapiv2.Response{
 //                         Description: "Returned when an unexpected error occured on the server side.",
 //                 },
@@ -314,6 +317,11 @@ type TransactionService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsTransaction",
+	//                                 },
+	//                         },
 	//                 },
 	//                 "404": openapiv2.Response{
 	//                         Description: "Returned when the resource is not found.",
@@ -346,6 +354,11 @@ type TransactionService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsGetTransactionsResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{
@@ -375,6 +388,11 @@ type TransactionService interface {
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsGetTransactionsByAccountResponse",
+	//                                 },
+	//                         },
 	//                 },
 	//         },
 	//         Security: []openapiv2.SecurityRequirement{

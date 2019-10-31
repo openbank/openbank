@@ -31,6 +31,9 @@ msgstr ""
 msgid "Birth date"
 msgstr ""
 
+msgid "Branch Identifier"
+msgstr ""
+
 msgid "Branch is the branch code for the branch associated with the account."
 msgstr ""
 
@@ -58,10 +61,19 @@ msgstr ""
 msgid "CountryName holds the country name information."
 msgstr ""
 
+msgid "Credit Limit"
+msgstr ""
+
+msgid "Credit rating"
+msgstr ""
+
 msgid "CreditLimit is the allowed credit limit."
 msgstr ""
 
 msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Current employment status"
 msgstr ""
 
 msgid "CurrentBalance is the current balance of the account."
@@ -70,7 +82,19 @@ msgstr ""
 msgid "CurrentTerm is the account validity period."
 msgstr ""
 
+msgid "Date of birth of dependents"
+msgstr ""
+
+msgid "Date when the face image was added/updated"
+msgstr ""
+
 msgid "DueDate is the loan maturity date."
+msgstr ""
+
+msgid "Face image of the customer"
+msgstr ""
+
+msgid "FirstName of the person"
 msgstr ""
 
 msgid "Full name"
@@ -79,16 +103,25 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
+msgid "Highest education such as bachelor, masters etc"
+msgstr ""
+
 msgid "Host"
 msgstr ""
 
 msgid "InterestRate is the interest rate for the account."
 msgstr ""
 
+msgid "Know Your Customer status"
+msgstr ""
+
 msgid "Language code used"
 msgstr ""
 
 msgid "LastFour is the last four digits of the card."
+msgstr ""
+
+msgid "LastName or last names (space separated) of the person"
 msgstr ""
 
 msgid "MajorCategory is the account category."
@@ -100,10 +133,19 @@ msgstr ""
 msgid "MaturityDate is the maturity date, format is ISO 8601"
 msgstr ""
 
+msgid "MiddleName or middle names (space separated) of the person"
+msgstr ""
+
 msgid "Mobile number"
 msgstr ""
 
+msgid "Name suffix"
+msgstr ""
+
 msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Number of dependents"
 msgstr ""
 
 msgid "Objects"
@@ -134,6 +176,9 @@ msgid "Query cards"
 msgstr ""
 
 msgid "Query profiles"
+msgstr ""
+
+msgid "RelationshipStatus. Ex: Single | Married"
 msgstr ""
 
 msgid "Request executed successfully."
@@ -203,4 +248,7 @@ msgid "User name"
 msgstr ""
 
 msgid "User profile photo url"
+msgstr ""
+
+msgid "profile number"
 msgstr ""

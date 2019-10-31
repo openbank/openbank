@@ -316,6 +316,18 @@
       },
       "description": "Amount defines a transaction amount."
     },
+    "typesCreditRating": {
+      "type": "object",
+      "properties": {
+        "Rating": {
+          "type": "string"
+        },
+        "Source": {
+          "type": "string"
+        }
+      },
+      "title": "Structure of credit rating information"
+    },
     "typesMajorCategory": {
       "type": "string",
       "enum": [
@@ -395,6 +407,76 @@
         "ContactAddress": {
           "$ref": "#/definitions/typesAddress",
           "title": "Contact address"
+        },
+        "ProfileNUmber": {
+          "type": "string",
+          "title": "profile number"
+        },
+        "FaceImageUrl": {
+          "type": "string",
+          "title": "Face image of the customer"
+        },
+        "FaceImageDate": {
+          "type": "string",
+          "title": "Date when the face image was added/updated"
+        },
+        "RelationshipStatus": {
+          "type": "string",
+          "title": "RelationshipStatus. Ex: Single | Married"
+        },
+        "Dependents": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Number of dependents"
+        },
+        "DobOfDependents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": "Date of birth of dependents"
+        },
+        "CreditRating": {
+          "$ref": "#/definitions/typesCreditRating",
+          "title": "Credit rating"
+        },
+        "CreditLimit": {
+          "$ref": "#/definitions/typesAmount",
+          "title": "Credit Limit"
+        },
+        "HighestEducationAttained": {
+          "type": "string",
+          "title": "Highest education such as bachelor, masters etc"
+        },
+        "EmploymentStatus": {
+          "type": "string",
+          "title": "Current employment status"
+        },
+        "KycStatus": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Know Your Customer status"
+        },
+        "BranchID": {
+          "type": "string",
+          "title": "Branch Identifier"
+        },
+        "NameSuffix": {
+          "type": "string",
+          "title": "Name suffix"
+        },
+        "FirstName": {
+          "type": "string",
+          "title": "FirstName of the person"
+        },
+        "MiddleName": {
+          "type": "string",
+          "title": "MiddleName or middle names (space separated) of the person"
+        },
+        "LastName": {
+          "type": "string",
+          "title": "LastName or last names (space separated) of the person"
         }
       },
       "title": "Structure of customer profile information"
