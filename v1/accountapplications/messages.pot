@@ -91,6 +91,9 @@ msgstr ""
 msgid "Face image of the customer"
 msgstr ""
 
+msgid "FirstName of the person"
+msgstr ""
+
 msgid "Full name"
 msgstr ""
 
@@ -115,7 +118,13 @@ msgstr ""
 msgid "Language code used"
 msgstr ""
 
+msgid "LastName or last names (space separated) of the person"
+msgstr ""
+
 msgid "List all accounts"
+msgstr ""
+
+msgid "MiddleName or middle names (space separated) of the person"
 msgstr ""
 
 msgid "Mobile number"
