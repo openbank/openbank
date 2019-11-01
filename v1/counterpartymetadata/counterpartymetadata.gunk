@@ -1,0 +1,2138 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Counterparty Metadata API",
+//                 Description: "Provides the access and availability to the counterparty metadata API.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to counterparty metadata resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package counterpartymetadata
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type CorporateLocation struct {
+	Location types.Location `pb:"1" json:"location"`
+}
+
+type MoreInfo struct {
+	MoreInfo string `pb:"1" json:"more_info"`
+}
+
+type OpenCorporatesURL struct {
+	URL string `pb:"1" json:"url"`
+}
+
+type URL struct {
+	URL string `pb:"1" json:"url"`
+}
+
+type ImageURL struct {
+	URL string `pb:"1" json:"url"`
+}
+
+type PhysicalLocation struct {
+	Location types.Location `pb:"1" json:"location"`
+}
+
+type PublicAlias struct {
+	Alias string `pb:"1" json:"alias"`
+}
+
+type PrivateAlias struct {
+	Alias string `pb:"1" json:"alias"`
+}
+
+type CreateCorporateLocationRequest struct {
+	// CorporateLocation is the corporate_location metadata made on a other_account.
+	CorporateLocation CorporateLocation `pb:"1" json:"corporate_location"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdateCorporateLocationRequest struct {
+	// CorporateLocation is the corporate_location metadata made on a other_account.
+	CorporateLocation CorporateLocation `pb:"1" json:"corporate_location"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeleteCorporateLocationRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetCorporateLocationRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetCorporateLocationsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetCorporateLocationsResponse struct {
+	// CorporateLocations is the list of corporate_locations.
+	CorporateLocations []CorporateLocation `pb:"1" json:"corporate_locations"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreateMoreInfoRequest struct {
+	// MoreInfo is the more_info metadata made on a other_account.
+	MoreInfo MoreInfo `pb:"1" json:"more_info"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdateMoreInfoRequest struct {
+	// MoreInfo is the more_info metadata made on a other_account.
+	MoreInfo MoreInfo `pb:"1" json:"more_info"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeleteMoreInfoRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetMoreInfoRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetMoreInfosRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetMoreInfosResponse struct {
+	// MoreInfos is the list of more_infos.
+	MoreInfos []MoreInfo `pb:"1" json:"more_infos"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreateOpenCorporatesURLRequest struct {
+	// OpenCorporatesURL is the open_corporates_url metadata made on a other_account.
+	OpenCorporatesURL OpenCorporatesURL `pb:"1" json:"open_corporates_url"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdateOpenCorporatesURLRequest struct {
+	// OpenCorporatesURL is the open_corporates_url metadata made on a other_account.
+	OpenCorporatesURL OpenCorporatesURL `pb:"1" json:"open_corporates_url"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeleteOpenCorporatesURLRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetOpenCorporatesURLRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetOpenCorporatesURLsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetOpenCorporatesURLsResponse struct {
+	// OpenCorporatesURLs is the list of open_corporates_urls.
+	OpenCorporatesURLs []OpenCorporatesURL `pb:"1" json:"open_corporates_urls"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreateURLRequest struct {
+	// URL is the url metadata made on a other_account.
+	URL URL `pb:"1" json:"url"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdateURLRequest struct {
+	// URL is the url metadata made on a other_account.
+	URL URL `pb:"1" json:"url"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeleteURLRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetURLRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetURLsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetURLsResponse struct {
+	// URLs is the list of urls.
+	URLs []URL `pb:"1" json:"urls"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreateImageURLRequest struct {
+	// ImageURL is the image_url metadata made on a other_account.
+	ImageURL ImageURL `pb:"1" json:"image_url"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdateImageURLRequest struct {
+	// ImageURL is the image_url metadata made on a other_account.
+	ImageURL ImageURL `pb:"1" json:"image_url"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeleteImageURLRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetImageURLRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetImageURLsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetImageURLsResponse struct {
+	// ImageURLs is the list of image_urls.
+	ImageURLs []ImageURL `pb:"1" json:"image_urls"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreatePhysicalLocationRequest struct {
+	// PhysicalLocation is the physical_location metadata made on a other_account.
+	PhysicalLocation PhysicalLocation `pb:"1" json:"physical_location"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdatePhysicalLocationRequest struct {
+	// PhysicalLocation is the physical_location metadata made on a other_account.
+	PhysicalLocation PhysicalLocation `pb:"1" json:"physical_location"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeletePhysicalLocationRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPhysicalLocationRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPhysicalLocationsRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPhysicalLocationsResponse struct {
+	// PhysicalLocations is the list of physical_locations.
+	PhysicalLocations []PhysicalLocation `pb:"1" json:"physical_locations"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreatePublicAliasRequest struct {
+	// PublicAlias is the public_alias metadata made on a other_account.
+	PublicAlias PublicAlias `pb:"1" json:"alias"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdatePublicAliasRequest struct {
+	// PublicAlias is the public_alias metadata made on a other_account.
+	PublicAlias PublicAlias `pb:"1" json:"alias"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeletePublicAliasRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPublicAliasRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPublicAliasesRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPublicAliasesResponse struct {
+	// PublicAliases is the list of public_aliases.
+	PublicAliases []PublicAlias `pb:"1" json:"aliases"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type CreatePrivateAliasRequest struct {
+	// PrivateAlias is the private_alias metadata made on a other_account.
+	PrivateAlias PublicAlias `pb:"1" json:"alias"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type UpdatePrivateAliasRequest struct {
+	// PrivateAlias is the private_alias metadata made on a other_account.
+	PrivateAlias PublicAlias `pb:"1" json:"alias"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type DeletePrivateAliasRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPrivateAliasRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPrivateAliasesRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetPrivateAliasesResponse struct {
+	// PrivateAliases is the list of private_aliases.
+	PrivateAliases []PublicAlias `pb:"1" json:"aliases"`
+
+	// BankID is the bank identifier.
+	BankID string `pb:"2" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"3" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"4" json:"other_account_id"`
+}
+
+type GetOtherAccountMetadataRequest struct {
+	// BankID is the bank identifier.
+	BankID string `pb:"1" json:"bank_id"`
+
+	// AccountID is the account identifier.
+	AccountID string `pb:"2" json:"account_id"`
+
+	// OtherAccountID is the other_account identifier.
+	OtherAccountID string `pb:"3" json:"other_account_id"`
+}
+
+type GetOtherAccountMetadataResponse struct {
+	PublicAlias       string            `pb:"1" json:"public_alias"`
+	PrivateAlias      string            `pb:"2" json:"private_alias"`
+	MoreInfo          string            `pb:"3" json:"more_info"`
+	URL               string            `pb:"4" json:"url"`
+	ImageURL          string            `pb:"5" json:"image_url"`
+	OpenCorporatesURL string            `pb:"6" json:"open_corporates_url"`
+	CorporateLocation CorporateLocation `pb:"7" json:"corporate_location"`
+	PhysicalLocation  PhysicalLocation  `pb:"8" json:"physical_location"`
+}
+
+type CounterpartyMetadataService interface {
+	// CreateCorporateLocation creates a new corporate location.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new corporate_location and returns the object.",
+	//         Summary:     "Create a corporate_location",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataCorporateLocation",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateCorporateLocation(CreateCorporateLocationRequest) CorporateLocation
+
+	// GetCorporateLocation retrieves a corporate location.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the corporate location specified by the ID",
+	//         Summary:     "Retrieve corporate location information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataCorporateLocation",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCorporateLocation(GetCorporateLocationRequest) CorporateLocation
+
+	// GetCorporateLocations retrieves all corporate locations.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available corporate locations.",
+	//         Summary:     "Retrieve all available corporate locations",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetCorporateLocationsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetCorporateLocations(GetCorporateLocationsRequest) GetCorporateLocationsResponse
+
+	// UpdateCorporateLocation updates the corporate location.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a corporate location's information",
+	//         Summary:     "Update a corporate location",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "CorporateLocation successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataCorporateLocation",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateCorporateLocation(UpdateCorporateLocationRequest) CorporateLocation
+
+	// DeleteCorporateLocation deletes the corporate location.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a corporate location.",
+	//         Summary:     "Delete a corporate location",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "CorporateLocation successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteCorporateLocation(DeleteCorporateLocationRequest)
+
+	// CreateMoreInfo creates a new more info.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new more_info and returns the object.",
+	//         Summary:     "Create a more_info",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataMoreInfo",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateMoreInfo(CreateMoreInfoRequest) MoreInfo
+
+	// GetMoreInfo retrieves a more info.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the more info specified by the ID",
+	//         Summary:     "Retrieve more info information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataMoreInfo",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetMoreInfo(GetMoreInfoRequest) MoreInfo
+
+	// GetMoreInfos retrieves all more infos.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available more infos.",
+	//         Summary:     "Retrieve all available more infos",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetMoreInfosResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetMoreInfos(GetMoreInfosRequest) GetMoreInfosResponse
+
+	// UpdateMoreInfo updates the more info.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a more info's information",
+	//         Summary:     "Update a more info",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "MoreInfo successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataMoreInfo",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateMoreInfo(UpdateMoreInfoRequest) MoreInfo
+
+	// DeleteMoreInfo deletes the more info.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a more info.",
+	//         Summary:     "Delete a more info",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "MoreInfo successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteMoreInfo(DeleteMoreInfoRequest)
+
+	// CreateOpenCorporatesURL creates a new open corporates url.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new open_corporates_url and returns the object.",
+	//         Summary:     "Create a open_corporates_url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataOpenCorporatesURL",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateOpenCorporatesURL(CreateOpenCorporatesURLRequest) OpenCorporatesURL
+
+	// GetOpenCorporatesURL retrieves a open corporates url.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the open corporates url specified by the ID",
+	//         Summary:     "Retrieve open corporates url information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataOpenCorporatesURL",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetOpenCorporatesURL(GetOpenCorporatesURLRequest) OpenCorporatesURL
+
+	// GetOpenCorporatesURLs retrieves all open corporates urls.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available open corporates urls.",
+	//         Summary:     "Retrieve all available open corporates urls",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetOpenCorporatesURLsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetOpenCorporatesURLs(GetOpenCorporatesURLsRequest) GetOpenCorporatesURLsResponse
+
+	// UpdateOpenCorporatesURL updates the open corporates url.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a open corporates url's information",
+	//         Summary:     "Update a open corporates url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "OpenCorporatesURL successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataOpenCorporatesURL",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateOpenCorporatesURL(UpdateOpenCorporatesURLRequest) OpenCorporatesURL
+
+	// DeleteOpenCorporatesURL deletes the open corporates url.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a open corporates url.",
+	//         Summary:     "Delete a open corporates url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "OpenCorporatesURL successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteOpenCorporatesURL(DeleteOpenCorporatesURLRequest)
+
+	// CreateURL creates a new url.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new url and returns the object.",
+	//         Summary:     "Create a url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataURL",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateURL(CreateURLRequest) URL
+
+	// GetURL retrieves a url.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the url specified by the ID",
+	//         Summary:     "Retrieve url information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataURL",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetURL(GetURLRequest) URL
+
+	// GetURLs retrieves all urls.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available urls.",
+	//         Summary:     "Retrieve all available urls",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetURLsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetURLs(GetURLsRequest) GetURLsResponse
+
+	// UpdateURL updates the url.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a url's information",
+	//         Summary:     "Update a url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "URL successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataURL",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateURL(UpdateURLRequest) URL
+
+	// DeleteURL deletes the url.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a url.",
+	//         Summary:     "Delete a url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "URL successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteURL(DeleteURLRequest)
+
+	// CreateImageURL creates a new image url.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new image_url and returns the object.",
+	//         Summary:     "Create a image_url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataImageURL",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateImageURL(CreateImageURLRequest) ImageURL
+
+	// GetImageURL retrieves a image url.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the image url specified by the ID",
+	//         Summary:     "Retrieve image url information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataImageURL",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetImageURL(GetImageURLRequest) ImageURL
+
+	// GetImageURLs retrieves all image urls.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available image urls.",
+	//         Summary:     "Retrieve all available image urls",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetImageURLsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetImageURLs(GetImageURLsRequest) GetImageURLsResponse
+
+	// UpdateImageURL updates the image url.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a image url's information",
+	//         Summary:     "Update a image url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "ImageURL successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataImageURL",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateImageURL(UpdateImageURLRequest) ImageURL
+
+	// DeleteImageURL deletes the image url.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a image url.",
+	//         Summary:     "Delete a image url",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "ImageURL successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteImageURL(DeleteImageURLRequest)
+
+	// CreatePhysicalLocation creates a new physical location.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new physical_location and returns the object.",
+	//         Summary:     "Create a physical_location",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPhysicalLocation",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreatePhysicalLocation(CreatePhysicalLocationRequest) PhysicalLocation
+
+	// GetPhysicalLocation retrieves a physical location.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the physical location specified by the ID",
+	//         Summary:     "Retrieve physical location information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPhysicalLocation",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPhysicalLocation(GetPhysicalLocationRequest) PhysicalLocation
+
+	// GetPhysicalLocations retrieves all physical locations.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available physical locations.",
+	//         Summary:     "Retrieve all available physical locations",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetPhysicalLocationsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPhysicalLocations(GetPhysicalLocationsRequest) GetPhysicalLocationsResponse
+
+	// UpdatePhysicalLocation updates the physical location.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a physical location's information",
+	//         Summary:     "Update a physical location",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "PhysicalLocation successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPhysicalLocation",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdatePhysicalLocation(UpdatePhysicalLocationRequest) PhysicalLocation
+
+	// DeletePhysicalLocation deletes the physical location.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a physical location.",
+	//         Summary:     "Delete a physical location",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "PhysicalLocation successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeletePhysicalLocation(DeletePhysicalLocationRequest)
+
+	// CreatePublicAlias creates a new public alias.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new public_alias and returns the object.",
+	//         Summary:     "Create a public_alias",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPublicAlias",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreatePublicAlias(CreatePublicAliasRequest) PublicAlias
+
+	// GetPublicAlias retrieves a public alias.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the public alias specified by the ID",
+	//         Summary:     "Retrieve public alias information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPublicAlias",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPublicAlias(GetPublicAliasRequest) PublicAlias
+
+	// GetPublicAliases retrieves all public aliases.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available public aliases.",
+	//         Summary:     "Retrieve all available public aliases",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetPublicAliasesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPublicAliases(GetPublicAliasesRequest) GetPublicAliasesResponse
+
+	// UpdatePublicAlias updates the public alias.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a public alias's information",
+	//         Summary:     "Update a public alias",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "PublicAlias successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPublicAlias",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdatePublicAlias(UpdatePublicAliasRequest) PublicAlias
+
+	// DeletePublicAlias deletes the public alias.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a public alias.",
+	//         Summary:     "Delete a public alias",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "PublicAlias successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeletePublicAlias(DeletePublicAliasRequest)
+
+	// CreatePrivateAlias creates a new private alias.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Creates a new private_alias and returns the object.",
+	//         Summary:     "Create a private_alias",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Corporate Location created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPrivateAlias",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreatePrivateAlias(CreatePrivateAliasRequest) PrivateAlias
+
+	// GetPrivateAlias retrieves a private alias.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the private alias specified by the ID",
+	//         Summary:     "Retrieve private alias information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPrivateAlias",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPrivateAlias(GetPrivateAliasRequest) PrivateAlias
+
+	// GetPrivateAliases retrieves all private aliases.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information regarding all available private aliases.",
+	//         Summary:     "Retrieve all available private aliases",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetPrivateAliasesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPrivateAliases(GetPrivateAliasesRequest) GetPrivateAliasesResponse
+
+	// UpdatePrivateAlias updates the private alias.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Updates a private alias's information",
+	//         Summary:     "Update a private alias",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "PrivateAlias successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataPrivateAlias",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdatePrivateAlias(UpdatePrivateAliasRequest) PrivateAlias
+
+	// DeletePrivateAlias deletes the private alias.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Permanently delete a private alias.",
+	//         Summary:     "Delete a private alias",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "PrivateAlias successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeletePrivateAlias(DeletePrivateAliasRequest)
+
+	// GetOtherAccountMetadata retrieves other accounts metadata.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Counterparty Metadata"},
+	//         Description: "Retrieve information about the other account metadata specified by the ID",
+	//         Summary:     "Retrieve other account metadata information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/counterpartymetadataGetOtherAccountMetadataResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetOtherAccountMetadata(GetOtherAccountMetadataRequest) GetOtherAccountMetadataResponse
+}
