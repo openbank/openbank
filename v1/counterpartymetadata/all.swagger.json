@@ -1,0 +1,3667 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Counterparty Metadata API",
+    "description": "Provides the access and availability to the counterparty metadata API.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata": {
+      "get": {
+        "summary": "Retrieve other account metadata information",
+        "description": "Retrieve information about the other account metadata specified by the ID",
+        "operationId": "GetOtherAccountMetadata",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetOtherAccountMetadataResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location": {
+      "get": {
+        "summary": "Retrieve corporate location information",
+        "description": "Retrieve information about the corporate location specified by the ID",
+        "operationId": "GetCorporateLocation",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a corporate location",
+        "description": "Permanently delete a corporate location.",
+        "operationId": "DeleteCorporateLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "CorporateLocation successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a corporate_location",
+        "description": "Creates a new corporate_location and returns the object.",
+        "operationId": "CreateCorporateLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreateCorporateLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a corporate location",
+        "description": "Updates a corporate location's information",
+        "operationId": "UpdateCorporateLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+            }
+          },
+          "204": {
+            "description": "CorporateLocation successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdateCorporateLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations": {
+      "get": {
+        "summary": "Retrieve all available corporate locations",
+        "description": "Retrieve information regarding all available corporate locations.",
+        "operationId": "GetCorporateLocations",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetCorporateLocationsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url": {
+      "get": {
+        "summary": "Retrieve image url information",
+        "description": "Retrieve information about the image url specified by the ID",
+        "operationId": "GetImageURL",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataImageURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a image url",
+        "description": "Permanently delete a image url.",
+        "operationId": "DeleteImageURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "ImageURL successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a image_url",
+        "description": "Creates a new image_url and returns the object.",
+        "operationId": "CreateImageURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataImageURL"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataImageURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreateImageURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a image url",
+        "description": "Updates a image url's information",
+        "operationId": "UpdateImageURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataImageURL"
+            }
+          },
+          "204": {
+            "description": "ImageURL successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataImageURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdateImageURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls": {
+      "get": {
+        "summary": "Retrieve all available image urls",
+        "description": "Retrieve information regarding all available image urls.",
+        "operationId": "GetImageURLs",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetImageURLsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info": {
+      "get": {
+        "summary": "Retrieve more info information",
+        "description": "Retrieve information about the more info specified by the ID",
+        "operationId": "GetMoreInfo",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataMoreInfo"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a more info",
+        "description": "Permanently delete a more info.",
+        "operationId": "DeleteMoreInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "MoreInfo successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a more_info",
+        "description": "Creates a new more_info and returns the object.",
+        "operationId": "CreateMoreInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataMoreInfo"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataMoreInfo"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreateMoreInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a more info",
+        "description": "Updates a more info's information",
+        "operationId": "UpdateMoreInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataMoreInfo"
+            }
+          },
+          "204": {
+            "description": "MoreInfo successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataMoreInfo"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdateMoreInfoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos": {
+      "get": {
+        "summary": "Retrieve all available more infos",
+        "description": "Retrieve information regarding all available more infos.",
+        "operationId": "GetMoreInfos",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetMoreInfosResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url": {
+      "get": {
+        "summary": "Retrieve open corporates url information",
+        "description": "Retrieve information about the open corporates url specified by the ID",
+        "operationId": "GetOpenCorporatesURL",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a open corporates url",
+        "description": "Permanently delete a open corporates url.",
+        "operationId": "DeleteOpenCorporatesURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "OpenCorporatesURL successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a open_corporates_url",
+        "description": "Creates a new open_corporates_url and returns the object.",
+        "operationId": "CreateOpenCorporatesURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreateOpenCorporatesURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a open corporates url",
+        "description": "Updates a open corporates url's information",
+        "operationId": "UpdateOpenCorporatesURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
+            }
+          },
+          "204": {
+            "description": "OpenCorporatesURL successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdateOpenCorporatesURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls": {
+      "get": {
+        "summary": "Retrieve all available open corporates urls",
+        "description": "Retrieve information regarding all available open corporates urls.",
+        "operationId": "GetOpenCorporatesURLs",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetOpenCorporatesURLsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location": {
+      "get": {
+        "summary": "Retrieve physical location information",
+        "description": "Retrieve information about the physical location specified by the ID",
+        "operationId": "GetPhysicalLocation",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a physical location",
+        "description": "Permanently delete a physical location.",
+        "operationId": "DeletePhysicalLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "PhysicalLocation successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a physical_location",
+        "description": "Creates a new physical_location and returns the object.",
+        "operationId": "CreatePhysicalLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreatePhysicalLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a physical location",
+        "description": "Updates a physical location's information",
+        "operationId": "UpdatePhysicalLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+            }
+          },
+          "204": {
+            "description": "PhysicalLocation successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdatePhysicalLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations": {
+      "get": {
+        "summary": "Retrieve all available physical locations",
+        "description": "Retrieve information regarding all available physical locations.",
+        "operationId": "GetPhysicalLocations",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetPhysicalLocationsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias": {
+      "get": {
+        "summary": "Retrieve private alias information",
+        "description": "Retrieve information about the private alias specified by the ID",
+        "operationId": "GetPrivateAlias",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPrivateAlias"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a private alias",
+        "description": "Permanently delete a private alias.",
+        "operationId": "DeletePrivateAlias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "PrivateAlias successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a private_alias",
+        "description": "Creates a new private_alias and returns the object.",
+        "operationId": "CreatePrivateAlias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPrivateAlias"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPrivateAlias"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreatePrivateAliasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a private alias",
+        "description": "Updates a private alias's information",
+        "operationId": "UpdatePrivateAlias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPrivateAlias"
+            }
+          },
+          "204": {
+            "description": "PrivateAlias successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPrivateAlias"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdatePrivateAliasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases": {
+      "get": {
+        "summary": "Retrieve all available private aliases",
+        "description": "Retrieve information regarding all available private aliases.",
+        "operationId": "GetPrivateAliases",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetPrivateAliasesResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias": {
+      "get": {
+        "summary": "Retrieve public alias information",
+        "description": "Retrieve information about the public alias specified by the ID",
+        "operationId": "GetPublicAlias",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPublicAlias"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a public alias",
+        "description": "Permanently delete a public alias.",
+        "operationId": "DeletePublicAlias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "PublicAlias successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a public_alias",
+        "description": "Creates a new public_alias and returns the object.",
+        "operationId": "CreatePublicAlias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPublicAlias"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPublicAlias"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreatePublicAliasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a public alias",
+        "description": "Updates a public alias's information",
+        "operationId": "UpdatePublicAlias",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPublicAlias"
+            }
+          },
+          "204": {
+            "description": "PublicAlias successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataPublicAlias"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdatePublicAliasRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases": {
+      "get": {
+        "summary": "Retrieve all available public aliases",
+        "description": "Retrieve information regarding all available public aliases.",
+        "operationId": "GetPublicAliases",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetPublicAliasesResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url": {
+      "get": {
+        "summary": "Retrieve url information",
+        "description": "Retrieve information about the url specified by the ID",
+        "operationId": "GetURL",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a url",
+        "description": "Permanently delete a url.",
+        "operationId": "DeleteURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "URL successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a url",
+        "description": "Creates a new url and returns the object.",
+        "operationId": "CreateURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataURL"
+            }
+          },
+          "201": {
+            "description": "Corporate Location created successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataCreateURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a url",
+        "description": "Updates a url's information",
+        "operationId": "UpdateURL",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataURL"
+            }
+          },
+          "204": {
+            "description": "URL successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataURL"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataUpdateURLRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls": {
+      "get": {
+        "summary": "Retrieve all available urls",
+        "description": "Retrieve information regarding all available urls.",
+        "operationId": "GetURLs",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/counterpartymetadataGetURLsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "description": "BankID is the bank identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OtherAccountID",
+            "description": "OtherAccountID is the other_account identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Counterparty Metadata"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "counterpartymetadataCorporateLocation": {
+      "type": "object",
+      "properties": {
+        "Location": {
+          "$ref": "#/definitions/typesLocation"
+        }
+      }
+    },
+    "counterpartymetadataCreateCorporateLocationRequest": {
+      "type": "object",
+      "properties": {
+        "CorporateLocation": {
+          "$ref": "#/definitions/counterpartymetadataCorporateLocation",
+          "description": "CorporateLocation is the corporate_location metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreateImageURLRequest": {
+      "type": "object",
+      "properties": {
+        "ImageURL": {
+          "$ref": "#/definitions/counterpartymetadataImageURL",
+          "description": "ImageURL is the image_url metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreateMoreInfoRequest": {
+      "type": "object",
+      "properties": {
+        "MoreInfo": {
+          "$ref": "#/definitions/counterpartymetadataMoreInfo",
+          "description": "MoreInfo is the more_info metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreateOpenCorporatesURLRequest": {
+      "type": "object",
+      "properties": {
+        "OpenCorporatesURL": {
+          "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL",
+          "description": "OpenCorporatesURL is the open_corporates_url metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreatePhysicalLocationRequest": {
+      "type": "object",
+      "properties": {
+        "PhysicalLocation": {
+          "$ref": "#/definitions/counterpartymetadataPhysicalLocation",
+          "description": "PhysicalLocation is the physical_location metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreatePrivateAliasRequest": {
+      "type": "object",
+      "properties": {
+        "PrivateAlias": {
+          "$ref": "#/definitions/counterpartymetadataPublicAlias",
+          "description": "PrivateAlias is the private_alias metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreatePublicAliasRequest": {
+      "type": "object",
+      "properties": {
+        "PublicAlias": {
+          "$ref": "#/definitions/counterpartymetadataPublicAlias",
+          "description": "PublicAlias is the public_alias metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataCreateURLRequest": {
+      "type": "object",
+      "properties": {
+        "URL": {
+          "$ref": "#/definitions/counterpartymetadataURL",
+          "description": "URL is the url metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetCorporateLocationsResponse": {
+      "type": "object",
+      "properties": {
+        "CorporateLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+          },
+          "description": "CorporateLocations is the list of corporate_locations."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetImageURLsResponse": {
+      "type": "object",
+      "properties": {
+        "ImageURLs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataImageURL"
+          },
+          "description": "ImageURLs is the list of image_urls."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetMoreInfosResponse": {
+      "type": "object",
+      "properties": {
+        "MoreInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataMoreInfo"
+          },
+          "description": "MoreInfos is the list of more_infos."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetOpenCorporatesURLsResponse": {
+      "type": "object",
+      "properties": {
+        "OpenCorporatesURLs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
+          },
+          "description": "OpenCorporatesURLs is the list of open_corporates_urls."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetOtherAccountMetadataResponse": {
+      "type": "object",
+      "properties": {
+        "PublicAlias": {
+          "type": "string"
+        },
+        "PrivateAlias": {
+          "type": "string"
+        },
+        "MoreInfo": {
+          "type": "string"
+        },
+        "URL": {
+          "type": "string"
+        },
+        "ImageURL": {
+          "type": "string"
+        },
+        "OpenCorporatesURL": {
+          "type": "string"
+        },
+        "CorporateLocation": {
+          "$ref": "#/definitions/counterpartymetadataCorporateLocation"
+        },
+        "PhysicalLocation": {
+          "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+        }
+      }
+    },
+    "counterpartymetadataGetPhysicalLocationsResponse": {
+      "type": "object",
+      "properties": {
+        "PhysicalLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
+          },
+          "description": "PhysicalLocations is the list of physical_locations."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetPrivateAliasesResponse": {
+      "type": "object",
+      "properties": {
+        "PrivateAliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataPublicAlias"
+          },
+          "description": "PrivateAliases is the list of private_aliases."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetPublicAliasesResponse": {
+      "type": "object",
+      "properties": {
+        "PublicAliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataPublicAlias"
+          },
+          "description": "PublicAliases is the list of public_aliases."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataGetURLsResponse": {
+      "type": "object",
+      "properties": {
+        "URLs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/counterpartymetadataURL"
+          },
+          "description": "URLs is the list of urls."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataImageURL": {
+      "type": "object",
+      "properties": {
+        "URL": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartymetadataMoreInfo": {
+      "type": "object",
+      "properties": {
+        "MoreInfo": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartymetadataOpenCorporatesURL": {
+      "type": "object",
+      "properties": {
+        "URL": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartymetadataPhysicalLocation": {
+      "type": "object",
+      "properties": {
+        "Location": {
+          "$ref": "#/definitions/typesLocation"
+        }
+      }
+    },
+    "counterpartymetadataPrivateAlias": {
+      "type": "object",
+      "properties": {
+        "Alias": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartymetadataPublicAlias": {
+      "type": "object",
+      "properties": {
+        "Alias": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartymetadataURL": {
+      "type": "object",
+      "properties": {
+        "URL": {
+          "type": "string"
+        }
+      }
+    },
+    "counterpartymetadataUpdateCorporateLocationRequest": {
+      "type": "object",
+      "properties": {
+        "CorporateLocation": {
+          "$ref": "#/definitions/counterpartymetadataCorporateLocation",
+          "description": "CorporateLocation is the corporate_location metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdateImageURLRequest": {
+      "type": "object",
+      "properties": {
+        "ImageURL": {
+          "$ref": "#/definitions/counterpartymetadataImageURL",
+          "description": "ImageURL is the image_url metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdateMoreInfoRequest": {
+      "type": "object",
+      "properties": {
+        "MoreInfo": {
+          "$ref": "#/definitions/counterpartymetadataMoreInfo",
+          "description": "MoreInfo is the more_info metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdateOpenCorporatesURLRequest": {
+      "type": "object",
+      "properties": {
+        "OpenCorporatesURL": {
+          "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL",
+          "description": "OpenCorporatesURL is the open_corporates_url metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdatePhysicalLocationRequest": {
+      "type": "object",
+      "properties": {
+        "PhysicalLocation": {
+          "$ref": "#/definitions/counterpartymetadataPhysicalLocation",
+          "description": "PhysicalLocation is the physical_location metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdatePrivateAliasRequest": {
+      "type": "object",
+      "properties": {
+        "PrivateAlias": {
+          "$ref": "#/definitions/counterpartymetadataPublicAlias",
+          "description": "PrivateAlias is the private_alias metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdatePublicAliasRequest": {
+      "type": "object",
+      "properties": {
+        "PublicAlias": {
+          "$ref": "#/definitions/counterpartymetadataPublicAlias",
+          "description": "PublicAlias is the public_alias metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "counterpartymetadataUpdateURLRequest": {
+      "type": "object",
+      "properties": {
+        "URL": {
+          "$ref": "#/definitions/counterpartymetadataURL",
+          "description": "URL is the url metadata made on a other_account."
+        },
+        "BankID": {
+          "type": "string",
+          "description": "BankID is the bank identifier."
+        },
+        "AccountID": {
+          "type": "string",
+          "description": "AccountID is the account identifier."
+        },
+        "OtherAccountID": {
+          "type": "string",
+          "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "typesLocation": {
+      "type": "object",
+      "properties": {
+        "Latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
+        },
+        "Longitude": {
+          "type": "number",
+          "format": "double",
+          "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+        }
+      },
+      "description": "Location is An object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude.\nValues must be within normalized ranges.\nRefer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to counterparty metadata resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
