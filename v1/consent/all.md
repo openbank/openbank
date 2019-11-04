@@ -206,9 +206,9 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all accounts
+## List all consents
 
-Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
+Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.
 
 ```sh
 curl -X GET \

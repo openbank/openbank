@@ -36,7 +36,7 @@
 //                         "OAuth2": openapiv2.SecurityScheme{
 //                                 Type:             openapiv2.TYPE_OAUTH2,
 //                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
-//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 Description:      "Access to consent resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
 //                                 AuthorizationURL: "/v1/auth",
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
@@ -103,13 +103,14 @@ type CreateConsentSMSRequest struct {
 	PhoneNumber string `pb:"4" json:"phone_number"`
 }
 
-// GetconsentsRequest
+// GetConsentsRequest
 type GetConsentsRequest struct {
-	BankID string `pb:"1" json:"bank_id"`
+	BankID            string `pb:"1" json:"bank_id"`
+	NexeStartingIndex string `pb:"2" json:"next_starting_index"`
 }
 
-// GetconsentsResponse
-type GetconsentsResponse struct {
+// GetConsentsResponse
+type GetConsentsResponse struct {
 	Consents []Consent `pb:"1" json:"consents"`
 }
 
@@ -137,7 +138,7 @@ type ConsentService interface {
 	//                         Description: "Answered the consent request challenge",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/consentsConsent",
+	//                                         Ref: "#/definitions/consentConsent",
 	//                                 },
 	//                         },
 	//                 },
@@ -172,7 +173,7 @@ type ConsentService interface {
 	//                         Description: "Email consent created successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/consentsConsent",
+	//                                         Ref: "#/definitions/consentConsent",
 	//                                 },
 	//                         },
 	//                 },
@@ -207,7 +208,7 @@ type ConsentService interface {
 	//                         Description: "SMS consent created successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/consentsConsent",
+	//                                         Ref: "#/definitions/consentConsent",
 	//                                 },
 	//                         },
 	//                 },
@@ -234,14 +235,14 @@ type ConsentService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Consent"},
-	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
-	//         Summary:     "List all accounts",
+	//         Description: "Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.",
+	//         Summary:     "List all consents",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
 	//                         Description: "Request executed successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/consentsGetConsentsResponse",
+	//                                         Ref: "#/definitions/consentGetConsentsResponse",
 	//                                 },
 	//                         },
 	//                 },
@@ -258,7 +259,7 @@ type ConsentService interface {
 	//                 },
 	//         },
 	// }
-	GetConsents(GetConsentsRequest) GetconsentsResponse
+	GetConsents(GetConsentsRequest) GetConsentsResponse
 
 	// RevokeConsent revokes the consent
 	//
@@ -276,7 +277,7 @@ type ConsentService interface {
 	//                         Description: "Consent revoked successfully.",
 	//                         Schema: openapiv2.Schema{
 	//                                 JSONSchema: openapiv2.JSONSchema{
-	//                                         Ref: "#/definitions/consentsConsent",
+	//                                         Ref: "#/definitions/consentConsent",
 	//                                 },
 	//                         },
 	//                 },
