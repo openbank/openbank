@@ -1,6 +1,6 @@
-# Consumer API v1.0.0
+# Account Public API v1.0.0
 
-Provides create and read operations on the consumer resource.
+Provides create and read operations on the account public resource.
 
 * Host ``
 

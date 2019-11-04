@@ -1,8 +1,8 @@
 // +gunk openapiv2.Swagger{
 //         Swagger: "2.0",
 //         Info: openapiv2.Info{
-//                 Title:       "Consumer API",
-//                 Description: "Provides create and read operations on the consumer resource.",
+//                 Title:       "Account Public API",
+//                 Description: "Provides create and read operations on the account public resource.",
 //                 Version:     "1.0.0",
 //         },
 //         Schemes: []openapiv2.SwaggerScheme{
