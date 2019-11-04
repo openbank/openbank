@@ -1,0 +1,345 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Consumer API",
+    "description": "Provides create and read operations on the consumer resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/accounts/public": {
+      "get": {
+        "summary": "Get public account at all banks.",
+        "description": "Return public account at all banks.",
+        "operationId": "GetPublicAccountAtAllBanks",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountpublicGetPublicAccountAtAllBanksResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Public Accounts"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/accounts/public": {
+      "get": {
+        "summary": "Get bank public account.",
+        "description": "Return customer public account for specific bank.",
+        "operationId": "GetBankPublicAccount",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountpublicGetBankPublicAccountResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Public Accounts"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account": {
+      "get": {
+        "summary": "Get Public Account By ID.",
+        "description": "Return customer public account for specific bank.",
+        "operationId": "GetPublicAccountByID",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountpublicGetPublicAccountByIDResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "AccountID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "ViewID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Public Accounts"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "accountpublicAccountRouting": {
+      "type": "object",
+      "properties": {
+        "Scheme": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpublicAccountRule": {
+      "type": "object",
+      "properties": {
+        "Scheme": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpublicGetBankPublicAccountResponse": {
+      "type": "object",
+      "properties": {
+        "Accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountpublicPublicAccount"
+          }
+        }
+      }
+    },
+    "accountpublicGetPublicAccountAtAllBanksResponse": {
+      "type": "object",
+      "properties": {
+        "Accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountpublicPublicAccount"
+          }
+        }
+      }
+    },
+    "accountpublicGetPublicAccountByIDResponse": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        },
+        "Label": {
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "Owners": {
+          "$ref": "#/definitions/accountpublicOwner"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Balance": {
+          "$ref": "#/definitions/typesAmount"
+        },
+        "AccountRoutings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountpublicAccountRouting"
+          }
+        },
+        "AccountRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountpublicAccountRule"
+          }
+        }
+      }
+    },
+    "accountpublicOwner": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Provider": {
+          "type": "string"
+        },
+        "DisplayName": {
+          "type": "string"
+        }
+      }
+    },
+    "accountpublicPublicAccount": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "Label": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        },
+        "ViewsAvailable": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountpublicViewAvailable"
+          }
+        }
+      }
+    },
+    "accountpublicViewAvailable": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string"
+        },
+        "ShortName": {
+          "type": "string"
+        },
+        "IsPublic": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

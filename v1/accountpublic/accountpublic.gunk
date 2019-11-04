@@ -1,0 +1,225 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Consumer API",
+//                 Description: "Provides create and read operations on the consumer resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package accountpublic
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	types "github.com/openbank/openbank/v1/types"
+)
+
+type Owner struct {
+	ID          string `pb:"1" json:"id"`
+	Provider    string `pb:"2" json:"provider"`
+	DisplayName string `pb:"3" json:"display_name"`
+}
+
+type AccountRouting struct {
+	Scheme  string `pb:"1" json:"scheme"`
+	Address string `pb:"2" json:"address"`
+}
+
+type AccountRule struct {
+	Scheme string `pb:"1" json:"scheme"`
+	Value  string `pb:"2" json:"value"`
+}
+
+type GetPublicAccountByIDRequest struct {
+	BankID    int `pb:"1" json:"bank_id"`
+	AccountID int `pb:"2" json:"account_id"`
+	ViewID    int `pb:"3" json: view_id`
+}
+
+type GetPublicAccountByIDResponse struct {
+	ID              string           `pb:"1" json:"id"`
+	BankID          string           `pb:"2" json:"bank_id"`
+	Label           string           `pb:"3" json:"label"`
+	Number          string           `pb:"4" json:"number"`
+	Owners          Owner            `pb:"5" json:"owners"`
+	Type            string           `pb:"6" json:"type"`
+	Balance         types.Amount     `pb:"7" json:"balance"`
+	AccountRoutings []AccountRouting `pb:"8" json:"account_routings"`
+	AccountRules    []AccountRule    `pb:"9" json:"account_rules"`
+}
+
+type ViewAvailable struct {
+	ID        string `pb:"1" json:"id"`
+	ShortName string `pb:"2" json:"short_name"`
+	IsPublic  bool   `pb:"3" json:"is_public"`
+}
+
+type PublicAccount struct {
+	ID             string          `pb:"1" json:"id"`
+	Label          string          `pb:"2" json:"label"`
+	BankID         string          `pb:"3" json:"bank_id"`
+	ViewsAvailable []ViewAvailable `pb:"4" json:"views_available"`
+}
+
+type GetBankPublicAccountRequest struct {
+	BankID string `pb:"1" json:"bank_id"`
+}
+
+type GetBankPublicAccountResponse struct {
+	Accounts []PublicAccount `pb:"1" json:"accounts"`
+}
+
+type GetPublicAccountAtAllBanksResponse struct {
+	Accounts []PublicAccount `pb:"1" json:"accounts"`
+}
+
+// AccountPublicService provides public account operations.
+type AccountPublicService interface {
+	// GetPublicAccountByID
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Public Accounts"},
+	//         Description: "Return customer public account for specific bank.",
+	//         Summary:     "Get Public Account By ID.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountpublicGetPublicAccountByIDResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPublicAccountByID(GetPublicAccountByIDRequest) GetPublicAccountByIDResponse
+
+	// GetBankPublicAccount
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/accounts/public",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Public Accounts"},
+	//         Description: "Return customer public account for specific bank.",
+	//         Summary:     "Get bank public account.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountpublicGetBankPublicAccountResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetBankPublicAccount(GetBankPublicAccountRequest) GetBankPublicAccountResponse
+
+	// GetPublicAccountAtAllBanks
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/accounts/public",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Public Accounts"},
+	//         Description: "Return public account at all banks.",
+	//         Summary:     "Get public account at all banks.",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/accountpublicGetPublicAccountAtAllBanksResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetPublicAccountAtAllBanks() GetPublicAccountAtAllBanksResponse
+}
