@@ -128,7 +128,7 @@ type AccountPublicService interface {
 	//         Path:   "/v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Public Accounts"},
+	//         Tags:        []string{"Account Public"},
 	//         Description: "Return customer public account for specific bank.",
 	//         Summary:     "Get Public Account By ID.",
 	//         Responses: map[string]openapiv2.Response{
@@ -162,7 +162,7 @@ type AccountPublicService interface {
 	//         Path:   "/v1/banks/{BankID}/accounts/public",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Public Accounts"},
+	//         Tags:        []string{"Account Public"},
 	//         Description: "Return customer public account for specific bank.",
 	//         Summary:     "Get bank public account.",
 	//         Responses: map[string]openapiv2.Response{
@@ -196,7 +196,7 @@ type AccountPublicService interface {
 	//         Path:   "/v1/accounts/public",
 	// }
 	// +gunk openapiv2.Operation{
-	//         Tags:        []string{"Public Accounts"},
+	//         Tags:        []string{"Account Public"},
 	//         Description: "Return public account at all banks.",
 	//         Summary:     "Get public account at all banks.",
 	//         Responses: map[string]openapiv2.Response{
