@@ -16,10 +16,10 @@ msgstr  "Project-Id-Version: %s\n"
 		"Content-Type: text/plain; charset=CHARSET\n"
 		"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Base Path"
+msgid "Account Public API"
 msgstr ""
 
-msgid "Consumer API"
+msgid "Base Path"
 msgstr ""
 
 msgid "Cur is the currency of the amount."
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Objects"
 msgstr ""
 
-msgid "Provides create and read operations on the consumer resource."
+msgid "Provides create and read operations on the account public resource."
 msgstr ""
 
 msgid "Query Parameters"
