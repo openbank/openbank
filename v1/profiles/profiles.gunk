@@ -57,7 +57,7 @@ import (
 	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/openapiv2"
 
-	accounts "github.com/openbank/openbank/v1/accounts"
+	account "github.com/openbank/openbank/v1/account"
 	types "github.com/openbank/openbank/v1/types"
 )
 
@@ -69,7 +69,7 @@ type GetProfileRequest struct {
 // GetProfileResponse is the response message for retrieving customer profiles.
 type GetProfileResponse struct {
 	Profile  types.Profile      `pb:"1" json:"profile"`
-	Accounts []accounts.Account `pb:"2" json:"accounts"`
+	Accounts []account.Account `pb:"2" json:"accounts"`
 }
 
 // GetProfileCardsRequest is the request message for retrieving customer cards.
