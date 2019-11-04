@@ -17,14 +17,14 @@
   "paths": {
     "/v1/banks/{BankID}/consents": {
       "get": {
-        "summary": "List all accounts",
-        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+        "summary": "List all consents",
+        "description": "Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.",
         "operationId": "GetConsents",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
             "schema": {
-              "$ref": "#/definitions/consentsGetConsentsResponse"
+              "$ref": "#/definitions/consentGetConsentsResponse"
             }
           },
           "400": {
@@ -53,6 +53,12 @@
             "name": "BankID",
             "in": "path",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "NexeStartingIndex",
+            "in": "query",
+            "required": false,
             "type": "string"
           }
         ],
@@ -83,7 +89,7 @@
           "201": {
             "description": "Email consent created successfully.",
             "schema": {
-              "$ref": "#/definitions/consentsConsent"
+              "$ref": "#/definitions/consentConsent"
             }
           },
           "400": {
@@ -150,7 +156,7 @@
           "201": {
             "description": "SMS consent created successfully.",
             "schema": {
-              "$ref": "#/definitions/consentsConsent"
+              "$ref": "#/definitions/consentConsent"
             }
           },
           "400": {
@@ -217,7 +223,7 @@
           "201": {
             "description": "Answered the consent request challenge",
             "schema": {
-              "$ref": "#/definitions/consentsConsent"
+              "$ref": "#/definitions/consentConsent"
             }
           },
           "400": {
@@ -290,7 +296,7 @@
           "201": {
             "description": "Consent revoked successfully.",
             "schema": {
-              "$ref": "#/definitions/consentsConsent"
+              "$ref": "#/definitions/consentConsent"
             }
           },
           "400": {
@@ -416,7 +422,7 @@
       },
       "title": "CreateConsentSMSRequest"
     },
-    "consentGetconsentsResponse": {
+    "consentGetConsentsResponse": {
       "type": "object",
       "properties": {
         "Consents": {
@@ -426,7 +432,7 @@
           }
         }
       },
-      "title": "GetconsentsResponse"
+      "title": "GetConsentsResponse"
     },
     "consentRevokeConsentRequest": {
       "type": "object",
@@ -460,7 +466,7 @@
   "securityDefinitions": {
     "OAuth2": {
       "type": "oauth2",
-      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "description": "Access to consent resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
       "flow": "accessCode",
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",

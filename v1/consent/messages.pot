@@ -61,7 +61,7 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-msgid "List all accounts"
+msgid "List all consents"
 msgstr ""
 
 msgid "Objects"
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
-msgid "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination."
+msgid "Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination."
 msgstr ""
 
 msgid "Revoke the  consent"
