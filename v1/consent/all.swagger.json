@@ -1,0 +1,473 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Consent API",
+    "description": "Provides CRUD operations on the consent part resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks/{BankID}/consents": {
+      "get": {
+        "summary": "List all accounts",
+        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+        "operationId": "GetConsents",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/consentsGetConsentsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Consent"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/consents/email": {
+      "post": {
+        "summary": "Create an email consent",
+        "description": "Creates a new email consent",
+        "operationId": "CreateConsentEmail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/consentConsent"
+            }
+          },
+          "201": {
+            "description": "Email consent created successfully.",
+            "schema": {
+              "$ref": "#/definitions/consentsConsent"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consentCreateConsentEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consent"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/consents/sms": {
+      "post": {
+        "summary": "Create an sms consent",
+        "description": "Creates a new sms consent",
+        "operationId": "CreateConsentSMS",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/consentConsent"
+            }
+          },
+          "201": {
+            "description": "SMS consent created successfully.",
+            "schema": {
+              "$ref": "#/definitions/consentsConsent"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consentCreateConsentSMSRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consent"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/consents/{ConsentID}/challenge": {
+      "post": {
+        "summary": "Answer the consent reqeust challenge",
+        "description": "Answer the consent request challenge",
+        "operationId": "AnswerConsentChallenge",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/consentConsent"
+            }
+          },
+          "201": {
+            "description": "Answered the consent request challenge",
+            "schema": {
+              "$ref": "#/definitions/consentsConsent"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ConsentID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consentAnswerConsentChallengeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consent"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/consents/{ConsentID}/revoke": {
+      "post": {
+        "summary": "Revoke the  consent",
+        "description": "Revoke the consent",
+        "operationId": "RevokeConsent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/consentConsent"
+            }
+          },
+          "201": {
+            "description": "Consent revoked successfully.",
+            "schema": {
+              "$ref": "#/definitions/consentsConsent"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ConsentID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/consentRevokeConsentRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Consent"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "consentAnswerConsentChallengeRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "ConsentID": {
+          "type": "string"
+        },
+        "Answer": {
+          "type": "string"
+        }
+      },
+      "title": "AnswerConsentChallengeRequest is a request mesasge to answer consent challenge request"
+    },
+    "consentConsent": {
+      "type": "object",
+      "properties": {
+        "ConsentID": {
+          "type": "string"
+        },
+        "Jwt": {
+          "type": "string"
+        },
+        "Status": {
+          "$ref": "#/definitions/consentStatus"
+        }
+      },
+      "title": "Consent is a response mesasge"
+    },
+    "consentCreateConsentEmailRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "For": {
+          "type": "string"
+        },
+        "View": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        }
+      },
+      "title": "CreateConsentEmailRequest"
+    },
+    "consentCreateConsentSMSRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "For": {
+          "type": "string"
+        },
+        "View": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        }
+      },
+      "title": "CreateConsentSMSRequest"
+    },
+    "consentGetconsentsResponse": {
+      "type": "object",
+      "properties": {
+        "Consents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/consentConsent"
+          }
+        }
+      },
+      "title": "GetconsentsResponse"
+    },
+    "consentRevokeConsentRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "ConsentID": {
+          "type": "string"
+        }
+      },
+      "title": "RevokeConsentRequest"
+    },
+    "consentStatus": {
+      "type": "string",
+      "enum": [
+        "UnknownStatus",
+        "INITIATED",
+        "ACCEPTED",
+        "REJECTED",
+        "REVOKED",
+        "RECEIVED",
+        "VALID",
+        "REVOKEDBYPSU",
+        "EXPIRED",
+        "TERMINATEDBYTPP"
+      ],
+      "default": "UnknownStatus"
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
