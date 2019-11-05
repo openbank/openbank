@@ -1,0 +1,421 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Product Collection API",
+    "description": "Provides CRUD operations on the Product Collection resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks/{BankID}/product-collections/{CollectionCode}": {
+      "get": {
+        "summary": "Retrieve product collection information",
+        "description": "Retrieve information about the product specified by the ID",
+        "operationId": "GetProductCollection",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/productcollectionProductCollection"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CollectionCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product Collection"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a product collection",
+        "description": "Permanently delete a product collection.",
+        "operationId": "DeleteProductCollection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "ProductCollection successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CollectionCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product Collection"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a product collection",
+        "description": "Creates a new product collection and returns the object.",
+        "operationId": "CreateProductCollection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productcollectionProductCollection"
+            }
+          },
+          "201": {
+            "description": "ProductCollection created successfully.",
+            "schema": {
+              "$ref": "#/definitions/productcollectionProductCollection"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CollectionCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productcollectionCreateProductCollectionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product Collection"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a product collection",
+        "description": "Updates a product collection's information",
+        "operationId": "UpdateProductCollection",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productcollectionProductCollection"
+            }
+          },
+          "204": {
+            "description": "ProductCollection successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/productcollectionProductCollection"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "CollectionCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productcollectionUpdateProductCollectionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product Collection"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "productAttributeType": {
+      "type": "string",
+      "enum": [
+        "UnknownType",
+        "STRING",
+        "INTEGER",
+        "DOUBLE",
+        "DATE_WITH_DAY"
+      ],
+      "default": "UnknownType"
+    },
+    "productMetadata": {
+      "type": "object",
+      "properties": {
+        "License": {
+          "type": "string"
+        }
+      }
+    },
+    "productProduct": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "ParentProductCode": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Category": {
+          "type": "string"
+        },
+        "Family": {
+          "type": "string"
+        },
+        "SuperFamily": {
+          "type": "string"
+        },
+        "MoreInfoURL": {
+          "type": "string"
+        },
+        "Details": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Meta": {
+          "$ref": "#/definitions/productMetadata"
+        },
+        "ProductAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductAttribute"
+          }
+        }
+      }
+    },
+    "productProductAttribute": {
+      "type": "object",
+      "properties": {
+        "ProductCode": {
+          "type": "string"
+        },
+        "ProductAttributeID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/productAttributeType"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "productcollectionCreateProductCollectionRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CollectionCode": {
+          "type": "string"
+        },
+        "ProductCollection": {
+          "$ref": "#/definitions/productcollectionProductCollection"
+        }
+      }
+    },
+    "productcollectionProductCollection": {
+      "type": "object",
+      "properties": {
+        "CollectionCode": {
+          "type": "string"
+        },
+        "Products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProduct"
+          }
+        }
+      }
+    },
+    "productcollectionUpdateProductCollectionRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "CollectionCode": {
+          "type": "string"
+        },
+        "ProductCollection": {
+          "$ref": "#/definitions/productcollectionProductCollection"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}
