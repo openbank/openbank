@@ -1,0 +1,791 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Product API",
+    "description": "Provides CRUD operations on the Product resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks/{BankID}/products": {
+      "get": {
+        "summary": "Retrieve all available products",
+        "description": "Retrieve information regarding all available products.",
+        "operationId": "GetProducts",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/productGetProductsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/products/{ProductCode}": {
+      "get": {
+        "summary": "Retrieve product information",
+        "description": "Retrieve information about the product specified by the ID",
+        "operationId": "GetProduct",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/productProduct"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a product",
+        "description": "Permanently delete a product.",
+        "operationId": "DeleteProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Product successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a product",
+        "description": "Creates a new product and returns the object.",
+        "operationId": "CreateProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productProduct"
+            }
+          },
+          "201": {
+            "description": "Product created successfully.",
+            "schema": {
+              "$ref": "#/definitions/productProduct"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productCreateProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a product",
+        "description": "Updates a product's information",
+        "operationId": "UpdateProduct",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productProduct"
+            }
+          },
+          "204": {
+            "description": "Product successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/productProduct"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productUpdateProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}": {
+      "get": {
+        "summary": "Retrieve product attribute information",
+        "description": "Retrieve information about the product specified by the ID",
+        "operationId": "GetProductAttribute",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/productProductAttribute"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductAttributeID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a product attribute",
+        "description": "Permanently delete a product attribute.",
+        "operationId": "DeleteProductAttribute",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "ProductAttribute successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductAttributeID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a product attribute",
+        "description": "Creates a new product attribute and returns the object.",
+        "operationId": "CreateProductAttribute",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productProductAttribute"
+            }
+          },
+          "201": {
+            "description": "ProductAttribute created successfully.",
+            "schema": {
+              "$ref": "#/definitions/productProductAttribute"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductAttributeID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productCreateProductAttributeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a product attribute",
+        "description": "Updates a product attribute's information",
+        "operationId": "UpdateProductAttribute",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/productProductAttribute"
+            }
+          },
+          "204": {
+            "description": "ProductAttribute successfully updated.",
+            "schema": {
+              "$ref": "#/definitions/productProductAttribute"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductCode",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ProductAttributeID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productUpdateProductAttributeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "productAttributeType": {
+      "type": "string",
+      "enum": [
+        "UnknownType",
+        "STRING",
+        "INTEGER",
+        "DOUBLE",
+        "DATE_WITH_DAY"
+      ],
+      "default": "UnknownType"
+    },
+    "productCreateProductAttributeRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "ProductCode": {
+          "type": "string"
+        },
+        "ProductAttributeID": {
+          "type": "string"
+        },
+        "ProductAttribute": {
+          "$ref": "#/definitions/productProductAttribute"
+        }
+      }
+    },
+    "productCreateProductRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "ProductCode": {
+          "type": "string"
+        },
+        "Product": {
+          "$ref": "#/definitions/productProduct"
+        }
+      }
+    },
+    "productGetProductsResponse": {
+      "type": "object",
+      "properties": {
+        "Products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProduct"
+          }
+        }
+      }
+    },
+    "productMetadata": {
+      "type": "object",
+      "properties": {
+        "License": {
+          "type": "string"
+        }
+      }
+    },
+    "productProduct": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "ParentProductCode": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Category": {
+          "type": "string"
+        },
+        "Family": {
+          "type": "string"
+        },
+        "SuperFamily": {
+          "type": "string"
+        },
+        "MoreInfoURL": {
+          "type": "string"
+        },
+        "Details": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Meta": {
+          "$ref": "#/definitions/productMetadata"
+        },
+        "ProductAttributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/productProductAttribute"
+          }
+        }
+      }
+    },
+    "productProductAttribute": {
+      "type": "object",
+      "properties": {
+        "ProductCode": {
+          "type": "string"
+        },
+        "ProductAttributeID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/productAttributeType"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "productUpdateProductAttributeRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "ProductCode": {
+          "type": "string"
+        },
+        "ProductAttributeID": {
+          "type": "string"
+        },
+        "ProductAttribute": {
+          "$ref": "#/definitions/productProductAttribute"
+        }
+      }
+    },
+    "productUpdateProductRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "ProductCode": {
+          "type": "string"
+        },
+        "Product": {
+          "$ref": "#/definitions/productProduct"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

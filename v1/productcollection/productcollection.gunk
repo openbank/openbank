@@ -1,0 +1,228 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Product Collection API",
+//                 Description: "Provides CRUD operations on the Product Collection resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package productcollection
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	product "github.com/openbank/openbank/v1/product"
+)
+
+
+type ProductCollection struct {
+	CollectionCode string    `pb:"1" json:"collection_code"`
+	Products       []product.Product `pb:"2" json:"products"`
+}
+
+type CreateProductCollectionRequest struct {
+	BankID            string            `pb:"1" json:"bank_id"`
+	CollectionCode    string            `pb:"2" json:"collection_code"`
+	ProductCollection ProductCollection `pb:"3" json:"product_collection"`
+}
+
+type UpdateProductCollectionRequest struct {
+	BankID            string            `pb:"1" json:"bank_id"`
+	CollectionCode    string            `pb:"2" json:"collection_code"`
+	ProductCollection ProductCollection `pb:"3" json:"product_collection"`
+}
+
+type DeleteProductCollectionRequest struct {
+	BankID         string `pb:"1" json:"bank_id"`
+	CollectionCode string `pb:"2" json:"collection_code"`
+}
+
+type GetProductCollectionRequest struct {
+	BankID         string `pb:"1" json:"bank_id"`
+	CollectionCode string `pb:"2" json:"collection_code"`
+}
+
+
+type ProductCollectionService interface {
+	// CreateProductCollection creates a new product collection.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/product-collections/{CollectionCode}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product Collection"},
+	//         Description: "Creates a new product collection and returns the object.",
+	//         Summary:     "Create a product collection",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "ProductCollection created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productcollectionProductCollection",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateProductCollection(CreateProductCollectionRequest) ProductCollection
+
+	// GetProductCollection retrieves the details of a specific product information, selected by its ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/product-collections/{CollectionCode}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product Collection"},
+	//         Description: "Retrieve information about the product specified by the ID",
+	//         Summary:     "Retrieve product collection information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productcollectionProductCollection",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProductCollection(GetProductCollectionRequest) ProductCollection
+
+	// UpdateProductCollection updates the product collection.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/product-collections/{CollectionCode}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product Collection"},
+	//         Description: "Updates a product collection's information",
+	//         Summary:     "Update a product collection",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "ProductCollection successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productcollectionProductCollection",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateProductCollection(UpdateProductCollectionRequest) ProductCollection
+
+	// DeleteProductCollection deletes a product collection.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/product-collections/{CollectionCode}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product Collection"},
+	//         Description: "Permanently delete a product collection.",
+	//         Summary:     "Delete a product collection",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "ProductCollection successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteProductCollection(DeleteProductCollectionRequest)
+}

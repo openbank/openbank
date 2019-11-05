@@ -1,0 +1,468 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Product API",
+//                 Description: "Provides CRUD operations on the Product resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package product
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+)
+
+type AttributeType int
+
+const (
+	UnknownType AttributeType = iota
+	STRING
+	INTEGER
+	DOUBLE
+	DATE_WITH_DAY
+)
+
+type License struct {
+	ID   string `pb:"1" json:"id"`
+	Name string `pb:"2" json:"name"`
+}
+
+type Metadata struct {
+	License string `pb:"1" json:"license"`
+}
+
+type ProductAttribute struct {
+	ProductCode        string        `pb:"1" json:"product_code"`
+	ProductAttributeID string        `pb:"2" json:"product_attribute_id"`
+	Name               string        `pb:"3" json:"name"`
+	Type               AttributeType `pb:"4" json:"type"`
+	Value              string        `pb:"5" json:"value"`
+}
+
+type Product struct {
+	BankID            string             `pb:"1" json:"bank_id"`
+	Code              string             `pb:"2" json:"code"`
+	ParentProductCode string             `pb:"3" json:"parent_product_code"`
+	Name              string             `pb:"4" json:"name"`
+	Category          string             `pb:"5" json:"category"`
+	Family            string             `pb:"6" json:"family"`
+	SuperFamily       string             `pb:"7" json:"super_family"`
+	MoreInfoURL       string             `pb:"8" json:"more_info_url"`
+	Details           string             `pb:"9" json:"details"`
+	Description       string             `pb:"10" json:"description"`
+	Meta              Metadata           `pb:"11" json:"meta"`
+	ProductAttributes []ProductAttribute `pb:"12" json:"product_attributes"`
+}
+
+type CreateProductRequest struct {
+	BankID      string  `pb:"1" json:"bank_id"`
+	ProductCode string  `pb:"2" json:"product_code"`
+	Product     Product `pb:"3" json:"product"`
+}
+
+type UpdateProductRequest struct {
+	BankID      string  `pb:"1" json:"bank_id"`
+	ProductCode string  `pb:"2" json:"product_code"`
+	Product     Product `pb:"3" json:"product"`
+}
+
+type DeleteProductRequest struct {
+	BankID      string `pb:"1" json:"bank_id"`
+	ProductCode string `pb:"2" json:"product_code"`
+}
+
+type GetProductRequest struct {
+	BankID      string `pb:"1" json:"bank_id"`
+	ProductCode string `pb:"2" json:"product_code"`
+}
+
+type GetProductsRequest struct {
+	BankID string `pb:"1" json:"bank_id"`
+}
+
+type GetProductsResponse struct {
+	Products []Product `pb:"1" json:"products"`
+}
+
+type CreateProductAttributeRequest struct {
+	BankID             string           `pb:"1" json:"bank_id"`
+	ProductCode        string           `pb:"2" json:"product_code"`
+	ProductAttributeID string           `pb:"3" json:"product_attribute_id"`
+	ProductAttribute   ProductAttribute `pb:"4" json:"product_attribute"`
+}
+
+type UpdateProductAttributeRequest struct {
+	BankID             string           `pb:"1" json:"bank_id"`
+	ProductCode        string           `pb:"2" json:"product_code"`
+	ProductAttributeID string           `pb:"3" json:"product_attribute_id"`
+	ProductAttribute   ProductAttribute `pb:"4" json:"product_attribute"`
+}
+
+type DeleteProductAttributeRequest struct {
+	BankID             string `pb:"1" json:"bank_id"`
+	ProductCode        string `pb:"2" json:"product_code"`
+	ProductAttributeID string `pb:"3" json:"product_attribute_id"`
+}
+
+type GetProductAttributeRequest struct {
+	BankID             string `pb:"1" json:"bank_id"`
+	ProductCode        string `pb:"2" json:"product_code"`
+	ProductAttributeID string `pb:"3" json:"product_attribute_id"`
+}
+
+type ProductService interface {
+	// CreateProduct creates a new product.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Creates a new product and returns the object.",
+	//         Summary:     "Create a product",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Product created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productProduct",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateProduct(CreateProductRequest) Product
+
+	// GetProduct retrieves the details of a specific product information, selected by its ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Retrieve information about the product specified by the ID",
+	//         Summary:     "Retrieve product information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productProduct",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProduct(GetProductRequest) Product
+
+	// GetProducts get all the available product.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/products",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Retrieve information regarding all available products.",
+	//         Summary:     "Retrieve all available products",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productGetProductsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProducts(GetProductsRequest) GetProductsResponse
+
+	// UpdateProduct updates the product.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Updates a product's information",
+	//         Summary:     "Update a product",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Product successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productProduct",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateProduct(UpdateProductRequest) Product
+
+	// DeleteProduct deletes a product.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Permanently delete a product.",
+	//         Summary:     "Delete a product",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Product successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteProduct(DeleteProductRequest)
+
+	// CreateProductAttribute creates a new product attribute.
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Creates a new product attribute and returns the object.",
+	//         Summary:     "Create a product attribute",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "ProductAttribute created successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productProductAttribute",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	CreateProductAttribute(CreateProductAttributeRequest) ProductAttribute
+
+	// GetProductAttribute retrieves the details of a specific product information, selected by its ID.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Retrieve information about the product specified by the ID",
+	//         Summary:     "Retrieve product attribute information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productProductAttribute",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProductAttribute(GetProductAttributeRequest) ProductAttribute
+
+	// UpdateProductAttribute updates the product attribute.
+	//
+	// +gunk http.Match{
+	//         Method: "PUT",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Updates a product attribute's information",
+	//         Summary:     "Update a product attribute",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "ProductAttribute successfully updated.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/productProductAttribute",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	UpdateProductAttribute(UpdateProductAttributeRequest) ProductAttribute
+
+	// DeleteProductAttribute deletes a product attribute.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Product"},
+	//         Description: "Permanently delete a product attribute.",
+	//         Summary:     "Delete a product attribute",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "ProductAttribute successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteProductAttribute(DeleteProductAttributeRequest)
+}
