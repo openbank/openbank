@@ -2,9 +2,12 @@
 
 Provides create and read operations on the branch resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create a branch
 

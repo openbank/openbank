@@ -2,9 +2,12 @@
 
 Provides CRUD operations on the transaction request resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Answer the transaction reqeust challenge
 

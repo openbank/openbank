@@ -2,9 +2,12 @@
 
 Provides create and read operations on the account public resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Get bank public account.
 

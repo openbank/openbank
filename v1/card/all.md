@@ -2,9 +2,12 @@
 
 Provides create and read operations on the card resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create new card
 

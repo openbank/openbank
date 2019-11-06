@@ -2,9 +2,12 @@
 
 Provides create and read operations on the account application resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create an account application
 

@@ -2,9 +2,12 @@
 
 Provides create and read operations on the KYC resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Add KYC check
 

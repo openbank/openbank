@@ -2,9 +2,12 @@
 
 Provides create and read operations on the customer resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Add address to the customer.
 

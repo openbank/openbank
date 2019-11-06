@@ -2,9 +2,12 @@
 
 Provides CRUD operations on the Profile resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Query profiles
 

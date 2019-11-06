@@ -2,9 +2,12 @@
 
 Provides create and read operations on the transaction resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Approve a pending transaction
 

@@ -36,7 +36,7 @@
 //                         "OAuth2": openapiv2.SecurityScheme{
 //                                 Type:             openapiv2.TYPE_OAUTH2,
 //                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
-//                                 Description:      "Access to transactions resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 Description:      "Access to fx resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
 //                                 AuthorizationURL: "/v1/auth",
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
