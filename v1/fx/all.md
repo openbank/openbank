@@ -2,9 +2,12 @@
 
 Provides create and read operations on the foreign exchange resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create a foreign exchange quote
 

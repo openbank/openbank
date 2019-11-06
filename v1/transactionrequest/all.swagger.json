@@ -1260,7 +1260,7 @@
   "securityDefinitions": {
     "OAuth2": {
       "type": "oauth2",
-      "description": "Access to accounts resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "description": "Access to transaction request resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
       "flow": "accessCode",
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",

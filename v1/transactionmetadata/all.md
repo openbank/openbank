@@ -2,9 +2,12 @@
 
 Provides the access and availability to the transaction metadata API.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Create a comment
 
