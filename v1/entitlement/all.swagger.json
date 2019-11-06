@@ -1,0 +1,862 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Entitlement API",
+    "description": "Provides CRUD operations on the entitlement part resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/banks/{BankID}/users/{UserID}/entitlements": {
+      "get": {
+        "summary": "Retrieve entitlement information",
+        "description": "Retrieve information about the entitlement specified by the User ID at bank",
+        "operationId": "GetEntitlementForUserAtBank",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlements"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "BankID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "UserID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/entitlement-requests": {
+      "get": {
+        "summary": "List all entitlements",
+        "description": "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+        "operationId": "GetAllEntitlementRequests",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlementRequests"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartingIndex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add an entitlement request for current user",
+        "description": "Add an entitlement request for current user",
+        "operationId": "AddEntitlementRequestForCurrentUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlementRequest"
+            }
+          },
+          "201": {
+            "description": "Add an entitlement request for current user",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlementRequest"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/entitlementAddEntitlementRequestForCurrentUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/entitlement-requests/{EntitlementRequestID}": {
+      "delete": {
+        "summary": "Delete a entitlement request",
+        "description": "Permanently delete an entitlement request.",
+        "operationId": "DeleteEntitlementRequest",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Entitlement request successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "EntitlementRequestID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/entitlements": {
+      "get": {
+        "summary": "List all entitlements",
+        "description": "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+        "operationId": "GetAllEntitlements",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlements"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartingIndex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/roles": {
+      "get": {
+        "summary": "List all entitlements",
+        "description": "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+        "operationId": "GetRoles",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementGetRolesResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "NextStartingIndex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/users/current/entitlement-requests": {
+      "get": {
+        "summary": "Retrieve entitlement request information",
+        "description": "Retrieve information about the entitlement request specified for current user",
+        "operationId": "GetEntitlementRequestForCurrentUser",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementGetEntitlementRequestForCurrentUserResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/users/current/entitlements": {
+      "get": {
+        "summary": "Retrieve entitlement information",
+        "description": "Retrieve information about the entitlement specified for current user",
+        "operationId": "GetEntitlementForCurrentUser",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlements"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/users/{UserID}/entitlement-requests": {
+      "get": {
+        "summary": "Retrieve entitlement request information",
+        "description": "Retrieve information about the entitlement request specified by the User ID",
+        "operationId": "GetEntitlementRequestForUser",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementGetEntitlementRequestForUserResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "UserID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/users/{UserID}/entitlements": {
+      "get": {
+        "summary": "Retrieve entitlement information",
+        "description": "Retrieve information about the entitlement specified by the User ID",
+        "operationId": "GetEntitlementForUser",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/entitlementEntitlements"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "UserID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add the entitlement request for user",
+        "description": "Add the entitlement entitlement request for user",
+        "operationId": "AddEntitlementRequestForUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/entitlementAddEntitlementRequestForUserResponse"
+            }
+          },
+          "201": {
+            "description": "Add the entitlement request for user",
+            "schema": {
+              "$ref": "#/definitions/entitlementAddEntitlementRequestForUserResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "UserID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/entitlementAddEntitlementRequestForUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/users/{UserID}/entitlements/{EntitlementID}": {
+      "delete": {
+        "summary": "Delete an entitlement",
+        "description": "Permanently delete an entitlement.",
+        "operationId": "DeleteEntitlement",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Entitlement successfully deleted.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "UserID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "EntitlementID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Entitlement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "entitlementAddEntitlementRequestForCurrentUserRequest": {
+      "type": "object",
+      "properties": {
+        "BankID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        }
+      }
+    },
+    "entitlementAddEntitlementRequestForUserRequest": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        }
+      }
+    },
+    "entitlementAddEntitlementRequestForUserResponse": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "EntitlementID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        }
+      }
+    },
+    "entitlementEntitlementRequest": {
+      "type": "object",
+      "properties": {
+        "EntitlementRequestID": {
+          "type": "string"
+        },
+        "User": {
+          "$ref": "#/definitions/entitlementUser"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        },
+        "Created": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "entitlementEntitlementRequests": {
+      "type": "object",
+      "properties": {
+        "EntitlementRequests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entitlementEntitlementRequest"
+          }
+        }
+      }
+    },
+    "entitlementEntitlements": {
+      "type": "object",
+      "properties": {
+        "List": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entitlementList"
+          }
+        }
+      }
+    },
+    "entitlementGetEntitlementRequestForCurrentUserResponse": {
+      "type": "object",
+      "properties": {
+        "EntitlementRequests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entitlementEntitlementRequest"
+          }
+        }
+      }
+    },
+    "entitlementGetEntitlementRequestForUserResponse": {
+      "type": "object",
+      "properties": {
+        "EntitlementRequests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entitlementEntitlementRequest"
+          }
+        }
+      }
+    },
+    "entitlementGetRolesResponse": {
+      "type": "object",
+      "properties": {
+        "Roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entitlementRoles"
+          }
+        }
+      }
+    },
+    "entitlementList": {
+      "type": "object",
+      "properties": {
+        "EntitlementID": {
+          "type": "string"
+        },
+        "RoleName": {
+          "type": "string"
+        },
+        "BankID": {
+          "type": "string"
+        }
+      }
+    },
+    "entitlementRoles": {
+      "type": "object",
+      "properties": {
+        "Role": {
+          "type": "string"
+        },
+        "RequiresBankID": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "entitlementUser": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "ProviderID": {
+          "type": "string"
+        },
+        "Provider": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        },
+        "Entitlements": {
+          "$ref": "#/definitions/entitlementEntitlements"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to entitlement resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "read": "Grants read access",
+        "write": "Grants write access"
+      }
+    }
+  }
+}

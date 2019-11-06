@@ -1,0 +1,125 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Add an entitlement request for current user"
+msgstr ""
+
+msgid "Add the entitlement entitlement request for user"
+msgstr ""
+
+msgid "Add the entitlement request for user"
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Body Parameters"
+msgstr ""
+
+msgid "Delete a entitlement request"
+msgstr ""
+
+msgid "Delete an entitlement"
+msgstr ""
+
+msgid "Entitlement API"
+msgstr ""
+
+msgid "Entitlement request successfully deleted."
+msgstr ""
+
+msgid "Entitlement successfully deleted."
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "List all entitlements"
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "Permanently delete an entitlement request."
+msgstr ""
+
+msgid "Permanently delete an entitlement."
+msgstr ""
+
+msgid "Provides CRUD operations on the entitlement part resource."
+msgstr ""
+
+msgid "Query Parameters"
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Retrieve entitlement information"
+msgstr ""
+
+msgid "Retrieve entitlement request information"
+msgstr ""
+
+msgid "Retrieve information about the entitlement request specified by the User ID"
+msgstr ""
+
+msgid "Retrieve information about the entitlement request specified for current user"
+msgstr ""
+
+msgid "Retrieve information about the entitlement specified by the User ID"
+msgstr ""
+
+msgid "Retrieve information about the entitlement specified by the User ID at bank"
+msgstr ""
+
+msgid "Retrieve information about the entitlement specified for current user"
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination."
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""

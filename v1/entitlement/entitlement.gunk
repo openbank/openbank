@@ -1,0 +1,583 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Entitlement API",
+//                 Description: "Provides CRUD operations on the entitlement part resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to entitlement resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "read":  "Grants read access",
+//                                                 "write": "Grants write access",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package entitlement
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+)
+
+type AddEntitlementRequestForCurrentUserRequest struct {
+	BankID   string `pb:"1" json:"bank_id"`
+	RoleName string `pb:"2" json:"role_name"`
+}
+
+type EntitlementRequest struct {
+	EntitlementRequestID string    `pb:"1" json:"entitlement_request_id"`
+	User                 User      `pb:"2" json:"user"`
+	RoleName             string    `pb:"3" json:"role_name"`
+	BankID               string    `pb:"4" json:"bank_id"`
+	Created              time.Time `pb:"5" json:"created"`
+}
+
+type EntitlementRequests struct {
+	EntitlementRequests []EntitlementRequest `pb:"1" json:"entitlement_requests"`
+}
+
+type List struct {
+	EntitlementID string `pb:"1" json:"entitlement_id"`
+	RoleName      string `pb:"2" json:"role_name"`
+	BankID        string `pb:"3" json:"bank_id"`
+}
+
+type Entitlements struct {
+	List []List `pb:"1" json:"list"`
+}
+
+type User struct {
+	UserID       string       `pb:"1" json:"user_id"`
+	Email        string       `pb:"2" json:"email"`
+	ProviderID   string       `pb:"3" json:"provider_id"`
+	Provider     string       `pb:"4" json:"provider"`
+	Username     string       `pb:"5" json:"username"`
+	Entitlements Entitlements `pb:"6" json:"entitlements"`
+}
+
+type AddEntitlementRequestForUserRequest struct {
+	UserID   string `pb:"1" json:"user_id"`
+	BankID   string `pb:"2" json:"bank_id"`
+	RoleName string `pb:"3" json:"role_name"`
+}
+
+type AddEntitlementRequestForUserResponse struct {
+	UserID        string `pb:"1" json:"user_id"`
+	EntitlementID string `pb:"2" json:"entitlement_id"`
+	RoleName      string `pb:"3" json:"role_name"`
+	BankID        string `pb:"4" json:"bank_id"`
+}
+
+type DeleteEntitlementRequest struct {
+	UserID        string `pb:"1" json:"user_id"`
+	EntitlementID string `pb:"2" json:"entitlement_id"`
+}
+
+type DeleteEntitlementRequestRequest struct {
+	EntitlementRequestID string `pb:"1" json:"entitlement_request_id"`
+}
+
+type GetEntitlementRequestForUserRequest struct {
+	UserID string `pb:"1" json:"user_id"`
+}
+
+type GetEntitlementRequestForUserResponse struct {
+	EntitlementRequests []EntitlementRequest `pb:"1" json:"entitlement_requests"`
+}
+
+type GetEntitlementRequestForCurrentUserRequest struct {
+}
+
+type GetEntitlementRequestForCurrentUserResponse struct {
+	EntitlementRequests []EntitlementRequest `pb:"1" json:"entitlement_requests"`
+}
+
+type GetEntitlementForUserAtBankRequest struct {
+	BankID string `pb:"1" json:"bank_id"`
+	UserID string `pb:"2" json:"user_id"`
+}
+
+type GetEntitlementForUserRequest struct {
+	UserID string `pb:"2" json:"user_id"`
+}
+
+type GetEntitlementForCurrentUserRequest struct {
+}
+
+type GetAllEntitlementsRequest struct {
+	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+}
+
+type GetAllEntitlementRequestRequest struct {
+	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+}
+
+type GetRolesResponse struct {
+	Roles []Roles `pb:"1" json:"roles"`
+}
+
+type Roles struct {
+	Role           string `pb:"1" json:"role"`
+	RequiresBankID bool   `pb:"2" json:"requires_bank_id"`
+}
+
+type GetRolesRequest struct {
+	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+}
+
+// EntitlementService provides entitlement related operations.
+type EntitlementService interface {
+	// AddEntitlementRequestForCurrentUser sends the entitlement request for current user
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/entitlement-requests",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Add an entitlement request for current user",
+	//         Summary:     "Add an entitlement request for current user",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Add an entitlement request for current user",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementEntitlementRequest",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddEntitlementRequestForCurrentUser(AddEntitlementRequestForCurrentUserRequest) EntitlementRequest
+
+	// AddEntitlementRequestForUser sends the entitlement request for user
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/users/{UserID}/entitlements",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Add the entitlement entitlement request for user",
+	//         Summary:     "Add the entitlement request for user",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "201": openapiv2.Response{
+	//                         Description: "Add the entitlement request for user",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementAddEntitlementRequestForUserResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	AddEntitlementRequestForUser(AddEntitlementRequestForUserRequest) AddEntitlementRequestForUserResponse
+
+	// DeleteEntitlement deletes an entitlement for user.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/users/{UserID}/entitlements/{EntitlementID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Permanently delete an entitlement.",
+	//         Summary:     "Delete an entitlement",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Entitlement successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteEntitlement(DeleteEntitlementRequest)
+
+	// DeleteEntitlementRequest deletes a entitlement request.
+	//
+	// +gunk http.Match{
+	//         Method: "DELETE",
+	//         Path:   "/v1/entitlement-requests/{EntitlementRequestID}",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Permanently delete an entitlement request.",
+	//         Summary:     "Delete a entitlement request",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "204": openapiv2.Response{
+	//                         Description: "Entitlement request successfully deleted.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	DeleteEntitlementRequest(DeleteEntitlementRequestRequest)
+
+	// GetEntitlementRequestForUser retrieves the details of a specific entitlement request for userid.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/users/{UserID}/entitlement-requests",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Retrieve information about the entitlement request specified by the User ID",
+	//         Summary:     "Retrieve entitlement request information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementGetEntitlementRequestForUserResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetEntitlementRequestForUser(GetEntitlementRequestForUserRequest) GetEntitlementRequestForUserResponse
+
+	// GetEntitlementRequestForCurrentUser retrieves the details of a specific entitlement request for current user.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/users/current/entitlement-requests",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Retrieve information about the entitlement request specified for current user",
+	//         Summary:     "Retrieve entitlement request information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementGetEntitlementRequestForCurrentUserResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetEntitlementRequestForCurrentUser(GetEntitlementRequestForCurrentUserRequest) GetEntitlementRequestForCurrentUserResponse
+
+	// GetEntitlementForUser retrieves the details of a specific entitlement for userid.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/users/{UserID}/entitlements",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Retrieve information about the entitlement specified by the User ID",
+	//         Summary:     "Retrieve entitlement information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementEntitlements",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetEntitlementForUser(GetEntitlementForUserRequest) Entitlements
+
+	// GetEntitlementForCurrentUser retrieves the details of a specific entitlement for current user.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/users/current/entitlements",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Retrieve information about the entitlement specified for current user",
+	//         Summary:     "Retrieve entitlement information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementEntitlements",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetEntitlementForCurrentUser(GetEntitlementForCurrentUserRequest) Entitlements
+
+	// GetEntitlementForUserAtBank retrieves the details of a specific entitlement for userid at bank
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/banks/{BankID}/users/{UserID}/entitlements",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Retrieve information about the entitlement specified by the User ID at bank",
+	//         Summary:     "Retrieve entitlement information",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementEntitlements",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetEntitlementForUserAtBank(GetEntitlementForUserAtBankRequest) Entitlements
+
+	// GetAllEntitlementRequests returns a list containing up to 20 entitlement requests.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/entitlement-requests",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+	//         Summary:     "List all entitlements",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementEntitlementRequests",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAllEntitlementRequests(GetAllEntitlementRequestRequest) EntitlementRequests
+
+	// GetAllEntitlements returns a list containing up to 20 entitlements.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/entitlements",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+	//         Summary:     "List all entitlements",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementEntitlements",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetAllEntitlements(GetAllEntitlementsRequest) Entitlements
+
+	// GetRoles returns a list containing up to 20 roles.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/roles",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Entitlement"},
+	//         Description: "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+	//         Summary:     "List all entitlements",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/entitlementGetRolesResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetRoles(GetRolesRequest) GetRolesResponse
+}
