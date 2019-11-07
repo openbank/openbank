@@ -74,10 +74,10 @@ type Account struct {
 	// Status is the status of the account.
 	Status string `pb:"4" json:"status"`
 
-	// TODO: add comment.
+	// Interest accrues at an annual rate of interest that is fixed
 	AccruedInterestAtMaturityDate time.Time `pb:"5" json:"accrued_interest_at_maturity_date"`
 
-	// TODO: add comment.
+	// Specify when payments are due on money borrowed
 	AmountDue types.Amount `pb:"6" json:"amount_due"`
 
 	// AvailableBalance is the available balance of the account.
@@ -95,7 +95,7 @@ type Account struct {
 	// CreditLimit is the allowed credit limit.
 	CreditLimit string `pb:"11" json:"credit_limit"`
 
-	// TODO: add comment.
+	// Interest earned but not received
 	CurrentAccruedInterest string `pb:"12" json:"current_accrued_interest"`
 
 	// CurrentBalance is the current balance of the account.
@@ -119,13 +119,13 @@ type Account struct {
 	// MaturityDate is the maturity date, format is ISO 8601
 	MaturityDate time.Time `pb:"19" json:"maturity_date"`
 
-	// TODO: add comment.
+	// Specify when payments are due on money borrowed
 	NextPaymentDueDate time.Time `pb:"20" json:"next_payment_due_date"`
 
 	// OwnerName is the name of the account's owner.
 	OwnerName string `pb:"21" json:"owner_name"`
 
-	// TODO: add comment.
+	// Account opening date
 	StartDate time.Time `pb:"22" json:"start_date"`
 }
 
@@ -163,15 +163,15 @@ const (
 	Org
 )
 
-// TODO: add comment.
+// AccountRole represents the role for an account
 type AccountRole struct {
-	// TODO: add comment.
+	// The identification number assigned to an account
 	EntityNumber string `pb:"1" json:"entity_number"`
 
-	// TODO: add comment.
+	// Type of entity
 	EntityType EntityType `pb:"2" json:"entity_type"`
 
-	// TODO: add comment.
+	// Name of the Role
 	Role string `pb:"3" json:"role"`
 }
 
@@ -195,31 +195,31 @@ type CreateAccountRequest struct {
 	// AccountID is the identifier of the account.
 	AccountID string `pb:"1" json:"account_id"`
 
-	// TODO: add comment.
+	// Description about the account
 	Description string `pb:"2" json:"description"`
 
-	// TODO: add comment.
+	// Roles for the account
 	AccountRoles []AccountRole `pb:"3" json:"account_roles"`
 
 	// Branch is the branch code of the associated branch.
 	Branch string `pb:"4" json:"branch"`
 
-	// TODO: add comment.
+	// Customer 
 	Customer string `pb:"5" json:"customer"`
 
-	// TODO: add comment.
+	// DebitTransaction debited to account
 	DebitTransaction DebitTransaction `pb:"6" json:"debit_transaction"`
 
-	// TODO: add comment.
+	// Rate of interest for an account
 	InterestRate string `pb:"7" json:"interest_rate"`
 
 	// MajorType is the type of the account.
 	MajorType types.MajorType `pb:"8" json:"major_type"`
 
-	// TODO: add comment.
+	// The maturity date is the date on which the principal amount becomes due
 	MaturityDate time.Time `pb:"9" json:"maturity_date"`
 
-	// TODO: add comment.
+	// Minor account 
 	Minor string `pb:"10" json:"minor"`
 }
 
@@ -237,7 +237,7 @@ type CreateAccountResponse struct {
 	// MajorType is the type of the account.
 	MajorType types.MajorType `pb:"4" json:"major_type"`
 
-	// TODO: add comment.
+	// Minor account
 	Minor string `pb:"5" json:"minor"`
 }
 
@@ -246,7 +246,7 @@ type UpdateAccountRequest struct {
 	// AccountID is the unique identifier of the account to update.
 	AccountID string `pb:"1" json:"account_id"`
 
-	// TODO: add comment.
+	// Description to update
 	Description string `pb:"2" json:"description"`
 }
 

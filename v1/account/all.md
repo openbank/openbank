@@ -2,9 +2,12 @@
 
 Provides CRUD operations on the accounts resource.
 
-* Host ``
+*
+Host ``
+EOL
 
-* Base Path ``
+*
+Base Path ``
 
 ## Verify account existence
 
@@ -91,28 +94,28 @@ curl -X POST \
 
 ### Body Parameters
 
-| Name             | Type             | Description                                         |
-|------------------|------------------|-----------------------------------------------------|
-| AccountID        | string           | AccountID is the identifier of the account.         |
-| Description      | string           | TODO: add comment.                                  |
-| AccountRoles     | []AccountRole    | TODO: add comment.                                  |
-| Branch           | string           | Branch is the branch code of the associated branch. |
-| Customer         | string           | TODO: add comment.                                  |
-| DebitTransaction | DebitTransaction | TODO: add comment.                                  |
-| InterestRate     | string           | TODO: add comment.                                  |
-| MajorType        | MajorType        | MajorType is the type of the account.               |
-| MaturityDate     | Timestamp        | TODO: add comment.                                  |
-| Minor            | string           | TODO: add comment.                                  |
+| Name             | Type             | Description                                                             |
+|------------------|------------------|-------------------------------------------------------------------------|
+| AccountID        | string           | AccountID is the identifier of the account.                             |
+| Description      | string           | Description about the account                                           |
+| AccountRoles     | []AccountRole    | Roles for the account                                                   |
+| Branch           | string           | Branch is the branch code of the associated branch.                     |
+| Customer         | string           | Customer                                                                |
+| DebitTransaction | DebitTransaction | DebitTransaction debited to account                                     |
+| InterestRate     | string           | Rate of interest for an account                                         |
+| MajorType        | MajorType        | MajorType is the type of the account.                                   |
+| MaturityDate     | Timestamp        | The maturity date is the date on which the principal amount becomes due |
+| Minor            | string           | Minor account                                                           |
 
 ##### Objects
 
 ###### AccountRole
 
-| Name         | Type       | Description        |
-|--------------|------------|--------------------|
-| EntityNumber | string     | TODO: add comment. |
-| EntityType   | EntityType | TODO: add comment. |
-| Role         | string     | TODO: add comment. |
+| Name         | Type       | Description                                      |
+|--------------|------------|--------------------------------------------------|
+| EntityNumber | string     | The identification number assigned to an account |
+| EntityType   | EntityType | Type of entity                                   |
+| Role         | string     | Name of the Role                                 |
 
 ###### DebitTransaction
 
@@ -140,7 +143,7 @@ curl -X POST \
 | CreditTransactionNumber | string    | CreditTransactionNumber is the transaction number of the credited account. |
 | DebitTransactionNumber  | string    | DebitTransactionNumber is the transaction number of the debited account.   |
 | MajorType               | MajorType | MajorType is the type of the account.                                      |
-| Minor                   | string    | TODO: add comment.                                                         |
+| Minor                   | string    | Minor account                                                              |
 
 Example:
 
@@ -235,14 +238,14 @@ curl -X GET \
 | Branch                        | string        | Branch is the branch code for the branch associated with the account.                 |
 | BranchName                    | string        | BranchName is the long-form name of the branch associated with the account.           |
 | Status                        | string        | Status is the status of the account.                                                  |
-| AccruedInterestAtMaturityDate | Timestamp     | TODO: add comment.                                                                    |
-| AmountDue                     | Amount        | TODO: add comment.                                                                    |
+| AccruedInterestAtMaturityDate | Timestamp     | Interest accrues at an annual rate of interest that is fixed                          |
+| AmountDue                     | Amount        | Specify when payments are due on money borrowed                                       |
 | AvailableBalance              | Amount        | AvailableBalance is the available balance of the account.                             |
 | AvailableCreditLimit          | string        | AvailableCreditLimit is the available credit limit for the account.                   |
 | CheckingInterestRate          | string        | CheckingInterestRate is the interest rate of the account if it is a checking account. |
 | ContractDate                  | Timestamp     | ContractDate is the date of the contract initialization.                              |
 | CreditLimit                   | string        | CreditLimit is the allowed credit limit.                                              |
-| CurrentAccruedInterest        | string        | TODO: add comment.                                                                    |
+| CurrentAccruedInterest        | string        | Interest earned but not received                                                      |
 | CurrentBalance                | Amount        | CurrentBalance is the current balance of the account.                                 |
 | CurrentTerm                   | string        | CurrentTerm is the account validity period.                                           |
 | DueDate                       | Timestamp     | DueDate is the loan maturity date.                                                    |
@@ -250,9 +253,9 @@ curl -X GET \
 | MajorType                     | MajorType     | MajorType is the account type.                                                        |
 | MajorCategory                 | MajorCategory | MajorCategory is the account category.                                                |
 | MaturityDate                  | Timestamp     | MaturityDate is the maturity date, format is ISO 8601                                 |
-| NextPaymentDueDate            | Timestamp     | TODO: add comment.                                                                    |
+| NextPaymentDueDate            | Timestamp     | Specify when payments are due on money borrowed                                       |
 | OwnerName                     | string        | OwnerName is the name of the account's owner.                                         |
-| StartDate                     | Timestamp     | TODO: add comment.                                                                    |
+| StartDate                     | Timestamp     | Account opening date                                                                  |
 
 ##### Objects
 
@@ -435,14 +438,14 @@ curl -X GET \
 | Branch                        | string        | Branch is the branch code for the branch associated with the account.                 |
 | BranchName                    | string        | BranchName is the long-form name of the branch associated with the account.           |
 | Status                        | string        | Status is the status of the account.                                                  |
-| AccruedInterestAtMaturityDate | Timestamp     | TODO: add comment.                                                                    |
-| AmountDue                     | Amount        | TODO: add comment.                                                                    |
+| AccruedInterestAtMaturityDate | Timestamp     | Interest accrues at an annual rate of interest that is fixed                          |
+| AmountDue                     | Amount        | Specify when payments are due on money borrowed                                       |
 | AvailableBalance              | Amount        | AvailableBalance is the available balance of the account.                             |
 | AvailableCreditLimit          | string        | AvailableCreditLimit is the available credit limit for the account.                   |
 | CheckingInterestRate          | string        | CheckingInterestRate is the interest rate of the account if it is a checking account. |
 | ContractDate                  | Timestamp     | ContractDate is the date of the contract initialization.                              |
 | CreditLimit                   | string        | CreditLimit is the allowed credit limit.                                              |
-| CurrentAccruedInterest        | string        | TODO: add comment.                                                                    |
+| CurrentAccruedInterest        | string        | Interest earned but not received                                                      |
 | CurrentBalance                | Amount        | CurrentBalance is the current balance of the account.                                 |
 | CurrentTerm                   | string        | CurrentTerm is the account validity period.                                           |
 | DueDate                       | Timestamp     | DueDate is the loan maturity date.                                                    |
@@ -450,9 +453,9 @@ curl -X GET \
 | MajorType                     | MajorType     | MajorType is the account type.                                                        |
 | MajorCategory                 | MajorCategory | MajorCategory is the account category.                                                |
 | MaturityDate                  | Timestamp     | MaturityDate is the maturity date, format is ISO 8601                                 |
-| NextPaymentDueDate            | Timestamp     | TODO: add comment.                                                                    |
+| NextPaymentDueDate            | Timestamp     | Specify when payments are due on money borrowed                                       |
 | OwnerName                     | string        | OwnerName is the name of the account's owner.                                         |
-| StartDate                     | Timestamp     | TODO: add comment.                                                                    |
+| StartDate                     | Timestamp     | Account opening date                                                                  |
 
 ###### Timestamp
 
@@ -567,7 +570,7 @@ curl -X PUT \
 | Name        | Type   | Description                                                  |
 |-------------|--------|--------------------------------------------------------------|
 | AccountID   | string | AccountID is the unique identifier of the account to update. |
-| Description | string | TODO: add comment.                                           |
+| Description | string | Description to update                                        |
 
 ### Responses
 
