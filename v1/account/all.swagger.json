@@ -488,11 +488,11 @@
         "AccruedInterestAtMaturityDate": {
           "type": "string",
           "format": "date-time",
-          "description": "TODO: add comment."
+          "title": "Interest accrues at an annual rate of interest that is fixed"
         },
         "AmountDue": {
           "$ref": "#/definitions/typesAmount",
-          "description": "TODO: add comment."
+          "title": "Specify when payments are due on money borrowed"
         },
         "AvailableBalance": {
           "$ref": "#/definitions/typesAmount",
@@ -517,7 +517,7 @@
         },
         "CurrentAccruedInterest": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Interest earned but not received"
         },
         "CurrentBalance": {
           "$ref": "#/definitions/typesAmount",
@@ -552,7 +552,7 @@
         "NextPaymentDueDate": {
           "type": "string",
           "format": "date-time",
-          "description": "TODO: add comment."
+          "title": "Specify when payments are due on money borrowed"
         },
         "OwnerName": {
           "type": "string",
@@ -561,7 +561,7 @@
         "StartDate": {
           "type": "string",
           "format": "date-time",
-          "description": "TODO: add comment."
+          "title": "Account opening date"
         }
       },
       "description": "Account holds all details about a bank account."
@@ -571,18 +571,18 @@
       "properties": {
         "EntityNumber": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "The identification number assigned to an account"
         },
         "EntityType": {
           "$ref": "#/definitions/accountsEntityType",
-          "description": "TODO: add comment."
+          "title": "Type of entity"
         },
         "Role": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Name of the Role"
         }
       },
-      "description": "TODO: add comment."
+      "title": "AccountRole represents the role for an account"
     },
     "accountsCheckAccountResponse": {
       "type": "object",
@@ -611,14 +611,14 @@
         },
         "Description": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Description about the account"
         },
         "AccountRoles": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountsAccountRole"
           },
-          "description": "TODO: add comment."
+          "title": "Roles for the account"
         },
         "Branch": {
           "type": "string",
@@ -626,15 +626,15 @@
         },
         "Customer": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Customer"
         },
         "DebitTransaction": {
           "$ref": "#/definitions/accountsDebitTransaction",
-          "description": "TODO: add comment."
+          "title": "DebitTransaction debited to account"
         },
         "InterestRate": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Rate of interest for an account"
         },
         "MajorType": {
           "$ref": "#/definitions/typesMajorType",
@@ -643,11 +643,11 @@
         "MaturityDate": {
           "type": "string",
           "format": "date-time",
-          "description": "TODO: add comment."
+          "title": "The maturity date is the date on which the principal amount becomes due"
         },
         "Minor": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Minor account"
         }
       },
       "description": "CreateAccountRequest wraps all required fields for account creation."
@@ -673,7 +673,7 @@
         },
         "Minor": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Minor account"
         }
       },
       "description": "CreateAccountResponse is the response envelope for account creation."
@@ -761,7 +761,7 @@
         },
         "Description": {
           "type": "string",
-          "description": "TODO: add comment."
+          "title": "Description to update"
         }
       },
       "description": "UpdateAccountRequest is the request envelope to update an account."

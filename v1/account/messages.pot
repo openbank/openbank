@@ -22,6 +22,9 @@ msgstr ""
 msgid "Account deleted successfully."
 msgstr ""
 
+msgid "Account opening date"
+msgstr ""
+
 msgid "Account updated successfully."
 msgstr ""
 
@@ -109,13 +112,25 @@ msgstr ""
 msgid "CurrentTerm is the account validity period."
 msgstr ""
 
+msgid "Customer"
+msgstr ""
+
 msgid "DebitAccount is the account number to debit from."
+msgstr ""
+
+msgid "DebitTransaction debited to account"
 msgstr ""
 
 msgid "DebitTransactionNumber is the transaction number of the debited account."
 msgstr ""
 
 msgid "Delete an account"
+msgstr ""
+
+msgid "Description about the account"
+msgstr ""
+
+msgid "Description to update"
 msgstr ""
 
 msgid "DueDate is the loan maturity date."
@@ -145,6 +160,12 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
+msgid "Interest accrues at an annual rate of interest that is fixed"
+msgstr ""
+
+msgid "Interest earned but not received"
+msgstr ""
+
 msgid "InterestRate is the interest rate for the account."
 msgstr ""
 
@@ -166,6 +187,12 @@ msgstr ""
 msgid "MaturityDate is the maturity date, format is ISO 8601"
 msgstr ""
 
+msgid "Minor account"
+msgstr ""
+
+msgid "Name of the Role"
+msgstr ""
+
 msgid "Num is the value of the amount."
 msgstr ""
 
@@ -182,6 +209,9 @@ msgid "Provides CRUD operations on the accounts resource."
 msgstr ""
 
 msgid "Query Parameters"
+msgstr ""
+
+msgid "Rate of interest for an account"
 msgstr ""
 
 msgid "Request executed successfully."
@@ -229,6 +259,12 @@ msgstr ""
 msgid "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination."
 msgstr ""
 
+msgid "Roles for the account"
+msgstr ""
+
+msgid "Specify when payments are due on money borrowed"
+msgstr ""
+
 msgid "Status is the current status of the account."
 msgstr ""
 
@@ -241,7 +277,13 @@ msgstr ""
 msgid "StatusDescription describe about the Status."
 msgstr ""
 
-msgid "TODO: add comment."
+msgid "The identification number assigned to an account"
+msgstr ""
+
+msgid "The maturity date is the date on which the principal amount becomes due"
+msgstr ""
+
+msgid "Type of entity"
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"
