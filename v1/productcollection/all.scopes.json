@@ -1,0 +1,1 @@
+{"/productcollection.ProductCollectionService/CreateProductCollection":["Write"],"/productcollection.ProductCollectionService/DeleteProductCollection":["Write"],"/productcollection.ProductCollectionService/GetProductCollection":["Read"],"/productcollection.ProductCollectionService/UpdateProductCollection":["Write"]}

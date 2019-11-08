@@ -1,0 +1,1 @@
+{"/branch.BranchService/CreateBranch":["Write"],"/branch.BranchService/DeleteBranch":["Write"],"/branch.BranchService/GetBranch":["Read"],"/branch.BranchService/GetBranches":["Read"],"/branch.BranchService/UpdateBranch":["Write"]}

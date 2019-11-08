@@ -1,0 +1,1 @@
+{"/kyc.KYCService/AddKYCCheck":["Write"],"/kyc.KYCService/AddKYCDocument":["Write"],"/kyc.KYCService/AddKYCMedia":["Write"],"/kyc.KYCService/AddKYCStatus":["Write"],"/kyc.KYCService/GetCustomerKYCCheck":["Read"],"/kyc.KYCService/GetCustomerKYCDocument":["Read"],"/kyc.KYCService/GetCustomerKYCStatus":["Read"],"/kyc.KYCService/GetKYCMedia":["Read"]}

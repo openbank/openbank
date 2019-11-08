@@ -1,0 +1,1 @@
+{"/consent.ConsentService/AnswerConsentChallenge":["Write"],"/consent.ConsentService/CreateConsentEmail":["Write"],"/consent.ConsentService/CreateConsentSMS":["Write"],"/consent.ConsentService/GetConsents":["Read"],"/consent.ConsentService/RevokeConsent":["Write"]}

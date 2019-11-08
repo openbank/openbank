@@ -1,0 +1,1 @@
+{"/counterparty.CounterPartyService/CreateCounterParty":["Write"],"/counterparty.CounterPartyService/GetCounterParties":["Read"],"/counterparty.CounterPartyService/GetCounterParty":["Read"],"/counterparty.CounterPartyService/GetOtherAccountByID":["Read"],"/counterparty.CounterPartyService/GetOtherAccounts":["Read"]}

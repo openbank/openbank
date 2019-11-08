@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "read":  "Grants read access",
-//                                                 "write": "Grants write access",
+//                                                 "Read":  "https://auth.bnk.to/entitlement.read",
+//                                                 "Write": "https://auth.bnk.to/entitlement.write",
 //                                         },
 //                                 },
 //                         },
@@ -192,7 +192,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -227,7 +227,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -256,7 +256,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -285,7 +285,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -322,7 +322,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -359,7 +359,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -396,7 +396,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -433,7 +433,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -470,7 +470,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -504,7 +504,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -538,7 +538,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -572,7 +572,7 @@ type EntitlementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },

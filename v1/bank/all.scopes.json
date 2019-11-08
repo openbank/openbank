@@ -1,0 +1,1 @@
+{"/bank.BankService/CreateBank":["Write"],"/bank.BankService/CreateTranscationTypeAtBank":["Write"],"/bank.BankService/DeleteBank":["Write"],"/bank.BankService/GetBank":["Read"],"/bank.BankService/GetBanks":["Read"],"/bank.BankService/UpdateBank":["Write"]}

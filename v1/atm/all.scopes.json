@@ -1,0 +1,1 @@
+{"/atm.ATMService/CreateATM":["Write"],"/atm.ATMService/GetATM":["Read"],"/atm.ATMService/GetATMs":["Read"]}

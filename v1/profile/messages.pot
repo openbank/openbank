@@ -1,0 +1,263 @@
+# Messages.pot - Contains all msgid extracted from swagger definitions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: %s\n"
+		"Report-Msgid-Bugs-To: %s\n"
+		"POT-Creation-Date: %s\n"
+		"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+		"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+		"Language-Team: LANGUAGE <LL@li.org>\n"
+		"Language: \n"
+		"MIME-Version: 1.0\n"
+		"Content-Type: text/plain; charset=CHARSET\n"
+		"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Account opening date"
+msgstr ""
+
+msgid "AccountID is the unique identifier of an account."
+msgstr ""
+
+msgid "AvailableBalance is the available balance of the account."
+msgstr ""
+
+msgid "AvailableCreditLimit is the available credit limit for the account."
+msgstr ""
+
+msgid "Base Path"
+msgstr ""
+
+msgid "Birth date"
+msgstr ""
+
+msgid "Branch Identifier"
+msgstr ""
+
+msgid "Branch is the branch code for the branch associated with the account."
+msgstr ""
+
+msgid "BranchName is the long-form name of the branch associated with the account."
+msgstr ""
+
+msgid "CardToken is the card number."
+msgstr ""
+
+msgid "Category is the card type."
+msgstr ""
+
+msgid "CheckingInterestRate is the interest rate of the account if it is a checking account."
+msgstr ""
+
+msgid "CityName holds the city name information."
+msgstr ""
+
+msgid "Contact address"
+msgstr ""
+
+msgid "ContractDate is the date of the contract initialization."
+msgstr ""
+
+msgid "CountryName holds the country name information."
+msgstr ""
+
+msgid "Credit Limit"
+msgstr ""
+
+msgid "Credit rating"
+msgstr ""
+
+msgid "CreditLimit is the allowed credit limit."
+msgstr ""
+
+msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Current employment status"
+msgstr ""
+
+msgid "CurrentBalance is the current balance of the account."
+msgstr ""
+
+msgid "CurrentTerm is the account validity period."
+msgstr ""
+
+msgid "Date of birth of dependents"
+msgstr ""
+
+msgid "Date when the face image was added/updated"
+msgstr ""
+
+msgid "DueDate is the loan maturity date."
+msgstr ""
+
+msgid "Face image of the customer"
+msgstr ""
+
+msgid "FirstName of the person"
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "HTTP Request"
+msgstr ""
+
+msgid "Highest education such as bachelor, masters etc"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Interest accrues at an annual rate of interest that is fixed"
+msgstr ""
+
+msgid "Interest earned but not received"
+msgstr ""
+
+msgid "InterestRate is the interest rate for the account."
+msgstr ""
+
+msgid "Know Your Customer status"
+msgstr ""
+
+msgid "Language code used"
+msgstr ""
+
+msgid "LastFour is the last four digits of the card."
+msgstr ""
+
+msgid "LastName or last names (space separated) of the person"
+msgstr ""
+
+msgid "MajorCategory is the account category."
+msgstr ""
+
+msgid "MajorType is the account type."
+msgstr ""
+
+msgid "MaturityDate is the maturity date, format is ISO 8601"
+msgstr ""
+
+msgid "MiddleName or middle names (space separated) of the person"
+msgstr ""
+
+msgid "Mobile number"
+msgstr ""
+
+msgid "Name suffix"
+msgstr ""
+
+msgid "Num is the value of the amount."
+msgstr ""
+
+msgid "Number of dependents"
+msgstr ""
+
+msgid "Objects"
+msgstr ""
+
+msgid "OwnerName is the name of the account's owner."
+msgstr ""
+
+msgid "OwnerName is the name of the card's owner."
+msgstr ""
+
+msgid "Permanent address"
+msgstr ""
+
+msgid "PostalCode holds the postal code information."
+msgstr ""
+
+msgid "Profile API"
+msgstr ""
+
+msgid "ProfileID is the unique identifier of a profile."
+msgstr ""
+
+msgid "Provides CRUD operations on the Profile resource."
+msgstr ""
+
+msgid "Query cards"
+msgstr ""
+
+msgid "Query profile"
+msgstr ""
+
+msgid "RelationshipStatus. Ex: Single | Married"
+msgstr ""
+
+msgid "Request executed successfully."
+msgstr ""
+
+msgid "Response body"
+msgstr ""
+
+msgid "Response codes"
+msgstr ""
+
+msgid "Responses"
+msgstr ""
+
+msgid "Returned when an unexpected error occured on the server side."
+msgstr ""
+
+msgid "Returned when the request body is malformatted or does not match the expected request."
+msgstr ""
+
+msgid "Returned when the request does not contains the user's credentials."
+msgstr ""
+
+msgid "Returned when the resource is not found."
+msgstr ""
+
+msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Returns an array of ProfileCard associated with the account for the profile based on profile identifier"
+msgstr ""
+
+msgid "Returns the profile and associated accounts"
+msgstr ""
+
+msgid "Specify when payments are due on money borrowed"
+msgstr ""
+
+msgid "State holds the state information."
+msgstr ""
+
+msgid "Status is the status of the account."
+msgstr ""
+
+msgid "Street holds the street information."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "True if email is verified, otherwise False"
+msgstr ""
+
+msgid "Type is the type of the account associated with the card."
+msgstr ""
+
+msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "User country code (VN, US, ID, SG, ...)."
+msgstr ""
+
+msgid "User email address"
+msgstr ""
+
+msgid "User name"
+msgstr ""
+
+msgid "User profile photo url"
+msgstr ""
+
+msgid "profile number"
+msgstr ""

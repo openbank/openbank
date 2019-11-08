@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "read":  "Grants read access",
-//                                                 "write": "Grants write access",
+//                                                 "Read":  "https://auth.bnk.to/productcollection.read",
+//                                                 "Write": "https://auth.bnk.to/productcollection.write",
 //                                         },
 //                                 },
 //                         },
@@ -60,9 +60,8 @@ import (
 	product "github.com/openbank/openbank/v1/product"
 )
 
-
 type ProductCollection struct {
-	CollectionCode string    `pb:"1" json:"collection_code"`
+	CollectionCode string            `pb:"1" json:"collection_code"`
 	Products       []product.Product `pb:"2" json:"products"`
 }
 
@@ -87,7 +86,6 @@ type GetProductCollectionRequest struct {
 	BankID         string `pb:"1" json:"bank_id"`
 	CollectionCode string `pb:"2" json:"collection_code"`
 }
-
 
 type ProductCollectionService interface {
 	// CreateProductCollection creates a new product collection.
@@ -116,7 +114,7 @@ type ProductCollectionService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -153,7 +151,7 @@ type ProductCollectionService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -188,7 +186,7 @@ type ProductCollectionService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -217,7 +215,7 @@ type ProductCollectionService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
