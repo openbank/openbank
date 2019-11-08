@@ -1,0 +1,1 @@
+{"/accountpublic.AccountPublicService/GetBankPublicAccount":["Read"],"/accountpublic.AccountPublicService/GetPublicAccountAtAllBanks":["Read"],"/accountpublic.AccountPublicService/GetPublicAccountByID":["Read"]}

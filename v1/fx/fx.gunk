@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "read":  "Grants read access",
-//                                                 "write": "Grants write access",
+//                                                 "Read":  "https://auth.bnk.to/fx.read",
+//                                                 "Write": "https://auth.bnk.to/fx.write",
 //                                         },
 //                                 },
 //                         },
@@ -131,7 +131,7 @@ type FXService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -166,7 +166,7 @@ type FXService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -196,7 +196,7 @@ type FXService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },

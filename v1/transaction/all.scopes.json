@@ -1,0 +1,1 @@
+{"/transactions.TransactionService/ApprovePayment":["Write"],"/transactions.TransactionService/CreateTransaction":["Write"],"/transactions.TransactionService/GetTransaction":["Read"],"/transactions.TransactionService/GetTransactions":["Read"],"/transactions.TransactionService/GetTransactionsByAccount":["Read"],"/transactions.TransactionService/TFA":["Write"]}

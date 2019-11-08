@@ -54,7 +54,7 @@
         "security": [
           {
             "OAuth2": [
-              "read"
+              "Read"
             ]
           }
         ]
@@ -113,7 +113,7 @@
         "security": [
           {
             "OAuth2": [
-              "write"
+              "Write"
             ]
           }
         ]
@@ -172,7 +172,7 @@
         "security": [
           {
             "OAuth2": [
-              "write"
+              "Write"
             ]
           }
         ]
@@ -233,7 +233,7 @@
         "security": [
           {
             "OAuth2": [
-              "write"
+              "Write"
             ]
           }
         ]
@@ -308,7 +308,7 @@
         "security": [
           {
             "OAuth2": [
-              "read"
+              "Read"
             ]
           }
         ]
@@ -364,7 +364,7 @@
         "security": [
           {
             "OAuth2": [
-              "write"
+              "Write"
             ]
           }
         ]
@@ -510,8 +510,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "read": "Grants read access",
-        "write": "Grants write access"
+        "Read": "https://auth.bnk.to/bank.read",
+        "Write": "https://auth.bnk.to/bank.write"
       }
     }
   }

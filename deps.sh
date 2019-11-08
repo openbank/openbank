@@ -8,4 +8,5 @@ go install \
 	github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger \
 	github.com/gunk/gunk \
 	github.com/gunk/gunk/docgen \
+	github.com/gunk/gunk/scopegen \
 	github.com/Kunde21/pulpMd

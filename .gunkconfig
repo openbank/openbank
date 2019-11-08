@@ -11,3 +11,9 @@ command=protoc-gen-grpc-gateway
 
 [generate]
 command=docgen
+
+
+[generate]
+command=scopegen
+go=true
+json=true

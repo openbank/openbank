@@ -1,0 +1,177 @@
+// +gunk openapiv2.Swagger{
+//         Swagger: "2.0",
+//         Info: openapiv2.Info{
+//                 Title:       "Profile API",
+//                 Description: "Provides CRUD operations on the Profile resource.",
+//                 Version:     "1.0.0",
+//         },
+//         Schemes: []openapiv2.SwaggerScheme{
+//                 openapiv2.HTTPS,
+//         },
+//         Consumes: []string{
+//                 "application/json",
+//         },
+//         Produces: []string{
+//                 "application/json",
+//         },
+//         Responses: map[string]openapiv2.Response{
+//                 "400": openapiv2.Response{
+//                         Description: "Returned when the request body is malformatted or does not match the expected request.",
+//                 },
+//                 "401": openapiv2.Response{
+//                         Description: "Returned when the request does not contains the user's credentials.",
+//                 },
+//                 "403": openapiv2.Response{
+//                         Description: "Returned when the user does not have permission to access the resource.",
+//                 },
+//                 "404": openapiv2.Response{
+//                         Description: "Returned when the resource is not found.",
+//                 },
+//                 "500": openapiv2.Response{
+//                         Description: "Returned when an unexpected error occured on the server side.",
+//                 },
+//         },
+//         SecurityDefinitions: openapiv2.SecurityDefinitions{
+//                 Security: map[string]openapiv2.SecurityScheme{
+//                         "OAuth2": openapiv2.SecurityScheme{
+//                                 Type:             openapiv2.TYPE_OAUTH2,
+//                                 Flow:             openapiv2.FLOW_ACCESS_CODE,
+//                                 Description:      "Access to profile resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+//                                 AuthorizationURL: "/v1/auth",
+//                                 TokenURL:         "/v1/token",
+//                                 Scopes: openapiv2.Scopes{
+//                                         Scope: map[string]string{
+//                                                 "Read":  "https://auth.bnk.to/profile.read",
+//                                                 "Write": "https://auth.bnk.to/profile.write",
+//                                         },
+//                                 },
+//                         },
+//                 },
+//         },
+// }
+package profile
+
+import (
+	"time"
+
+	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/openapiv2"
+
+	account "github.com/openbank/openbank/v1/account"
+	types "github.com/openbank/openbank/v1/types"
+)
+
+// GetProfileRequest is the request message for retrieving customer profile.
+type GetProfileRequest struct {
+	ProfileID string `pb:"1" json:"profile_id"`
+}
+
+// GetProfileResponse is the response message for retrieving customer profile.
+type GetProfileResponse struct {
+	Profile  types.Profile     `pb:"1" json:"profile"`
+	Accounts []account.Account `pb:"2" json:"accounts"`
+}
+
+// GetProfileCardsRequest is the request message for retrieving customer cards.
+type GetProfileCardsRequest struct {
+	ProfileID string `pb:"1" json:"profile_id"`
+}
+
+// GetProfileCardsResponse is the response message for retrieving customer cards.
+type GetProfileCardsResponse struct {
+	Cards []ProfileCard `pb:"1" json:"cards"`
+}
+
+// ProfileCard holds details about a customer's credit card.
+type ProfileCard struct {
+	// CardToken is the card number.
+	CardToken string `pb:"1" json:"card_token"`
+
+	// Category is the card type.
+	Category string `pb:"2" json:"category"`
+
+	// LastFour is the last four digits of the card.
+	LastFour string `pb:"3" json:"last_four"`
+
+	// OwnerName is the name of the card's owner.
+	OwnerName string `pb:"4" json:"owner_name"`
+
+	// Type is the type of the account associated with the card.
+	Type string `pb:"5" json:"type"`
+}
+
+type ProfileService interface {
+	// GetProfile retrieves user profile.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/profile",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Profile"},
+	//         Description: "Returns the profile and associated accounts",
+	//         Summary:     "Query profile",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/profileGetProfileResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "Read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProfile(GetProfileRequest) GetProfileResponse
+
+	// GetProfileCard retrieves cards.
+	//
+	// +gunk http.Match{
+	//         Method: "GET",
+	//         Path:   "/v1/profile/card",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Profile"},
+	//         Description: "Returns an array of ProfileCard associated with the account for the profile based on profile identifier",
+	//         Summary:     "Query cards",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Request executed successfully.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/profileGetProfileCardsResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//                 "404": openapiv2.Response{
+	//                         Description: "Returned when the resource is not found.",
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "Read",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	GetProfileCard(GetProfileCardsRequest) GetProfileCardsResponse
+}

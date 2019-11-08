@@ -1,0 +1,1 @@
+{"/accountapplication.AccountApplicationService/CreateAccountApplication":["Write"],"/accountapplication.AccountApplicationService/GetAccountApplication":["Read"],"/accountapplication.AccountApplicationService/GetAccountApplications":["Read"],"/accountapplication.AccountApplicationService/UpdateAccountApplicationStatus":["Write"]}

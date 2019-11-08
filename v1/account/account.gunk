@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "read":  "Grants read access",
-//                                                 "write": "Grants write access",
+//                                                 "Read":  "https://auth.bnk.to/account.read",
+//                                                 "Write": "https://auth.bnk.to/account.write",
 //                                         },
 //                                 },
 //                         },
@@ -204,7 +204,7 @@ type CreateAccountRequest struct {
 	// Branch is the branch code of the associated branch.
 	Branch string `pb:"4" json:"branch"`
 
-	// Customer 
+	// Customer
 	Customer string `pb:"5" json:"customer"`
 
 	// DebitTransaction debited to account
@@ -219,7 +219,7 @@ type CreateAccountRequest struct {
 	// The maturity date is the date on which the principal amount becomes due
 	MaturityDate time.Time `pb:"9" json:"maturity_date"`
 
-	// Minor account 
+	// Minor account
 	Minor string `pb:"10" json:"minor"`
 }
 
@@ -335,7 +335,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -369,7 +369,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -404,7 +404,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -434,7 +434,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -463,7 +463,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -500,7 +500,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -530,7 +530,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "write",
+	//                                                 "Write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -567,7 +567,7 @@ type AccountService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "read",
+	//                                                 "Read",
 	//                                         },
 	//                                 },
 	//                         },

@@ -1,0 +1,1 @@
+{"/card.CardService/CreateCard":["Write"],"/card.CardService/CreateCardAttribute":["Write"],"/card.CardService/DeleteCard":["Write"],"/card.CardService/GetCard":["Read"],"/card.CardService/GetUserCards":["Read"],"/card.CardService/UpdateCardAccessStatus":["Write"],"/card.CardService/UpdateCardStatus":["Write"]}
