@@ -2,12 +2,9 @@
 
 Provides CRUD operations on the accounts resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Verify account existence
 

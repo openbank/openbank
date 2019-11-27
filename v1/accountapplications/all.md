@@ -2,12 +2,9 @@
 
 Provides create and read operations on the account application resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Create an account application
 
@@ -77,7 +74,7 @@ curl -X POST \
 | Title                    | string       | Title                                                      |
 | PermanentAddress         | Address      | Permanent address                                          |
 | ContactAddress           | Address      | Contact address                                            |
-| ProfileNUmber            | string       | profile number                                             |
+| ProfileNumber            | string       | profile number                                             |
 | FaceImageUrl             | string       | Face image of the customer                                 |
 | FaceImageDate            | string       | Date when the face image was added/updated                 |
 | RelationshipStatus       | string       | RelationshipStatus. Ex: Single                             |

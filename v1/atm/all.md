@@ -2,12 +2,9 @@
 
 Provides create and read operations on the ATM resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Create an ATM
 

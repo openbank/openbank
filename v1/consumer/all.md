@@ -2,12 +2,9 @@
 
 Provides create and read operations on the consumer resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Set consumer enable or disable.
 

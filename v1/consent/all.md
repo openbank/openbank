@@ -2,12 +2,9 @@
 
 Provides CRUD operations on the consent part resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Answer the consent reqeust challenge
 

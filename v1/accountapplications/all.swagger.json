@@ -481,7 +481,7 @@
           "$ref": "#/definitions/typesAddress",
           "title": "Contact address"
         },
-        "ProfileNUmber": {
+        "ProfileNumber": {
           "type": "string",
           "title": "profile number"
         },

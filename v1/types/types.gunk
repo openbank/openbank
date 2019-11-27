@@ -349,7 +349,7 @@ type Profile struct {
 	ContactAddress Address `pb:"13" json:"contact_address"`
 
 	// profile number
-	ProfileNUmber string `pb:"14" json:"profile_number"`
+	ProfileNumber string `pb:"14" json:"profile_number"`
 
 	// Face image of the customer
 	FaceImageUrl string `pb:"15" json:"face_image_url"`
