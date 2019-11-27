@@ -16,6 +16,9 @@ msgstr  "Project-Id-Version: %s\n"
 		"Content-Type: text/plain; charset=CHARSET\n"
 		"Content-Transfer-Encoding: 8bit\n"
 
+msgid "Account opening date"
+msgstr ""
+
 msgid "AccountID is the unique identifier of an account."
 msgstr ""
 
@@ -107,6 +110,12 @@ msgid "Highest education such as bachelor, masters etc"
 msgstr ""
 
 msgid "Host"
+msgstr ""
+
+msgid "Interest accrues at an annual rate of interest that is fixed"
+msgstr ""
+
+msgid "Interest earned but not received"
 msgstr ""
 
 msgid "InterestRate is the interest rate for the account."
@@ -214,6 +223,9 @@ msgstr ""
 msgid "Returns the profile and associated accounts"
 msgstr ""
 
+msgid "Specify when payments are due on money borrowed"
+msgstr ""
+
 msgid "State holds the state information."
 msgstr ""
 
@@ -221,9 +233,6 @@ msgid "Status is the status of the account."
 msgstr ""
 
 msgid "Street holds the street information."
-msgstr ""
-
-msgid "TODO: add comment."
 msgstr ""
 
 msgid "Title"

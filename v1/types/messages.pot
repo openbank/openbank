@@ -88,9 +88,6 @@ msgstr ""
 msgid "FirstName of the person"
 msgstr ""
 
-msgid "FirstName of the user profile"
-msgstr ""
-
 msgid "Full name"
 msgstr ""
 
@@ -101,9 +98,6 @@ msgid "Know Your Customer status"
 msgstr ""
 
 msgid "Language code used"
-msgstr ""
-
-msgid "LastName of the user profile"
 msgstr ""
 
 msgid "LastName or last names (space separated) of the person"
@@ -143,9 +137,6 @@ msgid "MajorType_Saving account."
 msgstr ""
 
 msgid "MajorType_TimeDeposit for a time deposit account."
-msgstr ""
-
-msgid "MiddleName of the user profile"
 msgstr ""
 
 msgid "MiddleName or middle names (space separated) of the person"

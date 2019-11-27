@@ -2,12 +2,9 @@
 
 Provides CRUD operations on the Profile resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Query profiles
 
@@ -50,7 +47,7 @@ curl -X GET \
 | Title                    | string       | Title                                                      |
 | PermanentAddress         | Address      | Permanent address                                          |
 | ContactAddress           | Address      | Contact address                                            |
-| ProfileNUmber            | string       | profile number                                             |
+| ProfileNumber            | string       | profile number                                             |
 | FaceImageUrl             | string       | Face image of the customer                                 |
 | FaceImageDate            | string       | Date when the face image was added/updated                 |
 | RelationshipStatus       | string       | RelationshipStatus. Ex: Single                             |
@@ -75,14 +72,14 @@ curl -X GET \
 | Branch                        | string        | Branch is the branch code for the branch associated with the account.                 |
 | BranchName                    | string        | BranchName is the long-form name of the branch associated with the account.           |
 | Status                        | string        | Status is the status of the account.                                                  |
-| AccruedInterestAtMaturityDate | Timestamp     | TODO: add comment.                                                                    |
-| AmountDue                     | Amount        | TODO: add comment.                                                                    |
+| AccruedInterestAtMaturityDate | Timestamp     | Interest accrues at an annual rate of interest that is fixed                          |
+| AmountDue                     | Amount        | Specify when payments are due on money borrowed                                       |
 | AvailableBalance              | Amount        | AvailableBalance is the available balance of the account.                             |
 | AvailableCreditLimit          | string        | AvailableCreditLimit is the available credit limit for the account.                   |
 | CheckingInterestRate          | string        | CheckingInterestRate is the interest rate of the account if it is a checking account. |
 | ContractDate                  | Timestamp     | ContractDate is the date of the contract initialization.                              |
 | CreditLimit                   | string        | CreditLimit is the allowed credit limit.                                              |
-| CurrentAccruedInterest        | string        | TODO: add comment.                                                                    |
+| CurrentAccruedInterest        | string        | Interest earned but not received                                                      |
 | CurrentBalance                | Amount        | CurrentBalance is the current balance of the account.                                 |
 | CurrentTerm                   | string        | CurrentTerm is the account validity period.                                           |
 | DueDate                       | Timestamp     | DueDate is the loan maturity date.                                                    |
@@ -90,9 +87,9 @@ curl -X GET \
 | MajorType                     | MajorType     | MajorType is the account type.                                                        |
 | MajorCategory                 | MajorCategory | MajorCategory is the account category.                                                |
 | MaturityDate                  | Timestamp     | MaturityDate is the maturity date, format is ISO 8601                                 |
-| NextPaymentDueDate            | Timestamp     | TODO: add comment.                                                                    |
+| NextPaymentDueDate            | Timestamp     | Specify when payments are due on money borrowed                                       |
 | OwnerName                     | string        | OwnerName is the name of the account's owner.                                         |
-| StartDate                     | Timestamp     | TODO: add comment.                                                                    |
+| StartDate                     | Timestamp     | Account opening date                                                                  |
 
 ###### Address
 

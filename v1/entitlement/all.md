@@ -2,12 +2,9 @@
 
 Provides CRUD operations on the entitlement part resource.
 
-*
-Host ``
-EOL
+* Host ``
 
-*
-Base Path ``
+* Base Path ``
 
 ## Add an entitlement request for current user
 
