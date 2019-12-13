@@ -181,6 +181,9 @@ msgstr ""
 msgid "MajorType is the account type."
 msgstr ""
 
+msgid "MajorType is the type of account."
+msgstr ""
+
 msgid "MajorType is the type of the account."
 msgstr ""
 

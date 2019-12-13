@@ -11,23 +11,30 @@ Provides CRUD operations on the accounts resource.
 Verify whether or not an account exists.
 
 ```sh
-curl -X POST \
-	/v1/accounts/check \
+curl -X GET \
+	/v1/accounts/{AccountID}/check \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 ### HTTP Request
 
-`POST /v1/accounts/check`
+`GET /v1/accounts/{AccountID}/check`
+
+### Query Parameters
+
+| Name      | Type   | Description                                 |
+|-----------|--------|---------------------------------------------|
+| AccountID | string | AccountID is the account unique identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name        | Type   | Description                                   |
-|-------------|--------|-----------------------------------------------|
-| AccountID   | string | AccountID is the account unique identifier.   |
-| BankCode    | string | BankCode is the code that is related to bank. |
-| AccountName | string | AccountName is the owner name of the account. |
+| Name        | Type      | Description                                   |
+|-------------|-----------|-----------------------------------------------|
+| AccountID   | string    | AccountID is the account unique identifier.   |
+| BankCode    | string    | BankCode is the code that is related to bank. |
+| AccountName | string    | AccountName is the owner name of the account. |
+| MajorType   | MajorType | MajorType is the type of account.             |
 
 Example:
 
@@ -35,7 +42,8 @@ Example:
 {
   "account_id": "string",
   "bank_code": "string",
-  "account_name": "string"
+  "account_name": "string",
+  "major_type": "MajorType"
 }
 ```
 #### Response codes
