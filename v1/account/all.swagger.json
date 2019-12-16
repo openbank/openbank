@@ -128,51 +128,6 @@
         ]
       }
     },
-    "/v1/accounts/check": {
-      "post": {
-        "summary": "Verify account existence",
-        "description": "Verify whether or not an account exists.",
-        "operationId": "CheckAccount",
-        "responses": {
-          "200": {
-            "description": "Request executed successfully.",
-            "schema": {
-              "$ref": "#/definitions/accountsCheckAccountResponse"
-            }
-          },
-          "400": {
-            "description": "Returned when the request body is malformatted or does not match the expected request.",
-            "schema": {}
-          },
-          "401": {
-            "description": "Returned when the request does not contains the user's credentials.",
-            "schema": {}
-          },
-          "403": {
-            "description": "Returned when the user does not have permission to access the resource.",
-            "schema": {}
-          },
-          "404": {
-            "description": "Returned when the resource is not found.",
-            "schema": {}
-          },
-          "500": {
-            "description": "Returned when an unexpected error occured on the server side.",
-            "schema": {}
-          }
-        },
-        "tags": [
-          "Account"
-        ],
-        "security": [
-          {
-            "OAuth2": [
-              "Read"
-            ]
-          }
-        ]
-      }
-    },
     "/v1/accounts/{AccountID}": {
       "get": {
         "summary": "Retrieve an account",
@@ -341,6 +296,60 @@
           {
             "OAuth2": [
               "Write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/accounts/{AccountID}/check": {
+      "get": {
+        "summary": "Verify account existence",
+        "description": "Verify whether or not an account exists.",
+        "operationId": "CheckAccount",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountsCheckAccountResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "AccountID",
+            "description": "AccountID is the account unique identifier.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Account"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "Read"
             ]
           }
         ]
@@ -598,6 +607,10 @@
         "AccountName": {
           "type": "string",
           "description": "AccountName is the owner name of the account."
+        },
+        "MajorType": {
+          "$ref": "#/definitions/typesMajorType",
+          "description": "MajorType is the type of account."
         }
       },
       "description": "CheckAccountResponse is the response envelope for verifying an account's existence."

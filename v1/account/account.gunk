@@ -303,6 +303,9 @@ type CheckAccountResponse struct {
 
 	// AccountName is the owner name of the account.
 	AccountName string `pb:"3" json:"account_name"`
+
+	// MajorType is the type of account.
+	MajorType types.MajorType `pb:"4" json:"major_type"`
 }
 
 // AccountService provides Account-related operations.
@@ -542,8 +545,8 @@ type AccountService interface {
 	// CheckAccount checks if an account with the specific ID exists, returning the account owner's name if it does.
 	//
 	// +gunk http.Match{
-	//         Method: "POST",
-	//         Path:   "/v1/accounts/check",
+	//         Method: "GET",
+	//         Path:   "/v1/accounts/{AccountID}/check",
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Account"},

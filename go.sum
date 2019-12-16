@@ -37,6 +37,8 @@ github.com/grpc-ecosystem/grpc-gateway v1.11.3 h1:h8+NsYENhxNTuq+dobk3+ODoJtwY4F
 github.com/grpc-ecosystem/grpc-gateway v1.11.3/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
 github.com/gunk/gunk v0.1.1-0.20190905074619-47074c5b9132 h1:WXv27/6oUo5piunWxjha3wJeyxEroV3uCrOUHXR63M4=
 github.com/gunk/gunk v0.1.1-0.20190905074619-47074c5b9132/go.mod h1:gDtuIFyREvQetpbyN1xEEqdkpbxTNSFDfwGtb5cqKps=
+github.com/gunk/gunk v0.2.0 h1:8ExONXTGGt0j4wlnju8F4v+t7cYdkp1pjocOw5vehDY=
+github.com/gunk/gunk v0.2.0/go.mod h1:gDtuIFyREvQetpbyN1xEEqdkpbxTNSFDfwGtb5cqKps=
 github.com/gunk/opt v0.0.0-20190514110406-385321f21939 h1:6o8km4OArmTAyGJjWBCiNmd8ZqkgFLQjD0vGoSGSYsI=
 github.com/gunk/opt v0.0.0-20190514110406-385321f21939/go.mod h1:9wP1gVodayD0zF7ZzMEKJr9myJv+4DnfjEWOEOtmpBY=
 github.com/hashicorp/hcl v1.0.0 h1:0Anlzjpi4vEasTeNFn2mLJgTSwt0+6sfsiTG8qcWGx4=
