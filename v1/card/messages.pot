@@ -43,7 +43,13 @@ msgstr ""
 msgid "Card successfully deleted."
 msgstr ""
 
+msgid "CardNumber is the unique number issued by bank for each card."
+msgstr ""
+
 msgid "CardToken is the identifier to get the card information."
+msgstr ""
+
+msgid "CardType is the type of card. For example: Visa, Master."
 msgstr ""
 
 msgid "ContactNumber is the contact number of the card owner."
@@ -53,6 +59,15 @@ msgid "Create new card"
 msgstr ""
 
 msgid "Create new card attribute"
+msgstr ""
+
+msgid "CreditLimit is the allowed credit limit of this card."
+msgstr ""
+
+msgid "Cur is the currency of the amount."
+msgstr ""
+
+msgid "Currency is the ISO 4217 currency code."
 msgstr ""
 
 msgid "Delete a card"
@@ -79,7 +94,16 @@ msgstr ""
 msgid "ID is a unique identifier of a card."
 msgstr ""
 
+msgid "IssueBank is name of the bank that issue the card."
+msgstr ""
+
+msgid "IssuedDate is the date the card got issued."
+msgstr ""
+
 msgid "LastName is the last name of the card owner."
+msgstr ""
+
+msgid "Num is the value of the amount."
 msgstr ""
 
 msgid "Objects"
@@ -134,6 +158,9 @@ msgid "Returned when the resource is not found."
 msgstr ""
 
 msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Specify when payments are due on money borrowed of this card."
 msgstr ""
 
 msgid "Status is the new card status."

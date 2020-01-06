@@ -185,17 +185,24 @@ curl -X GET \
 
 #### Response body
 
-| Name          | Type             | Description                                                |
-|---------------|------------------|------------------------------------------------------------|
-| ID            | string           | ID is a unique identifier of a card.                       |
-| Account       | string           | Account is the ID of the account associated with the card. |
-| OwnerName     | string           | OwnerName is the name of the card owner.                   |
-| ContactNumber | string           | ContactNumber is the contact number of the card owner.     |
-| FirstName     | string           | FirstName is the first name of card owner.                 |
-| LastName      | string           | LastName is the last name of the card owner.               |
-| Expiry        | Timestamp        | Expiry is an expiry date of the card.                      |
-| Status        | CardStatus       | Status is the status of the card.                          |
-| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.             |
+| Name          | Type             | Description                                                   |
+|---------------|------------------|---------------------------------------------------------------|
+| ID            | string           | ID is a unique identifier of a card.                          |
+| Account       | string           | Account is the ID of the account associated with the card.    |
+| CardNumber    | string           | CardNumber is the unique number issued by bank for each card. |
+| OwnerName     | string           | OwnerName is the name of the card owner.                      |
+| CardType      | string           | CardType is the type of card. For example: Visa, Master.      |
+| ContactNumber | string           | ContactNumber is the contact number of the card owner.        |
+| FirstName     | string           | FirstName is the first name of card owner.                    |
+| LastName      | string           | LastName is the last name of the card owner.                  |
+| Expiry        | Timestamp        | Expiry is an expiry date of the card.                         |
+| Status        | CardStatus       | Status is the status of the card.                             |
+| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.                |
+| IssueBank     | string           | IssueBank is name of the bank that issue the card.            |
+| IssuedDate    | Timestamp        | IssuedDate is the date the card got issued.                   |
+| CreditLimit   | string           | CreditLimit is the allowed credit limit of this card.         |
+| AmountDue     | Amount           | Specify when payments are due on money borrowed of this card. |
+| Currency      | string           | Currency is the ISO 4217 currency code.                       |
 
 ##### Objects
 
@@ -206,13 +213,22 @@ curl -X GET \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
 Example:
 
 ```json
 {
   "id": "string",
   "account": "string",
+  "card_number": "string",
   "owner_name": "string",
+  "card_type": "string",
   "contact_number": "string",
   "first_name": "string",
   "last_name": "string",
@@ -221,7 +237,18 @@ Example:
     "nanos": "int32"
   },
   "status": "CardStatus",
-  "access_status": "CardAccessStatus"
+  "access_status": "CardAccessStatus",
+  "issue_bank": "string",
+  "issue_date": {
+    "seconds": "int64",
+    "nanos": "int32"
+  },
+  "credit_limit": "string",
+  "amount_due": {
+    "cur": "string",
+    "num": "string"
+  },
+  "currency": "string"
 }
 ```
 #### Response codes
@@ -269,17 +296,24 @@ curl -X GET \
 
 ###### Card
 
-| Name          | Type             | Description                                                |
-|---------------|------------------|------------------------------------------------------------|
-| ID            | string           | ID is a unique identifier of a card.                       |
-| Account       | string           | Account is the ID of the account associated with the card. |
-| OwnerName     | string           | OwnerName is the name of the card owner.                   |
-| ContactNumber | string           | ContactNumber is the contact number of the card owner.     |
-| FirstName     | string           | FirstName is the first name of card owner.                 |
-| LastName      | string           | LastName is the last name of the card owner.               |
-| Expiry        | Timestamp        | Expiry is an expiry date of the card.                      |
-| Status        | CardStatus       | Status is the status of the card.                          |
-| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.             |
+| Name          | Type             | Description                                                   |
+|---------------|------------------|---------------------------------------------------------------|
+| ID            | string           | ID is a unique identifier of a card.                          |
+| Account       | string           | Account is the ID of the account associated with the card.    |
+| CardNumber    | string           | CardNumber is the unique number issued by bank for each card. |
+| OwnerName     | string           | OwnerName is the name of the card owner.                      |
+| CardType      | string           | CardType is the type of card. For example: Visa, Master.      |
+| ContactNumber | string           | ContactNumber is the contact number of the card owner.        |
+| FirstName     | string           | FirstName is the first name of card owner.                    |
+| LastName      | string           | LastName is the last name of the card owner.                  |
+| Expiry        | Timestamp        | Expiry is an expiry date of the card.                         |
+| Status        | CardStatus       | Status is the status of the card.                             |
+| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.                |
+| IssueBank     | string           | IssueBank is name of the bank that issue the card.            |
+| IssuedDate    | Timestamp        | IssuedDate is the date the card got issued.                   |
+| CreditLimit   | string           | CreditLimit is the allowed credit limit of this card.         |
+| AmountDue     | Amount           | Specify when payments are due on money borrowed of this card. |
+| Currency      | string           | Currency is the ISO 4217 currency code.                       |
 
 ###### Timestamp
 
@@ -287,6 +321,13 @@ curl -X GET \
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -296,7 +337,9 @@ Example:
     {
       "id": "string",
       "account": "string",
+      "card_number": "string",
       "owner_name": "string",
+      "card_type": "string",
       "contact_number": "string",
       "first_name": "string",
       "last_name": "string",
@@ -305,7 +348,18 @@ Example:
         "nanos": "int32"
       },
       "status": "CardStatus",
-      "access_status": "CardAccessStatus"
+      "access_status": "CardAccessStatus",
+      "issue_bank": "string",
+      "issue_date": {
+        "seconds": "int64",
+        "nanos": "int32"
+      },
+      "credit_limit": "string",
+      "amount_due": {
+        "cur": "string",
+        "num": "string"
+      },
+      "currency": "string"
     }
   ]
 }

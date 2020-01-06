@@ -438,9 +438,17 @@
           "type": "string",
           "description": "Account is the ID of the account associated with the card."
         },
+        "CardNumber": {
+          "type": "string",
+          "description": "CardNumber is the unique number issued by bank for each card."
+        },
         "OwnerName": {
           "type": "string",
           "description": "OwnerName is the name of the card owner."
+        },
+        "CardType": {
+          "type": "string",
+          "description": "CardType is the type of card. For example: Visa, Master."
         },
         "ContactNumber": {
           "type": "string",
@@ -466,6 +474,27 @@
         "AccessStatus": {
           "$ref": "#/definitions/typesCardAccessStatus",
           "description": "AccessStatus is the access status of the card."
+        },
+        "IssueBank": {
+          "type": "string",
+          "description": "IssueBank is name of the bank that issue the card."
+        },
+        "IssuedDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "IssuedDate is the date the card got issued."
+        },
+        "CreditLimit": {
+          "type": "string",
+          "description": "CreditLimit is the allowed credit limit of this card."
+        },
+        "AmountDue": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Specify when payments are due on money borrowed of this card."
+        },
+        "Currency": {
+          "type": "string",
+          "description": "Currency is the ISO 4217 currency code."
         }
       },
       "description": "Card holds all details about a card."
@@ -589,6 +618,20 @@
         }
       },
       "description": "UpdateCardStatusRequest is the request envelope to update card status."
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
     },
     "typesCardAccessStatus": {
       "type": "string",

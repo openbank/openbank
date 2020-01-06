@@ -68,26 +68,47 @@ type Card struct {
 	// Account is the ID of the account associated with the card.
 	Account string `pb:"2" json:"account"`
 
+	// CardNumber is the unique number issued by bank for each card.
+	CardNumber string `pb:"3" json:"card_number"`
+
 	// OwnerName is the name of the card owner.
-	OwnerName string `pb:"3" json:"owner_name"`
+	OwnerName string `pb:"4" json:"owner_name"`
+
+	// CardType is the type of card. For example: Visa, Master.
+	CardType string `pb:"5" json:"card_type"`
 
 	// ContactNumber is the contact number of the card owner.
-	ContactNumber string `pb:"4" json:"contact_number"`
+	ContactNumber string `pb:"6" json:"contact_number"`
 
 	// FirstName is the first name of card owner.
-	FirstName string `pb:"5" json:"first_name"`
+	FirstName string `pb:"7" json:"first_name"`
 
 	// LastName is the last name of the card owner.
-	LastName string `pb:"6" json:"last_name"`
+	LastName string `pb:"8" json:"last_name"`
 
 	// Expiry is an expiry date of the card.
-	Expiry time.Time `pb:"7" json:"expiry"`
+	Expiry time.Time `pb:"9" json:"expiry"`
 
 	// Status is the status of the card.
-	Status types.CardStatus `pb:"8" json:"status"`
+	Status types.CardStatus `pb:"10" json:"status"`
 
 	// AccessStatus is the access status of the card.
-	AccessStatus types.CardAccessStatus `pb:"9" json:"access_status"`
+	AccessStatus types.CardAccessStatus `pb:"11" json:"access_status"`
+
+	// IssueBank is name of the bank that issue the card.
+	IssueBank string `pb:"12" json:"issue_bank"`
+
+        // IssuedDate is the date the card got issued.
+	IssuedDate time.Time `pb:"13" json:"issue_date"`
+
+	// CreditLimit is the allowed credit limit of this card.
+	CreditLimit string `pb:"14" json:"credit_limit"`
+
+	// Specify when payments are due on money borrowed of this card.
+	AmountDue types.Amount `pb:"15" json:"amount_due"`
+
+	// Currency is the ISO 4217 currency code.
+	Currency string `pb:"16" json:"currency"`
 }
 
 // CardAttribute hold all detail about card attribute
