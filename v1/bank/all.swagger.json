@@ -54,7 +54,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/bank.read"
             ]
           }
         ]
@@ -113,7 +113,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/bank.write"
             ]
           }
         ]
@@ -172,7 +172,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/bank.write"
             ]
           }
         ]
@@ -233,7 +233,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/bank.write"
             ]
           }
         ]
@@ -308,7 +308,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/bank.read"
             ]
           }
         ]
@@ -364,7 +364,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/bank.write"
             ]
           }
         ]
@@ -510,8 +510,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/bank.read",
-        "Write": "https://auth.bnk.to/bank.write"
+        "https://auth.bnk.to/bank.read": "View bank data",
+        "https://auth.bnk.to/bank.write": "Manage bank data"
       }
     }
   }

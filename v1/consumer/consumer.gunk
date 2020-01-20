@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/consumer.read",
-//                                                 "Write": "https://auth.bnk.to/consumer.write",
+//                                                 "https://auth.bnk.to/consumer.read":  "View consumer data",
+//                                                 "https://auth.bnk.to/consumer.write": "Manage consumer data",
 //                                         },
 //                                 },
 //                         },
@@ -193,7 +193,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consumer.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -227,7 +227,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/consumer.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -261,7 +261,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/consumer.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -295,7 +295,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/consumer.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -329,7 +329,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/consumer.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -367,7 +367,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consumer.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -405,7 +405,7 @@ type ConsumerService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consumer.write",
 	//                                         },
 	//                                 },
 	//                         },

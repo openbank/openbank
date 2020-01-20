@@ -68,7 +68,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/productcollection.read"
             ]
           }
         ]
@@ -129,7 +129,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/productcollection.write"
             ]
           }
         ]
@@ -200,7 +200,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/productcollection.write"
             ]
           }
         ]
@@ -271,7 +271,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/productcollection.write"
             ]
           }
         ]
@@ -413,8 +413,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/productcollection.read",
-        "Write": "https://auth.bnk.to/productcollection.write"
+        "https://auth.bnk.to/productcollection.read": "View productcollection data",
+        "https://auth.bnk.to/productcollection.write": "Manage productcollection data"
       }
     }
   }

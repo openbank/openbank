@@ -68,7 +68,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -122,7 +122,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -181,7 +181,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/entitlement.write"
             ]
           }
         ]
@@ -238,7 +238,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/entitlement.write"
             ]
           }
         ]
@@ -292,7 +292,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -346,7 +346,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -391,7 +391,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -436,7 +436,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -489,7 +489,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -542,7 +542,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/entitlement.read"
             ]
           }
         ]
@@ -607,7 +607,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/entitlement.write"
             ]
           }
         ]
@@ -670,7 +670,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/entitlement.write"
             ]
           }
         ]
@@ -854,8 +854,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/entitlement.read",
-        "Write": "https://auth.bnk.to/entitlement.write"
+        "https://auth.bnk.to/entitlement.read": "View entitlement data",
+        "https://auth.bnk.to/entitlement.write": "Manage entitlement data"
       }
     }
   }

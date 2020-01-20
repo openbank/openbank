@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/statement.read",
-//                                                 "Write": "https://auth.bnk.to/statement.write",
+//                                                 "https://auth.bnk.to/statement.read":  "View statement data",
+//                                                 "https://auth.bnk.to/statement.write": "Manage statement data",
 //                                         },
 //                                 },
 //                         },
@@ -139,7 +139,7 @@ type StatementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/statement.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -174,7 +174,7 @@ type StatementService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/statement.read",
 	//                                         },
 	//                                 },
 	//                         },

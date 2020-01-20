@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/accountapplication.read",
-//                                                 "Write": "https://auth.bnk.to/accountapplication.write",
+//                                                 "https://auth.bnk.to/accountapplication.read":  "View accountapplication data",
+//                                                 "https://auth.bnk.to/accountapplication.write": "Manage accountapplication data",
 //                                         },
 //                                 },
 //                         },
@@ -178,7 +178,7 @@ type AccountApplicationService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/accountapplication.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -215,7 +215,7 @@ type AccountApplicationService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/accountapplication.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -249,7 +249,7 @@ type AccountApplicationService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/accountapplication.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -279,7 +279,7 @@ type AccountApplicationService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/accountapplication.write",
 	//                                         },
 	//                                 },
 	//                         },

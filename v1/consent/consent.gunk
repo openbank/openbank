@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/consent.read",
-//                                                 "Write": "https://auth.bnk.to/consent.write",
+//                                                 "https://auth.bnk.to/consent.read":  "View consent data",
+//                                                 "https://auth.bnk.to/consent.write": "Manage consent data",
 //                                         },
 //                                 },
 //                         },
@@ -148,7 +148,7 @@ type ConsentService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consent.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -183,7 +183,7 @@ type ConsentService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consent.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -218,7 +218,7 @@ type ConsentService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consent.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -252,7 +252,7 @@ type ConsentService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/consent.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -287,7 +287,7 @@ type ConsentService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/consent.write",
 	//                                         },
 	//                                 },
 	//                         },

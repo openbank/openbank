@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/counterpartymetadata.read",
-//                                                 "Write": "https://auth.bnk.to/counterpartymetadata.write",
+//                                                 "https://auth.bnk.to/counterpartymetadata.read":  "View counterpartymetadata data",
+//                                                 "https://auth.bnk.to/counterpartymetadata.write": "Manage counterpartymetadata data",
 //                                         },
 //                                 },
 //                         },
@@ -741,7 +741,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -778,7 +778,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -815,7 +815,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -850,7 +850,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -879,7 +879,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -914,7 +914,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -951,7 +951,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -988,7 +988,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1023,7 +1023,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1052,7 +1052,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1087,7 +1087,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1124,7 +1124,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1161,7 +1161,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1196,7 +1196,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1225,7 +1225,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1260,7 +1260,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1297,7 +1297,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1334,7 +1334,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1369,7 +1369,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1398,7 +1398,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1433,7 +1433,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1470,7 +1470,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1507,7 +1507,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1542,7 +1542,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1571,7 +1571,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1606,7 +1606,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1643,7 +1643,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1680,7 +1680,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1715,7 +1715,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1744,7 +1744,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1779,7 +1779,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1816,7 +1816,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1853,7 +1853,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1888,7 +1888,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1917,7 +1917,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1952,7 +1952,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -1989,7 +1989,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -2026,7 +2026,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -2061,7 +2061,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -2090,7 +2090,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -2127,7 +2127,7 @@ type CounterpartyMetadataService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/counterpartymetadata.read",
 	//                                         },
 	//                                 },
 	//                         },

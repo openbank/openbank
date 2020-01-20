@@ -17,3 +17,4 @@ command=docgen
 command=scopegen
 go=true
 json=true
+output_version=2
