@@ -54,7 +54,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/branch.read"
             ]
           }
         ]
@@ -113,7 +113,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/branch.write"
             ]
           }
         ]
@@ -167,7 +167,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/branch.read"
             ]
           }
         ]
@@ -223,7 +223,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/branch.write"
             ]
           }
         ]
@@ -287,7 +287,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/branch.write"
             ]
           }
         ]
@@ -475,8 +475,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/branch.read",
-        "Write": "https://auth.bnk.to/branch.write"
+        "https://auth.bnk.to/branch.read": "View branch data",
+        "https://auth.bnk.to/branch.write": "Manage branch data"
       }
     }
   }

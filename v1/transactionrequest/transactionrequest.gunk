@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/transactionrequest.read",
-//                                                 "Write": "https://auth.bnk.to/transactionrequest.write",
+//                                                 "https://auth.bnk.to/transactionrequest.read":  "View transactionrequest data",
+//                                                 "https://auth.bnk.to/transactionrequest.write": "Manage transactionrequest data",
 //                                         },
 //                                 },
 //                         },
@@ -327,7 +327,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -362,7 +362,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -397,7 +397,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -432,7 +432,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -467,7 +467,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -502,7 +502,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -539,7 +539,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/transactionrequest.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -576,7 +576,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/transactionrequest.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -613,7 +613,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/transactionrequest.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -648,7 +648,7 @@ type TransactionRequestService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/transactionrequest.write",
 	//                                         },
 	//                                 },
 	//                         },

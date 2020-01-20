@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/profile.read",
-//                                                 "Write": "https://auth.bnk.to/profile.write",
+//                                                 "https://auth.bnk.to/profile.read":  "View profile data",
+//                                                 "https://auth.bnk.to/profile.write": "Manage profile data",
 //                                         },
 //                                 },
 //                         },
@@ -129,7 +129,7 @@ type ProfileService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/profile.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -166,7 +166,7 @@ type ProfileService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/profile.read",
 	//                                         },
 	//                                 },
 	//                         },

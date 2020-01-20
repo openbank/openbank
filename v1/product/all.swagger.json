@@ -62,7 +62,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/product.read"
             ]
           }
         ]
@@ -121,7 +121,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/product.read"
             ]
           }
         ]
@@ -182,7 +182,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/product.write"
             ]
           }
         ]
@@ -253,7 +253,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/product.write"
             ]
           }
         ]
@@ -324,7 +324,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/product.write"
             ]
           }
         ]
@@ -389,7 +389,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/product.read"
             ]
           }
         ]
@@ -456,7 +456,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/product.write"
             ]
           }
         ]
@@ -533,7 +533,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/product.write"
             ]
           }
         ]
@@ -610,7 +610,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/product.write"
             ]
           }
         ]
@@ -783,8 +783,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/product.read",
-        "Write": "https://auth.bnk.to/product.write"
+        "https://auth.bnk.to/product.read": "View product data",
+        "https://auth.bnk.to/product.write": "Manage product data"
       }
     }
   }

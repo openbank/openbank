@@ -62,7 +62,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/counterparty.read"
             ]
           }
         ]
@@ -121,7 +121,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/counterparty.read"
             ]
           }
         ]
@@ -175,7 +175,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/counterparty.read"
             ]
           }
         ]
@@ -236,7 +236,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/counterparty.write"
             ]
           }
         ]
@@ -289,7 +289,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/counterparty.read"
             ]
           }
         ]
@@ -586,8 +586,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/counterparty.read",
-        "Write": "https://auth.bnk.to/counterparty.write"
+        "https://auth.bnk.to/counterparty.read": "View counterparty data",
+        "https://auth.bnk.to/counterparty.write": "Manage counterparty data"
       }
     }
   }

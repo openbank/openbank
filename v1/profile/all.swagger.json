@@ -62,7 +62,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/profile.read"
             ]
           }
         ]
@@ -115,7 +115,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/profile.read"
             ]
           }
         ]
@@ -490,8 +490,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/profile.read",
-        "Write": "https://auth.bnk.to/profile.write"
+        "https://auth.bnk.to/profile.read": "View profile data",
+        "https://auth.bnk.to/profile.write": "Manage profile data"
       }
     }
   }

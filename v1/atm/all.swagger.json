@@ -54,7 +54,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/atm.read"
             ]
           }
         ]
@@ -113,7 +113,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/atm.write"
             ]
           }
         ]
@@ -167,7 +167,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/atm.read"
             ]
           }
         ]
@@ -313,8 +313,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/atm.read",
-        "Write": "https://auth.bnk.to/atm.write"
+        "https://auth.bnk.to/atm.read": "View atm data",
+        "https://auth.bnk.to/atm.write": "Manage atm data"
       }
     }
   }

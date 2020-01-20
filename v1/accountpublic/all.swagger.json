@@ -54,7 +54,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/accountpublic.read"
             ]
           }
         ]
@@ -107,7 +107,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/accountpublic.read"
             ]
           }
         ]
@@ -175,7 +175,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/accountpublic.read"
             ]
           }
         ]
@@ -337,8 +337,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/accountpublic.read",
-        "Write": "https://auth.bnk.to/accountpublic.write"
+        "https://auth.bnk.to/accountpublic.read": "View accountpublic data",
+        "https://auth.bnk.to/accountpublic.write": "Manage accountpublic data"
       }
     }
   }

@@ -63,7 +63,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/statement.read"
             ]
           }
         ]
@@ -152,8 +152,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/statement.read",
-        "Write": "https://auth.bnk.to/statement.write"
+        "https://auth.bnk.to/statement.read": "View statement data",
+        "https://auth.bnk.to/statement.write": "Manage statement data"
       }
     }
   }

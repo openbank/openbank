@@ -1,1 +1,1 @@
-{"/fx.FXService/CreateFX":["Write"],"/fx.FXService/GetCurrentFXRate":["Read"],"/fx.FXService/UpdateFX":["Write"]}
+{"scopes":{"https://auth.bnk.to/fx.read":"View fx data","https://auth.bnk.to/fx.write":"Manage fx data"},"auth_scopes":{"/fx.FXService/CreateFX":["https://auth.bnk.to/fx.write"],"/fx.FXService/GetCurrentFXRate":["https://auth.bnk.to/fx.read"],"/fx.FXService/UpdateFX":["https://auth.bnk.to/fx.write"]}}

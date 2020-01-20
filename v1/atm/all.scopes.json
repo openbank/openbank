@@ -1,1 +1,1 @@
-{"/atm.ATMService/CreateATM":["Write"],"/atm.ATMService/GetATM":["Read"],"/atm.ATMService/GetATMs":["Read"]}
+{"scopes":{"https://auth.bnk.to/atm.read":"View atm data","https://auth.bnk.to/atm.write":"Manage atm data"},"auth_scopes":{"/atm.ATMService/CreateATM":["https://auth.bnk.to/atm.write"],"/atm.ATMService/GetATM":["https://auth.bnk.to/atm.read"],"/atm.ATMService/GetATMs":["https://auth.bnk.to/atm.read"]}}
