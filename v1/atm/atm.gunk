@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/atm.read",
-//                                                 "Write": "https://auth.bnk.to/atm.write",
+//                                                 "https://auth.bnk.to/atm.read":  "View atm data",
+//                                                 "https://auth.bnk.to/atm.write": "Manage atm data",
 //                                         },
 //                                 },
 //                         },
@@ -151,7 +151,7 @@ type ATMService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/atm.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -188,7 +188,7 @@ type ATMService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/atm.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -223,7 +223,7 @@ type ATMService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/atm.write",
 	//                                         },
 	//                                 },
 	//                         },

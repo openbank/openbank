@@ -106,7 +106,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/transaction.read"
             ]
           }
         ]
@@ -196,7 +196,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/transaction.read"
             ]
           }
         ]
@@ -255,7 +255,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/transaction.write"
             ]
           }
         ]
@@ -310,7 +310,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/transaction.write"
             ]
           }
         ]
@@ -365,7 +365,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/transaction.write"
             ]
           }
         ]
@@ -419,7 +419,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/transaction.read"
             ]
           }
         ]
@@ -771,8 +771,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/transaction.read",
-        "Write": "https://auth.bnk.to/transaction.write"
+        "https://auth.bnk.to/transaction.read": "View transaction data",
+        "https://auth.bnk.to/transaction.write": "Manage transaction data"
       }
     }
   }

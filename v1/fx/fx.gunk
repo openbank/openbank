@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/fx.read",
-//                                                 "Write": "https://auth.bnk.to/fx.write",
+//                                                 "https://auth.bnk.to/fx.read":  "View fx data",
+//                                                 "https://auth.bnk.to/fx.write": "Manage fx data",
 //                                         },
 //                                 },
 //                         },
@@ -131,7 +131,7 @@ type FXService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/fx.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -166,7 +166,7 @@ type FXService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/fx.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -196,7 +196,7 @@ type FXService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/fx.write",
 	//                                         },
 	//                                 },
 	//                         },

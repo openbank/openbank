@@ -82,7 +82,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/kyc.write"
             ]
           }
         ]
@@ -155,7 +155,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/kyc.write"
             ]
           }
         ]
@@ -228,7 +228,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/kyc.write"
             ]
           }
         ]
@@ -287,7 +287,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/kyc.read"
             ]
           }
         ]
@@ -346,7 +346,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/kyc.read"
             ]
           }
         ]
@@ -405,7 +405,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/kyc.read"
             ]
           }
         ]
@@ -464,7 +464,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/kyc.read"
             ]
           }
         ]
@@ -529,7 +529,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/kyc.write"
             ]
           }
         ]
@@ -950,8 +950,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/kyc.read",
-        "Write": "https://auth.bnk.to/kyc.write"
+        "https://auth.bnk.to/kyc.read": "View kyc data",
+        "https://auth.bnk.to/kyc.write": "Manage kyc data"
       }
     }
   }

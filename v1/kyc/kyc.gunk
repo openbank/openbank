@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/kyc.read",
-//                                                 "Write": "https://auth.bnk.to/kyc.write",
+//                                                 "https://auth.bnk.to/kyc.read":  "View kyc data",
+//                                                 "https://auth.bnk.to/kyc.write": "Manage kyc data",
 //                                         },
 //                                 },
 //                         },
@@ -250,7 +250,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/kyc.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -286,7 +286,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/kyc.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -322,7 +322,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/kyc.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -358,7 +358,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/kyc.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -392,7 +392,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/kyc.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -427,7 +427,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/kyc.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -461,7 +461,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/kyc.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -495,7 +495,7 @@ type KYCService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/kyc.read",
 	//                                         },
 	//                                 },
 	//                         },

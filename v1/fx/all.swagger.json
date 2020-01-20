@@ -70,7 +70,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/fx.write"
             ]
           }
         ]
@@ -127,7 +127,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/fx.write"
             ]
           }
         ]
@@ -188,7 +188,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/fx.read"
             ]
           }
         ]
@@ -255,8 +255,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/fx.read",
-        "Write": "https://auth.bnk.to/fx.write"
+        "https://auth.bnk.to/fx.read": "View fx data",
+        "https://auth.bnk.to/fx.write": "Manage fx data"
       }
     }
   }

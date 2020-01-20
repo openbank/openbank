@@ -63,7 +63,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/account.read"
             ]
           }
         ]
@@ -122,7 +122,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/account.write"
             ]
           }
         ]
@@ -175,7 +175,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/account.read"
             ]
           }
         ]
@@ -231,7 +231,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/account.write"
             ]
           }
         ]
@@ -295,7 +295,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/account.write"
             ]
           }
         ]
@@ -349,7 +349,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/account.read"
             ]
           }
         ]
@@ -403,7 +403,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/account.read"
             ]
           }
         ]
@@ -467,7 +467,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/account.write"
             ]
           }
         ]
@@ -840,8 +840,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/account.read",
-        "Write": "https://auth.bnk.to/account.write"
+        "https://auth.bnk.to/account.read": "View account data",
+        "https://auth.bnk.to/account.write": "Manage account data"
       }
     }
   }

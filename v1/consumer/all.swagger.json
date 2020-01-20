@@ -54,7 +54,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/consumer.read"
             ]
           }
         ]
@@ -107,7 +107,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/consumer.read"
             ]
           }
         ]
@@ -166,7 +166,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/consumer.write"
             ]
           }
         ]
@@ -219,7 +219,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/consumer.read"
             ]
           }
         ]
@@ -278,7 +278,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/consumer.write"
             ]
           }
         ]
@@ -339,7 +339,7 @@
         "security": [
           {
             "OAuth2": [
-              "Write"
+              "https://auth.bnk.to/consumer.write"
             ]
           }
         ]
@@ -384,7 +384,7 @@
         "security": [
           {
             "OAuth2": [
-              "Read"
+              "https://auth.bnk.to/consumer.read"
             ]
           }
         ]
@@ -640,8 +640,8 @@
       "authorizationUrl": "/v1/auth",
       "tokenUrl": "/v1/token",
       "scopes": {
-        "Read": "https://auth.bnk.to/consumer.read",
-        "Write": "https://auth.bnk.to/consumer.write"
+        "https://auth.bnk.to/consumer.read": "View consumer data",
+        "https://auth.bnk.to/consumer.write": "Manage consumer data"
       }
     }
   }

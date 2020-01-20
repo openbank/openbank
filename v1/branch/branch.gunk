@@ -41,8 +41,8 @@
 //                                 TokenURL:         "/v1/token",
 //                                 Scopes: openapiv2.Scopes{
 //                                         Scope: map[string]string{
-//                                                 "Read":  "https://auth.bnk.to/branch.read",
-//                                                 "Write": "https://auth.bnk.to/branch.write",
+//                                                 "https://auth.bnk.to/branch.read":  "View branch data",
+//                                                 "https://auth.bnk.to/branch.write": "Manage branch data",
 //                                         },
 //                                 },
 //                         },
@@ -187,7 +187,7 @@ type BranchService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/branch.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -224,7 +224,7 @@ type BranchService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Read",
+	//                                                 "https://auth.bnk.to/branch.read",
 	//                                         },
 	//                                 },
 	//                         },
@@ -259,7 +259,7 @@ type BranchService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/branch.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -289,7 +289,7 @@ type BranchService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/branch.write",
 	//                                         },
 	//                                 },
 	//                         },
@@ -318,7 +318,7 @@ type BranchService interface {
 	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
 	//                                         Scope: []string{
-	//                                                 "Write",
+	//                                                 "https://auth.bnk.to/branch.write",
 	//                                         },
 	//                                 },
 	//                         },
