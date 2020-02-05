@@ -68,26 +68,35 @@ type Card struct {
 	// Account is the ID of the account associated with the card.
 	Account string `pb:"2" json:"account"`
 
+	// CardNumber is the unique identification number of each card.
+	CardNumber string `pb:"3" json:"card_number"`
+
 	// OwnerName is the name of the card owner.
-	OwnerName string `pb:"3" json:"owner_name"`
+	OwnerName string `pb:"4" json:"owner_name"`
 
 	// ContactNumber is the contact number of the card owner.
-	ContactNumber string `pb:"4" json:"contact_number"`
+	ContactNumber string `pb:"5" json:"contact_number"`
 
 	// FirstName is the first name of card owner.
-	FirstName string `pb:"5" json:"first_name"`
+	FirstName string `pb:"6" json:"first_name"`
 
 	// LastName is the last name of the card owner.
-	LastName string `pb:"6" json:"last_name"`
+	LastName string `pb:"7" json:"last_name"`
 
 	// Expiry is an expiry date of the card.
-	Expiry time.Time `pb:"7" json:"expiry"`
+	Expiry time.Time `pb:"8" json:"expiry"`
 
 	// Status is the status of the card.
-	Status types.CardStatus `pb:"8" json:"status"`
+	Status types.CardStatus `pb:"9" json:"status"`
 
 	// AccessStatus is the access status of the card.
-	AccessStatus types.CardAccessStatus `pb:"9" json:"access_status"`
+	AccessStatus types.CardAccessStatus `pb:"10" json:"access_status"`
+
+	// AmountDue is the the card holder is expected to paid by the due date.
+	AmountDue types.Amount `pb:"11" json:"amount_due"`
+
+	// CreditLimit is the allowed credit limit.
+	CreditLimit string `pb:"12" json:"credit_limit"`
 }
 
 // CardAttribute hold all detail about card attribute
@@ -137,17 +146,20 @@ type Result struct {
 
 // CreateCardRequest is the request data to create new card
 type CreateCardRequest struct {
+	// CardNumber is the unique identification number of each card.
+	CardNumber string `pb:"1" json:"card_number"`
+
 	// Account is the ID of the account associated with the card.
-	AccountID string `pb:"1" json:"account_id"`
+	AccountID string `pb:"2" json:"account_id"`
 
 	// ContactNumber is the contact number of the card owner.
-	ContactNumber string `pb:"2" json:"contact_number"`
+	ContactNumber string `pb:"3" json:"contact_number"`
 
 	// FirstName is the first name of card owner.
-	FirstName string `pb:"3" json:"first_name"`
+	FirstName string `pb:"4" json:"first_name"`
 
 	// LastName is the last name of the card owner.
-	LastName string `pb:"4" json:"last_name"`
+	LastName string `pb:"5" json:"last_name"`
 }
 
 // CreateCardResponse is the response for CreateCardRequest

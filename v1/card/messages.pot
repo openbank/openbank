@@ -25,6 +25,9 @@ msgstr ""
 msgid "Account is the ID of the account associated with the card."
 msgstr ""
 
+msgid "AmountDue is the the card holder is expected to paid by the due date."
+msgstr ""
+
 msgid "Base Path"
 msgstr ""
 
@@ -43,6 +46,9 @@ msgstr ""
 msgid "Card successfully deleted."
 msgstr ""
 
+msgid "CardNumber is the unique identification number of each card."
+msgstr ""
+
 msgid "CardToken is the identifier to get the card information."
 msgstr ""
 
@@ -53,6 +59,12 @@ msgid "Create new card"
 msgstr ""
 
 msgid "Create new card attribute"
+msgstr ""
+
+msgid "CreditLimit is the allowed credit limit."
+msgstr ""
+
+msgid "Cur is the currency of the amount."
 msgstr ""
 
 msgid "Delete a card"
@@ -80,6 +92,9 @@ msgid "ID is a unique identifier of a card."
 msgstr ""
 
 msgid "LastName is the last name of the card owner."
+msgstr ""
+
+msgid "Num is the value of the amount."
 msgstr ""
 
 msgid "Objects"

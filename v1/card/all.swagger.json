@@ -438,6 +438,10 @@
           "type": "string",
           "description": "Account is the ID of the account associated with the card."
         },
+        "CardNumber": {
+          "type": "string",
+          "description": "CardNumber is the unique identification number of each card."
+        },
         "OwnerName": {
           "type": "string",
           "description": "OwnerName is the name of the card owner."
@@ -466,6 +470,14 @@
         "AccessStatus": {
           "$ref": "#/definitions/typesCardAccessStatus",
           "description": "AccessStatus is the access status of the card."
+        },
+        "AmountDue": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "AmountDue is the the card holder is expected to paid by the due date."
+        },
+        "CreditLimit": {
+          "type": "string",
+          "description": "CreditLimit is the allowed credit limit."
         }
       },
       "description": "Card holds all details about a card."
@@ -501,6 +513,10 @@
     "cardCreateCardRequest": {
       "type": "object",
       "properties": {
+        "CardNumber": {
+          "type": "string",
+          "description": "CardNumber is the unique identification number of each card."
+        },
         "AccountID": {
           "type": "string",
           "description": "Account is the ID of the account associated with the card."
@@ -589,6 +605,20 @@
         }
       },
       "description": "UpdateCardStatusRequest is the request envelope to update card status."
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "Cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "Num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
     },
     "typesCardAccessStatus": {
       "type": "string",

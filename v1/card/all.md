@@ -15,6 +15,7 @@ curl -X POST \
 	/v1/card \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
+		"card_number": "string",
 		"account_id": "string",
 		"contact_number": "string",
 		"first_name": "string",
@@ -27,12 +28,13 @@ curl -X POST \
 
 ### Body Parameters
 
-| Name          | Type   | Description                                                |
-|---------------|--------|------------------------------------------------------------|
-| AccountID     | string | Account is the ID of the account associated with the card. |
-| ContactNumber | string | ContactNumber is the contact number of the card owner.     |
-| FirstName     | string | FirstName is the first name of card owner.                 |
-| LastName      | string | LastName is the last name of the card owner.               |
+| Name          | Type   | Description                                                  |
+|---------------|--------|--------------------------------------------------------------|
+| CardNumber    | string | CardNumber is the unique identification number of each card. |
+| AccountID     | string | Account is the ID of the account associated with the card.   |
+| ContactNumber | string | ContactNumber is the contact number of the card owner.       |
+| FirstName     | string | FirstName is the first name of card owner.                   |
+| LastName      | string | LastName is the last name of the card owner.                 |
 
 ### Responses
 
@@ -185,17 +187,20 @@ curl -X GET \
 
 #### Response body
 
-| Name          | Type             | Description                                                |
-|---------------|------------------|------------------------------------------------------------|
-| ID            | string           | ID is a unique identifier of a card.                       |
-| Account       | string           | Account is the ID of the account associated with the card. |
-| OwnerName     | string           | OwnerName is the name of the card owner.                   |
-| ContactNumber | string           | ContactNumber is the contact number of the card owner.     |
-| FirstName     | string           | FirstName is the first name of card owner.                 |
-| LastName      | string           | LastName is the last name of the card owner.               |
-| Expiry        | Timestamp        | Expiry is an expiry date of the card.                      |
-| Status        | CardStatus       | Status is the status of the card.                          |
-| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.             |
+| Name          | Type             | Description                                                           |
+|---------------|------------------|-----------------------------------------------------------------------|
+| ID            | string           | ID is a unique identifier of a card.                                  |
+| Account       | string           | Account is the ID of the account associated with the card.            |
+| CardNumber    | string           | CardNumber is the unique identification number of each card.          |
+| OwnerName     | string           | OwnerName is the name of the card owner.                              |
+| ContactNumber | string           | ContactNumber is the contact number of the card owner.                |
+| FirstName     | string           | FirstName is the first name of card owner.                            |
+| LastName      | string           | LastName is the last name of the card owner.                          |
+| Expiry        | Timestamp        | Expiry is an expiry date of the card.                                 |
+| Status        | CardStatus       | Status is the status of the card.                                     |
+| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.                        |
+| AmountDue     | Amount           | AmountDue is the the card holder is expected to paid by the due date. |
+| CreditLimit   | string           | CreditLimit is the allowed credit limit.                              |
 
 ##### Objects
 
@@ -206,12 +211,20 @@ curl -X GET \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
+
 Example:
 
 ```json
 {
   "id": "string",
   "account": "string",
+  "card_number": "string",
   "owner_name": "string",
   "contact_number": "string",
   "first_name": "string",
@@ -221,7 +234,12 @@ Example:
     "nanos": "int32"
   },
   "status": "CardStatus",
-  "access_status": "CardAccessStatus"
+  "access_status": "CardAccessStatus",
+  "amount_due": {
+    "cur": "string",
+    "num": "string"
+  },
+  "credit_limit": "string"
 }
 ```
 #### Response codes
@@ -269,17 +287,20 @@ curl -X GET \
 
 ###### Card
 
-| Name          | Type             | Description                                                |
-|---------------|------------------|------------------------------------------------------------|
-| ID            | string           | ID is a unique identifier of a card.                       |
-| Account       | string           | Account is the ID of the account associated with the card. |
-| OwnerName     | string           | OwnerName is the name of the card owner.                   |
-| ContactNumber | string           | ContactNumber is the contact number of the card owner.     |
-| FirstName     | string           | FirstName is the first name of card owner.                 |
-| LastName      | string           | LastName is the last name of the card owner.               |
-| Expiry        | Timestamp        | Expiry is an expiry date of the card.                      |
-| Status        | CardStatus       | Status is the status of the card.                          |
-| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.             |
+| Name          | Type             | Description                                                           |
+|---------------|------------------|-----------------------------------------------------------------------|
+| ID            | string           | ID is a unique identifier of a card.                                  |
+| Account       | string           | Account is the ID of the account associated with the card.            |
+| CardNumber    | string           | CardNumber is the unique identification number of each card.          |
+| OwnerName     | string           | OwnerName is the name of the card owner.                              |
+| ContactNumber | string           | ContactNumber is the contact number of the card owner.                |
+| FirstName     | string           | FirstName is the first name of card owner.                            |
+| LastName      | string           | LastName is the last name of the card owner.                          |
+| Expiry        | Timestamp        | Expiry is an expiry date of the card.                                 |
+| Status        | CardStatus       | Status is the status of the card.                                     |
+| AccessStatus  | CardAccessStatus | AccessStatus is the access status of the card.                        |
+| AmountDue     | Amount           | AmountDue is the the card holder is expected to paid by the due date. |
+| CreditLimit   | string           | CreditLimit is the allowed credit limit.                              |
 
 ###### Timestamp
 
@@ -287,6 +308,13 @@ curl -X GET \
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
+
+###### Amount
+
+| Name | Type   | Description                        |
+|------|--------|------------------------------------|
+| Cur  | string | Cur is the currency of the amount. |
+| Num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -296,6 +324,7 @@ Example:
     {
       "id": "string",
       "account": "string",
+      "card_number": "string",
       "owner_name": "string",
       "contact_number": "string",
       "first_name": "string",
@@ -305,7 +334,12 @@ Example:
         "nanos": "int32"
       },
       "status": "CardStatus",
-      "access_status": "CardAccessStatus"
+      "access_status": "CardAccessStatus",
+      "amount_due": {
+        "cur": "string",
+        "num": "string"
+      },
+      "credit_limit": "string"
     }
   ]
 }

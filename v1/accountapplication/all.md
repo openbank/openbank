@@ -74,6 +74,7 @@ curl -X POST \
 | Title                    | string       | Title                                                      |
 | PermanentAddress         | Address      | Permanent address                                          |
 | ContactAddress           | Address      | Contact address                                            |
+| ContactNumber            | string       | Contact number                                             |
 | ProfileNumber            | string       | profile number                                             |
 | FaceImageUrl             | string       | Face image of the customer                                 |
 | FaceImageDate            | string       | Date when the face image was added/updated                 |
@@ -159,6 +160,7 @@ Example:
       "line_1": "string",
       "postal_code": "string"
     },
+    "contact_number": "string",
     "profile_number": "string",
     "face_image_url": "string",
     "face_image_date": "string",
