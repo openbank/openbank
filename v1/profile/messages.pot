@@ -58,6 +58,9 @@ msgstr ""
 msgid "Contact address"
 msgstr ""
 
+msgid "Contact number"
+msgstr ""
+
 msgid "ContractDate is the date of the contract initialization."
 msgstr ""
 

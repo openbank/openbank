@@ -76,6 +76,7 @@ Structure of customer profile information
 | Title                    | string       | Title                                                      |
 | PermanentAddress         | Address      | Permanent address                                          |
 | ContactAddress           | Address      | Contact address                                            |
+| ContactNumber            | string       | Contact number                                             |
 | ProfileNumber            | string       | profile number                                             |
 | FaceImageUrl             | string       | Face image of the customer                                 |
 | FaceImageDate            | string       | Date when the face image was added/updated                 |

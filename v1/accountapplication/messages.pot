@@ -52,6 +52,9 @@ msgstr ""
 msgid "Contact address"
 msgstr ""
 
+msgid "Contact number"
+msgstr ""
+
 msgid "CountryName holds the country name information."
 msgstr ""
 
