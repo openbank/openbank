@@ -6,14 +6,32 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/product.write": "Manage product data",
 }
 
-var AuthScopes = map[string][]string{
-	"/product.ProductService/CreateProduct": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/CreateProductAttribute": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/DeleteProduct": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/DeleteProductAttribute": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/GetProduct": []string{"https://auth.bnk.to/product.read"},
-	"/product.ProductService/GetProductAttribute": []string{"https://auth.bnk.to/product.read"},
-	"/product.ProductService/GetProducts": []string{"https://auth.bnk.to/product.read"},
-	"/product.ProductService/UpdateProduct": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/UpdateProductAttribute": []string{"https://auth.bnk.to/product.write"},
+var AuthScopes = map[string][][]string{
+	"/product.ProductService/CreateProduct": [][]string{
+		{"https://auth.bnk.to/product.write",},
+	},
+	"/product.ProductService/CreateProductAttribute": [][]string{
+		{"https://auth.bnk.to/product.write",},
+	},
+	"/product.ProductService/DeleteProduct": [][]string{
+		{"https://auth.bnk.to/product.write",},
+	},
+	"/product.ProductService/DeleteProductAttribute": [][]string{
+		{"https://auth.bnk.to/product.write",},
+	},
+	"/product.ProductService/GetProduct": [][]string{
+		{"https://auth.bnk.to/product.read",},
+	},
+	"/product.ProductService/GetProductAttribute": [][]string{
+		{"https://auth.bnk.to/product.read",},
+	},
+	"/product.ProductService/GetProducts": [][]string{
+		{"https://auth.bnk.to/product.read",},
+	},
+	"/product.ProductService/UpdateProduct": [][]string{
+		{"https://auth.bnk.to/product.write",},
+	},
+	"/product.ProductService/UpdateProductAttribute": [][]string{
+		{"https://auth.bnk.to/product.write",},
+	},
 }

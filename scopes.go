@@ -70,9 +70,10 @@ func AllScopes() map[string]string {
 }
 
 // AllAuthScopes returns a mapping between method and its required OAuth2 scope.
-func AllAuthScopes() map[string]string {
+func AllAuthScopes() map[string][][]string {
 	var (
-		allAuthScopes = []map[string][]string{
+		result        = make(map[string][][]string)
+		allAuthScopes = []map[string][][]string{
 			accounts.AuthScopes,
 			accountapplication.AuthScopes,
 			accountpublic.AuthScopes,
@@ -99,14 +100,11 @@ func AllAuthScopes() map[string]string {
 			transactionrequest.AuthScopes,
 			types.AuthScopes,
 		}
-		result = make(map[string]string)
 	)
 
 	for _, authScopes := range allAuthScopes {
 		for method, scopes := range authScopes {
-			if len(scopes) != 0 {
-				result[method] = scopes[len(scopes)-1]
-			}
+			result[method] = scopes
 		}
 	}
 	return result

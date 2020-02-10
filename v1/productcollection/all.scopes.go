@@ -6,9 +6,17 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/productcollection.write": "Manage productcollection data",
 }
 
-var AuthScopes = map[string][]string{
-	"/productcollection.ProductCollectionService/CreateProductCollection": []string{"https://auth.bnk.to/productcollection.write"},
-	"/productcollection.ProductCollectionService/DeleteProductCollection": []string{"https://auth.bnk.to/productcollection.write"},
-	"/productcollection.ProductCollectionService/GetProductCollection": []string{"https://auth.bnk.to/productcollection.read"},
-	"/productcollection.ProductCollectionService/UpdateProductCollection": []string{"https://auth.bnk.to/productcollection.write"},
+var AuthScopes = map[string][][]string{
+	"/productcollection.ProductCollectionService/CreateProductCollection": [][]string{
+		{"https://auth.bnk.to/productcollection.write",},
+	},
+	"/productcollection.ProductCollectionService/DeleteProductCollection": [][]string{
+		{"https://auth.bnk.to/productcollection.write",},
+	},
+	"/productcollection.ProductCollectionService/GetProductCollection": [][]string{
+		{"https://auth.bnk.to/productcollection.read",},
+	},
+	"/productcollection.ProductCollectionService/UpdateProductCollection": [][]string{
+		{"https://auth.bnk.to/productcollection.write",},
+	},
 }

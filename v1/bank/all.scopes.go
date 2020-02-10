@@ -6,11 +6,23 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/bank.write": "Manage bank data",
 }
 
-var AuthScopes = map[string][]string{
-	"/bank.BankService/CreateBank": []string{"https://auth.bnk.to/bank.write"},
-	"/bank.BankService/CreateTranscationTypeAtBank": []string{"https://auth.bnk.to/bank.write"},
-	"/bank.BankService/DeleteBank": []string{"https://auth.bnk.to/bank.write"},
-	"/bank.BankService/GetBank": []string{"https://auth.bnk.to/bank.read"},
-	"/bank.BankService/GetBanks": []string{"https://auth.bnk.to/bank.read"},
-	"/bank.BankService/UpdateBank": []string{"https://auth.bnk.to/bank.write"},
+var AuthScopes = map[string][][]string{
+	"/bank.BankService/CreateBank": [][]string{
+		{"https://auth.bnk.to/bank.write",},
+	},
+	"/bank.BankService/CreateTranscationTypeAtBank": [][]string{
+		{"https://auth.bnk.to/bank.write",},
+	},
+	"/bank.BankService/DeleteBank": [][]string{
+		{"https://auth.bnk.to/bank.write",},
+	},
+	"/bank.BankService/GetBank": [][]string{
+		{"https://auth.bnk.to/bank.read",},
+	},
+	"/bank.BankService/GetBanks": [][]string{
+		{"https://auth.bnk.to/bank.read",},
+	},
+	"/bank.BankService/UpdateBank": [][]string{
+		{"https://auth.bnk.to/bank.write",},
+	},
 }

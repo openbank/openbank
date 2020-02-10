@@ -6,30 +6,80 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/transactionmetadata.write": "Manage transactionmetadata data",
 }
 
-var AuthScopes = map[string][]string{
-	"/transactionmetadata.TransactionMetadataService/CreateComment": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/CreateImage": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/CreateNarrative": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/CreateTag": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/CreateWhereTag": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/DeleteComment": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/DeleteImage": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/DeleteNarrative": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/DeleteTag": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/DeleteWhereTag": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/GetComment": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetComments": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetImage": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetImages": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetNarrative": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetNarratives": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetTag": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetTags": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetWhereTag": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/GetWhereTags": []string{"https://auth.bnk.to/transactionmetadata.read"},
-	"/transactionmetadata.TransactionMetadataService/UpdateComment": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/UpdateImage": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/UpdateNarrative": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/UpdateTag": []string{"https://auth.bnk.to/transactionmetadata.write"},
-	"/transactionmetadata.TransactionMetadataService/UpdateWhereTag": []string{"https://auth.bnk.to/transactionmetadata.write"},
+var AuthScopes = map[string][][]string{
+	"/transactionmetadata.TransactionMetadataService/CreateComment": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/CreateImage": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/CreateNarrative": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/CreateTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/CreateWhereTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/DeleteComment": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/DeleteImage": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/DeleteNarrative": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/DeleteTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/DeleteWhereTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetComment": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetComments": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetImage": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetImages": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetNarrative": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetNarratives": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetTags": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetWhereTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/GetWhereTags": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.read",},
+	},
+	"/transactionmetadata.TransactionMetadataService/UpdateComment": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/UpdateImage": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/UpdateNarrative": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/UpdateTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
+	"/transactionmetadata.TransactionMetadataService/UpdateWhereTag": [][]string{
+		{"https://auth.bnk.to/transactionmetadata.write",},
+	},
 }

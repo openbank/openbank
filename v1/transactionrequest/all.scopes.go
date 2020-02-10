@@ -6,15 +6,35 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/transactionrequest.write": "Manage transactionrequest data",
 }
 
-var AuthScopes = map[string][]string{
-	"/transactionrequest.TransactionRequestService/AnswerTransactionRequestChallenge": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateAccountOTPTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateAccountTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateCounterPartyTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateFreeFormTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateSEPATransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/GetSupportedTransactionRequestTypes": []string{"https://auth.bnk.to/transactionrequest.read"},
-	"/transactionrequest.TransactionRequestService/GetTransactionRequestTypes": []string{"https://auth.bnk.to/transactionrequest.read"},
-	"/transactionrequest.TransactionRequestService/GetTransactionRequests": []string{"https://auth.bnk.to/transactionrequest.read"},
-	"/transactionrequest.TransactionRequestService/SaveHistoricTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
+var AuthScopes = map[string][][]string{
+	"/transactionrequest.TransactionRequestService/AnswerTransactionRequestChallenge": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
+	"/transactionrequest.TransactionRequestService/CreateAccountOTPTransaction": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
+	"/transactionrequest.TransactionRequestService/CreateAccountTransaction": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
+	"/transactionrequest.TransactionRequestService/CreateCounterPartyTransaction": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
+	"/transactionrequest.TransactionRequestService/CreateFreeFormTransaction": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
+	"/transactionrequest.TransactionRequestService/CreateSEPATransaction": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
+	"/transactionrequest.TransactionRequestService/GetSupportedTransactionRequestTypes": [][]string{
+		{"https://auth.bnk.to/transactionrequest.read",},
+	},
+	"/transactionrequest.TransactionRequestService/GetTransactionRequestTypes": [][]string{
+		{"https://auth.bnk.to/transactionrequest.read",},
+	},
+	"/transactionrequest.TransactionRequestService/GetTransactionRequests": [][]string{
+		{"https://auth.bnk.to/transactionrequest.read",},
+	},
+	"/transactionrequest.TransactionRequestService/SaveHistoricTransaction": [][]string{
+		{"https://auth.bnk.to/transactionrequest.write",},
+	},
 }

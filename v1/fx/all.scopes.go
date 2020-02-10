@@ -6,8 +6,14 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/fx.write": "Manage fx data",
 }
 
-var AuthScopes = map[string][]string{
-	"/fx.FXService/CreateFX": []string{"https://auth.bnk.to/fx.write"},
-	"/fx.FXService/GetCurrentFXRate": []string{"https://auth.bnk.to/fx.read"},
-	"/fx.FXService/UpdateFX": []string{"https://auth.bnk.to/fx.write"},
+var AuthScopes = map[string][][]string{
+	"/fx.FXService/CreateFX": [][]string{
+		{"https://auth.bnk.to/fx.write",},
+	},
+	"/fx.FXService/GetCurrentFXRate": [][]string{
+		{"https://auth.bnk.to/fx.read",},
+	},
+	"/fx.FXService/UpdateFX": [][]string{
+		{"https://auth.bnk.to/fx.write",},
+	},
 }

@@ -6,17 +6,41 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/entitlement.write": "Manage entitlement data",
 }
 
-var AuthScopes = map[string][]string{
-	"/entitlement.EntitlementService/AddEntitlementRequestForCurrentUser": []string{"https://auth.bnk.to/entitlement.write"},
-	"/entitlement.EntitlementService/AddEntitlementRequestForUser": []string{"https://auth.bnk.to/entitlement.write"},
-	"/entitlement.EntitlementService/DeleteEntitlement": []string{"https://auth.bnk.to/entitlement.write"},
-	"/entitlement.EntitlementService/DeleteEntitlementRequest": []string{"https://auth.bnk.to/entitlement.write"},
-	"/entitlement.EntitlementService/GetAllEntitlementRequests": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetAllEntitlements": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetEntitlementForCurrentUser": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetEntitlementForUser": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetEntitlementForUserAtBank": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetEntitlementRequestForCurrentUser": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetEntitlementRequestForUser": []string{"https://auth.bnk.to/entitlement.read"},
-	"/entitlement.EntitlementService/GetRoles": []string{"https://auth.bnk.to/entitlement.read"},
+var AuthScopes = map[string][][]string{
+	"/entitlement.EntitlementService/AddEntitlementRequestForCurrentUser": [][]string{
+		{"https://auth.bnk.to/entitlement.write",},
+	},
+	"/entitlement.EntitlementService/AddEntitlementRequestForUser": [][]string{
+		{"https://auth.bnk.to/entitlement.write",},
+	},
+	"/entitlement.EntitlementService/DeleteEntitlement": [][]string{
+		{"https://auth.bnk.to/entitlement.write",},
+	},
+	"/entitlement.EntitlementService/DeleteEntitlementRequest": [][]string{
+		{"https://auth.bnk.to/entitlement.write",},
+	},
+	"/entitlement.EntitlementService/GetAllEntitlementRequests": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetAllEntitlements": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetEntitlementForCurrentUser": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetEntitlementForUser": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetEntitlementForUserAtBank": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetEntitlementRequestForCurrentUser": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetEntitlementRequestForUser": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
+	"/entitlement.EntitlementService/GetRoles": [][]string{
+		{"https://auth.bnk.to/entitlement.read",},
+	},
 }

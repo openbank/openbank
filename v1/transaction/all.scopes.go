@@ -6,11 +6,23 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/transaction.write": "Manage transaction data",
 }
 
-var AuthScopes = map[string][]string{
-	"/transactions.TransactionService/ApprovePayment": []string{"https://auth.bnk.to/transaction.write"},
-	"/transactions.TransactionService/CreateTransaction": []string{"https://auth.bnk.to/transaction.write"},
-	"/transactions.TransactionService/GetTransaction": []string{"https://auth.bnk.to/transaction.read"},
-	"/transactions.TransactionService/GetTransactions": []string{"https://auth.bnk.to/transaction.read"},
-	"/transactions.TransactionService/GetTransactionsByAccount": []string{"https://auth.bnk.to/transaction.read"},
-	"/transactions.TransactionService/TFA": []string{"https://auth.bnk.to/transaction.write"},
+var AuthScopes = map[string][][]string{
+	"/transactions.TransactionService/ApprovePayment": [][]string{
+		{"https://auth.bnk.to/transaction.write",},
+	},
+	"/transactions.TransactionService/CreateTransaction": [][]string{
+		{"https://auth.bnk.to/transaction.write",},
+	},
+	"/transactions.TransactionService/GetTransaction": [][]string{
+		{"https://auth.bnk.to/transaction.read",},
+	},
+	"/transactions.TransactionService/GetTransactions": [][]string{
+		{"https://auth.bnk.to/transaction.read",},
+	},
+	"/transactions.TransactionService/GetTransactionsByAccount": [][]string{
+		{"https://auth.bnk.to/transaction.read",},
+	},
+	"/transactions.TransactionService/TFA": [][]string{
+		{"https://auth.bnk.to/transaction.write",},
+	},
 }

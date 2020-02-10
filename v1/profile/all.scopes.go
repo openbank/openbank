@@ -6,7 +6,11 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/profile.write": "Manage profile data",
 }
 
-var AuthScopes = map[string][]string{
-	"/profile.ProfileService/GetProfile": []string{"https://auth.bnk.to/profile.read"},
-	"/profile.ProfileService/GetProfileCard": []string{"https://auth.bnk.to/profile.read"},
+var AuthScopes = map[string][][]string{
+	"/profile.ProfileService/GetProfile": [][]string{
+		{"https://auth.bnk.to/profile.read",},
+	},
+	"/profile.ProfileService/GetProfileCard": [][]string{
+		{"https://auth.bnk.to/profile.read",},
+	},
 }

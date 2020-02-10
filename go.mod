@@ -11,3 +11,5 @@ require (
 	google.golang.org/genproto v0.0.0-20190708153700-3bdd9d9f5532
 	google.golang.org/grpc v1.21.1
 )
+
+replace github.com/gunk/gunk => github.com/favadi/gunk v0.1.1-0.20200210044944-4770c0fc340b

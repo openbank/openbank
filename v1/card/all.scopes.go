@@ -6,12 +6,26 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/card.write": "Manage card data",
 }
 
-var AuthScopes = map[string][]string{
-	"/card.CardService/CreateCard": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/CreateCardAttribute": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/DeleteCard": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/GetCard": []string{"https://auth.bnk.to/card.read"},
-	"/card.CardService/GetUserCards": []string{"https://auth.bnk.to/card.read"},
-	"/card.CardService/UpdateCardAccessStatus": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/UpdateCardStatus": []string{"https://auth.bnk.to/card.write"},
+var AuthScopes = map[string][][]string{
+	"/card.CardService/CreateCard": [][]string{
+		{"https://auth.bnk.to/card.write",},
+	},
+	"/card.CardService/CreateCardAttribute": [][]string{
+		{"https://auth.bnk.to/card.write",},
+	},
+	"/card.CardService/DeleteCard": [][]string{
+		{"https://auth.bnk.to/card.write",},
+	},
+	"/card.CardService/GetCard": [][]string{
+		{"https://auth.bnk.to/card.read",},
+	},
+	"/card.CardService/GetUserCards": [][]string{
+		{"https://auth.bnk.to/card.read",},
+	},
+	"/card.CardService/UpdateCardAccessStatus": [][]string{
+		{"https://auth.bnk.to/card.write",},
+	},
+	"/card.CardService/UpdateCardStatus": [][]string{
+		{"https://auth.bnk.to/card.write",},
+	},
 }

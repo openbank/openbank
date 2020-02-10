@@ -6,8 +6,14 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/atm.write": "Manage atm data",
 }
 
-var AuthScopes = map[string][]string{
-	"/atm.ATMService/CreateATM": []string{"https://auth.bnk.to/atm.write"},
-	"/atm.ATMService/GetATM": []string{"https://auth.bnk.to/atm.read"},
-	"/atm.ATMService/GetATMs": []string{"https://auth.bnk.to/atm.read"},
+var AuthScopes = map[string][][]string{
+	"/atm.ATMService/CreateATM": [][]string{
+		{"https://auth.bnk.to/atm.write",},
+	},
+	"/atm.ATMService/GetATM": [][]string{
+		{"https://auth.bnk.to/atm.read",},
+	},
+	"/atm.ATMService/GetATMs": [][]string{
+		{"https://auth.bnk.to/atm.read",},
+	},
 }

@@ -6,12 +6,26 @@ var Scopes = map[string]string{
 	"https://auth.bnk.to/consumer.write": "Manage consumer data",
 }
 
-var AuthScopes = map[string][]string{
-	"/consumer.ConsumerService/EnableOrDisableConsumer": []string{"https://auth.bnk.to/consumer.write"},
-	"/consumer.ConsumerService/GetConsumer": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/GetConsumerCallLimits": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/GetConsumers": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/GetConsumersForLoggedInUser": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/SetConsumerCallsLimit": []string{"https://auth.bnk.to/consumer.write"},
-	"/consumer.ConsumerService/UpdateConsumerRedirectURL": []string{"https://auth.bnk.to/consumer.write"},
+var AuthScopes = map[string][][]string{
+	"/consumer.ConsumerService/EnableOrDisableConsumer": [][]string{
+		{"https://auth.bnk.to/consumer.write",},
+	},
+	"/consumer.ConsumerService/GetConsumer": [][]string{
+		{"https://auth.bnk.to/consumer.read",},
+	},
+	"/consumer.ConsumerService/GetConsumerCallLimits": [][]string{
+		{"https://auth.bnk.to/consumer.read",},
+	},
+	"/consumer.ConsumerService/GetConsumers": [][]string{
+		{"https://auth.bnk.to/consumer.read",},
+	},
+	"/consumer.ConsumerService/GetConsumersForLoggedInUser": [][]string{
+		{"https://auth.bnk.to/consumer.read",},
+	},
+	"/consumer.ConsumerService/SetConsumerCallsLimit": [][]string{
+		{"https://auth.bnk.to/consumer.write",},
+	},
+	"/consumer.ConsumerService/UpdateConsumerRedirectURL": [][]string{
+		{"https://auth.bnk.to/consumer.write",},
+	},
 }
