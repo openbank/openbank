@@ -16,6 +16,49 @@
   ],
   "paths": {
     "/v1/card": {
+      "get": {
+        "summary": "Retrieves all available cards",
+        "description": "Retrieves all available cards for specific user, selected by the user_id",
+        "operationId": "GetUserCards",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/cardGetUserCardsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "tags": [
+          "Card"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/card.read"
+            ]
+          }
+        ]
+      },
       "post": {
         "summary": "Create new card",
         "description": "Create new card",
@@ -256,59 +299,6 @@
           {
             "OAuth2": [
               "https://auth.bnk.to/card.write"
-            ]
-          }
-        ]
-      }
-    },
-    "/v1/card/user/{UserID}": {
-      "get": {
-        "summary": "Retrieves all available cards",
-        "description": "Retrieves all available cards for specific user, selected by the user_id",
-        "operationId": "GetUserCards",
-        "responses": {
-          "200": {
-            "description": "Request executed successfully.",
-            "schema": {
-              "$ref": "#/definitions/cardGetUserCardsResponse"
-            }
-          },
-          "400": {
-            "description": "Returned when the request body is malformatted or does not match the expected request.",
-            "schema": {}
-          },
-          "401": {
-            "description": "Returned when the request does not contains the user's credentials.",
-            "schema": {}
-          },
-          "403": {
-            "description": "Returned when the user does not have permission to access the resource.",
-            "schema": {}
-          },
-          "404": {
-            "description": "Returned when the resource is not found.",
-            "schema": {}
-          },
-          "500": {
-            "description": "Returned when an unexpected error occured on the server side.",
-            "schema": {}
-          }
-        },
-        "parameters": [
-          {
-            "name": "UserID",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "Card"
-        ],
-        "security": [
-          {
-            "OAuth2": [
-              "https://auth.bnk.to/card.read"
             ]
           }
         ]
