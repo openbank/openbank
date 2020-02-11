@@ -185,7 +185,6 @@ type DeleteCardRequest struct {
 }
 
 type GetUserCardsRequest struct {
-	UserID string `pb:"1" json:"user_id"`
 }
 
 type GetUserCardsResponse struct {
@@ -301,11 +300,11 @@ type CardService interface {
 	// }
 	GetCard(GetCardRequest) Card
 
-	// GetUserCards retrieves the detail of a cards information for the specific user, selected by user_id.
+	// GetUserCards retrieves the detail of a cards information for current user.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
-	//         Path:   "/v1/card/user/{UserID}",
+	//         Path:   "/v1/card",
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Card"},

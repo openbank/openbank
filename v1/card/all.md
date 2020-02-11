@@ -260,20 +260,14 @@ Retrieves all available cards for specific user, selected by the user_id
 
 ```sh
 curl -X GET \
-	/v1/card/user/{UserID} \
+	/v1/card \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 {{snippet getusercards []}}
 
 ### HTTP Request
 
-`GET /v1/card/user/{UserID}`
-
-### Query Parameters
-
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| UserID | string |             |
+`GET /v1/card`
 
 ### Responses
 
