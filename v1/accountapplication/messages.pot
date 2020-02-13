@@ -103,9 +103,6 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
-msgid "HasMore indicates if there are more accounts available."
-msgstr ""
-
 msgid "Highest education such as bachelor, masters etc"
 msgstr ""
 
@@ -175,7 +172,7 @@ msgstr ""
 msgid "Responses"
 msgstr ""
 
-msgid "Result is a list containing up to 20 Accounts."
+msgid "Result is a list of account applications."
 msgstr ""
 
 msgid "Retrieve an account application"
@@ -199,7 +196,7 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
-msgid "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination."
+msgid "Returns a list of account applications, pagination is supported."
 msgstr ""
 
 msgid "State holds the state information."
@@ -212,6 +209,9 @@ msgid "Street holds the street information."
 msgstr ""
 
 msgid "Title"
+msgstr ""
+
+msgid "Total returns the total number of available result items."
 msgstr ""
 
 msgid "True if email is verified, otherwise False"

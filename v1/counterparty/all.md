@@ -199,7 +199,7 @@ Example:
 
 ## List all accounts
 
-Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
+Returns a list of counter parties, pagination is supported.
 
 ```sh
 curl -X GET \
@@ -216,10 +216,10 @@ curl -X GET \
 
 #### Response body
 
-| Name    | Type           | Description                                             |
-|---------|----------------|---------------------------------------------------------|
-| Result  | []CounterParty | Result is a list containing up to 20 Counter parties.   |
-| HasMore | bool           | HasMore indicates if there are more accounts available. |
+| Name   | Type           | Description                                               |
+|--------|----------------|-----------------------------------------------------------|
+| Result | []CounterParty | Result is a list of counter parties.                      |
+| Total  | uint64         | Total returns the total number of available result items. |
 
 ##### Objects
 
@@ -309,7 +309,7 @@ Example:
       }
     }
   ],
-  "has_more": "bool"
+  "total": "uint64"
 }
 ```
 #### Response codes

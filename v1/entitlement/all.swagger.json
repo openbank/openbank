@@ -109,11 +109,20 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
+            "name": "Page",
+            "description": "Page is the page number of data to return.",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "Size",
+            "description": "Size is the maximum number of items to return.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
           }
         ],
         "tags": [
@@ -279,11 +288,20 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
+            "name": "Page",
+            "description": "Page is the page number of data to return.",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "Size",
+            "description": "Size is the maximum number of items to return.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
           }
         ],
         "tags": [

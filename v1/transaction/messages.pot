@@ -91,9 +91,6 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
-msgid "HasMore indicates if there are more transactions available."
-msgstr ""
-
 msgid "Host"
 msgstr ""
 
@@ -175,7 +172,7 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
-msgid "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page."
+msgid "Returns a list of transactions, pagination is supported. Max page size is 100."
 msgstr ""
 
 msgid "SMSCode is the OTP code used for testing."
@@ -221,6 +218,9 @@ msgid "The latitude in degrees. It must be in the range [-90.0, +90.0]."
 msgstr ""
 
 msgid "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+msgstr ""
+
+msgid "Total returns the total number of available result items."
 msgstr ""
 
 msgid "TraceNumber is the transaction reference code."

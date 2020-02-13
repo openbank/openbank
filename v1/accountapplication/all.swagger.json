@@ -18,7 +18,7 @@
     "/v1/account-applications": {
       "get": {
         "summary": "List all accounts",
-        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+        "description": "Returns a list of account applications, pagination is supported.",
         "operationId": "GetAccountApplications",
         "responses": {
           "200": {
@@ -50,11 +50,20 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination.",
+            "name": "Page",
+            "description": "Page is the page number of data to return.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "format": "uint64"
+          },
+          {
+            "name": "Size",
+            "description": "Size is the maximum number of items to return.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "uint64"
           }
         ],
         "tags": [
@@ -331,12 +340,12 @@
           "items": {
             "$ref": "#/definitions/accountapplicationAccountApplication"
           },
-          "description": "Result is a list containing up to 20 Accounts."
+          "description": "Result is a list of account applications."
         },
-        "HasMore": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "HasMore indicates if there are more accounts available."
+        "Total": {
+          "type": "string",
+          "format": "uint64",
+          "description": "Total returns the total number of available result items."
         }
       },
       "description": "GetAccountApplicationsResponse wraps the list of account applications."

@@ -160,12 +160,10 @@ type GetTransactionsRequest struct {
 	// TransactionType is a type of transaction, debit or credit.
 	TransactionType Type `pb:"3" json:"transaction_type"`
 
-	// Limit is number of search return of transactions.
-	Limit string `pb:"4" json:"limit"`
-
-	// NextStartingIndex is a cursor for pagination. It's a TransactionID that defines
-	// the current place in the total list of Transaction.
-	NextStartingIndex string `pb:"5" json:"next_starting_index"`
+	// Page is the page number of data to return.
+	Page uint64 `pb:"5" json:"page"`
+	// Size is the maximum number of items to return.
+	Size uint64 `pb:"6" json:"size"`
 }
 
 // GetTransactionsResponse is the response message for retrieving a list of transactions.
@@ -173,8 +171,8 @@ type GetTransactionsResponse struct {
 	// Result is a list containing up to 20 transactions.
 	Result []Transaction `pb:"1" json:"result"`
 
-	// HasMore indicates if there are more transactions available.
-	HasMore bool `pb:"2" json:"has_more"`
+	// Total returns the total number of available result items.
+	Total uint64 `pb:"2" json:"total"`
 
 	// LastRunningBalance is current balance for related account.
 	LastRunningBalance types.Amount `pb:"3" json:"last_running_balance"`
@@ -195,12 +193,10 @@ type GetTransactionsByAccountRequest struct {
 	// TransactionType is a type of transaction, debit or credit.
 	TransactionType Type `pb:"4" json:"transaction_type"`
 
-	// Limit is number of search return of transactions.
-	Limit string `pb:"5" json:"limit"`
-
-	// NextStartingIndex is a cursor for pagination. It's a TransactionID that defines
-	// the current place in the total list of Transaction.
-	NextStartingIndex string `pb:"6" json:"next_starting_index"`
+	// Page is the page number of data to return.
+	Page uint64 `pb:"5" json:"page"`
+	// Size is the maximum number of items to return.
+	Size uint64 `pb:"6" json:"size"`
 }
 
 // GetTransactionsByAccountResponse is the response message for retrieving a list of transactions.
@@ -208,8 +204,8 @@ type GetTransactionsByAccountResponse struct {
 	// Result is a list containing up to 20 transactions.
 	Result []Transaction `pb:"1" json:"result"`
 
-	// HasMore indicates if there are more transactions available.
-	HasMore bool `pb:"2" json:"has_more"`
+	// Total returns the total number of available result items.
+	Total uint64 `pb:"2" json:"total"`
 
 	// LastRunningBalance is current balance for related account.
 	LastRunningBalance types.Amount `pb:"3" json:"last_running_balance"`
@@ -349,7 +345,7 @@ type TransactionService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Transaction"},
-	//         Description: "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+	//         Description: "Returns a list of transactions, pagination is supported. Max page size is 100.",
 	//         Summary:     "List all transactions",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
@@ -383,7 +379,7 @@ type TransactionService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Transaction"},
-	//         Description: "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+	//         Description: "Returns a list of transactions, pagination is supported. Max page size is 100.",
 	//         Summary:     "List all transactions for given account id",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{

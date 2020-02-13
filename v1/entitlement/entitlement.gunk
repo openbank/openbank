@@ -144,11 +144,17 @@ type GetEntitlementForCurrentUserRequest struct {
 }
 
 type GetAllEntitlementsRequest struct {
-	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+	// Page is the page number of data to return.
+	Page uint64 `pb:"1" json:"page"`
+	// Size is the maximum number of items to return.
+	Size uint64 `pb:"2" json:"size"`
 }
 
 type GetAllEntitlementRequestRequest struct {
-	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+	// Page is the page number of data to return.
+	Page uint64 `pb:"1" json:"page"`
+	// Size is the maximum number of items to return.
+	Size uint64 `pb:"2" json:"size"`
 }
 
 type GetRolesResponse struct {

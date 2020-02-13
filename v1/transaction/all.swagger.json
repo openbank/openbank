@@ -18,7 +18,7 @@
     "/v1/accounts/{AccountID}/transactions": {
       "get": {
         "summary": "List all transactions for given account id",
-        "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+        "description": "Returns a list of transactions, pagination is supported. Max page size is 100.",
         "operationId": "GetTransactionsByAccount",
         "responses": {
           "200": {
@@ -86,18 +86,20 @@
             "default": "UnknownType"
           },
           {
-            "name": "Limit",
-            "description": "Limit is number of search return of transactions.",
+            "name": "Page",
+            "description": "Page is the page number of data to return.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "format": "uint64"
           },
           {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
+            "name": "Size",
+            "description": "Size is the maximum number of items to return.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "format": "uint64"
           }
         ],
         "tags": [
@@ -115,7 +117,7 @@
     "/v1/transactions": {
       "get": {
         "summary": "List all transactions",
-        "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
+        "description": "Returns a list of transactions, pagination is supported. Max page size is 100.",
         "operationId": "GetTransactions",
         "responses": {
           "200": {
@@ -176,18 +178,20 @@
             "default": "UnknownType"
           },
           {
-            "name": "Limit",
-            "description": "Limit is number of search return of transactions.",
+            "name": "Page",
+            "description": "Page is the page number of data to return.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "format": "uint64"
           },
           {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
+            "name": "Size",
+            "description": "Size is the maximum number of items to return.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "format": "uint64"
           }
         ],
         "tags": [
@@ -537,10 +541,10 @@
           },
           "description": "Result is a list containing up to 20 transactions."
         },
-        "HasMore": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "HasMore indicates if there are more transactions available."
+        "Total": {
+          "type": "string",
+          "format": "uint64",
+          "description": "Total returns the total number of available result items."
         },
         "LastRunningBalance": {
           "$ref": "#/definitions/typesAmount",
@@ -559,10 +563,10 @@
           },
           "description": "Result is a list containing up to 20 transactions."
         },
-        "HasMore": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "HasMore indicates if there are more transactions available."
+        "Total": {
+          "type": "string",
+          "format": "uint64",
+          "description": "Total returns the total number of available result items."
         },
         "LastRunningBalance": {
           "$ref": "#/definitions/typesAmount",

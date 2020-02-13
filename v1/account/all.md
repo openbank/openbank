@@ -413,7 +413,7 @@ Example:
 
 ## List all accounts
 
-Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
+Returns a list of accounts, pagination is supported.
 
 ```sh
 curl -X GET \
@@ -428,10 +428,10 @@ curl -X GET \
 
 #### Response body
 
-| Name    | Type      | Description                                             |
-|---------|-----------|---------------------------------------------------------|
-| Result  | []Account | Result is a list containing up to 20 Accounts.          |
-| HasMore | bool      | HasMore indicates if there are more accounts available. |
+| Name   | Type      | Description                                               |
+|--------|-----------|-----------------------------------------------------------|
+| Result | []Account | Result is a list of accounts.                             |
+| Total  | uint64    | Total returns the total number of available result items. |
 
 ##### Objects
 
@@ -533,7 +533,7 @@ Example:
       }
     }
   ],
-  "has_more": "bool"
+  "total": "uint64"
 }
 ```
 #### Response codes

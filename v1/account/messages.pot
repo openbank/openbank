@@ -154,9 +154,6 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
-msgid "HasMore indicates if there are more accounts available."
-msgstr ""
-
 msgid "Host"
 msgstr ""
 
@@ -229,7 +226,7 @@ msgstr ""
 msgid "Responses"
 msgstr ""
 
-msgid "Result is a list containing up to 20 Accounts."
+msgid "Result is a list of accounts."
 msgstr ""
 
 msgid "Retrieve an account"
@@ -259,7 +256,7 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
-msgid "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination."
+msgid "Returns a list of accounts, pagination is supported."
 msgstr ""
 
 msgid "Roles for the account"
@@ -284,6 +281,9 @@ msgid "The identification number assigned to an account"
 msgstr ""
 
 msgid "The maturity date is the date on which the principal amount becomes due"
+msgstr ""
+
+msgid "Total returns the total number of available result items."
 msgstr ""
 
 msgid "Type of entity"

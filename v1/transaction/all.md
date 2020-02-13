@@ -333,7 +333,7 @@ Example:
 
 ## List all transactions
 
-Returns a list containing up to 20 transactions. You can paginate through transactions by supplying nextstartingindex in your subsequents calls. nextstartingindex contains the transactionid of the last transactionid of the current page.
+Returns a list of transactions, pagination is supported. Max page size is 100.
 
 ```sh
 curl -X GET \
@@ -348,11 +348,11 @@ curl -X GET \
 
 #### Response body
 
-| Name               | Type          | Description                                                 |
-|--------------------|---------------|-------------------------------------------------------------|
-| Result             | []Transaction | Result is a list containing up to 20 transactions.          |
-| HasMore            | bool          | HasMore indicates if there are more transactions available. |
-| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account.  |
+| Name               | Type          | Description                                                |
+|--------------------|---------------|------------------------------------------------------------|
+| Result             | []Transaction | Result is a list containing up to 20 transactions.         |
+| Total              | uint64        | Total returns the total number of available result items.  |
+| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account. |
 
 ##### Objects
 
@@ -470,7 +470,7 @@ Example:
       "remarks": "string"
     }
   ],
-  "has_more": "bool",
+  "total": "uint64",
   "last_running_balance": {
     "cur": "string",
     "num": "string"
@@ -490,7 +490,7 @@ Example:
 
 ## List all transactions for given account id
 
-Returns a list containing up to 20 transactions. You can paginate through transactions by supplying nextstartingindex in your subsequents calls. nextstartingindex contains the transactionid of the last transactionid of the current page.
+Returns a list of transactions, pagination is supported. Max page size is 100.
 
 ```sh
 curl -X GET \
@@ -513,11 +513,11 @@ curl -X GET \
 
 #### Response body
 
-| Name               | Type          | Description                                                 |
-|--------------------|---------------|-------------------------------------------------------------|
-| Result             | []Transaction | Result is a list containing up to 20 transactions.          |
-| HasMore            | bool          | HasMore indicates if there are more transactions available. |
-| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account.  |
+| Name               | Type          | Description                                                |
+|--------------------|---------------|------------------------------------------------------------|
+| Result             | []Transaction | Result is a list containing up to 20 transactions.         |
+| Total              | uint64        | Total returns the total number of available result items.  |
+| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account. |
 
 ##### Objects
 
@@ -635,7 +635,7 @@ Example:
       "remarks": "string"
     }
   ],
-  "has_more": "bool",
+  "total": "uint64",
   "last_running_balance": {
     "cur": "string",
     "num": "string"

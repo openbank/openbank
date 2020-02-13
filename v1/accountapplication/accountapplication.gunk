@@ -128,17 +128,19 @@ type GetAccountApplicationRequest struct {
 
 // GetAccountApplicationsRequest is the request envelope to get a list of filtered account applications.
 type GetAccountApplicationsRequest struct {
-	// NextStartingIndex is a cursor for pagination.
-	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+	// Page is the page number of data to return.
+	Page uint64 `pb:"1" json:"page"`
+	// Size is the maximum number of items to return.
+	Size uint64 `pb:"2" json:"size"`
 }
 
 // GetAccountApplicationsResponse wraps the list of account applications.
 type GetAccountApplicationsResponse struct {
-	// Result is a list containing up to 20 Accounts.
+	// Result is a list of account applications.
 	Result []AccountApplication `pb:"1" json:"result"`
 
-	// HasMore indicates if there are more accounts available.
-	HasMore bool `pb:"2" json:"has_more"`
+	// Total returns the total number of available result items.
+	Total uint64 `pb:"2" json:"total"`
 }
 
 // UpdateAccountApplicationStatusRequest is the request envelope to update an account application status.
@@ -224,7 +226,7 @@ type AccountApplicationService interface {
 	// }
 	GetAccountApplication(GetAccountApplicationRequest) AccountApplication
 
-	// GetAccountApplications returns a list containing up to 20 accounts.
+	// GetAccountApplications returns a list of accounts.
 	//
 	// +gunk http.Match{
 	//         Method: "GET",
@@ -232,7 +234,7 @@ type AccountApplicationService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Account Application"},
-	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+	//         Description: "Returns a list of account applications, pagination is supported.",
 	//         Summary:     "List all accounts",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
