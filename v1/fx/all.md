@@ -6,7 +6,7 @@ Provides create and read operations on the foreign exchange resource.
 
 * Base Path ``
 
-## Create a foreign exchange quote
+## Create a foreign exchange quote {#method-post-createfx}
 
 Creates a new foreign exchange quote and returns it.
 
@@ -86,7 +86,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve exchange rate between two currencies
+## Retrieve exchange rate between two currencies {#method-get-getcurrentfxrate}
 
 Retrieve the exchange rate from a currency to another
 
@@ -145,7 +145,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a foreign exchange quote
+## Update a foreign exchange quote {#method-put-updatefx}
 
 Updates a foreign exchange quote
 

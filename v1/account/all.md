@@ -6,7 +6,7 @@ Provides CRUD operations on the accounts resource.
 
 * Base Path ``
 
-## Verify account existence
+## Verify account existence {#method-get-checkaccount}
 
 Verify whether or not an account exists.
 
@@ -58,7 +58,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an account
+## Create an account {#method-post-createaccount}
 
 Creates a new account
 
@@ -172,7 +172,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete an account
+## Delete an account {#method-delete-deleteaccount}
 
 Permanently delete an account.
 
@@ -214,7 +214,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an account
+## Retrieve an account {#method-get-getaccount}
 
 Retrieves all data from an account selected by the supplied account_id.
 
@@ -345,7 +345,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an account's status
+## Retrieve an account's status {#method-get-getaccountstatus}
 
 Retrieves status of the account, selected by the account_id you supplied.
 
@@ -411,7 +411,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all accounts
+## List all accounts {#method-get-getaccounts}
 
 Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
 
@@ -547,7 +547,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update an account
+## Update an account {#method-put-updateaccount}
 
 Updates an account with all the fields supplied.
 
@@ -600,7 +600,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update an account status
+## Update an account status {#method-put-updateaccountstatus}
 
 Updates the status of an account.
 

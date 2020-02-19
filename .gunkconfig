@@ -11,7 +11,7 @@ command=protoc-gen-grpc-gateway
 
 [generate]
 command=docgen
-
+custom-header-ids=true
 
 [generate]
 command=scopegen

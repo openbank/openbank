@@ -6,7 +6,7 @@ Provides create and read operations on the ATM resource.
 
 * Base Path ``
 
-## Create an ATM
+## Create an ATM {#method-post-createatm}
 
 Creates a new ATM and returns its id.
 
@@ -94,7 +94,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an ATM
+## Retrieve an ATM {#method-get-getatm}
 
 Retrieves information regarding a specific ATM, selected by the supplied ID.
 
@@ -182,7 +182,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available ATMs
+## Retrieve all available ATMs {#method-get-getatms}
 
 Retrieves information regarding all the available ATMs.
 

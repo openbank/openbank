@@ -6,7 +6,7 @@ Provides CRUD operations on the transaction request resource.
 
 * Base Path ``
 
-## Answer the transaction reqeust challenge
+## Answer the transaction reqeust challenge {#method-post-answertransactionrequestchallenge}
 
 Answer the transaction request challenge
 
@@ -168,7 +168,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an account otp transaction request
+## Create an account otp transaction request {#method-post-createaccountotptransaction}
 
 Creates a new account otp transaction request
 
@@ -513,7 +513,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an account transaction request
+## Create an account transaction request {#method-post-createaccounttransaction}
 
 Creates a new account transaction request
 
@@ -858,7 +858,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an counter party transaction request
+## Create an counter party transaction request {#method-post-createcounterpartytransaction}
 
 Creates a new counter party transaction request
 
@@ -1205,7 +1205,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an free form transaction request
+## Create an free form transaction request {#method-post-createfreeformtransaction}
 
 Creates a new free form transaction request
 
@@ -1538,7 +1538,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an sepa transaction request
+## Create an sepa transaction request {#method-post-createsepatransaction}
 
 Creates a new sepa transaction request
 
@@ -1885,7 +1885,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve transaction types
+## Retrieve transaction types {#method-get-getsupportedtransactionrequesttypes}
 
 Retrieves list of transaction request types
 
@@ -1967,7 +1967,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve transaction types
+## Retrieve transaction types {#method-get-gettransactionrequesttypes}
 
 Retrieves list of transaction request types for an account_id
 
@@ -2050,7 +2050,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve transaction requests
+## Retrieve transaction requests {#method-get-gettransactionrequests}
 
 Retrieves list of transaction requests for an account_id
 
@@ -2367,7 +2367,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Import a historic transaction
+## Import a historic transaction {#method-post-savehistorictransaction}
 
 Import a historic transaction
 

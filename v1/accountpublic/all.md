@@ -6,7 +6,7 @@ Provides create and read operations on the account public resource.
 
 * Base Path ``
 
-## Get bank public account.
+## Get bank public account. {#method-get-getbankpublicaccount}
 
 Return customer public account for specific bank.
 
@@ -85,7 +85,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get public account at all banks.
+## Get public account at all banks. {#method-get-getpublicaccountatallbanks}
 
 Return public account at all banks.
 
@@ -158,7 +158,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Public Account By ID.
+## Get Public Account By ID. {#method-get-getpublicaccountbyid}
 
 Return customer public account for specific bank.
 

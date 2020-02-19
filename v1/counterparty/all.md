@@ -6,7 +6,7 @@ Provides CRUD operations on the counter part resource.
 
 * Base Path ``
 
-## Create an counter party
+## Create an counter party {#method-post-createcounterparty}
 
 Creates a new counter party
 
@@ -197,7 +197,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all accounts
+## List all accounts {#method-get-getcounterparties}
 
 Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
 
@@ -323,7 +323,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an counter party
+## Retrieve an counter party {#method-get-getcounterparty}
 
 Retrieves all data from an counter party selected by the supplied counterpartyid.
 
@@ -444,7 +444,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an account with other account id
+## Retrieve an account with other account id {#method-get-getotheraccountbyid}
 
 Retrieves other account (counter party) by other account id
 
@@ -578,7 +578,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all other account with account id
+## Retrieve all other account with account id {#method-get-getotheraccounts}
 
 Retrieves all other accounts (counter party) for an account id
 

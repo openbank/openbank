@@ -6,7 +6,7 @@ Provides create and read operations on the account application resource.
 
 * Base Path ``
 
-## Create an account application
+## Create an account application {#method-post-createaccountapplication}
 
 Creates a new account application
 
@@ -207,7 +207,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an account application
+## Retrieve an account application {#method-get-getaccountapplication}
 
 Retrieves all data from an account application selected by the supplied accountapplicationid.
 
@@ -277,7 +277,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all accounts
+## List all accounts {#method-get-getaccountapplications}
 
 Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
 
@@ -352,7 +352,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update an account application
+## Update an account application {#method-put-updateaccountapplicationstatus}
 
 Updates an account application with the given status
 
