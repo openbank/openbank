@@ -6,7 +6,7 @@ Provides create and read operations on the customer resource.
 
 * Base Path ``
 
-## Add address to the customer.
+## Add address to the customer. {#method-post-addaddresstocustomer}
 
 Add address to the customer.
 
@@ -118,7 +118,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add social media handle
+## Add social media handle {#method-post-addsocialmediahandle}
 
 Add social media handle for the customer
 
@@ -199,7 +199,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create credit limit order
+## Create credit limit order {#method-post-createcreditlimitorder}
 
 Create Credit limit order for the customer on specific bank
 
@@ -272,7 +272,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a customer
+## Create a customer {#method-post-createcustomer}
 
 Creates a new customer
 
@@ -403,7 +403,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create user customer link
+## Create user customer link {#method-post-createusercustomerlink}
 
 Creare user customer link
 
@@ -483,7 +483,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete customer address
+## Delete customer address {#method-delete-deletecustomeraddress}
 
 Permanently delete customer address.
 
@@ -529,7 +529,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete tax residence
+## Delete tax residence {#method-delete-deletetaxresidence}
 
 Permanently delete tax residence.
 
@@ -575,7 +575,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all CRM events
+## List all CRM events {#method-get-getcrmevents}
 
 Returns a list containing up to 20 crm events.
 
@@ -667,7 +667,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all credit limit order
+## List all credit limit order {#method-get-getcreditlimitorder}
 
 Returns a list containing up to 20 CreditLimitOrder.
 
@@ -733,7 +733,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get credit limit order by id
+## Get credit limit order by id {#method-get-getcreditlimitorderbyid}
 
 Returns Credit limit order by id
 
@@ -798,7 +798,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all customer adddresses
+## List all customer adddresses {#method-get-getcustomeraddresses}
 
 Returns a list containing up to 20 customer addresses.
 
@@ -892,7 +892,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer By ID
+## Get Customer By ID {#method-get-getcustomerbycustomerid}
 
 Returns the customer data based on it's id
 
@@ -1020,7 +1020,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer By CustomerNumber
+## Get Customer By CustomerNumber {#method-get-getcustomerbycustomernumber}
 
 Returns the customer data based on the customer number
 
@@ -1149,7 +1149,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all customer social media handles
+## List all customer social media handles {#method-get-getcustomersocialmediahandles}
 
 Returns a list containing up to 20 customer social media handles
 
@@ -1230,7 +1230,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get customers data for current user
+## Get customers data for current user {#method-get-getcustomersforcurrentuser}
 
 Returns the current user customers data
 
@@ -1361,7 +1361,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get customers data by bank id
+## Get customers data by bank id {#method-get-getcustomersforcurrentuseratbank}
 
 Returns the current user customers data by bank ID
 
@@ -1498,7 +1498,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Return customer firehose
+## Return customer firehose {#method-get-getfirehosecustomer}
 
 Returns the list of customer firehose
 
@@ -1635,7 +1635,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get customers tax_residencies
+## Get customers tax_residencies {#method-get-gettaxresidenceofcustomer}
 
 Returns the user tax_residencies
 
@@ -1699,7 +1699,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer addresses.
+## Update customer addresses. {#method-put-updatecustomeraddress}
 
 Update customer addresses information.
 
@@ -1818,7 +1818,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer branch.
+## Update customer branch. {#method-put-updatecustomerbranch}
 
 Update customer branch information.
 
@@ -1968,7 +1968,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer credit limit.
+## Update customer credit limit. {#method-put-updatecustomercreditlimit}
 
 Update customer credit limit information.
 
@@ -2130,7 +2130,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer credut rating and source.
+## Update customer credut rating and source. {#method-put-updatecustomercreditratingandsource}
 
 Update customer credit rating and source information.
 
@@ -2292,7 +2292,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer email.
+## Update customer email. {#method-put-updatecustomeremail}
 
 Update customer email information.
 
@@ -2442,7 +2442,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer identity.
+## Update customer identity. {#method-put-updatecustomeridentity}
 
 Update customer identity information.
 
@@ -2596,7 +2596,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer mobile number.
+## Update customer mobile number. {#method-put-updatecustomermobilenumber}
 
 Update customer mobile number information.
 
@@ -2746,7 +2746,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer number.
+## Update customer number. {#method-put-updatecustomernumber}
 
 Update customer number information.
 
@@ -2896,7 +2896,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer data.
+## Update customer data. {#method-put-updatecustomerotherdata}
 
 Update customer data information.
 

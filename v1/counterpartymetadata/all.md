@@ -6,7 +6,7 @@ Provides the access and availability to the counterparty metadata API.
 
 * Base Path ``
 
-## Create a corporate_location
+## Create a corporate_location {#method-post-createcorporatelocation}
 
 Creates a new corporate_location and returns the object.
 
@@ -102,7 +102,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a image_url
+## Create a image_url {#method-post-createimageurl}
 
 Creates a new image_url and returns the object.
 
@@ -176,7 +176,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a more_info
+## Create a more_info {#method-post-createmoreinfo}
 
 Creates a new more_info and returns the object.
 
@@ -250,7 +250,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a open## corporates## url
+## Create a open## corporates## url {#method-post-createopencorporatesurl}
 
 Creates a new opencorporatesurl and returns the object.
 
@@ -324,7 +324,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a physical_location
+## Create a physical_location {#method-post-createphysicallocation}
 
 Creates a new physical_location and returns the object.
 
@@ -420,7 +420,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a private_alias
+## Create a private_alias {#method-post-createprivatealias}
 
 Creates a new private_alias and returns the object.
 
@@ -494,7 +494,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a public_alias
+## Create a public_alias {#method-post-createpublicalias}
 
 Creates a new public_alias and returns the object.
 
@@ -568,7 +568,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a url
+## Create a url {#method-post-createurl}
 
 Creates a new url and returns the object.
 
@@ -640,7 +640,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a corporate location
+## Delete a corporate location {#method-delete-deletecorporatelocation}
 
 Permanently delete a corporate location.
 
@@ -676,7 +676,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a image url
+## Delete a image url {#method-delete-deleteimageurl}
 
 Permanently delete a image url.
 
@@ -712,7 +712,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a more info
+## Delete a more info {#method-delete-deletemoreinfo}
 
 Permanently delete a more info.
 
@@ -748,7 +748,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a open corporates url
+## Delete a open corporates url {#method-delete-deleteopencorporatesurl}
 
 Permanently delete a open corporates url.
 
@@ -784,7 +784,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a physical location
+## Delete a physical location {#method-delete-deletephysicallocation}
 
 Permanently delete a physical location.
 
@@ -820,7 +820,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a private alias
+## Delete a private alias {#method-delete-deleteprivatealias}
 
 Permanently delete a private alias.
 
@@ -856,7 +856,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a public alias
+## Delete a public alias {#method-delete-deletepublicalias}
 
 Permanently delete a public alias.
 
@@ -892,7 +892,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a url
+## Delete a url {#method-delete-deleteurl}
 
 Permanently delete a url.
 
@@ -926,7 +926,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve corporate location information
+## Retrieve corporate location information {#method-get-getcorporatelocation}
 
 Retrieve information about the corporate location specified by the ID
 
@@ -988,7 +988,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available corporate locations
+## Retrieve all available corporate locations {#method-get-getcorporatelocations}
 
 Retrieve information regarding all available corporate locations.
 
@@ -1066,7 +1066,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve image url information
+## Retrieve image url information {#method-get-getimageurl}
 
 Retrieve information about the image url specified by the ID
 
@@ -1116,7 +1116,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available image urls
+## Retrieve all available image urls {#method-get-getimageurls}
 
 Retrieve information regarding all available image urls.
 
@@ -1184,7 +1184,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve more info information
+## Retrieve more info information {#method-get-getmoreinfo}
 
 Retrieve information about the more info specified by the ID
 
@@ -1234,7 +1234,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available more infos
+## Retrieve all available more infos {#method-get-getmoreinfos}
 
 Retrieve information regarding all available more infos.
 
@@ -1302,7 +1302,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve open corporates url information
+## Retrieve open corporates url information {#method-get-getopencorporatesurl}
 
 Retrieve information about the open corporates url specified by the ID
 
@@ -1352,7 +1352,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available open corporates urls
+## Retrieve all available open corporates urls {#method-get-getopencorporatesurls}
 
 Retrieve information regarding all available open corporates urls.
 
@@ -1420,7 +1420,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve other account metadata information
+## Retrieve other account metadata information {#method-get-getotheraccountmetadata}
 
 Retrieve information about the other account metadata specified by the ID
 
@@ -1515,7 +1515,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve physical location information
+## Retrieve physical location information {#method-get-getphysicallocation}
 
 Retrieve information about the physical location specified by the ID
 
@@ -1577,7 +1577,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available physical locations
+## Retrieve all available physical locations {#method-get-getphysicallocations}
 
 Retrieve information regarding all available physical locations.
 
@@ -1655,7 +1655,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve private alias information
+## Retrieve private alias information {#method-get-getprivatealias}
 
 Retrieve information about the private alias specified by the ID
 
@@ -1705,7 +1705,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available private aliases
+## Retrieve all available private aliases {#method-get-getprivatealiases}
 
 Retrieve information regarding all available private aliases.
 
@@ -1773,7 +1773,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve public alias information
+## Retrieve public alias information {#method-get-getpublicalias}
 
 Retrieve information about the public alias specified by the ID
 
@@ -1823,7 +1823,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available public aliases
+## Retrieve all available public aliases {#method-get-getpublicaliases}
 
 Retrieve information regarding all available public aliases.
 
@@ -1891,7 +1891,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve url information
+## Retrieve url information {#method-get-geturl}
 
 Retrieve information about the url specified by the ID
 
@@ -1939,7 +1939,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available urls
+## Retrieve all available urls {#method-get-geturls}
 
 Retrieve information regarding all available urls.
 
@@ -2007,7 +2007,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a corporate location
+## Update a corporate location {#method-put-updatecorporatelocation}
 
 Updates a corporate location's information
 
@@ -2103,7 +2103,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a image url
+## Update a image url {#method-put-updateimageurl}
 
 Updates a image url's information
 
@@ -2177,7 +2177,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a more info
+## Update a more info {#method-put-updatemoreinfo}
 
 Updates a more info's information
 
@@ -2251,7 +2251,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a open corporates url
+## Update a open corporates url {#method-put-updateopencorporatesurl}
 
 Updates a open corporates url's information
 
@@ -2325,7 +2325,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a physical location
+## Update a physical location {#method-put-updatephysicallocation}
 
 Updates a physical location's information
 
@@ -2421,7 +2421,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a private alias
+## Update a private alias {#method-put-updateprivatealias}
 
 Updates a private alias's information
 
@@ -2495,7 +2495,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a public alias
+## Update a public alias {#method-put-updatepublicalias}
 
 Updates a public alias's information
 
@@ -2569,7 +2569,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a url
+## Update a url {#method-put-updateurl}
 
 Updates a url's information
 

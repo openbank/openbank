@@ -6,7 +6,7 @@ Provides create and read operations on the branch resource.
 
 * Base Path ``
 
-## Create a branch
+## Create a branch {#method-post-createbranch}
 
 Creates a new branch and returns its id.
 
@@ -94,7 +94,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a branch
+## Delete a branch {#method-delete-deletebranch}
 
 Permanently delete a branch.
 
@@ -126,7 +126,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve branch information
+## Retrieve branch information {#method-get-getbranch}
 
 Retrieve information about the branch specified by the ID
 
@@ -214,7 +214,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available branches
+## Retrieve all available branches {#method-get-getbranches}
 
 Retrieve information regarding all available branches.
 
@@ -306,7 +306,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a branch
+## Update a branch {#method-put-updatebranch}
 
 Updates a branch's information
 

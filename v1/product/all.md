@@ -6,7 +6,7 @@ Provides CRUD operations on the Product resource.
 
 * Base Path ``
 
-## Create a product
+## Create a product {#method-post-createproduct}
 
 Creates a new product and returns the object.
 
@@ -173,7 +173,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a product attribute
+## Create a product attribute {#method-post-createproductattribute}
 
 Creates a new product attribute and returns the object.
 
@@ -263,7 +263,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a product
+## Delete a product {#method-delete-deleteproduct}
 
 Permanently delete a product.
 
@@ -296,7 +296,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a product attribute
+## Delete a product attribute {#method-delete-deleteproductattribute}
 
 Permanently delete a product attribute.
 
@@ -332,7 +332,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve product information
+## Retrieve product information {#method-get-getproduct}
 
 Retrieve information about the product specified by the ID
 
@@ -429,7 +429,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve product attribute information
+## Retrieve product attribute information {#method-get-getproductattribute}
 
 Retrieve information about the product specified by the ID
 
@@ -487,7 +487,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available products
+## Retrieve all available products {#method-get-getproducts}
 
 Retrieve information regarding all available products.
 
@@ -593,7 +593,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a product
+## Update a product {#method-put-updateproduct}
 
 Updates a product's information
 
@@ -760,7 +760,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a product attribute
+## Update a product attribute {#method-put-updateproductattribute}
 
 Updates a product attribute's information
 

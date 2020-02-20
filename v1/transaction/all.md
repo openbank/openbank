@@ -6,7 +6,7 @@ Provides create and read operations on the transaction resource.
 
 * Base Path ``
 
-## Approve a pending transaction
+## Approve a pending transaction {#method-post-approvepayment}
 
 Approve a pending transaction.
 
@@ -60,7 +60,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a transaction
+## Create a transaction {#method-post-createtransaction}
 
 Creates a new transaction and returns its id.
 
@@ -184,7 +184,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve a transaction
+## Retrieve a transaction {#method-get-gettransaction}
 
 Retrieves all data from a transaction, selected by the transaction_id you supplied.
 
@@ -331,7 +331,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all transactions
+## List all transactions {#method-get-gettransactions}
 
 Returns a list containing up to 20 transactions. You can paginate through transactions by supplying nextstartingindex in your subsequents calls. nextstartingindex contains the transactionid of the last transactionid of the current page.
 
@@ -488,7 +488,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all transactions for given account id
+## List all transactions for given account id {#method-get-gettransactionsbyaccount}
 
 Returns a list containing up to 20 transactions. You can paginate through transactions by supplying nextstartingindex in your subsequents calls. nextstartingindex contains the transactionid of the last transactionid of the current page.
 
@@ -653,7 +653,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Authorize a transaction with 2FA
+## Authorize a transaction with 2FA {#method-post-tfa}
 
 Authorization allows execution of transactions with 2-factor authentication (2FA).
 

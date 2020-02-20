@@ -6,7 +6,7 @@ Provides CRUD operations on the Product Collection resource.
 
 * Base Path ``
 
-## Create a product collection
+## Create a product collection {#method-post-createproductcollection}
 
 Creates a new product collection and returns the object.
 
@@ -199,7 +199,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a product collection
+## Delete a product collection {#method-delete-deleteproductcollection}
 
 Permanently delete a product collection.
 
@@ -234,7 +234,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve product collection information
+## Retrieve product collection information {#method-get-getproductcollection}
 
 Retrieve information about the product specified by the ID
 
@@ -345,7 +345,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a product collection
+## Update a product collection {#method-put-updateproductcollection}
 
 Updates a product collection's information
 

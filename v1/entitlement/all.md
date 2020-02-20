@@ -6,7 +6,7 @@ Provides CRUD operations on the entitlement part resource.
 
 * Base Path ``
 
-## Add an entitlement request for current user
+## Add an entitlement request for current user {#method-post-addentitlementrequestforcurrentuser}
 
 Add an entitlement request for current user
 
@@ -118,7 +118,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add the entitlement request for user
+## Add the entitlement request for user {#method-post-addentitlementrequestforuser}
 
 Add the entitlement entitlement request for user
 
@@ -184,7 +184,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete an entitlement
+## Delete an entitlement {#method-delete-deleteentitlement}
 
 Permanently delete an entitlement.
 
@@ -227,7 +227,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a entitlement request
+## Delete a entitlement request {#method-delete-deleteentitlementrequest}
 
 Permanently delete an entitlement request.
 
@@ -271,7 +271,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all entitlements
+## List all entitlements {#method-get-getallentitlementrequests}
 
 Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.
 
@@ -382,7 +382,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all entitlements
+## List all entitlements {#method-get-getallentitlements}
 
 Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.
 
@@ -439,7 +439,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement information
+## Retrieve entitlement information {#method-get-getentitlementforcurrentuser}
 
 Retrieve information about the entitlement specified for current user
 
@@ -497,7 +497,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement information
+## Retrieve entitlement information {#method-get-getentitlementforuser}
 
 Retrieve information about the entitlement specified by the User ID
 
@@ -561,7 +561,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement information
+## Retrieve entitlement information {#method-get-getentitlementforuseratbank}
 
 Retrieve information about the entitlement specified by the User ID at bank
 
@@ -626,7 +626,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement request information
+## Retrieve entitlement request information {#method-get-getentitlementrequestforcurrentuser}
 
 Retrieve information about the entitlement request specified for current user
 
@@ -738,7 +738,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement request information
+## Retrieve entitlement request information {#method-get-getentitlementrequestforuser}
 
 Retrieve information about the entitlement request specified by the User ID
 
@@ -856,7 +856,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all entitlements
+## List all entitlements {#method-get-getroles}
 
 Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.
 

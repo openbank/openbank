@@ -6,7 +6,7 @@ Provides CRUD operations on the statement resource.
 
 * Base Path ``
 
-## Retrieve a statement
+## Retrieve a statement {#method-get-getstatement}
 
 GetStatement retrieves a specific statement, specified by its ID.
 

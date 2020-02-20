@@ -6,7 +6,7 @@ Provides CRUD operations on the Profile resource.
 
 * Base Path ``
 
-## Query profile
+## Query profile {#method-get-getprofile}
 
 Returns the profile and associated accounts
 
@@ -249,7 +249,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Query cards
+## Query cards {#method-get-getprofilecard}
 
 Returns an array of ProfileCard associated with the account for the profile based on profile identifier
 
