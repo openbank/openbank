@@ -4,8 +4,8 @@ package transactions
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/transaction.read": "View transaction data",
-	"https://auth.bnk.to/transaction.write": "Manage transaction data",
+	"https://auth.bnk.to/transaction.read": "Allow application to view transaction history",
+	"https://auth.bnk.to/transaction.write": "Allow application to execute a transaction",
 }
 
 var AuthScopes = map[string][]string{
