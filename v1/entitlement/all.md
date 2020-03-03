@@ -273,7 +273,7 @@ Example:
 
 ## List all entitlements {#method-get-getallentitlementrequests}
 
-Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.
+Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \
@@ -384,7 +384,7 @@ Example:
 
 ## List all entitlements {#method-get-getallentitlements}
 
-Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.
+Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \
@@ -858,7 +858,7 @@ Example:
 
 ## List all entitlements {#method-get-getroles}
 
-Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.
+Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \

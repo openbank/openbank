@@ -130,7 +130,7 @@
     "/v1/counterparties": {
       "get": {
         "summary": "List all accounts",
-        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+        "description": "Returns a list containing up to 20 accounts. `after_index` can be used for pagination.",
         "operationId": "GetCounterParties",
         "responses": {
           "200": {
@@ -162,11 +162,19 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination.",
+            "name": "AfterID",
+            "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "Limit",
+            "description": "Limit is maximum number of results to return.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
           }
         ],
         "tags": [
@@ -467,12 +475,7 @@
           "items": {
             "$ref": "#/definitions/counterpartyCounterParty"
           },
-          "description": "Result is a list containing up to 20 Counter parties."
-        },
-        "HasMore": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "HasMore indicates if there are more accounts available."
+          "description": "Result is the paginated query result."
         }
       },
       "description": "GetCounterPartiesResponse wraps the list of counter parties."

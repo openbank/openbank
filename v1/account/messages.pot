@@ -154,9 +154,6 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
-msgid "HasMore indicates if there are more accounts available."
-msgstr ""
-
 msgid "Host"
 msgstr ""
 
@@ -229,7 +226,7 @@ msgstr ""
 msgid "Responses"
 msgstr ""
 
-msgid "Result is a list containing up to 20 Accounts."
+msgid "Result is the paginated query result."
 msgstr ""
 
 msgid "Retrieve an account"

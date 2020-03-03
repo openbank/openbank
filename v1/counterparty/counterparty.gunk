@@ -170,17 +170,16 @@ type GetCounterPartyRequest struct {
 
 // GetCounterPartiesRequest is the request envelope to get a list of filtered counter parties.
 type GetCounterPartiesRequest struct {
-	// NextStartingIndex is a cursor for pagination.
-	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+	// AfterID is a cursor for pagination.
+	AfterID string `pb:"1" json:"after_id"`
+	// Limit is maximum number of results to return.
+	Limit int `pb:"2" json:"limit"`
 }
 
 // GetCounterPartiesResponse wraps the list of counter parties.
 type GetCounterPartiesResponse struct {
-	// Result is a list containing up to 20 Counter parties.
+	// Result is the paginated query result.
 	Result []CounterParty `pb:"1" json:"result"`
-
-	// HasMore indicates if there are more accounts available.
-	HasMore bool `pb:"2" json:"has_more"`
 }
 
 type GetOtherAccountByIDRequest struct {
@@ -307,7 +306,7 @@ type CounterPartyService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Counterparty"},
-	//         Description: "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+	//         Description: "Returns a list containing up to 20 accounts. `after_index` can be used for pagination.",
 	//         Summary:     "List all accounts",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{

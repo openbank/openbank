@@ -131,17 +131,16 @@ type GetAccountApplicationRequest struct {
 
 // GetAccountApplicationsRequest is the request envelope to get a list of filtered account applications.
 type GetAccountApplicationsRequest struct {
-	// NextStartingIndex is a cursor for pagination.
-	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+	// AfterID is a cursor for pagination.
+	AfterID string `pb:"1" json:"after_id"`
+	// Limit is maximum number of results to return.
+	Limit int `pb:"2" json:"limit"`
 }
 
 // GetAccountApplicationsResponse wraps the list of account applications.
 type GetAccountApplicationsResponse struct {
-	// Result is a list containing up to 20 Accounts.
+	// Result is the paginated query result.
 	Result []AccountApplication `pb:"1" json:"result"`
-
-	// HasMore indicates if there are more accounts available.
-	HasMore bool `pb:"2" json:"has_more"`
 }
 
 // UpdateAccountApplicationStatusRequest is the request envelope to update an account application status.
