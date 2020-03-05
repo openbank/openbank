@@ -50,14 +50,14 @@
         },
         "parameters": [
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
@@ -136,7 +136,7 @@
         ]
       }
     },
-    "/v1/account-applications/{ID}": {
+    "/v1/account-applications/{iD}": {
       "get": {
         "summary": "Retrieve an account application",
         "description": "Retrieves all data from an account application selected by the supplied account_application_id.",
@@ -171,7 +171,7 @@
         },
         "parameters": [
           {
-            "name": "ID",
+            "name": "iD",
             "in": "path",
             "required": true,
             "type": "string"
@@ -226,7 +226,7 @@
         },
         "parameters": [
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the unique identifier of the account application to update.",
             "in": "path",
             "required": true,
@@ -258,23 +258,23 @@
     "accountapplicationAccountApplication": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "CustomerProfileID": {
+        "customer_profile_id": {
           "type": "string"
         },
-        "DateOfApplication": {
+        "date_of_application": {
           "type": "string",
           "format": "date-time"
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/accountapplicationAccountApplicationStatus"
         }
       },
@@ -294,13 +294,13 @@
     "accountapplicationCreateAccountApplicationRequest": {
       "type": "object",
       "properties": {
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "ProfileID": {
+        "profile_id": {
           "type": "string"
         }
       },
@@ -309,23 +309,23 @@
     "accountapplicationCreateAccountApplicationResponse": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "User": {
+        "user": {
           "$ref": "#/definitions/accountapplicationUser"
         },
-        "CustomerProfile": {
+        "customer_profile": {
           "$ref": "#/definitions/typesProfile"
         },
-        "DateOfApplication": {
+        "date_of_application": {
           "type": "string",
           "format": "date-time"
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/accountapplicationAccountApplicationStatus"
         }
       },
@@ -334,7 +334,7 @@
     "accountapplicationGetAccountApplicationsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountapplicationAccountApplication"
@@ -347,11 +347,11 @@
     "accountapplicationUpdateAccountApplicationStatusRequest": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the unique identifier of the account application to update."
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/accountapplicationAccountApplicationStatus",
           "title": "Status of the account application"
         }
@@ -361,15 +361,15 @@
     "accountapplicationUser": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "title": "User identifier used to login"
         },
-        "Email": {
+        "email": {
           "type": "string",
           "title": "Email of the user"
         },
-        "Username": {
+        "username": {
           "type": "string",
           "title": "Display name of the user"
         }
@@ -379,23 +379,23 @@
     "typesAddress": {
       "type": "object",
       "properties": {
-        "CountryName": {
+        "country_name": {
           "type": "string",
           "description": "CountryName holds the country name information."
         },
-        "CityName": {
+        "city_name": {
           "type": "string",
           "description": "CityName holds the city name information."
         },
-        "State": {
+        "state": {
           "type": "string",
           "description": "State holds the state information."
         },
-        "Street": {
+        "line_1": {
           "type": "string",
           "description": "Street holds the street information."
         },
-        "PostalCode": {
+        "postal_code": {
           "type": "string",
           "description": "PostalCode holds the postal code information."
         }
@@ -405,11 +405,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }
@@ -419,10 +419,10 @@
     "typesCreditRating": {
       "type": "object",
       "properties": {
-        "Rating": {
+        "rating": {
           "type": "string"
         },
-        "Source": {
+        "source": {
           "type": "string"
         }
       },
@@ -431,85 +431,85 @@
     "typesProfile": {
       "type": "object",
       "properties": {
-        "ProfileID": {
+        "profile_id": {
           "type": "string",
           "description": "ProfileID is the unique identifier of a profile."
         },
-        "FullName": {
+        "fullname": {
           "type": "string",
           "title": "Full name"
         },
-        "UserName": {
+        "username": {
           "type": "string",
           "title": "User name"
         },
-        "BirthDate": {
+        "birthdate": {
           "type": "string",
           "title": "Birth date"
         },
-        "Language": {
+        "language": {
           "type": "string",
           "title": "Language code used"
         },
-        "Country": {
+        "country": {
           "type": "string",
           "description": "User country code (VN, US, ID, SG, ...)."
         },
-        "Email": {
+        "email": {
           "type": "string",
           "title": "User email address"
         },
-        "EmailVefified": {
+        "email_verified": {
           "type": "boolean",
           "format": "boolean",
           "title": "True if email is verified, otherwise False"
         },
-        "Mobile": {
+        "mobile": {
           "type": "string",
           "title": "Mobile number"
         },
-        "Photo": {
+        "photo": {
           "type": "string",
           "title": "User profile photo url"
         },
-        "Title": {
+        "title": {
           "type": "string",
           "title": "Title"
         },
-        "PermanentAddress": {
+        "permanent_address": {
           "$ref": "#/definitions/typesAddress",
           "title": "Permanent address"
         },
-        "ContactAddress": {
+        "contact_address": {
           "$ref": "#/definitions/typesAddress",
           "title": "Contact address"
         },
-        "ContactNumber": {
+        "contact_number": {
           "type": "string",
           "title": "Contact number"
         },
-        "ProfileNumber": {
+        "profile_number": {
           "type": "string",
           "title": "profile number"
         },
-        "FaceImageUrl": {
+        "face_image_url": {
           "type": "string",
           "title": "Face image of the customer"
         },
-        "FaceImageDate": {
+        "face_image_date": {
           "type": "string",
           "title": "Date when the face image was added/updated"
         },
-        "RelationshipStatus": {
+        "relationship_status": {
           "type": "string",
           "title": "RelationshipStatus. Ex: Single | Married"
         },
-        "Dependents": {
+        "dependents": {
           "type": "integer",
           "format": "int32",
           "title": "Number of dependents"
         },
-        "DobOfDependents": {
+        "dob_of_dependents": {
           "type": "array",
           "items": {
             "type": "string",
@@ -517,44 +517,44 @@
           },
           "title": "Date of birth of dependents"
         },
-        "CreditRating": {
+        "credit_rating": {
           "$ref": "#/definitions/typesCreditRating",
           "title": "Credit rating"
         },
-        "CreditLimit": {
+        "credit_limit": {
           "$ref": "#/definitions/typesAmount",
           "title": "Credit Limit"
         },
-        "HighestEducationAttained": {
+        "highest_education_attained": {
           "type": "string",
           "title": "Highest education such as bachelor, masters etc"
         },
-        "EmploymentStatus": {
+        "employment_status": {
           "type": "string",
           "title": "Current employment status"
         },
-        "KycStatus": {
+        "kyc_status": {
           "type": "boolean",
           "format": "boolean",
           "title": "Know Your Customer status"
         },
-        "BranchID": {
+        "branchId": {
           "type": "string",
           "title": "Branch Identifier"
         },
-        "NameSuffix": {
+        "nameSuffix": {
           "type": "string",
           "title": "Name suffix"
         },
-        "FirstName": {
+        "first_name": {
           "type": "string",
           "title": "FirstName of the person"
         },
-        "MiddleName": {
+        "middle_name": {
           "type": "string",
           "title": "MiddleName or middle names (space separated) of the person"
         },
-        "LastName": {
+        "last_name": {
           "type": "string",
           "title": "LastName or last names (space separated) of the person"
         }

@@ -1,29 +1,32 @@
-# Statements API v1.0.0
+Statements API v1.0.0
+=====================
 
 Provides CRUD operations on the statement resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Retrieve a statement {#method-get-getstatement}
+Retrieve a statement {#method-get-getstatement}
+-----------------------------------------------
 
 GetStatement retrieves a specific statement, specified by its ID.
 
 ```sh
 curl -X GET \
-	/v1/statement/{ID} \
+	https:///v1/statement/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/statement/{ID}`
+`GET https:///v1/statement/{ID}`
 
 ### Query Parameters
 
 | Name | Type   | Description                                  |
 |------|--------|----------------------------------------------|
-| ID   | string | ID is the unique identifier of the statement |
+| id   | string | ID is the unique identifier of the statement |
 
 ### Responses
 
@@ -31,12 +34,12 @@ curl -X GET \
 
 | Name        | Type   | Description                                                           |
 |-------------|--------|-----------------------------------------------------------------------|
-| ID          | string | ID is the unique identifier of a statement.                           |
-| Status      | Status | Status is the status of the statement.                                |
-| Date        | string | Date is the date of the statement.                                    |
-| Description | string | Description is the description of the statement.                      |
-| Amount      | Amount | Amount is the amount if the transcation that writes on the statement. |
-| Balance     | Amount | Balance is remaining balance after related transaction.               |
+| id          | string | ID is the unique identifier of a statement.                           |
+| status      | Status | Status is the status of the statement.                                |
+| date        | string | Date is the date of the statement.                                    |
+| description | string | Description is the description of the statement.                      |
+| amount      | Amount | Amount is the amount if the transcation that writes on the statement. |
+| balance     | Amount | Balance is remaining balance after related transaction.               |
 
 ##### Objects
 
@@ -44,8 +47,8 @@ curl -X GET \
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -65,6 +68,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -77,9 +81,10 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Annex
+Annex
+-----
 
-####  Status
+#### Status
 
 Status define the status of a statment.
 

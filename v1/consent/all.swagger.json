@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/consents": {
+    "/v1/banks/{bankID}/consents": {
       "get": {
         "summary": "List all consents",
         "description": "Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.",
@@ -50,13 +50,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "NexeStartingIndex",
+            "name": "next_starting_index",
             "in": "query",
             "required": false,
             "type": "string"
@@ -74,7 +74,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/consents/email": {
+    "/v1/banks/{bankID}/consents/email": {
       "post": {
         "summary": "Create an email consent",
         "description": "Creates a new email consent",
@@ -115,7 +115,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -141,7 +141,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/consents/sms": {
+    "/v1/banks/{bankID}/consents/sms": {
       "post": {
         "summary": "Create an sms consent",
         "description": "Creates a new sms consent",
@@ -182,7 +182,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -208,7 +208,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/consents/{ConsentID}/challenge": {
+    "/v1/banks/{bankID}/consents/{consentID}/challenge": {
       "post": {
         "summary": "Answer the consent reqeust challenge",
         "description": "Answer the consent request challenge",
@@ -249,13 +249,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ConsentID",
+            "name": "consentID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -281,7 +281,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/consents/{ConsentID}/revoke": {
+    "/v1/banks/{bankID}/consents/{consentID}/revoke": {
       "post": {
         "summary": "Revoke the  consent",
         "description": "Revoke the consent",
@@ -322,13 +322,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ConsentID",
+            "name": "consentID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -359,13 +359,13 @@
     "consentAnswerConsentChallengeRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ConsentID": {
+        "consent_id": {
           "type": "string"
         },
-        "Answer": {
+        "answer": {
           "type": "string"
         }
       },
@@ -374,13 +374,13 @@
     "consentConsent": {
       "type": "object",
       "properties": {
-        "ConsentID": {
+        "consent_id": {
           "type": "string"
         },
-        "Jwt": {
+        "jwt": {
           "type": "string"
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/consentStatus"
         }
       },
@@ -389,16 +389,16 @@
     "consentCreateConsentEmailRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "For": {
+        "for": {
           "type": "string"
         },
-        "View": {
+        "view": {
           "type": "string"
         },
-        "Email": {
+        "email": {
           "type": "string"
         }
       },
@@ -407,16 +407,16 @@
     "consentCreateConsentSMSRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "For": {
+        "for": {
           "type": "string"
         },
-        "View": {
+        "view": {
           "type": "string"
         },
-        "PhoneNumber": {
+        "phone_number": {
           "type": "string"
         }
       },
@@ -425,7 +425,7 @@
     "consentGetConsentsResponse": {
       "type": "object",
       "properties": {
-        "Consents": {
+        "consents": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/consentConsent"
@@ -437,10 +437,10 @@
     "consentRevokeConsentRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ConsentID": {
+        "consent_id": {
           "type": "string"
         }
       },

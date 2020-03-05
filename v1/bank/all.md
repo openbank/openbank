@@ -1,18 +1,20 @@
-# Bank API v1.0.0
+Bank API v1.0.0
+===============
 
 Provides create and read operations on the bank resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create a bank {#method-post-createbank}
+Create a bank {#method-post-createbank}
+---------------------------------------
 
 Creates a new bank and returns its id.
 
 ```sh
 curl -X POST \
-	/v1/banks \
+	https:///v1/banks \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank": {
@@ -30,52 +32,53 @@ curl -X POST \
 		}
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks`
+`POST https:///v1/banks`
 
 ### Body Parameters
 
 | Name | Type | Description                                   |
 |------|------|-----------------------------------------------|
-| Bank | Bank | Bank is the related information about a bank. |
+| bank | Bank | Bank is the related information about a bank. |
 
 ##### Objects
 
 ###### Bank
 
-| Name               | Type        | Description                                          |
-|--------------------|-------------|------------------------------------------------------|
-| ID                 | string      | ID is an identifier for the bank.                    |
-| FullName           | string      | FullName is the full name of the bank.               |
-| ShortName          | string      | ShortName is the short name of the bank.             |
-| LogoURL            | string      | LogoURL is the url for the bank's logo.              |
-| WebsiteURL         | string      | WebsiteURL is the url for the bank's website.        |
-| SwiftBIC           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| NationalIdentifier | string      | NationalIdentifier is the national identifier code.  |
-| BankRouting        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                | Type        | Description                                          |
+|---------------------|-------------|------------------------------------------------------|
+| id                  | string      | ID is an identifier for the bank.                    |
+| full_name           | string      | FullName is the full name of the bank.               |
+| short_name          | string      | ShortName is the short name of the bank.             |
+| logo_url            | string      | LogoURL is the url for the bank's logo.              |
+| website_url         | string      | WebsiteURL is the url for the bank's website.        |
+| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier | string      | NationalIdentifier is the national identifier code.  |
+| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
 ###### BankRouting
 
 | Name    | Type   | Description                     |
 |---------|--------|---------------------------------|
-| Scheme  | string | Scheme is the routing scheme.   |
-| Address | string | Address is the routing address. |
+| scheme  | string | Scheme is the routing scheme.   |
+| address | string | Address is the routing address. |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type        | Description                                          |
-|--------------------|-------------|------------------------------------------------------|
-| ID                 | string      | ID is an identifier for the bank.                    |
-| FullName           | string      | FullName is the full name of the bank.               |
-| ShortName          | string      | ShortName is the short name of the bank.             |
-| LogoURL            | string      | LogoURL is the url for the bank's logo.              |
-| WebsiteURL         | string      | WebsiteURL is the url for the bank's website.        |
-| SwiftBIC           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| NationalIdentifier | string      | NationalIdentifier is the national identifier code.  |
-| BankRouting        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                | Type        | Description                                          |
+|---------------------|-------------|------------------------------------------------------|
+| id                  | string      | ID is an identifier for the bank.                    |
+| full_name           | string      | FullName is the full name of the bank.               |
+| short_name          | string      | ShortName is the short name of the bank.             |
+| logo_url            | string      | LogoURL is the url for the bank's logo.              |
+| website_url         | string      | WebsiteURL is the url for the bank's website.        |
+| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier | string      | NationalIdentifier is the national identifier code.  |
+| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
 ##### Objects
 
@@ -83,8 +86,8 @@ curl -X POST \
 
 | Name    | Type   | Description                     |
 |---------|--------|---------------------------------|
-| Scheme  | string | Scheme is the routing scheme.   |
-| Address | string | Address is the routing address. |
+| scheme  | string | Scheme is the routing scheme.   |
+| address | string | Address is the routing address. |
 
 Example:
 
@@ -103,6 +106,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -114,13 +118,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a new transaction type at a bank {#method-post-createtranscationtypeatbank}
+Create a new transaction type at a bank {#method-post-createtranscationtypeatbank}
+----------------------------------------------------------------------------------
 
 Creates a new transaction type at a bank and returns its transaction type response.
 
 ```sh
 curl -X POST \
-	/v1/banks/transaction-types \
+	https:///v1/banks/transaction-types \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"transaction_type": {
@@ -134,17 +139,16 @@ curl -X POST \
 		}
 	}'
 ```
-{{snippet createtranscationtypeatbank []}}
 
 ### HTTP Request
 
-`POST /v1/banks/transaction-types`
+`POST https:///v1/banks/transaction-types`
 
 ### Body Parameters
 
-| Name            | Type            | Description                                                                    |
-|-----------------|-----------------|--------------------------------------------------------------------------------|
-| TransactionType | TransactionType | TransactionType is the related information about a transaction type at a bank. |
+| Name             | Type            | Description                                                                    |
+|------------------|-----------------|--------------------------------------------------------------------------------|
+| transaction_type | TransactionType | TransactionType is the related information about a transaction type at a bank. |
 
 ##### Objects
 
@@ -152,13 +156,13 @@ curl -X POST \
 
 | Name        | Type   | Description                                                               |
 |-------------|--------|---------------------------------------------------------------------------|
-| ID          | string | ID is an identifier for the transaction type.                             |
-| BankID      | string | BankID is an identifier for the bank for the particular transaction type. |
-| ShortCode   | string | ShortCode is the short code of the transaction type.                      |
-| Summary     | string | Summary is the summary of the trasnaction type.                           |
-| Description | string | Description is the description of the transaction type.                   |
-| Currency    | string | Currency is the currency of the transaction type.                         |
-| Amount      | string | Amount is the amount of the transaction type.                             |
+| id          | string | ID is an identifier for the transaction type.                             |
+| bankId      | string | BankID is an identifier for the bank for the particular transaction type. |
+| short_code  | string | ShortCode is the short code of the transaction type.                      |
+| summary     | string | Summary is the summary of the trasnaction type.                           |
+| description | string | Description is the description of the transaction type.                   |
+| currency    | string | Currency is the currency of the transaction type.                         |
+| amount      | string | Amount is the amount of the transaction type.                             |
 
 ### Responses
 
@@ -166,13 +170,13 @@ curl -X POST \
 
 | Name        | Type   | Description                                                               |
 |-------------|--------|---------------------------------------------------------------------------|
-| ID          | string | ID is an identifier for the transaction type.                             |
-| BankID      | string | BankID is an identifier for the bank for the particular transaction type. |
-| ShortCode   | string | ShortCode is the short code of the transaction type.                      |
-| Summary     | string | Summary is the summary of the trasnaction type.                           |
-| Description | string | Description is the description of the transaction type.                   |
-| Currency    | string | Currency is the currency of the transaction type.                         |
-| Amount      | string | Amount is the amount of the transaction type.                             |
+| id          | string | ID is an identifier for the transaction type.                             |
+| bankId      | string | BankID is an identifier for the bank for the particular transaction type. |
+| short_code  | string | ShortCode is the short code of the transaction type.                      |
+| summary     | string | Summary is the summary of the trasnaction type.                           |
+| description | string | Description is the description of the transaction type.                   |
+| currency    | string | Currency is the currency of the transaction type.                         |
+| amount      | string | Amount is the amount of the transaction type.                             |
 
 Example:
 
@@ -187,6 +191,7 @@ Example:
   "amount": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -198,24 +203,26 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a bank {#method-delete-deletebank}
+Delete a bank {#method-delete-deletebank}
+-----------------------------------------
 
 Permanently delete a bank.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{ID} \
+	https:///v1/banks/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/banks/{ID}`
+`DELETE https:///v1/banks/{ID}`
 
 ### Query Parameters
 
 | Name | Type   | Description                       |
 |------|--------|-----------------------------------|
-| ID   | string | ID is the bank unique identifier. |
+| id   | string | ID is the bank unique identifier. |
 
 ### Responses
 
@@ -230,39 +237,41 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve bank information {#method-get-getbank}
+Retrieve bank information {#method-get-getbank}
+-----------------------------------------------
 
 Retrieve information about the bank specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{ID} \
+	https:///v1/banks/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{ID}`
+`GET https:///v1/banks/{ID}`
 
 ### Query Parameters
 
 | Name | Type   | Description                       |
 |------|--------|-----------------------------------|
-| ID   | string | ID is the bank unique identifier. |
+| id   | string | ID is the bank unique identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type        | Description                                          |
-|--------------------|-------------|------------------------------------------------------|
-| ID                 | string      | ID is an identifier for the bank.                    |
-| FullName           | string      | FullName is the full name of the bank.               |
-| ShortName          | string      | ShortName is the short name of the bank.             |
-| LogoURL            | string      | LogoURL is the url for the bank's logo.              |
-| WebsiteURL         | string      | WebsiteURL is the url for the bank's website.        |
-| SwiftBIC           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| NationalIdentifier | string      | NationalIdentifier is the national identifier code.  |
-| BankRouting        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                | Type        | Description                                          |
+|---------------------|-------------|------------------------------------------------------|
+| id                  | string      | ID is an identifier for the bank.                    |
+| full_name           | string      | FullName is the full name of the bank.               |
+| short_name          | string      | ShortName is the short name of the bank.             |
+| logo_url            | string      | LogoURL is the url for the bank's logo.              |
+| website_url         | string      | WebsiteURL is the url for the bank's website.        |
+| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier | string      | NationalIdentifier is the national identifier code.  |
+| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
 ##### Objects
 
@@ -270,8 +279,8 @@ curl -X GET \
 
 | Name    | Type   | Description                     |
 |---------|--------|---------------------------------|
-| Scheme  | string | Scheme is the routing scheme.   |
-| Address | string | Address is the routing address. |
+| scheme  | string | Scheme is the routing scheme.   |
+| address | string | Address is the routing address. |
 
 Example:
 
@@ -290,6 +299,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -302,48 +312,50 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available banks {#method-get-getbanks}
+Retrieve all available banks {#method-get-getbanks}
+---------------------------------------------------
 
 Retrieve information regarding all available banks.
 
 ```sh
 curl -X GET \
-	/v1/banks \
+	https:///v1/banks \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks`
+`GET https:///v1/banks`
 
 ### Responses
 
 #### Response body
 
-| Name  | Type   | Description                     |
-|-------|--------|---------------------------------|
-| Banks | []Bank | Banks is the list of the banks. |
+| Name  | Type    | Description                     |
+|-------|---------|---------------------------------|
+| banks | \[]Bank | Banks is the list of the banks. |
 
 ##### Objects
 
 ###### Bank
 
-| Name               | Type        | Description                                          |
-|--------------------|-------------|------------------------------------------------------|
-| ID                 | string      | ID is an identifier for the bank.                    |
-| FullName           | string      | FullName is the full name of the bank.               |
-| ShortName          | string      | ShortName is the short name of the bank.             |
-| LogoURL            | string      | LogoURL is the url for the bank's logo.              |
-| WebsiteURL         | string      | WebsiteURL is the url for the bank's website.        |
-| SwiftBIC           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| NationalIdentifier | string      | NationalIdentifier is the national identifier code.  |
-| BankRouting        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                | Type        | Description                                          |
+|---------------------|-------------|------------------------------------------------------|
+| id                  | string      | ID is an identifier for the bank.                    |
+| full_name           | string      | FullName is the full name of the bank.               |
+| short_name          | string      | ShortName is the short name of the bank.             |
+| logo_url            | string      | LogoURL is the url for the bank's logo.              |
+| website_url         | string      | WebsiteURL is the url for the bank's website.        |
+| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier | string      | NationalIdentifier is the national identifier code.  |
+| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
 ###### BankRouting
 
 | Name    | Type   | Description                     |
 |---------|--------|---------------------------------|
-| Scheme  | string | Scheme is the routing scheme.   |
-| Address | string | Address is the routing address. |
+| scheme  | string | Scheme is the routing scheme.   |
+| address | string | Address is the routing address. |
 
 Example:
 
@@ -366,6 +378,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -378,13 +391,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a bank {#method-put-updatebank}
+Update a bank {#method-put-updatebank}
+--------------------------------------
 
 Updates a bank's information
 
 ```sh
 curl -X PUT \
-	/v1/banks \
+	https:///v1/banks \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank": {
@@ -402,52 +416,53 @@ curl -X PUT \
 		}
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks`
+`PUT https:///v1/banks`
 
 ### Body Parameters
 
 | Name | Type | Description                                   |
 |------|------|-----------------------------------------------|
-| Bank | Bank | Bank is the related information about a bank. |
+| bank | Bank | Bank is the related information about a bank. |
 
 ##### Objects
 
 ###### Bank
 
-| Name               | Type        | Description                                          |
-|--------------------|-------------|------------------------------------------------------|
-| ID                 | string      | ID is an identifier for the bank.                    |
-| FullName           | string      | FullName is the full name of the bank.               |
-| ShortName          | string      | ShortName is the short name of the bank.             |
-| LogoURL            | string      | LogoURL is the url for the bank's logo.              |
-| WebsiteURL         | string      | WebsiteURL is the url for the bank's website.        |
-| SwiftBIC           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| NationalIdentifier | string      | NationalIdentifier is the national identifier code.  |
-| BankRouting        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                | Type        | Description                                          |
+|---------------------|-------------|------------------------------------------------------|
+| id                  | string      | ID is an identifier for the bank.                    |
+| full_name           | string      | FullName is the full name of the bank.               |
+| short_name          | string      | ShortName is the short name of the bank.             |
+| logo_url            | string      | LogoURL is the url for the bank's logo.              |
+| website_url         | string      | WebsiteURL is the url for the bank's website.        |
+| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier | string      | NationalIdentifier is the national identifier code.  |
+| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
 ###### BankRouting
 
 | Name    | Type   | Description                     |
 |---------|--------|---------------------------------|
-| Scheme  | string | Scheme is the routing scheme.   |
-| Address | string | Address is the routing address. |
+| scheme  | string | Scheme is the routing scheme.   |
+| address | string | Address is the routing address. |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type        | Description                                          |
-|--------------------|-------------|------------------------------------------------------|
-| ID                 | string      | ID is an identifier for the bank.                    |
-| FullName           | string      | FullName is the full name of the bank.               |
-| ShortName          | string      | ShortName is the short name of the bank.             |
-| LogoURL            | string      | LogoURL is the url for the bank's logo.              |
-| WebsiteURL         | string      | WebsiteURL is the url for the bank's website.        |
-| SwiftBIC           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| NationalIdentifier | string      | NationalIdentifier is the national identifier code.  |
-| BankRouting        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                | Type        | Description                                          |
+|---------------------|-------------|------------------------------------------------------|
+| id                  | string      | ID is an identifier for the bank.                    |
+| full_name           | string      | FullName is the full name of the bank.               |
+| short_name          | string      | ShortName is the short name of the bank.             |
+| logo_url            | string      | LogoURL is the url for the bank's logo.              |
+| website_url         | string      | WebsiteURL is the url for the bank's website.        |
+| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier | string      | NationalIdentifier is the national identifier code.  |
+| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
 ##### Objects
 
@@ -455,8 +470,8 @@ curl -X PUT \
 
 | Name    | Type   | Description                     |
 |---------|--------|---------------------------------|
-| Scheme  | string | Scheme is the routing scheme.   |
-| Address | string | Address is the routing address. |
+| scheme  | string | Scheme is the routing scheme.   |
+| address | string | Address is the routing address. |
 
 Example:
 
@@ -475,6 +490,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

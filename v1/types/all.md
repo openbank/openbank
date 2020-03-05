@@ -1,13 +1,16 @@
-# Annex
+Annex
+=====
 
-##  Timestamp
+Timestamp
+---------
 
 | Name    | Type  | Description |
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-##  Address
+Address
+-------
 
 Address hold all details about Address
 
@@ -19,7 +22,8 @@ Address hold all details about Address
 | Street      | string | Street holds the street information.            |
 | PostalCode  | string | PostalCode holds the postal code information.   |
 
-##  Amount
+Amount
+------
 
 Amount defines a transaction amount.
 
@@ -28,7 +32,8 @@ Amount defines a transaction amount.
 | Cur  | string | Cur is the currency of the amount. |
 | Num  | string | Num is the value of the amount.    |
 
-##  CreditRating
+CreditRating
+------------
 
 Structure of credit rating information
 
@@ -37,16 +42,18 @@ Structure of credit rating information
 | Rating | string |             |
 | Source | string |             |
 
-##  Location
+Location
+--------
 
 Location is An object representing a latitude/longitude pair. This is expressed as a pairof doubles representing degrees latitude and degrees longitude.Values must be within normalized ranges.Refer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng.
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
-##  OfflineUserInfo
+OfflineUserInfo
+---------------
 
 | Name       | Type     | Description                                                |
 |------------|----------|------------------------------------------------------------|
@@ -57,7 +64,8 @@ Location is An object representing a latitude/longitude pair. This is expressed 
 | MobileNo   | string   | MobileNo contact of the person                             |
 | Location   | Location | Location is the physical location of the interaction.      |
 
-##  Profile
+Profile
+-------
 
 Structure of customer profile information
 
@@ -82,7 +90,7 @@ Structure of customer profile information
 | FaceImageDate            | string       | Date when the face image was added/updated                 |
 | RelationshipStatus       | string       | RelationshipStatus. Ex: Single                             |
 | Dependents               | int32        | Number of dependents                                       |
-| DobOfDependents          | []Timestamp  | Date of birth of dependents                                |
+| DobOfDependents          | \[]Timestamp | Date of birth of dependents                                |
 | CreditRating             | CreditRating | Credit rating                                              |
 | CreditLimit              | Amount       | Credit Limit                                               |
 | HighestEducationAttained | string       | Highest education such as bachelor, masters etc            |
@@ -94,7 +102,8 @@ Structure of customer profile information
 | MiddleName               | string       | MiddleName or middle names (space separated) of the person |
 | LastName                 | string       | LastName or last names (space separated) of the person     |
 
-##  ProfileAccountInfo
+ProfileAccountInfo
+------------------
 
 Structure of account information
 
@@ -104,7 +113,8 @@ Structure of account information
 | AccountID | string | Account identifier |
 | ProfileID | string | Account identifier |
 
-##  BankCode
+BankCode
+--------
 
 DEPRECIATED: BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018
 
@@ -260,7 +270,8 @@ DEPRECIATED: BankCode indicates which bank to use; these should be a list of ban
 | JtrustIndonesia              |             |
 | Transferwise                 |             |
 
-##  CardAccessStatus
+CardAccessStatus
+----------------
 
 | Value                   | Description                                            |
 |-------------------------|--------------------------------------------------------|
@@ -268,7 +279,8 @@ DEPRECIATED: BankCode indicates which bank to use; these should be a list of ban
 | Often                   | CardAccessStatus_Often indicates a card is used often. |
 | Rare                    | CardAccessStatus_Rare indicates a card is used rarely. |
 
-##  CardStatus
+CardStatus
+----------
 
 | Value             | Description                                        |
 |-------------------|----------------------------------------------------|
@@ -277,7 +289,8 @@ DEPRECIATED: BankCode indicates which bank to use; these should be a list of ban
 | Unlock            | CardStatus_Unlock is the unlock status for a card. |
 | Active            | CardStatus_Active is the active status for a card. |
 
-##  MajorCategory
+MajorCategory
+-------------
 
 MajorCategory describes the category of the account.
 
@@ -287,7 +300,8 @@ MajorCategory describes the category of the account.
 | Dep                  | MajorCategory_Dep for deposit category. |
 | Loan                 | MajorCategory_Loan for loan category.   |
 
-##  MajorType
+MajorType
+---------
 
 MajorType describes the type of the account.
 
@@ -301,7 +315,8 @@ MajorType describes the type of the account.
 | MortgageLoan     | MajorType_MortgageLoan for a home loan account.       |
 | ConsumerLoan     | MajorType_ConsumerLoan for a consumer loan account.   |
 
-##  SortDirection
+SortDirection
+-------------
 
 | Value                | Description                                   |
 |----------------------|-----------------------------------------------|

@@ -239,7 +239,7 @@
         ]
       }
     },
-    "/v1/banks/{ID}": {
+    "/v1/banks/{iD}": {
       "get": {
         "summary": "Retrieve bank information",
         "description": "Retrieve information about the bank specified by the ID",
@@ -274,28 +274,28 @@
         },
         "parameters": [
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the bank unique identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "FullName",
+            "name": "full_name",
             "description": "FullName is the full name of the bank.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "ShortName",
+            "name": "short_name",
             "description": "ShortName is the short name of the bank.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "WebsiteURL",
+            "name": "website_url",
             "description": "WebsiteURL is the url for the bank's website.",
             "in": "query",
             "required": false,
@@ -351,7 +351,7 @@
         },
         "parameters": [
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the bank unique identifier.",
             "in": "path",
             "required": true,
@@ -375,35 +375,35 @@
     "bankBank": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is an identifier for the bank."
         },
-        "FullName": {
+        "full_name": {
           "type": "string",
           "description": "FullName is the full name of the bank."
         },
-        "ShortName": {
+        "short_name": {
           "type": "string",
           "description": "ShortName is the short name of the bank."
         },
-        "LogoURL": {
+        "logo_url": {
           "type": "string",
           "description": "LogoURL is the url for the bank's logo."
         },
-        "WebsiteURL": {
+        "website_url": {
           "type": "string",
           "description": "WebsiteURL is the url for the bank's website."
         },
-        "SwiftBIC": {
+        "swift_bic": {
           "type": "string",
           "description": "SwiftBIC is the SWIFT bank identifier code."
         },
-        "NationalIdentifier": {
+        "national_identifier": {
           "type": "string",
           "description": "NationalIdentifier is the national identifier code."
         },
-        "BankRouting": {
+        "bank_routing": {
           "$ref": "#/definitions/bankBankRouting",
           "description": "BankRouting is the routing information for the bank."
         }
@@ -413,11 +413,11 @@
     "bankBankRouting": {
       "type": "object",
       "properties": {
-        "Scheme": {
+        "scheme": {
           "type": "string",
           "description": "Scheme is the routing scheme."
         },
-        "Address": {
+        "address": {
           "type": "string",
           "description": "Address is the routing address."
         }
@@ -427,7 +427,7 @@
     "bankCreateBankRequest": {
       "type": "object",
       "properties": {
-        "Bank": {
+        "bank": {
           "$ref": "#/definitions/bankBank",
           "description": "Bank is the related information about a bank."
         }
@@ -437,7 +437,7 @@
     "bankCreateTransactionTypeAtBankRequest": {
       "type": "object",
       "properties": {
-        "TransactionType": {
+        "transaction_type": {
           "$ref": "#/definitions/bankTransactionType",
           "description": "TransactionType is the related information about a transaction type at a bank."
         }
@@ -447,7 +447,7 @@
     "bankGetBanksResponse": {
       "type": "object",
       "properties": {
-        "Banks": {
+        "banks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/bankBank"
@@ -460,31 +460,31 @@
     "bankTransactionType": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is an identifier for the transaction type."
         },
-        "BankID": {
+        "bankId": {
           "type": "string",
           "description": "BankID is an identifier for the bank for the particular transaction type."
         },
-        "ShortCode": {
+        "short_code": {
           "type": "string",
           "description": "ShortCode is the short code of the transaction type."
         },
-        "Summary": {
+        "summary": {
           "type": "string",
           "description": "Summary is the summary of the trasnaction type."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the description of the transaction type."
         },
-        "Currency": {
+        "currency": {
           "type": "string",
           "description": "Currency is the currency of the transaction type."
         },
-        "Amount": {
+        "amount": {
           "type": "string",
           "description": "Amount is the amount of the transaction type."
         }
@@ -494,7 +494,7 @@
     "bankUpdateBankRequest": {
       "type": "object",
       "properties": {
-        "Bank": {
+        "bank": {
           "$ref": "#/definitions/bankBank",
           "description": "Bank is the related information about a bank."
         }

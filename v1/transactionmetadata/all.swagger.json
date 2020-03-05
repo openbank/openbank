@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/comment/{iD}": {
       "delete": {
         "summary": "Delete a comment",
         "description": "Permanently delete a comment.",
@@ -54,28 +54,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the comment id that will be deleted.",
             "in": "path",
             "required": true,
@@ -94,7 +94,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/comments": {
       "get": {
         "summary": "Retrieve all available comments",
         "description": "Retrieve information regarding all available comments.",
@@ -129,21 +129,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -201,21 +201,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -281,21 +281,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -322,7 +322,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/image/{iD}": {
       "delete": {
         "summary": "Delete a image",
         "description": "Permanently delete a image.",
@@ -361,28 +361,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the image id that will be deleted.",
             "in": "path",
             "required": true,
@@ -401,7 +401,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/images": {
       "get": {
         "summary": "Retrieve all available images",
         "description": "Retrieve information regarding all available images.",
@@ -436,21 +436,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -508,21 +508,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -588,21 +588,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -629,7 +629,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/narratives": {
       "get": {
         "summary": "Retrieve all available narratives",
         "description": "Retrieve information regarding all available narratives.",
@@ -664,21 +664,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -736,21 +736,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -816,21 +816,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -857,7 +857,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/tag/{iD}": {
       "delete": {
         "summary": "Delete a tag",
         "description": "Permanently delete a tag.",
@@ -896,28 +896,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the tag id that will be deleted.",
             "in": "path",
             "required": true,
@@ -936,7 +936,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/tags": {
       "get": {
         "summary": "Retrieve all available tags",
         "description": "Retrieve information regarding all available tags.",
@@ -971,21 +971,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1043,21 +1043,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1123,21 +1123,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1164,7 +1164,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/where_tag/{iD}": {
       "get": {
         "summary": "Retrieve where tag information",
         "description": "Retrieve information about the where tag specified by the ID",
@@ -1199,28 +1199,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the where tag unique identifier.",
             "in": "path",
             "required": true,
@@ -1276,28 +1276,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the where tag id that will be deleted.",
             "in": "path",
             "required": true,
@@ -1316,7 +1316,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/where_tags": {
       "get": {
         "summary": "Retrieve all available where tags",
         "description": "Retrieve information regarding all available where tags.",
@@ -1351,21 +1351,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1423,21 +1423,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1503,21 +1503,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1544,7 +1544,7 @@
         ]
       }
     },
-    "/v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}": {
+    "/v1/comments/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/comment/{iD}": {
       "get": {
         "summary": "Retrieve comment information",
         "description": "Retrieve information about the comment specified by the ID",
@@ -1579,28 +1579,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the comment unique identifier.",
             "in": "path",
             "required": true,
@@ -1619,7 +1619,7 @@
         ]
       }
     },
-    "/v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}": {
+    "/v1/images/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/image/{iD}": {
       "get": {
         "summary": "Retrieve image information",
         "description": "Retrieve information about the image specified by the ID",
@@ -1654,28 +1654,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the image unique identifier.",
             "in": "path",
             "required": true,
@@ -1694,7 +1694,7 @@
         ]
       }
     },
-    "/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}": {
+    "/v1/narratives/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/narrative/{iD}": {
       "get": {
         "summary": "Retrieve narrative information",
         "description": "Retrieve information about the narrative specified by the ID",
@@ -1729,28 +1729,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the narrative unique identifier.",
             "in": "path",
             "required": true,
@@ -1806,28 +1806,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the narrative id that will be deleted.",
             "in": "path",
             "required": true,
@@ -1846,7 +1846,7 @@
         ]
       }
     },
-    "/v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}": {
+    "/v1/tags/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/tag/{iD}": {
       "get": {
         "summary": "Retrieve tag information",
         "description": "Retrieve information about the tag specified by the ID",
@@ -1881,28 +1881,28 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the tag unique identifier.",
             "in": "path",
             "required": true,
@@ -1926,20 +1926,20 @@
     "transactionmetadataComment": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the image identifier."
         },
-        "Value": {
+        "value": {
           "type": "string",
           "description": "Value is the comment content/value."
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time",
           "description": "Date is the date the tag is created/updated."
         },
-        "User": {
+        "user": {
           "$ref": "#/definitions/transactionmetadataUser",
           "description": "User is the user information."
         }
@@ -1948,19 +1948,19 @@
     "transactionmetadataCreateCommentRequest": {
       "type": "object",
       "properties": {
-        "Comment": {
+        "comment": {
           "$ref": "#/definitions/transactionmetadataComment",
           "description": "Comment is the comment metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -1969,19 +1969,19 @@
     "transactionmetadataCreateImageRequest": {
       "type": "object",
       "properties": {
-        "Image": {
+        "image": {
           "$ref": "#/definitions/transactionmetadataImage",
           "description": "Image is the image metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -1990,19 +1990,19 @@
     "transactionmetadataCreateNarrativeRequest": {
       "type": "object",
       "properties": {
-        "Narrative": {
+        "narrative": {
           "$ref": "#/definitions/transactionmetadataNarrative",
           "description": "Narrative is the narrative metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2011,19 +2011,19 @@
     "transactionmetadataCreateTagRequest": {
       "type": "object",
       "properties": {
-        "Tag": {
+        "tag": {
           "$ref": "#/definitions/transactionmetadataTag",
           "description": "Tag is the tag metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2032,19 +2032,19 @@
     "transactionmetadataCreateWhereTagRequest": {
       "type": "object",
       "properties": {
-        "WhereTag": {
+        "where_tag": {
           "$ref": "#/definitions/transactionmetadataWhereTag",
           "description": "WhereTag is the where tag metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2053,22 +2053,22 @@
     "transactionmetadataGetCommentsResponse": {
       "type": "object",
       "properties": {
-        "Comments": {
+        "comments": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionmetadataComment"
           },
           "description": "Comments is the list of comments."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2077,22 +2077,22 @@
     "transactionmetadataGetImagesResponse": {
       "type": "object",
       "properties": {
-        "Images": {
+        "images": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionmetadataImage"
           },
           "description": "Images is the list of images."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2101,22 +2101,22 @@
     "transactionmetadataGetNarrativesResponse": {
       "type": "object",
       "properties": {
-        "Narratives": {
+        "narratives": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionmetadataNarrative"
           },
           "description": "Narratives is the list of narratives."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2125,22 +2125,22 @@
     "transactionmetadataGetTagsResponse": {
       "type": "object",
       "properties": {
-        "Tags": {
+        "tags": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionmetadataTag"
           },
           "description": "Tags is the list of tags."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2149,22 +2149,22 @@
     "transactionmetadataGetWhereTagsResponse": {
       "type": "object",
       "properties": {
-        "WhereTags": {
+        "where_tags": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionmetadataWhereTag"
           },
           "description": "WhereTags is the list of where tags."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2173,24 +2173,24 @@
     "transactionmetadataImage": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the image identifier."
         },
-        "Label": {
+        "label": {
           "type": "string",
           "description": "Label is the label of the image."
         },
-        "URL": {
+        "url": {
           "type": "string",
           "description": "URL is the image URL."
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time",
           "description": "Date is the date the image is created/updated."
         },
-        "User": {
+        "user": {
           "$ref": "#/definitions/transactionmetadataUser",
           "description": "User is the user information."
         }
@@ -2199,7 +2199,7 @@
     "transactionmetadataNarrative": {
       "type": "object",
       "properties": {
-        "Narrative": {
+        "narrative": {
           "type": "string",
           "description": "Narrative is the content of the narrative."
         }
@@ -2208,20 +2208,20 @@
     "transactionmetadataTag": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the tag identifier."
         },
-        "Value": {
+        "value": {
           "type": "string",
           "description": "Value is the tag content/value."
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time",
           "description": "Date is the date the tag is created/updated."
         },
-        "User": {
+        "user": {
           "$ref": "#/definitions/transactionmetadataUser",
           "description": "User is the user information."
         }
@@ -2230,19 +2230,19 @@
     "transactionmetadataUpdateCommentRequest": {
       "type": "object",
       "properties": {
-        "Comment": {
+        "comment": {
           "$ref": "#/definitions/transactionmetadataComment",
           "description": "Comment is the comment metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2251,19 +2251,19 @@
     "transactionmetadataUpdateImageRequest": {
       "type": "object",
       "properties": {
-        "Image": {
+        "image": {
           "$ref": "#/definitions/transactionmetadataImage",
           "description": "Image is the image metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2272,19 +2272,19 @@
     "transactionmetadataUpdateNarrativeRequest": {
       "type": "object",
       "properties": {
-        "Narrative": {
+        "narrative": {
           "$ref": "#/definitions/transactionmetadataNarrative",
           "description": "Narrative is the narrative metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2293,19 +2293,19 @@
     "transactionmetadataUpdateTagRequest": {
       "type": "object",
       "properties": {
-        "Tag": {
+        "tag": {
           "$ref": "#/definitions/transactionmetadataTag",
           "description": "Tag is the tag metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2314,19 +2314,19 @@
     "transactionmetadataUpdateWhereTagRequest": {
       "type": "object",
       "properties": {
-        "WhereTag": {
+        "where_tag": {
           "$ref": "#/definitions/transactionmetadataWhereTag",
           "description": "WhereTag is the where tag metadata made on a transaction."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction identifier."
         }
@@ -2335,15 +2335,15 @@
     "transactionmetadataUser": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the user identifier."
         },
-        "Provider": {
+        "provider": {
           "type": "string",
           "description": "Provider is the provider of the user."
         },
-        "DisplayName": {
+        "display_name": {
           "type": "string",
           "description": "DisplayName is the user's display name."
         }
@@ -2352,16 +2352,16 @@
     "transactionmetadataWhereTag": {
       "type": "object",
       "properties": {
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the latitude and longitude information of the tag."
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time",
           "description": "Date is the date the geo information is created/updated."
         },
-        "User": {
+        "user": {
           "$ref": "#/definitions/transactionmetadataUser",
           "description": "User is the user information."
         }
@@ -2370,12 +2370,12 @@
     "typesLocation": {
       "type": "object",
       "properties": {
-        "Latitude": {
+        "latitude": {
           "type": "number",
           "format": "double",
           "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
-        "Longitude": {
+        "longitude": {
           "type": "number",
           "format": "double",
           "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"

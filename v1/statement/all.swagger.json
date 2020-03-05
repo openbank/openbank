@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/statement/{ID}": {
+    "/v1/statement/{iD}": {
       "get": {
         "summary": "Retrieve a statement",
         "description": "GetStatement retrieves a specific statement, specified by its ID.",
@@ -50,7 +50,7 @@
         },
         "parameters": [
           {
-            "name": "ID",
+            "name": "iD",
             "description": "ID is the unique identifier of the statement",
             "in": "path",
             "required": true,
@@ -74,14 +74,14 @@
     "statementGetStatementsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/statementStatement"
           },
           "description": "Result is a list containing the statement."
         },
-        "HasMore": {
+        "has_more": {
           "type": "boolean",
           "format": "boolean",
           "description": "HasMore indicates if there are more statement available."
@@ -92,27 +92,27 @@
     "statementStatement": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the unique identifier of a statement."
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/statementStatus",
           "description": "Status is the status of the statement."
         },
-        "Date": {
+        "date": {
           "type": "string",
           "description": "Date is the date of the statement."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the description of the statement."
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount",
           "description": "Amount is the amount if the transcation that writes on the statement."
         },
-        "Balance": {
+        "balance": {
           "$ref": "#/definitions/typesAmount",
           "description": "Balance is remaining balance after related transaction."
         }
@@ -132,11 +132,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }

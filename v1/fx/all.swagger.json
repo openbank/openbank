@@ -133,7 +133,7 @@
         ]
       }
     },
-    "/v1/fx/{FromCurrencyCode}/{ToCurrencyCode}": {
+    "/v1/fx/{fromCurrencyCode}/{toCurrencyCode}": {
       "get": {
         "summary": "Retrieve exchange rate between two currencies",
         "description": "Retrieve the exchange rate from a currency to another",
@@ -168,14 +168,14 @@
         },
         "parameters": [
           {
-            "name": "FromCurrencyCode",
+            "name": "fromCurrencyCode",
             "description": "FromCurrencyCode is the currency to transfer from.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ToCurrencyCode",
+            "name": "toCurrencyCode",
             "description": "ToCurrencyCode is the currency that we are transferring to.",
             "in": "path",
             "required": true,
@@ -199,7 +199,7 @@
     "fxCreateFXRequest": {
       "type": "object",
       "properties": {
-        "FX": {
+        "fx": {
           "$ref": "#/definitions/fxFX",
           "description": "FX is the foreign exchange information to create."
         }
@@ -209,27 +209,27 @@
     "fxFX": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is an identifier for the bank on this fx transaction."
         },
-        "FromCurrencyCode": {
+        "from_currency_code": {
           "type": "string",
           "description": "FromCurrencyCode is the currency to transfer from."
         },
-        "ToCurrencyCode": {
+        "to_currency_code": {
           "type": "string",
           "description": "ToCurrencyCode is the currency that we are transferring to."
         },
-        "Rate": {
+        "rate": {
           "type": "string",
           "description": "Rate is the exchange rate of the foreign exchange."
         },
-        "InverseRate": {
+        "inverse_rate": {
           "type": "string",
           "description": "InverseRate is the inverse of the exchange rate of the foreign exchange."
         },
-        "EffectiveDate": {
+        "effective_date": {
           "type": "string",
           "description": "EffectiveDate is the effective date of the foreign exchange quote."
         }
@@ -239,7 +239,7 @@
     "fxUpdateFXRequest": {
       "type": "object",
       "properties": {
-        "FX": {
+        "fx": {
           "$ref": "#/definitions/fxFX",
           "description": "FX is the foreign exchange information to update."
         }

@@ -1,18 +1,20 @@
-# Account Application API v1.0.0
+Account Application API v1.0.0
+==============================
 
 Provides create and read operations on the account application resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create an account application {#method-post-createaccountapplication}
+Create an account application {#method-post-createaccountapplication}
+---------------------------------------------------------------------
 
 Creates a new account application
 
 ```sh
 curl -X POST \
-	/v1/account-applications \
+	https:///v1/account-applications \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"product_code": "string",
@@ -20,32 +22,31 @@ curl -X POST \
 		"profile_id": "string"
 	}'
 ```
-{{snippet createaccountapplication []}}
 
 ### HTTP Request
 
-`POST /v1/account-applications`
+`POST https:///v1/account-applications`
 
 ### Body Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| ProductCode | string |             |
-| UserID      | string |             |
-| ProfileID   | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| product_code | string |             |
+| user_id      | string |             |
+| profile_id   | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type                     | Description |
-|-------------------|--------------------------|-------------|
-| ID                | string                   |             |
-| ProductCode       | string                   |             |
-| User              | User                     |             |
-| CustomerProfile   | Profile                  |             |
-| DateOfApplication | Timestamp                |             |
-| Status            | AccountApplicationStatus |             |
+| Name                | Type                     | Description |
+|---------------------|--------------------------|-------------|
+| id                  | string                   |             |
+| product_code        | string                   |             |
+| user                | User                     |             |
+| customer_profile    | Profile                  |             |
+| date_of_application | Timestamp                |             |
+| status              | AccountApplicationStatus |             |
 
 ##### Objects
 
@@ -53,44 +54,44 @@ curl -X POST \
 
 | Name     | Type   | Description                   |
 |----------|--------|-------------------------------|
-| ID       | string | User identifier used to login |
-| Email    | string | Email of the user             |
-| Username | string | Display name of the user      |
+| id       | string | User identifier used to login |
+| email    | string | Email of the user             |
+| username | string | Display name of the user      |
 
 ###### Profile
 
-| Name                     | Type         | Description                                                |
-|--------------------------|--------------|------------------------------------------------------------|
-| ProfileID                | string       | ProfileID is the unique identifier of a profile.           |
-| FullName                 | string       | Full name                                                  |
-| UserName                 | string       | User name                                                  |
-| BirthDate                | string       | Birth date                                                 |
-| Language                 | string       | Language code used                                         |
-| Country                  | string       | User country code (VN, US, ID, SG, ...).                   |
-| Email                    | string       | User email address                                         |
-| EmailVefified            | bool         | True if email is verified, otherwise False                 |
-| Mobile                   | string       | Mobile number                                              |
-| Photo                    | string       | User profile photo url                                     |
-| Title                    | string       | Title                                                      |
-| PermanentAddress         | Address      | Permanent address                                          |
-| ContactAddress           | Address      | Contact address                                            |
-| ContactNumber            | string       | Contact number                                             |
-| ProfileNumber            | string       | profile number                                             |
-| FaceImageUrl             | string       | Face image of the customer                                 |
-| FaceImageDate            | string       | Date when the face image was added/updated                 |
-| RelationshipStatus       | string       | RelationshipStatus. Ex: Single                             |
-| Dependents               | int32        | Number of dependents                                       |
-| DobOfDependents          | []Timestamp  | Date of birth of dependents                                |
-| CreditRating             | CreditRating | Credit rating                                              |
-| CreditLimit              | Amount       | Credit Limit                                               |
-| HighestEducationAttained | string       | Highest education such as bachelor, masters etc            |
-| EmploymentStatus         | string       | Current employment status                                  |
-| KycStatus                | bool         | Know Your Customer status                                  |
-| BranchID                 | string       | Branch Identifier                                          |
-| NameSuffix               | string       | Name suffix                                                |
-| FirstName                | string       | FirstName of the person                                    |
-| MiddleName               | string       | MiddleName or middle names (space separated) of the person |
-| LastName                 | string       | LastName or last names (space separated) of the person     |
+| Name                       | Type         | Description                                                |
+|----------------------------|--------------|------------------------------------------------------------|
+| profile_id                 | string       | ProfileID is the unique identifier of a profile.           |
+| fullname                   | string       | Full name                                                  |
+| username                   | string       | User name                                                  |
+| birthdate                  | string       | Birth date                                                 |
+| language                   | string       | Language code used                                         |
+| country                    | string       | User country code (VN, US, ID, SG, ...).                   |
+| email                      | string       | User email address                                         |
+| email_verified             | bool         | True if email is verified, otherwise False                 |
+| mobile                     | string       | Mobile number                                              |
+| photo                      | string       | User profile photo url                                     |
+| title                      | string       | Title                                                      |
+| permanent_address          | Address      | Permanent address                                          |
+| contact_address            | Address      | Contact address                                            |
+| contact_number             | string       | Contact number                                             |
+| profile_number             | string       | profile number                                             |
+| face_image_url             | string       | Face image of the customer                                 |
+| face_image_date            | string       | Date when the face image was added/updated                 |
+| relationship_status        | string       | RelationshipStatus. Ex: Single                             |
+| dependents                 | int32        | Number of dependents                                       |
+| dob_of_dependents          | \[]Timestamp | Date of birth of dependents                                |
+| credit_rating              | CreditRating | Credit rating                                              |
+| credit_limit               | Amount       | Credit Limit                                               |
+| highest_education_attained | string       | Highest education such as bachelor, masters etc            |
+| employment_status          | string       | Current employment status                                  |
+| kyc_status                 | bool         | Know Your Customer status                                  |
+| branchId                   | string       | Branch Identifier                                          |
+| nameSuffix                 | string       | Name suffix                                                |
+| first_name                 | string       | FirstName of the person                                    |
+| middle_name                | string       | MiddleName or middle names (space separated) of the person |
+| last_name                  | string       | LastName or last names (space separated) of the person     |
 
 ###### Timestamp
 
@@ -101,27 +102,27 @@ curl -X POST \
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### CreditRating
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -196,6 +197,7 @@ Example:
   "status": "AccountApplicationStatus"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -207,39 +209,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an account application {#method-get-getaccountapplication}
+Retrieve an account application {#method-get-getaccountapplication}
+-------------------------------------------------------------------
 
-Retrieves all data from an account application selected by the supplied accountapplicationid.
+Retrieves all data from an account application selected by the supplied account_application_id.
 
 ```sh
 curl -X GET \
-	/v1/account-applications/{ID} \
+	https:///v1/account-applications/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getaccountapplication []}}
 
 ### HTTP Request
 
-`GET /v1/account-applications/{ID}`
+`GET https:///v1/account-applications/{ID}`
 
 ### Query Parameters
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| ID   | string |             |
+| id   | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type                     | Description |
-|-------------------|--------------------------|-------------|
-| ID                | string                   |             |
-| ProductCode       | string                   |             |
-| UserID            | string                   |             |
-| CustomerProfileID | string                   |             |
-| DateOfApplication | Timestamp                |             |
-| Status            | AccountApplicationStatus |             |
+| Name                | Type                     | Description |
+|---------------------|--------------------------|-------------|
+| id                  | string                   |             |
+| product_code        | string                   |             |
+| user_id             | string                   |             |
+| customer_profile_id | string                   |             |
+| date_of_application | Timestamp                |             |
+| status              | AccountApplicationStatus |             |
 
 ##### Objects
 
@@ -265,6 +267,7 @@ Example:
   "status": "AccountApplicationStatus"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -277,41 +280,41 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all accounts {#method-get-getaccountapplications}
+List all accounts {#method-get-getaccountapplications}
+------------------------------------------------------
 
 Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
 
 ```sh
 curl -X GET \
-	/v1/account-applications \
+	https:///v1/account-applications \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getaccountapplications []}}
 
 ### HTTP Request
 
-`GET /v1/account-applications`
+`GET https:///v1/account-applications`
 
 ### Responses
 
 #### Response body
 
-| Name   | Type                 | Description                           |
-|--------|----------------------|---------------------------------------|
-| Result | []AccountApplication | Result is the paginated query result. |
+| Name   | Type                  | Description                           |
+|--------|-----------------------|---------------------------------------|
+| result | \[]AccountApplication | Result is the paginated query result. |
 
 ##### Objects
 
 ###### AccountApplication
 
-| Name              | Type                     | Description |
-|-------------------|--------------------------|-------------|
-| ID                | string                   |             |
-| ProductCode       | string                   |             |
-| UserID            | string                   |             |
-| CustomerProfileID | string                   |             |
-| DateOfApplication | Timestamp                |             |
-| Status            | AccountApplicationStatus |             |
+| Name                | Type                     | Description |
+|---------------------|--------------------------|-------------|
+| id                  | string                   |             |
+| product_code        | string                   |             |
+| user_id             | string                   |             |
+| customer_profile_id | string                   |             |
+| date_of_application | Timestamp                |             |
+| status              | AccountApplicationStatus |             |
 
 ###### Timestamp
 
@@ -339,6 +342,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -350,37 +354,37 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update an account application {#method-put-updateaccountapplicationstatus}
+Update an account application {#method-put-updateaccountapplicationstatus}
+--------------------------------------------------------------------------
 
 Updates an account application with the given status
 
 ```sh
 curl -X PUT \
-	/v1/account-applications/{ID} \
+	https:///v1/account-applications/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"id": "string",
 		"status": "AccountApplicationStatus"
 	}'
 ```
-{{snippet updateaccountapplication_status []}}
 
 ### HTTP Request
 
-`PUT /v1/account-applications/{ID}`
+`PUT https:///v1/account-applications/{ID}`
 
 ### Query Parameters
 
 | Name | Type   | Description                                                       |
 |------|--------|-------------------------------------------------------------------|
-| ID   | string | ID is the unique identifier of the account application to update. |
+| id   | string | ID is the unique identifier of the account application to update. |
 
 ### Body Parameters
 
 | Name   | Type                     | Description                                                       |
 |--------|--------------------------|-------------------------------------------------------------------|
-| ID     | string                   | ID is the unique identifier of the account application to update. |
-| Status | AccountApplicationStatus | Status of the account application                                 |
+| id     | string                   | ID is the unique identifier of the account application to update. |
+| status | AccountApplicationStatus | Status of the account application                                 |
 
 ### Responses
 
@@ -394,6 +398,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -405,9 +410,10 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Annex
+Annex
+-----
 
-####  AccountApplicationStatus
+#### AccountApplicationStatus
 
 Entity type defines the type of account application
 

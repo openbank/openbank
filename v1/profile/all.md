@@ -1,106 +1,109 @@
-# Profile API v1.0.0
+Profile API v1.0.0
+==================
 
 Provides CRUD operations on the Profile resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Query profile {#method-get-getprofile}
+Query profile {#method-get-getprofile}
+--------------------------------------
 
 Returns the profile and associated accounts
 
 ```sh
 curl -X GET \
-	/v1/profile \
+	https:///v1/profile \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/profile`
+`GET https:///v1/profile`
 
 ### Responses
 
 #### Response body
 
-| Name     | Type      | Description |
-|----------|-----------|-------------|
-| Profile  | Profile   |             |
-| Accounts | []Account |             |
+| Name     | Type       | Description |
+|----------|------------|-------------|
+| profile  | Profile    |             |
+| accounts | \[]Account |             |
 
 ##### Objects
 
 ###### Profile
 
-| Name                     | Type         | Description                                                |
-|--------------------------|--------------|------------------------------------------------------------|
-| ProfileID                | string       | ProfileID is the unique identifier of a profile.           |
-| FullName                 | string       | Full name                                                  |
-| UserName                 | string       | User name                                                  |
-| BirthDate                | string       | Birth date                                                 |
-| Language                 | string       | Language code used                                         |
-| Country                  | string       | User country code (VN, US, ID, SG, ...).                   |
-| Email                    | string       | User email address                                         |
-| EmailVefified            | bool         | True if email is verified, otherwise False                 |
-| Mobile                   | string       | Mobile number                                              |
-| Photo                    | string       | User profile photo url                                     |
-| Title                    | string       | Title                                                      |
-| PermanentAddress         | Address      | Permanent address                                          |
-| ContactAddress           | Address      | Contact address                                            |
-| ContactNumber            | string       | Contact number                                             |
-| ProfileNumber            | string       | profile number                                             |
-| FaceImageUrl             | string       | Face image of the customer                                 |
-| FaceImageDate            | string       | Date when the face image was added/updated                 |
-| RelationshipStatus       | string       | RelationshipStatus. Ex: Single                             |
-| Dependents               | int32        | Number of dependents                                       |
-| DobOfDependents          | []Timestamp  | Date of birth of dependents                                |
-| CreditRating             | CreditRating | Credit rating                                              |
-| CreditLimit              | Amount       | Credit Limit                                               |
-| HighestEducationAttained | string       | Highest education such as bachelor, masters etc            |
-| EmploymentStatus         | string       | Current employment status                                  |
-| KycStatus                | bool         | Know Your Customer status                                  |
-| BranchID                 | string       | Branch Identifier                                          |
-| NameSuffix               | string       | Name suffix                                                |
-| FirstName                | string       | FirstName of the person                                    |
-| MiddleName               | string       | MiddleName or middle names (space separated) of the person |
-| LastName                 | string       | LastName or last names (space separated) of the person     |
+| Name                       | Type         | Description                                                |
+|----------------------------|--------------|------------------------------------------------------------|
+| profile_id                 | string       | ProfileID is the unique identifier of a profile.           |
+| fullname                   | string       | Full name                                                  |
+| username                   | string       | User name                                                  |
+| birthdate                  | string       | Birth date                                                 |
+| language                   | string       | Language code used                                         |
+| country                    | string       | User country code (VN, US, ID, SG, ...).                   |
+| email                      | string       | User email address                                         |
+| email_verified             | bool         | True if email is verified, otherwise False                 |
+| mobile                     | string       | Mobile number                                              |
+| photo                      | string       | User profile photo url                                     |
+| title                      | string       | Title                                                      |
+| permanent_address          | Address      | Permanent address                                          |
+| contact_address            | Address      | Contact address                                            |
+| contact_number             | string       | Contact number                                             |
+| profile_number             | string       | profile number                                             |
+| face_image_url             | string       | Face image of the customer                                 |
+| face_image_date            | string       | Date when the face image was added/updated                 |
+| relationship_status        | string       | RelationshipStatus. Ex: Single                             |
+| dependents                 | int32        | Number of dependents                                       |
+| dob_of_dependents          | \[]Timestamp | Date of birth of dependents                                |
+| credit_rating              | CreditRating | Credit rating                                              |
+| credit_limit               | Amount       | Credit Limit                                               |
+| highest_education_attained | string       | Highest education such as bachelor, masters etc            |
+| employment_status          | string       | Current employment status                                  |
+| kyc_status                 | bool         | Know Your Customer status                                  |
+| branchId                   | string       | Branch Identifier                                          |
+| nameSuffix                 | string       | Name suffix                                                |
+| first_name                 | string       | FirstName of the person                                    |
+| middle_name                | string       | MiddleName or middle names (space separated) of the person |
+| last_name                  | string       | LastName or last names (space separated) of the person     |
 
 ###### Account
 
-| Name                          | Type          | Description                                                                           |
-|-------------------------------|---------------|---------------------------------------------------------------------------------------|
-| AccountID                     | string        | AccountID is the unique identifier of an account.                                     |
-| Branch                        | string        | Branch is the branch code for the branch associated with the account.                 |
-| BranchName                    | string        | BranchName is the long-form name of the branch associated with the account.           |
-| Status                        | string        | Status is the status of the account.                                                  |
-| AccruedInterestAtMaturityDate | Timestamp     | Interest accrues at an annual rate of interest that is fixed                          |
-| AmountDue                     | Amount        | Specify when payments are due on money borrowed                                       |
-| AvailableBalance              | Amount        | AvailableBalance is the available balance of the account.                             |
-| AvailableCreditLimit          | string        | AvailableCreditLimit is the available credit limit for the account.                   |
-| CheckingInterestRate          | string        | CheckingInterestRate is the interest rate of the account if it is a checking account. |
-| ContractDate                  | Timestamp     | ContractDate is the date of the contract initialization.                              |
-| CreditLimit                   | string        | CreditLimit is the allowed credit limit.                                              |
-| CurrentAccruedInterest        | string        | Interest earned but not received                                                      |
-| CurrentBalance                | Amount        | CurrentBalance is the current balance of the account.                                 |
-| CurrentTerm                   | string        | CurrentTerm is the account validity period.                                           |
-| DueDate                       | Timestamp     | DueDate is the loan maturity date.                                                    |
-| InterestRate                  | string        | InterestRate is the interest rate for the account.                                    |
-| MajorType                     | MajorType     | MajorType is the account type.                                                        |
-| MajorCategory                 | MajorCategory | MajorCategory is the account category.                                                |
-| MaturityDate                  | Timestamp     | MaturityDate is the maturity date, format is ISO 8601                                 |
-| NextPaymentDueDate            | Timestamp     | Specify when payments are due on money borrowed                                       |
-| OwnerName                     | string        | OwnerName is the name of the account's owner.                                         |
-| StartDate                     | Timestamp     | Account opening date                                                                  |
+| Name                              | Type          | Description                                                                           |
+|-----------------------------------|---------------|---------------------------------------------------------------------------------------|
+| account_id                        | string        | AccountID is the unique identifier of an account.                                     |
+| branch                            | string        | Branch is the branch code for the branch associated with the account.                 |
+| branch_name                       | string        | BranchName is the long-form name of the branch associated with the account.           |
+| status                            | string        | Status is the status of the account.                                                  |
+| accrued_interest_at_maturity_date | Timestamp     | Interest accrues at an annual rate of interest that is fixed                          |
+| amount_due                        | Amount        | Specify when payments are due on money borrowed                                       |
+| available_balance                 | Amount        | AvailableBalance is the available balance of the account.                             |
+| available_credit_limit            | string        | AvailableCreditLimit is the available credit limit for the account.                   |
+| checking_interest_rate            | string        | CheckingInterestRate is the interest rate of the account if it is a checking account. |
+| contract_date                     | Timestamp     | ContractDate is the date of the contract initialization.                              |
+| credit_limit                      | string        | CreditLimit is the allowed credit limit.                                              |
+| current_accrued_interest          | string        | Interest earned but not received                                                      |
+| current_balance                   | Amount        | CurrentBalance is the current balance of the account.                                 |
+| current_term                      | string        | CurrentTerm is the account validity period.                                           |
+| due_date                          | Timestamp     | DueDate is the loan maturity date.                                                    |
+| interest_rate                     | string        | InterestRate is the interest rate for the account.                                    |
+| major_type                        | MajorType     | MajorType is the account type.                                                        |
+| major_category                    | MajorCategory | MajorCategory is the account category.                                                |
+| maturity_date                     | Timestamp     | MaturityDate is the maturity date, format is ISO 8601                                 |
+| next_payment_due_date             | Timestamp     | Specify when payments are due on money borrowed                                       |
+| owner_name                        | string        | OwnerName is the name of the account's owner.                                         |
+| start_date                        | Timestamp     | Account opening date                                                                  |
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Timestamp
 
@@ -113,15 +116,15 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -237,6 +240,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -249,40 +253,40 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Query cards {#method-get-getprofilecard}
+Query cards {#method-get-getprofilecard}
+----------------------------------------
 
 Returns an array of ProfileCard associated with the account for the profile based on profile identifier
 
 ```sh
 curl -X GET \
-	/v1/profile/card \
+	https:///v1/profile/card \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getprofilecard []}}
 
 ### HTTP Request
 
-`GET /v1/profile/card`
+`GET https:///v1/profile/card`
 
 ### Responses
 
 #### Response body
 
-| Name  | Type          | Description |
-|-------|---------------|-------------|
-| Cards | []ProfileCard |             |
+| Name  | Type           | Description |
+|-------|----------------|-------------|
+| cards | \[]ProfileCard |             |
 
 ##### Objects
 
 ###### ProfileCard
 
-| Name      | Type   | Description                                               |
-|-----------|--------|-----------------------------------------------------------|
-| CardToken | string | CardToken is the card number.                             |
-| Category  | string | Category is the card type.                                |
-| LastFour  | string | LastFour is the last four digits of the card.             |
-| OwnerName | string | OwnerName is the name of the card's owner.                |
-| Type      | string | Type is the type of the account associated with the card. |
+| Name       | Type   | Description                                               |
+|------------|--------|-----------------------------------------------------------|
+| card_token | string | CardToken is the card number.                             |
+| category   | string | Category is the card type.                                |
+| last_four  | string | LastFour is the last four digits of the card.             |
+| owner_name | string | OwnerName is the name of the card's owner.                |
+| type       | string | Type is the type of the account associated with the card. |
 
 Example:
 
@@ -299,6 +303,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

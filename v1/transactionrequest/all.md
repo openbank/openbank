@@ -1,18 +1,20 @@
-# Transacton Request API v1.0.0
+Transacton Request API v1.0.0
+=============================
 
 Provides CRUD operations on the transaction request resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Answer the transaction reqeust challenge {#method-post-answertransactionrequestchallenge}
+Answer the transaction reqeust challenge {#method-post-answertransactionrequestchallenge}
+-----------------------------------------------------------------------------------------
 
 Answer the transaction request challenge
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -23,65 +25,64 @@ curl -X POST \
 		"answer": "string"
 	}'
 ```
-{{snippet answertransactionrequest_challenge []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge`
 
 ### Query Parameters
 
-| Name                   | Type   | Description |
-|------------------------|--------|-------------|
-| BankID                 | string |             |
-| AccountID              | string |             |
-| TransactionRequestType | string |             |
-| TransactionRequestID   | string |             |
+| Name                     | Type   | Description |
+|--------------------------|--------|-------------|
+| bank_id                  | string |             |
+| account_id               | string |             |
+| transaction_request_type | string |             |
+| transaction_request_id   | string |             |
 
 ### Body Parameters
 
-| Name                   | Type   | Description |
-|------------------------|--------|-------------|
-| BankID                 | string |             |
-| AccountID              | string |             |
-| TransactionRequestType | string |             |
-| TransactionRequestID   | string |             |
-| ID                     | string |             |
-| Answer                 | string |             |
+| Name                     | Type   | Description |
+|--------------------------|--------|-------------|
+| bank_id                  | string |             |
+| account_id               | string |             |
+| transaction_request_type | string |             |
+| transaction_request_id   | string |             |
+| id                       | string |             |
+| answer                   | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type             | Description |
-|----------------|------------------|-------------|
-| ID             | string           |             |
-| Type           | string           |             |
-| From           | BankAccount      |             |
-| Details        | ChallengeDetails |             |
-| TransactionIds | string           |             |
-| Status         | string           |             |
-| StartDate      | Timestamp        |             |
-| EndDate        | Timestamp        |             |
-| Challenge      | Challenge        |             |
-| Charge         | Charge           |             |
+| Name            | Type             | Description |
+|-----------------|------------------|-------------|
+| id              | string           |             |
+| type            | string           |             |
+| from            | BankAccount      |             |
+| details         | ChallengeDetails |             |
+| transaction_ids | string           |             |
+| status          | string           |             |
+| start_date      | Timestamp        |             |
+| end_date        | Timestamp        |             |
+| challenge       | Challenge        |             |
+| charge          | Charge           |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### ChallengeDetails
 
 | Name        | Type        | Description |
 |-------------|-------------|-------------|
-| To          | BankAccount |             |
-| Amount      | Amount      |             |
-| Description | string      |             |
+| to          | BankAccount |             |
+| amount      | Amount      |             |
+| description | string      |             |
 
 ###### Timestamp
 
@@ -92,25 +93,25 @@ curl -X POST \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -157,6 +158,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -168,13 +170,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an account otp transaction request {#method-post-createaccountotptransaction}
+Create an account otp transaction request {#method-post-createaccountotptransaction}
+------------------------------------------------------------------------------------
 
 Creates a new account otp transaction request
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -190,84 +193,83 @@ curl -X POST \
 		"description": "string"
 	}'
 ```
-{{snippet createaccountotp_transaction []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Body Parameters
 
 | Name        | Type        | Description |
 |-------------|-------------|-------------|
-| BankID      | string      |             |
-| AccountID   | string      |             |
-| To          | BankAccount |             |
-| Amount      | Amount      |             |
-| Description | string      |             |
+| bank_id     | string      |             |
+| account_id  | string      |             |
+| to_bank     | BankAccount |             |
+| amount      | Amount      |             |
+| description | string      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type        | Description |
-|----------------|-------------|-------------|
-| ID             | string      |             |
-| Type           | string      |             |
-| From           | BankAccount |             |
-| Details        | Details     |             |
-| TransactionIds | []string    |             |
-| Status         | string      |             |
-| StartDate      | Timestamp   |             |
-| EndDate        | Timestamp   |             |
-| Challenge      | Challenge   |             |
-| Charge         | Charge      |             |
+| Name            | Type        | Description |
+|-----------------|-------------|-------------|
+| id              | string      |             |
+| type            | string      |             |
+| from            | BankAccount |             |
+| details         | Details     |             |
+| transaction_ids | \[]string   |             |
+| status          | string      |             |
+| start_date      | Timestamp   |             |
+| end_date        | Timestamp   |             |
+| challenge       | Challenge   |             |
+| charge          | Charge      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Details
 
-| Name                  | Type                  | Description |
-|-----------------------|-----------------------|-------------|
-| ToSandboxTan          | BankAccount           |             |
-| ToSepa                | ToSepa                |             |
-| ToCounterparty        | ToCounterparty        |             |
-| ToTransferToPhone     | ToTransferToPhone     |             |
-| ToTransferToAtm       | ToTransferToAtm       |             |
-| ToTransferToAccount   | ToTransferToAccount   |             |
-| ToSepaCreditTransfers | ToSepaCreditTransfers |             |
-| Amount                | Amount                |             |
-| Description           | string                |             |
+| Name                     | Type                  | Description |
+|--------------------------|-----------------------|-------------|
+| to_sandbox_tan           | BankAccount           |             |
+| to_sepa                  | ToSepa                |             |
+| to_counterparty          | ToCounterparty        |             |
+| to_transfer_to_phone     | ToTransferToPhone     |             |
+| to_transfer_to_atm       | ToTransferToAtm       |             |
+| to_transfer_to_account   | ToTransferToAccount   |             |
+| to_sepa_credit_transfers | ToSepaCreditTransfers |             |
+| amount                   | Amount                |             |
+| description              | string                |             |
 
 ###### Timestamp
 
@@ -278,117 +280,117 @@ curl -X POST \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### ToTransferToPhone
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAtm
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAccount
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| Amount       | Amount |             |
-| Description  | string |             |
-| TransferType | string |             |
-| FutureDate   | string |             |
-| To           | To     |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| amount        | Amount |             |
+| description   | string |             |
+| transfer_type | string |             |
+| future_date   | string |             |
+| to            | To     |             |
 
 ###### ToSepaCreditTransfers
 
-| Name             | Type            | Description |
-|------------------|-----------------|-------------|
-| DebtorAccount    | DebtorAccount   |             |
-| InstructedAmount | Amount          |             |
-| CreditorAccount  | CreditorAccount |             |
-| CreditorName     | string          |             |
+| Name              | Type            | Description |
+|-------------------|-----------------|-------------|
+| debtor_account    | DebtorAccount   |             |
+| instructed_amount | Amount          |             |
+| creditor_account  | CreditorAccount |             |
+| creditor_name     | string          |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### FromPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
-| Nickname          | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
+| nickname            | string |             |
 
 ###### ToPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
 
 ###### To
 
-| Name              | Type        | Description |
-|-------------------|-------------|-------------|
-| LegalName         | string      |             |
-| DateOfBirth       | string      |             |
-| MobilePhoneNumber | string      |             |
-| KycDocument       | KycDocument |             |
+| Name                | Type        | Description |
+|---------------------|-------------|-------------|
+| legal_name          | string      |             |
+| date_of_birth       | string      |             |
+| mobile_phone_number | string      |             |
+| kyc_document        | KycDocument |             |
 
 ###### DebtorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### CreditorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### KycDocument
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Type   | string |             |
-| Number | string |             |
+| type   | string |             |
+| number | string |             |
 
 Example:
 
@@ -502,6 +504,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -513,13 +516,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an account transaction request {#method-post-createaccounttransaction}
+Create an account transaction request {#method-post-createaccounttransaction}
+-----------------------------------------------------------------------------
 
 Creates a new account transaction request
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -535,84 +539,83 @@ curl -X POST \
 		"description": "string"
 	}'
 ```
-{{snippet createaccounttransaction []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Body Parameters
 
 | Name        | Type        | Description |
 |-------------|-------------|-------------|
-| BankID      | string      |             |
-| AccountID   | string      |             |
-| To          | BankAccount |             |
-| Amount      | Amount      |             |
-| Description | string      |             |
+| bank_id     | string      |             |
+| account_id  | string      |             |
+| to_bank     | BankAccount |             |
+| amount      | Amount      |             |
+| description | string      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type        | Description |
-|----------------|-------------|-------------|
-| ID             | string      |             |
-| Type           | string      |             |
-| From           | BankAccount |             |
-| Details        | Details     |             |
-| TransactionIds | []string    |             |
-| Status         | string      |             |
-| StartDate      | Timestamp   |             |
-| EndDate        | Timestamp   |             |
-| Challenge      | Challenge   |             |
-| Charge         | Charge      |             |
+| Name            | Type        | Description |
+|-----------------|-------------|-------------|
+| id              | string      |             |
+| type            | string      |             |
+| from            | BankAccount |             |
+| details         | Details     |             |
+| transaction_ids | \[]string   |             |
+| status          | string      |             |
+| start_date      | Timestamp   |             |
+| end_date        | Timestamp   |             |
+| challenge       | Challenge   |             |
+| charge          | Charge      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Details
 
-| Name                  | Type                  | Description |
-|-----------------------|-----------------------|-------------|
-| ToSandboxTan          | BankAccount           |             |
-| ToSepa                | ToSepa                |             |
-| ToCounterparty        | ToCounterparty        |             |
-| ToTransferToPhone     | ToTransferToPhone     |             |
-| ToTransferToAtm       | ToTransferToAtm       |             |
-| ToTransferToAccount   | ToTransferToAccount   |             |
-| ToSepaCreditTransfers | ToSepaCreditTransfers |             |
-| Amount                | Amount                |             |
-| Description           | string                |             |
+| Name                     | Type                  | Description |
+|--------------------------|-----------------------|-------------|
+| to_sandbox_tan           | BankAccount           |             |
+| to_sepa                  | ToSepa                |             |
+| to_counterparty          | ToCounterparty        |             |
+| to_transfer_to_phone     | ToTransferToPhone     |             |
+| to_transfer_to_atm       | ToTransferToAtm       |             |
+| to_transfer_to_account   | ToTransferToAccount   |             |
+| to_sepa_credit_transfers | ToSepaCreditTransfers |             |
+| amount                   | Amount                |             |
+| description              | string                |             |
 
 ###### Timestamp
 
@@ -623,117 +626,117 @@ curl -X POST \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### ToTransferToPhone
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAtm
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAccount
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| Amount       | Amount |             |
-| Description  | string |             |
-| TransferType | string |             |
-| FutureDate   | string |             |
-| To           | To     |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| amount        | Amount |             |
+| description   | string |             |
+| transfer_type | string |             |
+| future_date   | string |             |
+| to            | To     |             |
 
 ###### ToSepaCreditTransfers
 
-| Name             | Type            | Description |
-|------------------|-----------------|-------------|
-| DebtorAccount    | DebtorAccount   |             |
-| InstructedAmount | Amount          |             |
-| CreditorAccount  | CreditorAccount |             |
-| CreditorName     | string          |             |
+| Name              | Type            | Description |
+|-------------------|-----------------|-------------|
+| debtor_account    | DebtorAccount   |             |
+| instructed_amount | Amount          |             |
+| creditor_account  | CreditorAccount |             |
+| creditor_name     | string          |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### FromPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
-| Nickname          | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
+| nickname            | string |             |
 
 ###### ToPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
 
 ###### To
 
-| Name              | Type        | Description |
-|-------------------|-------------|-------------|
-| LegalName         | string      |             |
-| DateOfBirth       | string      |             |
-| MobilePhoneNumber | string      |             |
-| KycDocument       | KycDocument |             |
+| Name                | Type        | Description |
+|---------------------|-------------|-------------|
+| legal_name          | string      |             |
+| date_of_birth       | string      |             |
+| mobile_phone_number | string      |             |
+| kyc_document        | KycDocument |             |
 
 ###### DebtorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### CreditorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### KycDocument
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Type   | string |             |
-| Number | string |             |
+| type   | string |             |
+| number | string |             |
 
 Example:
 
@@ -847,6 +850,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -858,13 +862,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an counter party transaction request {#method-post-createcounterpartytransaction}
+Create an counter party transaction request {#method-post-createcounterpartytransaction}
+----------------------------------------------------------------------------------------
 
 Creates a new counter party transaction request
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -881,85 +886,84 @@ curl -X POST \
 		"future_date": "string"
 	}'
 ```
-{{snippet createcounterparty_transaction []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Body Parameters
 
-| Name         | Type           | Description |
-|--------------|----------------|-------------|
-| BankID       | string         |             |
-| AccountID    | string         |             |
-| To           | ToCounterparty |             |
-| Amount       | Amount         |             |
-| Description  | string         |             |
-| ChargePolicy | string         |             |
-| FutureDate   | string         |             |
+| Name          | Type           | Description |
+|---------------|----------------|-------------|
+| bank_id       | string         |             |
+| account_id    | string         |             |
+| to            | ToCounterparty |             |
+| amount        | Amount         |             |
+| description   | string         |             |
+| charge_policy | string         |             |
+| future_date   | string         |             |
 
 ##### Objects
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type        | Description |
-|----------------|-------------|-------------|
-| ID             | string      |             |
-| Type           | string      |             |
-| From           | BankAccount |             |
-| Details        | Details     |             |
-| TransactionIds | []string    |             |
-| Status         | string      |             |
-| StartDate      | Timestamp   |             |
-| EndDate        | Timestamp   |             |
-| Challenge      | Challenge   |             |
-| Charge         | Charge      |             |
+| Name            | Type        | Description |
+|-----------------|-------------|-------------|
+| id              | string      |             |
+| type            | string      |             |
+| from            | BankAccount |             |
+| details         | Details     |             |
+| transaction_ids | \[]string   |             |
+| status          | string      |             |
+| start_date      | Timestamp   |             |
+| end_date        | Timestamp   |             |
+| challenge       | Challenge   |             |
+| charge          | Charge      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Details
 
-| Name                  | Type                  | Description |
-|-----------------------|-----------------------|-------------|
-| ToSandboxTan          | BankAccount           |             |
-| ToSepa                | ToSepa                |             |
-| ToCounterparty        | ToCounterparty        |             |
-| ToTransferToPhone     | ToTransferToPhone     |             |
-| ToTransferToAtm       | ToTransferToAtm       |             |
-| ToTransferToAccount   | ToTransferToAccount   |             |
-| ToSepaCreditTransfers | ToSepaCreditTransfers |             |
-| Amount                | Amount                |             |
-| Description           | string                |             |
+| Name                     | Type                  | Description |
+|--------------------------|-----------------------|-------------|
+| to_sandbox_tan           | BankAccount           |             |
+| to_sepa                  | ToSepa                |             |
+| to_counterparty          | ToCounterparty        |             |
+| to_transfer_to_phone     | ToTransferToPhone     |             |
+| to_transfer_to_atm       | ToTransferToAtm       |             |
+| to_transfer_to_account   | ToTransferToAccount   |             |
+| to_sepa_credit_transfers | ToSepaCreditTransfers |             |
+| amount                   | Amount                |             |
+| description              | string                |             |
 
 ###### Timestamp
 
@@ -970,117 +974,117 @@ curl -X POST \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### ToTransferToPhone
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAtm
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAccount
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| Amount       | Amount |             |
-| Description  | string |             |
-| TransferType | string |             |
-| FutureDate   | string |             |
-| To           | To     |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| amount        | Amount |             |
+| description   | string |             |
+| transfer_type | string |             |
+| future_date   | string |             |
+| to            | To     |             |
 
 ###### ToSepaCreditTransfers
 
-| Name             | Type            | Description |
-|------------------|-----------------|-------------|
-| DebtorAccount    | DebtorAccount   |             |
-| InstructedAmount | Amount          |             |
-| CreditorAccount  | CreditorAccount |             |
-| CreditorName     | string          |             |
+| Name              | Type            | Description |
+|-------------------|-----------------|-------------|
+| debtor_account    | DebtorAccount   |             |
+| instructed_amount | Amount          |             |
+| creditor_account  | CreditorAccount |             |
+| creditor_name     | string          |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### FromPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
-| Nickname          | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
+| nickname            | string |             |
 
 ###### ToPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
 
 ###### To
 
-| Name              | Type        | Description |
-|-------------------|-------------|-------------|
-| LegalName         | string      |             |
-| DateOfBirth       | string      |             |
-| MobilePhoneNumber | string      |             |
-| KycDocument       | KycDocument |             |
+| Name                | Type        | Description |
+|---------------------|-------------|-------------|
+| legal_name          | string      |             |
+| date_of_birth       | string      |             |
+| mobile_phone_number | string      |             |
+| kyc_document        | KycDocument |             |
 
 ###### DebtorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### CreditorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### KycDocument
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Type   | string |             |
-| Number | string |             |
+| type   | string |             |
+| number | string |             |
 
 Example:
 
@@ -1194,6 +1198,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1205,13 +1210,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an free form transaction request {#method-post-createfreeformtransaction}
+Create an free form transaction request {#method-post-createfreeformtransaction}
+--------------------------------------------------------------------------------
 
 Creates a new free form transaction request
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -1223,27 +1229,26 @@ curl -X POST \
 		"description": "string"
 	}'
 ```
-{{snippet createfreeform_transaction []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Body Parameters
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
-| BankID      | string |             |
-| AccountID   | string |             |
-| Amount      | Amount |             |
-| Description | string |             |
+| bank_id     | string |             |
+| account_id  | string |             |
+| amount      | Amount |             |
+| description | string |             |
 
 ##### Objects
 
@@ -1251,48 +1256,48 @@ curl -X POST \
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type        | Description |
-|----------------|-------------|-------------|
-| ID             | string      |             |
-| Type           | string      |             |
-| From           | BankAccount |             |
-| Details        | Details     |             |
-| TransactionIds | []string    |             |
-| Status         | string      |             |
-| StartDate      | Timestamp   |             |
-| EndDate        | Timestamp   |             |
-| Challenge      | Challenge   |             |
-| Charge         | Charge      |             |
+| Name            | Type        | Description |
+|-----------------|-------------|-------------|
+| id              | string      |             |
+| type            | string      |             |
+| from            | BankAccount |             |
+| details         | Details     |             |
+| transaction_ids | \[]string   |             |
+| status          | string      |             |
+| start_date      | Timestamp   |             |
+| end_date        | Timestamp   |             |
+| challenge       | Challenge   |             |
+| charge          | Charge      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Details
 
-| Name                  | Type                  | Description |
-|-----------------------|-----------------------|-------------|
-| ToSandboxTan          | BankAccount           |             |
-| ToSepa                | ToSepa                |             |
-| ToCounterparty        | ToCounterparty        |             |
-| ToTransferToPhone     | ToTransferToPhone     |             |
-| ToTransferToAtm       | ToTransferToAtm       |             |
-| ToTransferToAccount   | ToTransferToAccount   |             |
-| ToSepaCreditTransfers | ToSepaCreditTransfers |             |
-| Amount                | Amount                |             |
-| Description           | string                |             |
+| Name                     | Type                  | Description |
+|--------------------------|-----------------------|-------------|
+| to_sandbox_tan           | BankAccount           |             |
+| to_sepa                  | ToSepa                |             |
+| to_counterparty          | ToCounterparty        |             |
+| to_transfer_to_phone     | ToTransferToPhone     |             |
+| to_transfer_to_atm       | ToTransferToAtm       |             |
+| to_transfer_to_account   | ToTransferToAccount   |             |
+| to_sepa_credit_transfers | ToSepaCreditTransfers |             |
+| amount                   | Amount                |             |
+| description              | string                |             |
 
 ###### Timestamp
 
@@ -1303,117 +1308,117 @@ curl -X POST \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### ToTransferToPhone
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAtm
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAccount
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| Amount       | Amount |             |
-| Description  | string |             |
-| TransferType | string |             |
-| FutureDate   | string |             |
-| To           | To     |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| amount        | Amount |             |
+| description   | string |             |
+| transfer_type | string |             |
+| future_date   | string |             |
+| to            | To     |             |
 
 ###### ToSepaCreditTransfers
 
-| Name             | Type            | Description |
-|------------------|-----------------|-------------|
-| DebtorAccount    | DebtorAccount   |             |
-| InstructedAmount | Amount          |             |
-| CreditorAccount  | CreditorAccount |             |
-| CreditorName     | string          |             |
+| Name              | Type            | Description |
+|-------------------|-----------------|-------------|
+| debtor_account    | DebtorAccount   |             |
+| instructed_amount | Amount          |             |
+| creditor_account  | CreditorAccount |             |
+| creditor_name     | string          |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### FromPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
-| Nickname          | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
+| nickname            | string |             |
 
 ###### ToPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
 
 ###### To
 
-| Name              | Type        | Description |
-|-------------------|-------------|-------------|
-| LegalName         | string      |             |
-| DateOfBirth       | string      |             |
-| MobilePhoneNumber | string      |             |
-| KycDocument       | KycDocument |             |
+| Name                | Type        | Description |
+|---------------------|-------------|-------------|
+| legal_name          | string      |             |
+| date_of_birth       | string      |             |
+| mobile_phone_number | string      |             |
+| kyc_document        | KycDocument |             |
 
 ###### DebtorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### CreditorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### KycDocument
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Type   | string |             |
-| Number | string |             |
+| type   | string |             |
+| number | string |             |
 
 Example:
 
@@ -1527,6 +1532,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1538,13 +1544,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an sepa transaction request {#method-post-createsepatransaction}
+Create an sepa transaction request {#method-post-createsepatransaction}
+-----------------------------------------------------------------------
 
 Creates a new sepa transaction request
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -1561,30 +1568,29 @@ curl -X POST \
 		"future_date": "string"
 	}'
 ```
-{{snippet createsepa_transaction []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Body Parameters
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| BankID       | string |             |
-| AccountID    | string |             |
-| Amount       | Amount |             |
-| To           | ToSepa |             |
-| Description  | string |             |
-| ChargePolicy | string |             |
-| FutureDate   | string |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| bank_id       | string |             |
+| account_id    | string |             |
+| amount        | Amount |             |
+| to            | ToSepa |             |
+| description   | string |             |
+| charge_policy | string |             |
+| future_date   | string |             |
 
 ##### Objects
 
@@ -1592,54 +1598,54 @@ curl -X POST \
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type        | Description |
-|----------------|-------------|-------------|
-| ID             | string      |             |
-| Type           | string      |             |
-| From           | BankAccount |             |
-| Details        | Details     |             |
-| TransactionIds | []string    |             |
-| Status         | string      |             |
-| StartDate      | Timestamp   |             |
-| EndDate        | Timestamp   |             |
-| Challenge      | Challenge   |             |
-| Charge         | Charge      |             |
+| Name            | Type        | Description |
+|-----------------|-------------|-------------|
+| id              | string      |             |
+| type            | string      |             |
+| from            | BankAccount |             |
+| details         | Details     |             |
+| transaction_ids | \[]string   |             |
+| status          | string      |             |
+| start_date      | Timestamp   |             |
+| end_date        | Timestamp   |             |
+| challenge       | Challenge   |             |
+| charge          | Charge      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Details
 
-| Name                  | Type                  | Description |
-|-----------------------|-----------------------|-------------|
-| ToSandboxTan          | BankAccount           |             |
-| ToSepa                | ToSepa                |             |
-| ToCounterparty        | ToCounterparty        |             |
-| ToTransferToPhone     | ToTransferToPhone     |             |
-| ToTransferToAtm       | ToTransferToAtm       |             |
-| ToTransferToAccount   | ToTransferToAccount   |             |
-| ToSepaCreditTransfers | ToSepaCreditTransfers |             |
-| Amount                | Amount                |             |
-| Description           | string                |             |
+| Name                     | Type                  | Description |
+|--------------------------|-----------------------|-------------|
+| to_sandbox_tan           | BankAccount           |             |
+| to_sepa                  | ToSepa                |             |
+| to_counterparty          | ToCounterparty        |             |
+| to_transfer_to_phone     | ToTransferToPhone     |             |
+| to_transfer_to_atm       | ToTransferToAtm       |             |
+| to_transfer_to_account   | ToTransferToAccount   |             |
+| to_sepa_credit_transfers | ToSepaCreditTransfers |             |
+| amount                   | Amount                |             |
+| description              | string                |             |
 
 ###### Timestamp
 
@@ -1650,117 +1656,117 @@ curl -X POST \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### ToTransferToPhone
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAtm
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAccount
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| Amount       | Amount |             |
-| Description  | string |             |
-| TransferType | string |             |
-| FutureDate   | string |             |
-| To           | To     |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| amount        | Amount |             |
+| description   | string |             |
+| transfer_type | string |             |
+| future_date   | string |             |
+| to            | To     |             |
 
 ###### ToSepaCreditTransfers
 
-| Name             | Type            | Description |
-|------------------|-----------------|-------------|
-| DebtorAccount    | DebtorAccount   |             |
-| InstructedAmount | Amount          |             |
-| CreditorAccount  | CreditorAccount |             |
-| CreditorName     | string          |             |
+| Name              | Type            | Description |
+|-------------------|-----------------|-------------|
+| debtor_account    | DebtorAccount   |             |
+| instructed_amount | Amount          |             |
+| creditor_account  | CreditorAccount |             |
+| creditor_name     | string          |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### FromPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
-| Nickname          | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
+| nickname            | string |             |
 
 ###### ToPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
 
 ###### To
 
-| Name              | Type        | Description |
-|-------------------|-------------|-------------|
-| LegalName         | string      |             |
-| DateOfBirth       | string      |             |
-| MobilePhoneNumber | string      |             |
-| KycDocument       | KycDocument |             |
+| Name                | Type        | Description |
+|---------------------|-------------|-------------|
+| legal_name          | string      |             |
+| date_of_birth       | string      |             |
+| mobile_phone_number | string      |             |
+| kyc_document        | KycDocument |             |
 
 ###### DebtorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### CreditorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### KycDocument
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Type   | string |             |
-| Number | string |             |
+| type   | string |             |
+| number | string |             |
 
 Example:
 
@@ -1874,6 +1880,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1885,34 +1892,34 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve transaction types {#method-get-getsupportedtransactionrequesttypes}
+Retrieve transaction types {#method-get-getsupportedtransactionrequesttypes}
+----------------------------------------------------------------------------
 
 Retrieves list of transaction request types
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/transaction-request-types \
+	https:///v1/banks/{BankID}/transaction-request-types \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getsupportedtransactionrequesttypes []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/transaction-request-types`
+`GET https:///v1/banks/{BankID}/transaction-request-types`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                    | Type                     | Description |
-|-------------------------|--------------------------|-------------|
-| TransactionRequestTypes | []TransactionRequestType |             |
+| Name                      | Type                      | Description |
+|---------------------------|---------------------------|-------------|
+| transaction_request_types | \[]TransactionRequestType |             |
 
 ##### Objects
 
@@ -1920,22 +1927,22 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Value  | string |             |
-| Charge | Charge |             |
+| value  | string |             |
+| charge | Charge |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1955,6 +1962,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1967,35 +1975,35 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve transaction types {#method-get-gettransactionrequesttypes}
+Retrieve transaction types {#method-get-gettransactionrequesttypes}
+-------------------------------------------------------------------
 
 Retrieves list of transaction request types for an account_id
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet gettransactionrequest_types []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                    | Type                     | Description |
-|-------------------------|--------------------------|-------------|
-| TransactionRequestTypes | []TransactionRequestType |             |
+| Name                      | Type                      | Description |
+|---------------------------|---------------------------|-------------|
+| transaction_request_types | \[]TransactionRequestType |             |
 
 ##### Objects
 
@@ -2003,22 +2011,22 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Value  | string |             |
-| Charge | Charge |             |
+| value  | string |             |
+| charge | Charge |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2038,6 +2046,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2050,73 +2059,73 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve transaction requests {#method-get-gettransactionrequests}
+Retrieve transaction requests {#method-get-gettransactionrequests}
+------------------------------------------------------------------
 
 Retrieves list of transaction requests for an account_id
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactionrequests \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactionrequests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet gettransactionrequests []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactionrequests`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactionrequests`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                           | Type                             | Description |
-|--------------------------------|----------------------------------|-------------|
-| TransactionRequestsWithCharges | []TransactionRequestsWithCharges |             |
+| Name                              | Type                              | Description |
+|-----------------------------------|-----------------------------------|-------------|
+| transaction_requests_with_charges | \[]TransactionRequestsWithCharges |             |
 
 ##### Objects
 
 ###### TransactionRequestsWithCharges
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| ID             | string    |             |
-| Type           | string    |             |
-| From           | FromPhone |             |
-| Details        | Details   |             |
-| TransactionIds | []string  |             |
-| Status         | string    |             |
-| StartDate      | Timestamp |             |
-| EndDate        | Timestamp |             |
-| Challenge      | Challenge |             |
-| Charge         | Charge    |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| id              | string    |             |
+| type            | string    |             |
+| from            | FromPhone |             |
+| details         | Details   |             |
+| transaction_ids | \[]string |             |
+| status          | string    |             |
+| start_date      | Timestamp |             |
+| end_date        | Timestamp |             |
+| challenge       | Challenge |             |
+| charge          | Charge    |             |
 
 ###### FromPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
-| Nickname          | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
+| nickname            | string |             |
 
 ###### Details
 
-| Name                  | Type                  | Description |
-|-----------------------|-----------------------|-------------|
-| ToSandboxTan          | BankAccount           |             |
-| ToSepa                | ToSepa                |             |
-| ToCounterparty        | ToCounterparty        |             |
-| ToTransferToPhone     | ToTransferToPhone     |             |
-| ToTransferToAtm       | ToTransferToAtm       |             |
-| ToTransferToAccount   | ToTransferToAccount   |             |
-| ToSepaCreditTransfers | ToSepaCreditTransfers |             |
-| Amount                | Amount                |             |
-| Description           | string                |             |
+| Name                     | Type                  | Description |
+|--------------------------|-----------------------|-------------|
+| to_sandbox_tan           | BankAccount           |             |
+| to_sepa                  | ToSepa                |             |
+| to_counterparty          | ToCounterparty        |             |
+| to_transfer_to_phone     | ToTransferToPhone     |             |
+| to_transfer_to_atm       | ToTransferToAtm       |             |
+| to_transfer_to_account   | ToTransferToAccount   |             |
+| to_sepa_credit_transfers | ToSepaCreditTransfers |             |
+| amount                   | Amount                |             |
+| description              | string                |             |
 
 ###### Timestamp
 
@@ -2127,117 +2136,117 @@ curl -X GET \
 
 ###### Challenge
 
-| Name            | Type   | Description |
-|-----------------|--------|-------------|
-| ID              | string |             |
-| AllowedAttempts | int32  |             |
-| ChallengeType   | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| id               | string |             |
+| allowed_attempts | int32  |             |
+| challenge_type   | string |             |
 
 ###### Charge
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Summary | string |             |
-| Amount  | Amount |             |
+| summary | string |             |
+| amount  | Amount |             |
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### ToSepa
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### ToCounterparty
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| CounterpartyID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| counterparty_id | string |             |
 
 ###### ToTransferToPhone
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAtm
 
 | Name        | Type      | Description |
 |-------------|-----------|-------------|
-| Amount      | Amount    |             |
-| Description | string    |             |
-| Message     | string    |             |
-| From        | FromPhone |             |
-| To          | ToPhone   |             |
+| amount      | Amount    |             |
+| description | string    |             |
+| message     | string    |             |
+| from        | FromPhone |             |
+| to          | ToPhone   |             |
 
 ###### ToTransferToAccount
 
-| Name         | Type   | Description |
-|--------------|--------|-------------|
-| Amount       | Amount |             |
-| Description  | string |             |
-| TransferType | string |             |
-| FutureDate   | string |             |
-| To           | To     |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| amount        | Amount |             |
+| description   | string |             |
+| transfer_type | string |             |
+| future_date   | string |             |
+| to            | To     |             |
 
 ###### ToSepaCreditTransfers
 
-| Name             | Type            | Description |
-|------------------|-----------------|-------------|
-| DebtorAccount    | DebtorAccount   |             |
-| InstructedAmount | Amount          |             |
-| CreditorAccount  | CreditorAccount |             |
-| CreditorName     | string          |             |
+| Name              | Type            | Description |
+|-------------------|-----------------|-------------|
+| debtor_account    | DebtorAccount   |             |
+| instructed_amount | Amount          |             |
+| creditor_account  | CreditorAccount |             |
+| creditor_name     | string          |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### ToPhone
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| mobile_phone_number | string |             |
 
 ###### To
 
-| Name              | Type        | Description |
-|-------------------|-------------|-------------|
-| LegalName         | string      |             |
-| DateOfBirth       | string      |             |
-| MobilePhoneNumber | string      |             |
-| KycDocument       | KycDocument |             |
+| Name                | Type        | Description |
+|---------------------|-------------|-------------|
+| legal_name          | string      |             |
+| date_of_birth       | string      |             |
+| mobile_phone_number | string      |             |
+| kyc_document        | KycDocument |             |
 
 ###### DebtorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### CreditorAccount
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| Iban | string |             |
+| iban | string |             |
 
 ###### KycDocument
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Type   | string |             |
-| Number | string |             |
+| type   | string |             |
+| number | string |             |
 
 Example:
 
@@ -2355,6 +2364,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2367,13 +2377,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Import a historic transaction {#method-post-savehistorictransaction}
+Import a historic transaction {#method-post-savehistorictransaction}
+--------------------------------------------------------------------
 
 Import a historic transaction
 
 ```sh
 curl -X POST \
-	/v1/transactionrequest/import \
+	https:///v1/transactionrequest/import \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"from": {
@@ -2401,40 +2412,39 @@ curl -X POST \
 		"charge_policy": "string"
 	}'
 ```
-{{snippet savehistorictransaction []}}
 
 ### HTTP Request
 
-`POST /v1/transactionrequest/import`
+`POST https:///v1/transactionrequest/import`
 
 ### Body Parameters
 
-| Name                   | Type        | Description |
-|------------------------|-------------|-------------|
-| From                   | BankAccount |             |
-| To                     | BankAccount |             |
-| Amount                 | Amount      |             |
-| Description            | string      |             |
-| Posted                 | Timestamp   |             |
-| Completed              | Timestamp   |             |
-| TransactionRequestType | string      |             |
-| ChargePolicy           | string      |             |
+| Name                     | Type        | Description |
+|--------------------------|-------------|-------------|
+| from                     | BankAccount |             |
+| to                       | BankAccount |             |
+| amount                   | Amount      |             |
+| description              | string      |             |
+| posted                   | Timestamp   |             |
+| completed                | Timestamp   |             |
+| transaction_request_type | string      |             |
+| charge_policy            | string      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### Timestamp
 
@@ -2447,32 +2457,32 @@ curl -X POST \
 
 #### Response body
 
-| Name                   | Type        | Description |
-|------------------------|-------------|-------------|
-| From                   | BankAccount |             |
-| To                     | BankAccount |             |
-| Amount                 | Amount      |             |
-| Description            | string      |             |
-| Posted                 | Timestamp   |             |
-| Completed              | Timestamp   |             |
-| TransactionRequestType | string      |             |
-| ChargePolicy           | string      |             |
+| Name                     | Type        | Description |
+|--------------------------|-------------|-------------|
+| from                     | BankAccount |             |
+| to                       | BankAccount |             |
+| amount                   | Amount      |             |
+| description              | string      |             |
+| posted                   | Timestamp   |             |
+| completed                | Timestamp   |             |
+| transaction_request_type | string      |             |
+| charge_policy            | string      |             |
 
 ##### Objects
 
 ###### BankAccount
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| AccountID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| account_id | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### Timestamp
 
@@ -2510,6 +2520,7 @@ Example:
   "charge_policy": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

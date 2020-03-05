@@ -60,7 +60,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/public": {
+    "/v1/banks/{bankID}/accounts/public": {
       "get": {
         "summary": "Get bank public account.",
         "description": "Return customer public account for specific bank.",
@@ -95,7 +95,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -113,7 +113,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account": {
+    "/v1/banks/{bankID}/public/accounts/{accountID}/{viewID}/account": {
       "get": {
         "summary": "Get Public Account By ID.",
         "description": "Return customer public account for specific bank.",
@@ -148,21 +148,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "ViewID",
+            "name": "viewID",
             "in": "path",
             "required": true,
             "type": "integer",
@@ -186,10 +186,10 @@
     "accountpublicAccountRouting": {
       "type": "object",
       "properties": {
-        "Scheme": {
+        "scheme": {
           "type": "string"
         },
-        "Address": {
+        "address": {
           "type": "string"
         }
       }
@@ -197,10 +197,10 @@
     "accountpublicAccountRule": {
       "type": "object",
       "properties": {
-        "Scheme": {
+        "scheme": {
           "type": "string"
         },
-        "Value": {
+        "value": {
           "type": "string"
         }
       }
@@ -208,7 +208,7 @@
     "accountpublicGetBankPublicAccountResponse": {
       "type": "object",
       "properties": {
-        "Accounts": {
+        "accounts": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountpublicPublicAccount"
@@ -219,7 +219,7 @@
     "accountpublicGetPublicAccountAtAllBanksResponse": {
       "type": "object",
       "properties": {
-        "Accounts": {
+        "accounts": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountpublicPublicAccount"
@@ -230,34 +230,34 @@
     "accountpublicGetPublicAccountByIDResponse": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "Label": {
+        "label": {
           "type": "string"
         },
-        "Number": {
+        "number": {
           "type": "string"
         },
-        "Owners": {
+        "owners": {
           "$ref": "#/definitions/accountpublicOwner"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Balance": {
+        "balance": {
           "$ref": "#/definitions/typesAmount"
         },
-        "AccountRoutings": {
+        "account_routings": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountpublicAccountRouting"
           }
         },
-        "AccountRules": {
+        "account_rules": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountpublicAccountRule"
@@ -268,13 +268,13 @@
     "accountpublicOwner": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Provider": {
+        "provider": {
           "type": "string"
         },
-        "DisplayName": {
+        "display_name": {
           "type": "string"
         }
       }
@@ -282,16 +282,16 @@
     "accountpublicPublicAccount": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Label": {
+        "label": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ViewsAvailable": {
+        "views_available": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountpublicViewAvailable"
@@ -302,13 +302,13 @@
     "accountpublicViewAvailable": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "ShortName": {
+        "short_name": {
           "type": "string"
         },
-        "IsPublic": {
+        "is_public": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -317,11 +317,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }

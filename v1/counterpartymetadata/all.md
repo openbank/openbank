@@ -1,18 +1,20 @@
-# Counterparty Metadata API v1.0.0
+Counterparty Metadata API v1.0.0
+================================
 
 Provides the access and availability to the counterparty metadata API.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create a corporate_location {#method-post-createcorporatelocation}
+Create a corporate_location {#method-post-createcorporatelocation}
+------------------------------------------------------------------
 
 Creates a new corporate_location and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"corporate_location": {
@@ -26,28 +28,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createcorporatelocation []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name              | Type              | Description                                     |
-|-------------------|-------------------|-------------------------------------------------|
-| CorporateLocation | CorporateLocation | account.                                        |
-| BankID            | string            | BankID is the bank identifier.                  |
-| AccountID         | string            | AccountID is the account identifier.            |
-| OtherAccountID    | string            | OtherAccountID is the other_account identifier. |
+| Name               | Type              | Description                                                                   |
+|--------------------|-------------------|-------------------------------------------------------------------------------|
+| corporate_location | CorporateLocation | CorporateLocation is the corporate_location metadata made on a other_account. |
+| bank_id            | string            | BankID is the bank identifier.                                                |
+| account_id         | string            | AccountID is the account identifier.                                          |
+| other_account_id   | string            | OtherAccountID is the other_account identifier.                               |
 
 ##### Objects
 
@@ -55,14 +56,14 @@ curl -X POST \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 
@@ -70,16 +71,16 @@ curl -X POST \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -91,6 +92,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -102,13 +104,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a image_url {#method-post-createimageurl}
+Create a image_url {#method-post-createimageurl}
+------------------------------------------------
 
 Creates a new image_url and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"image_url": {
@@ -119,28 +122,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createimageurl []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type     | Description                                     |
-|----------------|----------|-------------------------------------------------|
-| ImageURL       | ImageURL | account.                                        |
-| BankID         | string   | BankID is the bank identifier.                  |
-| AccountID      | string   | AccountID is the account identifier.            |
-| OtherAccountID | string   | OtherAccountID is the other_account identifier. |
+| Name             | Type     | Description                                                 |
+|------------------|----------|-------------------------------------------------------------|
+| image_url        | ImageURL | ImageURL is the image_url metadata made on a other_account. |
+| bank_id          | string   | BankID is the bank identifier.                              |
+| account_id       | string   | AccountID is the account identifier.                        |
+| other_account_id | string   | OtherAccountID is the other_account identifier.             |
 
 ##### Objects
 
@@ -148,7 +150,7 @@ curl -X POST \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 ### Responses
 
@@ -156,7 +158,7 @@ curl -X POST \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -165,6 +167,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -176,13 +179,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a more_info {#method-post-createmoreinfo}
+Create a more_info {#method-post-createmoreinfo}
+------------------------------------------------
 
 Creates a new more_info and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"more_info": {
@@ -193,44 +197,43 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createmoreinfo []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type     | Description                                     |
-|----------------|----------|-------------------------------------------------|
-| MoreInfo       | MoreInfo | account.                                        |
-| BankID         | string   | BankID is the bank identifier.                  |
-| AccountID      | string   | AccountID is the account identifier.            |
-| OtherAccountID | string   | OtherAccountID is the other_account identifier. |
+| Name             | Type     | Description                                                 |
+|------------------|----------|-------------------------------------------------------------|
+| more_info        | MoreInfo | MoreInfo is the more_info metadata made on a other_account. |
+| bank_id          | string   | BankID is the bank identifier.                              |
+| account_id       | string   | AccountID is the account identifier.                        |
+| other_account_id | string   | OtherAccountID is the other_account identifier.             |
 
 ##### Objects
 
 ###### MoreInfo
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| MoreInfo | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| more_info | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| MoreInfo | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| more_info | string |             |
 
 Example:
 
@@ -239,6 +242,7 @@ Example:
   "more_info": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -250,13 +254,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a open## corporates## url {#method-post-createopencorporatesurl}
+Create a open_corporates_url {#method-post-createopencorporatesurl}
+-------------------------------------------------------------------
 
-Creates a new opencorporatesurl and returns the object.
+Creates a new open_corporates_url and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"open_corporates_url": {
@@ -267,28 +272,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createopencorporates_url []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name              | Type              | Description                                     |
-|-------------------|-------------------|-------------------------------------------------|
-| OpenCorporatesURL | OpenCorporatesURL | url metadata made on a other_account.           |
-| BankID            | string            | BankID is the bank identifier.                  |
-| AccountID         | string            | AccountID is the account identifier.            |
-| OtherAccountID    | string            | OtherAccountID is the other_account identifier. |
+| Name                | Type              | Description                                                                    |
+|---------------------|-------------------|--------------------------------------------------------------------------------|
+| open_corporates_url | OpenCorporatesURL | OpenCorporatesURL is the open_corporates_url metadata made on a other_account. |
+| bank_id             | string            | BankID is the bank identifier.                                                 |
+| account_id          | string            | AccountID is the account identifier.                                           |
+| other_account_id    | string            | OtherAccountID is the other_account identifier.                                |
 
 ##### Objects
 
@@ -296,7 +300,7 @@ curl -X POST \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 ### Responses
 
@@ -304,7 +308,7 @@ curl -X POST \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -313,6 +317,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -324,13 +329,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a physical_location {#method-post-createphysicallocation}
+Create a physical_location {#method-post-createphysicallocation}
+----------------------------------------------------------------
 
 Creates a new physical_location and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"physical_location": {
@@ -344,28 +350,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createphysicallocation []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name             | Type             | Description                                     |
-|------------------|------------------|-------------------------------------------------|
-| PhysicalLocation | PhysicalLocation | account.                                        |
-| BankID           | string           | BankID is the bank identifier.                  |
-| AccountID        | string           | AccountID is the account identifier.            |
-| OtherAccountID   | string           | OtherAccountID is the other_account identifier. |
+| Name              | Type             | Description                                                                 |
+|-------------------|------------------|-----------------------------------------------------------------------------|
+| physical_location | PhysicalLocation | PhysicalLocation is the physical_location metadata made on a other_account. |
+| bank_id           | string           | BankID is the bank identifier.                                              |
+| account_id        | string           | AccountID is the account identifier.                                        |
+| other_account_id  | string           | OtherAccountID is the other_account identifier.                             |
 
 ##### Objects
 
@@ -373,14 +378,14 @@ curl -X POST \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 
@@ -388,16 +393,16 @@ curl -X POST \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -409,6 +414,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -420,13 +426,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a private_alias {#method-post-createprivatealias}
+Create a private_alias {#method-post-createprivatealias}
+--------------------------------------------------------
 
 Creates a new private_alias and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"alias": {
@@ -437,28 +444,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createprivatealias []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type        | Description                                     |
-|----------------|-------------|-------------------------------------------------|
-| PrivateAlias   | PublicAlias | account.                                        |
-| BankID         | string      | BankID is the bank identifier.                  |
-| AccountID      | string      | AccountID is the account identifier.            |
-| OtherAccountID | string      | OtherAccountID is the other_account identifier. |
+| Name             | Type        | Description                                                         |
+|------------------|-------------|---------------------------------------------------------------------|
+| alias            | PublicAlias | PrivateAlias is the private_alias metadata made on a other_account. |
+| bank_id          | string      | BankID is the bank identifier.                                      |
+| account_id       | string      | AccountID is the account identifier.                                |
+| other_account_id | string      | OtherAccountID is the other_account identifier.                     |
 
 ##### Objects
 
@@ -466,7 +472,7 @@ curl -X POST \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 ### Responses
 
@@ -474,7 +480,7 @@ curl -X POST \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -483,6 +489,7 @@ Example:
   "alias": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -494,13 +501,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a public_alias {#method-post-createpublicalias}
+Create a public_alias {#method-post-createpublicalias}
+------------------------------------------------------
 
 Creates a new public_alias and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"alias": {
@@ -511,28 +519,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet createpublicalias []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type        | Description                                     |
-|----------------|-------------|-------------------------------------------------|
-| PublicAlias    | PublicAlias | account.                                        |
-| BankID         | string      | BankID is the bank identifier.                  |
-| AccountID      | string      | AccountID is the account identifier.            |
-| OtherAccountID | string      | OtherAccountID is the other_account identifier. |
+| Name             | Type        | Description                                                       |
+|------------------|-------------|-------------------------------------------------------------------|
+| alias            | PublicAlias | PublicAlias is the public_alias metadata made on a other_account. |
+| bank_id          | string      | BankID is the bank identifier.                                    |
+| account_id       | string      | AccountID is the account identifier.                              |
+| other_account_id | string      | OtherAccountID is the other_account identifier.                   |
 
 ##### Objects
 
@@ -540,7 +547,7 @@ curl -X POST \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 ### Responses
 
@@ -548,7 +555,7 @@ curl -X POST \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -557,6 +564,7 @@ Example:
   "alias": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -568,13 +576,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a url {#method-post-createurl}
+Create a url {#method-post-createurl}
+-------------------------------------
 
 Creates a new url and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"url": {
@@ -585,26 +594,27 @@ curl -X POST \
 		"other_account_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type   | Description                                      |
-|----------------|--------|--------------------------------------------------|
-| URL            | URL    | URL is the url metadata made on a other_account. |
-| BankID         | string | BankID is the bank identifier.                   |
-| AccountID      | string | AccountID is the account identifier.             |
-| OtherAccountID | string | OtherAccountID is the other_account identifier.  |
+| Name             | Type   | Description                                      |
+|------------------|--------|--------------------------------------------------|
+| url              | URL    | URL is the url metadata made on a other_account. |
+| bank_id          | string | BankID is the bank identifier.                   |
+| account_id       | string | AccountID is the account identifier.             |
+| other_account_id | string | OtherAccountID is the other_account identifier.  |
 
 ##### Objects
 
@@ -612,7 +622,7 @@ curl -X POST \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 ### Responses
 
@@ -620,7 +630,7 @@ curl -X POST \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -629,6 +639,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -640,28 +651,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a corporate location {#method-delete-deletecorporatelocation}
+Delete a corporate location {#method-delete-deletecorporatelocation}
+--------------------------------------------------------------------
 
 Permanently delete a corporate location.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletecorporatelocation []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -676,28 +687,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a image url {#method-delete-deleteimageurl}
+Delete a image url {#method-delete-deleteimageurl}
+--------------------------------------------------
 
 Permanently delete a image url.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deleteimageurl []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -712,28 +723,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a more info {#method-delete-deletemoreinfo}
+Delete a more info {#method-delete-deletemoreinfo}
+--------------------------------------------------
 
 Permanently delete a more info.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletemoreinfo []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -748,28 +759,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a open corporates url {#method-delete-deleteopencorporatesurl}
+Delete a open corporates url {#method-delete-deleteopencorporatesurl}
+---------------------------------------------------------------------
 
 Permanently delete a open corporates url.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deleteopencorporates_url []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -784,28 +795,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a physical location {#method-delete-deletephysicallocation}
+Delete a physical location {#method-delete-deletephysicallocation}
+------------------------------------------------------------------
 
 Permanently delete a physical location.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletephysicallocation []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -820,28 +831,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a private alias {#method-delete-deleteprivatealias}
+Delete a private alias {#method-delete-deleteprivatealias}
+----------------------------------------------------------
 
 Permanently delete a private alias.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deleteprivatealias []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -856,28 +867,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a public alias {#method-delete-deletepublicalias}
+Delete a public alias {#method-delete-deletepublicalias}
+--------------------------------------------------------
 
 Permanently delete a public alias.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletepublicalias []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -892,26 +903,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a url {#method-delete-deleteurl}
+Delete a url {#method-delete-deleteurl}
+---------------------------------------
 
 Permanently delete a url.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -926,28 +939,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve corporate location information {#method-get-getcorporatelocation}
+Retrieve corporate location information {#method-get-getcorporatelocation}
+--------------------------------------------------------------------------
 
 Retrieve information about the corporate location specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcorporatelocation []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -955,16 +968,16 @@ curl -X GET \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -976,6 +989,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -988,39 +1002,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available corporate locations {#method-get-getcorporatelocations}
+Retrieve all available corporate locations {#method-get-getcorporatelocations}
+------------------------------------------------------------------------------
 
 Retrieve information regarding all available corporate locations.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcorporatelocations []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type                | Description                                            |
-|--------------------|---------------------|--------------------------------------------------------|
-| CorporateLocations | []CorporateLocation | CorporateLocations is the list of corporate_locations. |
-| BankID             | string              | BankID is the bank identifier.                         |
-| AccountID          | string              | AccountID is the account identifier.                   |
-| OtherAccountID     | string              | OtherAccountID is the other_account identifier.        |
+| Name                | Type                 | Description                                            |
+|---------------------|----------------------|--------------------------------------------------------|
+| corporate_locations | \[]CorporateLocation | CorporateLocations is the list of corporate_locations. |
+| bank_id             | string               | BankID is the bank identifier.                         |
+| account_id          | string               | AccountID is the account identifier.                   |
+| other_account_id    | string               | OtherAccountID is the other_account identifier.        |
 
 ##### Objects
 
@@ -1028,14 +1042,14 @@ curl -X GET \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -1054,6 +1068,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1066,28 +1081,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve image url information {#method-get-getimageurl}
+Retrieve image url information {#method-get-getimageurl}
+--------------------------------------------------------
 
 Retrieve information about the image url specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getimageurl []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -1095,7 +1110,7 @@ curl -X GET \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -1104,6 +1119,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1116,39 +1132,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available image urls {#method-get-getimageurls}
+Retrieve all available image urls {#method-get-getimageurls}
+------------------------------------------------------------
 
 Retrieve information regarding all available image urls.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getimageurl_s []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type       | Description                                     |
-|----------------|------------|-------------------------------------------------|
-| ImageURLs      | []ImageURL | ImageURLs is the list of image_urls.            |
-| BankID         | string     | BankID is the bank identifier.                  |
-| AccountID      | string     | AccountID is the account identifier.            |
-| OtherAccountID | string     | OtherAccountID is the other_account identifier. |
+| Name             | Type        | Description                                     |
+|------------------|-------------|-------------------------------------------------|
+| image_urls       | \[]ImageURL | ImageURLs is the list of image_urls.            |
+| bank_id          | string      | BankID is the bank identifier.                  |
+| account_id       | string      | AccountID is the account identifier.            |
+| other_account_id | string      | OtherAccountID is the other_account identifier. |
 
 ##### Objects
 
@@ -1156,7 +1172,7 @@ curl -X GET \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -1172,6 +1188,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1184,36 +1201,36 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve more info information {#method-get-getmoreinfo}
+Retrieve more info information {#method-get-getmoreinfo}
+--------------------------------------------------------
 
 Retrieve information about the more info specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getmoreinfo []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| MoreInfo | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| more_info | string |             |
 
 Example:
 
@@ -1222,6 +1239,7 @@ Example:
   "more_info": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1234,47 +1252,47 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available more infos {#method-get-getmoreinfos}
+Retrieve all available more infos {#method-get-getmoreinfos}
+------------------------------------------------------------
 
 Retrieve information regarding all available more infos.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getmoreinfos []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type       | Description                                     |
-|----------------|------------|-------------------------------------------------|
-| MoreInfos      | []MoreInfo | MoreInfos is the list of more_infos.            |
-| BankID         | string     | BankID is the bank identifier.                  |
-| AccountID      | string     | AccountID is the account identifier.            |
-| OtherAccountID | string     | OtherAccountID is the other_account identifier. |
+| Name             | Type        | Description                                     |
+|------------------|-------------|-------------------------------------------------|
+| more_infos       | \[]MoreInfo | MoreInfos is the list of more_infos.            |
+| bank_id          | string      | BankID is the bank identifier.                  |
+| account_id       | string      | AccountID is the account identifier.            |
+| other_account_id | string      | OtherAccountID is the other_account identifier. |
 
 ##### Objects
 
 ###### MoreInfo
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| MoreInfo | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| more_info | string |             |
 
 Example:
 
@@ -1290,6 +1308,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1302,28 +1321,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve open corporates url information {#method-get-getopencorporatesurl}
+Retrieve open corporates url information {#method-get-getopencorporatesurl}
+---------------------------------------------------------------------------
 
 Retrieve information about the open corporates url specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getopencorporates_url []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -1331,7 +1350,7 @@ curl -X GET \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -1340,6 +1359,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1352,39 +1372,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available open corporates urls {#method-get-getopencorporatesurls}
+Retrieve all available open corporates urls {#method-get-getopencorporatesurls}
+-------------------------------------------------------------------------------
 
 Retrieve information regarding all available open corporates urls.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getopencorporatesurls []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type                | Description                                     |
-|--------------------|---------------------|-------------------------------------------------|
-| OpenCorporatesURLs | []OpenCorporatesURL | urls.                                           |
-| BankID             | string              | BankID is the bank identifier.                  |
-| AccountID          | string              | AccountID is the account identifier.            |
-| OtherAccountID     | string              | OtherAccountID is the other_account identifier. |
+| Name                 | Type                 | Description                                             |
+|----------------------|----------------------|---------------------------------------------------------|
+| open_corporates_urls | \[]OpenCorporatesURL | OpenCorporatesURLs is the list of open_corporates_urls. |
+| bank_id              | string               | BankID is the bank identifier.                          |
+| account_id           | string               | AccountID is the account identifier.                    |
+| other_account_id     | string               | OtherAccountID is the other_account identifier.         |
 
 ##### Objects
 
@@ -1392,7 +1412,7 @@ curl -X GET \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -1408,6 +1428,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1420,43 +1441,43 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve other account metadata information {#method-get-getotheraccountmetadata}
+Retrieve other account metadata information {#method-get-getotheraccountmetadata}
+---------------------------------------------------------------------------------
 
 Retrieve information about the other account metadata specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getotheraccount_metadata []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type              | Description |
-|-------------------|-------------------|-------------|
-| PublicAlias       | string            |             |
-| PrivateAlias      | string            |             |
-| MoreInfo          | string            |             |
-| URL               | string            |             |
-| ImageURL          | string            |             |
-| OpenCorporatesURL | string            |             |
-| CorporateLocation | CorporateLocation |             |
-| PhysicalLocation  | PhysicalLocation  |             |
+| Name                | Type              | Description |
+|---------------------|-------------------|-------------|
+| public_alias        | string            |             |
+| private_alias       | string            |             |
+| more_info           | string            |             |
+| url                 | string            |             |
+| image_url           | string            |             |
+| open_corporates_url | string            |             |
+| corporate_location  | CorporateLocation |             |
+| physical_location   | PhysicalLocation  |             |
 
 ##### Objects
 
@@ -1464,20 +1485,20 @@ curl -X GET \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### PhysicalLocation
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -1503,6 +1524,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1515,28 +1537,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve physical location information {#method-get-getphysicallocation}
+Retrieve physical location information {#method-get-getphysicallocation}
+------------------------------------------------------------------------
 
 Retrieve information about the physical location specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getphysicallocation []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -1544,16 +1566,16 @@ curl -X GET \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -1565,6 +1587,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1577,39 +1600,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available physical locations {#method-get-getphysicallocations}
+Retrieve all available physical locations {#method-get-getphysicallocations}
+----------------------------------------------------------------------------
 
 Retrieve information regarding all available physical locations.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getphysicallocations []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type               | Description                                          |
-|-------------------|--------------------|------------------------------------------------------|
-| PhysicalLocations | []PhysicalLocation | PhysicalLocations is the list of physical_locations. |
-| BankID            | string             | BankID is the bank identifier.                       |
-| AccountID         | string             | AccountID is the account identifier.                 |
-| OtherAccountID    | string             | OtherAccountID is the other_account identifier.      |
+| Name               | Type                | Description                                          |
+|--------------------|---------------------|------------------------------------------------------|
+| physical_locations | \[]PhysicalLocation | PhysicalLocations is the list of physical_locations. |
+| bank_id            | string              | BankID is the bank identifier.                       |
+| account_id         | string              | AccountID is the account identifier.                 |
+| other_account_id   | string              | OtherAccountID is the other_account identifier.      |
 
 ##### Objects
 
@@ -1617,14 +1640,14 @@ curl -X GET \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -1643,6 +1666,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1655,28 +1679,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve private alias information {#method-get-getprivatealias}
+Retrieve private alias information {#method-get-getprivatealias}
+----------------------------------------------------------------
 
 Retrieve information about the private alias specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getprivatealias []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -1684,7 +1708,7 @@ curl -X GET \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -1693,6 +1717,7 @@ Example:
   "alias": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1705,39 +1730,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available private aliases {#method-get-getprivatealiases}
+Retrieve all available private aliases {#method-get-getprivatealiases}
+----------------------------------------------------------------------
 
 Retrieve information regarding all available private aliases.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getprivatealiases []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type          | Description                                     |
-|----------------|---------------|-------------------------------------------------|
-| PrivateAliases | []PublicAlias | PrivateAliases is the list of private_aliases.  |
-| BankID         | string        | BankID is the bank identifier.                  |
-| AccountID      | string        | AccountID is the account identifier.            |
-| OtherAccountID | string        | OtherAccountID is the other_account identifier. |
+| Name             | Type           | Description                                     |
+|------------------|----------------|-------------------------------------------------|
+| aliases          | \[]PublicAlias | PrivateAliases is the list of private_aliases.  |
+| bank_id          | string         | BankID is the bank identifier.                  |
+| account_id       | string         | AccountID is the account identifier.            |
+| other_account_id | string         | OtherAccountID is the other_account identifier. |
 
 ##### Objects
 
@@ -1745,7 +1770,7 @@ curl -X GET \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -1761,6 +1786,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1773,28 +1799,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve public alias information {#method-get-getpublicalias}
+Retrieve public alias information {#method-get-getpublicalias}
+--------------------------------------------------------------
 
 Retrieve information about the public alias specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getpublicalias []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -1802,7 +1828,7 @@ curl -X GET \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -1811,6 +1837,7 @@ Example:
   "alias": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1823,39 +1850,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available public aliases {#method-get-getpublicaliases}
+Retrieve all available public aliases {#method-get-getpublicaliases}
+--------------------------------------------------------------------
 
 Retrieve information regarding all available public aliases.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getpublicaliases []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type          | Description                                     |
-|----------------|---------------|-------------------------------------------------|
-| PublicAliases  | []PublicAlias | PublicAliases is the list of public_aliases.    |
-| BankID         | string        | BankID is the bank identifier.                  |
-| AccountID      | string        | AccountID is the account identifier.            |
-| OtherAccountID | string        | OtherAccountID is the other_account identifier. |
+| Name             | Type           | Description                                     |
+|------------------|----------------|-------------------------------------------------|
+| aliases          | \[]PublicAlias | PublicAliases is the list of public_aliases.    |
+| bank_id          | string         | BankID is the bank identifier.                  |
+| account_id       | string         | AccountID is the account identifier.            |
+| other_account_id | string         | OtherAccountID is the other_account identifier. |
 
 ##### Objects
 
@@ -1863,7 +1890,7 @@ curl -X GET \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -1879,6 +1906,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1891,26 +1919,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve url information {#method-get-geturl}
+Retrieve url information {#method-get-geturl}
+---------------------------------------------
 
 Retrieve information about the url specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
@@ -1918,7 +1948,7 @@ curl -X GET \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -1927,6 +1957,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1939,39 +1970,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available urls {#method-get-geturls}
+Retrieve all available urls {#method-get-geturls}
+-------------------------------------------------
 
 Retrieve information regarding all available urls.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet geturls []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| URLs           | []URL  | URLs is the list of urls.                       |
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| urls             | \[]URL | URLs is the list of urls.                       |
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ##### Objects
 
@@ -1979,7 +2010,7 @@ curl -X GET \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -1995,6 +2026,7 @@ Example:
   "other_account_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2007,13 +2039,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a corporate location {#method-put-updatecorporatelocation}
+Update a corporate location {#method-put-updatecorporatelocation}
+-----------------------------------------------------------------
 
 Updates a corporate location's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"corporate_location": {
@@ -2027,28 +2060,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updatecorporatelocation []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name              | Type              | Description                                     |
-|-------------------|-------------------|-------------------------------------------------|
-| CorporateLocation | CorporateLocation | account.                                        |
-| BankID            | string            | BankID is the bank identifier.                  |
-| AccountID         | string            | AccountID is the account identifier.            |
-| OtherAccountID    | string            | OtherAccountID is the other_account identifier. |
+| Name               | Type              | Description                                                                   |
+|--------------------|-------------------|-------------------------------------------------------------------------------|
+| corporate_location | CorporateLocation | CorporateLocation is the corporate_location metadata made on a other_account. |
+| bank_id            | string            | BankID is the bank identifier.                                                |
+| account_id         | string            | AccountID is the account identifier.                                          |
+| other_account_id   | string            | OtherAccountID is the other_account identifier.                               |
 
 ##### Objects
 
@@ -2056,14 +2088,14 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 
@@ -2071,16 +2103,16 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -2092,6 +2124,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2103,13 +2136,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a image url {#method-put-updateimageurl}
+Update a image url {#method-put-updateimageurl}
+-----------------------------------------------
 
 Updates a image url's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"image_url": {
@@ -2120,28 +2154,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updateimageurl []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type     | Description                                     |
-|----------------|----------|-------------------------------------------------|
-| ImageURL       | ImageURL | account.                                        |
-| BankID         | string   | BankID is the bank identifier.                  |
-| AccountID      | string   | AccountID is the account identifier.            |
-| OtherAccountID | string   | OtherAccountID is the other_account identifier. |
+| Name             | Type     | Description                                                 |
+|------------------|----------|-------------------------------------------------------------|
+| image_url        | ImageURL | ImageURL is the image_url metadata made on a other_account. |
+| bank_id          | string   | BankID is the bank identifier.                              |
+| account_id       | string   | AccountID is the account identifier.                        |
+| other_account_id | string   | OtherAccountID is the other_account identifier.             |
 
 ##### Objects
 
@@ -2149,7 +2182,7 @@ curl -X PUT \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 ### Responses
 
@@ -2157,7 +2190,7 @@ curl -X PUT \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -2166,6 +2199,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2177,13 +2211,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a more info {#method-put-updatemoreinfo}
+Update a more info {#method-put-updatemoreinfo}
+-----------------------------------------------
 
 Updates a more info's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"more_info": {
@@ -2194,44 +2229,43 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updatemoreinfo []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type     | Description                                     |
-|----------------|----------|-------------------------------------------------|
-| MoreInfo       | MoreInfo | account.                                        |
-| BankID         | string   | BankID is the bank identifier.                  |
-| AccountID      | string   | AccountID is the account identifier.            |
-| OtherAccountID | string   | OtherAccountID is the other_account identifier. |
+| Name             | Type     | Description                                                 |
+|------------------|----------|-------------------------------------------------------------|
+| more_info        | MoreInfo | MoreInfo is the more_info metadata made on a other_account. |
+| bank_id          | string   | BankID is the bank identifier.                              |
+| account_id       | string   | AccountID is the account identifier.                        |
+| other_account_id | string   | OtherAccountID is the other_account identifier.             |
 
 ##### Objects
 
 ###### MoreInfo
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| MoreInfo | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| more_info | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| MoreInfo | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| more_info | string |             |
 
 Example:
 
@@ -2240,6 +2274,7 @@ Example:
   "more_info": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2251,13 +2286,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a open corporates url {#method-put-updateopencorporatesurl}
+Update a open corporates url {#method-put-updateopencorporatesurl}
+------------------------------------------------------------------
 
 Updates a open corporates url's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"open_corporates_url": {
@@ -2268,28 +2304,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updateopencorporates_url []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name              | Type              | Description                                     |
-|-------------------|-------------------|-------------------------------------------------|
-| OpenCorporatesURL | OpenCorporatesURL | url metadata made on a other_account.           |
-| BankID            | string            | BankID is the bank identifier.                  |
-| AccountID         | string            | AccountID is the account identifier.            |
-| OtherAccountID    | string            | OtherAccountID is the other_account identifier. |
+| Name                | Type              | Description                                                                    |
+|---------------------|-------------------|--------------------------------------------------------------------------------|
+| open_corporates_url | OpenCorporatesURL | OpenCorporatesURL is the open_corporates_url metadata made on a other_account. |
+| bank_id             | string            | BankID is the bank identifier.                                                 |
+| account_id          | string            | AccountID is the account identifier.                                           |
+| other_account_id    | string            | OtherAccountID is the other_account identifier.                                |
 
 ##### Objects
 
@@ -2297,7 +2332,7 @@ curl -X PUT \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 ### Responses
 
@@ -2305,7 +2340,7 @@ curl -X PUT \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -2314,6 +2349,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2325,13 +2361,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a physical location {#method-put-updatephysicallocation}
+Update a physical location {#method-put-updatephysicallocation}
+---------------------------------------------------------------
 
 Updates a physical location's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"physical_location": {
@@ -2345,28 +2382,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updatephysicallocation []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name             | Type             | Description                                     |
-|------------------|------------------|-------------------------------------------------|
-| PhysicalLocation | PhysicalLocation | account.                                        |
-| BankID           | string           | BankID is the bank identifier.                  |
-| AccountID        | string           | AccountID is the account identifier.            |
-| OtherAccountID   | string           | OtherAccountID is the other_account identifier. |
+| Name              | Type             | Description                                                                 |
+|-------------------|------------------|-----------------------------------------------------------------------------|
+| physical_location | PhysicalLocation | PhysicalLocation is the physical_location metadata made on a other_account. |
+| bank_id           | string           | BankID is the bank identifier.                                              |
+| account_id        | string           | AccountID is the account identifier.                                        |
+| other_account_id  | string           | OtherAccountID is the other_account identifier.                             |
 
 ##### Objects
 
@@ -2374,14 +2410,14 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 
@@ -2389,16 +2425,16 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Location | Location |             |
+| location | Location |             |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -2410,6 +2446,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2421,13 +2458,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a private alias {#method-put-updateprivatealias}
+Update a private alias {#method-put-updateprivatealias}
+-------------------------------------------------------
 
 Updates a private alias's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"alias": {
@@ -2438,28 +2476,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updateprivatealias []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type        | Description                                     |
-|----------------|-------------|-------------------------------------------------|
-| PrivateAlias   | PublicAlias | account.                                        |
-| BankID         | string      | BankID is the bank identifier.                  |
-| AccountID      | string      | AccountID is the account identifier.            |
-| OtherAccountID | string      | OtherAccountID is the other_account identifier. |
+| Name             | Type        | Description                                                         |
+|------------------|-------------|---------------------------------------------------------------------|
+| alias            | PublicAlias | PrivateAlias is the private_alias metadata made on a other_account. |
+| bank_id          | string      | BankID is the bank identifier.                                      |
+| account_id       | string      | AccountID is the account identifier.                                |
+| other_account_id | string      | OtherAccountID is the other_account identifier.                     |
 
 ##### Objects
 
@@ -2467,7 +2504,7 @@ curl -X PUT \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 ### Responses
 
@@ -2475,7 +2512,7 @@ curl -X PUT \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -2484,6 +2521,7 @@ Example:
   "alias": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2495,13 +2533,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a public alias {#method-put-updatepublicalias}
+Update a public alias {#method-put-updatepublicalias}
+-----------------------------------------------------
 
 Updates a public alias's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"alias": {
@@ -2512,28 +2551,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
-{{snippet updatepublicalias []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type        | Description                                     |
-|----------------|-------------|-------------------------------------------------|
-| PublicAlias    | PublicAlias | account.                                        |
-| BankID         | string      | BankID is the bank identifier.                  |
-| AccountID      | string      | AccountID is the account identifier.            |
-| OtherAccountID | string      | OtherAccountID is the other_account identifier. |
+| Name             | Type        | Description                                                       |
+|------------------|-------------|-------------------------------------------------------------------|
+| alias            | PublicAlias | PublicAlias is the public_alias metadata made on a other_account. |
+| bank_id          | string      | BankID is the bank identifier.                                    |
+| account_id       | string      | AccountID is the account identifier.                              |
+| other_account_id | string      | OtherAccountID is the other_account identifier.                   |
 
 ##### Objects
 
@@ -2541,7 +2579,7 @@ curl -X PUT \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 ### Responses
 
@@ -2549,7 +2587,7 @@ curl -X PUT \
 
 | Name  | Type   | Description |
 |-------|--------|-------------|
-| Alias | string |             |
+| alias | string |             |
 
 Example:
 
@@ -2558,6 +2596,7 @@ Example:
   "alias": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2569,13 +2608,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a url {#method-put-updateurl}
+Update a url {#method-put-updateurl}
+------------------------------------
 
 Updates a url's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"url": {
@@ -2586,26 +2626,27 @@ curl -X PUT \
 		"other_account_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url`
 
 ### Query Parameters
 
-| Name           | Type   | Description                                     |
-|----------------|--------|-------------------------------------------------|
-| BankID         | string | BankID is the bank identifier.                  |
-| AccountID      | string | AccountID is the account identifier.            |
-| OtherAccountID | string | OtherAccountID is the other_account identifier. |
+| Name             | Type   | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| bank_id          | string | BankID is the bank identifier.                  |
+| account_id       | string | AccountID is the account identifier.            |
+| other_account_id | string | OtherAccountID is the other_account identifier. |
 
 ### Body Parameters
 
-| Name           | Type   | Description                                      |
-|----------------|--------|--------------------------------------------------|
-| URL            | URL    | URL is the url metadata made on a other_account. |
-| BankID         | string | BankID is the bank identifier.                   |
-| AccountID      | string | AccountID is the account identifier.             |
-| OtherAccountID | string | OtherAccountID is the other_account identifier.  |
+| Name             | Type   | Description                                      |
+|------------------|--------|--------------------------------------------------|
+| url              | URL    | URL is the url metadata made on a other_account. |
+| bank_id          | string | BankID is the bank identifier.                   |
+| account_id       | string | AccountID is the account identifier.             |
+| other_account_id | string | OtherAccountID is the other_account identifier.  |
 
 ##### Objects
 
@@ -2613,7 +2654,7 @@ curl -X PUT \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 ### Responses
 
@@ -2621,7 +2662,7 @@ curl -X PUT \
 
 | Name | Type   | Description |
 |------|--------|-------------|
-| URL  | string |             |
+| url  | string |             |
 
 Example:
 
@@ -2630,6 +2671,7 @@ Example:
   "url": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

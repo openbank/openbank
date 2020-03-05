@@ -1,18 +1,20 @@
-# Customer API v1.0.0
+Customer API v1.0.0
+===================
 
 Provides create and read operations on the customer resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Add address to the customer. {#method-post-addaddresstocustomer}
+Add address to the customer. {#method-post-addaddresstocustomer}
+----------------------------------------------------------------
 
 Add address to the customer.
 
 ```sh
 curl -X POST \
-	/v1/customers/{CustomerID}/address \
+	https:///v1/customers/{CustomerID}/address \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"customer_id": "string",
@@ -28,53 +30,52 @@ curl -X POST \
 		"status": "string"
 	}'
 ```
-{{snippet addaddressto_customer []}}
 
 ### HTTP Request
 
-`POST /v1/customers/{CustomerID}/address`
+`POST https:///v1/customers/{CustomerID}/address`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name        | Type     | Description |
-|-------------|----------|-------------|
-| CustomerID  | string   |             |
-| Line1       | string   |             |
-| Line2       | string   |             |
-| Line3       | string   |             |
-| City        | string   |             |
-| County      | string   |             |
-| State       | string   |             |
-| Postcode    | string   |             |
-| CountryCode | string   |             |
-| Tags        | []string |             |
-| Status      | string   |             |
+| Name         | Type      | Description |
+|--------------|-----------|-------------|
+| customer_id  | string    |             |
+| line_1       | string    |             |
+| line_2       | string    |             |
+| line_3       | string    |             |
+| city         | string    |             |
+| county       | string    |             |
+| state        | string    |             |
+| postcode     | string    |             |
+| country_code | string    |             |
+| tags         | \[]string |             |
+| status       | string    |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type      | Description |
-|-------------------|-----------|-------------|
-| CustomerAddressID | string    |             |
-| CustomerID        | string    |             |
-| Line1             | string    |             |
-| Line2             | string    |             |
-| Line3             | string    |             |
-| City              | string    |             |
-| County            | string    |             |
-| State             | string    |             |
-| Postcode          | string    |             |
-| CountryCode       | string    |             |
-| Tags              | []string  |             |
-| Status            | string    |             |
-| InsertDate        | Timestamp |             |
+| Name                | Type      | Description |
+|---------------------|-----------|-------------|
+| customer_address_id | string    |             |
+| customer_id         | string    |             |
+| line_1              | string    |             |
+| line_2              | string    |             |
+| line_3              | string    |             |
+| city                | string    |             |
+| county              | string    |             |
+| state               | string    |             |
+| postcode            | string    |             |
+| country_code        | string    |             |
+| tags                | \[]string |             |
+| status              | string    |             |
+| insert_date         | Timestamp |             |
 
 ##### Objects
 
@@ -107,6 +108,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -118,13 +120,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add social media handle {#method-post-addsocialmediahandle}
+Add social media handle {#method-post-addsocialmediahandle}
+-----------------------------------------------------------
 
 Add social media handle for the customer
 
 ```sh
 curl -X POST \
-	/v1/customers/{CustomerID}/social_media_handles \
+	https:///v1/customers/{CustomerID}/social_media_handles \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"customer_id": "string",
@@ -141,28 +144,27 @@ curl -X POST \
 		}
 	}'
 ```
-{{snippet addsocialmedia_handle []}}
 
 ### HTTP Request
 
-`POST /v1/customers/{CustomerID}/social_media_handles`
+`POST https:///v1/customers/{CustomerID}/social_media_handles`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CustomerID     | string    |             |
-| CustomerNumber | string    |             |
-| Type           | string    |             |
-| Handle         | string    |             |
-| DateAdded      | Timestamp |             |
-| DateActivated  | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| customer_id     | string    |             |
+| customer_number | string    |             |
+| type            | string    |             |
+| handle          | string    |             |
+| date_added      | Timestamp |             |
+| date_activated  | Timestamp |             |
 
 ##### Objects
 
@@ -179,7 +181,7 @@ curl -X POST \
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Success | string |             |
+| success | string |             |
 
 Example:
 
@@ -188,6 +190,7 @@ Example:
   "success": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -199,13 +202,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create credit limit order {#method-post-createcreditlimitorder}
+Create credit limit order {#method-post-createcreditlimitorder}
+---------------------------------------------------------------
 
 Create Credit limit order for the customer on specific bank
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -219,40 +223,39 @@ curl -X POST \
 		"temporary_credit_documentation": "string"
 	}'
 ```
-{{snippet createcreditlimit_order []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests`
+`POST https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name                            | Type   | Description |
-|---------------------------------|--------|-------------|
-| BankID                          | string |             |
-| CustomerID                      | string |             |
-| RequestedCurrentRateAmount1     | string |             |
-| RequestedCurrentRateAmount2     | string |             |
-| RequestedCurrentValidEndDate    | string |             |
-| CurrentCreditDocumentation      | string |             |
-| TemporaryRequestedCurrentAmount | string |             |
-| RequestedTemporaryValidEndDate  | string |             |
-| TemporaryCreditDocumentation    | string |             |
+| Name                               | Type   | Description |
+|------------------------------------|--------|-------------|
+| bank_id                            | string |             |
+| customer_id                        | string |             |
+| requested_current_rate_amount1     | string |             |
+| requested_current_rate_amount2     | string |             |
+| requested_current_valid_end_date   | string |             |
+| current_credit_documentation       | string |             |
+| temporary_requested_current_amount | string |             |
+| requested_temporary_valid_end_date | string |             |
+| temporary_credit_documentation     | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| CreditLimitOrderID | string |             |
+| Name                  | Type   | Description |
+|-----------------------|--------|-------------|
+| credit_limit_order_id | string |             |
 
 Example:
 
@@ -261,6 +264,7 @@ Example:
   "credit_limit_order_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -272,13 +276,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a customer {#method-post-createcustomer}
+Create a customer {#method-post-createcustomer}
+-----------------------------------------------
 
 Creates a new customer
 
 ```sh
 curl -X POST \
-	/v1/customers \
+	https:///v1/customers \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -321,29 +326,30 @@ curl -X POST \
 		"branchId": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/customers`
+`POST https:///v1/customers`
 
 ### Body Parameters
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| BankID                   | string       |             |
-| LegalName                | string       |             |
-| MobilePhoneNumber        | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| DobOfDependents          | []Timestamp  |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                       | Type         | Description |
+|----------------------------|--------------|-------------|
+| bank_id                    | string       |             |
+| legal_name                 | string       |             |
+| mobile_phone_number        | string       |             |
+| email                      | string       |             |
+| face_image                 | FaceImage    |             |
+| date_of_birth              | Timestamp    |             |
+| relationship_status        | string       |             |
+| dob_of_dependents          | \[]Timestamp |             |
+| credit_rating              | CreditRating |             |
+| credit_limit               | Amount       |             |
+| highest_education_attained | string       |             |
+| employment_status          | string       |             |
+| last_ok_date               | Timestamp    |             |
+| title                      | string       |             |
+| branchId                   | string       |             |
 
 ##### Objects
 
@@ -351,8 +357,8 @@ curl -X POST \
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -365,24 +371,24 @@ curl -X POST \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ### Responses
 
 #### Response body
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
-| BankID     | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
+| bank_id     | string |             |
 
 Example:
 
@@ -392,6 +398,7 @@ Example:
   "bank_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -403,13 +410,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create user customer link {#method-post-createusercustomerlink}
+Create user customer link {#method-post-createusercustomerlink}
+---------------------------------------------------------------
 
 Creare user customer link
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/user_customer_links \
+	https:///v1/banks/{BankID}/user_customer_links \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -417,37 +425,36 @@ curl -X POST \
 		"customer_id": "string"
 	}'
 ```
-{{snippet createusercustomer_link []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/user_customer_links`
+`POST https:///v1/banks/{BankID}/user_customer_links`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Body Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| UserID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| user_id     | string |             |
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type      | Description |
-|--------------------|-----------|-------------|
-| UserCustomerLinkID | string    |             |
-| CustomerID         | string    |             |
-| UserID             | string    |             |
-| DateInserted       | Timestamp |             |
-| IsActive           | bool      |             |
+| Name                  | Type      | Description |
+|-----------------------|-----------|-------------|
+| user_customer_link_id | string    |             |
+| customer_id           | string    |             |
+| user_id               | string    |             |
+| date_inserted         | Timestamp |             |
+| is_active             | bool      |             |
 
 ##### Objects
 
@@ -472,6 +479,7 @@ Example:
   "is_active": "bool"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -483,28 +491,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete customer address {#method-delete-deletecustomeraddress}
+Delete customer address {#method-delete-deletecustomeraddress}
+--------------------------------------------------------------
 
 Permanently delete customer address.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID} \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletecustomeraddress []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
+`DELETE https:///v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
 
 ### Query Parameters
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| BankID            | string |             |
-| CustomerID        | string |             |
-| CustomerAddressID | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| bank_id             | string |             |
+| customer_id         | string |             |
+| customer_address_id | string |             |
 
 ### Responses
 
@@ -518,6 +526,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -529,28 +538,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete tax residence {#method-delete-deletetaxresidence}
+Delete tax residence {#method-delete-deletetaxresidence}
+--------------------------------------------------------
 
 Permanently delete tax residence.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID} \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletetaxresidence []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID}`
+`DELETE https:///v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID}`
 
 ### Query Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CustomerID     | string |             |
-| TaxResidenceID | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| bank_id          | string |             |
+| customer_id      | string |             |
+| tax_residence_id | string |             |
 
 ### Responses
 
@@ -564,6 +573,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -575,52 +585,52 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all CRM events {#method-get-getcrmevents}
+List all CRM events {#method-get-getcrmevents}
+----------------------------------------------
 
 Returns a list containing up to 20 crm events.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/crm-events \
+	https:///v1/banks/{BankID}/crm-events \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcrmevents []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/crm-events`
+`GET https:///v1/banks/{BankID}/crm-events`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| CRMEvents | []CRMEvent |             |
-| HasMore   | bool       |             |
+| Name       | Type        | Description |
+|------------|-------------|-------------|
+| crm_events | \[]CRMEvent |             |
+| has_more   | bool        |             |
 
 ##### Objects
 
 ###### CRMEvent
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| ID             | string    |             |
-| BankID         | string    |             |
-| CustomerName   | string    |             |
-| CustomerNumber | string    |             |
-| Category       | string    |             |
-| Detail         | string    |             |
-| Channel        | string    |             |
-| ScheduledDate  | Timestamp |             |
-| ActualDate     | Timestamp |             |
-| Result         | string    |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| id              | string    |             |
+| bank_id         | string    |             |
+| customer_name   | string    |             |
+| customer_number | string    |             |
+| category        | string    |             |
+| detail          | string    |             |
+| channel         | string    |             |
+| scheduled_date  | Timestamp |             |
+| actual_date     | Timestamp |             |
+| result          | string    |             |
 
 ###### Timestamp
 
@@ -656,6 +666,7 @@ Example:
   "has_more": "bool"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -667,46 +678,46 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all credit limit order {#method-get-getcreditlimitorder}
+List all credit limit order {#method-get-getcreditlimitorder}
+-------------------------------------------------------------
 
 Returns a list containing up to 20 CreditLimitOrder.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcreditlimit_order []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name   | Type               | Description |
-|--------|--------------------|-------------|
-| Result | []CreditLimitOrder |             |
+| Name   | Type                | Description |
+|--------|---------------------|-------------|
+| result | \[]CreditLimitOrder |             |
 
 ##### Objects
 
 ###### CreditLimitOrder
 
-| Name             | Type   | Description |
-|------------------|--------|-------------|
-| RankAmount1      | string |             |
-| NominalInterest1 | string |             |
-| RankAmount2      | string |             |
-| NominalInterest2 | string |             |
+| Name               | Type   | Description |
+|--------------------|--------|-------------|
+| rank_amount_1      | string |             |
+| nominal_interest_1 | string |             |
+| rank_amount_2      | string |             |
+| nominal_interest_2 | string |             |
 
 Example:
 
@@ -722,6 +733,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -733,47 +745,47 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get credit limit order by id {#method-get-getcreditlimitorderbyid}
+Get credit limit order by id {#method-get-getcreditlimitorderbyid}
+------------------------------------------------------------------
 
 Returns Credit limit order by id
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID} \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcreditlimitorderby_id []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
-| RequestID  | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
+| request_id  | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name             | Type             | Description |
-|------------------|------------------|-------------|
-| CreditLimitOrder | CreditLimitOrder |             |
+| Name               | Type             | Description |
+|--------------------|------------------|-------------|
+| credit_limit_order | CreditLimitOrder |             |
 
 ##### Objects
 
 ###### CreditLimitOrder
 
-| Name             | Type   | Description |
-|------------------|--------|-------------|
-| RankAmount1      | string |             |
-| NominalInterest1 | string |             |
-| RankAmount2      | string |             |
-| NominalInterest2 | string |             |
+| Name               | Type   | Description |
+|--------------------|--------|-------------|
+| rank_amount_1      | string |             |
+| nominal_interest_1 | string |             |
+| rank_amount_2      | string |             |
+| nominal_interest_2 | string |             |
 
 Example:
 
@@ -787,6 +799,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -798,55 +811,55 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all customer adddresses {#method-get-getcustomeraddresses}
+List all customer adddresses {#method-get-getcustomeraddresses}
+---------------------------------------------------------------
 
 Returns a list containing up to 20 customer addresses.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID}/addresses \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/addresses \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomeraddresses []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}/addresses`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}/addresses`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type      | Description |
-|-----------|-----------|-------------|
-| Addresses | []Address |             |
+| Name      | Type       | Description |
+|-----------|------------|-------------|
+| addresses | \[]Address |             |
 
 ##### Objects
 
 ###### Address
 
-| Name              | Type      | Description |
-|-------------------|-----------|-------------|
-| CustomerAddressID | string    |             |
-| CustomerID        | string    |             |
-| Line1             | string    |             |
-| Line2             | string    |             |
-| Line3             | string    |             |
-| City              | string    |             |
-| County            | string    |             |
-| State             | string    |             |
-| Postcode          | string    |             |
-| CountryCode       | string    |             |
-| Tags              | []string  |             |
-| Status            | string    |             |
-| InsertDate        | Timestamp |             |
+| Name                | Type      | Description |
+|---------------------|-----------|-------------|
+| customer_address_id | string    |             |
+| customer_id         | string    |             |
+| line_1              | string    |             |
+| line_2              | string    |             |
+| line_3              | string    |             |
+| city                | string    |             |
+| county              | string    |             |
+| state               | string    |             |
+| postcode            | string    |             |
+| country_code        | string    |             |
+| tags                | \[]string |             |
+| status              | string    |             |
+| insert_date         | Timestamp |             |
 
 ###### Timestamp
 
@@ -881,6 +894,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -892,51 +906,51 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer By ID {#method-get-getcustomerbycustomerid}
+Get Customer By ID {#method-get-getcustomerbycustomerid}
+--------------------------------------------------------
 
 Returns the customer data based on it's id
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID} \
+	https:///v1/banks/{BankID}/customers/{CustomerID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomerbycustomerid []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ##### Objects
 
@@ -944,8 +958,8 @@ curl -X GET \
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -958,15 +972,15 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1009,6 +1023,7 @@ Example:
   "branch_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1020,52 +1035,52 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer By CustomerNumber {#method-get-getcustomerbycustomernumber}
+Get Customer By CustomerNumber {#method-get-getcustomerbycustomernumber}
+------------------------------------------------------------------------
 
 Returns the customer data based on the customer number
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber} \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomerbycustomernumber []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber}`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber}`
 
 ### Query Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CustomerID     | string |             |
-| CustomerNumber | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| bank_id         | string |             |
+| customer_id     | string |             |
+| customer_number | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ##### Objects
 
@@ -1073,8 +1088,8 @@ curl -X GET \
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -1087,15 +1102,15 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1138,6 +1153,7 @@ Example:
   "branch_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1149,47 +1165,47 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all customer social media handles {#method-get-getcustomersocialmediahandles}
+List all customer social media handles {#method-get-getcustomersocialmediahandles}
+----------------------------------------------------------------------------------
 
 Returns a list containing up to 20 customer social media handles
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID}/social_media_handles \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/social_media_handles \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomersocialmediahandles []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}/social_media_handles`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}/social_media_handles`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name   | Type    | Description |
-|--------|---------|-------------|
-| Checks | []Check |             |
+| Name   | Type     | Description |
+|--------|----------|-------------|
+| checks | \[]Check |             |
 
 ##### Objects
 
 ###### Check
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CustomerNumber | string    |             |
-| Type           | string    |             |
-| Handle         | string    |             |
-| DateAdded      | Timestamp |             |
-| DateActivated  | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| customer_number | string    |             |
+| type            | string    |             |
+| handle          | string    |             |
+| date_added      | Timestamp |             |
+| date_activated  | Timestamp |             |
 
 ###### Timestamp
 
@@ -1219,6 +1235,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1230,59 +1247,59 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get customers data for current user {#method-get-getcustomersforcurrentuser}
+Get customers data for current user {#method-get-getcustomersforcurrentuser}
+----------------------------------------------------------------------------
 
 Returns the current user customers data
 
 ```sh
 curl -X GET \
-	/v1/users/current/customers \
+	https:///v1/users/current/customers \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomersforcurrentuser []}}
 
 ### HTTP Request
 
-`GET /v1/users/current/customers`
+`GET https:///v1/users/current/customers`
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| Customers | []Customer |             |
+| Name      | Type        | Description |
+|-----------|-------------|-------------|
+| customers | \[]Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -1295,15 +1312,15 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1350,6 +1367,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1361,65 +1379,65 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get customers data by bank id {#method-get-getcustomersforcurrentuseratbank}
+Get customers data by bank id {#method-get-getcustomersforcurrentuseratbank}
+----------------------------------------------------------------------------
 
 Returns the current user customers data by bank ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers \
+	https:///v1/banks/{BankID}/customers \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomersforcurrentuseratbank []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers`
+`GET https:///v1/banks/{BankID}/customers`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| Customers | []Customer |             |
+| Name      | Type        | Description |
+|-----------|-------------|-------------|
+| customers | \[]Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -1432,15 +1450,15 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1487,6 +1505,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1498,65 +1517,65 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Return customer firehose {#method-get-getfirehosecustomer}
+Return customer firehose {#method-get-getfirehosecustomer}
+----------------------------------------------------------
 
 Returns the list of customer firehose
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/firehose/customers \
+	https:///v1/banks/{BankID}/firehose/customers \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getfirehosecustomer []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/firehose/customers`
+`GET https:///v1/banks/{BankID}/firehose/customers`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| Customers | []Customer |             |
+| Name      | Type        | Description |
+|-----------|-------------|-------------|
+| customers | \[]Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -1569,15 +1588,15 @@ curl -X GET \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1624,6 +1643,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1635,45 +1655,45 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get customers tax_residencies {#method-get-gettaxresidenceofcustomer}
+Get customers tax_residencies {#method-get-gettaxresidenceofcustomer}
+---------------------------------------------------------------------
 
 Returns the user tax_residencies
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/customers/{CustomerID}/tax-residences \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/tax-residences \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet gettaxresidenceofcustomer []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/customers/{CustomerID}/tax-residences`
+`GET https:///v1/banks/{BankID}/customers/{CustomerID}/tax-residences`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name   | Type           | Description |
-|--------|----------------|-------------|
-| Result | []TaxResidence |             |
+| Name   | Type            | Description |
+|--------|-----------------|-------------|
+| result | \[]TaxResidence |             |
 
 ##### Objects
 
 ###### TaxResidence
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| Domain         | string |             |
-| TaxNumber      | string |             |
-| TaxResidenceID | string |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| domain           | string |             |
+| tax_number       | string |             |
+| tax_residence_id | string |             |
 
 Example:
 
@@ -1688,6 +1708,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1699,13 +1720,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer addresses. {#method-put-updatecustomeraddress}
+Update customer addresses. {#method-put-updatecustomeraddress}
+--------------------------------------------------------------
 
 Update customer addresses information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID} \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -1723,57 +1745,56 @@ curl -X PUT \
 		"status": "string"
 	}'
 ```
-{{snippet updatecustomeraddress []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
 
 ### Query Parameters
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| BankID            | string |             |
-| CustomerID        | string |             |
-| CustomerAddressID | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| bank_id             | string |             |
+| customer_id         | string |             |
+| customer_address_id | string |             |
 
 ### Body Parameters
 
-| Name              | Type     | Description |
-|-------------------|----------|-------------|
-| BankID            | string   |             |
-| CustomerID        | string   |             |
-| CustomerAddressID | string   |             |
-| Line1             | string   |             |
-| Line2             | string   |             |
-| Line3             | string   |             |
-| City              | string   |             |
-| County            | string   |             |
-| State             | string   |             |
-| Postcode          | string   |             |
-| CountryCode       | string   |             |
-| Tags              | []string |             |
-| Status            | string   |             |
+| Name                | Type      | Description |
+|---------------------|-----------|-------------|
+| bank_id             | string    |             |
+| customer_id         | string    |             |
+| customer_address_id | string    |             |
+| line_1              | string    |             |
+| line_2              | string    |             |
+| line_3              | string    |             |
+| city                | string    |             |
+| county              | string    |             |
+| state               | string    |             |
+| postcode            | string    |             |
+| country_code        | string    |             |
+| tags                | \[]string |             |
+| status              | string    |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type      | Description |
-|-------------------|-----------|-------------|
-| CustomerAddressID | string    |             |
-| CustomerID        | string    |             |
-| Line1             | string    |             |
-| Line2             | string    |             |
-| Line3             | string    |             |
-| City              | string    |             |
-| County            | string    |             |
-| State             | string    |             |
-| Postcode          | string    |             |
-| CountryCode       | string    |             |
-| Tags              | []string  |             |
-| Status            | string    |             |
-| InsertDate        | Timestamp |             |
+| Name                | Type      | Description |
+|---------------------|-----------|-------------|
+| customer_address_id | string    |             |
+| customer_id         | string    |             |
+| line_1              | string    |             |
+| line_2              | string    |             |
+| line_3              | string    |             |
+| city                | string    |             |
+| county              | string    |             |
+| state               | string    |             |
+| postcode            | string    |             |
+| country_code        | string    |             |
+| tags                | \[]string |             |
+| status              | string    |             |
+| insert_date         | Timestamp |             |
 
 ##### Objects
 
@@ -1806,6 +1827,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1818,13 +1840,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer branch. {#method-put-updatecustomerbranch}
+Update customer branch. {#method-put-updatecustomerbranch}
+----------------------------------------------------------
 
 Update customer branch information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/branch \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/branch \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -1832,26 +1855,25 @@ curl -X PUT \
 		"branch_id": "string"
 	}'
 ```
-{{snippet updatecustomerbranch []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/branch`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/branch`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
-| BranchID   | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
+| branch_id   | string |             |
 
 ### Responses
 
@@ -1859,38 +1881,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -1903,15 +1925,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -1956,6 +1978,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1968,13 +1991,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer credit limit. {#method-put-updatecustomercreditlimit}
+Update customer credit limit. {#method-put-updatecustomercreditlimit}
+---------------------------------------------------------------------
 
 Update customer credit limit information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/credit-limit \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/credit-limit \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -1985,26 +2009,25 @@ curl -X PUT \
 		}
 	}'
 ```
-{{snippet updatecustomercredit_limit []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/credit-limit`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/credit-limit`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| CustomerID  | string |             |
-| CreditLimit | Amount |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| bank_id      | string |             |
+| customer_id  | string |             |
+| credit_limit | Amount |             |
 
 ##### Objects
 
@@ -2012,8 +2035,8 @@ curl -X PUT \
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ### Responses
 
@@ -2021,38 +2044,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2065,15 +2088,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2118,6 +2141,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2130,13 +2154,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer credut rating and source. {#method-put-updatecustomercreditratingandsource}
+Update customer credut rating and source. {#method-put-updatecustomercreditratingandsource}
+-------------------------------------------------------------------------------------------
 
 Update customer credit rating and source information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -2147,26 +2172,25 @@ curl -X PUT \
 		}
 	}'
 ```
-{{snippet updatecustomercreditratingand_source []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name         | Type         | Description |
-|--------------|--------------|-------------|
-| BankID       | string       |             |
-| CustomerID   | string       |             |
-| CreditRating | CreditRating |             |
+| Name          | Type         | Description |
+|---------------|--------------|-------------|
+| bank_id       | string       |             |
+| customer_id   | string       |             |
+| credit_rating | CreditRating |             |
 
 ##### Objects
 
@@ -2174,8 +2198,8 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ### Responses
 
@@ -2183,38 +2207,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2227,15 +2251,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2280,6 +2304,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2292,13 +2317,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer email. {#method-put-updatecustomeremail}
+Update customer email. {#method-put-updatecustomeremail}
+--------------------------------------------------------
 
 Update customer email information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/email \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/email \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -2306,26 +2332,25 @@ curl -X PUT \
 		"email": "string"
 	}'
 ```
-{{snippet updatecustomeremail []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/email`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/email`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
-| Email      | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
+| email       | string |             |
 
 ### Responses
 
@@ -2333,38 +2358,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2377,15 +2402,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2430,6 +2455,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2442,13 +2468,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer identity. {#method-put-updatecustomeridentity}
+Update customer identity. {#method-put-updatecustomeridentity}
+--------------------------------------------------------------
 
 Update customer identity information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/identity \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/identity \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -2458,28 +2485,27 @@ curl -X PUT \
 		"title": "string"
 	}'
 ```
-{{snippet updatecustomeridentity []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/identity`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/identity`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| CustomerID  | string |             |
-| LegalName   | string |             |
-| DateOfBirth | string |             |
-| Title       | string |             |
+| Name          | Type   | Description |
+|---------------|--------|-------------|
+| bank_id       | string |             |
+| customer_id   | string |             |
+| legal_name    | string |             |
+| date_of_birth | string |             |
+| title         | string |             |
 
 ### Responses
 
@@ -2487,38 +2513,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2531,15 +2557,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2584,6 +2610,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2596,13 +2623,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer mobile number. {#method-put-updatecustomermobilenumber}
+Update customer mobile number. {#method-put-updatecustomermobilenumber}
+-----------------------------------------------------------------------
 
 Update customer mobile number information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/mobile-number \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/mobile-number \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -2610,26 +2638,25 @@ curl -X PUT \
 		"mobile_phone_number": "string"
 	}'
 ```
-{{snippet updatecustomermobile_number []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/mobile-number`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/mobile-number`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name              | Type   | Description |
-|-------------------|--------|-------------|
-| BankID            | string |             |
-| CustomerID        | string |             |
-| MobilePhoneNumber | string |             |
+| Name                | Type   | Description |
+|---------------------|--------|-------------|
+| bank_id             | string |             |
+| customer_id         | string |             |
+| mobile_phone_number | string |             |
 
 ### Responses
 
@@ -2637,38 +2664,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2681,15 +2708,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2734,6 +2761,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2746,13 +2774,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer number. {#method-put-updatecustomernumber}
+Update customer number. {#method-put-updatecustomernumber}
+----------------------------------------------------------
 
 Update customer number information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/number \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/number \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -2760,26 +2789,25 @@ curl -X PUT \
 		"customer_number": "string"
 	}'
 ```
-{{snippet updatecustomernumber []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/number`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/number`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CustomerID     | string |             |
-| CustomerNumber | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| bank_id         | string |             |
+| customer_id     | string |             |
+| customer_number | string |             |
 
 ### Responses
 
@@ -2787,38 +2815,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2831,15 +2859,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -2884,6 +2912,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2896,13 +2925,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update customer data. {#method-put-updatecustomerotherdata}
+Update customer data. {#method-put-updatecustomerotherdata}
+-----------------------------------------------------------
 
 Update customer data information.
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/customers/{CustomerID}/data \
+	https:///v1/banks/{BankID}/customers/{CustomerID}/data \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -2920,30 +2950,29 @@ curl -X PUT \
 		"employment_status": "string"
 	}'
 ```
-{{snippet updatecustomerother_data []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/customers/{CustomerID}/data`
+`PUT https:///v1/banks/{BankID}/customers/{CustomerID}/data`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| BankID     | string |             |
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| bank_id     | string |             |
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name                     | Type      | Description |
-|--------------------------|-----------|-------------|
-| BankID                   | string    |             |
-| CustomerID               | string    |             |
-| FaceImage                | FaceImage |             |
-| RelationshipStatus       | string    |             |
-| Dependants               | int32     |             |
-| HighestEducationAttained | string    |             |
-| EmploymentStatus         | string    |             |
+| Name                       | Type      | Description |
+|----------------------------|-----------|-------------|
+| bank_id                    | string    |             |
+| customer_id                | string    |             |
+| face_image                 | FaceImage |             |
+| relationship_status        | string    |             |
+| dependants                 | int32     |             |
+| highest_education_attained | string    |             |
+| employment_status          | string    |             |
 
 ##### Objects
 
@@ -2951,8 +2980,8 @@ curl -X PUT \
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -2967,38 +2996,38 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Customer | Customer |             |
+| customer | Customer |             |
 
 ##### Objects
 
 ###### Customer
 
-| Name                     | Type         | Description |
-|--------------------------|--------------|-------------|
-| ID                       | string       |             |
-| BankID                   | string       |             |
-| CustomerNumber           | string       |             |
-| LegalName                | string       |             |
-| PhoneNumber              | string       |             |
-| Email                    | string       |             |
-| FaceImage                | FaceImage    |             |
-| DateOfBirth              | Timestamp    |             |
-| RelationshipStatus       | string       |             |
-| CreditRating             | CreditRating |             |
-| CreditLimit              | Amount       |             |
-| HighestEducationAttained | string       |             |
-| EmploymentStatus         | string       |             |
-| KYCStatus                | bool         |             |
-| LastOKDate               | Timestamp    |             |
-| Title                    | string       |             |
-| BranchID                 | string       |             |
+| Name                         | Type         | Description |
+|------------------------------|--------------|-------------|
+| id                           | string       |             |
+| bank_id                      | string       |             |
+| customer_number              | string       |             |
+| legal_name                   | string       |             |
+| phone_number                 | string       |             |
+| email                        | string       |             |
+| face_image                   | FaceImage    |             |
+| date_of_birth                | Timestamp    |             |
+| relationship_status          | string       |             |
+| credit_rating                | CreditRating |             |
+| credit_limit                 | Amount       |             |
+| highest_educational_attained | string       |             |
+| employment_status            | string       |             |
+| kyc_status                   | bool         |             |
+| last_ok_data                 | Timestamp    |             |
+| title                        | string       |             |
+| branch_id                    | string       |             |
 
 ###### FaceImage
 
 | Name | Type      | Description |
 |------|-----------|-------------|
-| URL  | string    |             |
-| Date | Timestamp |             |
+| url  | string    |             |
+| date | Timestamp |             |
 
 ###### Timestamp
 
@@ -3011,15 +3040,15 @@ curl -X PUT \
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Rating | string |             |
-| Source | string |             |
+| rating | string |             |
+| source | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 Example:
 
@@ -3064,6 +3093,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

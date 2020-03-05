@@ -1,58 +1,59 @@
-# Account Public API v1.0.0
+Account Public API v1.0.0
+=========================
 
 Provides create and read operations on the account public resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Get bank public account. {#method-get-getbankpublicaccount}
+Get bank public account. {#method-get-getbankpublicaccount}
+-----------------------------------------------------------
 
 Return customer public account for specific bank.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/public \
+	https:///v1/banks/{BankID}/accounts/public \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getbankpublic_account []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/public`
+`GET https:///v1/banks/{BankID}/accounts/public`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type            | Description |
-|----------|-----------------|-------------|
-| Accounts | []PublicAccount |             |
+| Name     | Type             | Description |
+|----------|------------------|-------------|
+| accounts | \[]PublicAccount |             |
 
 ##### Objects
 
 ###### PublicAccount
 
-| Name           | Type            | Description |
-|----------------|-----------------|-------------|
-| ID             | string          |             |
-| Label          | string          |             |
-| BankID         | string          |             |
-| ViewsAvailable | []ViewAvailable |             |
+| Name            | Type             | Description |
+|-----------------|------------------|-------------|
+| id              | string           |             |
+| label           | string           |             |
+| bank_id         | string           |             |
+| views_available | \[]ViewAvailable |             |
 
 ###### ViewAvailable
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ID        | string |             |
-| ShortName | string |             |
-| IsPublic  | bool   |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| id         | string |             |
+| short_name | string |             |
+| is_public  | bool   |             |
 
 Example:
 
@@ -74,6 +75,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -85,47 +87,47 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get public account at all banks. {#method-get-getpublicaccountatallbanks}
+Get public account at all banks. {#method-get-getpublicaccountatallbanks}
+-------------------------------------------------------------------------
 
 Return public account at all banks.
 
 ```sh
 curl -X GET \
-	/v1/accounts/public \
+	https:///v1/accounts/public \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getpublicaccountatall_banks []}}
 
 ### HTTP Request
 
-`GET /v1/accounts/public`
+`GET https:///v1/accounts/public`
 
 ### Responses
 
 #### Response body
 
-| Name     | Type            | Description |
-|----------|-----------------|-------------|
-| Accounts | []PublicAccount |             |
+| Name     | Type             | Description |
+|----------|------------------|-------------|
+| accounts | \[]PublicAccount |             |
 
 ##### Objects
 
 ###### PublicAccount
 
-| Name           | Type            | Description |
-|----------------|-----------------|-------------|
-| ID             | string          |             |
-| Label          | string          |             |
-| BankID         | string          |             |
-| ViewsAvailable | []ViewAvailable |             |
+| Name            | Type             | Description |
+|-----------------|------------------|-------------|
+| id              | string           |             |
+| label           | string           |             |
+| bank_id         | string           |             |
+| views_available | \[]ViewAvailable |             |
 
 ###### ViewAvailable
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ID        | string |             |
-| ShortName | string |             |
-| IsPublic  | bool   |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| id         | string |             |
+| short_name | string |             |
+| is_public  | bool   |             |
 
 Example:
 
@@ -147,6 +149,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -158,75 +161,75 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Public Account By ID. {#method-get-getpublicaccountbyid}
+Get Public Account By ID. {#method-get-getpublicaccountbyid}
+------------------------------------------------------------
 
 Return customer public account for specific bank.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account \
+	https:///v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getpublicaccountbyid []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account`
+`GET https:///v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account`
 
 ### Query Parameters
 
-| Name      | Type  | Description |
-|-----------|-------|-------------|
-| BankID    | int32 |             |
-| AccountID | int32 |             |
-| ViewID    | int32 |             |
+| Name       | Type  | Description |
+|------------|-------|-------------|
+| bank_id    | int32 |             |
+| account_id | int32 |             |
+| int32      |       |             |
 
 ### Responses
 
 #### Response body
 
-| Name            | Type             | Description |
-|-----------------|------------------|-------------|
-| ID              | string           |             |
-| BankID          | string           |             |
-| Label           | string           |             |
-| Number          | string           |             |
-| Owners          | Owner            |             |
-| Type            | string           |             |
-| Balance         | Amount           |             |
-| AccountRoutings | []AccountRouting |             |
-| AccountRules    | []AccountRule    |             |
+| Name             | Type              | Description |
+|------------------|-------------------|-------------|
+| id               | string            |             |
+| bank_id          | string            |             |
+| label            | string            |             |
+| number           | string            |             |
+| owners           | Owner             |             |
+| type             | string            |             |
+| balance          | Amount            |             |
+| account_routings | \[]AccountRouting |             |
+| account_rules    | \[]AccountRule    |             |
 
 ##### Objects
 
 ###### Owner
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| ID          | string |             |
-| Provider    | string |             |
-| DisplayName | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| id           | string |             |
+| provider     | string |             |
+| display_name | string |             |
 
 ###### Amount
 
 | Name | Type   | Description                        |
 |------|--------|------------------------------------|
-| Cur  | string | Cur is the currency of the amount. |
-| Num  | string | Num is the value of the amount.    |
+| cur  | string | Cur is the currency of the amount. |
+| num  | string | Num is the value of the amount.    |
 
 ###### AccountRouting
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| Scheme  | string |             |
-| Address | string |             |
+| scheme  | string |             |
+| address | string |             |
 
 ###### AccountRule
 
 | Name   | Type   | Description |
 |--------|--------|-------------|
-| Scheme | string |             |
-| Value  | string |             |
+| scheme | string |             |
+| value  | string |             |
 
 Example:
 
@@ -260,6 +263,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

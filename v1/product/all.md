@@ -1,18 +1,20 @@
-# Product API v1.0.0
+Product API v1.0.0
+==================
 
 Provides CRUD operations on the Product resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create a product {#method-post-createproduct}
+Create a product {#method-post-createproduct}
+---------------------------------------------
 
 Creates a new product and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/products/{ProductCode} \
+	https:///v1/banks/{BankID}/products/{ProductCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -43,78 +45,79 @@ curl -X POST \
 		}
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/products/{ProductCode}`
+`POST https:///v1/banks/{BankID}/products/{ProductCode}`
 
 ### Query Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| ProductCode | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| bank_id      | string |             |
+| product_code | string |             |
 
 ### Body Parameters
 
-| Name        | Type    | Description |
-|-------------|---------|-------------|
-| BankID      | string  |             |
-| ProductCode | string  |             |
-| Product     | Product |             |
+| Name         | Type    | Description |
+|--------------|---------|-------------|
+| bank_id      | string  |             |
+| product_code | string  |             |
+| product      | Product |             |
 
 ##### Objects
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ##### Objects
 
@@ -122,17 +125,17 @@ curl -X POST \
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -162,6 +165,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -173,13 +177,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a product attribute {#method-post-createproductattribute}
+Create a product attribute {#method-post-createproductattribute}
+----------------------------------------------------------------
 
 Creates a new product attribute and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
+	https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -194,52 +199,51 @@ curl -X POST \
 		}
 	}'
 ```
-{{snippet createproductattribute []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
+`POST https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
 ### Query Parameters
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| BankID             | string |             |
-| ProductCode        | string |             |
-| ProductAttributeID | string |             |
+| Name                 | Type   | Description |
+|----------------------|--------|-------------|
+| bank_id              | string |             |
+| product_code         | string |             |
+| product_attribute_id | string |             |
 
 ### Body Parameters
 
-| Name               | Type             | Description |
-|--------------------|------------------|-------------|
-| BankID             | string           |             |
-| ProductCode        | string           |             |
-| ProductAttributeID | string           |             |
-| ProductAttribute   | ProductAttribute |             |
+| Name                 | Type             | Description |
+|----------------------|------------------|-------------|
+| bank_id              | string           |             |
+| product_code         | string           |             |
+| product_attribute_id | string           |             |
+| product_attribute    | ProductAttribute |             |
 
 ##### Objects
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -252,6 +256,7 @@ Example:
   "value": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -263,25 +268,27 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a product {#method-delete-deleteproduct}
+Delete a product {#method-delete-deleteproduct}
+-----------------------------------------------
 
 Permanently delete a product.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/products/{ProductCode} \
+	https:///v1/banks/{BankID}/products/{ProductCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/products/{ProductCode}`
+`DELETE https:///v1/banks/{BankID}/products/{ProductCode}`
 
 ### Query Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| ProductCode | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| bank_id      | string |             |
+| product_code | string |             |
 
 ### Responses
 
@@ -296,28 +303,28 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a product attribute {#method-delete-deleteproductattribute}
+Delete a product attribute {#method-delete-deleteproductattribute}
+------------------------------------------------------------------
 
 Permanently delete a product attribute.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
+	https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deleteproductattribute []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
+`DELETE https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
 ### Query Parameters
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| BankID             | string |             |
-| ProductCode        | string |             |
-| ProductAttributeID | string |             |
+| Name                 | Type   | Description |
+|----------------------|--------|-------------|
+| bank_id              | string |             |
+| product_code         | string |             |
+| product_attribute_id | string |             |
 
 ### Responses
 
@@ -332,44 +339,46 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve product information {#method-get-getproduct}
+Retrieve product information {#method-get-getproduct}
+-----------------------------------------------------
 
 Retrieve information about the product specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/products/{ProductCode} \
+	https:///v1/banks/{BankID}/products/{ProductCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/products/{ProductCode}`
+`GET https:///v1/banks/{BankID}/products/{ProductCode}`
 
 ### Query Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| ProductCode | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| bank_id      | string |             |
+| product_code | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ##### Objects
 
@@ -377,17 +386,17 @@ curl -X GET \
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -417,6 +426,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -429,40 +439,40 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve product attribute information {#method-get-getproductattribute}
+Retrieve product attribute information {#method-get-getproductattribute}
+------------------------------------------------------------------------
 
 Retrieve information about the product specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
+	https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getproductattribute []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
+`GET https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
 ### Query Parameters
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| BankID             | string |             |
-| ProductCode        | string |             |
-| ProductAttributeID | string |             |
+| Name                 | Type   | Description |
+|----------------------|--------|-------------|
+| bank_id              | string |             |
+| product_code         | string |             |
+| product_attribute_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -475,6 +485,7 @@ Example:
   "value": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -487,67 +498,69 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available products {#method-get-getproducts}
+Retrieve all available products {#method-get-getproducts}
+---------------------------------------------------------
 
 Retrieve information regarding all available products.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/products \
+	https:///v1/banks/{BankID}/products \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/products`
+`GET https:///v1/banks/{BankID}/products`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type      | Description |
-|----------|-----------|-------------|
-| Products | []Product |             |
+| Name     | Type       | Description |
+|----------|------------|-------------|
+| products | \[]Product |             |
 
 ##### Objects
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -581,6 +594,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -593,13 +607,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a product {#method-put-updateproduct}
+Update a product {#method-put-updateproduct}
+--------------------------------------------
 
 Updates a product's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/products/{ProductCode} \
+	https:///v1/banks/{BankID}/products/{ProductCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -630,78 +645,79 @@ curl -X PUT \
 		}
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/products/{ProductCode}`
+`PUT https:///v1/banks/{BankID}/products/{ProductCode}`
 
 ### Query Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| ProductCode | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| bank_id      | string |             |
+| product_code | string |             |
 
 ### Body Parameters
 
-| Name        | Type    | Description |
-|-------------|---------|-------------|
-| BankID      | string  |             |
-| ProductCode | string  |             |
-| Product     | Product |             |
+| Name         | Type    | Description |
+|--------------|---------|-------------|
+| bank_id      | string  |             |
+| product_code | string  |             |
+| product      | Product |             |
 
 ##### Objects
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 ### Responses
 
 #### Response body
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ##### Objects
 
@@ -709,17 +725,17 @@ curl -X PUT \
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -749,6 +765,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -760,13 +777,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a product attribute {#method-put-updateproductattribute}
+Update a product attribute {#method-put-updateproductattribute}
+---------------------------------------------------------------
 
 Updates a product attribute's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
+	https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -781,52 +799,51 @@ curl -X PUT \
 		}
 	}'
 ```
-{{snippet updateproductattribute []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
+`PUT https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
 ### Query Parameters
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| BankID             | string |             |
-| ProductCode        | string |             |
-| ProductAttributeID | string |             |
+| Name                 | Type   | Description |
+|----------------------|--------|-------------|
+| bank_id              | string |             |
+| product_code         | string |             |
+| product_attribute_id | string |             |
 
 ### Body Parameters
 
-| Name               | Type             | Description |
-|--------------------|------------------|-------------|
-| BankID             | string           |             |
-| ProductCode        | string           |             |
-| ProductAttributeID | string           |             |
-| ProductAttribute   | ProductAttribute |             |
+| Name                 | Type             | Description |
+|----------------------|------------------|-------------|
+| bank_id              | string           |             |
+| product_code         | string           |             |
+| product_attribute_id | string           |             |
+| product_attribute    | ProductAttribute |             |
 
 ##### Objects
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -839,6 +856,7 @@ Example:
   "value": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -850,14 +868,15 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Annex
+Annex
+-----
 
-####  AttributeType
+#### AttributeType
 
-| Value       | Description |
-|-------------|-------------|
-| UnknownType |             |
-| STRING      |             |
-| INTEGER     |             |
-| DOUBLE      |             |
-| DAY         |             |
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |

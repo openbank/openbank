@@ -119,7 +119,7 @@
         ]
       }
     },
-    "/v1/card/access_status/{CardToken}": {
+    "/v1/card/access_status/{cardToken}": {
       "put": {
         "summary": "Update card access status.",
         "description": "Update card access status.",
@@ -154,7 +154,7 @@
         },
         "parameters": [
           {
-            "name": "CardToken",
+            "name": "cardToken",
             "description": "CardToken is the identifier to get the card information.",
             "in": "path",
             "required": true,
@@ -242,7 +242,7 @@
         ]
       }
     },
-    "/v1/card/status/{CardToken}": {
+    "/v1/card/status/{cardToken}": {
       "put": {
         "summary": "Update card status",
         "description": "Update Card status.",
@@ -277,7 +277,7 @@
         },
         "parameters": [
           {
-            "name": "CardToken",
+            "name": "cardToken",
             "description": "CardToken is the identifier to get the card information.",
             "in": "path",
             "required": true,
@@ -304,7 +304,7 @@
         ]
       }
     },
-    "/v1/card/{CardID}": {
+    "/v1/card/{cardID}": {
       "delete": {
         "summary": "Delete a card",
         "description": "Permanently delete a card.",
@@ -343,7 +343,7 @@
         },
         "parameters": [
           {
-            "name": "CardID",
+            "name": "cardID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -361,7 +361,7 @@
         ]
       }
     },
-    "/v1/card/{CardToken}": {
+    "/v1/card/{cardToken}": {
       "get": {
         "summary": "Retrieve card information",
         "description": "Retrieves all data from a card, selected by the card_token you supplied.",
@@ -396,7 +396,7 @@
         },
         "parameters": [
           {
-            "name": "CardToken",
+            "name": "cardToken",
             "description": "CardToken is the identifier to get the card information.",
             "in": "path",
             "required": true,
@@ -420,52 +420,52 @@
     "cardCard": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is a unique identifier of a card."
         },
-        "Account": {
+        "account": {
           "type": "string",
           "description": "Account is the ID of the account associated with the card."
         },
-        "CardNumber": {
+        "card_number": {
           "type": "string",
           "description": "CardNumber is the unique identification number of each card."
         },
-        "OwnerName": {
+        "owner_name": {
           "type": "string",
           "description": "OwnerName is the name of the card owner."
         },
-        "ContactNumber": {
+        "contact_number": {
           "type": "string",
           "description": "ContactNumber is the contact number of the card owner."
         },
-        "FirstName": {
+        "first_name": {
           "type": "string",
           "description": "FirstName is the first name of card owner."
         },
-        "LastName": {
+        "last_name": {
           "type": "string",
           "description": "LastName is the last name of the card owner."
         },
-        "Expiry": {
+        "expiry": {
           "type": "string",
           "format": "date-time",
           "description": "Expiry is an expiry date of the card."
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/typesCardStatus",
           "description": "Status is the status of the card."
         },
-        "AccessStatus": {
+        "access_status": {
           "$ref": "#/definitions/typesCardAccessStatus",
           "description": "AccessStatus is the access status of the card."
         },
-        "AmountDue": {
+        "amount_due": {
           "$ref": "#/definitions/typesAmount",
           "description": "AmountDue is the the card holder is expected to paid by the due date."
         },
-        "CreditLimit": {
+        "credit_limit": {
           "type": "string",
           "description": "CreditLimit is the allowed credit limit."
         }
@@ -475,16 +475,16 @@
     "cardCreateCardAttributeRequest": {
       "type": "object",
       "properties": {
-        "CardID": {
+        "card_id": {
           "type": "string"
         },
-        "Name": {
+        "name": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Value": {
+        "value": {
           "type": "string"
         }
       }
@@ -492,10 +492,10 @@
     "cardCreateCardAttributeResponse": {
       "type": "object",
       "properties": {
-        "AttributeID": {
+        "attribute_id": {
           "type": "string"
         },
-        "CardID": {
+        "card_id": {
           "type": "string"
         }
       }
@@ -503,23 +503,23 @@
     "cardCreateCardRequest": {
       "type": "object",
       "properties": {
-        "CardNumber": {
+        "card_number": {
           "type": "string",
           "description": "CardNumber is the unique identification number of each card."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "Account is the ID of the account associated with the card."
         },
-        "ContactNumber": {
+        "contact_number": {
           "type": "string",
           "description": "ContactNumber is the contact number of the card owner."
         },
-        "FirstName": {
+        "first_name": {
           "type": "string",
           "description": "FirstName is the first name of card owner."
         },
-        "LastName": {
+        "last_name": {
           "type": "string",
           "description": "LastName is the last name of the card owner."
         }
@@ -529,10 +529,10 @@
     "cardCreateCardResponse": {
       "type": "object",
       "properties": {
-        "CardID": {
+        "card_id": {
           "type": "string"
         },
-        "Expiry": {
+        "expiry": {
           "type": "string"
         }
       },
@@ -541,7 +541,7 @@
     "cardGetUserCardsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/cardCard"
@@ -552,16 +552,16 @@
     "cardResult": {
       "type": "object",
       "properties": {
-        "Success": {
+        "success": {
           "type": "boolean",
           "format": "boolean",
           "description": "Success is a boolean indicating the success of the operation."
         },
-        "ErrorCode": {
+        "error_code": {
           "type": "string",
           "description": "ErrorCode is the code of the error."
         },
-        "ErrorMessage": {
+        "error_message": {
           "type": "string",
           "description": "ErrorMessage is the message of the error."
         }
@@ -571,11 +571,11 @@
     "cardUpdateCardAccessStatusRequest": {
       "type": "object",
       "properties": {
-        "CardToken": {
+        "card_token": {
           "type": "string",
           "description": "CardToken is the identifier to get the card information."
         },
-        "AccessStatus": {
+        "access_status": {
           "$ref": "#/definitions/typesCardAccessStatus",
           "description": "AccessStatus is the new card access status."
         }
@@ -585,11 +585,11 @@
     "cardUpdateCardStatusRequest": {
       "type": "object",
       "properties": {
-        "CardToken": {
+        "card_token": {
           "type": "string",
           "description": "CardToken is the identifier to get the card information."
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/typesCardStatus",
           "description": "Status is the new card status."
         }
@@ -599,11 +599,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }

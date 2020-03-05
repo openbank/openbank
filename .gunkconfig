@@ -3,11 +3,13 @@ version=v3.9.1
 
 [generate go]
 plugins=grpc
+json_tag_postproc=true
 
 [generate]
 command=protoc-gen-grpc-gateway
 
 [generate swagger]
+json_names_for_fields=true
 
 [generate]
 command=docgen

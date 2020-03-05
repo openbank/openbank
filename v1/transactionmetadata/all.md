@@ -1,18 +1,20 @@
-# Transaction Metadata API v1.0.0
+Transaction Metadata API v1.0.0
+===============================
 
 Provides the access and availability to the transaction metadata API.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create a comment {#method-post-createcomment}
+Create a comment {#method-post-createcomment}
+---------------------------------------------
 
 Creates a new comment and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"comment": {
@@ -33,26 +35,27 @@ curl -X POST \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type    | Description                                            |
-|---------------|---------|--------------------------------------------------------|
-| Comment       | Comment | Comment is the comment metadata made on a transaction. |
-| BankID        | string  | BankID is the bank identifier.                         |
-| AccountID     | string  | AccountID is the account identifier.                   |
-| TransactionID | string  | TransactionID is the transaction identifier.           |
+| Name           | Type    | Description                                            |
+|----------------|---------|--------------------------------------------------------|
+| comment        | Comment | Comment is the comment metadata made on a transaction. |
+| bank_id        | string  | BankID is the bank identifier.                         |
+| account_id     | string  | AccountID is the account identifier.                   |
+| transaction_id | string  | TransactionID is the transaction identifier.           |
 
 ##### Objects
 
@@ -60,10 +63,10 @@ curl -X POST \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the image identifier.                  |
-| Value | string    | Value is the comment content/value.          |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the image identifier.                  |
+| value | string    | Value is the comment content/value.          |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ###### Timestamp
 
@@ -74,11 +77,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -86,10 +89,10 @@ curl -X POST \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the image identifier.                  |
-| Value | string    | Value is the comment content/value.          |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the image identifier.                  |
+| value | string    | Value is the comment content/value.          |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ##### Objects
 
@@ -102,11 +105,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -125,6 +128,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -136,13 +140,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a image {#method-post-createimage}
+Create a image {#method-post-createimage}
+-----------------------------------------
 
 Creates a new image and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"image": {
@@ -164,26 +169,27 @@ curl -X POST \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type   | Description                                        |
-|---------------|--------|----------------------------------------------------|
-| Image         | Image  | Image is the image metadata made on a transaction. |
-| BankID        | string | BankID is the bank identifier.                     |
-| AccountID     | string | AccountID is the account identifier.               |
-| TransactionID | string | TransactionID is the transaction identifier.       |
+| Name           | Type   | Description                                        |
+|----------------|--------|----------------------------------------------------|
+| image          | Image  | Image is the image metadata made on a transaction. |
+| bank_id        | string | BankID is the bank identifier.                     |
+| account_id     | string | AccountID is the account identifier.               |
+| transaction_id | string | TransactionID is the transaction identifier.       |
 
 ##### Objects
 
@@ -191,11 +197,11 @@ curl -X POST \
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
-| ID    | string    | ID is the image identifier.                    |
-| Label | string    | Label is the label of the image.               |
-| URL   | string    | URL is the image URL.                          |
-| Date  | Timestamp | Date is the date the image is created/updated. |
-| User  | User      | User is the user information.                  |
+| id    | string    | ID is the image identifier.                    |
+| label | string    | Label is the label of the image.               |
+| url   | string    | URL is the image URL.                          |
+| date  | Timestamp | Date is the date the image is created/updated. |
+| user  | User      | User is the user information.                  |
 
 ###### Timestamp
 
@@ -206,11 +212,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -218,11 +224,11 @@ curl -X POST \
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
-| ID    | string    | ID is the image identifier.                    |
-| Label | string    | Label is the label of the image.               |
-| URL   | string    | URL is the image URL.                          |
-| Date  | Timestamp | Date is the date the image is created/updated. |
-| User  | User      | User is the user information.                  |
+| id    | string    | ID is the image identifier.                    |
+| label | string    | Label is the label of the image.               |
+| url   | string    | URL is the image URL.                          |
+| date  | Timestamp | Date is the date the image is created/updated. |
+| user  | User      | User is the user information.                  |
 
 ##### Objects
 
@@ -235,11 +241,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -259,6 +265,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -270,13 +277,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a narrative {#method-post-createnarrative}
+Create a narrative {#method-post-createnarrative}
+-------------------------------------------------
 
 Creates a new narrative and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"narrative": {
@@ -287,26 +295,27 @@ curl -X POST \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type      | Description                                                |
-|---------------|-----------|------------------------------------------------------------|
-| Narrative     | Narrative | Narrative is the narrative metadata made on a transaction. |
-| BankID        | string    | BankID is the bank identifier.                             |
-| AccountID     | string    | AccountID is the account identifier.                       |
-| TransactionID | string    | TransactionID is the transaction identifier.               |
+| Name           | Type      | Description                                                |
+|----------------|-----------|------------------------------------------------------------|
+| narrative      | Narrative | Narrative is the narrative metadata made on a transaction. |
+| bank_id        | string    | BankID is the bank identifier.                             |
+| account_id     | string    | AccountID is the account identifier.                       |
+| transaction_id | string    | TransactionID is the transaction identifier.               |
 
 ##### Objects
 
@@ -314,7 +323,7 @@ curl -X POST \
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
-| Narrative | string | Narrative is the content of the narrative. |
+| narrative | string | Narrative is the content of the narrative. |
 
 ### Responses
 
@@ -322,7 +331,7 @@ curl -X POST \
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
-| Narrative | string | Narrative is the content of the narrative. |
+| narrative | string | Narrative is the content of the narrative. |
 
 Example:
 
@@ -331,6 +340,7 @@ Example:
   "narrative": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -342,13 +352,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a tag {#method-post-createtag}
+Create a tag {#method-post-createtag}
+-------------------------------------
 
 Creates a new tag and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"tag": {
@@ -369,26 +380,27 @@ curl -X POST \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type   | Description                                    |
-|---------------|--------|------------------------------------------------|
-| Tag           | Tag    | Tag is the tag metadata made on a transaction. |
-| BankID        | string | BankID is the bank identifier.                 |
-| AccountID     | string | AccountID is the account identifier.           |
-| TransactionID | string | TransactionID is the transaction identifier.   |
+| Name           | Type   | Description                                    |
+|----------------|--------|------------------------------------------------|
+| tag            | Tag    | Tag is the tag metadata made on a transaction. |
+| bank_id        | string | BankID is the bank identifier.                 |
+| account_id     | string | AccountID is the account identifier.           |
+| transaction_id | string | TransactionID is the transaction identifier.   |
 
 ##### Objects
 
@@ -396,10 +408,10 @@ curl -X POST \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the tag identifier.                    |
-| Value | string    | Value is the tag content/value.              |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the tag identifier.                    |
+| value | string    | Value is the tag content/value.              |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ###### Timestamp
 
@@ -410,11 +422,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -422,10 +434,10 @@ curl -X POST \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the tag identifier.                    |
-| Value | string    | Value is the tag content/value.              |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the tag identifier.                    |
+| value | string    | Value is the tag content/value.              |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ##### Objects
 
@@ -438,11 +450,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -461,6 +473,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -472,13 +485,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create a where tag {#method-post-createwheretag}
+Create a where tag {#method-post-createwheretag}
+------------------------------------------------
 
 Creates a new where tag and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"where_tag": {
@@ -501,28 +515,27 @@ curl -X POST \
 		"transaction_id": "string"
 	}'
 ```
-{{snippet createwheretag []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
+`POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type     | Description                                               |
-|---------------|----------|-----------------------------------------------------------|
-| WhereTag      | WhereTag | WhereTag is the where tag metadata made on a transaction. |
-| BankID        | string   | BankID is the bank identifier.                            |
-| AccountID     | string   | AccountID is the account identifier.                      |
-| TransactionID | string   | TransactionID is the transaction identifier.              |
+| Name           | Type     | Description                                               |
+|----------------|----------|-----------------------------------------------------------|
+| where_tag      | WhereTag | WhereTag is the where tag metadata made on a transaction. |
+| bank_id        | string   | BankID is the bank identifier.                            |
+| account_id     | string   | AccountID is the account identifier.                      |
+| transaction_id | string   | TransactionID is the transaction identifier.              |
 
 ##### Objects
 
@@ -530,16 +543,16 @@ curl -X POST \
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
-| Location | Location  | Location is the latitude and longitude information of the tag. |
-| Date     | Timestamp | Date is the date the geo information is created/updated.       |
-| User     | User      | User is the user information.                                  |
+| location | Location  | Location is the latitude and longitude information of the tag. |
+| date     | Timestamp | Date is the date the geo information is created/updated.       |
+| user     | User      | User is the user information.                                  |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ###### Timestamp
 
@@ -550,11 +563,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -562,18 +575,18 @@ curl -X POST \
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
-| Location | Location  | Location is the latitude and longitude information of the tag. |
-| Date     | Timestamp | Date is the date the geo information is created/updated.       |
-| User     | User      | User is the user information.                                  |
+| location | Location  | Location is the latitude and longitude information of the tag. |
+| date     | Timestamp | Date is the date the geo information is created/updated.       |
+| user     | User      | User is the user information.                                  |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ###### Timestamp
 
@@ -584,11 +597,11 @@ curl -X POST \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -609,6 +622,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -620,27 +634,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a comment {#method-delete-deletecomment}
+Delete a comment {#method-delete-deletecomment}
+-----------------------------------------------
 
 Permanently delete a comment.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID} \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the comment id that will be deleted.   |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| comment        | string | ID is the comment id that will be deleted.   |
 
 ### Responses
 
@@ -654,6 +670,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -665,27 +682,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a image {#method-delete-deleteimage}
+Delete a image {#method-delete-deleteimage}
+-------------------------------------------
 
 Permanently delete a image.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID} \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the image id that will be deleted.     |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| image          | string | ID is the image id that will be deleted.     |
 
 ### Responses
 
@@ -699,6 +718,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -710,27 +730,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a narrative {#method-delete-deletenarrative}
+Delete a narrative {#method-delete-deletenarrative}
+---------------------------------------------------
 
 Permanently delete a narrative.
 
 ```sh
 curl -X DELETE \
-	/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID} \
+	https:///v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}`
+`DELETE https:///v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the narrative id that will be deleted. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| narrative      | string | ID is the narrative id that will be deleted. |
 
 ### Responses
 
@@ -744,6 +766,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -755,27 +778,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a tag {#method-delete-deletetag}
+Delete a tag {#method-delete-deletetag}
+---------------------------------------
 
 Permanently delete a tag.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID} \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the tag id that will be deleted.       |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| tag            | string | ID is the tag id that will be deleted.       |
 
 ### Responses
 
@@ -789,6 +814,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -800,29 +826,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a where tag {#method-delete-deletewheretag}
+Delete a where tag {#method-delete-deletewheretag}
+--------------------------------------------------
 
 Permanently delete a where tag.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID} \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deletewheretag []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}`
+`DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the where tag id that will be deleted. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| where_tag      | string | ID is the where tag id that will be deleted. |
 
 ### Responses
 
@@ -836,6 +862,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -847,27 +874,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve comment information {#method-get-getcomment}
+Retrieve comment information {#method-get-getcomment}
+-----------------------------------------------------
 
 Retrieve information about the comment specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID} \
+	https:///v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}`
+`GET https:///v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the comment unique identifier.         |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| comment        | string | ID is the comment unique identifier.         |
 
 ### Responses
 
@@ -875,10 +904,10 @@ curl -X GET \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the image identifier.                  |
-| Value | string    | Value is the comment content/value.          |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the image identifier.                  |
+| value | string    | Value is the comment content/value.          |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ##### Objects
 
@@ -891,11 +920,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -914,6 +943,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -926,37 +956,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available comments {#method-get-getcomments}
+Retrieve all available comments {#method-get-getcomments}
+---------------------------------------------------------
 
 Retrieve information regarding all available comments.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name          | Type      | Description                                  |
-|---------------|-----------|----------------------------------------------|
-| Comments      | []Comment | Comments is the list of comments.            |
-| BankID        | string    | BankID is the bank identifier.               |
-| AccountID     | string    | AccountID is the account identifier.         |
-| TransactionID | string    | TransactionID is the transaction identifier. |
+| Name           | Type       | Description                                  |
+|----------------|------------|----------------------------------------------|
+| comments       | \[]Comment | Comments is the list of comments.            |
+| bank_id        | string     | BankID is the bank identifier.               |
+| account_id     | string     | AccountID is the account identifier.         |
+| transaction_id | string     | TransactionID is the transaction identifier. |
 
 ##### Objects
 
@@ -964,10 +996,10 @@ curl -X GET \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the image identifier.                  |
-| Value | string    | Value is the comment content/value.          |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the image identifier.                  |
+| value | string    | Value is the comment content/value.          |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ###### Timestamp
 
@@ -978,11 +1010,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1008,6 +1040,7 @@ Example:
   "transaction_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1020,27 +1053,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve image information {#method-get-getimage}
+Retrieve image information {#method-get-getimage}
+-------------------------------------------------
 
 Retrieve information about the image specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID} \
+	https:///v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}`
+`GET https:///v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the image unique identifier.           |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| image          | string | ID is the image unique identifier.           |
 
 ### Responses
 
@@ -1048,11 +1083,11 @@ curl -X GET \
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
-| ID    | string    | ID is the image identifier.                    |
-| Label | string    | Label is the label of the image.               |
-| URL   | string    | URL is the image URL.                          |
-| Date  | Timestamp | Date is the date the image is created/updated. |
-| User  | User      | User is the user information.                  |
+| id    | string    | ID is the image identifier.                    |
+| label | string    | Label is the label of the image.               |
+| url   | string    | URL is the image URL.                          |
+| date  | Timestamp | Date is the date the image is created/updated. |
+| user  | User      | User is the user information.                  |
 
 ##### Objects
 
@@ -1065,11 +1100,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1089,6 +1124,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1101,37 +1137,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available images {#method-get-getimages}
+Retrieve all available images {#method-get-getimages}
+-----------------------------------------------------
 
 Retrieve information regarding all available images.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name          | Type    | Description                                  |
-|---------------|---------|----------------------------------------------|
-| Images        | []Image | Images is the list of images.                |
-| BankID        | string  | BankID is the bank identifier.               |
-| AccountID     | string  | AccountID is the account identifier.         |
-| TransactionID | string  | TransactionID is the transaction identifier. |
+| Name           | Type     | Description                                  |
+|----------------|----------|----------------------------------------------|
+| images         | \[]Image | Images is the list of images.                |
+| bank_id        | string   | BankID is the bank identifier.               |
+| account_id     | string   | AccountID is the account identifier.         |
+| transaction_id | string   | TransactionID is the transaction identifier. |
 
 ##### Objects
 
@@ -1139,11 +1177,11 @@ curl -X GET \
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
-| ID    | string    | ID is the image identifier.                    |
-| Label | string    | Label is the label of the image.               |
-| URL   | string    | URL is the image URL.                          |
-| Date  | Timestamp | Date is the date the image is created/updated. |
-| User  | User      | User is the user information.                  |
+| id    | string    | ID is the image identifier.                    |
+| label | string    | Label is the label of the image.               |
+| url   | string    | URL is the image URL.                          |
+| date  | Timestamp | Date is the date the image is created/updated. |
+| user  | User      | User is the user information.                  |
 
 ###### Timestamp
 
@@ -1154,11 +1192,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1185,6 +1223,7 @@ Example:
   "transaction_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1197,27 +1236,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve narrative information {#method-get-getnarrative}
+Retrieve narrative information {#method-get-getnarrative}
+---------------------------------------------------------
 
 Retrieve information about the narrative specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID} \
+	https:///v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}`
+`GET https:///v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the narrative unique identifier.       |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| narrative      | string | ID is the narrative unique identifier.       |
 
 ### Responses
 
@@ -1225,7 +1266,7 @@ curl -X GET \
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
-| Narrative | string | Narrative is the content of the narrative. |
+| narrative | string | Narrative is the content of the narrative. |
 
 Example:
 
@@ -1234,6 +1275,7 @@ Example:
   "narrative": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1246,37 +1288,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available narratives {#method-get-getnarratives}
+Retrieve all available narratives {#method-get-getnarratives}
+-------------------------------------------------------------
 
 Retrieve information regarding all available narratives.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name          | Type        | Description                                  |
-|---------------|-------------|----------------------------------------------|
-| Narratives    | []Narrative | Narratives is the list of narratives.        |
-| BankID        | string      | BankID is the bank identifier.               |
-| AccountID     | string      | AccountID is the account identifier.         |
-| TransactionID | string      | TransactionID is the transaction identifier. |
+| Name           | Type         | Description                                  |
+|----------------|--------------|----------------------------------------------|
+| narratives     | \[]Narrative | Narratives is the list of narratives.        |
+| bank_id        | string       | BankID is the bank identifier.               |
+| account_id     | string       | AccountID is the account identifier.         |
+| transaction_id | string       | TransactionID is the transaction identifier. |
 
 ##### Objects
 
@@ -1284,7 +1328,7 @@ curl -X GET \
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
-| Narrative | string | Narrative is the content of the narrative. |
+| narrative | string | Narrative is the content of the narrative. |
 
 Example:
 
@@ -1300,6 +1344,7 @@ Example:
   "transaction_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1312,27 +1357,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve tag information {#method-get-gettag}
+Retrieve tag information {#method-get-gettag}
+---------------------------------------------
 
 Retrieve information about the tag specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID} \
+	https:///v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}`
+`GET https:///v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the tag unique identifier.             |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| tag            | string | ID is the tag unique identifier.             |
 
 ### Responses
 
@@ -1340,10 +1387,10 @@ curl -X GET \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the tag identifier.                    |
-| Value | string    | Value is the tag content/value.              |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the tag identifier.                    |
+| value | string    | Value is the tag content/value.              |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ##### Objects
 
@@ -1356,11 +1403,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1379,6 +1426,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1391,37 +1439,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available tags {#method-get-gettags}
+Retrieve all available tags {#method-get-gettags}
+-------------------------------------------------
 
 Retrieve information regarding all available tags.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| Tags          | []Tag  | Tags is the list of tags.                    |
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| tags           | \[]Tag | Tags is the list of tags.                    |
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ##### Objects
 
@@ -1429,10 +1479,10 @@ curl -X GET \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the tag identifier.                    |
-| Value | string    | Value is the tag content/value.              |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the tag identifier.                    |
+| value | string    | Value is the tag content/value.              |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ###### Timestamp
 
@@ -1443,11 +1493,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1473,6 +1523,7 @@ Example:
   "transaction_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1485,29 +1536,29 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve where tag information {#method-get-getwheretag}
+Retrieve where tag information {#method-get-getwheretag}
+--------------------------------------------------------
 
 Retrieve information about the where tag specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID} \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getwheretag []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
-| ID            | string | ID is the where tag unique identifier.       |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
+| where_tag      | string | ID is the where tag unique identifier.       |
 
 ### Responses
 
@@ -1515,18 +1566,18 @@ curl -X GET \
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
-| Location | Location  | Location is the latitude and longitude information of the tag. |
-| Date     | Timestamp | Date is the date the geo information is created/updated.       |
-| User     | User      | User is the user information.                                  |
+| location | Location  | Location is the latitude and longitude information of the tag. |
+| date     | Timestamp | Date is the date the geo information is created/updated.       |
+| user     | User      | User is the user information.                                  |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ###### Timestamp
 
@@ -1537,11 +1588,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1562,6 +1613,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1574,39 +1626,39 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available where tags {#method-get-getwheretags}
+Retrieve all available where tags {#method-get-getwheretags}
+------------------------------------------------------------
 
 Retrieve information regarding all available where tags.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getwheretags []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
+`GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name          | Type       | Description                                  |
-|---------------|------------|----------------------------------------------|
-| WhereTags     | []WhereTag | WhereTags is the list of where tags.         |
-| BankID        | string     | BankID is the bank identifier.               |
-| AccountID     | string     | AccountID is the account identifier.         |
-| TransactionID | string     | TransactionID is the transaction identifier. |
+| Name           | Type        | Description                                  |
+|----------------|-------------|----------------------------------------------|
+| where_tags     | \[]WhereTag | WhereTags is the list of where tags.         |
+| bank_id        | string      | BankID is the bank identifier.               |
+| account_id     | string      | AccountID is the account identifier.         |
+| transaction_id | string      | TransactionID is the transaction identifier. |
 
 ##### Objects
 
@@ -1614,16 +1666,16 @@ curl -X GET \
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
-| Location | Location  | Location is the latitude and longitude information of the tag. |
-| Date     | Timestamp | Date is the date the geo information is created/updated.       |
-| User     | User      | User is the user information.                                  |
+| location | Location  | Location is the latitude and longitude information of the tag. |
+| date     | Timestamp | Date is the date the geo information is created/updated.       |
+| user     | User      | User is the user information.                                  |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ###### Timestamp
 
@@ -1634,11 +1686,11 @@ curl -X GET \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1666,6 +1718,7 @@ Example:
   "transaction_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1678,13 +1731,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a comment {#method-put-updatecomment}
+Update a comment {#method-put-updatecomment}
+--------------------------------------------
 
 Updates a comment's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"comment": {
@@ -1705,26 +1759,27 @@ curl -X PUT \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type    | Description                                            |
-|---------------|---------|--------------------------------------------------------|
-| Comment       | Comment | Comment is the comment metadata made on a transaction. |
-| BankID        | string  | BankID is the bank identifier.                         |
-| AccountID     | string  | AccountID is the account identifier.                   |
-| TransactionID | string  | TransactionID is the transaction identifier.           |
+| Name           | Type    | Description                                            |
+|----------------|---------|--------------------------------------------------------|
+| comment        | Comment | Comment is the comment metadata made on a transaction. |
+| bank_id        | string  | BankID is the bank identifier.                         |
+| account_id     | string  | AccountID is the account identifier.                   |
+| transaction_id | string  | TransactionID is the transaction identifier.           |
 
 ##### Objects
 
@@ -1732,10 +1787,10 @@ curl -X PUT \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the image identifier.                  |
-| Value | string    | Value is the comment content/value.          |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the image identifier.                  |
+| value | string    | Value is the comment content/value.          |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ###### Timestamp
 
@@ -1746,11 +1801,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -1758,10 +1813,10 @@ curl -X PUT \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the image identifier.                  |
-| Value | string    | Value is the comment content/value.          |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the image identifier.                  |
+| value | string    | Value is the comment content/value.          |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ##### Objects
 
@@ -1774,11 +1829,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1797,6 +1852,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1808,13 +1864,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a image {#method-put-updateimage}
+Update a image {#method-put-updateimage}
+----------------------------------------
 
 Updates a image's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"image": {
@@ -1836,26 +1893,27 @@ curl -X PUT \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type   | Description                                        |
-|---------------|--------|----------------------------------------------------|
-| Image         | Image  | Image is the image metadata made on a transaction. |
-| BankID        | string | BankID is the bank identifier.                     |
-| AccountID     | string | AccountID is the account identifier.               |
-| TransactionID | string | TransactionID is the transaction identifier.       |
+| Name           | Type   | Description                                        |
+|----------------|--------|----------------------------------------------------|
+| image          | Image  | Image is the image metadata made on a transaction. |
+| bank_id        | string | BankID is the bank identifier.                     |
+| account_id     | string | AccountID is the account identifier.               |
+| transaction_id | string | TransactionID is the transaction identifier.       |
 
 ##### Objects
 
@@ -1863,11 +1921,11 @@ curl -X PUT \
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
-| ID    | string    | ID is the image identifier.                    |
-| Label | string    | Label is the label of the image.               |
-| URL   | string    | URL is the image URL.                          |
-| Date  | Timestamp | Date is the date the image is created/updated. |
-| User  | User      | User is the user information.                  |
+| id    | string    | ID is the image identifier.                    |
+| label | string    | Label is the label of the image.               |
+| url   | string    | URL is the image URL.                          |
+| date  | Timestamp | Date is the date the image is created/updated. |
+| user  | User      | User is the user information.                  |
 
 ###### Timestamp
 
@@ -1878,11 +1936,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -1890,11 +1948,11 @@ curl -X PUT \
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
-| ID    | string    | ID is the image identifier.                    |
-| Label | string    | Label is the label of the image.               |
-| URL   | string    | URL is the image URL.                          |
-| Date  | Timestamp | Date is the date the image is created/updated. |
-| User  | User      | User is the user information.                  |
+| id    | string    | ID is the image identifier.                    |
+| label | string    | Label is the label of the image.               |
+| url   | string    | URL is the image URL.                          |
+| date  | Timestamp | Date is the date the image is created/updated. |
+| user  | User      | User is the user information.                  |
 
 ##### Objects
 
@@ -1907,11 +1965,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -1931,6 +1989,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -1942,13 +2001,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a narrative {#method-put-updatenarrative}
+Update a narrative {#method-put-updatenarrative}
+------------------------------------------------
 
 Updates a narrative's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"narrative": {
@@ -1959,26 +2019,27 @@ curl -X PUT \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type      | Description                                                |
-|---------------|-----------|------------------------------------------------------------|
-| Narrative     | Narrative | Narrative is the narrative metadata made on a transaction. |
-| BankID        | string    | BankID is the bank identifier.                             |
-| AccountID     | string    | AccountID is the account identifier.                       |
-| TransactionID | string    | TransactionID is the transaction identifier.               |
+| Name           | Type      | Description                                                |
+|----------------|-----------|------------------------------------------------------------|
+| narrative      | Narrative | Narrative is the narrative metadata made on a transaction. |
+| bank_id        | string    | BankID is the bank identifier.                             |
+| account_id     | string    | AccountID is the account identifier.                       |
+| transaction_id | string    | TransactionID is the transaction identifier.               |
 
 ##### Objects
 
@@ -1986,7 +2047,7 @@ curl -X PUT \
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
-| Narrative | string | Narrative is the content of the narrative. |
+| narrative | string | Narrative is the content of the narrative. |
 
 ### Responses
 
@@ -1994,7 +2055,7 @@ curl -X PUT \
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
-| Narrative | string | Narrative is the content of the narrative. |
+| narrative | string | Narrative is the content of the narrative. |
 
 Example:
 
@@ -2003,6 +2064,7 @@ Example:
   "narrative": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2014,13 +2076,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a tag {#method-put-updatetag}
+Update a tag {#method-put-updatetag}
+------------------------------------
 
 Updates a tag's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"tag": {
@@ -2041,26 +2104,27 @@ curl -X PUT \
 		"transaction_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type   | Description                                    |
-|---------------|--------|------------------------------------------------|
-| Tag           | Tag    | Tag is the tag metadata made on a transaction. |
-| BankID        | string | BankID is the bank identifier.                 |
-| AccountID     | string | AccountID is the account identifier.           |
-| TransactionID | string | TransactionID is the transaction identifier.   |
+| Name           | Type   | Description                                    |
+|----------------|--------|------------------------------------------------|
+| tag            | Tag    | Tag is the tag metadata made on a transaction. |
+| bank_id        | string | BankID is the bank identifier.                 |
+| account_id     | string | AccountID is the account identifier.           |
+| transaction_id | string | TransactionID is the transaction identifier.   |
 
 ##### Objects
 
@@ -2068,10 +2132,10 @@ curl -X PUT \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the tag identifier.                    |
-| Value | string    | Value is the tag content/value.              |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the tag identifier.                    |
+| value | string    | Value is the tag content/value.              |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ###### Timestamp
 
@@ -2082,11 +2146,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -2094,10 +2158,10 @@ curl -X PUT \
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
-| ID    | string    | ID is the tag identifier.                    |
-| Value | string    | Value is the tag content/value.              |
-| Date  | Timestamp | Date is the date the tag is created/updated. |
-| User  | User      | User is the user information.                |
+| id    | string    | ID is the tag identifier.                    |
+| value | string    | Value is the tag content/value.              |
+| date  | Timestamp | Date is the date the tag is created/updated. |
+| user  | User      | User is the user information.                |
 
 ##### Objects
 
@@ -2110,11 +2174,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -2133,6 +2197,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -2144,13 +2209,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a where tag {#method-put-updatewheretag}
+Update a where tag {#method-put-updatewheretag}
+-----------------------------------------------
 
 Updates a where tag's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags \
+	https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"where_tag": {
@@ -2173,28 +2239,27 @@ curl -X PUT \
 		"transaction_id": "string"
 	}'
 ```
-{{snippet updatewheretag []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
+`PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
 
 ### Query Parameters
 
-| Name          | Type   | Description                                  |
-|---------------|--------|----------------------------------------------|
-| BankID        | string | BankID is the bank identifier.               |
-| AccountID     | string | AccountID is the account identifier.         |
-| TransactionID | string | TransactionID is the transaction identifier. |
+| Name           | Type   | Description                                  |
+|----------------|--------|----------------------------------------------|
+| bank_id        | string | BankID is the bank identifier.               |
+| account_id     | string | AccountID is the account identifier.         |
+| transaction_id | string | TransactionID is the transaction identifier. |
 
 ### Body Parameters
 
-| Name          | Type     | Description                                               |
-|---------------|----------|-----------------------------------------------------------|
-| WhereTag      | WhereTag | WhereTag is the where tag metadata made on a transaction. |
-| BankID        | string   | BankID is the bank identifier.                            |
-| AccountID     | string   | AccountID is the account identifier.                      |
-| TransactionID | string   | TransactionID is the transaction identifier.              |
+| Name           | Type     | Description                                               |
+|----------------|----------|-----------------------------------------------------------|
+| where_tag      | WhereTag | WhereTag is the where tag metadata made on a transaction. |
+| bank_id        | string   | BankID is the bank identifier.                            |
+| account_id     | string   | AccountID is the account identifier.                      |
+| transaction_id | string   | TransactionID is the transaction identifier.              |
 
 ##### Objects
 
@@ -2202,16 +2267,16 @@ curl -X PUT \
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
-| Location | Location  | Location is the latitude and longitude information of the tag. |
-| Date     | Timestamp | Date is the date the geo information is created/updated.       |
-| User     | User      | User is the user information.                                  |
+| location | Location  | Location is the latitude and longitude information of the tag. |
+| date     | Timestamp | Date is the date the geo information is created/updated.       |
+| user     | User      | User is the user information.                                  |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ###### Timestamp
 
@@ -2222,11 +2287,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 ### Responses
 
@@ -2234,18 +2299,18 @@ curl -X PUT \
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
-| Location | Location  | Location is the latitude and longitude information of the tag. |
-| Date     | Timestamp | Date is the date the geo information is created/updated.       |
-| User     | User      | User is the user information.                                  |
+| location | Location  | Location is the latitude and longitude information of the tag. |
+| date     | Timestamp | Date is the date the geo information is created/updated.       |
+| user     | User      | User is the user information.                                  |
 
 ##### Objects
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ###### Timestamp
 
@@ -2256,11 +2321,11 @@ curl -X PUT \
 
 ###### User
 
-| Name        | Type   | Description                             |
-|-------------|--------|-----------------------------------------|
-| ID          | string | ID is the user identifier.              |
-| Provider    | string | Provider is the provider of the user.   |
-| DisplayName | string | DisplayName is the user's display name. |
+| Name         | Type   | Description                             |
+|--------------|--------|-----------------------------------------|
+| id           | string | ID is the user identifier.              |
+| provider     | string | Provider is the provider of the user.   |
+| display_name | string | DisplayName is the user's display name. |
 
 Example:
 
@@ -2281,6 +2346,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types": {
       "get": {
         "summary": "Retrieve transaction types",
         "description": "Retrieves list of transaction request types for an account_id",
@@ -50,13 +50,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -74,7 +74,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/ACCOUNT/transactionrequest": {
       "post": {
         "summary": "Create an account transaction request",
         "description": "Creates a new account transaction request",
@@ -115,13 +115,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -147,7 +147,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest": {
       "post": {
         "summary": "Create an account otp transaction request",
         "description": "Creates a new account otp transaction request",
@@ -188,13 +188,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -220,7 +220,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/COUNTERPARTY/transactionrequest": {
       "post": {
         "summary": "Create an counter party transaction request",
         "description": "Creates a new counter party transaction request",
@@ -261,13 +261,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -293,7 +293,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/FREE_FORM/transactionrequest": {
       "post": {
         "summary": "Create an free form transaction request",
         "description": "Creates a new free form transaction request",
@@ -334,13 +334,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -366,7 +366,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/SEPA/transactionrequest": {
       "post": {
         "summary": "Create an sepa transaction request",
         "description": "Creates a new sepa transaction request",
@@ -407,13 +407,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -439,7 +439,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/{transactionRequestType}/transactionrequest/{transactionRequestID}/challenge": {
       "post": {
         "summary": "Answer the transaction reqeust challenge",
         "description": "Answer the transaction request challenge",
@@ -480,25 +480,25 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionRequestType",
+            "name": "transactionRequestType",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TransactionRequestID",
+            "name": "transactionRequestID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -524,7 +524,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/transactionrequests": {
+    "/v1/banks/{bankID}/accounts/{accountID}/transactionrequests": {
       "get": {
         "summary": "Retrieve transaction requests",
         "description": "Retrieves list of transaction requests for an account_id",
@@ -559,13 +559,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -583,7 +583,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/transaction-request-types": {
+    "/v1/banks/{bankID}/transaction-request-types": {
       "get": {
         "summary": "Retrieve transaction types",
         "description": "Retrieves list of transaction request types",
@@ -618,7 +618,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -702,22 +702,22 @@
     "transactionrequestAnswerTransactionRequestChallengeRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "AccountID": {
+        "account_id": {
           "type": "string"
         },
-        "TransactionRequestType": {
+        "transaction_request_type": {
           "type": "string"
         },
-        "TransactionRequestID": {
+        "transaction_request_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Answer": {
+        "answer": {
           "type": "string"
         }
       }
@@ -725,36 +725,36 @@
     "transactionrequestAnswerTransactionRequestChallengeResponse": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "From": {
+        "from": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "Details": {
+        "details": {
           "$ref": "#/definitions/transactionrequestChallengeDetails"
         },
-        "TransactionIds": {
+        "transaction_ids": {
           "type": "string"
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "StartDate": {
+        "start_date": {
           "type": "string",
           "format": "date-time"
         },
-        "EndDate": {
+        "end_date": {
           "type": "string",
           "format": "date-time"
         },
-        "Challenge": {
+        "challenge": {
           "$ref": "#/definitions/transactionrequestChallenge"
         },
-        "Charge": {
+        "charge": {
           "$ref": "#/definitions/transactionrequestCharge"
         }
       }
@@ -762,10 +762,10 @@
     "transactionrequestBankAccount": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "AccountID": {
+        "account_id": {
           "type": "string"
         }
       }
@@ -773,14 +773,14 @@
     "transactionrequestChallenge": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "AllowedAttempts": {
+        "allowed_attempts": {
           "type": "integer",
           "format": "int32"
         },
-        "ChallengeType": {
+        "challenge_type": {
           "type": "string"
         }
       }
@@ -788,13 +788,13 @@
     "transactionrequestChallengeDetails": {
       "type": "object",
       "properties": {
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         }
       }
@@ -802,10 +802,10 @@
     "transactionrequestCharge": {
       "type": "object",
       "properties": {
-        "Summary": {
+        "summary": {
           "type": "string"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         }
       }
@@ -813,25 +813,25 @@
     "transactionrequestCounterPartyTransactionRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "AccountID": {
+        "account_id": {
           "type": "string"
         },
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestToCounterparty"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "ChargePolicy": {
+        "charge_policy": {
           "type": "string"
         },
-        "FutureDate": {
+        "future_date": {
           "type": "string"
         }
       }
@@ -839,7 +839,7 @@
     "transactionrequestCreditorAccount": {
       "type": "object",
       "properties": {
-        "Iban": {
+        "iban": {
           "type": "string"
         }
       }
@@ -847,7 +847,7 @@
     "transactionrequestDebtorAccount": {
       "type": "object",
       "properties": {
-        "Iban": {
+        "iban": {
           "type": "string"
         }
       }
@@ -855,31 +855,31 @@
     "transactionrequestDetails": {
       "type": "object",
       "properties": {
-        "ToSandboxTan": {
+        "to_sandbox_tan": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "ToSepa": {
+        "to_sepa": {
           "$ref": "#/definitions/transactionrequestToSepa"
         },
-        "ToCounterparty": {
+        "to_counterparty": {
           "$ref": "#/definitions/transactionrequestToCounterparty"
         },
-        "ToTransferToPhone": {
+        "to_transfer_to_phone": {
           "$ref": "#/definitions/transactionrequestToTransferToPhone"
         },
-        "ToTransferToAtm": {
+        "to_transfer_to_atm": {
           "$ref": "#/definitions/transactionrequestToTransferToAtm"
         },
-        "ToTransferToAccount": {
+        "to_transfer_to_account": {
           "$ref": "#/definitions/transactionrequestToTransferToAccount"
         },
-        "ToSepaCreditTransfers": {
+        "to_sepa_credit_transfers": {
           "$ref": "#/definitions/transactionrequestToSepaCreditTransfers"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         }
       }
@@ -887,16 +887,16 @@
     "transactionrequestFreeFormTransactionRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "AccountID": {
+        "account_id": {
           "type": "string"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         }
       }
@@ -904,10 +904,10 @@
     "transactionrequestFromPhone": {
       "type": "object",
       "properties": {
-        "MobilePhoneNumber": {
+        "mobile_phone_number": {
           "type": "string"
         },
-        "Nickname": {
+        "nickname": {
           "type": "string"
         }
       }
@@ -915,7 +915,7 @@
     "transactionrequestGetSupportedTransactionRequestTypesResponse": {
       "type": "object",
       "properties": {
-        "TransactionRequestTypes": {
+        "transaction_request_types": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionrequestTransactionRequestType"
@@ -926,7 +926,7 @@
     "transactionrequestGetTransactionRequestTypesResponse": {
       "type": "object",
       "properties": {
-        "TransactionRequestTypes": {
+        "transaction_request_types": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionrequestTransactionRequestType"
@@ -937,7 +937,7 @@
     "transactionrequestGetTransactionRequestsResponse": {
       "type": "object",
       "properties": {
-        "TransactionRequestsWithCharges": {
+        "transaction_requests_with_charges": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionrequestTransactionRequestsWithCharges"
@@ -948,30 +948,30 @@
     "transactionrequestHistoricTransaction": {
       "type": "object",
       "properties": {
-        "From": {
+        "from": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "Posted": {
+        "posted": {
           "type": "string",
           "format": "date-time"
         },
-        "Completed": {
+        "completed": {
           "type": "string",
           "format": "date-time"
         },
-        "TransactionRequestType": {
+        "transaction_request_type": {
           "type": "string"
         },
-        "ChargePolicy": {
+        "charge_policy": {
           "type": "string"
         }
       }
@@ -979,10 +979,10 @@
     "transactionrequestKycDocument": {
       "type": "object",
       "properties": {
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Number": {
+        "number": {
           "type": "string"
         }
       }
@@ -990,25 +990,25 @@
     "transactionrequestSEPATransactionRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "AccountID": {
+        "account_id": {
           "type": "string"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestToSepa"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "ChargePolicy": {
+        "charge_policy": {
           "type": "string"
         },
-        "FutureDate": {
+        "future_date": {
           "type": "string"
         }
       }
@@ -1016,16 +1016,16 @@
     "transactionrequestTo": {
       "type": "object",
       "properties": {
-        "LegalName": {
+        "legal_name": {
           "type": "string"
         },
-        "DateOfBirth": {
+        "date_of_birth": {
           "type": "string"
         },
-        "MobilePhoneNumber": {
+        "mobile_phone_number": {
           "type": "string"
         },
-        "KycDocument": {
+        "kyc_document": {
           "$ref": "#/definitions/transactionrequestKycDocument"
         }
       }
@@ -1033,7 +1033,7 @@
     "transactionrequestToCounterparty": {
       "type": "object",
       "properties": {
-        "CounterpartyID": {
+        "counterparty_id": {
           "type": "string"
         }
       }
@@ -1041,7 +1041,7 @@
     "transactionrequestToPhone": {
       "type": "object",
       "properties": {
-        "MobilePhoneNumber": {
+        "mobile_phone_number": {
           "type": "string"
         }
       }
@@ -1049,7 +1049,7 @@
     "transactionrequestToSepa": {
       "type": "object",
       "properties": {
-        "Iban": {
+        "iban": {
           "type": "string"
         }
       }
@@ -1057,16 +1057,16 @@
     "transactionrequestToSepaCreditTransfers": {
       "type": "object",
       "properties": {
-        "DebtorAccount": {
+        "debtor_account": {
           "$ref": "#/definitions/transactionrequestDebtorAccount"
         },
-        "InstructedAmount": {
+        "instructed_amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "CreditorAccount": {
+        "creditor_account": {
           "$ref": "#/definitions/transactionrequestCreditorAccount"
         },
-        "CreditorName": {
+        "creditor_name": {
           "type": "string"
         }
       }
@@ -1074,19 +1074,19 @@
     "transactionrequestToTransferToAccount": {
       "type": "object",
       "properties": {
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "TransferType": {
+        "transfer_type": {
           "type": "string"
         },
-        "FutureDate": {
+        "future_date": {
           "type": "string"
         },
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestTo"
         }
       }
@@ -1094,19 +1094,19 @@
     "transactionrequestToTransferToAtm": {
       "type": "object",
       "properties": {
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "Message": {
+        "message": {
           "type": "string"
         },
-        "From": {
+        "from": {
           "$ref": "#/definitions/transactionrequestFromPhone"
         },
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestToPhone"
         }
       }
@@ -1114,19 +1114,19 @@
     "transactionrequestToTransferToPhone": {
       "type": "object",
       "properties": {
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "Message": {
+        "message": {
           "type": "string"
         },
-        "From": {
+        "from": {
           "$ref": "#/definitions/transactionrequestFromPhone"
         },
-        "To": {
+        "to": {
           "$ref": "#/definitions/transactionrequestToPhone"
         }
       }
@@ -1134,19 +1134,19 @@
     "transactionrequestTransactionRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "AccountID": {
+        "account_id": {
           "type": "string"
         },
-        "To": {
+        "to_bank": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount"
         },
-        "Description": {
+        "description": {
           "type": "string"
         }
       }
@@ -1154,10 +1154,10 @@
     "transactionrequestTransactionRequestType": {
       "type": "object",
       "properties": {
-        "Value": {
+        "value": {
           "type": "string"
         },
-        "Charge": {
+        "charge": {
           "$ref": "#/definitions/transactionrequestCharge"
         }
       }
@@ -1165,39 +1165,39 @@
     "transactionrequestTransactionRequestsWithCharges": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "From": {
+        "from": {
           "$ref": "#/definitions/transactionrequestFromPhone"
         },
-        "Details": {
+        "details": {
           "$ref": "#/definitions/transactionrequestDetails"
         },
-        "TransactionIds": {
+        "transaction_ids": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "StartDate": {
+        "start_date": {
           "type": "string",
           "format": "date-time"
         },
-        "EndDate": {
+        "end_date": {
           "type": "string",
           "format": "date-time"
         },
-        "Challenge": {
+        "challenge": {
           "$ref": "#/definitions/transactionrequestChallenge"
         },
-        "Charge": {
+        "charge": {
           "$ref": "#/definitions/transactionrequestCharge"
         }
       }
@@ -1205,39 +1205,39 @@
     "transactionrequestTransactionResponse": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "From": {
+        "from": {
           "$ref": "#/definitions/transactionrequestBankAccount"
         },
-        "Details": {
+        "details": {
           "$ref": "#/definitions/transactionrequestDetails"
         },
-        "TransactionIds": {
+        "transaction_ids": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "StartDate": {
+        "start_date": {
           "type": "string",
           "format": "date-time"
         },
-        "EndDate": {
+        "end_date": {
           "type": "string",
           "format": "date-time"
         },
-        "Challenge": {
+        "challenge": {
           "$ref": "#/definitions/transactionrequestChallenge"
         },
-        "Charge": {
+        "charge": {
           "$ref": "#/definitions/transactionrequestCharge"
         }
       }
@@ -1245,11 +1245,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }

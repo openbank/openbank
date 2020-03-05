@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/products": {
+    "/v1/banks/{bankID}/products": {
       "get": {
         "summary": "Retrieve all available products",
         "description": "Retrieve information regarding all available products.",
@@ -50,7 +50,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -68,7 +68,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/products/{ProductCode}": {
+    "/v1/banks/{bankID}/products/{productCode}": {
       "get": {
         "summary": "Retrieve product information",
         "description": "Retrieve information about the product specified by the ID",
@@ -103,13 +103,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
@@ -164,13 +164,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
@@ -227,13 +227,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
@@ -298,13 +298,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
@@ -330,7 +330,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}": {
+    "/v1/banks/{bankID}/products/{productCode}/attributes/{productAttributeID}": {
       "get": {
         "summary": "Retrieve product attribute information",
         "description": "Retrieve information about the product specified by the ID",
@@ -365,19 +365,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductAttributeID",
+            "name": "productAttributeID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -432,19 +432,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductAttributeID",
+            "name": "productAttributeID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -501,19 +501,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductAttributeID",
+            "name": "productAttributeID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -578,19 +578,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductCode",
+            "name": "productCode",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "ProductAttributeID",
+            "name": "productAttributeID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -632,16 +632,16 @@
     "productCreateProductAttributeRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "ProductAttributeID": {
+        "product_attribute_id": {
           "type": "string"
         },
-        "ProductAttribute": {
+        "product_attribute": {
           "$ref": "#/definitions/productProductAttribute"
         }
       }
@@ -649,13 +649,13 @@
     "productCreateProductRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "Product": {
+        "product": {
           "$ref": "#/definitions/productProduct"
         }
       }
@@ -663,7 +663,7 @@
     "productGetProductsResponse": {
       "type": "object",
       "properties": {
-        "Products": {
+        "products": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/productProduct"
@@ -674,7 +674,7 @@
     "productMetadata": {
       "type": "object",
       "properties": {
-        "License": {
+        "license": {
           "type": "string"
         }
       }
@@ -682,40 +682,40 @@
     "productProduct": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "Code": {
+        "code": {
           "type": "string"
         },
-        "ParentProductCode": {
+        "parent_product_code": {
           "type": "string"
         },
-        "Name": {
+        "name": {
           "type": "string"
         },
-        "Category": {
+        "category": {
           "type": "string"
         },
-        "Family": {
+        "family": {
           "type": "string"
         },
-        "SuperFamily": {
+        "super_family": {
           "type": "string"
         },
-        "MoreInfoURL": {
+        "more_info_url": {
           "type": "string"
         },
-        "Details": {
+        "details": {
           "type": "string"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "Meta": {
+        "meta": {
           "$ref": "#/definitions/productMetadata"
         },
-        "ProductAttributes": {
+        "product_attributes": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/productProductAttribute"
@@ -726,19 +726,19 @@
     "productProductAttribute": {
       "type": "object",
       "properties": {
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "ProductAttributeID": {
+        "product_attribute_id": {
           "type": "string"
         },
-        "Name": {
+        "name": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "$ref": "#/definitions/productAttributeType"
         },
-        "Value": {
+        "value": {
           "type": "string"
         }
       }
@@ -746,16 +746,16 @@
     "productUpdateProductAttributeRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "ProductAttributeID": {
+        "product_attribute_id": {
           "type": "string"
         },
-        "ProductAttribute": {
+        "product_attribute": {
           "$ref": "#/definitions/productProductAttribute"
         }
       }
@@ -763,13 +763,13 @@
     "productUpdateProductRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "ProductCode": {
+        "product_code": {
           "type": "string"
         },
-        "Product": {
+        "product": {
           "$ref": "#/definitions/productProduct"
         }
       }

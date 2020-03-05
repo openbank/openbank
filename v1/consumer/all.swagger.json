@@ -60,7 +60,7 @@
         ]
       }
     },
-    "/v1/management/consumers/{ConsumerID}": {
+    "/v1/management/consumers/{consumerID}": {
       "get": {
         "summary": "Get consumer",
         "description": "Returns consumer data by it's ID",
@@ -95,7 +95,7 @@
         },
         "parameters": [
           {
-            "name": "ConsumerID",
+            "name": "consumerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -146,7 +146,7 @@
         },
         "parameters": [
           {
-            "name": "ConsumerID",
+            "name": "consumerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -172,7 +172,7 @@
         ]
       }
     },
-    "/v1/management/consumers/{ConsumerID}/consumer/call-limits": {
+    "/v1/management/consumers/{consumerID}/consumer/call-limits": {
       "get": {
         "summary": "Get consumer call lists",
         "description": "Returns a list up to 20 consumer call limits data.",
@@ -207,7 +207,7 @@
         },
         "parameters": [
           {
-            "name": "ConsumerID",
+            "name": "consumerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -258,7 +258,7 @@
         },
         "parameters": [
           {
-            "name": "ConsumerID",
+            "name": "consumerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -284,7 +284,7 @@
         ]
       }
     },
-    "/v1/management/consumers/{ConsumerID}/consumer/redirect_url": {
+    "/v1/management/consumers/{consumerID}/consumer/redirect_url": {
       "put": {
         "summary": "Set consumer redirect url.",
         "description": "Set consumer redirect url.",
@@ -319,7 +319,7 @@
         },
         "parameters": [
           {
-            "name": "ConsumerID",
+            "name": "consumerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -395,36 +395,36 @@
     "consumerConsumer": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "integer",
           "format": "int32"
         },
-        "AppName": {
+        "app_name": {
           "type": "string"
         },
-        "AppType": {
+        "app_type": {
           "type": "string"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "DeveloperEmail": {
+        "developer_email": {
           "type": "string"
         },
-        "RedirectURL": {
+        "redirect_url": {
           "type": "string"
         },
-        "CreatedByUserID": {
+        "created_by_user_id": {
           "type": "string"
         },
-        "CreatedByUser": {
+        "created_by_user": {
           "$ref": "#/definitions/consumerCreateByUser"
         },
-        "Enabled": {
+        "enabled": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Created": {
+        "created": {
           "type": "string",
           "format": "date-time"
         }
@@ -433,19 +433,19 @@
     "consumerCreateByUser": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "Email": {
+        "email": {
           "type": "string"
         },
-        "ProviderID": {
+        "provider_id": {
           "type": "string"
         },
-        "Provider": {
+        "provider": {
           "type": "string"
         },
-        "Username": {
+        "username": {
           "type": "string"
         }
       }
@@ -453,22 +453,22 @@
     "consumerCurrentState": {
       "type": "object",
       "properties": {
-        "PerSecond": {
+        "per_second": {
           "$ref": "#/definitions/consumerState"
         },
-        "PerHour": {
+        "per_hour": {
           "$ref": "#/definitions/consumerState"
         },
-        "PerDay": {
+        "per_day": {
           "$ref": "#/definitions/consumerState"
         },
-        "PerWeek": {
+        "per_week": {
           "$ref": "#/definitions/consumerState"
         },
-        "PerMonth": {
+        "per_month": {
           "$ref": "#/definitions/consumerState"
         },
-        "PerYear": {
+        "per_year": {
           "$ref": "#/definitions/consumerState"
         }
       }
@@ -476,10 +476,10 @@
     "consumerEnableOrDisableConsumerRequest": {
       "type": "object",
       "properties": {
-        "ConsumerID": {
+        "consumer_id": {
           "type": "string"
         },
-        "Enable": {
+        "enable": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -488,7 +488,7 @@
     "consumerEnableOrDisableConsumerResponse": {
       "type": "object",
       "properties": {
-        "Enable": {
+        "enable": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -497,25 +497,25 @@
     "consumerGetConsumerCallLimitsResponse": {
       "type": "object",
       "properties": {
-        "PerSecondCallLimit": {
+        "per_second_call_limit": {
           "type": "string"
         },
-        "PerMinuteCallLimit": {
+        "per_minute_call_limit": {
           "type": "string"
         },
-        "PerHourCallLimit": {
+        "per_hour_call_limit": {
           "type": "string"
         },
-        "PerDayCallLimit": {
+        "per_day_call_limit": {
           "type": "string"
         },
-        "PerWeekCallLimit": {
+        "per_week_call_limit": {
           "type": "string"
         },
-        "PerMonthCallLimit": {
+        "per_month_call_limit": {
           "type": "string"
         },
-        "CurrentState": {
+        "current_state": {
           "$ref": "#/definitions/consumerCurrentState"
         }
       }
@@ -523,7 +523,7 @@
     "consumerGetConsumerResponse": {
       "type": "object",
       "properties": {
-        "Consumer": {
+        "consumer": {
           "$ref": "#/definitions/consumerConsumer"
         }
       }
@@ -531,7 +531,7 @@
     "consumerGetConsumersForLoggedInUserResponse": {
       "type": "object",
       "properties": {
-        "Consumers": {
+        "consumers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/consumerConsumer"
@@ -542,7 +542,7 @@
     "consumerGetConsumersResponse": {
       "type": "object",
       "properties": {
-        "Consumers": {
+        "consumers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/consumerConsumer"
@@ -553,25 +553,25 @@
     "consumerSetConsumerCallsLimitRequest": {
       "type": "object",
       "properties": {
-        "ConsumerID": {
+        "consumer_id": {
           "type": "string"
         },
-        "PerSecondCallLimit": {
+        "per_second_call_limit": {
           "type": "string"
         },
-        "PerMinuteCallLimit": {
+        "per_minute_call_limit": {
           "type": "string"
         },
-        "PerHourCallLimit": {
+        "per_hour_call_limit": {
           "type": "string"
         },
-        "PerDayCallLimit": {
+        "per_day_call_limit": {
           "type": "string"
         },
-        "PerWeekCallLimit": {
+        "per_week_call_limit": {
           "type": "string"
         },
-        "PerMonthCallLimit": {
+        "per_month_call_limit": {
           "type": "string"
         }
       }
@@ -579,22 +579,22 @@
     "consumerSetConsumerCallsLimitResponse": {
       "type": "object",
       "properties": {
-        "PerSecondCallLimit": {
+        "per_second_call_limit": {
           "type": "string"
         },
-        "PerMinuteCallLimit": {
+        "per_minute_call_limit": {
           "type": "string"
         },
-        "PerHourCallLimit": {
+        "per_hour_call_limit": {
           "type": "string"
         },
-        "PerDayCallLimit": {
+        "per_day_call_limit": {
           "type": "string"
         },
-        "PerWeekCallLimit": {
+        "per_week_call_limit": {
           "type": "string"
         },
-        "PerMonthCallLimit": {
+        "per_month_call_limit": {
           "type": "string"
         }
       }
@@ -602,11 +602,11 @@
     "consumerState": {
       "type": "object",
       "properties": {
-        "CallsMade": {
+        "calls_made": {
           "type": "integer",
           "format": "int32"
         },
-        "ResetInSeconds": {
+        "reset_in_seconds": {
           "type": "integer",
           "format": "int32"
         }
@@ -615,10 +615,10 @@
     "consumerUpdateConsumerRedirectURLRequest": {
       "type": "object",
       "properties": {
-        "ConsumerID": {
+        "consumer_id": {
           "type": "string"
         },
-        "RedirectURL": {
+        "redirect_url": {
           "type": "string"
         }
       }
@@ -626,7 +626,7 @@
     "consumerUpdateConsumerRedirectURLResponse": {
       "type": "object",
       "properties": {
-        "Consumer": {
+        "consumer": {
           "$ref": "#/definitions/consumerConsumer"
         }
       }

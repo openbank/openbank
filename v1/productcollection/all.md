@@ -1,18 +1,20 @@
-# Product Collection API v1.0.0
+Product Collection API v1.0.0
+=============================
 
 Provides CRUD operations on the Product Collection resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create a product collection {#method-post-createproductcollection}
+Create a product collection {#method-post-createproductcollection}
+------------------------------------------------------------------
 
 Creates a new product collection and returns the object.
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/product-collections/{CollectionCode} \
+	https:///v1/banks/{BankID}/product-collections/{CollectionCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -48,112 +50,111 @@ curl -X POST \
 		}
 	}'
 ```
-{{snippet createproductcollection []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/product-collections/{CollectionCode}`
+`POST https:///v1/banks/{BankID}/product-collections/{CollectionCode}`
 
 ### Query Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CollectionCode | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| bank_id         | string |             |
+| collection_code | string |             |
 
 ### Body Parameters
 
-| Name              | Type              | Description |
-|-------------------|-------------------|-------------|
-| BankID            | string            |             |
-| CollectionCode    | string            |             |
-| ProductCollection | ProductCollection |             |
+| Name               | Type              | Description |
+|--------------------|-------------------|-------------|
+| bank_id            | string            |             |
+| collection_code    | string            |             |
+| product_collection | ProductCollection |             |
 
 ##### Objects
 
 ###### ProductCollection
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CollectionCode | string    |             |
-| Products       | []Product |             |
+| Name            | Type       | Description |
+|-----------------|------------|-------------|
+| collection_code | string     |             |
+| products        | \[]Product |             |
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CollectionCode | string    |             |
-| Products       | []Product |             |
+| Name            | Type       | Description |
+|-----------------|------------|-------------|
+| collection_code | string     |             |
+| products        | \[]Product |             |
 
 ##### Objects
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -188,6 +189,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -199,27 +201,27 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a product collection {#method-delete-deleteproductcollection}
+Delete a product collection {#method-delete-deleteproductcollection}
+--------------------------------------------------------------------
 
 Permanently delete a product collection.
 
 ```sh
 curl -X DELETE \
-	/v1/banks/{BankID}/product-collections/{CollectionCode} \
+	https:///v1/banks/{BankID}/product-collections/{CollectionCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deleteproductcollection []}}
 
 ### HTTP Request
 
-`DELETE /v1/banks/{BankID}/product-collections/{CollectionCode}`
+`DELETE https:///v1/banks/{BankID}/product-collections/{CollectionCode}`
 
 ### Query Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CollectionCode | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| bank_id         | string |             |
+| collection_code | string |             |
 
 ### Responses
 
@@ -234,71 +236,71 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve product collection information {#method-get-getproductcollection}
+Retrieve product collection information {#method-get-getproductcollection}
+--------------------------------------------------------------------------
 
 Retrieve information about the product specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/product-collections/{CollectionCode} \
+	https:///v1/banks/{BankID}/product-collections/{CollectionCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getproductcollection []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/product-collections/{CollectionCode}`
+`GET https:///v1/banks/{BankID}/product-collections/{CollectionCode}`
 
 ### Query Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CollectionCode | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| bank_id         | string |             |
+| collection_code | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CollectionCode | string    |             |
-| Products       | []Product |             |
+| Name            | Type       | Description |
+|-----------------|------------|-------------|
+| collection_code | string     |             |
+| products        | \[]Product |             |
 
 ##### Objects
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -333,6 +335,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -345,13 +348,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a product collection {#method-put-updateproductcollection}
+Update a product collection {#method-put-updateproductcollection}
+-----------------------------------------------------------------
 
 Updates a product collection's information
 
 ```sh
 curl -X PUT \
-	/v1/banks/{BankID}/product-collections/{CollectionCode} \
+	https:///v1/banks/{BankID}/product-collections/{CollectionCode} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -387,112 +391,111 @@ curl -X PUT \
 		}
 	}'
 ```
-{{snippet updateproductcollection []}}
 
 ### HTTP Request
 
-`PUT /v1/banks/{BankID}/product-collections/{CollectionCode}`
+`PUT https:///v1/banks/{BankID}/product-collections/{CollectionCode}`
 
 ### Query Parameters
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| BankID         | string |             |
-| CollectionCode | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| bank_id         | string |             |
+| collection_code | string |             |
 
 ### Body Parameters
 
-| Name              | Type              | Description |
-|-------------------|-------------------|-------------|
-| BankID            | string            |             |
-| CollectionCode    | string            |             |
-| ProductCollection | ProductCollection |             |
+| Name               | Type              | Description |
+|--------------------|-------------------|-------------|
+| bank_id            | string            |             |
+| collection_code    | string            |             |
+| product_collection | ProductCollection |             |
 
 ##### Objects
 
 ###### ProductCollection
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CollectionCode | string    |             |
-| Products       | []Product |             |
+| Name            | Type       | Description |
+|-----------------|------------|-------------|
+| collection_code | string     |             |
+| products        | \[]Product |             |
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 ### Responses
 
 #### Response body
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CollectionCode | string    |             |
-| Products       | []Product |             |
+| Name            | Type       | Description |
+|-----------------|------------|-------------|
+| collection_code | string     |             |
+| products        | \[]Product |             |
 
 ##### Objects
 
 ###### Product
 
-| Name              | Type               | Description |
-|-------------------|--------------------|-------------|
-| BankID            | string             |             |
-| Code              | string             |             |
-| ParentProductCode | string             |             |
-| Name              | string             |             |
-| Category          | string             |             |
-| Family            | string             |             |
-| SuperFamily       | string             |             |
-| MoreInfoURL       | string             |             |
-| Details           | string             |             |
-| Description       | string             |             |
-| Meta              | Metadata           |             |
-| ProductAttributes | []ProductAttribute |             |
+| Name                | Type                | Description |
+|---------------------|---------------------|-------------|
+| bank_id             | string              |             |
+| code                | string              |             |
+| parent_product_code | string              |             |
+| name                | string              |             |
+| category            | string              |             |
+| family              | string              |             |
+| super_family        | string              |             |
+| more_info_url       | string              |             |
+| details             | string              |             |
+| description         | string              |             |
+| meta                | Metadata            |             |
+| product_attributes  | \[]ProductAttribute |             |
 
 ###### Metadata
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
-| License | string |             |
+| license | string |             |
 
 ###### ProductAttribute
 
-| Name               | Type          | Description |
-|--------------------|---------------|-------------|
-| ProductCode        | string        |             |
-| ProductAttributeID | string        |             |
-| Name               | string        |             |
-| Type               | AttributeType |             |
-| Value              | string        |             |
+| Name                 | Type          | Description |
+|----------------------|---------------|-------------|
+| product_code         | string        |             |
+| product_attribute_id | string        |             |
+| name                 | string        |             |
+| type                 | AttributeType |             |
+| value                | string        |             |
 
 Example:
 
@@ -527,6 +530,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/crm-events": {
+    "/v1/banks/{bankID}/crm-events": {
       "get": {
         "summary": "List all CRM events",
         "description": "Returns a list containing up to 20 crm events.",
@@ -50,7 +50,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -68,7 +68,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers": {
+    "/v1/banks/{bankID}/customers": {
       "get": {
         "summary": "Get customers data by bank id",
         "description": "Returns the current user customers data by bank ID",
@@ -103,7 +103,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -121,7 +121,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}": {
+    "/v1/banks/{bankID}/customers/{customerID}": {
       "get": {
         "summary": "Get Customer By ID",
         "description": "Returns the customer data based on it's id",
@@ -156,13 +156,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -180,7 +180,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/addresses": {
+    "/v1/banks/{bankID}/customers/{customerID}/addresses": {
       "get": {
         "summary": "List all customer adddresses",
         "description": "Returns a list containing up to 20 customer addresses.",
@@ -215,13 +215,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -239,7 +239,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}": {
+    "/v1/banks/{bankID}/customers/{customerID}/addresses/{customerAddressID}": {
       "delete": {
         "summary": "Delete customer address",
         "description": "Permanently delete customer address.",
@@ -278,19 +278,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerAddressID",
+            "name": "customerAddressID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -341,19 +341,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerAddressID",
+            "name": "customerAddressID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -379,7 +379,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/branch": {
+    "/v1/banks/{bankID}/customers/{customerID}/branch": {
       "put": {
         "summary": "Update customer branch.",
         "description": "Update customer branch information.",
@@ -414,13 +414,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -446,7 +446,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/credit-limit": {
+    "/v1/banks/{bankID}/customers/{customerID}/credit-limit": {
       "put": {
         "summary": "Update customer credit limit.",
         "description": "Update customer credit limit information.",
@@ -481,13 +481,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -513,7 +513,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source": {
+    "/v1/banks/{bankID}/customers/{customerID}/credit-rating-and-source": {
       "put": {
         "summary": "Update customer credut rating and source.",
         "description": "Update customer credit rating and source information.",
@@ -548,13 +548,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -580,7 +580,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}": {
+    "/v1/banks/{bankID}/customers/{customerID}/credit_limit/request/{requestID}": {
       "get": {
         "summary": "Get credit limit order by id",
         "description": "Returns Credit limit order by id",
@@ -615,19 +615,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "RequestID",
+            "name": "requestID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -645,7 +645,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests": {
+    "/v1/banks/{bankID}/customers/{customerID}/credit_limit/requests": {
       "get": {
         "summary": "List all credit limit order",
         "description": "Returns a list containing up to 20 CreditLimitOrder.",
@@ -680,13 +680,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -743,13 +743,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -775,7 +775,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber}": {
+    "/v1/banks/{bankID}/customers/{customerID}/customer-number/{customerNumber}": {
       "get": {
         "summary": "Get Customer By CustomerNumber",
         "description": "Returns the customer data based on the customer number",
@@ -810,19 +810,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerNumber",
+            "name": "customerNumber",
             "in": "path",
             "required": true,
             "type": "string"
@@ -840,7 +840,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/data": {
+    "/v1/banks/{bankID}/customers/{customerID}/data": {
       "put": {
         "summary": "Update customer data.",
         "description": "Update customer data information.",
@@ -875,13 +875,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -907,7 +907,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/email": {
+    "/v1/banks/{bankID}/customers/{customerID}/email": {
       "put": {
         "summary": "Update customer email.",
         "description": "Update customer email information.",
@@ -942,13 +942,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -974,7 +974,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/identity": {
+    "/v1/banks/{bankID}/customers/{customerID}/identity": {
       "put": {
         "summary": "Update customer identity.",
         "description": "Update customer identity information.",
@@ -1009,13 +1009,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1041,7 +1041,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/mobile-number": {
+    "/v1/banks/{bankID}/customers/{customerID}/mobile-number": {
       "put": {
         "summary": "Update customer mobile number.",
         "description": "Update customer mobile number information.",
@@ -1076,13 +1076,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1108,7 +1108,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/number": {
+    "/v1/banks/{bankID}/customers/{customerID}/number": {
       "put": {
         "summary": "Update customer number.",
         "description": "Update customer number information.",
@@ -1143,13 +1143,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1175,7 +1175,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/social_media_handles": {
+    "/v1/banks/{bankID}/customers/{customerID}/social_media_handles": {
       "get": {
         "summary": "List all customer social media handles",
         "description": "Returns a list containing up to 20 customer social media handles",
@@ -1210,13 +1210,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1234,7 +1234,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/tax-residences": {
+    "/v1/banks/{bankID}/customers/{customerID}/tax-residences": {
       "get": {
         "summary": "Get customers tax_residencies",
         "description": "Returns the user tax_residencies",
@@ -1269,13 +1269,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1293,7 +1293,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID}": {
+    "/v1/banks/{bankID}/customers/{customerID}/tax_residencies/{taxResidenceID}": {
       "delete": {
         "summary": "Delete tax residence",
         "description": "Permanently delete tax residence.",
@@ -1332,19 +1332,19 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "TaxResidenceID",
+            "name": "taxResidenceID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1362,7 +1362,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/firehose/customers": {
+    "/v1/banks/{bankID}/firehose/customers": {
       "get": {
         "summary": "Return customer firehose",
         "description": "Returns the list of customer firehose",
@@ -1397,13 +1397,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "SortDirection",
+            "name": "sort_direction",
             "description": " - ASC: SortDirection_ASC indicates ascending sort.\n - DESC: SortDirection_DESC indicates descending sort.",
             "in": "query",
             "required": false,
@@ -1416,28 +1416,28 @@
             "default": "UnknownSortDirection"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "in": "query",
             "required": false,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "Offset",
+            "name": "offset",
             "in": "query",
             "required": false,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "FromDate",
+            "name": "from_date",
             "in": "query",
             "required": false,
             "type": "string",
             "format": "date-time"
           },
           {
-            "name": "ToDate",
+            "name": "to_date",
             "in": "query",
             "required": false,
             "type": "string",
@@ -1456,7 +1456,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/user_customer_links": {
+    "/v1/banks/{bankID}/user_customer_links": {
       "post": {
         "summary": "Create user customer link",
         "description": "Creare user customer link",
@@ -1497,7 +1497,7 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1584,7 +1584,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/address": {
+    "/v1/customers/{customerID}/address": {
       "post": {
         "summary": "Add address to the customer.",
         "description": "Add address to the customer.",
@@ -1625,7 +1625,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1651,7 +1651,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/social_media_handles": {
+    "/v1/customers/{customerID}/social_media_handles": {
       "post": {
         "summary": "Add social media handle",
         "description": "Add social media handle for the customer",
@@ -1692,7 +1692,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1768,40 +1768,40 @@
     "customerAddAddressToCustomerRequest": {
       "type": "object",
       "properties": {
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "Line1": {
+        "line_1": {
           "type": "string"
         },
-        "Line2": {
+        "line_2": {
           "type": "string"
         },
-        "Line3": {
+        "line_3": {
           "type": "string"
         },
-        "City": {
+        "city": {
           "type": "string"
         },
-        "County": {
+        "county": {
           "type": "string"
         },
-        "State": {
+        "state": {
           "type": "string"
         },
-        "Postcode": {
+        "postcode": {
           "type": "string"
         },
-        "CountryCode": {
+        "country_code": {
           "type": "string"
         },
-        "Tags": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         }
       }
@@ -1809,46 +1809,46 @@
     "customerAddAddressToCustomerResponse": {
       "type": "object",
       "properties": {
-        "CustomerAddressID": {
+        "customer_address_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "Line1": {
+        "line_1": {
           "type": "string"
         },
-        "Line2": {
+        "line_2": {
           "type": "string"
         },
-        "Line3": {
+        "line_3": {
           "type": "string"
         },
-        "City": {
+        "city": {
           "type": "string"
         },
-        "County": {
+        "county": {
           "type": "string"
         },
-        "State": {
+        "state": {
           "type": "string"
         },
-        "Postcode": {
+        "postcode": {
           "type": "string"
         },
-        "CountryCode": {
+        "country_code": {
           "type": "string"
         },
-        "Tags": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "InsertDate": {
+        "insert_date": {
           "type": "string",
           "format": "date-time"
         }
@@ -1857,23 +1857,23 @@
     "customerAddSocialMediaHandleRequest": {
       "type": "object",
       "properties": {
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Handle": {
+        "handle": {
           "type": "string"
         },
-        "DateAdded": {
+        "date_added": {
           "type": "string",
           "format": "date-time"
         },
-        "DateActivated": {
+        "date_activated": {
           "type": "string",
           "format": "date-time"
         }
@@ -1882,7 +1882,7 @@
     "customerAddSocialMediaHandleResponse": {
       "type": "object",
       "properties": {
-        "Success": {
+        "success": {
           "type": "string"
         }
       }
@@ -1890,46 +1890,46 @@
     "customerAddress": {
       "type": "object",
       "properties": {
-        "CustomerAddressID": {
+        "customer_address_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "Line1": {
+        "line_1": {
           "type": "string"
         },
-        "Line2": {
+        "line_2": {
           "type": "string"
         },
-        "Line3": {
+        "line_3": {
           "type": "string"
         },
-        "City": {
+        "city": {
           "type": "string"
         },
-        "County": {
+        "county": {
           "type": "string"
         },
-        "State": {
+        "state": {
           "type": "string"
         },
-        "Postcode": {
+        "postcode": {
           "type": "string"
         },
-        "CountryCode": {
+        "country_code": {
           "type": "string"
         },
-        "Tags": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "InsertDate": {
+        "insert_date": {
           "type": "string",
           "format": "date-time"
         }
@@ -1938,36 +1938,36 @@
     "customerCRMEvent": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerName": {
+        "customer_name": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Category": {
+        "category": {
           "type": "string"
         },
-        "Detail": {
+        "detail": {
           "type": "string"
         },
-        "Channel": {
+        "channel": {
           "type": "string"
         },
-        "ScheduledDate": {
+        "scheduled_date": {
           "type": "string",
           "format": "date-time"
         },
-        "ActualDate": {
+        "actual_date": {
           "type": "string",
           "format": "date-time"
         },
-        "Result": {
+        "result": {
           "type": "string"
         }
       }
@@ -1975,20 +1975,20 @@
     "customerCheck": {
       "type": "object",
       "properties": {
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Handle": {
+        "handle": {
           "type": "string"
         },
-        "DateAdded": {
+        "date_added": {
           "type": "string",
           "format": "date-time"
         },
-        "DateActivated": {
+        "date_activated": {
           "type": "string",
           "format": "date-time"
         }
@@ -1997,31 +1997,31 @@
     "customerCreateCreditLimitOrderRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "RequestedCurrentRateAmount1": {
+        "requested_current_rate_amount1": {
           "type": "string"
         },
-        "RequestedCurrentRateAmount2": {
+        "requested_current_rate_amount2": {
           "type": "string"
         },
-        "RequestedCurrentValidEndDate": {
+        "requested_current_valid_end_date": {
           "type": "string"
         },
-        "CurrentCreditDocumentation": {
+        "current_credit_documentation": {
           "type": "string"
         },
-        "TemporaryRequestedCurrentAmount": {
+        "temporary_requested_current_amount": {
           "type": "string"
         },
-        "RequestedTemporaryValidEndDate": {
+        "requested_temporary_valid_end_date": {
           "type": "string"
         },
-        "TemporaryCreditDocumentation": {
+        "temporary_credit_documentation": {
           "type": "string"
         }
       }
@@ -2029,7 +2029,7 @@
     "customerCreateCreditLimitOrderResponse": {
       "type": "object",
       "properties": {
-        "CreditLimitOrderID": {
+        "credit_limit_order_id": {
           "type": "string"
         }
       }
@@ -2037,55 +2037,55 @@
     "customerCreateCustomerRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "LegalName": {
+        "legal_name": {
           "type": "string"
         },
-        "MobilePhoneNumber": {
+        "mobile_phone_number": {
           "type": "string"
         },
-        "Email": {
+        "email": {
           "type": "string"
         },
-        "FaceImage": {
+        "face_image": {
           "$ref": "#/definitions/customerFaceImage"
         },
-        "DateOfBirth": {
+        "date_of_birth": {
           "type": "string",
           "format": "date-time"
         },
-        "RelationshipStatus": {
+        "relationship_status": {
           "type": "string"
         },
-        "DobOfDependents": {
+        "dob_of_dependents": {
           "type": "array",
           "items": {
             "type": "string",
             "format": "date-time"
           }
         },
-        "CreditRating": {
+        "credit_rating": {
           "$ref": "#/definitions/customerCreditRating"
         },
-        "CreditLimit": {
+        "credit_limit": {
           "$ref": "#/definitions/typesAmount"
         },
-        "HighestEducationAttained": {
+        "highest_education_attained": {
           "type": "string"
         },
-        "EmploymentStatus": {
+        "employment_status": {
           "type": "string"
         },
-        "LastOKDate": {
+        "last_ok_date": {
           "type": "string",
           "format": "date-time"
         },
-        "Title": {
+        "title": {
           "type": "string"
         },
-        "BranchID": {
+        "branchId": {
           "type": "string"
         }
       }
@@ -2093,10 +2093,10 @@
     "customerCreateCustomerResponse": {
       "type": "object",
       "properties": {
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         }
       }
@@ -2104,13 +2104,13 @@
     "customerCreateUserCustomerLinkRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         }
       }
@@ -2118,20 +2118,20 @@
     "customerCreateUserCustomerLinkResponse": {
       "type": "object",
       "properties": {
-        "UserCustomerLinkID": {
+        "user_customer_link_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "DateInserted": {
+        "date_inserted": {
           "type": "string",
           "format": "date-time"
         },
-        "IsActive": {
+        "is_active": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -2140,16 +2140,16 @@
     "customerCreditLimitOrder": {
       "type": "object",
       "properties": {
-        "RankAmount1": {
+        "rank_amount_1": {
           "type": "string"
         },
-        "NominalInterest1": {
+        "nominal_interest_1": {
           "type": "string"
         },
-        "RankAmount2": {
+        "rank_amount_2": {
           "type": "string"
         },
-        "NominalInterest2": {
+        "nominal_interest_2": {
           "type": "string"
         }
       }
@@ -2157,10 +2157,10 @@
     "customerCreditRating": {
       "type": "object",
       "properties": {
-        "Rating": {
+        "rating": {
           "type": "string"
         },
-        "Source": {
+        "source": {
           "type": "string"
         }
       }
@@ -2168,58 +2168,58 @@
     "customerCustomer": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "LegalName": {
+        "legal_name": {
           "type": "string"
         },
-        "PhoneNumber": {
+        "phone_number": {
           "type": "string"
         },
-        "Email": {
+        "email": {
           "type": "string"
         },
-        "FaceImage": {
+        "face_image": {
           "$ref": "#/definitions/customerFaceImage"
         },
-        "DateOfBirth": {
+        "date_of_birth": {
           "type": "string",
           "format": "date-time"
         },
-        "RelationshipStatus": {
+        "relationship_status": {
           "type": "string"
         },
-        "CreditRating": {
+        "credit_rating": {
           "$ref": "#/definitions/customerCreditRating"
         },
-        "CreditLimit": {
+        "credit_limit": {
           "$ref": "#/definitions/typesAmount"
         },
-        "HighestEducationAttained": {
+        "highest_educational_attained": {
           "type": "string"
         },
-        "EmploymentStatus": {
+        "employment_status": {
           "type": "string"
         },
-        "KYCStatus": {
+        "kyc_status": {
           "type": "boolean",
           "format": "boolean"
         },
-        "LastOKDate": {
+        "last_ok_data": {
           "type": "string",
           "format": "date-time"
         },
-        "Title": {
+        "title": {
           "type": "string"
         },
-        "BranchID": {
+        "branch_id": {
           "type": "string"
         }
       }
@@ -2227,10 +2227,10 @@
     "customerFaceImage": {
       "type": "object",
       "properties": {
-        "URL": {
+        "url": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         }
@@ -2239,13 +2239,13 @@
     "customerGetCRMEventsResponse": {
       "type": "object",
       "properties": {
-        "CRMEvents": {
+        "crm_events": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerCRMEvent"
           }
         },
-        "HasMore": {
+        "has_more": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -2254,7 +2254,7 @@
     "customerGetCreditLimitOrderByIDResponse": {
       "type": "object",
       "properties": {
-        "CreditLimitOrder": {
+        "credit_limit_order": {
           "$ref": "#/definitions/customerCreditLimitOrder"
         }
       }
@@ -2262,7 +2262,7 @@
     "customerGetCreditLimitOrderResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerCreditLimitOrder"
@@ -2273,7 +2273,7 @@
     "customerGetCustomerAddressesResponse": {
       "type": "object",
       "properties": {
-        "Addresses": {
+        "addresses": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerAddress"
@@ -2284,7 +2284,7 @@
     "customerGetCustomerSocialMediaHandlesResponse": {
       "type": "object",
       "properties": {
-        "Checks": {
+        "checks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerCheck"
@@ -2295,7 +2295,7 @@
     "customerGetCustomersForCurrentUserAtBankResponse": {
       "type": "object",
       "properties": {
-        "Customers": {
+        "customers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerCustomer"
@@ -2306,7 +2306,7 @@
     "customerGetCustomersForCurrentUserResponse": {
       "type": "object",
       "properties": {
-        "Customers": {
+        "customers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerCustomer"
@@ -2317,7 +2317,7 @@
     "customerGetFirehoseCustomerResponse": {
       "type": "object",
       "properties": {
-        "Customers": {
+        "customers": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerCustomer"
@@ -2328,7 +2328,7 @@
     "customerGetTaxResidenceOfCustomerResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/customerTaxResidence"
@@ -2339,13 +2339,13 @@
     "customerTaxResidence": {
       "type": "object",
       "properties": {
-        "Domain": {
+        "domain": {
           "type": "string"
         },
-        "TaxNumber": {
+        "tax_number": {
           "type": "string"
         },
-        "TaxResidenceID": {
+        "tax_residence_id": {
           "type": "string"
         }
       }
@@ -2353,46 +2353,46 @@
     "customerUpdateCustomerAddressRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerAddressID": {
+        "customer_address_id": {
           "type": "string"
         },
-        "Line1": {
+        "line_1": {
           "type": "string"
         },
-        "Line2": {
+        "line_2": {
           "type": "string"
         },
-        "Line3": {
+        "line_3": {
           "type": "string"
         },
-        "City": {
+        "city": {
           "type": "string"
         },
-        "County": {
+        "county": {
           "type": "string"
         },
-        "State": {
+        "state": {
           "type": "string"
         },
-        "Postcode": {
+        "postcode": {
           "type": "string"
         },
-        "CountryCode": {
+        "country_code": {
           "type": "string"
         },
-        "Tags": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         }
       }
@@ -2400,46 +2400,46 @@
     "customerUpdateCustomerAddressResponse": {
       "type": "object",
       "properties": {
-        "CustomerAddressID": {
+        "customer_address_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "Line1": {
+        "line_1": {
           "type": "string"
         },
-        "Line2": {
+        "line_2": {
           "type": "string"
         },
-        "Line3": {
+        "line_3": {
           "type": "string"
         },
-        "City": {
+        "city": {
           "type": "string"
         },
-        "County": {
+        "county": {
           "type": "string"
         },
-        "State": {
+        "state": {
           "type": "string"
         },
-        "Postcode": {
+        "postcode": {
           "type": "string"
         },
-        "CountryCode": {
+        "country_code": {
           "type": "string"
         },
-        "Tags": {
+        "tags": {
           "type": "array",
           "items": {
             "type": "string"
           }
         },
-        "Status": {
+        "status": {
           "type": "string"
         },
-        "InsertDate": {
+        "insert_date": {
           "type": "string",
           "format": "date-time"
         }
@@ -2448,13 +2448,13 @@
     "customerUpdateCustomerBranchRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "BranchID": {
+        "branch_id": {
           "type": "string"
         }
       }
@@ -2462,7 +2462,7 @@
     "customerUpdateCustomerBranchResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2470,13 +2470,13 @@
     "customerUpdateCustomerCreditLimitRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CreditLimit": {
+        "credit_limit": {
           "$ref": "#/definitions/typesAmount"
         }
       }
@@ -2484,7 +2484,7 @@
     "customerUpdateCustomerCreditLimitResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2492,13 +2492,13 @@
     "customerUpdateCustomerCreditRatingAndSourceRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CreditRating": {
+        "credit_rating": {
           "$ref": "#/definitions/customerCreditRating"
         }
       }
@@ -2506,7 +2506,7 @@
     "customerUpdateCustomerCreditRatingAndSourceResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2514,13 +2514,13 @@
     "customerUpdateCustomerEmailRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "Email": {
+        "email": {
           "type": "string"
         }
       }
@@ -2528,7 +2528,7 @@
     "customerUpdateCustomerEmailResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2536,19 +2536,19 @@
     "customerUpdateCustomerIdentityRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "LegalName": {
+        "legal_name": {
           "type": "string"
         },
-        "DateOfBirth": {
+        "date_of_birth": {
           "type": "string"
         },
-        "Title": {
+        "title": {
           "type": "string"
         }
       }
@@ -2556,7 +2556,7 @@
     "customerUpdateCustomerIdentityResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2564,13 +2564,13 @@
     "customerUpdateCustomerMobileNumberRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "MobilePhoneNumber": {
+        "mobile_phone_number": {
           "type": "string"
         }
       }
@@ -2578,7 +2578,7 @@
     "customerUpdateCustomerMobileNumberResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2586,13 +2586,13 @@
     "customerUpdateCustomerNumberRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         }
       }
@@ -2600,7 +2600,7 @@
     "customerUpdateCustomerNumberResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2608,26 +2608,26 @@
     "customerUpdateCustomerOtherDataRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "FaceImage": {
+        "face_image": {
           "$ref": "#/definitions/customerFaceImage"
         },
-        "RelationshipStatus": {
+        "relationship_status": {
           "type": "string"
         },
-        "Dependants": {
+        "dependants": {
           "type": "integer",
           "format": "int32"
         },
-        "HighestEducationAttained": {
+        "highest_education_attained": {
           "type": "string"
         },
-        "EmploymentStatus": {
+        "employment_status": {
           "type": "string"
         }
       }
@@ -2635,7 +2635,7 @@
     "customerUpdateCustomerOtherDataResponse": {
       "type": "object",
       "properties": {
-        "Customer": {
+        "customer": {
           "$ref": "#/definitions/customerCustomer"
         }
       }
@@ -2643,11 +2643,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }

@@ -1,18 +1,20 @@
-# KYC API v1.0.0
+KYC API v1.0.0
+==============
 
 Provides create and read operations on the KYC resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Add KYC check {#method-put-addkyccheck}
+Add KYC check {#method-put-addkyccheck}
+---------------------------------------
 
 Add KYC check for the customer specified
 
 ```sh
 curl -X PUT \
-	/v1/customers/{CustomerID}/kyc_check/{KYCCheckID} \
+	https:///v1/customers/{CustomerID}/kyc_check/{KYCCheckID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"kyc_check_id": "string",
@@ -29,32 +31,31 @@ curl -X PUT \
 		"comments": "string"
 	}'
 ```
-{{snippet addkyccheck []}}
 
 ### HTTP Request
 
-`PUT /v1/customers/{CustomerID}/kyc_check/{KYCCheckID}`
+`PUT https:///v1/customers/{CustomerID}/kyc_check/{KYCCheckID}`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
-| KYCCheckID | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| customer_id  | string |             |
+| kyc_check_id | string |             |
 
 ### Body Parameters
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| KYCCheckID     | string    |             |
-| CustomerID     | string    |             |
-| CustomerNumber | string    |             |
-| Date           | Timestamp |             |
-| How            | string    |             |
-| StaffUserID    | string    |             |
-| StaffName      | string    |             |
-| Satisfied      | bool      |             |
-| Comments       | string    |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| kyc_check_id    | string    |             |
+| customer_id     | string    |             |
+| customer_number | string    |             |
+| date            | Timestamp |             |
+| how             | string    |             |
+| staff_user_id   | string    |             |
+| staff_name      | string    |             |
+| satisfied       | bool      |             |
+| comments        | string    |             |
 
 ##### Objects
 
@@ -69,18 +70,18 @@ curl -X PUT \
 
 #### Response body
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| BankID         | string    |             |
-| CustomerID     | string    |             |
-| ID             | string    |             |
-| CustomerNumber | string    |             |
-| Date           | Timestamp |             |
-| How            | string    |             |
-| StaffUserID    | string    |             |
-| StaffName      | string    |             |
-| Satisfied      | bool      |             |
-| Comments       | string    |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| bank_id         | string    |             |
+| customer_id     | string    |             |
+| id              | string    |             |
+| customer_number | string    |             |
+| date            | Timestamp |             |
+| how             | string    |             |
+| staff_user_id   | string    |             |
+| staff_name      | string    |             |
+| satisfied       | bool      |             |
+| comments        | string    |             |
 
 ##### Objects
 
@@ -110,6 +111,7 @@ Example:
   "comments": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -121,13 +123,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add KYC document {#method-put-addkycdocument}
+Add KYC document {#method-put-addkycdocument}
+---------------------------------------------
 
 Add KYC document for the customer specified
 
 ```sh
 curl -X PUT \
-	/v1/customers/{CustomerID}/kyc_check/{KYCDocumentID} \
+	https:///v1/customers/{CustomerID}/kyc_check/{KYCDocumentID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"kyc_document_id": "string",
@@ -146,31 +149,30 @@ curl -X PUT \
 		}
 	}'
 ```
-{{snippet addkycdocument []}}
 
 ### HTTP Request
 
-`PUT /v1/customers/{CustomerID}/kyc_check/{KYCDocumentID}`
+`PUT https:///v1/customers/{CustomerID}/kyc_check/{KYCDocumentID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| CustomerID    | string |             |
-| KYCDocumentID | string |             |
+| Name            | Type   | Description |
+|-----------------|--------|-------------|
+| customer_id     | string |             |
+| kyc_document_id | string |             |
 
 ### Body Parameters
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| KYCDocumentID  | string    |             |
-| CustomerID     | string    |             |
-| CustomerNumber | string    |             |
-| Type           | string    |             |
-| Number         | string    |             |
-| IssueDate      | Timestamp |             |
-| IssuePlace     | string    |             |
-| ExpiryDate     | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| kyc_document_id | string    |             |
+| customer_id     | string    |             |
+| customer_number | string    |             |
+| type            | string    |             |
+| number          | string    |             |
+| issue_date      | Timestamp |             |
+| issue_place     | string    |             |
+| expiry_date     | Timestamp |             |
 
 ##### Objects
 
@@ -185,17 +187,17 @@ curl -X PUT \
 
 #### Response body
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| BankID         | string    |             |
-| CustomerID     | string    |             |
-| ID             | string    |             |
-| CustomerNumber | string    |             |
-| Type           | string    |             |
-| Number         | string    |             |
-| IssueDate      | Timestamp |             |
-| IssuePlace     | string    |             |
-| ExpiryDate     | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| bank_id         | string    |             |
+| customer_id     | string    |             |
+| id              | string    |             |
+| customer_number | string    |             |
+| type            | string    |             |
+| number          | string    |             |
+| issue_date      | Timestamp |             |
+| issue_place     | string    |             |
+| expiry_date     | Timestamp |             |
 
 ##### Objects
 
@@ -227,6 +229,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -238,13 +241,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add KYC media {#method-put-addkycmedia}
+Add KYC media {#method-put-addkycmedia}
+---------------------------------------
 
 Add KYC media for the customer specified
 
 ```sh
 curl -X PUT \
-	/v1/customers/{CustomerID}/kyc_check/{KYCMediaID} \
+	https:///v1/customers/{CustomerID}/kyc_check/{KYCMediaID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"kyc_media_id": "string",
@@ -260,31 +264,30 @@ curl -X PUT \
 		"relates_to_kyc_check_id": "string"
 	}'
 ```
-{{snippet addkycmedia []}}
 
 ### HTTP Request
 
-`PUT /v1/customers/{CustomerID}/kyc_check/{KYCMediaID}`
+`PUT https:///v1/customers/{CustomerID}/kyc_check/{KYCMediaID}`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
-| KYCMediaID | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| customer_id  | string |             |
+| kyc_media_id | string |             |
 
 ### Body Parameters
 
-| Name                   | Type      | Description |
-|------------------------|-----------|-------------|
-| KYCMediaID             | string    |             |
-| CustomerID             | string    |             |
-| CustomerNumber         | string    |             |
-| Type                   | string    |             |
-| URL                    | string    |             |
-| Date                   | Timestamp |             |
-| RelatesToKycDocumentID | string    |             |
-| RelatesToKycCheckID    | string    |             |
+| Name                       | Type      | Description |
+|----------------------------|-----------|-------------|
+| kyc_media_id               | string    |             |
+| customer_id                | string    |             |
+| customer_number            | string    |             |
+| type                       | string    |             |
+| url                        | string    |             |
+| date                       | Timestamp |             |
+| relates_to_kyc_document_id | string    |             |
+| relates_to_kyc_check_id    | string    |             |
 
 ##### Objects
 
@@ -299,17 +302,17 @@ curl -X PUT \
 
 #### Response body
 
-| Name                   | Type      | Description |
-|------------------------|-----------|-------------|
-| BankID                 | string    |             |
-| CustomerID             | string    |             |
-| ID                     | string    |             |
-| CustomerNumber         | string    |             |
-| Type                   | string    |             |
-| URL                    | string    |             |
-| Date                   | Timestamp |             |
-| RelatesToKycDocumentID | string    |             |
-| RelatesToKycCheckID    | string    |             |
+| Name                       | Type      | Description |
+|----------------------------|-----------|-------------|
+| bank_id                    | string    |             |
+| customer_id                | string    |             |
+| id                         | string    |             |
+| customer_number            | string    |             |
+| type                       | string    |             |
+| url                        | string    |             |
+| date                       | Timestamp |             |
+| relates_to_kyc_document_id | string    |             |
+| relates_to_kyc_check_id    | string    |             |
 
 ##### Objects
 
@@ -338,6 +341,7 @@ Example:
   "relates_to_kyc_check_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -349,13 +353,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add KYC status {#method-put-addkycstatus}
+Add KYC status {#method-put-addkycstatus}
+-----------------------------------------
 
 Add KYC status for the customer specified
 
 ```sh
 curl -X PUT \
-	/v1/customers/{CustomerID}/kyc_statuses \
+	https:///v1/customers/{CustomerID}/kyc_statuses \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"customer_id": "string",
@@ -367,26 +372,25 @@ curl -X PUT \
 		}
 	}'
 ```
-{{snippet addkycstatus []}}
 
 ### HTTP Request
 
-`PUT /v1/customers/{CustomerID}/kyc_statuses`
+`PUT https:///v1/customers/{CustomerID}/kyc_statuses`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Body Parameters
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CustomerID     | string    |             |
-| CustomerNumber | string    |             |
-| Ok             | bool      |             |
-| Date           | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| customer_id     | string    |             |
+| customer_number | string    |             |
+| ok              | bool      |             |
+| date            | Timestamp |             |
 
 ##### Objects
 
@@ -401,12 +405,12 @@ curl -X PUT \
 
 #### Response body
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CustomerID     | string    |             |
-| CustomerNumber | string    |             |
-| Ok             | bool      |             |
-| Date           | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| customer_id     | string    |             |
+| customer_number | string    |             |
+| ok              | bool      |             |
+| date            | Timestamp |             |
 
 ##### Objects
 
@@ -430,6 +434,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -441,51 +446,51 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer KYC check {#method-get-getcustomerkyccheck}
+Get Customer KYC check {#method-get-getcustomerkyccheck}
+--------------------------------------------------------
 
 Get Customer KYC check fot the customer
 
 ```sh
 curl -X GET \
-	/v1/customers/{CustomerID}/kyc_checks \
+	https:///v1/customers/{CustomerID}/kyc_checks \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomerkyc_check []}}
 
 ### HTTP Request
 
-`GET /v1/customers/{CustomerID}/kyc_checks`
+`GET https:///v1/customers/{CustomerID}/kyc_checks`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name   | Type    | Description |
-|--------|---------|-------------|
-| Checks | []Check |             |
+| Name   | Type     | Description |
+|--------|----------|-------------|
+| checks | \[]Check |             |
 
 ##### Objects
 
 ###### Check
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| BankID         | string    |             |
-| CustomerID     | string    |             |
-| ID             | string    |             |
-| CustomerNumber | string    |             |
-| Date           | Timestamp |             |
-| How            | string    |             |
-| StaffUserID    | string    |             |
-| StaffName      | string    |             |
-| Satisfied      | bool      |             |
-| Comments       | string    |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| bank_id         | string    |             |
+| customer_id     | string    |             |
+| id              | string    |             |
+| customer_number | string    |             |
+| date            | Timestamp |             |
+| how             | string    |             |
+| staff_user_id   | string    |             |
+| staff_name      | string    |             |
+| satisfied       | bool      |             |
+| comments        | string    |             |
 
 ###### Timestamp
 
@@ -517,6 +522,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -528,50 +534,50 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer KYC documents {#method-get-getcustomerkycdocument}
+Get Customer KYC documents {#method-get-getcustomerkycdocument}
+---------------------------------------------------------------
 
 Get Customer KYC documents fot the customer
 
 ```sh
 curl -X GET \
-	/v1/customers/{CustomerID}/kyc_documents \
+	https:///v1/customers/{CustomerID}/kyc_documents \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomerkyc_document []}}
 
 ### HTTP Request
 
-`GET /v1/customers/{CustomerID}/kyc_documents`
+`GET https:///v1/customers/{CustomerID}/kyc_documents`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| Documents | []Document |             |
+| Name      | Type        | Description |
+|-----------|-------------|-------------|
+| documents | \[]Document |             |
 
 ##### Objects
 
 ###### Document
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| BankID         | string    |             |
-| CustomerID     | string    |             |
-| ID             | string    |             |
-| CustomerNumber | string    |             |
-| Type           | string    |             |
-| Number         | string    |             |
-| IssueDate      | Timestamp |             |
-| IssuePlace     | string    |             |
-| ExpiryDate     | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| bank_id         | string    |             |
+| customer_id     | string    |             |
+| id              | string    |             |
+| customer_number | string    |             |
+| type            | string    |             |
+| number          | string    |             |
+| issue_date      | Timestamp |             |
+| issue_place     | string    |             |
+| expiry_date     | Timestamp |             |
 
 ###### Timestamp
 
@@ -605,6 +611,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -616,45 +623,45 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer KYC statuses {#method-get-getcustomerkycstatus}
+Get Customer KYC statuses {#method-get-getcustomerkycstatus}
+------------------------------------------------------------
 
 Get Customer KYC statuses fot the customer
 
 ```sh
 curl -X GET \
-	/v1/customers/{CustomerID}/kyc_statuses \
+	https:///v1/customers/{CustomerID}/kyc_statuses \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getcustomerkyc_status []}}
 
 ### HTTP Request
 
-`GET /v1/customers/{CustomerID}/kyc_statuses`
+`GET https:///v1/customers/{CustomerID}/kyc_statuses`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type     | Description |
-|----------|----------|-------------|
-| Statuses | []Status |             |
+| Name     | Type      | Description |
+|----------|-----------|-------------|
+| statuses | \[]Status |             |
 
 ##### Objects
 
 ###### Status
 
-| Name           | Type      | Description |
-|----------------|-----------|-------------|
-| CustomerID     | string    |             |
-| CustomerNumber | string    |             |
-| Ok             | bool      |             |
-| Date           | Timestamp |             |
+| Name            | Type      | Description |
+|-----------------|-----------|-------------|
+| customer_id     | string    |             |
+| customer_number | string    |             |
+| ok              | bool      |             |
+| date            | Timestamp |             |
 
 ###### Timestamp
 
@@ -680,6 +687,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -691,50 +699,50 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get Customer KYC media {#method-get-getkycmedia}
+Get Customer KYC media {#method-get-getkycmedia}
+------------------------------------------------
 
 Get Customer KYC media fot the customer
 
 ```sh
 curl -X GET \
-	/v1/customers/{CustomerID}/kyc_media \
+	https:///v1/customers/{CustomerID}/kyc_media \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getkycmedia []}}
 
 ### HTTP Request
 
-`GET /v1/customers/{CustomerID}/kyc_media`
+`GET https:///v1/customers/{CustomerID}/kyc_media`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| CustomerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| customer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name   | Type    | Description |
-|--------|---------|-------------|
-| Medias | []Media |             |
+| Name   | Type     | Description |
+|--------|----------|-------------|
+| medias | \[]Media |             |
 
 ##### Objects
 
 ###### Media
 
-| Name                   | Type      | Description |
-|------------------------|-----------|-------------|
-| BankID                 | string    |             |
-| CustomerID             | string    |             |
-| ID                     | string    |             |
-| CustomerNumber         | string    |             |
-| Type                   | string    |             |
-| URL                    | string    |             |
-| Date                   | Timestamp |             |
-| RelatesToKycDocumentID | string    |             |
-| RelatesToKycCheckID    | string    |             |
+| Name                       | Type      | Description |
+|----------------------------|-----------|-------------|
+| bank_id                    | string    |             |
+| customer_id                | string    |             |
+| id                         | string    |             |
+| customer_number            | string    |             |
+| type                       | string    |             |
+| url                        | string    |             |
+| date                       | Timestamp |             |
+| relates_to_kyc_document_id | string    |             |
+| relates_to_kyc_check_id    | string    |             |
 
 ###### Timestamp
 
@@ -765,6 +773,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
