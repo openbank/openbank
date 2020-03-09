@@ -49,12 +49,15 @@
 //                 },
 //         },
 // }
+// +gunk java.Package("to.bnk.api.productcollection")
+// +gunk java.MultipleFiles(true)
 package productcollection
 
 import (
 	"time"
 
 	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/file/java"
 	"github.com/gunk/opt/openapiv2"
 
 	product "github.com/openbank/openbank/v1/product"

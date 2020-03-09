@@ -1,4 +1,10 @@
+// +gunk java.Package("to.bnk.api.apierror")
+// +gunk java.MultipleFiles(true)
 package apierror
+
+import (
+    "github.com/gunk/opt/file/java"
+)
 
 // ErrorType defines the type of the error.
 type ErrorType int

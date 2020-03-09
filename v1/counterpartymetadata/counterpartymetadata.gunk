@@ -49,12 +49,15 @@
 //                 },
 //         },
 // }
+// +gunk java.Package("to.bnk.api.counterpartymetadata")
+// +gunk java.MultipleFiles(true)
 package counterpartymetadata
 
 import (
 	"time"
 
 	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/file/java"
 	"github.com/gunk/opt/openapiv2"
 
 	types "github.com/openbank/openbank/v1/types"

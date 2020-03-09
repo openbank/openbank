@@ -49,12 +49,15 @@
 //                 },
 //         },
 // }
+// +gunk java.Package("to.bnk.api.profile")
+// +gunk java.MultipleFiles(true)
 package profile
 
 import (
 	"time"
 
 	"github.com/gunk/opt/http"
+	"github.com/gunk/opt/file/java"
 	"github.com/gunk/opt/openapiv2"
 
 	account "github.com/openbank/openbank/v1/account"
