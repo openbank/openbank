@@ -77,7 +77,7 @@
     "/v1/entitlement-requests": {
       "get": {
         "summary": "List all entitlements",
-        "description": "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+        "description": "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
         "operationId": "GetAllEntitlementRequests",
         "responses": {
           "200": {
@@ -109,7 +109,15 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
+            "name": "AfterID",
+            "description": "AfterID is a cursor for pagination.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Limit",
+            "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -247,7 +255,7 @@
     "/v1/entitlements": {
       "get": {
         "summary": "List all entitlements",
-        "description": "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+        "description": "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
         "operationId": "GetAllEntitlements",
         "responses": {
           "200": {
@@ -279,7 +287,15 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
+            "name": "AfterID",
+            "description": "AfterID is a cursor for pagination.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Limit",
+            "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -301,7 +317,7 @@
     "/v1/roles": {
       "get": {
         "summary": "List all entitlements",
-        "description": "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+        "description": "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
         "operationId": "GetRoles",
         "responses": {
           "200": {
@@ -333,7 +349,15 @@
         },
         "parameters": [
           {
-            "name": "NextStartingIndex",
+            "name": "AfterID",
+            "description": "AfterID is a cursor for pagination.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Limit",
+            "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
             "type": "integer",

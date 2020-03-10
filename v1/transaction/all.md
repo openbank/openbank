@@ -348,11 +348,10 @@ curl -X GET \
 
 #### Response body
 
-| Name               | Type          | Description                                                 |
-|--------------------|---------------|-------------------------------------------------------------|
-| Result             | []Transaction | Result is a list containing up to 20 transactions.          |
-| HasMore            | bool          | HasMore indicates if there are more transactions available. |
-| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account.  |
+| Name               | Type          | Description                                                |
+|--------------------|---------------|------------------------------------------------------------|
+| Result             | []Transaction | Result is the paginated query result.                      |
+| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account. |
 
 ##### Objects
 
@@ -470,7 +469,6 @@ Example:
       "remarks": "string"
     }
   ],
-  "has_more": "bool",
   "last_running_balance": {
     "cur": "string",
     "num": "string"
@@ -513,11 +511,10 @@ curl -X GET \
 
 #### Response body
 
-| Name               | Type          | Description                                                 |
-|--------------------|---------------|-------------------------------------------------------------|
-| Result             | []Transaction | Result is a list containing up to 20 transactions.          |
-| HasMore            | bool          | HasMore indicates if there are more transactions available. |
-| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account.  |
+| Name               | Type          | Description                                                |
+|--------------------|---------------|------------------------------------------------------------|
+| Result             | []Transaction | Result is a list containing up to 20 transactions.         |
+| LastRunningBalance | Amount        | LastRunningBalance is current balance for related account. |
 
 ##### Objects
 
@@ -635,7 +632,6 @@ Example:
       "remarks": "string"
     }
   ],
-  "has_more": "bool",
   "last_running_balance": {
     "cur": "string",
     "num": "string"

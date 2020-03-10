@@ -199,7 +199,7 @@ Example:
 
 ## List all accounts {#method-get-getcounterparties}
 
-Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.
+Returns a list containing up to 20 accounts. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \
@@ -216,10 +216,9 @@ curl -X GET \
 
 #### Response body
 
-| Name    | Type           | Description                                             |
-|---------|----------------|---------------------------------------------------------|
-| Result  | []CounterParty | Result is a list containing up to 20 Counter parties.   |
-| HasMore | bool           | HasMore indicates if there are more accounts available. |
+| Name   | Type           | Description                           |
+|--------|----------------|---------------------------------------|
+| Result | []CounterParty | Result is the paginated query result. |
 
 ##### Objects
 
@@ -308,8 +307,7 @@ Example:
         "private_alias": "string"
       }
     }
-  ],
-  "has_more": "bool"
+  ]
 }
 ```
 #### Response codes

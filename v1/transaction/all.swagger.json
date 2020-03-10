@@ -86,18 +86,19 @@
             "default": "UnknownType"
           },
           {
-            "name": "Limit",
-            "description": "Limit is number of search return of transactions.",
+            "name": "AfterID",
+            "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
+            "name": "Limit",
+            "description": "Limit is number of search return of transactions.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "integer",
+            "format": "int32"
           }
         ],
         "tags": [
@@ -176,18 +177,19 @@
             "default": "UnknownType"
           },
           {
-            "name": "Limit",
-            "description": "Limit is number of search return of transactions.",
+            "name": "AfterID",
+            "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "NextStartingIndex",
-            "description": "NextStartingIndex is a cursor for pagination. It's a TransactionID that defines\nthe current place in the total list of Transaction.",
+            "name": "Limit",
+            "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "integer",
+            "format": "int32"
           }
         ],
         "tags": [
@@ -537,11 +539,6 @@
           },
           "description": "Result is a list containing up to 20 transactions."
         },
-        "HasMore": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "HasMore indicates if there are more transactions available."
-        },
         "LastRunningBalance": {
           "$ref": "#/definitions/typesAmount",
           "description": "LastRunningBalance is current balance for related account."
@@ -557,12 +554,7 @@
           "items": {
             "$ref": "#/definitions/transactionsTransaction"
           },
-          "description": "Result is a list containing up to 20 transactions."
-        },
-        "HasMore": {
-          "type": "boolean",
-          "format": "boolean",
-          "description": "HasMore indicates if there are more transactions available."
+          "description": "Result is the paginated query result."
         },
         "LastRunningBalance": {
           "$ref": "#/definitions/typesAmount",

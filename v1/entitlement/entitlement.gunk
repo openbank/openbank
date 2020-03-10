@@ -147,11 +147,17 @@ type GetEntitlementForCurrentUserRequest struct {
 }
 
 type GetAllEntitlementsRequest struct {
-	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+	// AfterID is a cursor for pagination.
+	AfterID string `pb:"1" json:"after_id"`
+	// Limit is maximum number of results to return.
+	Limit int `pb:"2" json:"limit"`
 }
 
 type GetAllEntitlementRequestRequest struct {
-	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+	// AfterID is a cursor for pagination.
+	AfterID string `pb:"1" json:"after_id"`
+	// Limit is maximum number of results to return.
+	Limit int `pb:"2" json:"limit"`
 }
 
 type GetRolesResponse struct {
@@ -164,7 +170,10 @@ type Roles struct {
 }
 
 type GetRolesRequest struct {
-	NextStartingIndex int `pb:"1" json:"next_starting_index"`
+	// AfterID is a cursor for pagination.
+	AfterID string `pb:"1" json:"after_id"`
+	// Limit is maximum number of results to return.
+	Limit int `pb:"2" json:"limit"`
 }
 
 // EntitlementService provides entitlement related operations.
@@ -490,7 +499,7 @@ type EntitlementService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Entitlement"},
-	//         Description: "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+	//         Description: "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
 	//         Summary:     "List all entitlements",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
@@ -524,7 +533,7 @@ type EntitlementService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Entitlement"},
-	//         Description: "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+	//         Description: "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
 	//         Summary:     "List all entitlements",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{
@@ -558,7 +567,7 @@ type EntitlementService interface {
 	// }
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Entitlement"},
-	//         Description: "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination.",
+	//         Description: "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
 	//         Summary:     "List all entitlements",
 	//         Responses: map[string]openapiv2.Response{
 	//                 "200": openapiv2.Response{

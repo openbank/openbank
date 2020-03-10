@@ -428,10 +428,9 @@ curl -X GET \
 
 #### Response body
 
-| Name    | Type      | Description                                             |
-|---------|-----------|---------------------------------------------------------|
-| Result  | []Account | Result is a list containing up to 20 Accounts.          |
-| HasMore | bool      | HasMore indicates if there are more accounts available. |
+| Name   | Type      | Description                           |
+|--------|-----------|---------------------------------------|
+| Result | []Account | Result is the paginated query result. |
 
 ##### Objects
 
@@ -532,8 +531,7 @@ Example:
         "nanos": "int32"
       }
     }
-  ],
-  "has_more": "bool"
+  ]
 }
 ```
 #### Response codes

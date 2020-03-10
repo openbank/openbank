@@ -118,7 +118,7 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
-msgid "Returns a list containing up to 20 entitlements. `next_starting_index` can be used for pagination."
+msgid "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"

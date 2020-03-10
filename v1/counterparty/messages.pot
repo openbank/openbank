@@ -67,9 +67,6 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
-msgid "HasMore indicates if there are more accounts available."
-msgstr ""
-
 msgid "Host"
 msgstr ""
 
@@ -109,7 +106,7 @@ msgstr ""
 msgid "Responses"
 msgstr ""
 
-msgid "Result is a list containing up to 20 Counter parties."
+msgid "Result is the paginated query result."
 msgstr ""
 
 msgid "Retrieve all other account with account id"
@@ -145,7 +142,7 @@ msgstr ""
 msgid "Returned when the user does not have permission to access the resource."
 msgstr ""
 
-msgid "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination."
+msgid "Returns a list containing up to 20 accounts. `after_index` can be used for pagination."
 msgstr ""
 
 msgid "The description of the about counter party"
