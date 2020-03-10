@@ -1,42 +1,43 @@
-# Consumer API v1.0.0
+Consumer API v1.0.0
+===================
 
 Provides create and read operations on the consumer resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Set consumer enable or disable. {#method-put-enableordisableconsumer}
+Set consumer enable or disable. {#method-put-enableordisableconsumer}
+---------------------------------------------------------------------
 
 Set enable or disable consumer
 
 ```sh
 curl -X PUT \
-	/v1/management/consumers/{ConsumerID} \
+	https:///v1/management/consumers/{ConsumerID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"consumer_id": "string",
 		"enable": "bool"
 	}'
 ```
-{{snippet enableordisable_consumer []}}
 
 ### HTTP Request
 
-`PUT /v1/management/consumers/{ConsumerID}`
+`PUT https:///v1/management/consumers/{ConsumerID}`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| ConsumerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| consumer_id | string |             |
 
 ### Body Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| ConsumerID | string |             |
-| Enable     | bool   |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| consumer_id | string |             |
+| enable      | bool   |             |
 
 ### Responses
 
@@ -44,7 +45,7 @@ curl -X PUT \
 
 | Name   | Type | Description |
 |--------|------|-------------|
-| Enable | bool |             |
+| enable | bool |             |
 
 Example:
 
@@ -53,6 +54,7 @@ Example:
   "enable": "bool"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -65,24 +67,26 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get consumer {#method-get-getconsumer}
+Get consumer {#method-get-getconsumer}
+--------------------------------------
 
 Returns consumer data by it's ID
 
 ```sh
 curl -X GET \
-	/v1/management/consumers/{ConsumerID} \
+	https:///v1/management/consumers/{ConsumerID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/management/consumers/{ConsumerID}`
+`GET https:///v1/management/consumers/{ConsumerID}`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| ConsumerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| consumer_id | string |             |
 
 ### Responses
 
@@ -90,34 +94,34 @@ curl -X GET \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Consumer | Consumer |             |
+| consumer | Consumer |             |
 
 ##### Objects
 
 ###### Consumer
 
-| Name            | Type         | Description |
-|-----------------|--------------|-------------|
-| ID              | int32        |             |
-| AppName         | string       |             |
-| AppType         | string       |             |
-| Description     | string       |             |
-| DeveloperEmail  | string       |             |
-| RedirectURL     | string       |             |
-| CreatedByUserID | string       |             |
-| CreatedByUser   | CreateByUser |             |
-| Enabled         | bool         |             |
-| Created         | Timestamp    |             |
+| Name               | Type         | Description |
+|--------------------|--------------|-------------|
+| id                 | int32        |             |
+| app_name           | string       |             |
+| app_type           | string       |             |
+| description        | string       |             |
+| developer_email    | string       |             |
+| redirect_url       | string       |             |
+| created_by_user_id | string       |             |
+| created_by_user    | CreateByUser |             |
+| enabled            | bool         |             |
+| created            | Timestamp    |             |
 
 ###### CreateByUser
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| UserID     | string |             |
-| Email      | string |             |
-| ProviderID | string |             |
-| Provider   | string |             |
-| Username   | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| user_id     | string |             |
+| email       | string |             |
+| provider_id | string |             |
+| provider    | string |             |
+| username    | string |             |
 
 ###### Timestamp
 
@@ -153,6 +157,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -164,60 +169,60 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get consumer call lists {#method-get-getconsumercalllimits}
+Get consumer call lists {#method-get-getconsumercalllimits}
+-----------------------------------------------------------
 
 Returns a list up to 20 consumer call limits data.
 
 ```sh
 curl -X GET \
-	/v1/management/consumers/{ConsumerID}/consumer/call-limits \
+	https:///v1/management/consumers/{ConsumerID}/consumer/call-limits \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getconsumercall_limits []}}
 
 ### HTTP Request
 
-`GET /v1/management/consumers/{ConsumerID}/consumer/call-limits`
+`GET https:///v1/management/consumers/{ConsumerID}/consumer/call-limits`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| ConsumerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| consumer_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type         | Description |
-|--------------------|--------------|-------------|
-| PerSecondCallLimit | string       |             |
-| PerMinuteCallLimit | string       |             |
-| PerHourCallLimit   | string       |             |
-| PerDayCallLimit    | string       |             |
-| PerWeekCallLimit   | string       |             |
-| PerMonthCallLimit  | string       |             |
-| CurrentState       | CurrentState |             |
+| Name                  | Type         | Description |
+|-----------------------|--------------|-------------|
+| per_second_call_limit | string       |             |
+| per_minute_call_limit | string       |             |
+| per_hour_call_limit   | string       |             |
+| per_day_call_limit    | string       |             |
+| per_week_call_limit   | string       |             |
+| per_month_call_limit  | string       |             |
+| current_state         | CurrentState |             |
 
 ##### Objects
 
 ###### CurrentState
 
-| Name      | Type  | Description |
-|-----------|-------|-------------|
-| PerSecond | State |             |
-| PerHour   | State |             |
-| PerDay    | State |             |
-| PerWeek   | State |             |
-| PerMonth  | State |             |
-| PerYear   | State |             |
+| Name       | Type  | Description |
+|------------|-------|-------------|
+| per_second | State |             |
+| per_hour   | State |             |
+| per_day    | State |             |
+| per_week   | State |             |
+| per_month  | State |             |
+| per_year   | State |             |
 
 ###### State
 
-| Name           | Type  | Description |
-|----------------|-------|-------------|
-| CallsMade      | int32 |             |
-| ResetInSeconds | int32 |             |
+| Name             | Type  | Description |
+|------------------|-------|-------------|
+| calls_made       | int32 |             |
+| reset_in_seconds | int32 |             |
 
 Example:
 
@@ -257,6 +262,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -268,53 +274,55 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get consumers {#method-get-getconsumers}
+Get consumers {#method-get-getconsumers}
+----------------------------------------
 
 Returns all consumers data up to 20 consumers data.
 
 ```sh
 curl -X GET \
-	/v1/management/consumers \
+	https:///v1/management/consumers \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/management/consumers`
+`GET https:///v1/management/consumers`
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| Consumers | []Consumer |             |
+| Name      | Type        | Description |
+|-----------|-------------|-------------|
+| consumers | \[]Consumer |             |
 
 ##### Objects
 
 ###### Consumer
 
-| Name            | Type         | Description |
-|-----------------|--------------|-------------|
-| ID              | int32        |             |
-| AppName         | string       |             |
-| AppType         | string       |             |
-| Description     | string       |             |
-| DeveloperEmail  | string       |             |
-| RedirectURL     | string       |             |
-| CreatedByUserID | string       |             |
-| CreatedByUser   | CreateByUser |             |
-| Enabled         | bool         |             |
-| Created         | Timestamp    |             |
+| Name               | Type         | Description |
+|--------------------|--------------|-------------|
+| id                 | int32        |             |
+| app_name           | string       |             |
+| app_type           | string       |             |
+| description        | string       |             |
+| developer_email    | string       |             |
+| redirect_url       | string       |             |
+| created_by_user_id | string       |             |
+| created_by_user    | CreateByUser |             |
+| enabled            | bool         |             |
+| created            | Timestamp    |             |
 
 ###### CreateByUser
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| UserID     | string |             |
-| Email      | string |             |
-| ProviderID | string |             |
-| Provider   | string |             |
-| Username   | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| user_id     | string |             |
+| email       | string |             |
+| provider_id | string |             |
+| provider    | string |             |
+| username    | string |             |
 
 ###### Timestamp
 
@@ -352,6 +360,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -363,55 +372,55 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Get consumers for logged in user {#method-get-getconsumersforloggedinuser}
+Get consumers for logged in user {#method-get-getconsumersforloggedinuser}
+--------------------------------------------------------------------------
 
 Returns all consumers for logged in user data up to 20 consumers data.
 
 ```sh
 curl -X GET \
-	/v1/management/users/current/consumers \
+	https:///v1/management/users/current/consumers \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getconsumersforloggedin_user []}}
 
 ### HTTP Request
 
-`GET /v1/management/users/current/consumers`
+`GET https:///v1/management/users/current/consumers`
 
 ### Responses
 
 #### Response body
 
-| Name      | Type       | Description |
-|-----------|------------|-------------|
-| Consumers | []Consumer |             |
+| Name      | Type        | Description |
+|-----------|-------------|-------------|
+| consumers | \[]Consumer |             |
 
 ##### Objects
 
 ###### Consumer
 
-| Name            | Type         | Description |
-|-----------------|--------------|-------------|
-| ID              | int32        |             |
-| AppName         | string       |             |
-| AppType         | string       |             |
-| Description     | string       |             |
-| DeveloperEmail  | string       |             |
-| RedirectURL     | string       |             |
-| CreatedByUserID | string       |             |
-| CreatedByUser   | CreateByUser |             |
-| Enabled         | bool         |             |
-| Created         | Timestamp    |             |
+| Name               | Type         | Description |
+|--------------------|--------------|-------------|
+| id                 | int32        |             |
+| app_name           | string       |             |
+| app_type           | string       |             |
+| description        | string       |             |
+| developer_email    | string       |             |
+| redirect_url       | string       |             |
+| created_by_user_id | string       |             |
+| created_by_user    | CreateByUser |             |
+| enabled            | bool         |             |
+| created            | Timestamp    |             |
 
 ###### CreateByUser
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| UserID     | string |             |
-| Email      | string |             |
-| ProviderID | string |             |
-| Provider   | string |             |
-| Username   | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| user_id     | string |             |
+| email       | string |             |
+| provider_id | string |             |
+| provider    | string |             |
+| username    | string |             |
 
 ###### Timestamp
 
@@ -449,6 +458,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -460,13 +470,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Set consumer call limits. {#method-put-setconsumercallslimit}
+Set consumer call limits. {#method-put-setconsumercallslimit}
+-------------------------------------------------------------
 
 Set consumer call limits.
 
 ```sh
 curl -X PUT \
-	/v1/management/consumers/{ConsumerID}/consumer/call-limits \
+	https:///v1/management/consumers/{ConsumerID}/consumer/call-limits \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"consumer_id": "string",
@@ -478,42 +489,41 @@ curl -X PUT \
 		"per_month_call_limit": "string"
 	}'
 ```
-{{snippet setconsumercalls_limit []}}
 
 ### HTTP Request
 
-`PUT /v1/management/consumers/{ConsumerID}/consumer/call-limits`
+`PUT https:///v1/management/consumers/{ConsumerID}/consumer/call-limits`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| ConsumerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| consumer_id | string |             |
 
 ### Body Parameters
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| ConsumerID         | string |             |
-| PerSecondCallLimit | string |             |
-| PerMinuteCallLimit | string |             |
-| PerHourCallLimit   | string |             |
-| PerDayCallLimit    | string |             |
-| PerWeekCallLimit   | string |             |
-| PerMonthCallLimit  | string |             |
+| Name                  | Type   | Description |
+|-----------------------|--------|-------------|
+| consumer_id           | string |             |
+| per_second_call_limit | string |             |
+| per_minute_call_limit | string |             |
+| per_hour_call_limit   | string |             |
+| per_day_call_limit    | string |             |
+| per_week_call_limit   | string |             |
+| per_month_call_limit  | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name               | Type   | Description |
-|--------------------|--------|-------------|
-| PerSecondCallLimit | string |             |
-| PerMinuteCallLimit | string |             |
-| PerHourCallLimit   | string |             |
-| PerDayCallLimit    | string |             |
-| PerWeekCallLimit   | string |             |
-| PerMonthCallLimit  | string |             |
+| Name                  | Type   | Description |
+|-----------------------|--------|-------------|
+| per_second_call_limit | string |             |
+| per_minute_call_limit | string |             |
+| per_hour_call_limit   | string |             |
+| per_day_call_limit    | string |             |
+| per_week_call_limit   | string |             |
+| per_month_call_limit  | string |             |
 
 Example:
 
@@ -527,6 +537,7 @@ Example:
   "per_month_call_limit": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -539,37 +550,37 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Set consumer redirect url. {#method-put-updateconsumerredirecturl}
+Set consumer redirect url. {#method-put-updateconsumerredirecturl}
+------------------------------------------------------------------
 
 Set consumer redirect url.
 
 ```sh
 curl -X PUT \
-	/v1/management/consumers/{ConsumerID}/consumer/redirect_url \
+	https:///v1/management/consumers/{ConsumerID}/consumer/redirect_url \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"consumer_id": "string",
 		"redirect_url": "string"
 	}'
 ```
-{{snippet updateconsumerredirect_url []}}
 
 ### HTTP Request
 
-`PUT /v1/management/consumers/{ConsumerID}/consumer/redirect_url`
+`PUT https:///v1/management/consumers/{ConsumerID}/consumer/redirect_url`
 
 ### Query Parameters
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| ConsumerID | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| consumer_id | string |             |
 
 ### Body Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| ConsumerID  | string |             |
-| RedirectURL | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| consumer_id  | string |             |
+| redirect_url | string |             |
 
 ### Responses
 
@@ -577,34 +588,34 @@ curl -X PUT \
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
-| Consumer | Consumer |             |
+| consumer | Consumer |             |
 
 ##### Objects
 
 ###### Consumer
 
-| Name            | Type         | Description |
-|-----------------|--------------|-------------|
-| ID              | int32        |             |
-| AppName         | string       |             |
-| AppType         | string       |             |
-| Description     | string       |             |
-| DeveloperEmail  | string       |             |
-| RedirectURL     | string       |             |
-| CreatedByUserID | string       |             |
-| CreatedByUser   | CreateByUser |             |
-| Enabled         | bool         |             |
-| Created         | Timestamp    |             |
+| Name               | Type         | Description |
+|--------------------|--------------|-------------|
+| id                 | int32        |             |
+| app_name           | string       |             |
+| app_type           | string       |             |
+| description        | string       |             |
+| developer_email    | string       |             |
+| redirect_url       | string       |             |
+| created_by_user_id | string       |             |
+| created_by_user    | CreateByUser |             |
+| enabled            | bool         |             |
+| created            | Timestamp    |             |
 
 ###### CreateByUser
 
-| Name       | Type   | Description |
-|------------|--------|-------------|
-| UserID     | string |             |
-| Email      | string |             |
-| ProviderID | string |             |
-| Provider   | string |             |
-| Username   | string |             |
+| Name        | Type   | Description |
+|-------------|--------|-------------|
+| user_id     | string |             |
+| email       | string |             |
+| provider_id | string |             |
+| provider    | string |             |
+| username    | string |             |
 
 ###### Timestamp
 
@@ -640,6 +651,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

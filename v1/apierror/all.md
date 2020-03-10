@@ -1,6 +1,8 @@
-# Annex
+Annex
+=====
 
-##  APIError
+APIError
+--------
 
 APIError defines the error model returned by an API in case something went wrong
 
@@ -11,7 +13,8 @@ APIError defines the error model returned by an API in case something went wrong
 | Message | string    | Message is a human readable message providing more details about the error.               |
 | DocURL  | string    | DocURL is a direct link to the specific error type documentation, when applicable.        |
 
-##  ErrorType
+ErrorType
+---------
 
 ErrorType defines the type of the error.
 

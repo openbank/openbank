@@ -1,48 +1,49 @@
-# Entitlement API v1.0.0
+Entitlement API v1.0.0
+======================
 
 Provides CRUD operations on the entitlement part resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Add an entitlement request for current user {#method-post-addentitlementrequestforcurrentuser}
+Add an entitlement request for current user {#method-post-addentitlementrequestforcurrentuser}
+----------------------------------------------------------------------------------------------
 
 Add an entitlement request for current user
 
 ```sh
 curl -X POST \
-	/v1/entitlement-requests \
+	https:///v1/entitlement-requests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
 		"role_name": "string"
 	}'
 ```
-{{snippet addentitlementrequestforcurrent_user []}}
 
 ### HTTP Request
 
-`POST /v1/entitlement-requests`
+`POST https:///v1/entitlement-requests`
 
 ### Body Parameters
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| BankID   | string |             |
-| RoleName | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| bank_id   | string |             |
+| role_name | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                 | Type      | Description |
-|----------------------|-----------|-------------|
-| EntitlementRequestID | string    |             |
-| User                 | User      |             |
-| RoleName             | string    |             |
-| BankID               | string    |             |
-| Created              | Timestamp |             |
+| Name                   | Type      | Description |
+|------------------------|-----------|-------------|
+| entitlement_request_id | string    |             |
+| user                   | User      |             |
+| role_name              | string    |             |
+| bank_id                | string    |             |
+| created                | Timestamp |             |
 
 ##### Objects
 
@@ -50,12 +51,12 @@ curl -X POST \
 
 | Name         | Type         | Description |
 |--------------|--------------|-------------|
-| UserID       | string       |             |
-| Email        | string       |             |
-| ProviderID   | string       |             |
-| Provider     | string       |             |
-| Username     | string       |             |
-| Entitlements | Entitlements |             |
+| user_id      | string       |             |
+| email        | string       |             |
+| provider_id  | string       |             |
+| provider     | string       |             |
+| username     | string       |             |
+| entitlements | Entitlements |             |
 
 ###### Timestamp
 
@@ -66,17 +67,17 @@ curl -X POST \
 
 ###### Entitlements
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -107,6 +108,7 @@ Example:
   }
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -118,13 +120,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Add the entitlement request for user {#method-post-addentitlementrequestforuser}
+Add the entitlement request for user {#method-post-addentitlementrequestforuser}
+--------------------------------------------------------------------------------
 
 Add the entitlement entitlement request for user
 
 ```sh
 curl -X POST \
-	/v1/users/{UserID}/entitlements \
+	https:///v1/users/{UserID}/entitlements \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"user_id": "string",
@@ -132,36 +135,35 @@ curl -X POST \
 		"role_name": "string"
 	}'
 ```
-{{snippet addentitlementrequestforuser []}}
 
 ### HTTP Request
 
-`POST /v1/users/{UserID}/entitlements`
+`POST https:///v1/users/{UserID}/entitlements`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| UserID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| user_id | string |             |
 
 ### Body Parameters
 
-| Name     | Type   | Description |
-|----------|--------|-------------|
-| UserID   | string |             |
-| BankID   | string |             |
-| RoleName | string |             |
+| Name      | Type   | Description |
+|-----------|--------|-------------|
+| user_id   | string |             |
+| bank_id   | string |             |
+| role_name | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| UserID        | string |             |
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| user_id        | string |             |
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -173,6 +175,7 @@ Example:
   "bank_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -184,25 +187,27 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete an entitlement {#method-delete-deleteentitlement}
+Delete an entitlement {#method-delete-deleteentitlement}
+--------------------------------------------------------
 
 Permanently delete an entitlement.
 
 ```sh
 curl -X DELETE \
-	/v1/users/{UserID}/entitlements/{EntitlementID} \
+	https:///v1/users/{UserID}/entitlements/{EntitlementID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/users/{UserID}/entitlements/{EntitlementID}`
+`DELETE https:///v1/users/{UserID}/entitlements/{EntitlementID}`
 
 ### Query Parameters
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| UserID        | string |             |
-| EntitlementID | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| user_id        | string |             |
+| entitlement_id | string |             |
 
 ### Responses
 
@@ -216,6 +221,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -227,26 +233,26 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a entitlement request {#method-delete-deleteentitlementrequest}
+Delete a entitlement request {#method-delete-deleteentitlementrequest}
+----------------------------------------------------------------------
 
 Permanently delete an entitlement request.
 
 ```sh
 curl -X DELETE \
-	/v1/entitlement-requests/{EntitlementRequestID} \
+	https:///v1/entitlement-requests/{EntitlementRequestID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet deleteentitlementrequest []}}
 
 ### HTTP Request
 
-`DELETE /v1/entitlement-requests/{EntitlementRequestID}`
+`DELETE https:///v1/entitlement-requests/{EntitlementRequestID}`
 
 ### Query Parameters
 
-| Name                 | Type   | Description |
-|----------------------|--------|-------------|
-| EntitlementRequestID | string |             |
+| Name                   | Type   | Description |
+|------------------------|--------|-------------|
+| entitlement_request_id | string |             |
 
 ### Responses
 
@@ -260,6 +266,7 @@ Example:
 ```json
 {}
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -271,51 +278,51 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all entitlements {#method-get-getallentitlementrequests}
+List all entitlements {#method-get-getallentitlementrequests}
+-------------------------------------------------------------
 
 Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \
-	/v1/entitlement-requests \
+	https:///v1/entitlement-requests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getallentitlement_requests []}}
 
 ### HTTP Request
 
-`GET /v1/entitlement-requests`
+`GET https:///v1/entitlement-requests`
 
 ### Responses
 
 #### Response body
 
-| Name                | Type                 | Description |
-|---------------------|----------------------|-------------|
-| EntitlementRequests | []EntitlementRequest |             |
+| Name                 | Type                  | Description |
+|----------------------|-----------------------|-------------|
+| entitlement_requests | \[]EntitlementRequest |             |
 
 ##### Objects
 
 ###### EntitlementRequest
 
-| Name                 | Type      | Description |
-|----------------------|-----------|-------------|
-| EntitlementRequestID | string    |             |
-| User                 | User      |             |
-| RoleName             | string    |             |
-| BankID               | string    |             |
-| Created              | Timestamp |             |
+| Name                   | Type      | Description |
+|------------------------|-----------|-------------|
+| entitlement_request_id | string    |             |
+| user                   | User      |             |
+| role_name              | string    |             |
+| bank_id                | string    |             |
+| created                | Timestamp |             |
 
 ###### User
 
 | Name         | Type         | Description |
 |--------------|--------------|-------------|
-| UserID       | string       |             |
-| Email        | string       |             |
-| ProviderID   | string       |             |
-| Provider     | string       |             |
-| Username     | string       |             |
-| Entitlements | Entitlements |             |
+| user_id      | string       |             |
+| email        | string       |             |
+| provider_id  | string       |             |
+| provider     | string       |             |
+| username     | string       |             |
+| entitlements | Entitlements |             |
 
 ###### Timestamp
 
@@ -326,17 +333,17 @@ curl -X GET \
 
 ###### Entitlements
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -371,6 +378,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -382,38 +390,38 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all entitlements {#method-get-getallentitlements}
+List all entitlements {#method-get-getallentitlements}
+------------------------------------------------------
 
 Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \
-	/v1/entitlements \
+	https:///v1/entitlements \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getallentitlements []}}
 
 ### HTTP Request
 
-`GET /v1/entitlements`
+`GET https:///v1/entitlements`
 
 ### Responses
 
 #### Response body
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ##### Objects
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -428,6 +436,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -439,38 +448,38 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement information {#method-get-getentitlementforcurrentuser}
+Retrieve entitlement information {#method-get-getentitlementforcurrentuser}
+---------------------------------------------------------------------------
 
 Retrieve information about the entitlement specified for current user
 
 ```sh
 curl -X GET \
-	/v1/users/current/entitlements \
+	https:///v1/users/current/entitlements \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getentitlementforcurrentuser []}}
 
 ### HTTP Request
 
-`GET /v1/users/current/entitlements`
+`GET https:///v1/users/current/entitlements`
 
 ### Responses
 
 #### Response body
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ##### Objects
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -485,6 +494,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -497,44 +507,44 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement information {#method-get-getentitlementforuser}
+Retrieve entitlement information {#method-get-getentitlementforuser}
+--------------------------------------------------------------------
 
 Retrieve information about the entitlement specified by the User ID
 
 ```sh
 curl -X GET \
-	/v1/users/{UserID}/entitlements \
+	https:///v1/users/{UserID}/entitlements \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getentitlementfor_user []}}
 
 ### HTTP Request
 
-`GET /v1/users/{UserID}/entitlements`
+`GET https:///v1/users/{UserID}/entitlements`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| UserID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| user_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ##### Objects
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -549,6 +559,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -561,45 +572,45 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement information {#method-get-getentitlementforuseratbank}
+Retrieve entitlement information {#method-get-getentitlementforuseratbank}
+--------------------------------------------------------------------------
 
 Retrieve information about the entitlement specified by the User ID at bank
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/users/{UserID}/entitlements \
+	https:///v1/banks/{BankID}/users/{UserID}/entitlements \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getentitlementforuserat_bank []}}
 
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/users/{UserID}/entitlements`
+`GET https:///v1/banks/{BankID}/users/{UserID}/entitlements`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
-| UserID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
+| user_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ##### Objects
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -614,6 +625,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -626,51 +638,51 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement request information {#method-get-getentitlementrequestforcurrentuser}
+Retrieve entitlement request information {#method-get-getentitlementrequestforcurrentuser}
+------------------------------------------------------------------------------------------
 
 Retrieve information about the entitlement request specified for current user
 
 ```sh
 curl -X GET \
-	/v1/users/current/entitlement-requests \
+	https:///v1/users/current/entitlement-requests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getentitlementrequestforcurrent_user []}}
 
 ### HTTP Request
 
-`GET /v1/users/current/entitlement-requests`
+`GET https:///v1/users/current/entitlement-requests`
 
 ### Responses
 
 #### Response body
 
-| Name                | Type                 | Description |
-|---------------------|----------------------|-------------|
-| EntitlementRequests | []EntitlementRequest |             |
+| Name                 | Type                  | Description |
+|----------------------|-----------------------|-------------|
+| entitlement_requests | \[]EntitlementRequest |             |
 
 ##### Objects
 
 ###### EntitlementRequest
 
-| Name                 | Type      | Description |
-|----------------------|-----------|-------------|
-| EntitlementRequestID | string    |             |
-| User                 | User      |             |
-| RoleName             | string    |             |
-| BankID               | string    |             |
-| Created              | Timestamp |             |
+| Name                   | Type      | Description |
+|------------------------|-----------|-------------|
+| entitlement_request_id | string    |             |
+| user                   | User      |             |
+| role_name              | string    |             |
+| bank_id                | string    |             |
+| created                | Timestamp |             |
 
 ###### User
 
 | Name         | Type         | Description |
 |--------------|--------------|-------------|
-| UserID       | string       |             |
-| Email        | string       |             |
-| ProviderID   | string       |             |
-| Provider     | string       |             |
-| Username     | string       |             |
-| Entitlements | Entitlements |             |
+| user_id      | string       |             |
+| email        | string       |             |
+| provider_id  | string       |             |
+| provider     | string       |             |
+| username     | string       |             |
+| entitlements | Entitlements |             |
 
 ###### Timestamp
 
@@ -681,17 +693,17 @@ curl -X GET \
 
 ###### Entitlements
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -726,6 +738,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -738,57 +751,57 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve entitlement request information {#method-get-getentitlementrequestforuser}
+Retrieve entitlement request information {#method-get-getentitlementrequestforuser}
+-----------------------------------------------------------------------------------
 
 Retrieve information about the entitlement request specified by the User ID
 
 ```sh
 curl -X GET \
-	/v1/users/{UserID}/entitlement-requests \
+	https:///v1/users/{UserID}/entitlement-requests \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getentitlementrequestforuser []}}
 
 ### HTTP Request
 
-`GET /v1/users/{UserID}/entitlement-requests`
+`GET https:///v1/users/{UserID}/entitlement-requests`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| UserID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| user_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name                | Type                 | Description |
-|---------------------|----------------------|-------------|
-| EntitlementRequests | []EntitlementRequest |             |
+| Name                 | Type                  | Description |
+|----------------------|-----------------------|-------------|
+| entitlement_requests | \[]EntitlementRequest |             |
 
 ##### Objects
 
 ###### EntitlementRequest
 
-| Name                 | Type      | Description |
-|----------------------|-----------|-------------|
-| EntitlementRequestID | string    |             |
-| User                 | User      |             |
-| RoleName             | string    |             |
-| BankID               | string    |             |
-| Created              | Timestamp |             |
+| Name                   | Type      | Description |
+|------------------------|-----------|-------------|
+| entitlement_request_id | string    |             |
+| user                   | User      |             |
+| role_name              | string    |             |
+| bank_id                | string    |             |
+| created                | Timestamp |             |
 
 ###### User
 
 | Name         | Type         | Description |
 |--------------|--------------|-------------|
-| UserID       | string       |             |
-| Email        | string       |             |
-| ProviderID   | string       |             |
-| Provider     | string       |             |
-| Username     | string       |             |
-| Entitlements | Entitlements |             |
+| user_id      | string       |             |
+| email        | string       |             |
+| provider_id  | string       |             |
+| provider     | string       |             |
+| username     | string       |             |
+| entitlements | Entitlements |             |
 
 ###### Timestamp
 
@@ -799,17 +812,17 @@ curl -X GET \
 
 ###### Entitlements
 
-| Name | Type   | Description |
-|------|--------|-------------|
-| List | []List |             |
+| Name | Type    | Description |
+|------|---------|-------------|
+| list | \[]List |             |
 
 ###### List
 
-| Name          | Type   | Description |
-|---------------|--------|-------------|
-| EntitlementID | string |             |
-| RoleName      | string |             |
-| BankID        | string |             |
+| Name           | Type   | Description |
+|----------------|--------|-------------|
+| entitlement_id | string |             |
+| role_name      | string |             |
+| bank_id        | string |             |
 
 Example:
 
@@ -844,6 +857,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -856,35 +870,37 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all entitlements {#method-get-getroles}
+List all entitlements {#method-get-getroles}
+--------------------------------------------
 
 Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
 ```sh
 curl -X GET \
-	/v1/roles \
+	https:///v1/roles \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/roles`
+`GET https:///v1/roles`
 
 ### Responses
 
 #### Response body
 
-| Name  | Type    | Description |
-|-------|---------|-------------|
-| Roles | []Roles |             |
+| Name  | Type     | Description |
+|-------|----------|-------------|
+| roles | \[]Roles |             |
 
 ##### Objects
 
 ###### Roles
 
-| Name           | Type   | Description |
-|----------------|--------|-------------|
-| Role           | string |             |
-| RequiresBankID | bool   |             |
+| Name             | Type   | Description |
+|------------------|--------|-------------|
+| role             | string |             |
+| requires_bank_id | bool   |             |
 
 Example:
 
@@ -898,6 +914,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

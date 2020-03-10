@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/users/{UserID}/entitlements": {
+    "/v1/banks/{bankID}/users/{userID}/entitlements": {
       "get": {
         "summary": "Retrieve entitlement information",
         "description": "Retrieve information about the entitlement specified by the User ID at bank",
@@ -50,13 +50,13 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "UserID",
+            "name": "userID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -109,14 +109,14 @@
         },
         "parameters": [
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
@@ -195,7 +195,7 @@
         ]
       }
     },
-    "/v1/entitlement-requests/{EntitlementRequestID}": {
+    "/v1/entitlement-requests/{entitlementRequestID}": {
       "delete": {
         "summary": "Delete a entitlement request",
         "description": "Permanently delete an entitlement request.",
@@ -234,7 +234,7 @@
         },
         "parameters": [
           {
-            "name": "EntitlementRequestID",
+            "name": "entitlementRequestID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -287,14 +287,14 @@
         },
         "parameters": [
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
@@ -349,14 +349,14 @@
         },
         "parameters": [
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
@@ -466,7 +466,7 @@
         ]
       }
     },
-    "/v1/users/{UserID}/entitlement-requests": {
+    "/v1/users/{userID}/entitlement-requests": {
       "get": {
         "summary": "Retrieve entitlement request information",
         "description": "Retrieve information about the entitlement request specified by the User ID",
@@ -501,7 +501,7 @@
         },
         "parameters": [
           {
-            "name": "UserID",
+            "name": "userID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -519,7 +519,7 @@
         ]
       }
     },
-    "/v1/users/{UserID}/entitlements": {
+    "/v1/users/{userID}/entitlements": {
       "get": {
         "summary": "Retrieve entitlement information",
         "description": "Retrieve information about the entitlement specified by the User ID",
@@ -554,7 +554,7 @@
         },
         "parameters": [
           {
-            "name": "UserID",
+            "name": "userID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -611,7 +611,7 @@
         },
         "parameters": [
           {
-            "name": "UserID",
+            "name": "userID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -637,7 +637,7 @@
         ]
       }
     },
-    "/v1/users/{UserID}/entitlements/{EntitlementID}": {
+    "/v1/users/{userID}/entitlements/{entitlementID}": {
       "delete": {
         "summary": "Delete an entitlement",
         "description": "Permanently delete an entitlement.",
@@ -676,13 +676,13 @@
         },
         "parameters": [
           {
-            "name": "UserID",
+            "name": "userID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "EntitlementID",
+            "name": "entitlementID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -705,10 +705,10 @@
     "entitlementAddEntitlementRequestForCurrentUserRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "RoleName": {
+        "role_name": {
           "type": "string"
         }
       }
@@ -716,13 +716,13 @@
     "entitlementAddEntitlementRequestForUserRequest": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "RoleName": {
+        "role_name": {
           "type": "string"
         }
       }
@@ -730,16 +730,16 @@
     "entitlementAddEntitlementRequestForUserResponse": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "EntitlementID": {
+        "entitlement_id": {
           "type": "string"
         },
-        "RoleName": {
+        "role_name": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         }
       }
@@ -747,19 +747,19 @@
     "entitlementEntitlementRequest": {
       "type": "object",
       "properties": {
-        "EntitlementRequestID": {
+        "entitlement_request_id": {
           "type": "string"
         },
-        "User": {
+        "user": {
           "$ref": "#/definitions/entitlementUser"
         },
-        "RoleName": {
+        "role_name": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "Created": {
+        "created": {
           "type": "string",
           "format": "date-time"
         }
@@ -768,7 +768,7 @@
     "entitlementEntitlementRequests": {
       "type": "object",
       "properties": {
-        "EntitlementRequests": {
+        "entitlement_requests": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/entitlementEntitlementRequest"
@@ -779,7 +779,7 @@
     "entitlementEntitlements": {
       "type": "object",
       "properties": {
-        "List": {
+        "list": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/entitlementList"
@@ -790,7 +790,7 @@
     "entitlementGetEntitlementRequestForCurrentUserResponse": {
       "type": "object",
       "properties": {
-        "EntitlementRequests": {
+        "entitlement_requests": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/entitlementEntitlementRequest"
@@ -801,7 +801,7 @@
     "entitlementGetEntitlementRequestForUserResponse": {
       "type": "object",
       "properties": {
-        "EntitlementRequests": {
+        "entitlement_requests": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/entitlementEntitlementRequest"
@@ -812,7 +812,7 @@
     "entitlementGetRolesResponse": {
       "type": "object",
       "properties": {
-        "Roles": {
+        "roles": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/entitlementRoles"
@@ -823,13 +823,13 @@
     "entitlementList": {
       "type": "object",
       "properties": {
-        "EntitlementID": {
+        "entitlement_id": {
           "type": "string"
         },
-        "RoleName": {
+        "role_name": {
           "type": "string"
         },
-        "BankID": {
+        "bank_id": {
           "type": "string"
         }
       }
@@ -837,10 +837,10 @@
     "entitlementRoles": {
       "type": "object",
       "properties": {
-        "Role": {
+        "role": {
           "type": "string"
         },
-        "RequiresBankID": {
+        "requires_bank_id": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -849,22 +849,22 @@
     "entitlementUser": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "user_id": {
           "type": "string"
         },
-        "Email": {
+        "email": {
           "type": "string"
         },
-        "ProviderID": {
+        "provider_id": {
           "type": "string"
         },
-        "Provider": {
+        "provider": {
           "type": "string"
         },
-        "Username": {
+        "username": {
           "type": "string"
         },
-        "Entitlements": {
+        "entitlements": {
           "$ref": "#/definitions/entitlementEntitlements"
         }
       }

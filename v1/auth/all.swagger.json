@@ -50,14 +50,14 @@
         },
         "parameters": [
           {
-            "name": "ClientID",
+            "name": "client_id",
             "description": "ClientID is the identifier provided during the registration process.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "RedirectURI",
+            "name": "redirect_uri",
             "description": "RedirectURI must match one of the URLs provided during the registration process.",
             "in": "query",
             "required": false,
@@ -128,19 +128,19 @@
     "authCreateAccessTokenRequest": {
       "type": "object",
       "properties": {
-        "GrantType": {
+        "grant_type": {
           "$ref": "#/definitions/authGrantType",
           "description": "GrantType is an enum to define which operation to perform."
         },
-        "Code": {
+        "code": {
           "type": "string",
           "description": "Code is the authorization code previously received from the authorization server."
         },
-        "RedirectURI": {
+        "redirect_uri": {
           "type": "string",
           "description": "RedirectURI must match RedirectURI provided for the autorization code request.\nRequired only when GrantType is equal to \"authorization_code\"."
         },
-        "RefreshToken": {
+        "refresh_token": {
           "type": "string",
           "title": "RefreshToken is the refresh token previously issued to the client.\nRequired only when GrantType is equal to \"refresh_token\""
         }
@@ -150,20 +150,20 @@
     "authCreateAccessTokenResponse": {
       "type": "object",
       "properties": {
-        "AccessToken": {
+        "access_token": {
           "type": "string",
           "description": "AccessToken issued by the authorization server."
         },
-        "TokenType": {
+        "token_type": {
           "type": "string",
           "description": "TokenType is the type of the token (which is always \"bearer\")."
         },
-        "ExpiresIn": {
+        "expires_in": {
           "type": "integer",
           "format": "int32",
           "description": "ExpiresIn is the duration in seconds that the access token will remain valid."
         },
-        "RefreshToken": {
+        "refresh_token": {
           "type": "string",
           "description": "RefreshToken is the token to renew an expired access token."
         }

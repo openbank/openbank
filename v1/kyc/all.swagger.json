@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/customers/{CustomerID}/kyc_check/{KYCCheckID}": {
+    "/v1/customers/{customerID}/kyc_check/{kYCCheckID}": {
       "put": {
         "summary": "Add KYC check",
         "description": "Add KYC check for the customer specified",
@@ -56,13 +56,13 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "KYCCheckID",
+            "name": "kYCCheckID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -88,7 +88,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/kyc_check/{KYCDocumentID}": {
+    "/v1/customers/{customerID}/kyc_check/{kYCDocumentID}": {
       "put": {
         "summary": "Add KYC document",
         "description": "Add KYC document for the customer specified",
@@ -129,13 +129,13 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "KYCDocumentID",
+            "name": "kYCDocumentID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -161,7 +161,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/kyc_check/{KYCMediaID}": {
+    "/v1/customers/{customerID}/kyc_check/{kYCMediaID}": {
       "put": {
         "summary": "Add KYC media",
         "description": "Add KYC media for the customer specified",
@@ -202,13 +202,13 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "KYCMediaID",
+            "name": "kYCMediaID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -234,7 +234,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/kyc_checks": {
+    "/v1/customers/{customerID}/kyc_checks": {
       "get": {
         "summary": "Get Customer KYC check",
         "description": "Get Customer KYC check fot the customer",
@@ -275,7 +275,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -293,7 +293,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/kyc_documents": {
+    "/v1/customers/{customerID}/kyc_documents": {
       "get": {
         "summary": "Get Customer KYC documents",
         "description": "Get Customer KYC documents fot the customer",
@@ -334,7 +334,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -352,7 +352,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/kyc_media": {
+    "/v1/customers/{customerID}/kyc_media": {
       "get": {
         "summary": "Get Customer KYC media",
         "description": "Get Customer KYC media fot the customer",
@@ -393,7 +393,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -411,7 +411,7 @@
         ]
       }
     },
-    "/v1/customers/{CustomerID}/kyc_statuses": {
+    "/v1/customers/{customerID}/kyc_statuses": {
       "get": {
         "summary": "Get Customer KYC statuses",
         "description": "Get Customer KYC statuses fot the customer",
@@ -452,7 +452,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -509,7 +509,7 @@
         },
         "parameters": [
           {
-            "name": "CustomerID",
+            "name": "customerID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -540,33 +540,33 @@
     "kycAddKYCCheckRequest": {
       "type": "object",
       "properties": {
-        "KYCCheckID": {
+        "kyc_check_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         },
-        "How": {
+        "how": {
           "type": "string"
         },
-        "StaffUserID": {
+        "staff_user_id": {
           "type": "string"
         },
-        "StaffName": {
+        "staff_name": {
           "type": "string"
         },
-        "Satisfied": {
+        "satisfied": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Comments": {
+        "comments": {
           "type": "string"
         }
       }
@@ -574,36 +574,36 @@
     "kycAddKYCCheckResponse": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         },
-        "How": {
+        "how": {
           "type": "string"
         },
-        "StaffUserID": {
+        "staff_user_id": {
           "type": "string"
         },
-        "StaffName": {
+        "staff_name": {
           "type": "string"
         },
-        "Satisfied": {
+        "satisfied": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Comments": {
+        "comments": {
           "type": "string"
         }
       }
@@ -611,29 +611,29 @@
     "kycAddKYCDocumentRequest": {
       "type": "object",
       "properties": {
-        "KYCDocumentID": {
+        "kyc_document_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Number": {
+        "number": {
           "type": "string"
         },
-        "IssueDate": {
+        "issue_date": {
           "type": "string",
           "format": "date-time"
         },
-        "IssuePlace": {
+        "issue_place": {
           "type": "string"
         },
-        "ExpiryDate": {
+        "expiry_date": {
           "type": "string",
           "format": "date-time"
         }
@@ -642,32 +642,32 @@
     "kycAddKYCDocumentResponse": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Number": {
+        "number": {
           "type": "string"
         },
-        "IssueDate": {
+        "issue_date": {
           "type": "string",
           "format": "date-time"
         },
-        "IssuePlace": {
+        "issue_place": {
           "type": "string"
         },
-        "ExpiryDate": {
+        "expiry_date": {
           "type": "string",
           "format": "date-time"
         }
@@ -676,29 +676,29 @@
     "kycAddKYCMediaRequest": {
       "type": "object",
       "properties": {
-        "KYCMediaID": {
+        "kyc_media_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "URL": {
+        "url": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         },
-        "RelatesToKycDocumentID": {
+        "relates_to_kyc_document_id": {
           "type": "string"
         },
-        "RelatesToKycCheckID": {
+        "relates_to_kyc_check_id": {
           "type": "string"
         }
       }
@@ -706,32 +706,32 @@
     "kycAddKYCMediaResponse": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "URL": {
+        "url": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         },
-        "RelatesToKycDocumentID": {
+        "relates_to_kyc_document_id": {
           "type": "string"
         },
-        "RelatesToKycCheckID": {
+        "relates_to_kyc_check_id": {
           "type": "string"
         }
       }
@@ -739,17 +739,17 @@
     "kycAddKYCStatusRequest": {
       "type": "object",
       "properties": {
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Ok": {
+        "ok": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         }
@@ -758,17 +758,17 @@
     "kycAddKYCStatusResponse": {
       "type": "object",
       "properties": {
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Ok": {
+        "ok": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         }
@@ -777,36 +777,36 @@
     "kycCheck": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         },
-        "How": {
+        "how": {
           "type": "string"
         },
-        "StaffUserID": {
+        "staff_user_id": {
           "type": "string"
         },
-        "StaffName": {
+        "staff_name": {
           "type": "string"
         },
-        "Satisfied": {
+        "satisfied": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Comments": {
+        "comments": {
           "type": "string"
         }
       }
@@ -814,32 +814,32 @@
     "kycDocument": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "Number": {
+        "number": {
           "type": "string"
         },
-        "IssueDate": {
+        "issue_date": {
           "type": "string",
           "format": "date-time"
         },
-        "IssuePlace": {
+        "issue_place": {
           "type": "string"
         },
-        "ExpiryDate": {
+        "expiry_date": {
           "type": "string",
           "format": "date-time"
         }
@@ -848,7 +848,7 @@
     "kycGetCustomerKYCCheckResponse": {
       "type": "object",
       "properties": {
-        "Checks": {
+        "checks": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/kycCheck"
@@ -859,7 +859,7 @@
     "kycGetCustomerKYCDocumentResponse": {
       "type": "object",
       "properties": {
-        "Documents": {
+        "documents": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/kycDocument"
@@ -870,7 +870,7 @@
     "kycGetCustomerKYCStatusResponse": {
       "type": "object",
       "properties": {
-        "Statuses": {
+        "statuses": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/kycStatus"
@@ -881,7 +881,7 @@
     "kycGetKYCMediaResponse": {
       "type": "object",
       "properties": {
-        "Medias": {
+        "medias": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/kycMedia"
@@ -892,32 +892,32 @@
     "kycMedia": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string"
         },
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Type": {
+        "type": {
           "type": "string"
         },
-        "URL": {
+        "url": {
           "type": "string"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         },
-        "RelatesToKycDocumentID": {
+        "relates_to_kyc_document_id": {
           "type": "string"
         },
-        "RelatesToKycCheckID": {
+        "relates_to_kyc_check_id": {
           "type": "string"
         }
       }
@@ -925,17 +925,17 @@
     "kycStatus": {
       "type": "object",
       "properties": {
-        "CustomerID": {
+        "customer_id": {
           "type": "string"
         },
-        "CustomerNumber": {
+        "customer_number": {
           "type": "string"
         },
-        "Ok": {
+        "ok": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time"
         }

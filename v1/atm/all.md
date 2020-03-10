@@ -1,18 +1,20 @@
-# ATM API v1.0.0
+ATM API v1.0.0
+==============
 
 Provides create and read operations on the ATM resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create an ATM {#method-post-createatm}
+Create an ATM {#method-post-createatm}
+--------------------------------------
 
 Creates a new ATM and returns its id.
 
 ```sh
 curl -X POST \
-	/v1/atms \
+	https:///v1/atms \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -32,41 +34,40 @@ curl -X POST \
 		"metadata": "string"
 	}'
 ```
-{{snippet createat_m []}}
 
 ### HTTP Request
 
-`POST /v1/atms`
+`POST https:///v1/atms`
 
 ### Body Parameters
 
 | Name        | Type     | Description                                                   |
 |-------------|----------|---------------------------------------------------------------|
-| BankID      | string   | BankID is the bank identifier that owned the ATM              |
-| Name        | string   | BankID is the identifier of the bank associated with the ATM. |
-| Address     | Address  | Address is the ATM's address.                                 |
-| Location    | Location | Location is the ATM's longitude and latitude                  |
-| Description | string   | Description is the ATM's description.                         |
-| Metadata    | string   | Metadata is the ATM's metadata.                               |
+| bank_id     | string   | BankID is the bank identifier that owned the ATM              |
+| name        | string   | BankID is the identifier of the bank associated with the ATM. |
+| 3           | Address  | Address is the ATM's address.                                 |
+| location    | Location | Location is the ATM's longitude and latitude                  |
+| description | string   | Description is the ATM's description.                         |
+| metadata    | string   | Metadata is the ATM's metadata.                               |
 
 ##### Objects
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 
@@ -74,7 +75,7 @@ curl -X POST \
 
 | Name   | Type   | Description                                 |
 |--------|--------|---------------------------------------------|
-| ATM_ID | string | ATM_ID is the unique identifier of the ATM. |
+| atm_id | string | ATM_ID is the unique identifier of the ATM. |
 
 Example:
 
@@ -83,6 +84,7 @@ Example:
   "atm_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -94,26 +96,26 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve an ATM {#method-get-getatm}
+Retrieve an ATM {#method-get-getatm}
+------------------------------------
 
 Retrieves information regarding a specific ATM, selected by the supplied ID.
 
 ```sh
 curl -X GET \
-	/v1/atms/{ATM_ID} \
+	https:///v1/atms/{ATM_ID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getat_m []}}
 
 ### HTTP Request
 
-`GET /v1/atms/{ATM_ID}`
+`GET https:///v1/atms/{ATM_ID}`
 
 ### Query Parameters
 
 | Name   | Type   | Description                               |
 |--------|--------|-------------------------------------------|
-| ATM_ID | string | ATM_ID is a unique identifier of the ATM. |
+| atm_id | string | ATM_ID is a unique identifier of the ATM. |
 
 ### Responses
 
@@ -121,32 +123,32 @@ curl -X GET \
 
 | Name        | Type     | Description                                                   |
 |-------------|----------|---------------------------------------------------------------|
-| ID          | string   | ID is the unique identifier of an ATM.                        |
-| BankID      | string   | BankID is the identifier of the bank associated with the ATM. |
-| Name        | string   | Name is the name of ATM.                                      |
-| Address     | Address  | Address is the ATM's address.                                 |
-| Location    | Location | Location is the ATM longitude and latitude.                   |
-| Description | string   | Description is the ATM's description.                         |
-| Metadata    | string   | Metadata is the ATM's metadata.                               |
+| id          | string   | ID is the unique identifier of an ATM.                        |
+| bank_id     | string   | BankID is the identifier of the bank associated with the ATM. |
+| name        | string   | Name is the name of ATM.                                      |
+| address     | Address  | Address is the ATM's address.                                 |
+| location    | Location | Location is the ATM longitude and latitude.                   |
+| description | string   | Description is the ATM's description.                         |
+| metadata    | string   | Metadata is the ATM's metadata.                               |
 
 ##### Objects
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -170,6 +172,7 @@ Example:
   "metadata": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -182,28 +185,28 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available ATMs {#method-get-getatms}
+Retrieve all available ATMs {#method-get-getatms}
+-------------------------------------------------
 
 Retrieves information regarding all the available ATMs.
 
 ```sh
 curl -X GET \
-	/v1/atms \
+	https:///v1/atms \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
-{{snippet getat_ms []}}
 
 ### HTTP Request
 
-`GET /v1/atms`
+`GET https:///v1/atms`
 
 ### Responses
 
 #### Response body
 
-| Name   | Type  | Description                     |
-|--------|-------|---------------------------------|
-| Result | []ATM | Result is the list of the ATMs. |
+| Name   | Type   | Description                     |
+|--------|--------|---------------------------------|
+| result | \[]ATM | Result is the list of the ATMs. |
 
 ##### Objects
 
@@ -211,30 +214,30 @@ curl -X GET \
 
 | Name        | Type     | Description                                                   |
 |-------------|----------|---------------------------------------------------------------|
-| ID          | string   | ID is the unique identifier of an ATM.                        |
-| BankID      | string   | BankID is the identifier of the bank associated with the ATM. |
-| Name        | string   | Name is the name of ATM.                                      |
-| Address     | Address  | Address is the ATM's address.                                 |
-| Location    | Location | Location is the ATM longitude and latitude.                   |
-| Description | string   | Description is the ATM's description.                         |
-| Metadata    | string   | Metadata is the ATM's metadata.                               |
+| id          | string   | ID is the unique identifier of an ATM.                        |
+| bank_id     | string   | BankID is the identifier of the bank associated with the ATM. |
+| name        | string   | Name is the name of ATM.                                      |
+| address     | Address  | Address is the ATM's address.                                 |
+| location    | Location | Location is the ATM longitude and latitude.                   |
+| description | string   | Description is the ATM's description.                         |
+| metadata    | string   | Metadata is the ATM's metadata.                               |
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -262,6 +265,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |

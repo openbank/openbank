@@ -119,7 +119,7 @@
         ]
       }
     },
-    "/v1/branches/{BranchID}": {
+    "/v1/branches/{branchID}": {
       "get": {
         "summary": "Retrieve branch information",
         "description": "Retrieve information about the branch specified by the ID",
@@ -154,7 +154,7 @@
         },
         "parameters": [
           {
-            "name": "BranchID",
+            "name": "branchID",
             "description": "BranchID is the branch unique identifier.",
             "in": "path",
             "required": true,
@@ -210,7 +210,7 @@
         },
         "parameters": [
           {
-            "name": "BranchID",
+            "name": "branchID",
             "description": "BranchID is the branch unique identifier.",
             "in": "path",
             "required": true,
@@ -266,7 +266,7 @@
         },
         "parameters": [
           {
-            "name": "BranchID",
+            "name": "branchID",
             "description": "BranchID is the branch unique identifier.",
             "in": "path",
             "required": true,
@@ -298,35 +298,35 @@
     "branchBranch": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the unique identifier of the branch."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is an identifier for the bank the branch is associated with."
         },
-        "Name": {
+        "name": {
           "type": "string",
           "description": "Name is the branch name."
         },
-        "PhoneNumber": {
+        "phone_number": {
           "type": "string",
           "description": "PhoneNumber is the branch's phone number."
         },
-        "Address": {
+        "address": {
           "$ref": "#/definitions/typesAddress",
           "description": "Address is the branch's address."
         },
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the branch's longitude and latitude."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the branch's description."
         },
-        "Metadata": {
+        "metadata": {
           "type": "string",
           "description": "Metadata is the branch's metadata."
         }
@@ -336,31 +336,31 @@
     "branchCreateBranchRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is an identifier for the bank the branch is associated with."
         },
-        "Name": {
+        "name": {
           "type": "string",
           "description": "Name is the branch name."
         },
-        "PhoneNumber": {
+        "phone_number": {
           "type": "string",
           "description": "PhoneNumber is the branch's phone number."
         },
-        "Address": {
+        "address": {
           "$ref": "#/definitions/typesAddress",
           "description": "Address is the branch's address."
         },
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the branch's longitude and latitude."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the branch's description."
         },
-        "Metadata": {
+        "metadata": {
           "type": "string",
           "description": "Metadata is the branch's metadata."
         }
@@ -370,7 +370,7 @@
     "branchCreateBranchResponse": {
       "type": "object",
       "properties": {
-        "BranchID": {
+        "branch_id": {
           "type": "string",
           "description": "BranchID is the branch unique identifier."
         }
@@ -380,7 +380,7 @@
     "branchGetBranchesResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/branchBranch"
@@ -393,31 +393,31 @@
     "branchUpdateBranchRequest": {
       "type": "object",
       "properties": {
-        "BranchID": {
+        "branch_id": {
           "type": "string",
           "description": "BranchID is the branch unique identifier."
         },
-        "Name": {
+        "name": {
           "type": "string",
           "description": "Name is the branch name."
         },
-        "PhoneNumber": {
+        "phone_number": {
           "type": "string",
           "description": "PhoneNumber is the branch phone number."
         },
-        "Address": {
+        "address": {
           "$ref": "#/definitions/typesAddress",
           "description": "Address is the branch address details."
         },
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the branch longitude and latitude."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the branch description."
         },
-        "Metadata": {
+        "metadata": {
           "type": "string",
           "description": "Metadata is the branch metadata."
         }
@@ -427,23 +427,23 @@
     "typesAddress": {
       "type": "object",
       "properties": {
-        "CountryName": {
+        "country_name": {
           "type": "string",
           "description": "CountryName holds the country name information."
         },
-        "CityName": {
+        "city_name": {
           "type": "string",
           "description": "CityName holds the city name information."
         },
-        "State": {
+        "state": {
           "type": "string",
           "description": "State holds the state information."
         },
-        "Street": {
+        "line_1": {
           "type": "string",
           "description": "Street holds the street information."
         },
-        "PostalCode": {
+        "postal_code": {
           "type": "string",
           "description": "PostalCode holds the postal code information."
         }
@@ -453,12 +453,12 @@
     "typesLocation": {
       "type": "object",
       "properties": {
-        "Latitude": {
+        "latitude": {
           "type": "number",
           "format": "double",
           "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
-        "Longitude": {
+        "longitude": {
           "type": "number",
           "format": "double",
           "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"

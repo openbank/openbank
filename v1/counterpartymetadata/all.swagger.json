@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata": {
       "get": {
         "summary": "Retrieve other account metadata information",
         "description": "Retrieve information about the other account metadata specified by the ID",
@@ -50,21 +50,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -83,7 +83,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_location": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/corporate_location": {
       "get": {
         "summary": "Retrieve corporate location information",
         "description": "Retrieve information about the corporate location specified by the ID",
@@ -118,21 +118,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -188,21 +188,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -260,21 +260,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -340,21 +340,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -381,7 +381,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/corporate_locations": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/corporate_locations": {
       "get": {
         "summary": "Retrieve all available corporate locations",
         "description": "Retrieve information regarding all available corporate locations.",
@@ -416,21 +416,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -449,7 +449,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_url": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/image_url": {
       "get": {
         "summary": "Retrieve image url information",
         "description": "Retrieve information about the image url specified by the ID",
@@ -484,21 +484,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -554,21 +554,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -626,21 +626,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -706,21 +706,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -747,7 +747,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/image_urls": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/image_urls": {
       "get": {
         "summary": "Retrieve all available image urls",
         "description": "Retrieve information regarding all available image urls.",
@@ -782,21 +782,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -815,7 +815,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_info": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/more_info": {
       "get": {
         "summary": "Retrieve more info information",
         "description": "Retrieve information about the more info specified by the ID",
@@ -850,21 +850,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -920,21 +920,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -992,21 +992,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1072,21 +1072,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1113,7 +1113,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/more_infos": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/more_infos": {
       "get": {
         "summary": "Retrieve all available more infos",
         "description": "Retrieve information regarding all available more infos.",
@@ -1148,21 +1148,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1181,7 +1181,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_url": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/open_corporates_url": {
       "get": {
         "summary": "Retrieve open corporates url information",
         "description": "Retrieve information about the open corporates url specified by the ID",
@@ -1216,21 +1216,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1286,21 +1286,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1358,21 +1358,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1438,21 +1438,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1479,7 +1479,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/open_corporates_urls": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/open_corporates_urls": {
       "get": {
         "summary": "Retrieve all available open corporates urls",
         "description": "Retrieve information regarding all available open corporates urls.",
@@ -1514,21 +1514,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1547,7 +1547,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_location": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/physical_location": {
       "get": {
         "summary": "Retrieve physical location information",
         "description": "Retrieve information about the physical location specified by the ID",
@@ -1582,21 +1582,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1652,21 +1652,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1724,21 +1724,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1804,21 +1804,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1845,7 +1845,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/physical_locations": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/physical_locations": {
       "get": {
         "summary": "Retrieve all available physical locations",
         "description": "Retrieve information regarding all available physical locations.",
@@ -1880,21 +1880,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1913,7 +1913,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_alias": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/private_alias": {
       "get": {
         "summary": "Retrieve private alias information",
         "description": "Retrieve information about the private alias specified by the ID",
@@ -1948,21 +1948,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2018,21 +2018,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2090,21 +2090,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2170,21 +2170,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2211,7 +2211,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/private_aliases": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/private_aliases": {
       "get": {
         "summary": "Retrieve all available private aliases",
         "description": "Retrieve information regarding all available private aliases.",
@@ -2246,21 +2246,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2279,7 +2279,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_alias": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/public_alias": {
       "get": {
         "summary": "Retrieve public alias information",
         "description": "Retrieve information about the public alias specified by the ID",
@@ -2314,21 +2314,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2384,21 +2384,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2456,21 +2456,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2536,21 +2536,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2577,7 +2577,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/public_aliases": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/public_aliases": {
       "get": {
         "summary": "Retrieve all available public aliases",
         "description": "Retrieve information regarding all available public aliases.",
@@ -2612,21 +2612,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2645,7 +2645,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/url": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/url": {
       "get": {
         "summary": "Retrieve url information",
         "description": "Retrieve information about the url specified by the ID",
@@ -2680,21 +2680,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2750,21 +2750,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2822,21 +2822,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2902,21 +2902,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2943,7 +2943,7 @@
         ]
       }
     },
-    "/v1/banks/{BankID}/accounts/{AccountID}/other_accounts/{OtherAccountID}/metadata/urls": {
+    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/urls": {
       "get": {
         "summary": "Retrieve all available urls",
         "description": "Retrieve information regarding all available urls.",
@@ -2978,21 +2978,21 @@
         },
         "parameters": [
           {
-            "name": "BankID",
+            "name": "bankID",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -3016,7 +3016,7 @@
     "counterpartymetadataCorporateLocation": {
       "type": "object",
       "properties": {
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation"
         }
       }
@@ -3024,19 +3024,19 @@
     "counterpartymetadataCreateCorporateLocationRequest": {
       "type": "object",
       "properties": {
-        "CorporateLocation": {
+        "corporate_location": {
           "$ref": "#/definitions/counterpartymetadataCorporateLocation",
           "description": "CorporateLocation is the corporate_location metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3045,19 +3045,19 @@
     "counterpartymetadataCreateImageURLRequest": {
       "type": "object",
       "properties": {
-        "ImageURL": {
+        "image_url": {
           "$ref": "#/definitions/counterpartymetadataImageURL",
           "description": "ImageURL is the image_url metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3066,19 +3066,19 @@
     "counterpartymetadataCreateMoreInfoRequest": {
       "type": "object",
       "properties": {
-        "MoreInfo": {
+        "more_info": {
           "$ref": "#/definitions/counterpartymetadataMoreInfo",
           "description": "MoreInfo is the more_info metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3087,19 +3087,19 @@
     "counterpartymetadataCreateOpenCorporatesURLRequest": {
       "type": "object",
       "properties": {
-        "OpenCorporatesURL": {
+        "open_corporates_url": {
           "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL",
           "description": "OpenCorporatesURL is the open_corporates_url metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3108,19 +3108,19 @@
     "counterpartymetadataCreatePhysicalLocationRequest": {
       "type": "object",
       "properties": {
-        "PhysicalLocation": {
+        "physical_location": {
           "$ref": "#/definitions/counterpartymetadataPhysicalLocation",
           "description": "PhysicalLocation is the physical_location metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3129,19 +3129,19 @@
     "counterpartymetadataCreatePrivateAliasRequest": {
       "type": "object",
       "properties": {
-        "PrivateAlias": {
+        "alias": {
           "$ref": "#/definitions/counterpartymetadataPublicAlias",
           "description": "PrivateAlias is the private_alias metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3150,19 +3150,19 @@
     "counterpartymetadataCreatePublicAliasRequest": {
       "type": "object",
       "properties": {
-        "PublicAlias": {
+        "alias": {
           "$ref": "#/definitions/counterpartymetadataPublicAlias",
           "description": "PublicAlias is the public_alias metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3171,19 +3171,19 @@
     "counterpartymetadataCreateURLRequest": {
       "type": "object",
       "properties": {
-        "URL": {
+        "url": {
           "$ref": "#/definitions/counterpartymetadataURL",
           "description": "URL is the url metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3192,22 +3192,22 @@
     "counterpartymetadataGetCorporateLocationsResponse": {
       "type": "object",
       "properties": {
-        "CorporateLocations": {
+        "corporate_locations": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataCorporateLocation"
           },
           "description": "CorporateLocations is the list of corporate_locations."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3216,22 +3216,22 @@
     "counterpartymetadataGetImageURLsResponse": {
       "type": "object",
       "properties": {
-        "ImageURLs": {
+        "image_urls": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataImageURL"
           },
           "description": "ImageURLs is the list of image_urls."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3240,22 +3240,22 @@
     "counterpartymetadataGetMoreInfosResponse": {
       "type": "object",
       "properties": {
-        "MoreInfos": {
+        "more_infos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataMoreInfo"
           },
           "description": "MoreInfos is the list of more_infos."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3264,22 +3264,22 @@
     "counterpartymetadataGetOpenCorporatesURLsResponse": {
       "type": "object",
       "properties": {
-        "OpenCorporatesURLs": {
+        "open_corporates_urls": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL"
           },
           "description": "OpenCorporatesURLs is the list of open_corporates_urls."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3288,28 +3288,28 @@
     "counterpartymetadataGetOtherAccountMetadataResponse": {
       "type": "object",
       "properties": {
-        "PublicAlias": {
+        "public_alias": {
           "type": "string"
         },
-        "PrivateAlias": {
+        "private_alias": {
           "type": "string"
         },
-        "MoreInfo": {
+        "more_info": {
           "type": "string"
         },
-        "URL": {
+        "url": {
           "type": "string"
         },
-        "ImageURL": {
+        "image_url": {
           "type": "string"
         },
-        "OpenCorporatesURL": {
+        "open_corporates_url": {
           "type": "string"
         },
-        "CorporateLocation": {
+        "corporate_location": {
           "$ref": "#/definitions/counterpartymetadataCorporateLocation"
         },
-        "PhysicalLocation": {
+        "physical_location": {
           "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
         }
       }
@@ -3317,22 +3317,22 @@
     "counterpartymetadataGetPhysicalLocationsResponse": {
       "type": "object",
       "properties": {
-        "PhysicalLocations": {
+        "physical_locations": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataPhysicalLocation"
           },
           "description": "PhysicalLocations is the list of physical_locations."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3341,22 +3341,22 @@
     "counterpartymetadataGetPrivateAliasesResponse": {
       "type": "object",
       "properties": {
-        "PrivateAliases": {
+        "aliases": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataPublicAlias"
           },
           "description": "PrivateAliases is the list of private_aliases."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3365,22 +3365,22 @@
     "counterpartymetadataGetPublicAliasesResponse": {
       "type": "object",
       "properties": {
-        "PublicAliases": {
+        "aliases": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataPublicAlias"
           },
           "description": "PublicAliases is the list of public_aliases."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3389,22 +3389,22 @@
     "counterpartymetadataGetURLsResponse": {
       "type": "object",
       "properties": {
-        "URLs": {
+        "urls": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartymetadataURL"
           },
           "description": "URLs is the list of urls."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3413,7 +3413,7 @@
     "counterpartymetadataImageURL": {
       "type": "object",
       "properties": {
-        "URL": {
+        "url": {
           "type": "string"
         }
       }
@@ -3421,7 +3421,7 @@
     "counterpartymetadataMoreInfo": {
       "type": "object",
       "properties": {
-        "MoreInfo": {
+        "more_info": {
           "type": "string"
         }
       }
@@ -3429,7 +3429,7 @@
     "counterpartymetadataOpenCorporatesURL": {
       "type": "object",
       "properties": {
-        "URL": {
+        "url": {
           "type": "string"
         }
       }
@@ -3437,7 +3437,7 @@
     "counterpartymetadataPhysicalLocation": {
       "type": "object",
       "properties": {
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation"
         }
       }
@@ -3445,7 +3445,7 @@
     "counterpartymetadataPrivateAlias": {
       "type": "object",
       "properties": {
-        "Alias": {
+        "alias": {
           "type": "string"
         }
       }
@@ -3453,7 +3453,7 @@
     "counterpartymetadataPublicAlias": {
       "type": "object",
       "properties": {
-        "Alias": {
+        "alias": {
           "type": "string"
         }
       }
@@ -3461,7 +3461,7 @@
     "counterpartymetadataURL": {
       "type": "object",
       "properties": {
-        "URL": {
+        "url": {
           "type": "string"
         }
       }
@@ -3469,19 +3469,19 @@
     "counterpartymetadataUpdateCorporateLocationRequest": {
       "type": "object",
       "properties": {
-        "CorporateLocation": {
+        "corporate_location": {
           "$ref": "#/definitions/counterpartymetadataCorporateLocation",
           "description": "CorporateLocation is the corporate_location metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3490,19 +3490,19 @@
     "counterpartymetadataUpdateImageURLRequest": {
       "type": "object",
       "properties": {
-        "ImageURL": {
+        "image_url": {
           "$ref": "#/definitions/counterpartymetadataImageURL",
           "description": "ImageURL is the image_url metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3511,19 +3511,19 @@
     "counterpartymetadataUpdateMoreInfoRequest": {
       "type": "object",
       "properties": {
-        "MoreInfo": {
+        "more_info": {
           "$ref": "#/definitions/counterpartymetadataMoreInfo",
           "description": "MoreInfo is the more_info metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3532,19 +3532,19 @@
     "counterpartymetadataUpdateOpenCorporatesURLRequest": {
       "type": "object",
       "properties": {
-        "OpenCorporatesURL": {
+        "open_corporates_url": {
           "$ref": "#/definitions/counterpartymetadataOpenCorporatesURL",
           "description": "OpenCorporatesURL is the open_corporates_url metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3553,19 +3553,19 @@
     "counterpartymetadataUpdatePhysicalLocationRequest": {
       "type": "object",
       "properties": {
-        "PhysicalLocation": {
+        "physical_location": {
           "$ref": "#/definitions/counterpartymetadataPhysicalLocation",
           "description": "PhysicalLocation is the physical_location metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3574,19 +3574,19 @@
     "counterpartymetadataUpdatePrivateAliasRequest": {
       "type": "object",
       "properties": {
-        "PrivateAlias": {
+        "alias": {
           "$ref": "#/definitions/counterpartymetadataPublicAlias",
           "description": "PrivateAlias is the private_alias metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3595,19 +3595,19 @@
     "counterpartymetadataUpdatePublicAliasRequest": {
       "type": "object",
       "properties": {
-        "PublicAlias": {
+        "alias": {
           "$ref": "#/definitions/counterpartymetadataPublicAlias",
           "description": "PublicAlias is the public_alias metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3616,19 +3616,19 @@
     "counterpartymetadataUpdateURLRequest": {
       "type": "object",
       "properties": {
-        "URL": {
+        "url": {
           "$ref": "#/definitions/counterpartymetadataURL",
           "description": "URL is the url metadata made on a other_account."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the bank identifier."
         },
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the account identifier."
         },
-        "OtherAccountID": {
+        "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
         }
@@ -3637,12 +3637,12 @@
     "typesLocation": {
       "type": "object",
       "properties": {
-        "Latitude": {
+        "latitude": {
           "type": "number",
           "format": "double",
           "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
-        "Longitude": {
+        "longitude": {
           "type": "number",
           "format": "double",
           "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"

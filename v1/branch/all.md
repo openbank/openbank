@@ -1,18 +1,20 @@
-# Branch API v1.0.0
+Branch API v1.0.0
+=================
 
 Provides create and read operations on the branch resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Create a branch {#method-post-createbranch}
+Create a branch {#method-post-createbranch}
+-------------------------------------------
 
 Creates a new branch and returns its id.
 
 ```sh
 curl -X POST \
-	/v1/branches \
+	https:///v1/branches \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -33,48 +35,49 @@ curl -X POST \
 		"metadata": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/branches`
+`POST https:///v1/branches`
 
 ### Body Parameters
 
-| Name        | Type     | Description                                                         |
-|-------------|----------|---------------------------------------------------------------------|
-| BankID      | string   | BankID is an identifier for the bank the branch is associated with. |
-| Name        | string   | Name is the branch name.                                            |
-| PhoneNumber | string   | PhoneNumber is the branch's phone number.                           |
-| Address     | Address  | Address is the branch's address.                                    |
-| Location    | Location | Location is the branch's longitude and latitude.                    |
-| Description | string   | Description is the branch's description.                            |
-| Metadata    | string   | Metadata is the branch's metadata.                                  |
+| Name         | Type     | Description                                                         |
+|--------------|----------|---------------------------------------------------------------------|
+| bank_id      | string   | BankID is an identifier for the bank the branch is associated with. |
+| name         | string   | Name is the branch name.                                            |
+| phone_number | string   | PhoneNumber is the branch's phone number.                           |
+| address      | Address  | Address is the branch's address.                                    |
+| location     | Location | Location is the branch's longitude and latitude.                    |
+| description  | string   | Description is the branch's description.                            |
+| metadata     | string   | Metadata is the branch's metadata.                                  |
 
 ##### Objects
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type   | Description                               |
-|----------|--------|-------------------------------------------|
-| BranchID | string | BranchID is the branch unique identifier. |
+| Name      | Type   | Description                               |
+|-----------|--------|-------------------------------------------|
+| branch_id | string | BranchID is the branch unique identifier. |
 
 Example:
 
@@ -83,6 +86,7 @@ Example:
   "branch_id": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -94,24 +98,26 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Delete a branch {#method-delete-deletebranch}
+Delete a branch {#method-delete-deletebranch}
+---------------------------------------------
 
 Permanently delete a branch.
 
 ```sh
 curl -X DELETE \
-	/v1/branches/{BranchID} \
+	https:///v1/branches/{BranchID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`DELETE /v1/branches/{BranchID}`
+`DELETE https:///v1/branches/{BranchID}`
 
 ### Query Parameters
 
-| Name     | Type   | Description                               |
-|----------|--------|-------------------------------------------|
-| BranchID | string | BranchID is the branch unique identifier. |
+| Name      | Type   | Description                               |
+|-----------|--------|-------------------------------------------|
+| branch_id | string | BranchID is the branch unique identifier. |
 
 ### Responses
 
@@ -126,58 +132,60 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve branch information {#method-get-getbranch}
+Retrieve branch information {#method-get-getbranch}
+---------------------------------------------------
 
 Retrieve information about the branch specified by the ID
 
 ```sh
 curl -X GET \
-	/v1/branches/{BranchID} \
+	https:///v1/branches/{BranchID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/branches/{BranchID}`
+`GET https:///v1/branches/{BranchID}`
 
 ### Query Parameters
 
-| Name     | Type   | Description                               |
-|----------|--------|-------------------------------------------|
-| BranchID | string | BranchID is the branch unique identifier. |
+| Name      | Type   | Description                               |
+|-----------|--------|-------------------------------------------|
+| branch_id | string | BranchID is the branch unique identifier. |
 
 ### Responses
 
 #### Response body
 
-| Name        | Type     | Description                                                         |
-|-------------|----------|---------------------------------------------------------------------|
-| ID          | string   | ID is the unique identifier of the branch.                          |
-| BankID      | string   | BankID is an identifier for the bank the branch is associated with. |
-| Name        | string   | Name is the branch name.                                            |
-| PhoneNumber | string   | PhoneNumber is the branch's phone number.                           |
-| Address     | Address  | Address is the branch's address.                                    |
-| Location    | Location | Location is the branch's longitude and latitude.                    |
-| Description | string   | Description is the branch's description.                            |
-| Metadata    | string   | Metadata is the branch's metadata.                                  |
+| Name         | Type     | Description                                                         |
+|--------------|----------|---------------------------------------------------------------------|
+| id           | string   | ID is the unique identifier of the branch.                          |
+| bank_id      | string   | BankID is an identifier for the bank the branch is associated with. |
+| name         | string   | Name is the branch name.                                            |
+| phone_number | string   | PhoneNumber is the branch's phone number.                           |
+| address      | Address  | Address is the branch's address.                                    |
+| location     | Location | Location is the branch's longitude and latitude.                    |
+| description  | string   | Description is the branch's description.                            |
+| metadata     | string   | Metadata is the branch's metadata.                                  |
 
 ##### Objects
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -202,6 +210,7 @@ Example:
   "metadata": "string"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -214,58 +223,60 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Retrieve all available branches {#method-get-getbranches}
+Retrieve all available branches {#method-get-getbranches}
+---------------------------------------------------------
 
 Retrieve information regarding all available branches.
 
 ```sh
 curl -X GET \
-	/v1/branches \
+	https:///v1/branches \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/branches`
+`GET https:///v1/branches`
 
 ### Responses
 
 #### Response body
 
-| Name   | Type     | Description                       |
-|--------|----------|-----------------------------------|
-| Result | []Branch | Result is the list of the branch. |
+| Name   | Type      | Description                       |
+|--------|-----------|-----------------------------------|
+| result | \[]Branch | Result is the list of the branch. |
 
 ##### Objects
 
 ###### Branch
 
-| Name        | Type     | Description                                                         |
-|-------------|----------|---------------------------------------------------------------------|
-| ID          | string   | ID is the unique identifier of the branch.                          |
-| BankID      | string   | BankID is an identifier for the bank the branch is associated with. |
-| Name        | string   | Name is the branch name.                                            |
-| PhoneNumber | string   | PhoneNumber is the branch's phone number.                           |
-| Address     | Address  | Address is the branch's address.                                    |
-| Location    | Location | Location is the branch's longitude and latitude.                    |
-| Description | string   | Description is the branch's description.                            |
-| Metadata    | string   | Metadata is the branch's metadata.                                  |
+| Name         | Type     | Description                                                         |
+|--------------|----------|---------------------------------------------------------------------|
+| id           | string   | ID is the unique identifier of the branch.                          |
+| bank_id      | string   | BankID is an identifier for the bank the branch is associated with. |
+| name         | string   | Name is the branch name.                                            |
+| phone_number | string   | PhoneNumber is the branch's phone number.                           |
+| address      | Address  | Address is the branch's address.                                    |
+| location     | Location | Location is the branch's longitude and latitude.                    |
+| description  | string   | Description is the branch's description.                            |
+| metadata     | string   | Metadata is the branch's metadata.                                  |
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 Example:
 
@@ -294,6 +305,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -306,13 +318,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Update a branch {#method-put-updatebranch}
+Update a branch {#method-put-updatebranch}
+------------------------------------------
 
 Updates a branch's information
 
 ```sh
 curl -X PUT \
-	/v1/branches/{BranchID} \
+	https:///v1/branches/{BranchID} \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"branch_id": "string",
@@ -333,46 +346,47 @@ curl -X PUT \
 		"metadata": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`PUT /v1/branches/{BranchID}`
+`PUT https:///v1/branches/{BranchID}`
 
 ### Query Parameters
 
-| Name     | Type   | Description                               |
-|----------|--------|-------------------------------------------|
-| BranchID | string | BranchID is the branch unique identifier. |
+| Name      | Type   | Description                               |
+|-----------|--------|-------------------------------------------|
+| branch_id | string | BranchID is the branch unique identifier. |
 
 ### Body Parameters
 
-| Name        | Type     | Description                                    |
-|-------------|----------|------------------------------------------------|
-| BranchID    | string   | BranchID is the branch unique identifier.      |
-| Name        | string   | Name is the branch name.                       |
-| PhoneNumber | string   | PhoneNumber is the branch phone number.        |
-| Address     | Address  | Address is the branch address details.         |
-| Location    | Location | Location is the branch longitude and latitude. |
-| Description | string   | Description is the branch description.         |
-| Metadata    | string   | Metadata is the branch metadata.               |
+| Name         | Type     | Description                                    |
+|--------------|----------|------------------------------------------------|
+| branch_id    | string   | BranchID is the branch unique identifier.      |
+| name         | string   | Name is the branch name.                       |
+| phone_number | string   | PhoneNumber is the branch phone number.        |
+| address      | Address  | Address is the branch address details.         |
+| location     | Location | Location is the branch longitude and latitude. |
+| description  | string   | Description is the branch description.         |
+| metadata     | string   | Metadata is the branch metadata.               |
 
 ##### Objects
 
 ###### Address
 
-| Name        | Type   | Description                                     |
-|-------------|--------|-------------------------------------------------|
-| CountryName | string | CountryName holds the country name information. |
-| CityName    | string | CityName holds the city name information.       |
-| State       | string | State holds the state information.              |
-| Street      | string | Street holds the street information.            |
-| PostalCode  | string | PostalCode holds the postal code information.   |
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ###### Location
 
-| Name      | Type   | Description                                                        |
-|-----------|--------|--------------------------------------------------------------------|
-| Latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
-| Longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+| Name      | Type   | Description                                                         |
+|-----------|--------|---------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
 ### Responses
 

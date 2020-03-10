@@ -50,7 +50,7 @@
         },
         "parameters": [
           {
-            "name": "ProfileID",
+            "name": "profile_id",
             "in": "query",
             "required": false,
             "type": "string"
@@ -103,7 +103,7 @@
         },
         "parameters": [
           {
-            "name": "ProfileID",
+            "name": "profile_id",
             "in": "query",
             "required": false,
             "type": "string"
@@ -126,96 +126,96 @@
     "accountsAccount": {
       "type": "object",
       "properties": {
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the unique identifier of an account."
         },
-        "Branch": {
+        "branch": {
           "type": "string",
           "description": "Branch is the branch code for the branch associated with the account."
         },
-        "BranchName": {
+        "branch_name": {
           "type": "string",
           "description": "BranchName is the long-form name of the branch associated with the account."
         },
-        "Status": {
+        "status": {
           "type": "string",
           "description": "Status is the status of the account."
         },
-        "AccruedInterestAtMaturityDate": {
+        "accrued_interest_at_maturity_date": {
           "type": "string",
           "format": "date-time",
           "title": "Interest accrues at an annual rate of interest that is fixed"
         },
-        "AmountDue": {
+        "amount_due": {
           "$ref": "#/definitions/typesAmount",
           "title": "Specify when payments are due on money borrowed"
         },
-        "AvailableBalance": {
+        "available_balance": {
           "$ref": "#/definitions/typesAmount",
           "description": "AvailableBalance is the available balance of the account."
         },
-        "AvailableCreditLimit": {
+        "available_credit_limit": {
           "type": "string",
           "description": "AvailableCreditLimit is the available credit limit for the account."
         },
-        "CheckingInterestRate": {
+        "checking_interest_rate": {
           "type": "string",
           "description": "CheckingInterestRate is the interest rate of the account if it is a checking account."
         },
-        "ContractDate": {
+        "contract_date": {
           "type": "string",
           "format": "date-time",
           "description": "ContractDate is the date of the contract initialization."
         },
-        "CreditLimit": {
+        "credit_limit": {
           "type": "string",
           "description": "CreditLimit is the allowed credit limit."
         },
-        "CurrentAccruedInterest": {
+        "current_accrued_interest": {
           "type": "string",
           "title": "Interest earned but not received"
         },
-        "CurrentBalance": {
+        "current_balance": {
           "$ref": "#/definitions/typesAmount",
           "description": "CurrentBalance is the current balance of the account."
         },
-        "CurrentTerm": {
+        "current_term": {
           "type": "string",
           "description": "CurrentTerm is the account validity period."
         },
-        "DueDate": {
+        "due_date": {
           "type": "string",
           "format": "date-time",
           "description": "DueDate is the loan maturity date."
         },
-        "InterestRate": {
+        "interest_rate": {
           "type": "string",
           "description": "InterestRate is the interest rate for the account."
         },
-        "MajorType": {
+        "major_type": {
           "$ref": "#/definitions/typesMajorType",
           "description": "MajorType is the account type."
         },
-        "MajorCategory": {
+        "major_category": {
           "$ref": "#/definitions/typesMajorCategory",
           "description": "MajorCategory is the account category."
         },
-        "MaturityDate": {
+        "maturity_date": {
           "type": "string",
           "format": "date-time",
           "title": "MaturityDate is the maturity date, format is ISO 8601"
         },
-        "NextPaymentDueDate": {
+        "next_payment_due_date": {
           "type": "string",
           "format": "date-time",
           "title": "Specify when payments are due on money borrowed"
         },
-        "OwnerName": {
+        "owner_name": {
           "type": "string",
           "description": "OwnerName is the name of the account's owner."
         },
-        "StartDate": {
+        "start_date": {
           "type": "string",
           "format": "date-time",
           "title": "Account opening date"
@@ -226,7 +226,7 @@
     "profileGetProfileCardsResponse": {
       "type": "object",
       "properties": {
-        "Cards": {
+        "cards": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/profileProfileCard"
@@ -238,10 +238,10 @@
     "profileGetProfileResponse": {
       "type": "object",
       "properties": {
-        "Profile": {
+        "profile": {
           "$ref": "#/definitions/typesProfile"
         },
-        "Accounts": {
+        "accounts": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/accountsAccount"
@@ -253,23 +253,23 @@
     "profileProfileCard": {
       "type": "object",
       "properties": {
-        "CardToken": {
+        "card_token": {
           "type": "string",
           "description": "CardToken is the card number."
         },
-        "Category": {
+        "category": {
           "type": "string",
           "description": "Category is the card type."
         },
-        "LastFour": {
+        "last_four": {
           "type": "string",
           "description": "LastFour is the last four digits of the card."
         },
-        "OwnerName": {
+        "owner_name": {
           "type": "string",
           "description": "OwnerName is the name of the card's owner."
         },
-        "Type": {
+        "type": {
           "type": "string",
           "description": "Type is the type of the account associated with the card."
         }
@@ -279,23 +279,23 @@
     "typesAddress": {
       "type": "object",
       "properties": {
-        "CountryName": {
+        "country_name": {
           "type": "string",
           "description": "CountryName holds the country name information."
         },
-        "CityName": {
+        "city_name": {
           "type": "string",
           "description": "CityName holds the city name information."
         },
-        "State": {
+        "state": {
           "type": "string",
           "description": "State holds the state information."
         },
-        "Street": {
+        "line_1": {
           "type": "string",
           "description": "Street holds the street information."
         },
-        "PostalCode": {
+        "postal_code": {
           "type": "string",
           "description": "PostalCode holds the postal code information."
         }
@@ -305,11 +305,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }
@@ -319,10 +319,10 @@
     "typesCreditRating": {
       "type": "object",
       "properties": {
-        "Rating": {
+        "rating": {
           "type": "string"
         },
-        "Source": {
+        "source": {
           "type": "string"
         }
       },
@@ -355,85 +355,85 @@
     "typesProfile": {
       "type": "object",
       "properties": {
-        "ProfileID": {
+        "profile_id": {
           "type": "string",
           "description": "ProfileID is the unique identifier of a profile."
         },
-        "FullName": {
+        "fullname": {
           "type": "string",
           "title": "Full name"
         },
-        "UserName": {
+        "username": {
           "type": "string",
           "title": "User name"
         },
-        "BirthDate": {
+        "birthdate": {
           "type": "string",
           "title": "Birth date"
         },
-        "Language": {
+        "language": {
           "type": "string",
           "title": "Language code used"
         },
-        "Country": {
+        "country": {
           "type": "string",
           "description": "User country code (VN, US, ID, SG, ...)."
         },
-        "Email": {
+        "email": {
           "type": "string",
           "title": "User email address"
         },
-        "EmailVefified": {
+        "email_verified": {
           "type": "boolean",
           "format": "boolean",
           "title": "True if email is verified, otherwise False"
         },
-        "Mobile": {
+        "mobile": {
           "type": "string",
           "title": "Mobile number"
         },
-        "Photo": {
+        "photo": {
           "type": "string",
           "title": "User profile photo url"
         },
-        "Title": {
+        "title": {
           "type": "string",
           "title": "Title"
         },
-        "PermanentAddress": {
+        "permanent_address": {
           "$ref": "#/definitions/typesAddress",
           "title": "Permanent address"
         },
-        "ContactAddress": {
+        "contact_address": {
           "$ref": "#/definitions/typesAddress",
           "title": "Contact address"
         },
-        "ContactNumber": {
+        "contact_number": {
           "type": "string",
           "title": "Contact number"
         },
-        "ProfileNumber": {
+        "profile_number": {
           "type": "string",
           "title": "profile number"
         },
-        "FaceImageUrl": {
+        "face_image_url": {
           "type": "string",
           "title": "Face image of the customer"
         },
-        "FaceImageDate": {
+        "face_image_date": {
           "type": "string",
           "title": "Date when the face image was added/updated"
         },
-        "RelationshipStatus": {
+        "relationship_status": {
           "type": "string",
           "title": "RelationshipStatus. Ex: Single | Married"
         },
-        "Dependents": {
+        "dependents": {
           "type": "integer",
           "format": "int32",
           "title": "Number of dependents"
         },
-        "DobOfDependents": {
+        "dob_of_dependents": {
           "type": "array",
           "items": {
             "type": "string",
@@ -441,44 +441,44 @@
           },
           "title": "Date of birth of dependents"
         },
-        "CreditRating": {
+        "credit_rating": {
           "$ref": "#/definitions/typesCreditRating",
           "title": "Credit rating"
         },
-        "CreditLimit": {
+        "credit_limit": {
           "$ref": "#/definitions/typesAmount",
           "title": "Credit Limit"
         },
-        "HighestEducationAttained": {
+        "highest_education_attained": {
           "type": "string",
           "title": "Highest education such as bachelor, masters etc"
         },
-        "EmploymentStatus": {
+        "employment_status": {
           "type": "string",
           "title": "Current employment status"
         },
-        "KycStatus": {
+        "kyc_status": {
           "type": "boolean",
           "format": "boolean",
           "title": "Know Your Customer status"
         },
-        "BranchID": {
+        "branchId": {
           "type": "string",
           "title": "Branch Identifier"
         },
-        "NameSuffix": {
+        "nameSuffix": {
           "type": "string",
           "title": "Name suffix"
         },
-        "FirstName": {
+        "first_name": {
           "type": "string",
           "title": "FirstName of the person"
         },
-        "MiddleName": {
+        "middle_name": {
           "type": "string",
           "title": "MiddleName or middle names (space separated) of the person"
         },
-        "LastName": {
+        "last_name": {
           "type": "string",
           "title": "LastName or last names (space separated) of the person"
         }

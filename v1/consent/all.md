@@ -1,18 +1,20 @@
-# Consent API v1.0.0
+Consent API v1.0.0
+==================
 
 Provides CRUD operations on the consent part resource.
 
-* Host ``
+* Host `https://`
 
 * Base Path ``
 
-## Answer the consent reqeust challenge {#method-post-answerconsentchallenge}
+Answer the consent reqeust challenge {#method-post-answerconsentchallenge}
+--------------------------------------------------------------------------
 
 Answer the consent request challenge
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/consents/{ConsentID}/challenge \
+	https:///v1/banks/{BankID}/consents/{ConsentID}/challenge \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -20,36 +22,35 @@ curl -X POST \
 		"answer": "string"
 	}'
 ```
-{{snippet answerconsentchallenge []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/consents/{ConsentID}/challenge`
+`POST https:///v1/banks/{BankID}/consents/{ConsentID}/challenge`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| ConsentID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| consent_id | string |             |
 
 ### Body Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| ConsentID | string |             |
-| Answer    | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| consent_id | string |             |
+| answer     | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ConsentID | string |             |
-| Jwt       | string |             |
-| Status    | Status |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| consent_id | string |             |
+| jwt        | string |             |
+| status     | Status |             |
 
 Example:
 
@@ -60,6 +61,7 @@ Example:
   "status": "Status"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -71,13 +73,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an email consent {#method-post-createconsentemail}
+Create an email consent {#method-post-createconsentemail}
+---------------------------------------------------------
 
 Creates a new email consent
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/consents/email \
+	https:///v1/banks/{BankID}/consents/email \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -86,36 +89,35 @@ curl -X POST \
 		"email": "string"
 	}'
 ```
-{{snippet createconsentemail []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/consents/email`
+`POST https:///v1/banks/{BankID}/consents/email`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Body Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
-| For    | string |             |
-| View   | string |             |
-| Email  | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
+| for     | string |             |
+| view    | string |             |
+| email   | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ConsentID | string |             |
-| Jwt       | string |             |
-| Status    | Status |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| consent_id | string |             |
+| jwt        | string |             |
+| status     | Status |             |
 
 Example:
 
@@ -126,6 +128,7 @@ Example:
   "status": "Status"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -137,13 +140,14 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Create an sms consent {#method-post-createconsentsms}
+Create an sms consent {#method-post-createconsentsms}
+-----------------------------------------------------
 
 Creates a new sms consent
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/consents/sms \
+	https:///v1/banks/{BankID}/consents/sms \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
@@ -152,36 +156,35 @@ curl -X POST \
 		"phone_number": "string"
 	}'
 ```
-{{snippet createconsentsms []}}
 
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/consents/sms`
+`POST https:///v1/banks/{BankID}/consents/sms`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Body Parameters
 
-| Name        | Type   | Description |
-|-------------|--------|-------------|
-| BankID      | string |             |
-| For         | string |             |
-| View        | string |             |
-| PhoneNumber | string |             |
+| Name         | Type   | Description |
+|--------------|--------|-------------|
+| bank_id      | string |             |
+| for          | string |             |
+| view         | string |             |
+| phone_number | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ConsentID | string |             |
-| Jwt       | string |             |
-| Status    | Status |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| consent_id | string |             |
+| jwt        | string |             |
+| status     | Status |             |
 
 Example:
 
@@ -192,6 +195,7 @@ Example:
   "status": "Status"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -203,42 +207,44 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## List all consents {#method-get-getconsents}
+List all consents {#method-get-getconsents}
+-------------------------------------------
 
 Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.
 
 ```sh
 curl -X GET \
-	/v1/banks/{BankID}/consents \
+	https:///v1/banks/{BankID}/consents \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
+
 ### HTTP Request
 
-`GET /v1/banks/{BankID}/consents`
+`GET https:///v1/banks/{BankID}/consents`
 
 ### Query Parameters
 
-| Name   | Type   | Description |
-|--------|--------|-------------|
-| BankID | string |             |
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| bank_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name     | Type      | Description |
-|----------|-----------|-------------|
-| Consents | []Consent |             |
+| Name     | Type       | Description |
+|----------|------------|-------------|
+| consents | \[]Consent |             |
 
 ##### Objects
 
 ###### Consent
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ConsentID | string |             |
-| Jwt       | string |             |
-| Status    | Status |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| consent_id | string |             |
+| jwt        | string |             |
+| status     | Status |             |
 
 Example:
 
@@ -253,6 +259,7 @@ Example:
   ]
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -264,46 +271,48 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Revoke the consent {#method-post-revokeconsent}
+Revoke the consent {#method-post-revokeconsent}
+-----------------------------------------------
 
 Revoke the consent
 
 ```sh
 curl -X POST \
-	/v1/banks/{BankID}/consents/{ConsentID}/revoke \
+	https:///v1/banks/{BankID}/consents/{ConsentID}/revoke \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
 	-d '{
 		"bank_id": "string",
 		"consent_id": "string"
 	}'
 ```
+
 ### HTTP Request
 
-`POST /v1/banks/{BankID}/consents/{ConsentID}/revoke`
+`POST https:///v1/banks/{BankID}/consents/{ConsentID}/revoke`
 
 ### Query Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| ConsentID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| consent_id | string |             |
 
 ### Body Parameters
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| BankID    | string |             |
-| ConsentID | string |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| bank_id    | string |             |
+| consent_id | string |             |
 
 ### Responses
 
 #### Response body
 
-| Name      | Type   | Description |
-|-----------|--------|-------------|
-| ConsentID | string |             |
-| Jwt       | string |             |
-| Status    | Status |             |
+| Name       | Type   | Description |
+|------------|--------|-------------|
+| consent_id | string |             |
+| jwt        | string |             |
+| status     | Status |             |
 
 Example:
 
@@ -314,6 +323,7 @@ Example:
   "status": "Status"
 }
 ```
+
 #### Response codes
 
 | Status | Description                                                                            |
@@ -325,9 +335,10 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-## Annex
+Annex
+-----
 
-####  Status
+#### Status
 
 | Value           | Description |
 |-----------------|-------------|

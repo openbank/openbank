@@ -119,7 +119,7 @@
         ]
       }
     },
-    "/v1/atms/{ATM_ID}": {
+    "/v1/atms/{aTM_ID}": {
       "get": {
         "summary": "Retrieve an ATM",
         "description": "Retrieves information regarding a specific ATM, selected by the supplied ID.",
@@ -154,7 +154,7 @@
         },
         "parameters": [
           {
-            "name": "ATM_ID",
+            "name": "aTM_ID",
             "description": "ATM_ID is a unique identifier of the ATM.",
             "in": "path",
             "required": true,
@@ -178,31 +178,31 @@
     "atmATM": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string",
           "description": "ID is the unique identifier of an ATM."
         },
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "description": "BankID is the identifier of the bank associated with the ATM."
         },
-        "Name": {
+        "name": {
           "type": "string",
           "description": "Name is the name of ATM."
         },
-        "Address": {
+        "address": {
           "$ref": "#/definitions/typesAddress",
           "description": "Address is the ATM's address."
         },
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the ATM longitude and latitude."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the ATM's description."
         },
-        "Metadata": {
+        "metadata": {
           "type": "string",
           "description": "Metadata is the ATM's metadata."
         }
@@ -212,27 +212,27 @@
     "atmCreateATMRequest": {
       "type": "object",
       "properties": {
-        "BankID": {
+        "bank_id": {
           "type": "string",
           "title": "BankID is the bank identifier that owned the ATM"
         },
-        "Name": {
+        "name": {
           "type": "string",
           "description": "BankID is the identifier of the bank associated with the ATM."
         },
-        "Address": {
+        "3": {
           "$ref": "#/definitions/typesAddress",
           "description": "Address is the ATM's address."
         },
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "title": "Location is the ATM's longitude and latitude"
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description is the ATM's description."
         },
-        "Metadata": {
+        "metadata": {
           "type": "string",
           "description": "Metadata is the ATM's metadata."
         }
@@ -242,7 +242,7 @@
     "atmCreateATMResponse": {
       "type": "object",
       "properties": {
-        "ATM_ID": {
+        "atm_id": {
           "type": "string",
           "description": "ATM_ID is the unique identifier of the ATM."
         }
@@ -252,7 +252,7 @@
     "atmGetATMsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/atmATM"
@@ -265,23 +265,23 @@
     "typesAddress": {
       "type": "object",
       "properties": {
-        "CountryName": {
+        "country_name": {
           "type": "string",
           "description": "CountryName holds the country name information."
         },
-        "CityName": {
+        "city_name": {
           "type": "string",
           "description": "CityName holds the city name information."
         },
-        "State": {
+        "state": {
           "type": "string",
           "description": "State holds the state information."
         },
-        "Street": {
+        "line_1": {
           "type": "string",
           "description": "Street holds the street information."
         },
-        "PostalCode": {
+        "postal_code": {
           "type": "string",
           "description": "PostalCode holds the postal code information."
         }
@@ -291,12 +291,12 @@
     "typesLocation": {
       "type": "object",
       "properties": {
-        "Latitude": {
+        "latitude": {
           "type": "number",
           "format": "double",
           "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
-        "Longitude": {
+        "longitude": {
           "type": "number",
           "format": "double",
           "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"

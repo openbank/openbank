@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/accounts/{AccountID}/otheraccounts": {
+    "/v1/accounts/{accountID}/otheraccounts": {
       "get": {
         "summary": "Retrieve all other account with account id",
         "description": "Retrieves all other accounts (counter party) for an account id",
@@ -50,7 +50,7 @@
         },
         "parameters": [
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -68,7 +68,7 @@
         ]
       }
     },
-    "/v1/accounts/{AccountID}/otheraccounts/{OtherAccountID}": {
+    "/v1/accounts/{accountID}/otheraccounts/{otherAccountID}": {
       "get": {
         "summary": "Retrieve an account with other account id",
         "description": "Retrieves other account (counter party) by other account id",
@@ -103,13 +103,13 @@
         },
         "parameters": [
           {
-            "name": "AccountID",
+            "name": "accountID",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "OtherAccountID",
+            "name": "otherAccountID",
             "in": "path",
             "required": true,
             "type": "string"
@@ -162,14 +162,14 @@
         },
         "parameters": [
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
@@ -250,7 +250,7 @@
         ]
       }
     },
-    "/v1/counterparty/{ID}": {
+    "/v1/counterparty/{iD}": {
       "get": {
         "summary": "Retrieve an counter party",
         "description": "Retrieves all data from an counter party selected by the supplied counter_party_id.",
@@ -285,7 +285,7 @@
         },
         "parameters": [
           {
-            "name": "ID",
+            "name": "iD",
             "in": "path",
             "required": true,
             "type": "string"
@@ -308,10 +308,10 @@
     "counterpartyAccountRoutings": {
       "type": "object",
       "properties": {
-        "Scheme": {
+        "scheme": {
           "type": "string"
         },
-        "Address": {
+        "address": {
           "type": "string"
         }
       }
@@ -319,10 +319,10 @@
     "counterpartyBankRouting": {
       "type": "object",
       "properties": {
-        "Scheme": {
+        "scheme": {
           "type": "string"
         },
-        "Address": {
+        "address": {
           "type": "string"
         }
       }
@@ -330,11 +330,11 @@
     "counterpartyBespoke": {
       "type": "object",
       "properties": {
-        "Key": {
+        "key": {
           "type": "string",
           "title": "any info-key you want to add to this counerparty"
         },
-        "Value": {
+        "value": {
           "type": "string",
           "title": "any info-value you want to add to this counerparty"
         }
@@ -344,59 +344,59 @@
     "counterpartyCounterParty": {
       "type": "object",
       "properties": {
-        "Name": {
+        "name": {
           "type": "string",
           "title": "The human readable name (e.g. John Bravo)"
         },
-        "Description": {
+        "description": {
           "type": "string",
           "title": "The description of the about counter party"
         },
-        "OtherAccountRoutingScheme": {
+        "other_account_routing_scheme": {
           "type": "string",
           "title": "Account routing schme such as AccountId or AccountNumber or any   strings"
         },
-        "OtherAccountRoutingAddress": {
+        "other_account_routing_address": {
           "type": "string",
           "title": "Account routing address is a valid account identifier"
         },
-        "OtherAccountSecondaryRoutingScheme": {
+        "other_account_secondary_routing_scheme": {
           "type": "string",
           "title": "Account secondary routing address such as IBan"
         },
-        "OtherAccountSecondaryRoutingAddress": {
+        "other_account_secondary_routing_address": {
           "type": "string",
           "description": "IBan it should be unique for each counterparty."
         },
-        "OtherBankRoutingScheme": {
+        "other_bank_routing_scheme": {
           "type": "string",
           "title": "Bank routing scheme such as bankId or bankCode or any   strings"
         },
-        "OtherBankRoutingAddress": {
+        "other_bank_routing_address": {
           "type": "string",
           "title": "Bank routing address such as eg: testsandbox, must be valid sandbox bankIds"
         },
-        "OtherBranchRoutingScheme": {
+        "other_branch_routing_scheme": {
           "type": "string",
           "title": "Branch routing scheme such as branchId or any other strings"
         },
-        "OtherBranchRoutingAddress": {
+        "other_branch_routing_address": {
           "type": "string",
           "title": "Branch routing address like branch-id-765 or you can leave it empty"
         },
-        "IsBeneficiary": {
+        "is_beneficiary": {
           "type": "boolean",
           "format": "boolean",
           "title": "Must be set to true in order to send payments to this counterparty"
         },
-        "Bespoke": {
+        "bespoke": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartyBespoke"
           },
           "description": "It support list of key-value, you can add it to the counterarty."
         },
-        "Metadata": {
+        "metadata": {
           "$ref": "#/definitions/counterpartyMetadata",
           "title": "Metadata about the counter party"
         }
@@ -406,41 +406,41 @@
     "counterpartyCreateCounterPartyRequest": {
       "type": "object",
       "properties": {
-        "Name": {
+        "name": {
           "type": "string"
         },
-        "Description": {
+        "description": {
           "type": "string"
         },
-        "OtherAccountRoutingScheme": {
+        "other_account_routing_scheme": {
           "type": "string"
         },
-        "OtherAccountRoutingAddress": {
+        "other_account_routing_address": {
           "type": "string"
         },
-        "OtherAccountSecondaryRoutingScheme": {
+        "other_account_secondary_routing_scheme": {
           "type": "string"
         },
-        "OtherAccountSecondaryRoutingAddress": {
+        "other_account_secondary_routing_address": {
           "type": "string"
         },
-        "OtherBankRoutingScheme": {
+        "other_bank_routing_scheme": {
           "type": "string"
         },
-        "OtherBankRoutingAddress": {
+        "other_bank_routing_address": {
           "type": "string"
         },
-        "OtherBranchRoutingScheme": {
+        "other_branch_routing_scheme": {
           "type": "string"
         },
-        "OtherBranchRoutingAddress": {
+        "other_branch_routing_address": {
           "type": "string"
         },
-        "IsBeneficiary": {
+        "is_beneficiary": {
           "type": "boolean",
           "format": "boolean"
         },
-        "Bespoke": {
+        "bespoke": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartyBespoke"
@@ -452,16 +452,16 @@
     "counterpartyCreateCounterPartyResponse": {
       "type": "object",
       "properties": {
-        "CounterParty": {
+        "counter_party": {
           "$ref": "#/definitions/counterpartyCounterParty"
         },
-        "Metadata": {
+        "metadata": {
           "$ref": "#/definitions/counterpartyMetadata"
         },
-        "PhysicalLocation": {
+        "physical_location": {
           "$ref": "#/definitions/typesLocation"
         },
-        "PrivateAlias": {
+        "private_alias": {
           "type": "string"
         }
       },
@@ -470,7 +470,7 @@
     "counterpartyGetCounterPartiesResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartyCounterParty"
@@ -483,7 +483,7 @@
     "counterpartyGetOtherAccountByIDResponse": {
       "type": "object",
       "properties": {
-        "OtherAccount": {
+        "other_account": {
           "$ref": "#/definitions/counterpartyOtherAccount"
         }
       }
@@ -491,7 +491,7 @@
     "counterpartyGetOtherAccountsResponse": {
       "type": "object",
       "properties": {
-        "OtherAccounts": {
+        "other_accounts": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartyOtherAccount"
@@ -502,10 +502,10 @@
     "counterpartyHolder": {
       "type": "object",
       "properties": {
-        "Name": {
+        "name": {
           "type": "string"
         },
-        "IsAlias": {
+        "is_alias": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -514,28 +514,28 @@
     "counterpartyMetadata": {
       "type": "object",
       "properties": {
-        "PublicAlias": {
+        "public_alias": {
           "type": "string"
         },
-        "MoreInfo": {
+        "more_info": {
           "type": "string"
         },
-        "URL": {
+        "url": {
           "type": "string"
         },
-        "ImageURL": {
+        "image_url": {
           "type": "string"
         },
-        "OpenCorporatesURL": {
+        "open_corporates_url": {
           "type": "string"
         },
-        "CorporateLocation": {
+        "corporate_location": {
           "$ref": "#/definitions/typesLocation"
         },
-        "PhysicalLocation": {
+        "physical_location": {
           "$ref": "#/definitions/typesLocation"
         },
-        "PrivateAlias": {
+        "private_alias": {
           "type": "string"
         }
       },
@@ -544,22 +544,22 @@
     "counterpartyOtherAccount": {
       "type": "object",
       "properties": {
-        "ID": {
+        "id": {
           "type": "string"
         },
-        "Holder": {
+        "holder": {
           "$ref": "#/definitions/counterpartyHolder"
         },
-        "BankRouting": {
+        "bank_routing": {
           "$ref": "#/definitions/counterpartyBankRouting"
         },
-        "AccountRoutings": {
+        "account_routings": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/counterpartyAccountRoutings"
           }
         },
-        "Metadata": {
+        "metadata": {
           "$ref": "#/definitions/counterpartyMetadata"
         }
       }
@@ -567,12 +567,12 @@
     "typesLocation": {
       "type": "object",
       "properties": {
-        "Latitude": {
+        "latitude": {
           "type": "number",
           "format": "double",
           "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
-        "Longitude": {
+        "longitude": {
           "type": "number",
           "format": "double",
           "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"

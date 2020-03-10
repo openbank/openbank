@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/accounts/{AccountID}/transactions": {
+    "/v1/accounts/{accountID}/transactions": {
       "get": {
         "summary": "List all transactions for given account id",
         "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
@@ -50,14 +50,14 @@
         },
         "parameters": [
           {
-            "name": "AccountID",
+            "name": "accountID",
             "description": "AccountID is the unique identifier of an account.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "FromDate",
+            "name": "from_date",
             "description": "FromDate is starting date to get the transactions.",
             "in": "query",
             "required": false,
@@ -65,7 +65,7 @@
             "format": "date-time"
           },
           {
-            "name": "ToDate",
+            "name": "to_date",
             "description": "ToDate is end date to get the transactions.",
             "in": "query",
             "required": false,
@@ -73,7 +73,7 @@
             "format": "date-time"
           },
           {
-            "name": "TransactionType",
+            "name": "transaction_type",
             "description": "TransactionType is a type of transaction, debit or credit.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction.",
             "in": "query",
             "required": false,
@@ -86,14 +86,14 @@
             "default": "UnknownType"
           },
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is number of search return of transactions.",
             "in": "query",
             "required": false,
@@ -148,7 +148,7 @@
         },
         "parameters": [
           {
-            "name": "FromDate",
+            "name": "from_date",
             "description": "FromDate is starting date to get the transactions.",
             "in": "query",
             "required": false,
@@ -156,7 +156,7 @@
             "format": "date-time"
           },
           {
-            "name": "ToDate",
+            "name": "to_date",
             "description": "ToDate is end date to get the transactions.",
             "in": "query",
             "required": false,
@@ -164,7 +164,7 @@
             "format": "date-time"
           },
           {
-            "name": "TransactionType",
+            "name": "transaction_type",
             "description": "TransactionType is a type of transaction, debit or credit.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction.",
             "in": "query",
             "required": false,
@@ -177,14 +177,14 @@
             "default": "UnknownType"
           },
           {
-            "name": "AfterID",
+            "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
             "required": false,
             "type": "string"
           },
           {
-            "name": "Limit",
+            "name": "limit",
             "description": "Limit is maximum number of results to return.",
             "in": "query",
             "required": false,
@@ -373,7 +373,7 @@
         ]
       }
     },
-    "/v1/transactions/{TransactionID}": {
+    "/v1/transactions/{transactionID}": {
       "get": {
         "summary": "Retrieve a transaction",
         "description": "Retrieves all data from a transaction, selected by the transaction_id you supplied.",
@@ -408,7 +408,7 @@
         },
         "parameters": [
           {
-            "name": "TransactionID",
+            "name": "transactionID",
             "description": "TransactionID is the unique identifier of a transaction.",
             "in": "path",
             "required": true,
@@ -432,16 +432,16 @@
     "transactionsApprovePaymentRequest": {
       "type": "object",
       "properties": {
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the transaction unique identifier."
         },
-        "Approve": {
+        "approve": {
           "type": "boolean",
           "format": "boolean",
           "description": "Approve is Boolean value of approval action."
         },
-        "TFAType": {
+        "tfa_type": {
           "$ref": "#/definitions/transactionsTFAType",
           "description": "TFAType is type to receive OTP authentication code."
         }
@@ -451,11 +451,11 @@
     "transactionsApprovePaymentResponse": {
       "type": "object",
       "properties": {
-        "AuthorizationID": {
+        "authorization_id": {
           "type": "string",
           "title": "AuthorizationID is the executable code is obtained from\nthe payment feedback result"
         },
-        "SMSCode": {
+        "sms_code": {
           "type": "string",
           "format": "int64",
           "description": "SMSCode is the OTP code used for testing."
@@ -466,19 +466,19 @@
     "transactionsBankAccountInfo": {
       "type": "object",
       "properties": {
-        "AccountID": {
+        "account_id": {
           "type": "string",
           "description": "AccountID is the identifier of the account."
         },
-        "BankCode": {
+        "bank_code": {
           "type": "string",
           "description": "BankCode is code of the bank the account belongs to."
         },
-        "OwnerName": {
+        "owner_name": {
           "type": "string",
           "description": "OwnerName is the name of the owner of the account."
         },
-        "MajorType": {
+        "major_type": {
           "$ref": "#/definitions/typesMajorType",
           "description": "MajorType is the type of account."
         }
@@ -488,27 +488,27 @@
     "transactionsCreateTransactionRequest": {
       "type": "object",
       "properties": {
-        "SourceAccountID": {
+        "source_account_id": {
           "type": "string",
           "description": "SourceAccountID is the identifier of the account emitting the transaction."
         },
-        "SourceOfflineUser": {
+        "source_offline_user": {
           "$ref": "#/definitions/typesOfflineUserInfo",
           "description": "SourceOfflineUser is the contact information for an offline user."
         },
-        "DestinationAccount": {
+        "destination_account": {
           "$ref": "#/definitions/transactionsBankAccountInfo",
           "description": "DestinationAccount is the account receiving the transaction."
         },
-        "DestinationOfflineUser": {
+        "destination_offline_user": {
           "$ref": "#/definitions/typesOfflineUserInfo",
           "description": "DestinationOfflineUser is the contact information for an offline user."
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount",
           "description": "Amount holds the amount value and currency of the transaction."
         },
-        "Remarks": {
+        "remarks": {
           "type": "string",
           "description": "Remarks is an informational note about the transaction."
         }
@@ -518,11 +518,11 @@
     "transactionsCreateTransactionResponse": {
       "type": "object",
       "properties": {
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the unique identifier of a transaction."
         },
-        "CratedAt": {
+        "created_at": {
           "type": "string",
           "description": "CreatedAt is the transaction created date."
         }
@@ -532,14 +532,14 @@
     "transactionsGetTransactionsByAccountResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionsTransaction"
           },
           "description": "Result is a list containing up to 20 transactions."
         },
-        "LastRunningBalance": {
+        "last_running_balance": {
           "$ref": "#/definitions/typesAmount",
           "description": "LastRunningBalance is current balance for related account."
         }
@@ -549,14 +549,14 @@
     "transactionsGetTransactionsResponse": {
       "type": "object",
       "properties": {
-        "Result": {
+        "result": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/transactionsTransaction"
           },
           "description": "Result is the paginated query result."
         },
-        "LastRunningBalance": {
+        "last_running_balance": {
           "$ref": "#/definitions/typesAmount",
           "description": "LastRunningBalance is current balance for related account."
         }
@@ -577,19 +577,19 @@
     "transactionsTFARequest": {
       "type": "object",
       "properties": {
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is transaction / payment identification code requires approval."
         },
-        "Code": {
+        "code": {
           "type": "string",
           "description": "Code is 2-digit authentication code is sent via SMS."
         },
-        "AuthorizationID": {
+        "authorization_id": {
           "type": "string",
           "description": "AuthorizationID is the executable code is obtained from the payment feedback result."
         },
-        "TFAType": {
+        "tfa_type": {
           "$ref": "#/definitions/transactionsTFAType",
           "description": "TFAType is type to receive OTP authentication code."
         }
@@ -599,7 +599,7 @@
     "transactionsTFAResponse": {
       "type": "object",
       "properties": {
-        "TraceNumber": {
+        "trace_number": {
           "type": "string",
           "description": "TraceNumber is the transaction reference code."
         }
@@ -619,52 +619,52 @@
     "transactionsTransaction": {
       "type": "object",
       "properties": {
-        "TransactionID": {
+        "transaction_id": {
           "type": "string",
           "description": "TransactionID is the unique identifier of a transaction."
         },
-        "SourceAccount": {
+        "source_account": {
           "$ref": "#/definitions/transactionsBankAccountInfo",
           "description": "SourceAccount is the account emitting the transaction."
         },
-        "SourceOfflineUser": {
+        "source_offline_user": {
           "$ref": "#/definitions/typesOfflineUserInfo",
           "description": "SourceOfflineUser is the contact information for an offline user."
         },
-        "DestinationAccount": {
+        "destination_account": {
           "$ref": "#/definitions/transactionsBankAccountInfo",
           "description": "DestinationAccount is the account receiving the transaction."
         },
-        "DestinationOfflineUser": {
+        "destination_offline_user": {
           "$ref": "#/definitions/typesOfflineUserInfo",
           "description": "DestinationOfflineUser is the contact information for an offline user."
         },
-        "Date": {
+        "date": {
           "type": "string",
           "format": "date-time",
           "description": "Date is the date of the transaction."
         },
-        "Type": {
+        "type": {
           "$ref": "#/definitions/transactionsType",
           "description": "Type is the type of transaction."
         },
-        "Status": {
+        "status": {
           "$ref": "#/definitions/transactionsStatus",
           "description": "Status is the status of the transaction."
         },
-        "Amount": {
+        "amount": {
           "$ref": "#/definitions/typesAmount",
           "description": "Amount holds the amount value and currency of the transaction."
         },
-        "Description": {
+        "description": {
           "type": "string",
           "description": "Description describes the transaction."
         },
-        "UserID": {
+        "user_id": {
           "type": "string",
           "description": "UserID is the identifier of the issuer of the transaction."
         },
-        "Remarks": {
+        "remarks": {
           "type": "string",
           "description": "Remarks is an informational note about the transaction."
         }
@@ -684,11 +684,11 @@
     "typesAmount": {
       "type": "object",
       "properties": {
-        "Cur": {
+        "cur": {
           "type": "string",
           "description": "Cur is the currency of the amount."
         },
-        "Num": {
+        "num": {
           "type": "string",
           "description": "Num is the value of the amount."
         }
@@ -698,12 +698,12 @@
     "typesLocation": {
       "type": "object",
       "properties": {
-        "Latitude": {
+        "latitude": {
           "type": "number",
           "format": "double",
           "description": "The latitude in degrees. It must be in the range [-90.0, +90.0]."
         },
-        "Longitude": {
+        "longitude": {
           "type": "number",
           "format": "double",
           "title": "The longitude in degrees. It must be in the range [-180.0, +180.0]"
@@ -728,27 +728,27 @@
     "typesOfflineUserInfo": {
       "type": "object",
       "properties": {
-        "UserID": {
+        "user_id": {
           "type": "string",
           "title": "UserID"
         },
-        "FirstName": {
+        "first_name": {
           "type": "string",
           "title": "FirstName of the person"
         },
-        "MiddleName": {
+        "middle_name": {
           "type": "string",
           "title": "MiddleName or middle names (space separated) of the person"
         },
-        "LastName": {
+        "last_name": {
           "type": "string",
           "title": "LastName or last names (space separated) of the person"
         },
-        "MobileNo": {
+        "mobile_no": {
           "type": "string",
           "title": "MobileNo contact of the person"
         },
-        "Location": {
+        "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the physical location of the interaction."
         }
