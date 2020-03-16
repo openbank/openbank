@@ -19,9 +19,6 @@ msgstr  "Project-Id-Version: %s\n"
 msgid "Amount is the amount if the transcation that writes on the statement."
 msgstr ""
 
-msgid "Annex"
-msgstr ""
-
 msgid "Balance is remaining balance after related transaction."
 msgstr ""
 
@@ -35,6 +32,9 @@ msgid "Date is the date of the statement."
 msgstr ""
 
 msgid "Description is the description of the statement."
+msgstr ""
+
+msgid "Enums"
 msgstr ""
 
 msgid "GetStatement retrieves a specific statement, specified by its ID."
@@ -58,10 +58,16 @@ msgstr ""
 msgid "Objects"
 msgstr ""
 
+msgid "Pending is the value for a pending statement."
+msgstr ""
+
 msgid "Provides CRUD operations on the statement resource."
 msgstr ""
 
 msgid "Query Parameters"
+msgstr ""
+
+msgid "Received is the value for a received statment."
 msgstr ""
 
 msgid "Request executed successfully."
@@ -101,12 +107,6 @@ msgid "Status define the status of a statment."
 msgstr ""
 
 msgid "Status is the status of the statement."
-msgstr ""
-
-msgid "Status_Pending is the value for a pending statement."
-msgstr ""
-
-msgid "Status_Received is the value for a received statment."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"

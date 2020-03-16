@@ -37,11 +37,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcounterparty}
 
 `POST https:///v1/counterparty`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcounterparty}
 
 | Name                                    | Type       | Description |
 |-----------------------------------------|------------|-------------|
@@ -58,7 +58,7 @@ curl -X POST \
 | is_beneficiary                          | bool       |             |
 | bespoke                                 | \[]Bespoke |             |
 
-##### Objects
+##### Objects {#objects-CreateCounterPartyRequest}
 
 ###### Bespoke
 
@@ -67,9 +67,9 @@ curl -X POST \
 | key   | string | any info-key you want to add to this counerparty   |
 | value | string | any info-value you want to add to this counerparty |
 
-### Responses
+### Responses {#responses-method-post-createcounterparty}
 
-#### Response body
+#### Response body {#response-body-method-post-createcounterparty}
 
 | Name              | Type         | Description |
 |-------------------|--------------|-------------|
@@ -78,7 +78,7 @@ curl -X POST \
 | physical_location | Location     |             |
 | private_alias     | string       |             |
 
-##### Objects
+##### Objects {#objects-CreateCounterPartyResponse}
 
 ###### CounterParty
 
@@ -188,7 +188,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcounterparty}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -210,19 +210,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcounterparties}
 
 `GET https:///v1/counterparties`
 
-### Responses
+### Responses {#responses-method-get-getcounterparties}
 
-#### Response body
+#### Response body {#response-body-method-get-getcounterparties}
 
 | Name   | Type            | Description                           |
 |--------|-----------------|---------------------------------------|
 | result | \[]CounterParty | Result is the paginated query result. |
 
-##### Objects
+##### Objects {#objects-GetCounterPartiesResponse}
 
 ###### CounterParty
 
@@ -313,7 +313,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcounterparties}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -335,19 +335,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcounterparty}
 
 `GET https:///v1/counterparty/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcounterparty}
 
 | Name | Type   | Description |
 |------|--------|-------------|
 | id   | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcounterparty}
 
-#### Response body
+#### Response body {#response-body-method-get-getcounterparty}
 
 | Name                                    | Type       | Description                                                                 |
 |-----------------------------------------|------------|-----------------------------------------------------------------------------|
@@ -365,7 +365,7 @@ curl -X GET \
 | bespoke                                 | \[]Bespoke | It support list of key-value, you can add it to the counterarty.            |
 | metadata                                | Metadata   | Metadata about the counter party                                            |
 
-##### Objects
+##### Objects {#objects-CounterParty}
 
 ###### Bespoke
 
@@ -434,7 +434,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcounterparty}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -457,26 +457,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getotheraccountbyid}
 
 `GET https:///v1/accounts/{AccountID}/otheraccounts/{OtherAccountID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getotheraccountbyid}
 
 | Name             | Type   | Description |
 |------------------|--------|-------------|
 | account_id       | string |             |
 | other_account_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getotheraccountbyid}
 
-#### Response body
+#### Response body {#response-body-method-get-getotheraccountbyid}
 
 | Name          | Type         | Description |
 |---------------|--------------|-------------|
 | other_account | OtherAccount |             |
 
-##### Objects
+##### Objects {#objects-GetOtherAccountByIDResponse}
 
 ###### OtherAccount
 
@@ -569,7 +569,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getotheraccountbyid}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -592,25 +592,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getotheraccounts}
 
 `GET https:///v1/accounts/{AccountID}/otheraccounts`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getotheraccounts}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | account_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getotheraccounts}
 
-#### Response body
+#### Response body {#response-body-method-get-getotheraccounts}
 
 | Name           | Type            | Description |
 |----------------|-----------------|-------------|
 | other_accounts | \[]OtherAccount |             |
 
-##### Objects
+##### Objects {#objects-GetOtherAccountsResponse}
 
 ###### OtherAccount
 
@@ -705,7 +705,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getotheraccounts}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -716,16 +716,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### TransactionRequestType
-
-Entity type defines the type of counterparty
-
-| Value                         | Description                                  |
-|-------------------------------|----------------------------------------------|
-| UnknownTransactionRequestType |                                              |
-| COUNTERPARTY                  | Counter party type                           |
-| SEPA                          | TransactionRequestType_SEPA transaction type |

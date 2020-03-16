@@ -36,11 +36,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcomment}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createcomment}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -48,7 +48,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcomment}
 
 | Name           | Type    | Description                                            |
 |----------------|---------|--------------------------------------------------------|
@@ -57,7 +57,7 @@ curl -X POST \
 | account_id     | string  | AccountID is the account identifier.                   |
 | transaction_id | string  | TransactionID is the transaction identifier.           |
 
-##### Objects
+##### Objects {#objects-CreateCommentRequest}
 
 ###### Comment
 
@@ -83,9 +83,9 @@ curl -X POST \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-post-createcomment}
 
-#### Response body
+#### Response body {#response-body-method-post-createcomment}
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
@@ -94,7 +94,7 @@ curl -X POST \
 | date  | Timestamp | Date is the date the tag is created/updated. |
 | user  | User      | User is the user information.                |
 
-##### Objects
+##### Objects {#objects-Comment}
 
 ###### Timestamp
 
@@ -129,7 +129,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcomment}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -170,11 +170,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createimage}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createimage}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -182,7 +182,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createimage}
 
 | Name           | Type   | Description                                        |
 |----------------|--------|----------------------------------------------------|
@@ -191,7 +191,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.               |
 | transaction_id | string | TransactionID is the transaction identifier.       |
 
-##### Objects
+##### Objects {#objects-CreateImageRequest}
 
 ###### Image
 
@@ -218,9 +218,9 @@ curl -X POST \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-post-createimage}
 
-#### Response body
+#### Response body {#response-body-method-post-createimage}
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
@@ -230,7 +230,7 @@ curl -X POST \
 | date  | Timestamp | Date is the date the image is created/updated. |
 | user  | User      | User is the user information.                  |
 
-##### Objects
+##### Objects {#objects-Image}
 
 ###### Timestamp
 
@@ -266,7 +266,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createimage}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -296,11 +296,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createnarrative}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createnarrative}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -308,7 +308,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createnarrative}
 
 | Name           | Type      | Description                                                |
 |----------------|-----------|------------------------------------------------------------|
@@ -317,7 +317,7 @@ curl -X POST \
 | account_id     | string    | AccountID is the account identifier.                       |
 | transaction_id | string    | TransactionID is the transaction identifier.               |
 
-##### Objects
+##### Objects {#objects-CreateNarrativeRequest}
 
 ###### Narrative
 
@@ -325,9 +325,9 @@ curl -X POST \
 |-----------|--------|--------------------------------------------|
 | narrative | string | Narrative is the content of the narrative. |
 
-### Responses
+### Responses {#responses-method-post-createnarrative}
 
-#### Response body
+#### Response body {#response-body-method-post-createnarrative}
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
@@ -341,7 +341,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createnarrative}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -381,11 +381,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createtag}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createtag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -393,7 +393,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createtag}
 
 | Name           | Type   | Description                                    |
 |----------------|--------|------------------------------------------------|
@@ -402,7 +402,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.           |
 | transaction_id | string | TransactionID is the transaction identifier.   |
 
-##### Objects
+##### Objects {#objects-CreateTagRequest}
 
 ###### Tag
 
@@ -428,9 +428,9 @@ curl -X POST \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-post-createtag}
 
-#### Response body
+#### Response body {#response-body-method-post-createtag}
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
@@ -439,7 +439,7 @@ curl -X POST \
 | date  | Timestamp | Date is the date the tag is created/updated. |
 | user  | User      | User is the user information.                |
 
-##### Objects
+##### Objects {#objects-Tag}
 
 ###### Timestamp
 
@@ -474,7 +474,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createtag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -516,11 +516,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createwheretag}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createwheretag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -528,7 +528,7 @@ curl -X POST \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createwheretag}
 
 | Name           | Type     | Description                                               |
 |----------------|----------|-----------------------------------------------------------|
@@ -537,7 +537,7 @@ curl -X POST \
 | account_id     | string   | AccountID is the account identifier.                      |
 | transaction_id | string   | TransactionID is the transaction identifier.              |
 
-##### Objects
+##### Objects {#objects-CreateWhereTagRequest}
 
 ###### WhereTag
 
@@ -569,9 +569,9 @@ curl -X POST \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-post-createwheretag}
 
-#### Response body
+#### Response body {#response-body-method-post-createwheretag}
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
@@ -579,7 +579,7 @@ curl -X POST \
 | date     | Timestamp | Date is the date the geo information is created/updated.       |
 | user     | User      | User is the user information.                                  |
 
-##### Objects
+##### Objects {#objects-WhereTag}
 
 ###### Location
 
@@ -623,7 +623,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createwheretag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -645,11 +645,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletecomment}
 
 `DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletecomment}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -658,9 +658,9 @@ curl -X DELETE \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | comment        | string | ID is the comment id that will be deleted.   |
 
-### Responses
+### Responses {#responses-method-delete-deletecomment}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletecomment}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -671,7 +671,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletecomment}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -693,11 +693,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deleteimage}
 
 `DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deleteimage}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -706,9 +706,9 @@ curl -X DELETE \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | image          | string | ID is the image id that will be deleted.     |
 
-### Responses
+### Responses {#responses-method-delete-deleteimage}
 
-#### Response body
+#### Response body {#response-body-method-delete-deleteimage}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -719,7 +719,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deleteimage}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -741,11 +741,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletenarrative}
 
 `DELETE https:///v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletenarrative}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -754,9 +754,9 @@ curl -X DELETE \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | narrative      | string | ID is the narrative id that will be deleted. |
 
-### Responses
+### Responses {#responses-method-delete-deletenarrative}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletenarrative}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -767,7 +767,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletenarrative}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -789,11 +789,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletetag}
 
 `DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletetag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -802,9 +802,9 @@ curl -X DELETE \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | tag            | string | ID is the tag id that will be deleted.       |
 
-### Responses
+### Responses {#responses-method-delete-deletetag}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletetag}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -815,7 +815,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletetag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -837,11 +837,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletewheretag}
 
 `DELETE https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletewheretag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -850,9 +850,9 @@ curl -X DELETE \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | where_tag      | string | ID is the where tag id that will be deleted. |
 
-### Responses
+### Responses {#responses-method-delete-deletewheretag}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletewheretag}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -863,7 +863,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletewheretag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -885,11 +885,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcomment}
 
 `GET https:///v1/comments/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comment/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcomment}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -898,9 +898,9 @@ curl -X GET \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | comment        | string | ID is the comment unique identifier.         |
 
-### Responses
+### Responses {#responses-method-get-getcomment}
 
-#### Response body
+#### Response body {#response-body-method-get-getcomment}
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
@@ -909,7 +909,7 @@ curl -X GET \
 | date  | Timestamp | Date is the date the tag is created/updated. |
 | user  | User      | User is the user information.                |
 
-##### Objects
+##### Objects {#objects-Comment}
 
 ###### Timestamp
 
@@ -944,7 +944,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcomment}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -967,11 +967,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcomments}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcomments}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -979,9 +979,9 @@ curl -X GET \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Responses
+### Responses {#responses-method-get-getcomments}
 
-#### Response body
+#### Response body {#response-body-method-get-getcomments}
 
 | Name           | Type       | Description                                  |
 |----------------|------------|----------------------------------------------|
@@ -990,7 +990,7 @@ curl -X GET \
 | account_id     | string     | AccountID is the account identifier.         |
 | transaction_id | string     | TransactionID is the transaction identifier. |
 
-##### Objects
+##### Objects {#objects-GetCommentsResponse}
 
 ###### Comment
 
@@ -1041,7 +1041,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcomments}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1064,11 +1064,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getimage}
 
 `GET https:///v1/images/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/image/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getimage}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1077,9 +1077,9 @@ curl -X GET \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | image          | string | ID is the image unique identifier.           |
 
-### Responses
+### Responses {#responses-method-get-getimage}
 
-#### Response body
+#### Response body {#response-body-method-get-getimage}
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
@@ -1089,7 +1089,7 @@ curl -X GET \
 | date  | Timestamp | Date is the date the image is created/updated. |
 | user  | User      | User is the user information.                  |
 
-##### Objects
+##### Objects {#objects-Image}
 
 ###### Timestamp
 
@@ -1125,7 +1125,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getimage}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1148,11 +1148,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getimages}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getimages}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1160,9 +1160,9 @@ curl -X GET \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Responses
+### Responses {#responses-method-get-getimages}
 
-#### Response body
+#### Response body {#response-body-method-get-getimages}
 
 | Name           | Type     | Description                                  |
 |----------------|----------|----------------------------------------------|
@@ -1171,7 +1171,7 @@ curl -X GET \
 | account_id     | string   | AccountID is the account identifier.         |
 | transaction_id | string   | TransactionID is the transaction identifier. |
 
-##### Objects
+##### Objects {#objects-GetImagesResponse}
 
 ###### Image
 
@@ -1224,7 +1224,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getimages}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1247,11 +1247,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getnarrative}
 
 `GET https:///v1/narratives/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narrative/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getnarrative}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1260,9 +1260,9 @@ curl -X GET \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | narrative      | string | ID is the narrative unique identifier.       |
 
-### Responses
+### Responses {#responses-method-get-getnarrative}
 
-#### Response body
+#### Response body {#response-body-method-get-getnarrative}
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
@@ -1276,7 +1276,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getnarrative}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1299,11 +1299,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getnarratives}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getnarratives}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1311,9 +1311,9 @@ curl -X GET \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Responses
+### Responses {#responses-method-get-getnarratives}
 
-#### Response body
+#### Response body {#response-body-method-get-getnarratives}
 
 | Name           | Type         | Description                                  |
 |----------------|--------------|----------------------------------------------|
@@ -1322,7 +1322,7 @@ curl -X GET \
 | account_id     | string       | AccountID is the account identifier.         |
 | transaction_id | string       | TransactionID is the transaction identifier. |
 
-##### Objects
+##### Objects {#objects-GetNarrativesResponse}
 
 ###### Narrative
 
@@ -1345,7 +1345,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getnarratives}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1368,11 +1368,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettag}
 
 `GET https:///v1/tags/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tag/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1381,9 +1381,9 @@ curl -X GET \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | tag            | string | ID is the tag unique identifier.             |
 
-### Responses
+### Responses {#responses-method-get-gettag}
 
-#### Response body
+#### Response body {#response-body-method-get-gettag}
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
@@ -1392,7 +1392,7 @@ curl -X GET \
 | date  | Timestamp | Date is the date the tag is created/updated. |
 | user  | User      | User is the user information.                |
 
-##### Objects
+##### Objects {#objects-Tag}
 
 ###### Timestamp
 
@@ -1427,7 +1427,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1450,11 +1450,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettags}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettags}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1462,9 +1462,9 @@ curl -X GET \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Responses
+### Responses {#responses-method-get-gettags}
 
-#### Response body
+#### Response body {#response-body-method-get-gettags}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1473,7 +1473,7 @@ curl -X GET \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-##### Objects
+##### Objects {#objects-GetTagsResponse}
 
 ###### Tag
 
@@ -1524,7 +1524,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettags}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1547,11 +1547,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getwheretag}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tag/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getwheretag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1560,9 +1560,9 @@ curl -X GET \
 | transaction_id | string | TransactionID is the transaction identifier. |
 | where_tag      | string | ID is the where tag unique identifier.       |
 
-### Responses
+### Responses {#responses-method-get-getwheretag}
 
-#### Response body
+#### Response body {#response-body-method-get-getwheretag}
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
@@ -1570,7 +1570,7 @@ curl -X GET \
 | date     | Timestamp | Date is the date the geo information is created/updated.       |
 | user     | User      | User is the user information.                                  |
 
-##### Objects
+##### Objects {#objects-WhereTag}
 
 ###### Location
 
@@ -1614,7 +1614,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getwheretag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1637,11 +1637,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getwheretags}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getwheretags}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1649,9 +1649,9 @@ curl -X GET \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Responses
+### Responses {#responses-method-get-getwheretags}
 
-#### Response body
+#### Response body {#response-body-method-get-getwheretags}
 
 | Name           | Type        | Description                                  |
 |----------------|-------------|----------------------------------------------|
@@ -1660,7 +1660,7 @@ curl -X GET \
 | account_id     | string      | AccountID is the account identifier.         |
 | transaction_id | string      | TransactionID is the transaction identifier. |
 
-##### Objects
+##### Objects {#objects-GetWhereTagsResponse}
 
 ###### WhereTag
 
@@ -1719,7 +1719,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getwheretags}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1760,11 +1760,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecomment}
 
 `PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/comments`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecomment}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1772,7 +1772,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecomment}
 
 | Name           | Type    | Description                                            |
 |----------------|---------|--------------------------------------------------------|
@@ -1781,7 +1781,7 @@ curl -X PUT \
 | account_id     | string  | AccountID is the account identifier.                   |
 | transaction_id | string  | TransactionID is the transaction identifier.           |
 
-##### Objects
+##### Objects {#objects-UpdateCommentRequest}
 
 ###### Comment
 
@@ -1807,9 +1807,9 @@ curl -X PUT \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-put-updatecomment}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecomment}
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
@@ -1818,7 +1818,7 @@ curl -X PUT \
 | date  | Timestamp | Date is the date the tag is created/updated. |
 | user  | User      | User is the user information.                |
 
-##### Objects
+##### Objects {#objects-Comment}
 
 ###### Timestamp
 
@@ -1853,7 +1853,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecomment}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1894,11 +1894,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateimage}
 
 `PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/images`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateimage}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -1906,7 +1906,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateimage}
 
 | Name           | Type   | Description                                        |
 |----------------|--------|----------------------------------------------------|
@@ -1915,7 +1915,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.               |
 | transaction_id | string | TransactionID is the transaction identifier.       |
 
-##### Objects
+##### Objects {#objects-UpdateImageRequest}
 
 ###### Image
 
@@ -1942,9 +1942,9 @@ curl -X PUT \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-put-updateimage}
 
-#### Response body
+#### Response body {#response-body-method-put-updateimage}
 
 | Name  | Type      | Description                                    |
 |-------|-----------|------------------------------------------------|
@@ -1954,7 +1954,7 @@ curl -X PUT \
 | date  | Timestamp | Date is the date the image is created/updated. |
 | user  | User      | User is the user information.                  |
 
-##### Objects
+##### Objects {#objects-Image}
 
 ###### Timestamp
 
@@ -1990,7 +1990,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateimage}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2020,11 +2020,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatenarrative}
 
 `PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/narratives`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatenarrative}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -2032,7 +2032,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatenarrative}
 
 | Name           | Type      | Description                                                |
 |----------------|-----------|------------------------------------------------------------|
@@ -2041,7 +2041,7 @@ curl -X PUT \
 | account_id     | string    | AccountID is the account identifier.                       |
 | transaction_id | string    | TransactionID is the transaction identifier.               |
 
-##### Objects
+##### Objects {#objects-UpdateNarrativeRequest}
 
 ###### Narrative
 
@@ -2049,9 +2049,9 @@ curl -X PUT \
 |-----------|--------|--------------------------------------------|
 | narrative | string | Narrative is the content of the narrative. |
 
-### Responses
+### Responses {#responses-method-put-updatenarrative}
 
-#### Response body
+#### Response body {#response-body-method-put-updatenarrative}
 
 | Name      | Type   | Description                                |
 |-----------|--------|--------------------------------------------|
@@ -2065,7 +2065,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatenarrative}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2105,11 +2105,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatetag}
 
 `PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/tags`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatetag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -2117,7 +2117,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatetag}
 
 | Name           | Type   | Description                                    |
 |----------------|--------|------------------------------------------------|
@@ -2126,7 +2126,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.           |
 | transaction_id | string | TransactionID is the transaction identifier.   |
 
-##### Objects
+##### Objects {#objects-UpdateTagRequest}
 
 ###### Tag
 
@@ -2152,9 +2152,9 @@ curl -X PUT \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-put-updatetag}
 
-#### Response body
+#### Response body {#response-body-method-put-updatetag}
 
 | Name  | Type      | Description                                  |
 |-------|-----------|----------------------------------------------|
@@ -2163,7 +2163,7 @@ curl -X PUT \
 | date  | Timestamp | Date is the date the tag is created/updated. |
 | user  | User      | User is the user information.                |
 
-##### Objects
+##### Objects {#objects-Tag}
 
 ###### Timestamp
 
@@ -2198,7 +2198,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatetag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2240,11 +2240,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatewheretag}
 
 `PUT https:///v1/banks/{BankID}/accounts/{AccountID}/transactions/{TransactionID}/metadata/where_tags`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatewheretag}
 
 | Name           | Type   | Description                                  |
 |----------------|--------|----------------------------------------------|
@@ -2252,7 +2252,7 @@ curl -X PUT \
 | account_id     | string | AccountID is the account identifier.         |
 | transaction_id | string | TransactionID is the transaction identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatewheretag}
 
 | Name           | Type     | Description                                               |
 |----------------|----------|-----------------------------------------------------------|
@@ -2261,7 +2261,7 @@ curl -X PUT \
 | account_id     | string   | AccountID is the account identifier.                      |
 | transaction_id | string   | TransactionID is the transaction identifier.              |
 
-##### Objects
+##### Objects {#objects-UpdateWhereTagRequest}
 
 ###### WhereTag
 
@@ -2293,9 +2293,9 @@ curl -X PUT \
 | provider     | string | Provider is the provider of the user.   |
 | display_name | string | DisplayName is the user's display name. |
 
-### Responses
+### Responses {#responses-method-put-updatewheretag}
 
-#### Response body
+#### Response body {#response-body-method-put-updatewheretag}
 
 | Name     | Type      | Description                                                    |
 |----------|-----------|----------------------------------------------------------------|
@@ -2303,7 +2303,7 @@ curl -X PUT \
 | date     | Timestamp | Date is the date the geo information is created/updated.       |
 | user     | User      | User is the user information.                                  |
 
-##### Objects
+##### Objects {#objects-WhereTag}
 
 ###### Location
 
@@ -2347,7 +2347,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatewheretag}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

@@ -36,11 +36,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createbranch}
 
 `POST https:///v1/branches`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createbranch}
 
 | Name         | Type     | Description                                                         |
 |--------------|----------|---------------------------------------------------------------------|
@@ -52,7 +52,7 @@ curl -X POST \
 | description  | string   | Description is the branch's description.                            |
 | metadata     | string   | Metadata is the branch's metadata.                                  |
 
-##### Objects
+##### Objects {#objects-CreateBranchRequest}
 
 ###### Address
 
@@ -71,9 +71,9 @@ curl -X POST \
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
-### Responses
+### Responses {#responses-method-post-createbranch}
 
-#### Response body
+#### Response body {#response-body-method-post-createbranch}
 
 | Name      | Type   | Description                               |
 |-----------|--------|-------------------------------------------|
@@ -87,7 +87,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createbranch}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -109,19 +109,19 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletebranch}
 
 `DELETE https:///v1/branches/{BranchID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletebranch}
 
 | Name      | Type   | Description                               |
 |-----------|--------|-------------------------------------------|
 | branch_id | string | BranchID is the branch unique identifier. |
 
-### Responses
+### Responses {#responses-method-delete-deletebranch}
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletebranch}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -143,19 +143,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getbranch}
 
 `GET https:///v1/branches/{BranchID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getbranch}
 
 | Name      | Type   | Description                               |
 |-----------|--------|-------------------------------------------|
 | branch_id | string | BranchID is the branch unique identifier. |
 
-### Responses
+### Responses {#responses-method-get-getbranch}
 
-#### Response body
+#### Response body {#response-body-method-get-getbranch}
 
 | Name         | Type     | Description                                                         |
 |--------------|----------|---------------------------------------------------------------------|
@@ -168,7 +168,7 @@ curl -X GET \
 | description  | string   | Description is the branch's description.                            |
 | metadata     | string   | Metadata is the branch's metadata.                                  |
 
-##### Objects
+##### Objects {#objects-Branch}
 
 ###### Address
 
@@ -211,7 +211,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getbranch}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -234,19 +234,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getbranches}
 
 `GET https:///v1/branches`
 
-### Responses
+### Responses {#responses-method-get-getbranches}
 
-#### Response body
+#### Response body {#response-body-method-get-getbranches}
 
 | Name   | Type      | Description                       |
 |--------|-----------|-----------------------------------|
 | result | \[]Branch | Result is the list of the branch. |
 
-##### Objects
+##### Objects {#objects-GetBranchesResponse}
 
 ###### Branch
 
@@ -306,7 +306,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getbranches}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -347,17 +347,17 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatebranch}
 
 `PUT https:///v1/branches/{BranchID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatebranch}
 
 | Name      | Type   | Description                               |
 |-----------|--------|-------------------------------------------|
 | branch_id | string | BranchID is the branch unique identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatebranch}
 
 | Name         | Type     | Description                                    |
 |--------------|----------|------------------------------------------------|
@@ -369,7 +369,7 @@ curl -X PUT \
 | description  | string   | Description is the branch description.         |
 | metadata     | string   | Metadata is the branch metadata.               |
 
-##### Objects
+##### Objects {#objects-UpdateBranchRequest}
 
 ###### Address
 
@@ -388,9 +388,9 @@ curl -X PUT \
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
-### Responses
+### Responses {#responses-method-put-updatebranch}
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatebranch}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

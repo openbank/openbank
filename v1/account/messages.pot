@@ -58,9 +58,6 @@ msgstr ""
 msgid "Amount is the amount debited."
 msgstr ""
 
-msgid "Annex"
-msgstr ""
-
 msgid "AvailableBalance is the available balance of the account."
 msgstr ""
 
@@ -85,7 +82,16 @@ msgstr ""
 msgid "BranchName is the long-form name of the branch associated with the account."
 msgstr ""
 
+msgid "Checking account."
+msgstr ""
+
 msgid "CheckingInterestRate is the interest rate of the account if it is a checking account."
+msgstr ""
+
+msgid "CommercialLoan for a business loan account."
+msgstr ""
+
+msgid "ConsumerLoan for a consumer loan account."
 msgstr ""
 
 msgid "ContractDate is the date of the contract initialization."
@@ -127,6 +133,9 @@ msgstr ""
 msgid "Delete an account"
 msgstr ""
 
+msgid "Dep for deposit category."
+msgstr ""
+
 msgid "Description about the account"
 msgstr ""
 
@@ -142,10 +151,7 @@ msgstr ""
 msgid "EntityType describes the type of the entity."
 msgstr ""
 
-msgid "EntityType_Org is an organisation customer."
-msgstr ""
-
-msgid "EntityType_Pers is an individual customer."
+msgid "Enums"
 msgstr ""
 
 msgid "Exchange rate is the exchange rate for the transaction (if applicable)."
@@ -172,7 +178,16 @@ msgstr ""
 msgid "List all accounts"
 msgstr ""
 
+msgid "Loan for loan category."
+msgstr ""
+
+msgid "MajorCategory describes the category of the account."
+msgstr ""
+
 msgid "MajorCategory is the account category."
+msgstr ""
+
+msgid "MajorType describes the type of the account."
 msgstr ""
 
 msgid "MajorType is the account type."
@@ -190,6 +205,9 @@ msgstr ""
 msgid "Minor account"
 msgstr ""
 
+msgid "MortgageLoan for a home loan account."
+msgstr ""
+
 msgid "Name of the Role"
 msgstr ""
 
@@ -199,10 +217,16 @@ msgstr ""
 msgid "Objects"
 msgstr ""
 
+msgid "Org is an organisation customer."
+msgstr ""
+
 msgid "OwnerName is the name of the account's owner."
 msgstr ""
 
 msgid "Permanently delete an account."
+msgstr ""
+
+msgid "Pers is an individual customer."
 msgstr ""
 
 msgid "Provides CRUD operations on the accounts resource."
@@ -262,6 +286,9 @@ msgstr ""
 msgid "Roles for the account"
 msgstr ""
 
+msgid "Saving account."
+msgstr ""
+
 msgid "Specify when payments are due on money borrowed"
 msgstr ""
 
@@ -281,6 +308,9 @@ msgid "The identification number assigned to an account"
 msgstr ""
 
 msgid "The maturity date is the date on which the principal amount becomes due"
+msgstr ""
+
+msgid "TimeDeposit for a time deposit account."
 msgstr ""
 
 msgid "Type of entity"

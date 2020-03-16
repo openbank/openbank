@@ -22,26 +22,26 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-enableordisableconsumer}
 
 `PUT https:///v1/management/consumers/{ConsumerID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-enableordisableconsumer}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | consumer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-enableordisableconsumer}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | consumer_id | string |             |
 | enable      | bool   |             |
 
-### Responses
+### Responses {#responses-method-put-enableordisableconsumer}
 
-#### Response body
+#### Response body {#response-body-method-put-enableordisableconsumer}
 
 | Name   | Type | Description |
 |--------|------|-------------|
@@ -55,7 +55,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-enableordisableconsumer}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -78,25 +78,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getconsumer}
 
 `GET https:///v1/management/consumers/{ConsumerID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getconsumer}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | consumer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getconsumer}
 
-#### Response body
+#### Response body {#response-body-method-get-getconsumer}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | consumer | Consumer |             |
 
-##### Objects
+##### Objects {#objects-GetConsumerResponse}
 
 ###### Consumer
 
@@ -158,7 +158,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getconsumer}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -180,19 +180,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getconsumercalllimits}
 
 `GET https:///v1/management/consumers/{ConsumerID}/consumer/call-limits`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getconsumercalllimits}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | consumer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getconsumercalllimits}
 
-#### Response body
+#### Response body {#response-body-method-get-getconsumercalllimits}
 
 | Name                  | Type         | Description |
 |-----------------------|--------------|-------------|
@@ -204,7 +204,7 @@ curl -X GET \
 | per_month_call_limit  | string       |             |
 | current_state         | CurrentState |             |
 
-##### Objects
+##### Objects {#objects-GetConsumerCallLimitsResponse}
 
 ###### CurrentState
 
@@ -263,7 +263,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getconsumercalllimits}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -285,19 +285,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getconsumers}
 
 `GET https:///v1/management/consumers`
 
-### Responses
+### Responses {#responses-method-get-getconsumers}
 
-#### Response body
+#### Response body {#response-body-method-get-getconsumers}
 
 | Name      | Type        | Description |
 |-----------|-------------|-------------|
 | consumers | \[]Consumer |             |
 
-##### Objects
+##### Objects {#objects-GetConsumersResponse}
 
 ###### Consumer
 
@@ -361,7 +361,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getconsumers}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -383,19 +383,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getconsumersforloggedinuser}
 
 `GET https:///v1/management/users/current/consumers`
 
-### Responses
+### Responses {#responses-method-get-getconsumersforloggedinuser}
 
-#### Response body
+#### Response body {#response-body-method-get-getconsumersforloggedinuser}
 
 | Name      | Type        | Description |
 |-----------|-------------|-------------|
 | consumers | \[]Consumer |             |
 
-##### Objects
+##### Objects {#objects-GetConsumersForLoggedInUserResponse}
 
 ###### Consumer
 
@@ -459,7 +459,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getconsumersforloggedinuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -490,17 +490,17 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-setconsumercallslimit}
 
 `PUT https:///v1/management/consumers/{ConsumerID}/consumer/call-limits`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-setconsumercallslimit}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | consumer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-setconsumercallslimit}
 
 | Name                  | Type   | Description |
 |-----------------------|--------|-------------|
@@ -512,9 +512,9 @@ curl -X PUT \
 | per_week_call_limit   | string |             |
 | per_month_call_limit  | string |             |
 
-### Responses
+### Responses {#responses-method-put-setconsumercallslimit}
 
-#### Response body
+#### Response body {#response-body-method-put-setconsumercallslimit}
 
 | Name                  | Type   | Description |
 |-----------------------|--------|-------------|
@@ -538,7 +538,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-setconsumercallslimit}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -565,32 +565,32 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateconsumerredirecturl}
 
 `PUT https:///v1/management/consumers/{ConsumerID}/consumer/redirect_url`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateconsumerredirecturl}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | consumer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateconsumerredirecturl}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | consumer_id  | string |             |
 | redirect_url | string |             |
 
-### Responses
+### Responses {#responses-method-put-updateconsumerredirecturl}
 
-#### Response body
+#### Response body {#response-body-method-put-updateconsumerredirecturl}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | consumer | Consumer |             |
 
-##### Objects
+##### Objects {#objects-UpdateConsumerRedirectURLResponse}
 
 ###### Consumer
 
@@ -652,7 +652,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateconsumerredirecturl}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

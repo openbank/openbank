@@ -46,18 +46,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createproduct}
 
 `POST https:///v1/banks/{BankID}/products/{ProductCode}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createproduct}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | bank_id      | string |             |
 | product_code | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createproduct}
 
 | Name         | Type    | Description |
 |--------------|---------|-------------|
@@ -65,7 +65,7 @@ curl -X POST \
 | product_code | string  |             |
 | product      | Product |             |
 
-##### Objects
+##### Objects {#objects-CreateProductRequest}
 
 ###### Product
 
@@ -100,9 +100,21 @@ curl -X POST \
 | type                 | AttributeType |             |
 | value                | string        |             |
 
-### Responses
+##### Enums {#enums-CreateProductRequest}
 
-#### Response body
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
+
+### Responses {#responses-method-post-createproduct}
+
+#### Response body {#response-body-method-post-createproduct}
 
 | Name                | Type                | Description |
 |---------------------|---------------------|-------------|
@@ -119,7 +131,7 @@ curl -X POST \
 | meta                | Metadata            |             |
 | product_attributes  | \[]ProductAttribute |             |
 
-##### Objects
+##### Objects {#objects-Product}
 
 ###### Metadata
 
@@ -136,6 +148,18 @@ curl -X POST \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-Product}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -166,7 +190,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createproduct}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -200,11 +224,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createproductattribute}
 
 `POST https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createproductattribute}
 
 | Name                 | Type   | Description |
 |----------------------|--------|-------------|
@@ -212,7 +236,7 @@ curl -X POST \
 | product_code         | string |             |
 | product_attribute_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createproductattribute}
 
 | Name                 | Type             | Description |
 |----------------------|------------------|-------------|
@@ -221,7 +245,7 @@ curl -X POST \
 | product_attribute_id | string           |             |
 | product_attribute    | ProductAttribute |             |
 
-##### Objects
+##### Objects {#objects-CreateProductAttributeRequest}
 
 ###### ProductAttribute
 
@@ -233,9 +257,21 @@ curl -X POST \
 | type                 | AttributeType |             |
 | value                | string        |             |
 
-### Responses
+##### Enums {#enums-CreateProductAttributeRequest}
 
-#### Response body
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
+
+### Responses {#responses-method-post-createproductattribute}
+
+#### Response body {#response-body-method-post-createproductattribute}
 
 | Name                 | Type          | Description |
 |----------------------|---------------|-------------|
@@ -244,6 +280,18 @@ curl -X POST \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-ProductAttribute}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -257,7 +305,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createproductattribute}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -279,20 +327,20 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deleteproduct}
 
 `DELETE https:///v1/banks/{BankID}/products/{ProductCode}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deleteproduct}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | bank_id      | string |             |
 | product_code | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deleteproduct}
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deleteproduct}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -314,11 +362,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deleteproductattribute}
 
 `DELETE https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deleteproductattribute}
 
 | Name                 | Type   | Description |
 |----------------------|--------|-------------|
@@ -326,9 +374,9 @@ curl -X DELETE \
 | product_code         | string |             |
 | product_attribute_id | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deleteproductattribute}
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deleteproductattribute}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -350,20 +398,20 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getproduct}
 
 `GET https:///v1/banks/{BankID}/products/{ProductCode}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getproduct}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | bank_id      | string |             |
 | product_code | string |             |
 
-### Responses
+### Responses {#responses-method-get-getproduct}
 
-#### Response body
+#### Response body {#response-body-method-get-getproduct}
 
 | Name                | Type                | Description |
 |---------------------|---------------------|-------------|
@@ -380,7 +428,7 @@ curl -X GET \
 | meta                | Metadata            |             |
 | product_attributes  | \[]ProductAttribute |             |
 
-##### Objects
+##### Objects {#objects-Product}
 
 ###### Metadata
 
@@ -397,6 +445,18 @@ curl -X GET \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-Product}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -427,7 +487,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getproduct}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -450,11 +510,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getproductattribute}
 
 `GET https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getproductattribute}
 
 | Name                 | Type   | Description |
 |----------------------|--------|-------------|
@@ -462,9 +522,9 @@ curl -X GET \
 | product_code         | string |             |
 | product_attribute_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getproductattribute}
 
-#### Response body
+#### Response body {#response-body-method-get-getproductattribute}
 
 | Name                 | Type          | Description |
 |----------------------|---------------|-------------|
@@ -473,6 +533,18 @@ curl -X GET \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-ProductAttribute}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -486,7 +558,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getproductattribute}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -509,25 +581,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getproducts}
 
 `GET https:///v1/banks/{BankID}/products`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getproducts}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getproducts}
 
-#### Response body
+#### Response body {#response-body-method-get-getproducts}
 
 | Name     | Type       | Description |
 |----------|------------|-------------|
 | products | \[]Product |             |
 
-##### Objects
+##### Objects {#objects-GetProductsResponse}
 
 ###### Product
 
@@ -561,6 +633,18 @@ curl -X GET \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-GetProductsResponse}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -595,7 +679,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getproducts}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -646,18 +730,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateproduct}
 
 `PUT https:///v1/banks/{BankID}/products/{ProductCode}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateproduct}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | bank_id      | string |             |
 | product_code | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateproduct}
 
 | Name         | Type    | Description |
 |--------------|---------|-------------|
@@ -665,7 +749,7 @@ curl -X PUT \
 | product_code | string  |             |
 | product      | Product |             |
 
-##### Objects
+##### Objects {#objects-UpdateProductRequest}
 
 ###### Product
 
@@ -700,9 +784,21 @@ curl -X PUT \
 | type                 | AttributeType |             |
 | value                | string        |             |
 
-### Responses
+##### Enums {#enums-UpdateProductRequest}
 
-#### Response body
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
+
+### Responses {#responses-method-put-updateproduct}
+
+#### Response body {#response-body-method-put-updateproduct}
 
 | Name                | Type                | Description |
 |---------------------|---------------------|-------------|
@@ -719,7 +815,7 @@ curl -X PUT \
 | meta                | Metadata            |             |
 | product_attributes  | \[]ProductAttribute |             |
 
-##### Objects
+##### Objects {#objects-Product}
 
 ###### Metadata
 
@@ -736,6 +832,18 @@ curl -X PUT \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-Product}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -766,7 +874,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateproduct}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -800,11 +908,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateproductattribute}
 
 `PUT https:///v1/banks/{BankID}/products/{ProductCode}/attributes/{ProductAttributeID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateproductattribute}
 
 | Name                 | Type   | Description |
 |----------------------|--------|-------------|
@@ -812,7 +920,7 @@ curl -X PUT \
 | product_code         | string |             |
 | product_attribute_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateproductattribute}
 
 | Name                 | Type             | Description |
 |----------------------|------------------|-------------|
@@ -821,7 +929,7 @@ curl -X PUT \
 | product_attribute_id | string           |             |
 | product_attribute    | ProductAttribute |             |
 
-##### Objects
+##### Objects {#objects-UpdateProductAttributeRequest}
 
 ###### ProductAttribute
 
@@ -833,9 +941,21 @@ curl -X PUT \
 | type                 | AttributeType |             |
 | value                | string        |             |
 
-### Responses
+##### Enums {#enums-UpdateProductAttributeRequest}
 
-#### Response body
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
+
+### Responses {#responses-method-put-updateproductattribute}
+
+#### Response body {#response-body-method-put-updateproductattribute}
 
 | Name                 | Type          | Description |
 |----------------------|---------------|-------------|
@@ -844,6 +964,18 @@ curl -X PUT \
 | name                 | string        |             |
 | type                 | AttributeType |             |
 | value                | string        |             |
+
+##### Enums {#enums-ProductAttribute}
+
+###### AttributeType
+
+| Value         | Description |
+|---------------|-------------|
+| UnknownType   |             |
+| STRING        |             |
+| INTEGER       |             |
+| DOUBLE        |             |
+| DATE_WITH_DAY |             |
 
 Example:
 
@@ -857,7 +989,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateproductattribute}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -867,16 +999,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### AttributeType
-
-| Value         | Description |
-|---------------|-------------|
-| UnknownType   |             |
-| STRING        |             |
-| INTEGER       |             |
-| DOUBLE        |             |
-| DATE_WITH_DAY |             |

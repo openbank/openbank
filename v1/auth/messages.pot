@@ -19,10 +19,10 @@ msgstr  "Project-Id-Version: %s\n"
 msgid "AccessToken issued by the authorization server."
 msgstr ""
 
-msgid "Annex"
+msgid "Auth API"
 msgstr ""
 
-msgid "Auth API"
+msgid "AuthorizationCode is the grant type used to exchange an authorization code with an access token."
 msgstr ""
 
 msgid "Base Path"
@@ -37,6 +37,9 @@ msgstr ""
 msgid "Create an access token"
 msgstr ""
 
+msgid "Enums"
+msgstr ""
+
 msgid "ExpiresIn is the duration in seconds that the access token will remain valid."
 msgstr ""
 
@@ -49,12 +52,6 @@ msgstr ""
 msgid "GrantType is an enum to define which operation to perform."
 msgstr ""
 
-msgid "GrantType_AuthorizationCode is the grant type used to exchange an authorization code with an access token."
-msgstr ""
-
-msgid "GrantType_RefreshToken is the grant type used to refresh an access token."
-msgstr ""
-
 msgid "HTTP Request"
 msgstr ""
 
@@ -65,6 +62,9 @@ msgid "In order to interact with openbank APIs, you must be authenticated. This 
 msgstr ""
 
 msgid "RedirectURI must match RedirectURI provided for the autorization code request.Required only when GrantType is equal to \"authorization_code\"."
+msgstr ""
+
+msgid "RefreshToken is the grant type used to refresh an access token."
 msgstr ""
 
 msgid "RefreshToken is the refresh token previously issued to the client.Required only when GrantType is equal to \"refresh_token\""

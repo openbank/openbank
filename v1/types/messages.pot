@@ -16,7 +16,13 @@ msgstr  "Project-Id-Version: %s\n"
 		"Content-Type: text/plain; charset=CHARSET\n"
 		"Content-Transfer-Encoding: 8bit\n"
 
+msgid "ASC indicates ascending sort."
+msgstr ""
+
 msgid "Account identifier"
+msgstr ""
+
+msgid "Active is the active status for a card."
 msgstr ""
 
 msgid "Address hold all details about Address"
@@ -37,22 +43,16 @@ msgstr ""
 msgid "Branch Identifier"
 msgstr ""
 
-msgid "CardAccessStatus_Often indicates a card is used often."
-msgstr ""
-
-msgid "CardAccessStatus_Rare indicates a card is used rarely."
-msgstr ""
-
-msgid "CardStatus_Active is the active status for a card."
-msgstr ""
-
-msgid "CardStatus_Lock is the lock status for a card."
-msgstr ""
-
-msgid "CardStatus_Unlock is the unlock status for a card."
+msgid "Checking account."
 msgstr ""
 
 msgid "CityName holds the city name information."
+msgstr ""
+
+msgid "CommercialLoan for a business loan account."
+msgstr ""
+
+msgid "ConsumerLoan for a consumer loan account."
 msgstr ""
 
 msgid "Contact address"
@@ -79,10 +79,16 @@ msgstr ""
 msgid "DEPRECIATED: BankCode indicates which bank to use; these should be a list of banksthat we are currently integrated withThis is the updated list of banks per January 2018"
 msgstr ""
 
+msgid "DESC indicates descending sort."
+msgstr ""
+
 msgid "Date of birth of dependents"
 msgstr ""
 
 msgid "Date when the face image was added/updated"
+msgstr ""
+
+msgid "Dep for deposit category."
 msgstr ""
 
 msgid "Face image of the customer"
@@ -106,40 +112,22 @@ msgstr ""
 msgid "LastName or last names (space separated) of the person"
 msgstr ""
 
+msgid "Loan for loan category."
+msgstr ""
+
 msgid "Location is An object representing a latitude/longitude pair. This is expressed as a pairof doubles representing degrees latitude and degrees longitude.Values must be within normalized ranges.Refer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng."
 msgstr ""
 
 msgid "Location is the physical location of the interaction."
 msgstr ""
 
+msgid "Lock is the lock status for a card."
+msgstr ""
+
 msgid "MajorCategory describes the category of the account."
 msgstr ""
 
-msgid "MajorCategory_Dep for deposit category."
-msgstr ""
-
-msgid "MajorCategory_Loan for loan category."
-msgstr ""
-
 msgid "MajorType describes the type of the account."
-msgstr ""
-
-msgid "MajorType_Checking account."
-msgstr ""
-
-msgid "MajorType_CommercialLoan for a business loan account."
-msgstr ""
-
-msgid "MajorType_ConsumerLoan for a consumer loan account."
-msgstr ""
-
-msgid "MajorType_MortgageLoan for a home loan account."
-msgstr ""
-
-msgid "MajorType_Saving account."
-msgstr ""
-
-msgid "MajorType_TimeDeposit for a time deposit account."
 msgstr ""
 
 msgid "MiddleName or middle names (space separated) of the person"
@@ -151,6 +139,9 @@ msgstr ""
 msgid "MobileNo contact of the person"
 msgstr ""
 
+msgid "MortgageLoan for a home loan account."
+msgstr ""
+
 msgid "Name suffix"
 msgstr ""
 
@@ -158,6 +149,9 @@ msgid "Num is the value of the amount."
 msgstr ""
 
 msgid "Number of dependents"
+msgstr ""
+
+msgid "Often indicates a card is used often."
 msgstr ""
 
 msgid "Permanent address"
@@ -169,13 +163,13 @@ msgstr ""
 msgid "ProfileID is the unique identifier of a profile."
 msgstr ""
 
+msgid "Rare indicates a card is used rarely."
+msgstr ""
+
 msgid "RelationshipStatus. Ex: Single | Married"
 msgstr ""
 
-msgid "SortDirection_ASC indicates ascending sort."
-msgstr ""
-
-msgid "SortDirection_DESC indicates descending sort."
+msgid "Saving account."
 msgstr ""
 
 msgid "State holds the state information."
@@ -199,10 +193,16 @@ msgstr ""
 msgid "The longitude in degrees. It must be in the range [-180.0, +180.0]"
 msgstr ""
 
+msgid "TimeDeposit for a time deposit account."
+msgstr ""
+
 msgid "Title"
 msgstr ""
 
 msgid "True if email is verified, otherwise False"
+msgstr ""
+
+msgid "Unlock is the unlock status for a card."
 msgstr ""
 
 msgid "User country code (VN, US, ID, SG, ...)."

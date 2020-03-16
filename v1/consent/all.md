@@ -23,18 +23,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-answerconsentchallenge}
 
 `POST https:///v1/banks/{BankID}/consents/{ConsentID}/challenge`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-answerconsentchallenge}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | consent_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-answerconsentchallenge}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
@@ -42,15 +42,32 @@ curl -X POST \
 | consent_id | string |             |
 | answer     | string |             |
 
-### Responses
+### Responses {#responses-method-post-answerconsentchallenge}
 
-#### Response body
+#### Response body {#response-body-method-post-answerconsentchallenge}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | consent_id | string |             |
 | jwt        | string |             |
 | status     | Status |             |
+
+##### Enums {#enums-Consent}
+
+###### Status
+
+| Value           | Description |
+|-----------------|-------------|
+| UnknownStatus   |             |
+| INITIATED       |             |
+| ACCEPTED        |             |
+| REJECTED        |             |
+| REVOKED         |             |
+| RECEIVED        |             |
+| VALID           |             |
+| REVOKEDBYPSU    |             |
+| EXPIRED         |             |
+| TERMINATEDBYTPP |             |
 
 Example:
 
@@ -62,7 +79,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-answerconsentchallenge}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -90,17 +107,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createconsentemail}
 
 `POST https:///v1/banks/{BankID}/consents/email`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createconsentemail}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createconsentemail}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
@@ -109,15 +126,32 @@ curl -X POST \
 | view    | string |             |
 | email   | string |             |
 
-### Responses
+### Responses {#responses-method-post-createconsentemail}
 
-#### Response body
+#### Response body {#response-body-method-post-createconsentemail}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | consent_id | string |             |
 | jwt        | string |             |
 | status     | Status |             |
+
+##### Enums {#enums-Consent}
+
+###### Status
+
+| Value           | Description |
+|-----------------|-------------|
+| UnknownStatus   |             |
+| INITIATED       |             |
+| ACCEPTED        |             |
+| REJECTED        |             |
+| REVOKED         |             |
+| RECEIVED        |             |
+| VALID           |             |
+| REVOKEDBYPSU    |             |
+| EXPIRED         |             |
+| TERMINATEDBYTPP |             |
 
 Example:
 
@@ -129,7 +163,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createconsentemail}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -157,17 +191,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createconsentsms}
 
 `POST https:///v1/banks/{BankID}/consents/sms`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createconsentsms}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createconsentsms}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
@@ -176,15 +210,32 @@ curl -X POST \
 | view         | string |             |
 | phone_number | string |             |
 
-### Responses
+### Responses {#responses-method-post-createconsentsms}
 
-#### Response body
+#### Response body {#response-body-method-post-createconsentsms}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | consent_id | string |             |
 | jwt        | string |             |
 | status     | Status |             |
+
+##### Enums {#enums-Consent}
+
+###### Status
+
+| Value           | Description |
+|-----------------|-------------|
+| UnknownStatus   |             |
+| INITIATED       |             |
+| ACCEPTED        |             |
+| REJECTED        |             |
+| REVOKED         |             |
+| RECEIVED        |             |
+| VALID           |             |
+| REVOKEDBYPSU    |             |
+| EXPIRED         |             |
+| TERMINATEDBYTPP |             |
 
 Example:
 
@@ -196,7 +247,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createconsentsms}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -218,25 +269,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getconsents}
 
 `GET https:///v1/banks/{BankID}/consents`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getconsents}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getconsents}
 
-#### Response body
+#### Response body {#response-body-method-get-getconsents}
 
 | Name     | Type       | Description |
 |----------|------------|-------------|
 | consents | \[]Consent |             |
 
-##### Objects
+##### Objects {#objects-GetConsentsResponse}
 
 ###### Consent
 
@@ -245,6 +296,23 @@ curl -X GET \
 | consent_id | string |             |
 | jwt        | string |             |
 | status     | Status |             |
+
+##### Enums {#enums-GetConsentsResponse}
+
+###### Status
+
+| Value           | Description |
+|-----------------|-------------|
+| UnknownStatus   |             |
+| INITIATED       |             |
+| ACCEPTED        |             |
+| REJECTED        |             |
+| REVOKED         |             |
+| RECEIVED        |             |
+| VALID           |             |
+| REVOKEDBYPSU    |             |
+| EXPIRED         |             |
+| TERMINATEDBYTPP |             |
 
 Example:
 
@@ -260,7 +328,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getconsents}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -286,27 +354,27 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-revokeconsent}
 
 `POST https:///v1/banks/{BankID}/consents/{ConsentID}/revoke`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-revokeconsent}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | consent_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-revokeconsent}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | consent_id | string |             |
 
-### Responses
+### Responses {#responses-method-post-revokeconsent}
 
-#### Response body
+#### Response body {#response-body-method-post-revokeconsent}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
@@ -314,31 +382,9 @@ curl -X POST \
 | jwt        | string |             |
 | status     | Status |             |
 
-Example:
+##### Enums {#enums-Consent}
 
-```json
-{
-  "consent_id": "string",
-  "jwt": "string",
-  "status": "Status"
-}
-```
-
-#### Response codes
-
-| Status | Description                                                                            |
-|--------|----------------------------------------------------------------------------------------|
-| 201    | Consent revoked successfully.                                                          |
-| 400    | Returned when the request body is malformatted or does not match the expected request. |
-| 401    | Returned when the request does not contains the user's credentials.                    |
-| 403    | Returned when the user does not have permission to access the resource.                |
-| 404    | Returned when the resource is not found.                                               |
-| 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### Status
+###### Status
 
 | Value           | Description |
 |-----------------|-------------|
@@ -352,3 +398,24 @@ Annex
 | REVOKEDBYPSU    |             |
 | EXPIRED         |             |
 | TERMINATEDBYTPP |             |
+
+Example:
+
+```json
+{
+  "consent_id": "string",
+  "jwt": "string",
+  "status": "Status"
+}
+```
+
+#### Response codes {#response-codes-method-post-revokeconsent}
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 201    | Consent revoked successfully.                                                          |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |

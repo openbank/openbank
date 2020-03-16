@@ -35,11 +35,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createatm}
 
 `POST https:///v1/atms`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createatm}
 
 | Name        | Type     | Description                                                   |
 |-------------|----------|---------------------------------------------------------------|
@@ -50,7 +50,7 @@ curl -X POST \
 | description | string   | Description is the ATM's description.                         |
 | metadata    | string   | Metadata is the ATM's metadata.                               |
 
-##### Objects
+##### Objects {#objects-CreateATMRequest}
 
 ###### Address
 
@@ -69,9 +69,9 @@ curl -X POST \
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
-### Responses
+### Responses {#responses-method-post-createatm}
 
-#### Response body
+#### Response body {#response-body-method-post-createatm}
 
 | Name   | Type   | Description                                 |
 |--------|--------|---------------------------------------------|
@@ -85,7 +85,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createatm}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -107,19 +107,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getatm}
 
 `GET https:///v1/atms/{ATM_ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getatm}
 
 | Name   | Type   | Description                               |
 |--------|--------|-------------------------------------------|
 | atm_id | string | ATM_ID is a unique identifier of the ATM. |
 
-### Responses
+### Responses {#responses-method-get-getatm}
 
-#### Response body
+#### Response body {#response-body-method-get-getatm}
 
 | Name        | Type     | Description                                                   |
 |-------------|----------|---------------------------------------------------------------|
@@ -131,7 +131,7 @@ curl -X GET \
 | description | string   | Description is the ATM's description.                         |
 | metadata    | string   | Metadata is the ATM's metadata.                               |
 
-##### Objects
+##### Objects {#objects-ATM}
 
 ###### Address
 
@@ -173,7 +173,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getatm}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -196,19 +196,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getatms}
 
 `GET https:///v1/atms`
 
-### Responses
+### Responses {#responses-method-get-getatms}
 
-#### Response body
+#### Response body {#response-body-method-get-getatms}
 
 | Name   | Type   | Description                     |
 |--------|--------|---------------------------------|
 | result | \[]ATM | Result is the list of the ATMs. |
 
-##### Objects
+##### Objects {#objects-GetATMsResponse}
 
 ###### ATM
 
@@ -266,7 +266,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getatms}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

@@ -31,6 +31,9 @@ msgstr ""
 msgid "Delete a product collection"
 msgstr ""
 
+msgid "Enums"
+msgstr ""
+
 msgid "HTTP Request"
 msgstr ""
 

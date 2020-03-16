@@ -25,6 +25,9 @@ msgstr ""
 msgid "Account is the ID of the account associated with the card."
 msgstr ""
 
+msgid "Active is the active status for a card."
+msgstr ""
+
 msgid "AmountDue is the the card holder is expected to paid by the due date."
 msgstr ""
 
@@ -70,6 +73,9 @@ msgstr ""
 msgid "Delete a card"
 msgstr ""
 
+msgid "Enums"
+msgstr ""
+
 msgid "ErrorCode is the code of the error."
 msgstr ""
 
@@ -94,10 +100,16 @@ msgstr ""
 msgid "LastName is the last name of the card owner."
 msgstr ""
 
+msgid "Lock is the lock status for a card."
+msgstr ""
+
 msgid "Num is the value of the amount."
 msgstr ""
 
 msgid "Objects"
+msgstr ""
+
+msgid "Often indicates a card is used often."
 msgstr ""
 
 msgid "OwnerName is the name of the card owner."
@@ -110,6 +122,9 @@ msgid "Provides create and read operations on the card resource."
 msgstr ""
 
 msgid "Query Parameters"
+msgstr ""
+
+msgid "Rare indicates a card is used rarely."
 msgstr ""
 
 msgid "Request executed successfully."
@@ -161,6 +176,9 @@ msgid "Success is a boolean indicating the success of the operation."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"
+msgstr ""
+
+msgid "Unlock is the unlock status for a card."
 msgstr ""
 
 msgid "Update Card status."

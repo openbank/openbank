@@ -16,9 +16,6 @@ msgstr  "Project-Id-Version: %s\n"
 		"Content-Type: text/plain; charset=CHARSET\n"
 		"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Annex"
-msgstr ""
-
 msgid "Answer the consent reqeust challenge"
 msgstr ""
 
@@ -53,6 +50,9 @@ msgid "Creates a new sms consent"
 msgstr ""
 
 msgid "Email consent created successfully."
+msgstr ""
+
+msgid "Enums"
 msgstr ""
 
 msgid "HTTP Request"

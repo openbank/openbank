@@ -23,11 +23,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createaccountapplication}
 
 `POST https:///v1/account-applications`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createaccountapplication}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
@@ -35,9 +35,9 @@ curl -X POST \
 | user_id      | string |             |
 | profile_id   | string |             |
 
-### Responses
+### Responses {#responses-method-post-createaccountapplication}
 
-#### Response body
+#### Response body {#response-body-method-post-createaccountapplication}
 
 | Name                | Type                     | Description |
 |---------------------|--------------------------|-------------|
@@ -48,7 +48,7 @@ curl -X POST \
 | date_of_application | Timestamp                |             |
 | status              | AccountApplicationStatus |             |
 
-##### Objects
+##### Objects {#objects-CreateAccountApplicationResponse}
 
 ###### User
 
@@ -124,6 +124,18 @@ curl -X POST \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
+##### Enums {#enums-CreateAccountApplicationResponse}
+
+###### AccountApplicationStatus
+
+Entity type defines the type of account application
+
+| Value                    | Description                     |
+|--------------------------|---------------------------------|
+| UnknownApplicationStatus |                                 |
+| Requested                | Account application is created  |
+| Accepted                 | Account application is accepted |
+
 Example:
 
 ```json
@@ -198,7 +210,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createaccountapplication}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -220,19 +232,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getaccountapplication}
 
 `GET https:///v1/account-applications/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getaccountapplication}
 
 | Name | Type   | Description |
 |------|--------|-------------|
 | id   | string |             |
 
-### Responses
+### Responses {#responses-method-get-getaccountapplication}
 
-#### Response body
+#### Response body {#response-body-method-get-getaccountapplication}
 
 | Name                | Type                     | Description |
 |---------------------|--------------------------|-------------|
@@ -243,7 +255,7 @@ curl -X GET \
 | date_of_application | Timestamp                |             |
 | status              | AccountApplicationStatus |             |
 
-##### Objects
+##### Objects {#objects-AccountApplication}
 
 ###### Timestamp
 
@@ -251,6 +263,18 @@ curl -X GET \
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
+
+##### Enums {#enums-AccountApplication}
+
+###### AccountApplicationStatus
+
+Entity type defines the type of account application
+
+| Value                    | Description                     |
+|--------------------------|---------------------------------|
+| UnknownApplicationStatus |                                 |
+| Requested                | Account application is created  |
+| Accepted                 | Account application is accepted |
 
 Example:
 
@@ -268,7 +292,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getaccountapplication}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -291,19 +315,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getaccountapplications}
 
 `GET https:///v1/account-applications`
 
-### Responses
+### Responses {#responses-method-get-getaccountapplications}
 
-#### Response body
+#### Response body {#response-body-method-get-getaccountapplications}
 
 | Name   | Type                  | Description                           |
 |--------|-----------------------|---------------------------------------|
 | result | \[]AccountApplication | Result is the paginated query result. |
 
-##### Objects
+##### Objects {#objects-GetAccountApplicationsResponse}
 
 ###### AccountApplication
 
@@ -322,6 +346,18 @@ curl -X GET \
 |---------|-------|-------------|
 | seconds | int64 |             |
 | nanos   | int32 |             |
+
+##### Enums {#enums-GetAccountApplicationsResponse}
+
+###### AccountApplicationStatus
+
+Entity type defines the type of account application
+
+| Value                    | Description                     |
+|--------------------------|---------------------------------|
+| UnknownApplicationStatus |                                 |
+| Requested                | Account application is created  |
+| Accepted                 | Account application is accepted |
 
 Example:
 
@@ -343,7 +379,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getaccountapplications}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -369,26 +405,38 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateaccountapplicationstatus}
 
 `PUT https:///v1/account-applications/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateaccountapplicationstatus}
 
 | Name | Type   | Description                                                       |
 |------|--------|-------------------------------------------------------------------|
 | id   | string | ID is the unique identifier of the account application to update. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateaccountapplicationstatus}
 
 | Name   | Type                     | Description                                                       |
 |--------|--------------------------|-------------------------------------------------------------------|
 | id     | string                   | ID is the unique identifier of the account application to update. |
 | status | AccountApplicationStatus | Status of the account application                                 |
 
-### Responses
+##### Enums {#enums-UpdateAccountApplicationStatusRequest}
 
-#### Response body
+###### AccountApplicationStatus
+
+Entity type defines the type of account application
+
+| Value                    | Description                     |
+|--------------------------|---------------------------------|
+| UnknownApplicationStatus |                                 |
+| Requested                | Account application is created  |
+| Accepted                 | Account application is accepted |
+
+### Responses {#responses-method-put-updateaccountapplicationstatus}
+
+#### Response body {#response-body-method-put-updateaccountapplicationstatus}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -399,7 +447,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateaccountapplicationstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -409,16 +457,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### AccountApplicationStatus
-
-Entity type defines the type of account application
-
-| Value                    | Description                     |
-|--------------------------|---------------------------------|
-| UnknownApplicationStatus |                                 |
-| Requested                | Account application is created  |
-| Accepted                 | Account application is accepted |

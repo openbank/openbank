@@ -25,9 +25,6 @@ msgstr ""
 msgid "Account routing schme such as AccountId or AccountNumber or any   strings"
 msgstr ""
 
-msgid "Annex"
-msgstr ""
-
 msgid "Bank routing address such as eg: testsandbox, must be valid sandbox bankIds"
 msgstr ""
 
@@ -49,9 +46,6 @@ msgstr ""
 msgid "Counter Party created successfully."
 msgstr ""
 
-msgid "Counter party type"
-msgstr ""
-
 msgid "Counterpart API"
 msgstr ""
 
@@ -59,9 +53,6 @@ msgid "Create an counter party"
 msgstr ""
 
 msgid "Creates a new counter party"
-msgstr ""
-
-msgid "Entity type defines the type of counterparty"
 msgstr ""
 
 msgid "HTTP Request"
@@ -155,9 +146,6 @@ msgid "The latitude in degrees. It must be in the range [-90.0, +90.0]."
 msgstr ""
 
 msgid "The longitude in degrees. It must be in the range [-180.0, +180.0]"
-msgstr ""
-
-msgid "TransactionRequestType_SEPA transaction type"
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"

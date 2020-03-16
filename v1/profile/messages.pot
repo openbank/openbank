@@ -49,10 +49,19 @@ msgstr ""
 msgid "Category is the card type."
 msgstr ""
 
+msgid "Checking account."
+msgstr ""
+
 msgid "CheckingInterestRate is the interest rate of the account if it is a checking account."
 msgstr ""
 
 msgid "CityName holds the city name information."
+msgstr ""
+
+msgid "CommercialLoan for a business loan account."
+msgstr ""
+
+msgid "ConsumerLoan for a consumer loan account."
 msgstr ""
 
 msgid "Contact address"
@@ -94,7 +103,13 @@ msgstr ""
 msgid "Date when the face image was added/updated"
 msgstr ""
 
+msgid "Dep for deposit category."
+msgstr ""
+
 msgid "DueDate is the loan maturity date."
+msgstr ""
+
+msgid "Enums"
 msgstr ""
 
 msgid "Face image of the customer"
@@ -136,7 +151,16 @@ msgstr ""
 msgid "LastName or last names (space separated) of the person"
 msgstr ""
 
+msgid "Loan for loan category."
+msgstr ""
+
+msgid "MajorCategory describes the category of the account."
+msgstr ""
+
 msgid "MajorCategory is the account category."
+msgstr ""
+
+msgid "MajorType describes the type of the account."
 msgstr ""
 
 msgid "MajorType is the account type."
@@ -149,6 +173,9 @@ msgid "MiddleName or middle names (space separated) of the person"
 msgstr ""
 
 msgid "Mobile number"
+msgstr ""
+
+msgid "MortgageLoan for a home loan account."
 msgstr ""
 
 msgid "Name suffix"
@@ -226,6 +253,9 @@ msgstr ""
 msgid "Returns the profile and associated accounts"
 msgstr ""
 
+msgid "Saving account."
+msgstr ""
+
 msgid "Specify when payments are due on money borrowed"
 msgstr ""
 
@@ -236,6 +266,9 @@ msgid "Status is the status of the account."
 msgstr ""
 
 msgid "Street holds the street information."
+msgstr ""
+
+msgid "TimeDeposit for a time deposit account."
 msgstr ""
 
 msgid "Title"

@@ -18,20 +18,20 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getprofile}
 
 `GET https:///v1/profile`
 
-### Responses
+### Responses {#responses-method-get-getprofile}
 
-#### Response body
+#### Response body {#response-body-method-get-getprofile}
 
 | Name     | Type       | Description |
 |----------|------------|-------------|
 | profile  | Profile    |             |
 | accounts | \[]Account |             |
 
-##### Objects
+##### Objects {#objects-GetProfileResponse}
 
 ###### Profile
 
@@ -125,6 +125,32 @@ curl -X GET \
 |------|--------|------------------------------------|
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
+
+##### Enums {#enums-GetProfileResponse}
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
+
+###### MajorCategory
+
+MajorCategory describes the category of the account.
+
+| Value                | Description               |
+|----------------------|---------------------------|
+| UnknownMajorCategory |                           |
+| Dep                  | Dep for deposit category. |
+| Loan                 | Loan for loan category.   |
 
 Example:
 
@@ -241,7 +267,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getprofile}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -264,19 +290,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getprofilecard}
 
 `GET https:///v1/profile/card`
 
-### Responses
+### Responses {#responses-method-get-getprofilecard}
 
-#### Response body
+#### Response body {#response-body-method-get-getprofilecard}
 
 | Name  | Type           | Description |
 |-------|----------------|-------------|
 | cards | \[]ProfileCard |             |
 
-##### Objects
+##### Objects {#objects-GetProfileCardsResponse}
 
 ###### ProfileCard
 
@@ -304,7 +330,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getprofilecard}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
