@@ -31,9 +31,6 @@ msgstr ""
 msgid "Account application is created"
 msgstr ""
 
-msgid "Annex"
-msgstr ""
-
 msgid "Base Path"
 msgstr ""
 
@@ -89,6 +86,9 @@ msgid "Email of the user"
 msgstr ""
 
 msgid "Entity type defines the type of account application"
+msgstr ""
+
+msgid "Enums"
 msgstr ""
 
 msgid "Face image of the customer"

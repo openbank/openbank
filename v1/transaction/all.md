@@ -23,11 +23,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-approvepayment}
 
 `POST https:///v1/transactions/approval`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-approvepayment}
 
 | Name           | Type    | Description                                         |
 |----------------|---------|-----------------------------------------------------|
@@ -35,9 +35,20 @@ curl -X POST \
 | approve        | bool    | Approve is Boolean value of approval action.        |
 | tfa_type       | TFAType | TFAType is type to receive OTP authentication code. |
 
-### Responses
+##### Enums {#enums-ApprovePaymentRequest}
 
-#### Response body
+###### TFAType
+
+TFAType is available type of TFA.
+
+| Value   | Description          |
+|---------|----------------------|
+| SMS     | SMS Message.         |
+| SAFEKEY | SAFEKEY Application. |
+
+### Responses {#responses-method-post-approvepayment}
+
+#### Response body {#response-body-method-post-approvepayment}
 
 | Name             | Type   | Description                                                                        |
 |------------------|--------|------------------------------------------------------------------------------------|
@@ -53,7 +64,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-approvepayment}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -111,11 +122,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createtransaction}
 
 `POST https:///v1/transactions`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createtransaction}
 
 | Name                     | Type            | Description                                                                |
 |--------------------------|-----------------|----------------------------------------------------------------------------|
@@ -126,7 +137,7 @@ curl -X POST \
 | amount                   | Amount          | Amount holds the amount value and currency of the transaction.             |
 | remarks                  | string          | Remarks is an informational note about the transaction.                    |
 
-##### Objects
+##### Objects {#objects-CreateTransactionRequest}
 
 ###### OfflineUserInfo
 
@@ -162,9 +173,25 @@ curl -X POST \
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
 
-### Responses
+##### Enums {#enums-CreateTransactionRequest}
 
-#### Response body
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
+
+### Responses {#responses-method-post-createtransaction}
+
+#### Response body {#response-body-method-post-createtransaction}
 
 | Name           | Type   | Description                                              |
 |----------------|--------|----------------------------------------------------------|
@@ -180,7 +207,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createtransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -202,19 +229,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettransaction}
 
 `GET https:///v1/transactions/{TransactionID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettransaction}
 
 | Name           | Type   | Description                                              |
 |----------------|--------|----------------------------------------------------------|
 | transaction_id | string | TransactionID is the unique identifier of a transaction. |
 
-### Responses
+### Responses {#responses-method-get-gettransaction}
 
-#### Response body
+#### Response body {#response-body-method-get-gettransaction}
 
 | Name                     | Type            | Description                                                            |
 |--------------------------|-----------------|------------------------------------------------------------------------|
@@ -231,7 +258,7 @@ curl -X GET \
 | user_id                  | string          | UserID is the identifier of the issuer of the transaction.             |
 | remarks                  | string          | Remarks is an informational note about the transaction.                |
 
-##### Objects
+##### Objects {#objects-Transaction}
 
 ###### BankAccountInfo
 
@@ -273,6 +300,43 @@ curl -X GET \
 |-----------|--------|---------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+
+##### Enums {#enums-Transaction}
+
+###### Type
+
+Type defines the type of a transaction.
+
+| Value       | Description                                   |
+|-------------|-----------------------------------------------|
+| UnknownType |                                               |
+| Credit      | Credit is the value for a credit transaction. |
+| Debit       | Debit is the value for a debit transaction.   |
+
+###### Status
+
+Status defines the status of a transaction.
+
+| Value         | Description                                        |
+|---------------|----------------------------------------------------|
+| UnknownStatus |                                                    |
+| Success       | Success is the value for a successful transaction. |
+| Pending       | Pending is the value for a pending transaction.    |
+| Rejected      | Rejected is the value for a rejected transaction.  |
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
 
 Example:
 
@@ -329,7 +393,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -352,20 +416,20 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettransactions}
 
 `GET https:///v1/transactions`
 
-### Responses
+### Responses {#responses-method-get-gettransactions}
 
-#### Response body
+#### Response body {#response-body-method-get-gettransactions}
 
 | Name                 | Type           | Description                                                |
 |----------------------|----------------|------------------------------------------------------------|
 | result               | \[]Transaction | Result is the paginated query result.                      |
 | last_running_balance | Amount         | LastRunningBalance is current balance for related account. |
 
-##### Objects
+##### Objects {#objects-GetTransactionsResponse}
 
 ###### Transaction
 
@@ -424,6 +488,43 @@ curl -X GET \
 |-----------|--------|---------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+
+##### Enums {#enums-GetTransactionsResponse}
+
+###### Type
+
+Type defines the type of a transaction.
+
+| Value       | Description                                   |
+|-------------|-----------------------------------------------|
+| UnknownType |                                               |
+| Credit      | Credit is the value for a credit transaction. |
+| Debit       | Debit is the value for a debit transaction.   |
+
+###### Status
+
+Status defines the status of a transaction.
+
+| Value         | Description                                        |
+|---------------|----------------------------------------------------|
+| UnknownStatus |                                                    |
+| Success       | Success is the value for a successful transaction. |
+| Pending       | Pending is the value for a pending transaction.    |
+| Rejected      | Rejected is the value for a rejected transaction.  |
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
 
 Example:
 
@@ -488,7 +589,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettransactions}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -510,26 +611,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettransactionsbyaccount}
 
 `GET https:///v1/accounts/{AccountID}/transactions`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettransactionsbyaccount}
 
 | Name       | Type   | Description                                       |
 |------------|--------|---------------------------------------------------|
 | account_id | string | AccountID is the unique identifier of an account. |
 
-### Responses
+### Responses {#responses-method-get-gettransactionsbyaccount}
 
-#### Response body
+#### Response body {#response-body-method-get-gettransactionsbyaccount}
 
 | Name                 | Type           | Description                                                |
 |----------------------|----------------|------------------------------------------------------------|
 | result               | \[]Transaction | Result is a list containing up to 20 transactions.         |
 | last_running_balance | Amount         | LastRunningBalance is current balance for related account. |
 
-##### Objects
+##### Objects {#objects-GetTransactionsByAccountResponse}
 
 ###### Transaction
 
@@ -588,6 +689,43 @@ curl -X GET \
 |-----------|--------|---------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+
+##### Enums {#enums-GetTransactionsByAccountResponse}
+
+###### Type
+
+Type defines the type of a transaction.
+
+| Value       | Description                                   |
+|-------------|-----------------------------------------------|
+| UnknownType |                                               |
+| Credit      | Credit is the value for a credit transaction. |
+| Debit       | Debit is the value for a debit transaction.   |
+
+###### Status
+
+Status defines the status of a transaction.
+
+| Value         | Description                                        |
+|---------------|----------------------------------------------------|
+| UnknownStatus |                                                    |
+| Success       | Success is the value for a successful transaction. |
+| Pending       | Pending is the value for a pending transaction.    |
+| Rejected      | Rejected is the value for a rejected transaction.  |
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
 
 Example:
 
@@ -652,7 +790,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettransactionsbyaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -680,11 +818,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-tfa}
 
 `POST https:///v1/transactions/confirmation`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-tfa}
 
 | Name             | Type    | Description                                                                          |
 |------------------|---------|--------------------------------------------------------------------------------------|
@@ -693,9 +831,20 @@ curl -X POST \
 | authorization_id | string  | AuthorizationID is the executable code is obtained from the payment feedback result. |
 | tfa_type         | TFAType | TFAType is type to receive OTP authentication code.                                  |
 
-### Responses
+##### Enums {#enums-TFARequest}
 
-#### Response body
+###### TFAType
+
+TFAType is available type of TFA.
+
+| Value   | Description          |
+|---------|----------------------|
+| SMS     | SMS Message.         |
+| SAFEKEY | SAFEKEY Application. |
+
+### Responses {#responses-method-post-tfa}
+
+#### Response body {#response-body-method-post-tfa}
 
 | Name         | Type   | Description                                    |
 |--------------|--------|------------------------------------------------|
@@ -709,7 +858,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-tfa}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -719,36 +868,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### Status
-
-Status defines the status of a transaction.
-
-| Value         | Description                                               |
-|---------------|-----------------------------------------------------------|
-| UnknownStatus |                                                           |
-| Success       | Status_Success is the value for a successful transaction. |
-| Pending       | Status_Pending is the value for a pending transaction.    |
-| Rejected      | Status_Rejected is the value for a rejected transaction.  |
-
-#### TFAType
-
-TFAType is available type of TFA.
-
-| Value   | Description                  |
-|---------|------------------------------|
-| SMS     | TFAType_SMS Message.         |
-| SAFEKEY | TFAType_SAFEKEY Application. |
-
-#### Type
-
-Type defines the type of a transaction.
-
-| Value       | Description                                        |
-|-------------|----------------------------------------------------|
-| UnknownType |                                                    |
-| Credit      | Type_Credit is the value for a credit transaction. |
-| Debit       | Type_Debit is the value for a debit transaction.   |

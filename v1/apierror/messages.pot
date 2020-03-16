@@ -19,6 +19,9 @@ msgstr  "Project-Id-Version: %s\n"
 msgid "APIError defines the error model returned by an API in case something went wrong"
 msgstr ""
 
+msgid "AccountAlreadyExists is returned when trying to create a duplicate account."
+msgstr ""
+
 msgid "Annex"
 msgstr ""
 
@@ -29,9 +32,6 @@ msgid "DocURL is a direct link to the specific error type documentation, when ap
 msgstr ""
 
 msgid "ErrorType defines the type of the error."
-msgstr ""
-
-msgid "ErrorType_AccountAlreadyExists is returned when trying to create a duplicate account."
 msgstr ""
 
 msgid "Message is a human readable message providing more details about the error."

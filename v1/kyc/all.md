@@ -32,18 +32,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-addkyccheck}
 
 `PUT https:///v1/customers/{CustomerID}/kyc_check/{KYCCheckID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-addkyccheck}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | customer_id  | string |             |
 | kyc_check_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-addkyccheck}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -57,7 +57,7 @@ curl -X PUT \
 | satisfied       | bool      |             |
 | comments        | string    |             |
 
-##### Objects
+##### Objects {#objects-AddKYCCheckRequest}
 
 ###### Timestamp
 
@@ -66,9 +66,9 @@ curl -X PUT \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-put-addkyccheck}
 
-#### Response body
+#### Response body {#response-body-method-put-addkyccheck}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -83,7 +83,7 @@ curl -X PUT \
 | satisfied       | bool      |             |
 | comments        | string    |             |
 
-##### Objects
+##### Objects {#objects-AddKYCCheckResponse}
 
 ###### Timestamp
 
@@ -112,7 +112,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-addkyccheck}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -150,18 +150,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-addkycdocument}
 
 `PUT https:///v1/customers/{CustomerID}/kyc_check/{KYCDocumentID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-addkycdocument}
 
 | Name            | Type   | Description |
 |-----------------|--------|-------------|
 | customer_id     | string |             |
 | kyc_document_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-addkycdocument}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -174,7 +174,7 @@ curl -X PUT \
 | issue_place     | string    |             |
 | expiry_date     | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-AddKYCDocumentRequest}
 
 ###### Timestamp
 
@@ -183,9 +183,9 @@ curl -X PUT \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-put-addkycdocument}
 
-#### Response body
+#### Response body {#response-body-method-put-addkycdocument}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -199,7 +199,7 @@ curl -X PUT \
 | issue_place     | string    |             |
 | expiry_date     | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-AddKYCDocumentResponse}
 
 ###### Timestamp
 
@@ -230,7 +230,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-addkycdocument}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -265,18 +265,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-addkycmedia}
 
 `PUT https:///v1/customers/{CustomerID}/kyc_check/{KYCMediaID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-addkycmedia}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
 | customer_id  | string |             |
 | kyc_media_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-addkycmedia}
 
 | Name                       | Type      | Description |
 |----------------------------|-----------|-------------|
@@ -289,7 +289,7 @@ curl -X PUT \
 | relates_to_kyc_document_id | string    |             |
 | relates_to_kyc_check_id    | string    |             |
 
-##### Objects
+##### Objects {#objects-AddKYCMediaRequest}
 
 ###### Timestamp
 
@@ -298,9 +298,9 @@ curl -X PUT \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-put-addkycmedia}
 
-#### Response body
+#### Response body {#response-body-method-put-addkycmedia}
 
 | Name                       | Type      | Description |
 |----------------------------|-----------|-------------|
@@ -314,7 +314,7 @@ curl -X PUT \
 | relates_to_kyc_document_id | string    |             |
 | relates_to_kyc_check_id    | string    |             |
 
-##### Objects
+##### Objects {#objects-AddKYCMediaResponse}
 
 ###### Timestamp
 
@@ -342,7 +342,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-addkycmedia}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -373,17 +373,17 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-addkycstatus}
 
 `PUT https:///v1/customers/{CustomerID}/kyc_statuses`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-addkycstatus}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-addkycstatus}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -392,7 +392,7 @@ curl -X PUT \
 | ok              | bool      |             |
 | date            | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-AddKYCStatusRequest}
 
 ###### Timestamp
 
@@ -401,9 +401,9 @@ curl -X PUT \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-put-addkycstatus}
 
-#### Response body
+#### Response body {#response-body-method-put-addkycstatus}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -412,7 +412,7 @@ curl -X PUT \
 | ok              | bool      |             |
 | date            | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-AddKYCStatusResponse}
 
 ###### Timestamp
 
@@ -435,7 +435,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-addkycstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -457,25 +457,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomerkyccheck}
 
 `GET https:///v1/customers/{CustomerID}/kyc_checks`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomerkyccheck}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomerkyccheck}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomerkyccheck}
 
 | Name   | Type     | Description |
 |--------|----------|-------------|
 | checks | \[]Check |             |
 
-##### Objects
+##### Objects {#objects-GetCustomerKYCCheckResponse}
 
 ###### Check
 
@@ -523,7 +523,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomerkyccheck}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -545,25 +545,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomerkycdocument}
 
 `GET https:///v1/customers/{CustomerID}/kyc_documents`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomerkycdocument}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomerkycdocument}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomerkycdocument}
 
 | Name      | Type        | Description |
 |-----------|-------------|-------------|
 | documents | \[]Document |             |
 
-##### Objects
+##### Objects {#objects-GetCustomerKYCDocumentResponse}
 
 ###### Document
 
@@ -612,7 +612,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomerkycdocument}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -634,25 +634,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomerkycstatus}
 
 `GET https:///v1/customers/{CustomerID}/kyc_statuses`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomerkycstatus}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomerkycstatus}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomerkycstatus}
 
 | Name     | Type      | Description |
 |----------|-----------|-------------|
 | statuses | \[]Status |             |
 
-##### Objects
+##### Objects {#objects-GetCustomerKYCStatusResponse}
 
 ###### Status
 
@@ -688,7 +688,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomerkycstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -710,25 +710,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getkycmedia}
 
 `GET https:///v1/customers/{CustomerID}/kyc_media`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getkycmedia}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getkycmedia}
 
-#### Response body
+#### Response body {#response-body-method-get-getkycmedia}
 
 | Name   | Type     | Description |
 |--------|----------|-------------|
 | medias | \[]Media |             |
 
-##### Objects
+##### Objects {#objects-GetKYCMediaResponse}
 
 ###### Media
 
@@ -774,7 +774,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getkycmedia}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

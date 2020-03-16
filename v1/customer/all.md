@@ -31,17 +31,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-addaddresstocustomer}
 
 `POST https:///v1/customers/{CustomerID}/address`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-addaddresstocustomer}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-addaddresstocustomer}
 
 | Name         | Type      | Description |
 |--------------|-----------|-------------|
@@ -57,9 +57,9 @@ curl -X POST \
 | tags         | \[]string |             |
 | status       | string    |             |
 
-### Responses
+### Responses {#responses-method-post-addaddresstocustomer}
 
-#### Response body
+#### Response body {#response-body-method-post-addaddresstocustomer}
 
 | Name                | Type      | Description |
 |---------------------|-----------|-------------|
@@ -77,7 +77,7 @@ curl -X POST \
 | status              | string    |             |
 | insert_date         | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-AddAddressToCustomerResponse}
 
 ###### Timestamp
 
@@ -109,7 +109,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-addaddresstocustomer}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -145,17 +145,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-addsocialmediahandle}
 
 `POST https:///v1/customers/{CustomerID}/social_media_handles`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-addsocialmediahandle}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-addsocialmediahandle}
 
 | Name            | Type      | Description |
 |-----------------|-----------|-------------|
@@ -166,7 +166,7 @@ curl -X POST \
 | date_added      | Timestamp |             |
 | date_activated  | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-AddSocialMediaHandleRequest}
 
 ###### Timestamp
 
@@ -175,9 +175,9 @@ curl -X POST \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-post-addsocialmediahandle}
 
-#### Response body
+#### Response body {#response-body-method-post-addsocialmediahandle}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
@@ -191,7 +191,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-addsocialmediahandle}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -224,18 +224,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcreditlimitorder}
 
 `POST https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createcreditlimitorder}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcreditlimitorder}
 
 | Name                               | Type   | Description |
 |------------------------------------|--------|-------------|
@@ -249,9 +249,9 @@ curl -X POST \
 | requested_temporary_valid_end_date | string |             |
 | temporary_credit_documentation     | string |             |
 
-### Responses
+### Responses {#responses-method-post-createcreditlimitorder}
 
-#### Response body
+#### Response body {#response-body-method-post-createcreditlimitorder}
 
 | Name                  | Type   | Description |
 |-----------------------|--------|-------------|
@@ -265,7 +265,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcreditlimitorder}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -327,11 +327,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcustomer}
 
 `POST https:///v1/customers`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcustomer}
 
 | Name                       | Type         | Description |
 |----------------------------|--------------|-------------|
@@ -351,7 +351,7 @@ curl -X POST \
 | title                      | string       |             |
 | branchId                   | string       |             |
 
-##### Objects
+##### Objects {#objects-CreateCustomerRequest}
 
 ###### FaceImage
 
@@ -381,9 +381,9 @@ curl -X POST \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
-### Responses
+### Responses {#responses-method-post-createcustomer}
 
-#### Response body
+#### Response body {#response-body-method-post-createcustomer}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
@@ -399,7 +399,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcustomer}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -426,17 +426,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createusercustomerlink}
 
 `POST https:///v1/banks/{BankID}/user_customer_links`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createusercustomerlink}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createusercustomerlink}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
@@ -444,9 +444,9 @@ curl -X POST \
 | user_id     | string |             |
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-post-createusercustomerlink}
 
-#### Response body
+#### Response body {#response-body-method-post-createusercustomerlink}
 
 | Name                  | Type      | Description |
 |-----------------------|-----------|-------------|
@@ -456,7 +456,7 @@ curl -X POST \
 | date_inserted         | Timestamp |             |
 | is_active             | bool      |             |
 
-##### Objects
+##### Objects {#objects-CreateUserCustomerLinkResponse}
 
 ###### Timestamp
 
@@ -480,7 +480,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createusercustomerlink}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -502,11 +502,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletecustomeraddress}
 
 `DELETE https:///v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletecustomeraddress}
 
 | Name                | Type   | Description |
 |---------------------|--------|-------------|
@@ -514,9 +514,9 @@ curl -X DELETE \
 | customer_id         | string |             |
 | customer_address_id | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deletecustomeraddress}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletecustomeraddress}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -527,7 +527,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletecustomeraddress}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -549,11 +549,11 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletetaxresidence}
 
 `DELETE https:///v1/banks/{BankID}/customers/{CustomerID}/tax_residencies/{TaxResidenceID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletetaxresidence}
 
 | Name             | Type   | Description |
 |------------------|--------|-------------|
@@ -561,9 +561,9 @@ curl -X DELETE \
 | customer_id      | string |             |
 | tax_residence_id | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deletetaxresidence}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletetaxresidence}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -574,7 +574,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletetaxresidence}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -596,26 +596,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcrmevents}
 
 `GET https:///v1/banks/{BankID}/crm-events`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcrmevents}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcrmevents}
 
-#### Response body
+#### Response body {#response-body-method-get-getcrmevents}
 
 | Name       | Type        | Description |
 |------------|-------------|-------------|
 | crm_events | \[]CRMEvent |             |
 | has_more   | bool        |             |
 
-##### Objects
+##### Objects {#objects-GetCRMEventsResponse}
 
 ###### CRMEvent
 
@@ -667,7 +667,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcrmevents}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -689,26 +689,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcreditlimitorder}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/requests`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcreditlimitorder}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcreditlimitorder}
 
-#### Response body
+#### Response body {#response-body-method-get-getcreditlimitorder}
 
 | Name   | Type                | Description |
 |--------|---------------------|-------------|
 | result | \[]CreditLimitOrder |             |
 
-##### Objects
+##### Objects {#objects-GetCreditLimitOrderResponse}
 
 ###### CreditLimitOrder
 
@@ -734,7 +734,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcreditlimitorder}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -756,11 +756,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcreditlimitorderbyid}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}/credit_limit/request/{RequestID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcreditlimitorderbyid}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
@@ -768,15 +768,15 @@ curl -X GET \
 | customer_id | string |             |
 | request_id  | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcreditlimitorderbyid}
 
-#### Response body
+#### Response body {#response-body-method-get-getcreditlimitorderbyid}
 
 | Name               | Type             | Description |
 |--------------------|------------------|-------------|
 | credit_limit_order | CreditLimitOrder |             |
 
-##### Objects
+##### Objects {#objects-GetCreditLimitOrderByIDResponse}
 
 ###### CreditLimitOrder
 
@@ -800,7 +800,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcreditlimitorderbyid}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -822,26 +822,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomeraddresses}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}/addresses`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomeraddresses}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomeraddresses}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomeraddresses}
 
 | Name      | Type       | Description |
 |-----------|------------|-------------|
 | addresses | \[]Address |             |
 
-##### Objects
+##### Objects {#objects-GetCustomerAddressesResponse}
 
 ###### Address
 
@@ -895,7 +895,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomeraddresses}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -917,20 +917,20 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomerbycustomerid}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomerbycustomerid}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomerbycustomerid}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomerbycustomerid}
 
 | Name                         | Type         | Description |
 |------------------------------|--------------|-------------|
@@ -952,7 +952,7 @@ curl -X GET \
 | title                        | string       |             |
 | branch_id                    | string       |             |
 
-##### Objects
+##### Objects {#objects-Customer}
 
 ###### FaceImage
 
@@ -1024,7 +1024,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomerbycustomerid}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1046,11 +1046,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomerbycustomernumber}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}/customer-number/{CustomerNumber}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomerbycustomernumber}
 
 | Name            | Type   | Description |
 |-----------------|--------|-------------|
@@ -1058,9 +1058,9 @@ curl -X GET \
 | customer_id     | string |             |
 | customer_number | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomerbycustomernumber}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomerbycustomernumber}
 
 | Name                         | Type         | Description |
 |------------------------------|--------------|-------------|
@@ -1082,7 +1082,7 @@ curl -X GET \
 | title                        | string       |             |
 | branch_id                    | string       |             |
 
-##### Objects
+##### Objects {#objects-Customer}
 
 ###### FaceImage
 
@@ -1154,7 +1154,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomerbycustomernumber}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1176,26 +1176,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomersocialmediahandles}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}/social_media_handles`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomersocialmediahandles}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomersocialmediahandles}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomersocialmediahandles}
 
 | Name   | Type     | Description |
 |--------|----------|-------------|
 | checks | \[]Check |             |
 
-##### Objects
+##### Objects {#objects-GetCustomerSocialMediaHandlesResponse}
 
 ###### Check
 
@@ -1236,7 +1236,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomersocialmediahandles}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1258,19 +1258,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomersforcurrentuser}
 
 `GET https:///v1/users/current/customers`
 
-### Responses
+### Responses {#responses-method-get-getcustomersforcurrentuser}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomersforcurrentuser}
 
 | Name      | Type        | Description |
 |-----------|-------------|-------------|
 | customers | \[]Customer |             |
 
-##### Objects
+##### Objects {#objects-GetCustomersForCurrentUserResponse}
 
 ###### Customer
 
@@ -1368,7 +1368,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomersforcurrentuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1390,25 +1390,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcustomersforcurrentuseratbank}
 
 `GET https:///v1/banks/{BankID}/customers`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcustomersforcurrentuseratbank}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getcustomersforcurrentuseratbank}
 
-#### Response body
+#### Response body {#response-body-method-get-getcustomersforcurrentuseratbank}
 
 | Name      | Type        | Description |
 |-----------|-------------|-------------|
 | customers | \[]Customer |             |
 
-##### Objects
+##### Objects {#objects-GetCustomersForCurrentUserAtBankResponse}
 
 ###### Customer
 
@@ -1506,7 +1506,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcustomersforcurrentuseratbank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1528,25 +1528,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getfirehosecustomer}
 
 `GET https:///v1/banks/{BankID}/firehose/customers`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getfirehosecustomer}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getfirehosecustomer}
 
-#### Response body
+#### Response body {#response-body-method-get-getfirehosecustomer}
 
 | Name      | Type        | Description |
 |-----------|-------------|-------------|
 | customers | \[]Customer |             |
 
-##### Objects
+##### Objects {#objects-GetFirehoseCustomerResponse}
 
 ###### Customer
 
@@ -1644,7 +1644,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getfirehosecustomer}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1666,26 +1666,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettaxresidenceofcustomer}
 
 `GET https:///v1/banks/{BankID}/customers/{CustomerID}/tax-residences`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettaxresidenceofcustomer}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-gettaxresidenceofcustomer}
 
-#### Response body
+#### Response body {#response-body-method-get-gettaxresidenceofcustomer}
 
 | Name   | Type            | Description |
 |--------|-----------------|-------------|
 | result | \[]TaxResidence |             |
 
-##### Objects
+##### Objects {#objects-GetTaxResidenceOfCustomerResponse}
 
 ###### TaxResidence
 
@@ -1709,7 +1709,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettaxresidenceofcustomer}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1746,11 +1746,11 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomeraddress}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/addresses/{CustomerAddressID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomeraddress}
 
 | Name                | Type   | Description |
 |---------------------|--------|-------------|
@@ -1758,7 +1758,7 @@ curl -X PUT \
 | customer_id         | string |             |
 | customer_address_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomeraddress}
 
 | Name                | Type      | Description |
 |---------------------|-----------|-------------|
@@ -1776,9 +1776,9 @@ curl -X PUT \
 | tags                | \[]string |             |
 | status              | string    |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomeraddress}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomeraddress}
 
 | Name                | Type      | Description |
 |---------------------|-----------|-------------|
@@ -1796,7 +1796,7 @@ curl -X PUT \
 | status              | string    |             |
 | insert_date         | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerAddressResponse}
 
 ###### Timestamp
 
@@ -1828,7 +1828,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomeraddress}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1856,18 +1856,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomerbranch}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/branch`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomerbranch}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomerbranch}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
@@ -1875,15 +1875,15 @@ curl -X PUT \
 | customer_id | string |             |
 | branch_id   | string |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomerbranch}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomerbranch}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerBranchResponse}
 
 ###### Customer
 
@@ -1979,7 +1979,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomerbranch}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2010,18 +2010,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomercreditlimit}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/credit-limit`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomercreditlimit}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomercreditlimit}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
@@ -2029,7 +2029,7 @@ curl -X PUT \
 | customer_id  | string |             |
 | credit_limit | Amount |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerCreditLimitRequest}
 
 ###### Amount
 
@@ -2038,15 +2038,15 @@ curl -X PUT \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
-### Responses
+### Responses {#responses-method-put-updatecustomercreditlimit}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomercreditlimit}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerCreditLimitResponse}
 
 ###### Customer
 
@@ -2142,7 +2142,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomercreditlimit}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2173,18 +2173,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomercreditratingandsource}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/credit-rating-and-source`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomercreditratingandsource}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomercreditratingandsource}
 
 | Name          | Type         | Description |
 |---------------|--------------|-------------|
@@ -2192,7 +2192,7 @@ curl -X PUT \
 | customer_id   | string       |             |
 | credit_rating | CreditRating |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerCreditRatingAndSourceRequest}
 
 ###### CreditRating
 
@@ -2201,15 +2201,15 @@ curl -X PUT \
 | rating | string |             |
 | source | string |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomercreditratingandsource}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomercreditratingandsource}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerCreditRatingAndSourceResponse}
 
 ###### Customer
 
@@ -2305,7 +2305,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomercreditratingandsource}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2333,18 +2333,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomeremail}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/email`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomeremail}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomeremail}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
@@ -2352,15 +2352,15 @@ curl -X PUT \
 | customer_id | string |             |
 | email       | string |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomeremail}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomeremail}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerEmailResponse}
 
 ###### Customer
 
@@ -2456,7 +2456,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomeremail}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2486,18 +2486,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomeridentity}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/identity`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomeridentity}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomeridentity}
 
 | Name          | Type   | Description |
 |---------------|--------|-------------|
@@ -2507,15 +2507,15 @@ curl -X PUT \
 | date_of_birth | string |             |
 | title         | string |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomeridentity}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomeridentity}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerIdentityResponse}
 
 ###### Customer
 
@@ -2611,7 +2611,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomeridentity}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2639,18 +2639,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomermobilenumber}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/mobile-number`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomermobilenumber}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomermobilenumber}
 
 | Name                | Type   | Description |
 |---------------------|--------|-------------|
@@ -2658,15 +2658,15 @@ curl -X PUT \
 | customer_id         | string |             |
 | mobile_phone_number | string |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomermobilenumber}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomermobilenumber}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerMobileNumberResponse}
 
 ###### Customer
 
@@ -2762,7 +2762,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomermobilenumber}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2790,18 +2790,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomernumber}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/number`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomernumber}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomernumber}
 
 | Name            | Type   | Description |
 |-----------------|--------|-------------|
@@ -2809,15 +2809,15 @@ curl -X PUT \
 | customer_id     | string |             |
 | customer_number | string |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomernumber}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomernumber}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerNumberResponse}
 
 ###### Customer
 
@@ -2913,7 +2913,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomernumber}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2951,18 +2951,18 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecustomerotherdata}
 
 `PUT https:///v1/banks/{BankID}/customers/{CustomerID}/data`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecustomerotherdata}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
 | bank_id     | string |             |
 | customer_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecustomerotherdata}
 
 | Name                       | Type      | Description |
 |----------------------------|-----------|-------------|
@@ -2974,7 +2974,7 @@ curl -X PUT \
 | highest_education_attained | string    |             |
 | employment_status          | string    |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerOtherDataRequest}
 
 ###### FaceImage
 
@@ -2990,15 +2990,15 @@ curl -X PUT \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-put-updatecustomerotherdata}
 
-#### Response body
+#### Response body {#response-body-method-put-updatecustomerotherdata}
 
 | Name     | Type     | Description |
 |----------|----------|-------------|
 | customer | Customer |             |
 
-##### Objects
+##### Objects {#objects-UpdateCustomerOtherDataResponse}
 
 ###### Customer
 
@@ -3094,7 +3094,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecustomerotherdata}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

@@ -18,25 +18,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getbankpublicaccount}
 
 `GET https:///v1/banks/{BankID}/accounts/public`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getbankpublicaccount}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getbankpublicaccount}
 
-#### Response body
+#### Response body {#response-body-method-get-getbankpublicaccount}
 
 | Name     | Type             | Description |
 |----------|------------------|-------------|
 | accounts | \[]PublicAccount |             |
 
-##### Objects
+##### Objects {#objects-GetBankPublicAccountResponse}
 
 ###### PublicAccount
 
@@ -76,7 +76,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getbankpublicaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -98,19 +98,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getpublicaccountatallbanks}
 
 `GET https:///v1/accounts/public`
 
-### Responses
+### Responses {#responses-method-get-getpublicaccountatallbanks}
 
-#### Response body
+#### Response body {#response-body-method-get-getpublicaccountatallbanks}
 
 | Name     | Type             | Description |
 |----------|------------------|-------------|
 | accounts | \[]PublicAccount |             |
 
-##### Objects
+##### Objects {#objects-GetPublicAccountAtAllBanksResponse}
 
 ###### PublicAccount
 
@@ -150,7 +150,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getpublicaccountatallbanks}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -172,11 +172,11 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getpublicaccountbyid}
 
 `GET https:///v1/banks/{BankID}/public/accounts/{AccountID}/{ViewID}/account`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getpublicaccountbyid}
 
 | Name       | Type  | Description |
 |------------|-------|-------------|
@@ -184,9 +184,9 @@ curl -X GET \
 | account_id | int32 |             |
 | int32      |       |             |
 
-### Responses
+### Responses {#responses-method-get-getpublicaccountbyid}
 
-#### Response body
+#### Response body {#response-body-method-get-getpublicaccountbyid}
 
 | Name             | Type              | Description |
 |------------------|-------------------|-------------|
@@ -200,7 +200,7 @@ curl -X GET \
 | account_routings | \[]AccountRouting |             |
 | account_rules    | \[]AccountRule    |             |
 
-##### Objects
+##### Objects {#objects-GetPublicAccountByIDResponse}
 
 ###### Owner
 
@@ -264,7 +264,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getpublicaccountbyid}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

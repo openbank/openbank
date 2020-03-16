@@ -24,11 +24,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createaccesstoken}
 
 `POST https:///v1/token`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createaccesstoken}
 
 | Name          | Type      | Description                                                                                                                                  |
 |---------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,9 +37,21 @@ curl -X POST \
 | redirect_uri  | string    | RedirectURI must match RedirectURI provided for the autorization code request.Required only when GrantType is equal to "authorization_code". |
 | refresh_token | string    | RefreshToken is the refresh token previously issued to the client.Required only when GrantType is equal to "refresh_token"                   |
 
-### Responses
+##### Enums {#enums-CreateAccessTokenRequest}
 
-#### Response body
+###### GrantType
+
+GrantType defines the grant type when requesting a token.
+
+| Value             | Description                                                                                      |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| UnknownGrantType  |                                                                                                  |
+| AuthorizationCode | AuthorizationCode is the grant type used to exchange an authorization code with an access token. |
+| RefreshToken      | RefreshToken is the grant type used to refresh an access token.                                  |
+
+### Responses {#responses-method-post-createaccesstoken}
+
+#### Response body {#response-body-method-post-createaccesstoken}
 
 | Name          | Type   | Description                                                                   |
 |---------------|--------|-------------------------------------------------------------------------------|
@@ -59,7 +71,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createaccesstoken}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -81,13 +93,13 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getauthorizationcode}
 
 `GET https:///v1/auth`
 
-### Responses
+### Responses {#responses-method-get-getauthorizationcode}
 
-#### Response body
+#### Response body {#response-body-method-get-getauthorizationcode}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -98,7 +110,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getauthorizationcode}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -108,16 +120,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### GrantType
-
-GrantType defines the grant type when requesting a token.
-
-| Value             | Description                                                                                                |
-|-------------------|------------------------------------------------------------------------------------------------------------|
-| UnknownGrantType  |                                                                                                            |
-| AuthorizationCode | GrantType_AuthorizationCode is the grant type used to exchange an authorization code with an access token. |
-| RefreshToken      | GrantType_RefreshToken is the grant type used to refresh an access token.                                  |

@@ -22,20 +22,20 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-addentitlementrequestforcurrentuser}
 
 `POST https:///v1/entitlement-requests`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-addentitlementrequestforcurrentuser}
 
 | Name      | Type   | Description |
 |-----------|--------|-------------|
 | bank_id   | string |             |
 | role_name | string |             |
 
-### Responses
+### Responses {#responses-method-post-addentitlementrequestforcurrentuser}
 
-#### Response body
+#### Response body {#response-body-method-post-addentitlementrequestforcurrentuser}
 
 | Name                   | Type      | Description |
 |------------------------|-----------|-------------|
@@ -45,7 +45,7 @@ curl -X POST \
 | bank_id                | string    |             |
 | created                | Timestamp |             |
 
-##### Objects
+##### Objects {#objects-EntitlementRequest}
 
 ###### User
 
@@ -109,7 +109,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-addentitlementrequestforcurrentuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -136,17 +136,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-addentitlementrequestforuser}
 
 `POST https:///v1/users/{UserID}/entitlements`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-addentitlementrequestforuser}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | user_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-addentitlementrequestforuser}
 
 | Name      | Type   | Description |
 |-----------|--------|-------------|
@@ -154,9 +154,9 @@ curl -X POST \
 | bank_id   | string |             |
 | role_name | string |             |
 
-### Responses
+### Responses {#responses-method-post-addentitlementrequestforuser}
 
-#### Response body
+#### Response body {#response-body-method-post-addentitlementrequestforuser}
 
 | Name           | Type   | Description |
 |----------------|--------|-------------|
@@ -176,7 +176,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-addentitlementrequestforuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -198,20 +198,20 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deleteentitlement}
 
 `DELETE https:///v1/users/{UserID}/entitlements/{EntitlementID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deleteentitlement}
 
 | Name           | Type   | Description |
 |----------------|--------|-------------|
 | user_id        | string |             |
 | entitlement_id | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deleteentitlement}
 
-#### Response body
+#### Response body {#response-body-method-delete-deleteentitlement}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -222,7 +222,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deleteentitlement}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -244,19 +244,19 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deleteentitlementrequest}
 
 `DELETE https:///v1/entitlement-requests/{EntitlementRequestID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deleteentitlementrequest}
 
 | Name                   | Type   | Description |
 |------------------------|--------|-------------|
 | entitlement_request_id | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deleteentitlementrequest}
 
-#### Response body
+#### Response body {#response-body-method-delete-deleteentitlementrequest}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -267,7 +267,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deleteentitlementrequest}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -289,19 +289,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getallentitlementrequests}
 
 `GET https:///v1/entitlement-requests`
 
-### Responses
+### Responses {#responses-method-get-getallentitlementrequests}
 
-#### Response body
+#### Response body {#response-body-method-get-getallentitlementrequests}
 
 | Name                 | Type                  | Description |
 |----------------------|-----------------------|-------------|
 | entitlement_requests | \[]EntitlementRequest |             |
 
-##### Objects
+##### Objects {#objects-EntitlementRequests}
 
 ###### EntitlementRequest
 
@@ -379,7 +379,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getallentitlementrequests}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -401,19 +401,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getallentitlements}
 
 `GET https:///v1/entitlements`
 
-### Responses
+### Responses {#responses-method-get-getallentitlements}
 
-#### Response body
+#### Response body {#response-body-method-get-getallentitlements}
 
 | Name | Type    | Description |
 |------|---------|-------------|
 | list | \[]List |             |
 
-##### Objects
+##### Objects {#objects-Entitlements}
 
 ###### List
 
@@ -437,7 +437,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getallentitlements}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -459,19 +459,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getentitlementforcurrentuser}
 
 `GET https:///v1/users/current/entitlements`
 
-### Responses
+### Responses {#responses-method-get-getentitlementforcurrentuser}
 
-#### Response body
+#### Response body {#response-body-method-get-getentitlementforcurrentuser}
 
 | Name | Type    | Description |
 |------|---------|-------------|
 | list | \[]List |             |
 
-##### Objects
+##### Objects {#objects-Entitlements}
 
 ###### List
 
@@ -495,7 +495,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getentitlementforcurrentuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -518,25 +518,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getentitlementforuser}
 
 `GET https:///v1/users/{UserID}/entitlements`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getentitlementforuser}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | user_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getentitlementforuser}
 
-#### Response body
+#### Response body {#response-body-method-get-getentitlementforuser}
 
 | Name | Type    | Description |
 |------|---------|-------------|
 | list | \[]List |             |
 
-##### Objects
+##### Objects {#objects-Entitlements}
 
 ###### List
 
@@ -560,7 +560,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getentitlementforuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -583,26 +583,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getentitlementforuseratbank}
 
 `GET https:///v1/banks/{BankID}/users/{UserID}/entitlements`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getentitlementforuseratbank}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 | user_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getentitlementforuseratbank}
 
-#### Response body
+#### Response body {#response-body-method-get-getentitlementforuseratbank}
 
 | Name | Type    | Description |
 |------|---------|-------------|
 | list | \[]List |             |
 
-##### Objects
+##### Objects {#objects-Entitlements}
 
 ###### List
 
@@ -626,7 +626,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getentitlementforuseratbank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -649,19 +649,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getentitlementrequestforcurrentuser}
 
 `GET https:///v1/users/current/entitlement-requests`
 
-### Responses
+### Responses {#responses-method-get-getentitlementrequestforcurrentuser}
 
-#### Response body
+#### Response body {#response-body-method-get-getentitlementrequestforcurrentuser}
 
 | Name                 | Type                  | Description |
 |----------------------|-----------------------|-------------|
 | entitlement_requests | \[]EntitlementRequest |             |
 
-##### Objects
+##### Objects {#objects-GetEntitlementRequestForCurrentUserResponse}
 
 ###### EntitlementRequest
 
@@ -739,7 +739,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getentitlementrequestforcurrentuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -762,25 +762,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getentitlementrequestforuser}
 
 `GET https:///v1/users/{UserID}/entitlement-requests`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getentitlementrequestforuser}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | user_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getentitlementrequestforuser}
 
-#### Response body
+#### Response body {#response-body-method-get-getentitlementrequestforuser}
 
 | Name                 | Type                  | Description |
 |----------------------|-----------------------|-------------|
 | entitlement_requests | \[]EntitlementRequest |             |
 
-##### Objects
+##### Objects {#objects-GetEntitlementRequestForUserResponse}
 
 ###### EntitlementRequest
 
@@ -858,7 +858,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getentitlementrequestforuser}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -881,19 +881,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getroles}
 
 `GET https:///v1/roles`
 
-### Responses
+### Responses {#responses-method-get-getroles}
 
-#### Response body
+#### Response body {#response-body-method-get-getroles}
 
 | Name  | Type     | Description |
 |-------|----------|-------------|
 | roles | \[]Roles |             |
 
-##### Objects
+##### Objects {#objects-GetRolesResponse}
 
 ###### Roles
 
@@ -915,7 +915,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getroles}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

@@ -18,19 +18,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getstatement}
 
 `GET https:///v1/statement/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getstatement}
 
 | Name | Type   | Description                                  |
 |------|--------|----------------------------------------------|
 | id   | string | ID is the unique identifier of the statement |
 
-### Responses
+### Responses {#responses-method-get-getstatement}
 
-#### Response body
+#### Response body {#response-body-method-get-getstatement}
 
 | Name        | Type   | Description                                                           |
 |-------------|--------|-----------------------------------------------------------------------|
@@ -41,7 +41,7 @@ curl -X GET \
 | amount      | Amount | Amount is the amount if the transcation that writes on the statement. |
 | balance     | Amount | Balance is remaining balance after related transaction.               |
 
-##### Objects
+##### Objects {#objects-Statement}
 
 ###### Amount
 
@@ -49,6 +49,18 @@ curl -X GET \
 |------|--------|------------------------------------|
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
+
+##### Enums {#enums-Statement}
+
+###### Status
+
+Status define the status of a statment.
+
+| Value         | Description                                    |
+|---------------|------------------------------------------------|
+| UnknownStatus |                                                |
+| Received      | Received is the value for a received statment. |
+| Pending       | Pending is the value for a pending statement.  |
 
 Example:
 
@@ -69,7 +81,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getstatement}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -80,16 +92,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### Status
-
-Status define the status of a statment.
-
-| Value         | Description                                           |
-|---------------|-------------------------------------------------------|
-| UnknownStatus |                                                       |
-| Received      | Status_Received is the value for a received statment. |
-| Pending       | Status_Pending is the value for a pending statement.  |

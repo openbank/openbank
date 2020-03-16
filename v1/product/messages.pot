@@ -16,9 +16,6 @@ msgstr  "Project-Id-Version: %s\n"
 		"Content-Type: text/plain; charset=CHARSET\n"
 		"Content-Transfer-Encoding: 8bit\n"
 
-msgid "Annex"
-msgstr ""
-
 msgid "Base Path"
 msgstr ""
 
@@ -41,6 +38,9 @@ msgid "Delete a product"
 msgstr ""
 
 msgid "Delete a product attribute"
+msgstr ""
+
+msgid "Enums"
 msgstr ""
 
 msgid "HTTP Request"

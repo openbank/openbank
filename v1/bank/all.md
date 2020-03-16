@@ -33,17 +33,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createbank}
 
 `POST https:///v1/banks`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createbank}
 
 | Name | Type | Description                                   |
 |------|------|-----------------------------------------------|
 | bank | Bank | Bank is the related information about a bank. |
 
-##### Objects
+##### Objects {#objects-CreateBankRequest}
 
 ###### Bank
 
@@ -65,9 +65,9 @@ curl -X POST \
 | scheme  | string | Scheme is the routing scheme.   |
 | address | string | Address is the routing address. |
 
-### Responses
+### Responses {#responses-method-post-createbank}
 
-#### Response body
+#### Response body {#response-body-method-post-createbank}
 
 | Name                | Type        | Description                                          |
 |---------------------|-------------|------------------------------------------------------|
@@ -80,7 +80,7 @@ curl -X POST \
 | national_identifier | string      | NationalIdentifier is the national identifier code.  |
 | bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
-##### Objects
+##### Objects {#objects-Bank}
 
 ###### BankRouting
 
@@ -107,7 +107,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createbank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -140,17 +140,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createtranscationtypeatbank}
 
 `POST https:///v1/banks/transaction-types`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createtranscationtypeatbank}
 
 | Name             | Type            | Description                                                                    |
 |------------------|-----------------|--------------------------------------------------------------------------------|
 | transaction_type | TransactionType | TransactionType is the related information about a transaction type at a bank. |
 
-##### Objects
+##### Objects {#objects-CreateTransactionTypeAtBankRequest}
 
 ###### TransactionType
 
@@ -164,9 +164,9 @@ curl -X POST \
 | currency    | string | Currency is the currency of the transaction type.                         |
 | amount      | string | Amount is the amount of the transaction type.                             |
 
-### Responses
+### Responses {#responses-method-post-createtranscationtypeatbank}
 
-#### Response body
+#### Response body {#response-body-method-post-createtranscationtypeatbank}
 
 | Name        | Type   | Description                                                               |
 |-------------|--------|---------------------------------------------------------------------------|
@@ -192,7 +192,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createtranscationtypeatbank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -214,19 +214,19 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletebank}
 
 `DELETE https:///v1/banks/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletebank}
 
 | Name | Type   | Description                       |
 |------|--------|-----------------------------------|
 | id   | string | ID is the bank unique identifier. |
 
-### Responses
+### Responses {#responses-method-delete-deletebank}
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletebank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -248,19 +248,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getbank}
 
 `GET https:///v1/banks/{ID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getbank}
 
 | Name | Type   | Description                       |
 |------|--------|-----------------------------------|
 | id   | string | ID is the bank unique identifier. |
 
-### Responses
+### Responses {#responses-method-get-getbank}
 
-#### Response body
+#### Response body {#response-body-method-get-getbank}
 
 | Name                | Type        | Description                                          |
 |---------------------|-------------|------------------------------------------------------|
@@ -273,7 +273,7 @@ curl -X GET \
 | national_identifier | string      | NationalIdentifier is the national identifier code.  |
 | bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
-##### Objects
+##### Objects {#objects-Bank}
 
 ###### BankRouting
 
@@ -300,7 +300,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getbank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -323,19 +323,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getbanks}
 
 `GET https:///v1/banks`
 
-### Responses
+### Responses {#responses-method-get-getbanks}
 
-#### Response body
+#### Response body {#response-body-method-get-getbanks}
 
 | Name  | Type    | Description                     |
 |-------|---------|---------------------------------|
 | banks | \[]Bank | Banks is the list of the banks. |
 
-##### Objects
+##### Objects {#objects-GetBanksResponse}
 
 ###### Bank
 
@@ -379,7 +379,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getbanks}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -417,17 +417,17 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatebank}
 
 `PUT https:///v1/banks`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatebank}
 
 | Name | Type | Description                                   |
 |------|------|-----------------------------------------------|
 | bank | Bank | Bank is the related information about a bank. |
 
-##### Objects
+##### Objects {#objects-UpdateBankRequest}
 
 ###### Bank
 
@@ -449,9 +449,9 @@ curl -X PUT \
 | scheme  | string | Scheme is the routing scheme.   |
 | address | string | Address is the routing address. |
 
-### Responses
+### Responses {#responses-method-put-updatebank}
 
-#### Response body
+#### Response body {#response-body-method-put-updatebank}
 
 | Name                | Type        | Description                                          |
 |---------------------|-------------|------------------------------------------------------|
@@ -464,7 +464,7 @@ curl -X PUT \
 | national_identifier | string      | NationalIdentifier is the national identifier code.  |
 | bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
 
-##### Objects
+##### Objects {#objects-Bank}
 
 ###### BankRouting
 
@@ -491,7 +491,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatebank}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

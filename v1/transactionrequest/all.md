@@ -26,11 +26,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-answertransactionrequestchallenge}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/{TransactionRequestType}/transactionrequest/{TransactionRequestID}/challenge`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-answertransactionrequestchallenge}
 
 | Name                     | Type   | Description |
 |--------------------------|--------|-------------|
@@ -39,7 +39,7 @@ curl -X POST \
 | transaction_request_type | string |             |
 | transaction_request_id   | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-answertransactionrequestchallenge}
 
 | Name                     | Type   | Description |
 |--------------------------|--------|-------------|
@@ -50,9 +50,9 @@ curl -X POST \
 | id                       | string |             |
 | answer                   | string |             |
 
-### Responses
+### Responses {#responses-method-post-answertransactionrequestchallenge}
 
-#### Response body
+#### Response body {#response-body-method-post-answertransactionrequestchallenge}
 
 | Name            | Type             | Description |
 |-----------------|------------------|-------------|
@@ -67,7 +67,7 @@ curl -X POST \
 | challenge       | Challenge        |             |
 | charge          | Charge           |             |
 
-##### Objects
+##### Objects {#objects-AnswerTransactionRequestChallengeResponse}
 
 ###### BankAccount
 
@@ -159,7 +159,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-answertransactionrequestchallenge}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -194,18 +194,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createaccountotptransaction}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createaccountotptransaction}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createaccountotptransaction}
 
 | Name        | Type        | Description |
 |-------------|-------------|-------------|
@@ -215,7 +215,7 @@ curl -X POST \
 | amount      | Amount      |             |
 | description | string      |             |
 
-##### Objects
+##### Objects {#objects-TransactionRequest}
 
 ###### BankAccount
 
@@ -231,9 +231,9 @@ curl -X POST \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
-### Responses
+### Responses {#responses-method-post-createaccountotptransaction}
 
-#### Response body
+#### Response body {#response-body-method-post-createaccountotptransaction}
 
 | Name            | Type        | Description |
 |-----------------|-------------|-------------|
@@ -248,7 +248,7 @@ curl -X POST \
 | challenge       | Challenge   |             |
 | charge          | Charge      |             |
 
-##### Objects
+##### Objects {#objects-TransactionResponse}
 
 ###### BankAccount
 
@@ -505,7 +505,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createaccountotptransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -540,18 +540,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createaccounttransaction}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/ACCOUNT/transactionrequest`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createaccounttransaction}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createaccounttransaction}
 
 | Name        | Type        | Description |
 |-------------|-------------|-------------|
@@ -561,7 +561,7 @@ curl -X POST \
 | amount      | Amount      |             |
 | description | string      |             |
 
-##### Objects
+##### Objects {#objects-TransactionRequest}
 
 ###### BankAccount
 
@@ -577,9 +577,9 @@ curl -X POST \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
-### Responses
+### Responses {#responses-method-post-createaccounttransaction}
 
-#### Response body
+#### Response body {#response-body-method-post-createaccounttransaction}
 
 | Name            | Type        | Description |
 |-----------------|-------------|-------------|
@@ -594,7 +594,7 @@ curl -X POST \
 | challenge       | Challenge   |             |
 | charge          | Charge      |             |
 
-##### Objects
+##### Objects {#objects-TransactionResponse}
 
 ###### BankAccount
 
@@ -851,7 +851,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createaccounttransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -887,18 +887,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcounterpartytransaction}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/COUNTERPARTY/transactionrequest`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createcounterpartytransaction}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcounterpartytransaction}
 
 | Name          | Type           | Description |
 |---------------|----------------|-------------|
@@ -910,7 +910,7 @@ curl -X POST \
 | charge_policy | string         |             |
 | future_date   | string         |             |
 
-##### Objects
+##### Objects {#objects-CounterPartyTransactionRequest}
 
 ###### ToCounterparty
 
@@ -925,9 +925,9 @@ curl -X POST \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
-### Responses
+### Responses {#responses-method-post-createcounterpartytransaction}
 
-#### Response body
+#### Response body {#response-body-method-post-createcounterpartytransaction}
 
 | Name            | Type        | Description |
 |-----------------|-------------|-------------|
@@ -942,7 +942,7 @@ curl -X POST \
 | challenge       | Challenge   |             |
 | charge          | Charge      |             |
 
-##### Objects
+##### Objects {#objects-TransactionResponse}
 
 ###### BankAccount
 
@@ -1199,7 +1199,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcounterpartytransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1230,18 +1230,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createfreeformtransaction}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/FREE_FORM/transactionrequest`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createfreeformtransaction}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createfreeformtransaction}
 
 | Name        | Type   | Description |
 |-------------|--------|-------------|
@@ -1250,7 +1250,7 @@ curl -X POST \
 | amount      | Amount |             |
 | description | string |             |
 
-##### Objects
+##### Objects {#objects-FreeFormTransactionRequest}
 
 ###### Amount
 
@@ -1259,9 +1259,9 @@ curl -X POST \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
-### Responses
+### Responses {#responses-method-post-createfreeformtransaction}
 
-#### Response body
+#### Response body {#response-body-method-post-createfreeformtransaction}
 
 | Name            | Type        | Description |
 |-----------------|-------------|-------------|
@@ -1276,7 +1276,7 @@ curl -X POST \
 | challenge       | Challenge   |             |
 | charge          | Charge      |             |
 
-##### Objects
+##### Objects {#objects-TransactionResponse}
 
 ###### BankAccount
 
@@ -1533,7 +1533,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createfreeformtransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1569,18 +1569,18 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createsepatransaction}
 
 `POST https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types/SEPA/transactionrequest`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-post-createsepatransaction}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createsepatransaction}
 
 | Name          | Type   | Description |
 |---------------|--------|-------------|
@@ -1592,7 +1592,7 @@ curl -X POST \
 | charge_policy | string |             |
 | future_date   | string |             |
 
-##### Objects
+##### Objects {#objects-SEPATransactionRequest}
 
 ###### Amount
 
@@ -1607,9 +1607,9 @@ curl -X POST \
 |------|--------|-------------|
 | iban | string |             |
 
-### Responses
+### Responses {#responses-method-post-createsepatransaction}
 
-#### Response body
+#### Response body {#response-body-method-post-createsepatransaction}
 
 | Name            | Type        | Description |
 |-----------------|-------------|-------------|
@@ -1624,7 +1624,7 @@ curl -X POST \
 | challenge       | Challenge   |             |
 | charge          | Charge      |             |
 
-##### Objects
+##### Objects {#objects-TransactionResponse}
 
 ###### BankAccount
 
@@ -1881,7 +1881,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createsepatransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1903,25 +1903,25 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getsupportedtransactionrequesttypes}
 
 `GET https:///v1/banks/{BankID}/transaction-request-types`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getsupportedtransactionrequesttypes}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | bank_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getsupportedtransactionrequesttypes}
 
-#### Response body
+#### Response body {#response-body-method-get-getsupportedtransactionrequesttypes}
 
 | Name                      | Type                      | Description |
 |---------------------------|---------------------------|-------------|
 | transaction_request_types | \[]TransactionRequestType |             |
 
-##### Objects
+##### Objects {#objects-GetSupportedTransactionRequestTypesResponse}
 
 ###### TransactionRequestType
 
@@ -1963,7 +1963,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getsupportedtransactionrequesttypes}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -1986,26 +1986,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettransactionrequesttypes}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transaction-request-types`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettransactionrequesttypes}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-gettransactionrequesttypes}
 
-#### Response body
+#### Response body {#response-body-method-get-gettransactionrequesttypes}
 
 | Name                      | Type                      | Description |
 |---------------------------|---------------------------|-------------|
 | transaction_request_types | \[]TransactionRequestType |             |
 
-##### Objects
+##### Objects {#objects-GetTransactionRequestTypesResponse}
 
 ###### TransactionRequestType
 
@@ -2047,7 +2047,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettransactionrequesttypes}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2070,26 +2070,26 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-gettransactionrequests}
 
 `GET https:///v1/banks/{BankID}/accounts/{AccountID}/transactionrequests`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-gettransactionrequests}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | bank_id    | string |             |
 | account_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-gettransactionrequests}
 
-#### Response body
+#### Response body {#response-body-method-get-gettransactionrequests}
 
 | Name                              | Type                              | Description |
 |-----------------------------------|-----------------------------------|-------------|
 | transaction_requests_with_charges | \[]TransactionRequestsWithCharges |             |
 
-##### Objects
+##### Objects {#objects-GetTransactionRequestsResponse}
 
 ###### TransactionRequestsWithCharges
 
@@ -2365,7 +2365,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-gettransactionrequests}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -2413,11 +2413,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-savehistorictransaction}
 
 `POST https:///v1/transactionrequest/import`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-savehistorictransaction}
 
 | Name                     | Type        | Description |
 |--------------------------|-------------|-------------|
@@ -2430,7 +2430,7 @@ curl -X POST \
 | transaction_request_type | string      |             |
 | charge_policy            | string      |             |
 
-##### Objects
+##### Objects {#objects-HistoricTransaction}
 
 ###### BankAccount
 
@@ -2453,9 +2453,9 @@ curl -X POST \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+### Responses {#responses-method-post-savehistorictransaction}
 
-#### Response body
+#### Response body {#response-body-method-post-savehistorictransaction}
 
 | Name                     | Type        | Description |
 |--------------------------|-------------|-------------|
@@ -2468,7 +2468,7 @@ curl -X POST \
 | transaction_request_type | string      |             |
 | charge_policy            | string      |             |
 
-##### Objects
+##### Objects {#objects-HistoricTransaction}
 
 ###### BankAccount
 
@@ -2521,7 +2521,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-savehistorictransaction}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

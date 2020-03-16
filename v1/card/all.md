@@ -25,11 +25,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcard}
 
 `POST https:///v1/card`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcard}
 
 | Name           | Type   | Description                                                  |
 |----------------|--------|--------------------------------------------------------------|
@@ -39,9 +39,9 @@ curl -X POST \
 | first_name     | string | FirstName is the first name of card owner.                   |
 | last_name      | string | LastName is the last name of the card owner.                 |
 
-### Responses
+### Responses {#responses-method-post-createcard}
 
-#### Response body
+#### Response body {#response-body-method-post-createcard}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
@@ -57,7 +57,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcard}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -85,11 +85,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createcardattribute}
 
 `POST https:///v1/card/attribute`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createcardattribute}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
@@ -98,9 +98,9 @@ curl -X POST \
 | type    | string |             |
 | value   | string |             |
 
-### Responses
+### Responses {#responses-method-post-createcardattribute}
 
-#### Response body
+#### Response body {#response-body-method-post-createcardattribute}
 
 | Name         | Type   | Description |
 |--------------|--------|-------------|
@@ -116,7 +116,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createcardattribute}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -138,19 +138,19 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deletecard}
 
 `DELETE https:///v1/card/{CardID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deletecard}
 
 | Name    | Type   | Description |
 |---------|--------|-------------|
 | card_id | string |             |
 
-### Responses
+### Responses {#responses-method-delete-deletecard}
 
-#### Response body
+#### Response body {#response-body-method-delete-deletecard}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -161,7 +161,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deletecard}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -183,19 +183,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcard}
 
 `GET https:///v1/card/{CardToken}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcard}
 
 | Name       | Type   | Description                                              |
 |------------|--------|----------------------------------------------------------|
 | card_token | string | CardToken is the identifier to get the card information. |
 
-### Responses
+### Responses {#responses-method-get-getcard}
 
-#### Response body
+#### Response body {#response-body-method-get-getcard}
 
 | Name           | Type             | Description                                                           |
 |----------------|------------------|-----------------------------------------------------------------------|
@@ -212,7 +212,7 @@ curl -X GET \
 | amount_due     | Amount           | AmountDue is the the card holder is expected to paid by the due date. |
 | credit_limit   | string           | CreditLimit is the allowed credit limit.                              |
 
-##### Objects
+##### Objects {#objects-Card}
 
 ###### Timestamp
 
@@ -227,6 +227,25 @@ curl -X GET \
 |------|--------|------------------------------------|
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
+
+##### Enums {#enums-Card}
+
+###### CardStatus
+
+| Value             | Description                             |
+|-------------------|-----------------------------------------|
+| UnknownCardStatus |                                         |
+| Lock              | Lock is the lock status for a card.     |
+| Unlock            | Unlock is the unlock status for a card. |
+| Active            | Active is the active status for a card. |
+
+###### CardAccessStatus
+
+| Value                   | Description                           |
+|-------------------------|---------------------------------------|
+| UnknownCardAccessStatus |                                       |
+| Often                   | Often indicates a card is used often. |
+| Rare                    | Rare indicates a card is used rarely. |
 
 Example:
 
@@ -253,7 +272,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcard}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -276,19 +295,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getusercards}
 
 `GET https:///v1/card`
 
-### Responses
+### Responses {#responses-method-get-getusercards}
 
-#### Response body
+#### Response body {#response-body-method-get-getusercards}
 
 | Name   | Type    | Description |
 |--------|---------|-------------|
 | result | \[]Card |             |
 
-##### Objects
+##### Objects {#objects-GetUserCardsResponse}
 
 ###### Card
 
@@ -321,6 +340,25 @@ curl -X GET \
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
 
+##### Enums {#enums-GetUserCardsResponse}
+
+###### CardStatus
+
+| Value             | Description                             |
+|-------------------|-----------------------------------------|
+| UnknownCardStatus |                                         |
+| Lock              | Lock is the lock status for a card.     |
+| Unlock            | Unlock is the unlock status for a card. |
+| Active            | Active is the active status for a card. |
+
+###### CardAccessStatus
+
+| Value                   | Description                           |
+|-------------------------|---------------------------------------|
+| UnknownCardAccessStatus |                                       |
+| Often                   | Often indicates a card is used often. |
+| Rare                    | Rare indicates a card is used rarely. |
+
 Example:
 
 ```json
@@ -350,7 +388,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getusercards}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -377,26 +415,36 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecardaccessstatus}
 
 `PUT https:///v1/card/access_status/{CardToken}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecardaccessstatus}
 
 | Name       | Type   | Description                                              |
 |------------|--------|----------------------------------------------------------|
 | card_token | string | CardToken is the identifier to get the card information. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecardaccessstatus}
 
 | Name          | Type             | Description                                              |
 |---------------|------------------|----------------------------------------------------------|
 | card_token    | string           | CardToken is the identifier to get the card information. |
 | access_status | CardAccessStatus | AccessStatus is the new card access status.              |
 
-### Responses
+##### Enums {#enums-UpdateCardAccessStatusRequest}
 
-#### Response body
+###### CardAccessStatus
+
+| Value                   | Description                           |
+|-------------------------|---------------------------------------|
+| UnknownCardAccessStatus |                                       |
+| Often                   | Often indicates a card is used often. |
+| Rare                    | Rare indicates a card is used rarely. |
+
+### Responses {#responses-method-put-updatecardaccessstatus}
+
+#### Response body {#response-body-method-put-updatecardaccessstatus}
 
 | Name          | Type   | Description                                                   |
 |---------------|--------|---------------------------------------------------------------|
@@ -414,7 +462,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecardaccessstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -441,26 +489,37 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatecardstatus}
 
 `PUT https:///v1/card/status/{CardToken}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updatecardstatus}
 
 | Name       | Type   | Description                                              |
 |------------|--------|----------------------------------------------------------|
 | card_token | string | CardToken is the identifier to get the card information. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatecardstatus}
 
 | Name       | Type       | Description                                              |
 |------------|------------|----------------------------------------------------------|
 | card_token | string     | CardToken is the identifier to get the card information. |
 | status     | CardStatus | Status is the new card status.                           |
 
-### Responses
+##### Enums {#enums-UpdateCardStatusRequest}
 
-#### Response body
+###### CardStatus
+
+| Value             | Description                             |
+|-------------------|-----------------------------------------|
+| UnknownCardStatus |                                         |
+| Lock              | Lock is the lock status for a card.     |
+| Unlock            | Unlock is the unlock status for a card. |
+| Active            | Active is the active status for a card. |
+
+### Responses {#responses-method-put-updatecardstatus}
+
+#### Response body {#response-body-method-put-updatecardstatus}
 
 | Name          | Type   | Description                                                   |
 |---------------|--------|---------------------------------------------------------------|
@@ -478,7 +537,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatecardstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|

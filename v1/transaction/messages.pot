@@ -25,9 +25,6 @@ msgstr ""
 msgid "Amount holds the amount value and currency of the transaction."
 msgstr ""
 
-msgid "Annex"
-msgstr ""
-
 msgid "Approve a pending transaction"
 msgstr ""
 
@@ -58,7 +55,16 @@ msgstr ""
 msgid "Body Parameters"
 msgstr ""
 
+msgid "Checking account."
+msgstr ""
+
 msgid "Code is 2-digit authentication code is sent via SMS."
+msgstr ""
+
+msgid "CommercialLoan for a business loan account."
+msgstr ""
+
+msgid "ConsumerLoan for a consumer loan account."
 msgstr ""
 
 msgid "Create a transaction"
@@ -70,10 +76,16 @@ msgstr ""
 msgid "Creates a new transaction and returns its id."
 msgstr ""
 
+msgid "Credit is the value for a credit transaction."
+msgstr ""
+
 msgid "Cur is the currency of the amount."
 msgstr ""
 
 msgid "Date is the date of the transaction."
+msgstr ""
+
+msgid "Debit is the value for a debit transaction."
 msgstr ""
 
 msgid "Description describes the transaction."
@@ -83,6 +95,9 @@ msgid "DestinationAccount is the account receiving the transaction."
 msgstr ""
 
 msgid "DestinationOfflineUser is the contact information for an offline user."
+msgstr ""
+
+msgid "Enums"
 msgstr ""
 
 msgid "FirstName of the person"
@@ -109,6 +124,9 @@ msgstr ""
 msgid "Location is the physical location of the interaction."
 msgstr ""
 
+msgid "MajorType describes the type of the account."
+msgstr ""
+
 msgid "MajorType is the type of account."
 msgstr ""
 
@@ -116,6 +134,9 @@ msgid "MiddleName or middle names (space separated) of the person"
 msgstr ""
 
 msgid "MobileNo contact of the person"
+msgstr ""
+
+msgid "MortgageLoan for a home loan account."
 msgstr ""
 
 msgid "Num is the value of the amount."
@@ -127,10 +148,16 @@ msgstr ""
 msgid "OwnerName is the name of the owner of the account."
 msgstr ""
 
+msgid "Pending is the value for a pending transaction."
+msgstr ""
+
 msgid "Provides create and read operations on the transaction resource."
 msgstr ""
 
 msgid "Query Parameters"
+msgstr ""
+
+msgid "Rejected is the value for a rejected transaction."
 msgstr ""
 
 msgid "Remarks is an informational note about the transaction."
@@ -178,7 +205,16 @@ msgstr ""
 msgid "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page."
 msgstr ""
 
+msgid "SAFEKEY Application."
+msgstr ""
+
+msgid "SMS Message."
+msgstr ""
+
 msgid "SMSCode is the OTP code used for testing."
+msgstr ""
+
+msgid "Saving account."
 msgstr ""
 
 msgid "SourceAccount is the account emitting the transaction."
@@ -196,13 +232,7 @@ msgstr ""
 msgid "Status is the status of the transaction."
 msgstr ""
 
-msgid "Status_Pending is the value for a pending transaction."
-msgstr ""
-
-msgid "Status_Rejected is the value for a rejected transaction."
-msgstr ""
-
-msgid "Status_Success is the value for a successful transaction."
+msgid "Success is the value for a successful transaction."
 msgstr ""
 
 msgid "TFAType is available type of TFA."
@@ -211,16 +241,13 @@ msgstr ""
 msgid "TFAType is type to receive OTP authentication code."
 msgstr ""
 
-msgid "TFAType_SAFEKEY Application."
-msgstr ""
-
-msgid "TFAType_SMS Message."
-msgstr ""
-
 msgid "The latitude in degrees. It must be in the range [-90.0, +90.0]."
 msgstr ""
 
 msgid "The longitude in degrees. It must be in the range [-180.0, +180.0]"
+msgstr ""
+
+msgid "TimeDeposit for a time deposit account."
 msgstr ""
 
 msgid "TraceNumber is the transaction reference code."
@@ -251,12 +278,6 @@ msgid "Type defines the type of a transaction."
 msgstr ""
 
 msgid "Type is the type of transaction."
-msgstr ""
-
-msgid "Type_Credit is the value for a credit transaction."
-msgstr ""
-
-msgid "Type_Debit is the value for a debit transaction."
 msgstr ""
 
 msgid "USE_YOUR_TOKEN"

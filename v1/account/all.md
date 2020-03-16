@@ -18,19 +18,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-checkaccount}
 
 `GET https:///v1/accounts/{AccountID}/check`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-checkaccount}
 
 | Name       | Type   | Description                                 |
 |------------|--------|---------------------------------------------|
 | account_id | string | AccountID is the account unique identifier. |
 
-### Responses
+### Responses {#responses-method-get-checkaccount}
 
-#### Response body
+#### Response body {#response-body-method-get-checkaccount}
 
 | Name         | Type      | Description                                   |
 |--------------|-----------|-----------------------------------------------|
@@ -38,6 +38,22 @@ curl -X GET \
 | bank_code    | string    | BankCode is the code that is related to bank. |
 | account_name | string    | AccountName is the owner name of the account. |
 | major_type   | MajorType | MajorType is the type of account.             |
+
+##### Enums {#enums-CheckAccountResponse}
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
 
 Example:
 
@@ -50,7 +66,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-checkaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -99,11 +115,11 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createaccount}
 
 `POST https:///v1/accounts`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createaccount}
 
 | Name              | Type             | Description                                                             |
 |-------------------|------------------|-------------------------------------------------------------------------|
@@ -118,7 +134,7 @@ curl -X POST \
 | maturity_date     | Timestamp        | The maturity date is the date on which the principal amount becomes due |
 | minor             | string           | Minor account                                                           |
 
-##### Objects
+##### Objects {#objects-CreateAccountRequest}
 
 ###### AccountRole
 
@@ -144,9 +160,35 @@ curl -X POST \
 | seconds | int64 |             |
 | nanos   | int32 |             |
 
-### Responses
+##### Enums {#enums-CreateAccountRequest}
 
-#### Response body
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
+
+###### EntityType
+
+EntityType describes the type of the entity.
+
+| Value             | Description                      |
+|-------------------|----------------------------------|
+| UnknownEntityType |                                  |
+| Pers              | Pers is an individual customer.  |
+| Org               | Org is an organisation customer. |
+
+### Responses {#responses-method-post-createaccount}
+
+#### Response body {#response-body-method-post-createaccount}
 
 | Name                      | Type      | Description                                                                |
 |---------------------------|-----------|----------------------------------------------------------------------------|
@@ -155,6 +197,22 @@ curl -X POST \
 | debit_transaction_number  | string    | DebitTransactionNumber is the transaction number of the debited account.   |
 | major_type                | MajorType | MajorType is the type of the account.                                      |
 | minor                     | string    | Minor account                                                              |
+
+##### Enums {#enums-CreateAccountResponse}
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
 
 Example:
 
@@ -168,7 +226,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -190,19 +248,19 @@ curl -X DELETE \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-delete-deleteaccount}
 
 `DELETE https:///v1/accounts/{AccountID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-delete-deleteaccount}
 
 | Name       | Type   | Description                                 |
 |------------|--------|---------------------------------------------|
 | account_id | string | AccountID is the account unique identifier. |
 
-### Responses
+### Responses {#responses-method-delete-deleteaccount}
 
-#### Response body
+#### Response body {#response-body-method-delete-deleteaccount}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -213,7 +271,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-delete-deleteaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -235,19 +293,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getaccount}
 
 `GET https:///v1/accounts/{AccountID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getaccount}
 
 | Name       | Type   | Description |
 |------------|--------|-------------|
 | account_id | string |             |
 
-### Responses
+### Responses {#responses-method-get-getaccount}
 
-#### Response body
+#### Response body {#response-body-method-get-getaccount}
 
 | Name                              | Type          | Description                                                                           |
 |-----------------------------------|---------------|---------------------------------------------------------------------------------------|
@@ -274,7 +332,7 @@ curl -X GET \
 | owner_name                        | string        | OwnerName is the name of the account's owner.                                         |
 | start_date                        | Timestamp     | Account opening date                                                                  |
 
-##### Objects
+##### Objects {#objects-Account}
 
 ###### Timestamp
 
@@ -289,6 +347,32 @@ curl -X GET \
 |------|--------|------------------------------------|
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
+
+##### Enums {#enums-Account}
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
+
+###### MajorCategory
+
+MajorCategory describes the category of the account.
+
+| Value                | Description               |
+|----------------------|---------------------------|
+| UnknownMajorCategory |                           |
+| Dep                  | Dep for deposit category. |
+| Loan                 | Loan for loan category.   |
 
 Example:
 
@@ -346,7 +430,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -369,19 +453,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getaccountstatus}
 
 `GET https:///v1/accounts/{AccountID}/status`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getaccountstatus}
 
 | Name       | Type   | Description                                        |
 |------------|--------|----------------------------------------------------|
 | account_id | string | AccountID is the unique identifier of the account. |
 
-### Responses
+### Responses {#responses-method-get-getaccountstatus}
 
-#### Response body
+#### Response body {#response-body-method-get-getaccountstatus}
 
 | Name               | Type      | Description                                  |
 |--------------------|-----------|----------------------------------------------|
@@ -390,7 +474,7 @@ curl -X GET \
 | status             | string    | Status is the current status of the account. |
 | status_description | string    | StatusDescription describe about the Status. |
 
-##### Objects
+##### Objects {#objects-GetAccountStatusResponse}
 
 ###### Timestamp
 
@@ -413,7 +497,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getaccountstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -436,19 +520,19 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getaccounts}
 
 `GET https:///v1/accounts`
 
-### Responses
+### Responses {#responses-method-get-getaccounts}
 
-#### Response body
+#### Response body {#response-body-method-get-getaccounts}
 
 | Name   | Type       | Description                           |
 |--------|------------|---------------------------------------|
 | result | \[]Account | Result is the paginated query result. |
 
-##### Objects
+##### Objects {#objects-GetAccountsResponse}
 
 ###### Account
 
@@ -490,6 +574,32 @@ curl -X GET \
 |------|--------|------------------------------------|
 | cur  | string | Cur is the currency of the amount. |
 | num  | string | Num is the value of the amount.    |
+
+##### Enums {#enums-GetAccountsResponse}
+
+###### MajorType
+
+MajorType describes the type of the account.
+
+| Value            | Description                                 |
+|------------------|---------------------------------------------|
+| UnknownMajorType |                                             |
+| Checking         | Checking account.                           |
+| Saving           | Saving account.                             |
+| TimeDeposit      | TimeDeposit for a time deposit account.     |
+| CommercialLoan   | CommercialLoan for a business loan account. |
+| MortgageLoan     | MortgageLoan for a home loan account.       |
+| ConsumerLoan     | ConsumerLoan for a consumer loan account.   |
+
+###### MajorCategory
+
+MajorCategory describes the category of the account.
+
+| Value                | Description               |
+|----------------------|---------------------------|
+| UnknownMajorCategory |                           |
+| Dep                  | Dep for deposit category. |
+| Loan                 | Loan for loan category.   |
 
 Example:
 
@@ -551,7 +661,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getaccounts}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -577,26 +687,26 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateaccount}
 
 `PUT https:///v1/accounts/{AccountID}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateaccount}
 
 | Name       | Type   | Description                                                  |
 |------------|--------|--------------------------------------------------------------|
 | account_id | string | AccountID is the unique identifier of the account to update. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateaccount}
 
 | Name        | Type   | Description                                                  |
 |-------------|--------|--------------------------------------------------------------|
 | account_id  | string | AccountID is the unique identifier of the account to update. |
 | description | string | Description to update                                        |
 
-### Responses
+### Responses {#responses-method-put-updateaccount}
 
-#### Response body
+#### Response body {#response-body-method-put-updateaccount}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -607,7 +717,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateaccount}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -633,26 +743,26 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updateaccountstatus}
 
 `PUT https:///v1/accounts/{AccountID}/status`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-put-updateaccountstatus}
 
 | Name       | Type   | Description                                 |
 |------------|--------|---------------------------------------------|
 | account_id | string | AccountID is the account unique identifier. |
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updateaccountstatus}
 
 | Name       | Type   | Description                                 |
 |------------|--------|---------------------------------------------|
 | account_id | string | AccountID is the account unique identifier. |
 | status     | string | Status is the status to be updated          |
 
-### Responses
+### Responses {#responses-method-put-updateaccountstatus}
 
-#### Response body
+#### Response body {#response-body-method-put-updateaccountstatus}
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -663,7 +773,7 @@ Example:
 {}
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updateaccountstatus}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -673,16 +783,3 @@ Example:
 | 403    | Returned when the user does not have permission to access the resource.                |
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
-
-Annex
------
-
-#### EntityType
-
-EntityType describes the type of the entity.
-
-| Value             | Description                                 |
-|-------------------|---------------------------------------------|
-| UnknownEntityType |                                             |
-| Pers              | EntityType_Pers is an individual customer.  |
-| Org               | EntityType_Org is an organisation customer. |

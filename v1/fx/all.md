@@ -28,17 +28,17 @@ curl -X POST \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-post-createfx}
 
 `POST https:///v1/fx`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-post-createfx}
 
 | Name | Type | Description                                       |
 |------|------|---------------------------------------------------|
 | fx   | FX   | FX is the foreign exchange information to create. |
 
-##### Objects
+##### Objects {#objects-CreateFXRequest}
 
 ###### FX
 
@@ -51,9 +51,9 @@ curl -X POST \
 | inverse_rate       | string | InverseRate is the inverse of the exchange rate of the foreign exchange. |
 | effective_date     | string | EffectiveDate is the effective date of the foreign exchange quote.       |
 
-### Responses
+### Responses {#responses-method-post-createfx}
 
-#### Response body
+#### Response body {#response-body-method-post-createfx}
 
 | Name               | Type   | Description                                                              |
 |--------------------|--------|--------------------------------------------------------------------------|
@@ -77,7 +77,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-post-createfx}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -99,20 +99,20 @@ curl -X GET \
 	-H 'Authorization: Bearer USE_YOUR_TOKEN'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-get-getcurrentfxrate}
 
 `GET https:///v1/fx/{FromCurrencyCode}/{ToCurrencyCode}`
 
-### Query Parameters
+### Query Parameters {#query-parameters-method-get-getcurrentfxrate}
 
 | Name               | Type   | Description                                                 |
 |--------------------|--------|-------------------------------------------------------------|
 | from_currency_code | string | FromCurrencyCode is the currency to transfer from.          |
 | to_currency_code   | string | ToCurrencyCode is the currency that we are transferring to. |
 
-### Responses
+### Responses {#responses-method-get-getcurrentfxrate}
 
-#### Response body
+#### Response body {#response-body-method-get-getcurrentfxrate}
 
 | Name               | Type   | Description                                                              |
 |--------------------|--------|--------------------------------------------------------------------------|
@@ -136,7 +136,7 @@ Example:
 }
 ```
 
-#### Response codes
+#### Response codes {#response-codes-method-get-getcurrentfxrate}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
@@ -169,17 +169,17 @@ curl -X PUT \
 	}'
 ```
 
-### HTTP Request
+### HTTP Request {#http-request-method-put-updatefx}
 
 `PUT https:///v1/fx`
 
-### Body Parameters
+### Body Parameters {#body-parameters-method-put-updatefx}
 
 | Name | Type | Description                                       |
 |------|------|---------------------------------------------------|
 | fx   | FX   | FX is the foreign exchange information to update. |
 
-##### Objects
+##### Objects {#objects-UpdateFXRequest}
 
 ###### FX
 
@@ -192,9 +192,9 @@ curl -X PUT \
 | inverse_rate       | string | InverseRate is the inverse of the exchange rate of the foreign exchange. |
 | effective_date     | string | EffectiveDate is the effective date of the foreign exchange quote.       |
 
-### Responses
+### Responses {#responses-method-put-updatefx}
 
-#### Response codes
+#### Response codes {#response-codes-method-put-updatefx}
 
 | Status | Description                                                                            |
 |--------|----------------------------------------------------------------------------------------|
