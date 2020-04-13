@@ -100,8 +100,8 @@ func (MajorCategory) EnumDescriptor() ([]byte, []int) {
 }
 
 // DEPRECIATED: BankCode indicates which bank to use; these should be a list of banks
-//that we are currently integrated with
-//This is the updated list of banks per January 2018
+// that we are currently integrated with
+// This is the updated list of banks per January 2018
 type BankCode int32
 
 const (
@@ -790,9 +790,9 @@ func (m *Address) GetPostalCode() string {
 }
 
 // Location is An object representing a latitude/longitude pair. This is expressed as a pair
-//of doubles representing degrees latitude and degrees longitude.
-//Values must be within normalized ranges.
-//Refer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng.
+// of doubles representing degrees latitude and degrees longitude.
+// Values must be within normalized ranges.
+// Refer to https://godoc.org/google.golang.org/genproto/googleapis/type/latlng.
 type Location struct {
 	// The latitude in degrees. It must be in the range [-90.0, +90.0].
 	Latitude float64 `protobuf:"fixed64,1,opt,name=Latitude,json=latitude,proto3" json:"latitude,omitempty"`

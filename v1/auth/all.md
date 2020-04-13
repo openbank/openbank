@@ -30,12 +30,12 @@ curl -X POST \
 
 ### Body Parameters {#body-parameters-method-post-createaccesstoken}
 
-| Name          | Type      | Description                                                                                                                                  |
-|---------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| grant_type    | GrantType | GrantType is an enum to define which operation to perform.                                                                                   |
-| code          | string    | Code is the authorization code previously received from the authorization server.                                                            |
-| redirect_uri  | string    | RedirectURI must match RedirectURI provided for the autorization code request.Required only when GrantType is equal to "authorization_code". |
-| refresh_token | string    | RefreshToken is the refresh token previously issued to the client.Required only when GrantType is equal to "refresh_token"                   |
+| Name          | Type      | Description                                                                                                                                   |
+|---------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| grant_type    | GrantType | GrantType is an enum to define which operation to perform.                                                                                    |
+| code          | string    | Code is the authorization code previously received from the authorization server.                                                             |
+| redirect_uri  | string    | RedirectURI must match RedirectURI provided for the autorization code request. Required only when GrantType is equal to "authorization_code". |
+| refresh_token | string    | RefreshToken is the refresh token previously issued to the client. Required only when GrantType is equal to "refresh_token"                   |
 
 ##### Enums {#enums-CreateAccessTokenRequest}
 

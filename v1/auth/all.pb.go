@@ -146,10 +146,10 @@ type CreateAccessTokenRequest struct {
 	// Code is the authorization code previously received from the authorization server.
 	Code string `protobuf:"bytes,2,opt,name=Code,json=code,proto3" json:"code,omitempty"`
 	// RedirectURI must match RedirectURI provided for the autorization code request.
-	//Required only when GrantType is equal to "authorization_code".
+	// Required only when GrantType is equal to "authorization_code".
 	RedirectURI string `protobuf:"bytes,3,opt,name=RedirectURI,json=redirect_uri,proto3" json:"redirect_uri,omitempty"`
 	// RefreshToken is the refresh token previously issued to the client.
-	//Required only when GrantType is equal to "refresh_token"
+	// Required only when GrantType is equal to "refresh_token"
 	RefreshToken         string   `protobuf:"bytes,4,opt,name=RefreshToken,json=refresh_token,proto3" json:"refresh_token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

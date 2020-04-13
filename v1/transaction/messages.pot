@@ -37,10 +37,10 @@ msgstr ""
 msgid "Authorization allows execution of transactions with 2-factor authentication (2FA)."
 msgstr ""
 
-msgid "AuthorizationID is the executable code is obtained from the payment feedback result."
+msgid "AuthorizationID is the executable code is obtained from the payment feedback result"
 msgstr ""
 
-msgid "AuthorizationID is the executable code is obtained fromthe payment feedback result"
+msgid "AuthorizationID is the executable code is obtained from the payment feedback result."
 msgstr ""
 
 msgid "Authorize a transaction with 2FA"

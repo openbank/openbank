@@ -61,13 +61,13 @@ msgstr ""
 msgid "In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token."
 msgstr ""
 
-msgid "RedirectURI must match RedirectURI provided for the autorization code request.Required only when GrantType is equal to \"authorization_code\"."
+msgid "RedirectURI must match RedirectURI provided for the autorization code request. Required only when GrantType is equal to \"authorization_code\"."
 msgstr ""
 
 msgid "RefreshToken is the grant type used to refresh an access token."
 msgstr ""
 
-msgid "RefreshToken is the refresh token previously issued to the client.Required only when GrantType is equal to \"refresh_token\""
+msgid "RefreshToken is the refresh token previously issued to the client. Required only when GrantType is equal to \"refresh_token\""
 msgstr ""
 
 msgid "RefreshToken is the token to renew an expired access token."

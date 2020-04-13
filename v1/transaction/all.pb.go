@@ -638,7 +638,7 @@ func (m *GetTransactionsByAccountResponse) GetLastRunningBalance() *types.Amount
 }
 
 // CreateTransactionRequest is the request message for creating a transaction.
-//Only one of SourceOfflineUser and DestinationOfflineUser can be used to create a transaction.
+// Only one of SourceOfflineUser and DestinationOfflineUser can be used to create a transaction.
 type CreateTransactionRequest struct {
 	// SourceAccountID is the identifier of the account emitting the transaction.
 	SourceAccountID string `protobuf:"bytes,1,opt,name=SourceAccountID,json=source_account_id,proto3" json:"source_account_id,omitempty"`
@@ -836,7 +836,7 @@ func (m *ApprovePaymentRequest) GetTFAType() TFAType {
 // ApprovePaymentResponse is the response message for approving a pending transaction.
 type ApprovePaymentResponse struct {
 	// AuthorizationID is the executable code is obtained from
-	//the payment feedback result
+	// the payment feedback result
 	AuthorizationID string `protobuf:"bytes,1,opt,name=AuthorizationID,json=authorization_id,proto3" json:"authorization_id,omitempty"`
 	// SMSCode is the OTP code used for testing.
 	SMSCode              int64    `protobuf:"varint,2,opt,name=SMSCode,json=sms_code,proto3" json:"sms_code,omitempty"`

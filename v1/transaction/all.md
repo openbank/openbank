@@ -50,10 +50,10 @@ TFAType is available type of TFA.
 
 #### Response body {#response-body-method-post-approvepayment}
 
-| Name             | Type   | Description                                                                        |
-|------------------|--------|------------------------------------------------------------------------------------|
-| authorization_id | string | AuthorizationID is the executable code is obtained fromthe payment feedback result |
-| sms_code         | int64  | SMSCode is the OTP code used for testing.                                          |
+| Name             | Type   | Description                                                                         |
+|------------------|--------|-------------------------------------------------------------------------------------|
+| authorization_id | string | AuthorizationID is the executable code is obtained from the payment feedback result |
+| sms_code         | int64  | SMSCode is the OTP code used for testing.                                           |
 
 Example:
 
