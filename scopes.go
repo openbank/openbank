@@ -3,6 +3,7 @@ package openbank
 import (
 	accounts "github.com/openbank/openbank/v1/account"
 	"github.com/openbank/openbank/v1/accountapplication"
+	"github.com/openbank/openbank/v1/accountapplications"
 	"github.com/openbank/openbank/v1/accountpublic"
 	"github.com/openbank/openbank/v1/apierror"
 	"github.com/openbank/openbank/v1/atm"
@@ -21,7 +22,9 @@ import (
 	"github.com/openbank/openbank/v1/product"
 	"github.com/openbank/openbank/v1/productcollection"
 	"github.com/openbank/openbank/v1/profile"
+	"github.com/openbank/openbank/v1/profiles"
 	"github.com/openbank/openbank/v1/statement"
+	"github.com/openbank/openbank/v1/statements"
 	transactions "github.com/openbank/openbank/v1/transaction"
 	"github.com/openbank/openbank/v1/transactionmetadata"
 	"github.com/openbank/openbank/v1/transactionrequest"
@@ -34,6 +37,7 @@ func AllScopes() map[string]string {
 		allScopes = []map[string]string{
 			accounts.Scopes,
 			accountapplication.Scopes,
+			accountapplications.Scopes,
 			accountpublic.Scopes,
 			apierror.Scopes,
 			atm.Scopes,
@@ -52,7 +56,9 @@ func AllScopes() map[string]string {
 			product.Scopes,
 			productcollection.Scopes,
 			profile.Scopes,
+			profiles.Scopes,
 			statement.Scopes,
+			statements.Scopes,
 			transactions.Scopes,
 			transactionmetadata.Scopes,
 			transactionrequest.Scopes,

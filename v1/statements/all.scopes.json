@@ -1,0 +1,1 @@
+{"scopes":{"https://auth.bnk.to/statement.read":"View statement data","https://auth.bnk.to/statement.write":"Manage statement data"},"auth_scopes":{"/statements.StatementService/GetStatement":["https://auth.bnk.to/statement.read"],"/statements.StatementService/GetStatements":["https://auth.bnk.to/statement.read"]}}

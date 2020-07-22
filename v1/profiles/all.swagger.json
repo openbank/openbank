@@ -1,0 +1,502 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Profile API",
+    "description": "Provides CRUD operations on the Profile resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/profile": {
+      "get": {
+        "summary": "Query profile",
+        "description": "Returns the profile and associated accounts",
+        "operationId": "GetProfile",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/profileGetProfileResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "profile_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Profile"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/profile.read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/profile/card": {
+      "get": {
+        "summary": "Query cards",
+        "description": "Returns an array of ProfileCard associated with the account for the profile based on profile identifier",
+        "operationId": "GetProfileCard",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/profileGetProfileCardsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "profile_id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Profile"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/profile.read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "accountsAccount": {
+      "type": "object",
+      "properties": {
+        "account_id": {
+          "type": "string",
+          "description": "AccountID is the unique identifier of an account."
+        },
+        "branch": {
+          "type": "string",
+          "description": "Branch is the branch code for the branch associated with the account."
+        },
+        "branch_name": {
+          "type": "string",
+          "description": "BranchName is the long-form name of the branch associated with the account."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status is the status of the account."
+        },
+        "accrued_interest_at_maturity_date": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Interest accrues at an annual rate of interest that is fixed"
+        },
+        "amount_due": {
+          "$ref": "#/definitions/typesAmount",
+          "title": "Specify when payments are due on money borrowed"
+        },
+        "available_balance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "AvailableBalance is the available balance of the account."
+        },
+        "available_credit_limit": {
+          "type": "string",
+          "description": "AvailableCreditLimit is the available credit limit for the account."
+        },
+        "checking_interest_rate": {
+          "type": "string",
+          "description": "CheckingInterestRate is the interest rate of the account if it is a checking account."
+        },
+        "contract_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ContractDate is the date of the contract initialization."
+        },
+        "credit_limit": {
+          "type": "string",
+          "description": "CreditLimit is the allowed credit limit."
+        },
+        "current_accrued_interest": {
+          "type": "string",
+          "title": "Interest earned but not received"
+        },
+        "current_balance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "CurrentBalance is the current balance of the account."
+        },
+        "current_term": {
+          "type": "string",
+          "description": "CurrentTerm is the account validity period."
+        },
+        "due_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "DueDate is the loan maturity date."
+        },
+        "interest_rate": {
+          "type": "string",
+          "description": "InterestRate is the interest rate for the account."
+        },
+        "major_type": {
+          "$ref": "#/definitions/typesMajorType",
+          "description": "MajorType is the account type."
+        },
+        "major_category": {
+          "$ref": "#/definitions/typesMajorCategory",
+          "description": "MajorCategory is the account category."
+        },
+        "maturity_date": {
+          "type": "string",
+          "format": "date-time",
+          "title": "MaturityDate is the maturity date, format is ISO 8601"
+        },
+        "next_payment_due_date": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Specify when payments are due on money borrowed"
+        },
+        "owner_name": {
+          "type": "string",
+          "description": "OwnerName is the name of the account's owner."
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Account opening date"
+        }
+      },
+      "description": "Account holds all details about a bank account."
+    },
+    "profilesGetProfileCardsResponse": {
+      "type": "object",
+      "properties": {
+        "cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/profilesProfileCard"
+          }
+        }
+      },
+      "description": "GetProfileCardsResponse is the response message for retrieving customer cards."
+    },
+    "profilesGetProfileResponse": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/definitions/typesProfile"
+        },
+        "accounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountsAccount"
+          }
+        }
+      },
+      "description": "GetProfileResponse is the response message for retrieving customer profile."
+    },
+    "profilesProfileCard": {
+      "type": "object",
+      "properties": {
+        "card_token": {
+          "type": "string",
+          "description": "CardToken is the card number."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category is the card type."
+        },
+        "last_four": {
+          "type": "string",
+          "description": "LastFour is the last four digits of the card."
+        },
+        "owner_name": {
+          "type": "string",
+          "description": "OwnerName is the name of the card's owner."
+        },
+        "type": {
+          "type": "string",
+          "description": "Type is the type of the account associated with the card."
+        }
+      },
+      "description": "ProfileCard holds details about a customer's credit card."
+    },
+    "typesAddress": {
+      "type": "object",
+      "properties": {
+        "country_name": {
+          "type": "string",
+          "description": "CountryName holds the country name information."
+        },
+        "city_name": {
+          "type": "string",
+          "description": "CityName holds the city name information."
+        },
+        "state": {
+          "type": "string",
+          "description": "State holds the state information."
+        },
+        "line_1": {
+          "type": "string",
+          "description": "Street holds the street information."
+        },
+        "postal_code": {
+          "type": "string",
+          "description": "PostalCode holds the postal code information."
+        }
+      },
+      "title": "Address hold all details about Address"
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    },
+    "typesCreditRating": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "title": "Structure of credit rating information"
+    },
+    "typesMajorCategory": {
+      "type": "string",
+      "enum": [
+        "UnknownMajorCategory",
+        "Dep",
+        "Loan"
+      ],
+      "default": "UnknownMajorCategory",
+      "description": "MajorCategory describes the category of the account.\n\n - Dep: MajorCategory_Dep for deposit category.\n - Loan: MajorCategory_Loan for loan category."
+    },
+    "typesMajorType": {
+      "type": "string",
+      "enum": [
+        "UnknownMajorType",
+        "Checking",
+        "Saving",
+        "TimeDeposit",
+        "CommercialLoan",
+        "MortgageLoan",
+        "ConsumerLoan"
+      ],
+      "default": "UnknownMajorType",
+      "description": "MajorType describes the type of the account.\n\n - Checking: MajorType_Checking account.\n - Saving: MajorType_Saving account.\n - TimeDeposit: MajorType_TimeDeposit for a time deposit account.\n - CommercialLoan: MajorType_CommercialLoan for a business loan account.\n - MortgageLoan: MajorType_MortgageLoan for a home loan account.\n - ConsumerLoan: MajorType_ConsumerLoan for a consumer loan account."
+    },
+    "typesProfile": {
+      "type": "object",
+      "properties": {
+        "profile_id": {
+          "type": "string",
+          "description": "ProfileID is the unique identifier of a profile."
+        },
+        "fullname": {
+          "type": "string",
+          "title": "Full name"
+        },
+        "username": {
+          "type": "string",
+          "title": "User name"
+        },
+        "birthdate": {
+          "type": "string",
+          "title": "Birth date"
+        },
+        "language": {
+          "type": "string",
+          "title": "Language code used"
+        },
+        "country": {
+          "type": "string",
+          "description": "User country code (VN, US, ID, SG, ...)."
+        },
+        "email": {
+          "type": "string",
+          "title": "User email address"
+        },
+        "email_verified": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "True if email is verified, otherwise False"
+        },
+        "mobile": {
+          "type": "string",
+          "title": "Mobile number"
+        },
+        "photo": {
+          "type": "string",
+          "title": "User profile photo url"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "permanent_address": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Permanent address"
+        },
+        "contact_address": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Contact address"
+        },
+        "contact_number": {
+          "type": "string",
+          "title": "Contact number"
+        },
+        "profile_number": {
+          "type": "string",
+          "title": "profile number"
+        },
+        "face_image_url": {
+          "type": "string",
+          "title": "Face image of the customer"
+        },
+        "face_image_date": {
+          "type": "string",
+          "title": "Date when the face image was added/updated"
+        },
+        "relationship_status": {
+          "type": "string",
+          "title": "RelationshipStatus. Ex: Single | Married"
+        },
+        "dependents": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Number of dependents"
+        },
+        "dob_of_dependents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": "Date of birth of dependents"
+        },
+        "credit_rating": {
+          "$ref": "#/definitions/typesCreditRating",
+          "title": "Credit rating"
+        },
+        "credit_limit": {
+          "$ref": "#/definitions/typesAmount",
+          "title": "Credit Limit"
+        },
+        "highest_education_attained": {
+          "type": "string",
+          "title": "Highest education such as bachelor, masters etc"
+        },
+        "employment_status": {
+          "type": "string",
+          "title": "Current employment status"
+        },
+        "kyc_status": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Know Your Customer status"
+        },
+        "branchId": {
+          "type": "string",
+          "title": "Branch Identifier"
+        },
+        "nameSuffix": {
+          "type": "string",
+          "title": "Name suffix"
+        },
+        "first_name": {
+          "type": "string",
+          "title": "FirstName of the person"
+        },
+        "middle_name": {
+          "type": "string",
+          "title": "MiddleName or middle names (space separated) of the person"
+        },
+        "last_name": {
+          "type": "string",
+          "title": "LastName or last names (space separated) of the person"
+        }
+      },
+      "title": "Structure of customer profile information"
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to profile resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "https://auth.bnk.to/profile.read": "View profile data",
+        "https://auth.bnk.to/profile.write": "Manage profile data"
+      }
+    }
+  }
+}
