@@ -1,0 +1,160 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Statements API",
+    "description": "Provides CRUD operations on the statement resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/statement/{iD}": {
+      "get": {
+        "summary": "Retrieve a statement",
+        "description": "GetStatement retrieves a specific statement, specified by its ID.",
+        "operationId": "GetStatement",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/statementStatement"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "iD",
+            "description": "ID is the unique identifier of the statement",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Statement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/statement.read"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "statementsGetStatementsResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/statementsStatement"
+          },
+          "description": "Result is a list containing the statement."
+        },
+        "has_more": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "HasMore indicates if there are more statement available."
+        }
+      },
+      "title": "GetStatementResponse is the response envelope for retrieving"
+    },
+    "statementsStatement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID is the unique identifier of a statement."
+        },
+        "status": {
+          "$ref": "#/definitions/statementsStatus",
+          "description": "Status is the status of the statement."
+        },
+        "date": {
+          "type": "string",
+          "description": "Date is the date of the statement."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description is the description of the statement."
+        },
+        "amount": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Amount is the amount if the transcation that writes on the statement."
+        },
+        "balance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Balance is remaining balance after related transaction."
+        }
+      },
+      "description": "Statement holds details regarding a customer's statement."
+    },
+    "statementsStatus": {
+      "type": "string",
+      "enum": [
+        "UnknownStatus",
+        "Received",
+        "Pending"
+      ],
+      "default": "UnknownStatus",
+      "description": "Status define the status of a statment.\n\n - Received: Status_Received is the value for a received statment.\n - Pending: Status_Pending is the value for a pending statement."
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to statement resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "https://auth.bnk.to/statement.read": "View statement data",
+        "https://auth.bnk.to/statement.write": "Manage statement data"
+      }
+    }
+  }
+}

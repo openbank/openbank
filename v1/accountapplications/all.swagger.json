@@ -1,0 +1,578 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Account Application API",
+    "description": "Provides create and read operations on the account application resource.",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/account-applications": {
+      "get": {
+        "summary": "List all accounts",
+        "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
+        "operationId": "GetAccountApplications",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountapplicationGetAccountApplicationsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "after_id",
+            "description": "AfterID is a cursor for pagination.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Limit is maximum number of results to return.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Account Application"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/accountapplication.read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create an account application",
+        "description": "Creates a new account application",
+        "operationId": "CreateAccountApplication",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/accountapplicationsCreateAccountApplicationResponse"
+            }
+          },
+          "201": {
+            "description": "Account application created successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountapplicationCreateAccountApplicationResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/accountapplicationsCreateAccountApplicationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Account Application"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/accountapplication.write"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/account-applications/{iD}": {
+      "get": {
+        "summary": "Retrieve an account application",
+        "description": "Retrieves all data from an account application selected by the supplied account_application_id.",
+        "operationId": "GetAccountApplication",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/accountapplicationAccountApplication"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "iD",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Account"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/accountapplication.read"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update an account application",
+        "description": "Updates an account application with the given status",
+        "operationId": "UpdateAccountApplicationStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "204": {
+            "description": "Account Application status updated successfully.",
+            "schema": {}
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "iD",
+            "description": "ID is the unique identifier of the account application to update.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/accountapplicationsUpdateAccountApplicationStatusRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Account Application"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/accountapplication.write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "accountapplicationsAccountApplication": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "product_code": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "customer_profile_id": {
+          "type": "string"
+        },
+        "date_of_application": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/accountapplicationsAccountApplicationStatus"
+        }
+      },
+      "title": "/ AccountApplication is a structure of account application"
+    },
+    "accountapplicationsAccountApplicationStatus": {
+      "type": "string",
+      "enum": [
+        "UnknownApplicationStatus",
+        "Requested",
+        "Accepted"
+      ],
+      "default": "UnknownApplicationStatus",
+      "description": "- Requested: Account application is created\n - Accepted: Account application is accepted",
+      "title": "Entity type defines the type of account application"
+    },
+    "accountapplicationsCreateAccountApplicationRequest": {
+      "type": "object",
+      "properties": {
+        "product_code": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "profile_id": {
+          "type": "string"
+        }
+      },
+      "title": "CreateAccountApplicationRequest is a request mesasge to create account application"
+    },
+    "accountapplicationsCreateAccountApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "product_code": {
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/accountapplicationsUser"
+        },
+        "customer_profile": {
+          "$ref": "#/definitions/typesProfile"
+        },
+        "date_of_application": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/accountapplicationsAccountApplicationStatus"
+        }
+      },
+      "title": "CreateAccountApplicationResponse is a response message for create account application"
+    },
+    "accountapplicationsGetAccountApplicationsResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/accountapplicationsAccountApplication"
+          },
+          "description": "Result is the paginated query result."
+        }
+      },
+      "description": "GetAccountApplicationsResponse wraps the list of account applications."
+    },
+    "accountapplicationsUpdateAccountApplicationStatusRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID is the unique identifier of the account application to update."
+        },
+        "status": {
+          "$ref": "#/definitions/accountapplicationsAccountApplicationStatus",
+          "title": "Status of the account application"
+        }
+      },
+      "description": "UpdateAccountApplicationStatusRequest is the request envelope to update an account application status."
+    },
+    "accountapplicationsUser": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "User identifier used to login"
+        },
+        "email": {
+          "type": "string",
+          "title": "Email of the user"
+        },
+        "username": {
+          "type": "string",
+          "title": "Display name of the user"
+        }
+      },
+      "title": "Structure of user information"
+    },
+    "typesAddress": {
+      "type": "object",
+      "properties": {
+        "country_name": {
+          "type": "string",
+          "description": "CountryName holds the country name information."
+        },
+        "city_name": {
+          "type": "string",
+          "description": "CityName holds the city name information."
+        },
+        "state": {
+          "type": "string",
+          "description": "State holds the state information."
+        },
+        "line_1": {
+          "type": "string",
+          "description": "Street holds the street information."
+        },
+        "postal_code": {
+          "type": "string",
+          "description": "PostalCode holds the postal code information."
+        }
+      },
+      "title": "Address hold all details about Address"
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
+    },
+    "typesCreditRating": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "title": "Structure of credit rating information"
+    },
+    "typesProfile": {
+      "type": "object",
+      "properties": {
+        "profile_id": {
+          "type": "string",
+          "description": "ProfileID is the unique identifier of a profile."
+        },
+        "fullname": {
+          "type": "string",
+          "title": "Full name"
+        },
+        "username": {
+          "type": "string",
+          "title": "User name"
+        },
+        "birthdate": {
+          "type": "string",
+          "title": "Birth date"
+        },
+        "language": {
+          "type": "string",
+          "title": "Language code used"
+        },
+        "country": {
+          "type": "string",
+          "description": "User country code (VN, US, ID, SG, ...)."
+        },
+        "email": {
+          "type": "string",
+          "title": "User email address"
+        },
+        "email_verified": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "True if email is verified, otherwise False"
+        },
+        "mobile": {
+          "type": "string",
+          "title": "Mobile number"
+        },
+        "photo": {
+          "type": "string",
+          "title": "User profile photo url"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "permanent_address": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Permanent address"
+        },
+        "contact_address": {
+          "$ref": "#/definitions/typesAddress",
+          "title": "Contact address"
+        },
+        "contact_number": {
+          "type": "string",
+          "title": "Contact number"
+        },
+        "profile_number": {
+          "type": "string",
+          "title": "profile number"
+        },
+        "face_image_url": {
+          "type": "string",
+          "title": "Face image of the customer"
+        },
+        "face_image_date": {
+          "type": "string",
+          "title": "Date when the face image was added/updated"
+        },
+        "relationship_status": {
+          "type": "string",
+          "title": "RelationshipStatus. Ex: Single | Married"
+        },
+        "dependents": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Number of dependents"
+        },
+        "dob_of_dependents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "title": "Date of birth of dependents"
+        },
+        "credit_rating": {
+          "$ref": "#/definitions/typesCreditRating",
+          "title": "Credit rating"
+        },
+        "credit_limit": {
+          "$ref": "#/definitions/typesAmount",
+          "title": "Credit Limit"
+        },
+        "highest_education_attained": {
+          "type": "string",
+          "title": "Highest education such as bachelor, masters etc"
+        },
+        "employment_status": {
+          "type": "string",
+          "title": "Current employment status"
+        },
+        "kyc_status": {
+          "type": "boolean",
+          "format": "boolean",
+          "title": "Know Your Customer status"
+        },
+        "branchId": {
+          "type": "string",
+          "title": "Branch Identifier"
+        },
+        "nameSuffix": {
+          "type": "string",
+          "title": "Name suffix"
+        },
+        "first_name": {
+          "type": "string",
+          "title": "FirstName of the person"
+        },
+        "middle_name": {
+          "type": "string",
+          "title": "MiddleName or middle names (space separated) of the person"
+        },
+        "last_name": {
+          "type": "string",
+          "title": "LastName or last names (space separated) of the person"
+        }
+      },
+      "title": "Structure of customer profile information"
+    }
+  },
+  "securityDefinitions": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "Access to account applications resources is restricted to authenticated users. The authentication process follows the Authorization Code flow.",
+      "flow": "accessCode",
+      "authorizationUrl": "/v1/auth",
+      "tokenUrl": "/v1/token",
+      "scopes": {
+        "https://auth.bnk.to/accountapplication.read": "View accountapplication data",
+        "https://auth.bnk.to/accountapplication.write": "Manage accountapplication data"
+      }
+    }
+  }
+}
