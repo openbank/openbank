@@ -106,6 +106,9 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
+msgid "HasMore indicates if there are more transactions available."
+msgstr ""
+
 msgid "Host"
 msgstr ""
 

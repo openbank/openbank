@@ -528,9 +528,10 @@ curl -X GET \
 
 #### Response body {#response-body-method-get-getaccounts}
 
-| Name   | Type       | Description                           |
-|--------|------------|---------------------------------------|
-| result | \[]Account | Result is the paginated query result. |
+| Name     | Type       | Description                                             |
+|----------|------------|---------------------------------------------------------|
+| result   | \[]Account | Result is the paginated query result.                   |
+| has_more | bool       | HasMore indicates if there are more accounts available. |
 
 ##### Objects {#objects-GetAccountsResponse}
 
@@ -657,7 +658,8 @@ Example:
         "nanos": "int32"
       }
     }
-  ]
+  ],
+  "has_more": "bool"
 }
 ```
 

@@ -484,10 +484,6 @@
           "$ref": "#/definitions/typesAddress",
           "title": "Contact address"
         },
-        "contact_number": {
-          "type": "string",
-          "title": "Contact number"
-        },
         "profile_number": {
           "type": "string",
           "title": "profile number"
@@ -557,6 +553,10 @@
         "last_name": {
           "type": "string",
           "title": "LastName or last names (space separated) of the person"
+        },
+        "contact_number": {
+          "type": "string",
+          "title": "Contact number"
         }
       },
       "title": "Structure of customer profile information"

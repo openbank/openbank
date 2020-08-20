@@ -352,54 +352,54 @@ type Profile struct {
 	// Contact address
 	ContactAddress Address `pb:"13" json:"contact_address"`
 
-	// Contact number
-	ContactNumber string `pb:"14" json:"contact_number"`
-
 	// profile number
-	ProfileNumber string `pb:"15" json:"profile_number"`
+	ProfileNumber string `pb:"14" json:"profile_number"`
 
 	// Face image of the customer
-	FaceImageUrl string `pb:"16" json:"face_image_url"`
+	FaceImageUrl string `pb:"15" json:"face_image_url"`
 
 	// Date when the face image was added/updated
-	FaceImageDate string `pb:"17" json:"face_image_date"`
+	FaceImageDate string `pb:"16" json:"face_image_date"`
 
 	// RelationshipStatus. Ex: Single | Married
-	RelationshipStatus string `pb:"18" json:"relationship_status"`
+	RelationshipStatus string `pb:"17" json:"relationship_status"`
 
 	// Number of dependents
-	Dependents int `pb:"19" json:"dependents"`
+	Dependents int `pb:"18" json:"dependents"`
 
 	// Date of birth of dependents
-	DobOfDependents []time.Time `pb:"20" json:"dob_of_dependents"`
+	DobOfDependents []time.Time `pb:"19" json:"dob_of_dependents"`
 
 	// Credit rating
-	CreditRating CreditRating `pb:"21" json:"credit_rating"`
+	CreditRating CreditRating `pb:"20" json:"credit_rating"`
 
 	// Credit Limit
-	CreditLimit Amount `pb:"22" json:"credit_limit"`
+	CreditLimit Amount `pb:"21" json:"credit_limit"`
 
 	// Highest education such as bachelor, masters etc
-	HighestEducationAttained string `pb:"23" json:"highest_education_attained"`
+	HighestEducationAttained string `pb:"22" json:"highest_education_attained"`
 
 	// Current employment status
-	EmploymentStatus string `pb:"24" json:"employment_status"`
+	EmploymentStatus string `pb:"23" json:"employment_status"`
 
 	// Know Your Customer status
-	KycStatus bool `pb:"25" json:"kyc_status"`
+	KycStatus bool `pb:"24" json:"kyc_status"`
 
 	// Branch Identifier
-	BranchID string `pb:"26" json:"branchId"`
+	BranchID string `pb:"25" json:"branchId"`
 
 	// Name suffix
-	NameSuffix string `pb:"27" json:"nameSuffix"`
+	NameSuffix string `pb:"26" json:"nameSuffix"`
 
 	// FirstName of the person
-	FirstName string `pb:"28" json:"first_name"`
+	FirstName string `pb:"27" json:"first_name"`
 
 	// MiddleName or middle names (space separated) of the person
-	MiddleName string `pb:"29" json:"middle_name"`
+	MiddleName string `pb:"28" json:"middle_name"`
 
 	// LastName or last names (space separated) of the person
-	LastName string `pb:"30" json:"last_name"`
+	LastName string `pb:"29" json:"last_name"`
+
+	// Contact number
+	ContactNumber string `pb:"30" json:"contact_number"`
 }

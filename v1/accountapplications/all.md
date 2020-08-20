@@ -75,7 +75,6 @@ curl -X POST \
 | title                      | string       | Title                                                      |
 | permanent_address          | Address      | Permanent address                                          |
 | contact_address            | Address      | Contact address                                            |
-| contact_number             | string       | Contact number                                             |
 | profile_number             | string       | profile number                                             |
 | face_image_url             | string       | Face image of the customer                                 |
 | face_image_date            | string       | Date when the face image was added/updated                 |
@@ -92,6 +91,7 @@ curl -X POST \
 | first_name                 | string       | FirstName of the person                                    |
 | middle_name                | string       | MiddleName or middle names (space separated) of the person |
 | last_name                  | string       | LastName or last names (space separated) of the person     |
+| contact_number             | string       | Contact number                                             |
 
 ###### Timestamp
 
@@ -173,7 +173,6 @@ Example:
       "line_1": "string",
       "postal_code": "string"
     },
-    "contact_number": "string",
     "profile_number": "string",
     "face_image_url": "string",
     "face_image_date": "string",
@@ -200,7 +199,8 @@ Example:
     "nameSuffix": "string",
     "first_name": "string",
     "middle_name": "string",
-    "last_name": "string"
+    "last_name": "string",
+    "contact_number": "string"
   },
   "date_of_application": {
     "seconds": "int64",
