@@ -169,6 +169,9 @@ msgstr ""
 msgid "Request executed successfully."
 msgstr ""
 
+msgid "Resend OTP/TFA code for the transaction"
+msgstr ""
+
 msgid "Response body"
 msgstr ""
 

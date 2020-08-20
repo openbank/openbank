@@ -307,6 +307,18 @@ type TFAResponse struct {
 	TraceNumber string `pb:"1" json:"trace_number"`
 }
 
+// ResendTFARequest is request message for re-sending TFA.
+type ResendTFARequest struct {
+	// TransactionID is transaction / payment identification code requires approval.
+	TransactionID string `pb:"1" json:"transaction_id"`
+
+	// TFAType is type to receive OTP authentication code.
+	TFAType TFAType `pb:"2" json:"tfa_type"`
+}
+
+// ResendTFAResponse is empty response for resend OTP/TFA request.
+type ResendTFAResponse struct {}
+
 // TransactionService provides Transacton operations.
 type TransactionService interface {
 	// GetTransaction retrieves the detail of a transaction, selected by its id.
@@ -518,4 +530,40 @@ type TransactionService interface {
 	//         },
 	// }
 	TFA(TFARequest) TFAResponse
+
+
+	// ResendTFA re-sends the verification code for the transaction
+	//
+	// +gunk http.Match{
+	//         Method: "POST",
+	//         Path:   "/v1/transactions/resend",
+	//         Body:   "*",
+	// }
+	// +gunk openapiv2.Operation{
+	//         Tags:        []string{"Transaction"},
+	//         Description: "Resend OTP/TFA code for the transaction",
+	//         Summary:     "Resend OTP/TFA code for the transaction",
+	//         Responses: map[string]openapiv2.Response{
+	//                 "200": openapiv2.Response{
+	//                         Description: "Transaction authorized.",
+	//                         Schema: openapiv2.Schema{
+	//                                 JSONSchema: openapiv2.JSONSchema{
+	//                                         Ref: "#/definitions/transactionsTFAResponse",
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	//         Security: []openapiv2.SecurityRequirement{
+	//                 {
+	//                         SecurityRequirement: map[string]openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                 "OAuth2": openapiv2.SecurityRequirement_SecurityRequirementValue{
+	//                                         Scope: []string{
+	//                                                 "https://auth.bnk.to/transaction.write",
+	//                                         },
+	//                                 },
+	//                         },
+	//                 },
+	//         },
+	// }
+	ResendTFA(ResendTFARequest) ResendTFAResponse
 }
