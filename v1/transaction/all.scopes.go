@@ -14,6 +14,7 @@ var AuthScopes = map[string][]string{
 	"/transactions.TransactionService/GetTransaction": []string{"https://auth.bnk.to/transaction.read"},
 	"/transactions.TransactionService/GetTransactions": []string{"https://auth.bnk.to/transaction.read"},
 	"/transactions.TransactionService/GetTransactionsByAccount": []string{"https://auth.bnk.to/transaction.read"},
+	"/transactions.TransactionService/ResendTFA": []string{"https://auth.bnk.to/transaction.write"},
 	"/transactions.TransactionService/TFA": []string{"https://auth.bnk.to/transaction.write"},
 }
 

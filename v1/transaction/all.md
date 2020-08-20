@@ -803,6 +803,67 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
+Resend OTP/TFA code for the transaction {#method-post-resendtfa}
+----------------------------------------------------------------
+
+Resend OTP/TFA code for the transaction
+
+```sh
+curl -X POST \
+	https:///v1/transactions/resend \
+	-H 'Authorization: Bearer USE_YOUR_TOKEN' \
+	-d '{
+		"transaction_id": "string",
+		"tfa_type": "TFAType"
+	}'
+```
+
+### HTTP Request {#http-request-method-post-resendtfa}
+
+`POST https:///v1/transactions/resend`
+
+### Body Parameters {#body-parameters-method-post-resendtfa}
+
+| Name           | Type    | Description                                                                   |
+|----------------|---------|-------------------------------------------------------------------------------|
+| transaction_id | string  | TransactionID is transaction / payment identification code requires approval. |
+| tfa_type       | TFAType | TFAType is type to receive OTP authentication code.                           |
+
+##### Enums {#enums-ResendTFARequest}
+
+###### TFAType
+
+TFAType is available type of TFA.
+
+| Value   | Description          |
+|---------|----------------------|
+| SMS     | SMS Message.         |
+| SAFEKEY | SAFEKEY Application. |
+
+### Responses {#responses-method-post-resendtfa}
+
+#### Response body {#response-body-method-post-resendtfa}
+
+| Name | Type | Description |
+|------|------|-------------|
+
+Example:
+
+```json
+{}
+```
+
+#### Response codes {#response-codes-method-post-resendtfa}
+
+| Status | Description                                                                            |
+|--------|----------------------------------------------------------------------------------------|
+| 200    | Transaction authorized.                                                                |
+| 400    | Returned when the request body is malformatted or does not match the expected request. |
+| 401    | Returned when the request does not contains the user's credentials.                    |
+| 403    | Returned when the user does not have permission to access the resource.                |
+| 404    | Returned when the resource is not found.                                               |
+| 500    | Returned when an unexpected error occured on the server side.                          |
+
 Authorize a transaction with 2FA {#method-post-tfa}
 ---------------------------------------------------
 

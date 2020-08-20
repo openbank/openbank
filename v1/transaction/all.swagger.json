@@ -387,6 +387,61 @@
         ]
       }
     },
+    "/v1/transactions/resend": {
+      "post": {
+        "summary": "Resend OTP/TFA code for the transaction",
+        "description": "Resend OTP/TFA code for the transaction",
+        "operationId": "ResendTFA",
+        "responses": {
+          "200": {
+            "description": "Transaction authorized.",
+            "schema": {
+              "$ref": "#/definitions/transactionsTFAResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/transactionsResendTFARequest"
+            }
+          }
+        ],
+        "tags": [
+          "Transaction"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/transaction.write"
+            ]
+          }
+        ]
+      }
+    },
     "/v1/transactions/{transactionID}": {
       "get": {
         "summary": "Retrieve a transaction",
@@ -581,6 +636,24 @@
         }
       },
       "description": "GetTransactionsResponse is the response message for retrieving a list of transactions."
+    },
+    "transactionsResendTFARequest": {
+      "type": "object",
+      "properties": {
+        "transaction_id": {
+          "type": "string",
+          "description": "TransactionID is transaction / payment identification code requires approval."
+        },
+        "tfa_type": {
+          "$ref": "#/definitions/transactionsTFAType",
+          "description": "TFAType is type to receive OTP authentication code."
+        }
+      },
+      "description": "ResendTFARequest is request message for re-sending TFA."
+    },
+    "transactionsResendTFAResponse": {
+      "type": "object",
+      "description": "TFAResponse is the response message for a 2FA request."
     },
     "transactionsStatus": {
       "type": "string",
