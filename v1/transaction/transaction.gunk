@@ -163,11 +163,18 @@ type GetTransactionsRequest struct {
 	// TransactionType is a type of transaction, debit or credit.
 	TransactionType Type `pb:"3" json:"transaction_type"`
 
+	// Limit is number of search return of transactions.
+    Limit string `pb:"4" json:"limit"`
+
+    // NextStartingIndex is a cursor for pagination. It's a TransactionID that defines
+    // the current place in the total list of Transaction.
+    NextStartingIndex string `pb:"5" json:"next_starting_index"`
+
 	// AfterID is a cursor for pagination.
-	AfterID string `pb:"4" json:"after_id"`
-	
-	// Limit is maximum number of results to return.
-	Limit int `pb:"5" json:"limit"`
+	AfterID string `pb:"6" json:"after_id"`
+
+	// PageLimit is maximum number of results to return.
+	PageLimit int `pb:"7" json:"page_limit"`
 }
 
 // GetTransactionsResponse is the response message for retrieving a list of transactions.
@@ -175,8 +182,11 @@ type GetTransactionsResponse struct {
 	// Result is the paginated query result.
 	Result []Transaction `pb:"1" json:"result"`
 
+	// HasMore indicates if there are more transactions available.
+	HasMore bool `pb:"2" json:"has_more"`
+
 	// LastRunningBalance is current balance for related account.
-	LastRunningBalance types.Amount `pb:"2" json:"last_running_balance"`
+	LastRunningBalance types.Amount `pb:"3" json:"last_running_balance"`
 }
 
 // GetTransactionsByAccountRequest is the request message to get a list of transactions.

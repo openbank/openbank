@@ -50,6 +50,13 @@
         },
         "parameters": [
           {
+            "name": "next_starting_index",
+            "description": "NextStartingIndex is a cursor for pagination. It's an AccountID that defines\nthe current place in the total list of Accounts.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "after_id",
             "description": "AfterID is a cursor for pagination.",
             "in": "query",
@@ -764,6 +771,11 @@
             "$ref": "#/definitions/accountsAccount"
           },
           "description": "Result is the paginated query result."
+        },
+        "has_more": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "HasMore indicates if there are more accounts available."
         }
       },
       "description": "GetAccountsResponse wraps the list of accounts."

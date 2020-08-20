@@ -160,6 +160,9 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
+msgid "HasMore indicates if there are more accounts available."
+msgstr ""
+
 msgid "Host"
 msgstr ""
 

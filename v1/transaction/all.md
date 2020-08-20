@@ -424,10 +424,11 @@ curl -X GET \
 
 #### Response body {#response-body-method-get-gettransactions}
 
-| Name                 | Type           | Description                                                |
-|----------------------|----------------|------------------------------------------------------------|
-| result               | \[]Transaction | Result is the paginated query result.                      |
-| last_running_balance | Amount         | LastRunningBalance is current balance for related account. |
+| Name                 | Type           | Description                                                 |
+|----------------------|----------------|-------------------------------------------------------------|
+| result               | \[]Transaction | Result is the paginated query result.                       |
+| has_more             | bool           | HasMore indicates if there are more transactions available. |
+| last_running_balance | Amount         | LastRunningBalance is current balance for related account.  |
 
 ##### Objects {#objects-GetTransactionsResponse}
 
@@ -582,6 +583,7 @@ Example:
       "remarks": "string"
     }
   ],
+  "has_more": "bool",
   "last_running_balance": {
     "cur": "string",
     "num": "string"
