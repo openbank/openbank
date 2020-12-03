@@ -1071,7 +1071,7 @@ func (m *ResendTFARequest) GetTFAType() TFAType {
 	return TFAType__
 }
 
-// TFAResponse is the response message for a 2FA request.
+// ResendTFAResponse is empty response for resend OTP/TFA request.
 type ResendTFAResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

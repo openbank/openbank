@@ -653,7 +653,7 @@
     },
     "transactionsResendTFAResponse": {
       "type": "object",
-      "description": "TFAResponse is the response message for a 2FA request."
+      "description": "ResendTFAResponse is empty response for resend OTP/TFA request."
     },
     "transactionsStatus": {
       "type": "string",
