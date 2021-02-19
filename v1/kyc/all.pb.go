@@ -6,6 +6,8 @@ package kyc
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -52,15 +55,19 @@ func (*AddKYCCheckRequest) Descriptor() ([]byte, []int) {
 func (m *AddKYCCheckRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCCheckRequest.Unmarshal(m, b)
 }
+
 func (m *AddKYCCheckRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCCheckRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCCheckRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCCheckRequest.Merge(m, src)
 }
+
 func (m *AddKYCCheckRequest) XXX_Size() int {
 	return xxx_messageInfo_AddKYCCheckRequest.Size(m)
 }
+
 func (m *AddKYCCheckRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCCheckRequest.DiscardUnknown(m)
 }
@@ -156,15 +163,19 @@ func (*AddKYCCheckResponse) Descriptor() ([]byte, []int) {
 func (m *AddKYCCheckResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCCheckResponse.Unmarshal(m, b)
 }
+
 func (m *AddKYCCheckResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCCheckResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCCheckResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCCheckResponse.Merge(m, src)
 }
+
 func (m *AddKYCCheckResponse) XXX_Size() int {
 	return xxx_messageInfo_AddKYCCheckResponse.Size(m)
 }
+
 func (m *AddKYCCheckResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCCheckResponse.DiscardUnknown(m)
 }
@@ -265,15 +276,19 @@ func (*AddKYCDocumentRequest) Descriptor() ([]byte, []int) {
 func (m *AddKYCDocumentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCDocumentRequest.Unmarshal(m, b)
 }
+
 func (m *AddKYCDocumentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCDocumentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCDocumentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCDocumentRequest.Merge(m, src)
 }
+
 func (m *AddKYCDocumentRequest) XXX_Size() int {
 	return xxx_messageInfo_AddKYCDocumentRequest.Size(m)
 }
+
 func (m *AddKYCDocumentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCDocumentRequest.DiscardUnknown(m)
 }
@@ -361,15 +376,19 @@ func (*AddKYCDocumentResponse) Descriptor() ([]byte, []int) {
 func (m *AddKYCDocumentResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCDocumentResponse.Unmarshal(m, b)
 }
+
 func (m *AddKYCDocumentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCDocumentResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCDocumentResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCDocumentResponse.Merge(m, src)
 }
+
 func (m *AddKYCDocumentResponse) XXX_Size() int {
 	return xxx_messageInfo_AddKYCDocumentResponse.Size(m)
 }
+
 func (m *AddKYCDocumentResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCDocumentResponse.DiscardUnknown(m)
 }
@@ -463,15 +482,19 @@ func (*AddKYCMediaRequest) Descriptor() ([]byte, []int) {
 func (m *AddKYCMediaRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCMediaRequest.Unmarshal(m, b)
 }
+
 func (m *AddKYCMediaRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCMediaRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCMediaRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCMediaRequest.Merge(m, src)
 }
+
 func (m *AddKYCMediaRequest) XXX_Size() int {
 	return xxx_messageInfo_AddKYCMediaRequest.Size(m)
 }
+
 func (m *AddKYCMediaRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCMediaRequest.DiscardUnknown(m)
 }
@@ -559,15 +582,19 @@ func (*AddKYCMediaResponse) Descriptor() ([]byte, []int) {
 func (m *AddKYCMediaResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCMediaResponse.Unmarshal(m, b)
 }
+
 func (m *AddKYCMediaResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCMediaResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCMediaResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCMediaResponse.Merge(m, src)
 }
+
 func (m *AddKYCMediaResponse) XXX_Size() int {
 	return xxx_messageInfo_AddKYCMediaResponse.Size(m)
 }
+
 func (m *AddKYCMediaResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCMediaResponse.DiscardUnknown(m)
 }
@@ -657,15 +684,19 @@ func (*AddKYCStatusRequest) Descriptor() ([]byte, []int) {
 func (m *AddKYCStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCStatusRequest.Unmarshal(m, b)
 }
+
 func (m *AddKYCStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCStatusRequest.Merge(m, src)
 }
+
 func (m *AddKYCStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_AddKYCStatusRequest.Size(m)
 }
+
 func (m *AddKYCStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCStatusRequest.DiscardUnknown(m)
 }
@@ -720,15 +751,19 @@ func (*AddKYCStatusResponse) Descriptor() ([]byte, []int) {
 func (m *AddKYCStatusResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddKYCStatusResponse.Unmarshal(m, b)
 }
+
 func (m *AddKYCStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddKYCStatusResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddKYCStatusResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddKYCStatusResponse.Merge(m, src)
 }
+
 func (m *AddKYCStatusResponse) XXX_Size() int {
 	return xxx_messageInfo_AddKYCStatusResponse.Size(m)
 }
+
 func (m *AddKYCStatusResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddKYCStatusResponse.DiscardUnknown(m)
 }
@@ -789,15 +824,19 @@ func (*Check) Descriptor() ([]byte, []int) {
 func (m *Check) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Check.Unmarshal(m, b)
 }
+
 func (m *Check) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Check.Marshal(b, m, deterministic)
 }
+
 func (m *Check) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Check.Merge(m, src)
 }
+
 func (m *Check) XXX_Size() int {
 	return xxx_messageInfo_Check.Size(m)
 }
+
 func (m *Check) XXX_DiscardUnknown() {
 	xxx_messageInfo_Check.DiscardUnknown(m)
 }
@@ -899,15 +938,19 @@ func (*Document) Descriptor() ([]byte, []int) {
 func (m *Document) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Document.Unmarshal(m, b)
 }
+
 func (m *Document) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Document.Marshal(b, m, deterministic)
 }
+
 func (m *Document) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Document.Merge(m, src)
 }
+
 func (m *Document) XXX_Size() int {
 	return xxx_messageInfo_Document.Size(m)
 }
+
 func (m *Document) XXX_DiscardUnknown() {
 	xxx_messageInfo_Document.DiscardUnknown(m)
 }
@@ -997,15 +1040,19 @@ func (*Status) Descriptor() ([]byte, []int) {
 func (m *Status) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Status.Unmarshal(m, b)
 }
+
 func (m *Status) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Status.Marshal(b, m, deterministic)
 }
+
 func (m *Status) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Status.Merge(m, src)
 }
+
 func (m *Status) XXX_Size() int {
 	return xxx_messageInfo_Status.Size(m)
 }
+
 func (m *Status) XXX_DiscardUnknown() {
 	xxx_messageInfo_Status.DiscardUnknown(m)
 }
@@ -1065,15 +1112,19 @@ func (*Media) Descriptor() ([]byte, []int) {
 func (m *Media) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Media.Unmarshal(m, b)
 }
+
 func (m *Media) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Media.Marshal(b, m, deterministic)
 }
+
 func (m *Media) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Media.Merge(m, src)
 }
+
 func (m *Media) XXX_Size() int {
 	return xxx_messageInfo_Media.Size(m)
 }
+
 func (m *Media) XXX_DiscardUnknown() {
 	xxx_messageInfo_Media.DiscardUnknown(m)
 }
@@ -1160,15 +1211,19 @@ func (*GetCustomerKYCCheckRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerKYCCheckRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerKYCCheckRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerKYCCheckRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerKYCCheckRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerKYCCheckRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerKYCCheckRequest.Merge(m, src)
 }
+
 func (m *GetCustomerKYCCheckRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerKYCCheckRequest.Size(m)
 }
+
 func (m *GetCustomerKYCCheckRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerKYCCheckRequest.DiscardUnknown(m)
 }
@@ -1199,15 +1254,19 @@ func (*GetCustomerKYCCheckResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomerKYCCheckResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerKYCCheckResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomerKYCCheckResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerKYCCheckResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerKYCCheckResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerKYCCheckResponse.Merge(m, src)
 }
+
 func (m *GetCustomerKYCCheckResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerKYCCheckResponse.Size(m)
 }
+
 func (m *GetCustomerKYCCheckResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerKYCCheckResponse.DiscardUnknown(m)
 }
@@ -1238,15 +1297,19 @@ func (*GetCustomerKYCDocumentRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerKYCDocumentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerKYCDocumentRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerKYCDocumentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerKYCDocumentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerKYCDocumentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerKYCDocumentRequest.Merge(m, src)
 }
+
 func (m *GetCustomerKYCDocumentRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerKYCDocumentRequest.Size(m)
 }
+
 func (m *GetCustomerKYCDocumentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerKYCDocumentRequest.DiscardUnknown(m)
 }
@@ -1277,15 +1340,19 @@ func (*GetCustomerKYCDocumentResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomerKYCDocumentResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerKYCDocumentResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomerKYCDocumentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerKYCDocumentResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerKYCDocumentResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerKYCDocumentResponse.Merge(m, src)
 }
+
 func (m *GetCustomerKYCDocumentResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerKYCDocumentResponse.Size(m)
 }
+
 func (m *GetCustomerKYCDocumentResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerKYCDocumentResponse.DiscardUnknown(m)
 }
@@ -1316,15 +1383,19 @@ func (*GetCustomerKYCStatusRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerKYCStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerKYCStatusRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerKYCStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerKYCStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerKYCStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerKYCStatusRequest.Merge(m, src)
 }
+
 func (m *GetCustomerKYCStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerKYCStatusRequest.Size(m)
 }
+
 func (m *GetCustomerKYCStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerKYCStatusRequest.DiscardUnknown(m)
 }
@@ -1355,15 +1426,19 @@ func (*GetCustomerKYCStatusResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomerKYCStatusResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerKYCStatusResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomerKYCStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerKYCStatusResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerKYCStatusResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerKYCStatusResponse.Merge(m, src)
 }
+
 func (m *GetCustomerKYCStatusResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerKYCStatusResponse.Size(m)
 }
+
 func (m *GetCustomerKYCStatusResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerKYCStatusResponse.DiscardUnknown(m)
 }
@@ -1394,15 +1469,19 @@ func (*GetKYCMediaRequest) Descriptor() ([]byte, []int) {
 func (m *GetKYCMediaRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetKYCMediaRequest.Unmarshal(m, b)
 }
+
 func (m *GetKYCMediaRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetKYCMediaRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetKYCMediaRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetKYCMediaRequest.Merge(m, src)
 }
+
 func (m *GetKYCMediaRequest) XXX_Size() int {
 	return xxx_messageInfo_GetKYCMediaRequest.Size(m)
 }
+
 func (m *GetKYCMediaRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetKYCMediaRequest.DiscardUnknown(m)
 }
@@ -1433,15 +1512,19 @@ func (*GetKYCMediaResponse) Descriptor() ([]byte, []int) {
 func (m *GetKYCMediaResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetKYCMediaResponse.Unmarshal(m, b)
 }
+
 func (m *GetKYCMediaResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetKYCMediaResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetKYCMediaResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetKYCMediaResponse.Merge(m, src)
 }
+
 func (m *GetKYCMediaResponse) XXX_Size() int {
 	return xxx_messageInfo_GetKYCMediaResponse.Size(m)
 }
+
 func (m *GetKYCMediaResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetKYCMediaResponse.DiscardUnknown(m)
 }
@@ -1610,14 +1693,16 @@ var fileDescriptor_513aaa1cb88678c5 = []byte{
 	0x5f, 0xc3, 0x70, 0x79, 0xff, 0x02, 0x40, 0xc7, 0xee, 0x5b, 0x64, 0x57, 0x84, 0x6c, 0x62, 0x8e,
 	0xa1, 0x3c, 0xe2, 0x42, 0x83, 0x4e, 0xdc, 0xc1, 0x36, 0xde, 0x26, 0xfd, 0x27, 0x8e, 0x73, 0x2a,
 	0xac, 0x70, 0xc7, 0xf2, 0x3a, 0xc6, 0x9b, 0xd2, 0x9a, 0xf4, 0x50, 0x69, 0x76, 0x8d, 0x77, 0xa5,
-	0xcc, 0x13, 0x29, 0xf3, 0xbe, 0x94, 0xf9, 0x85, 0x94, 0x79, 0x2a, 0x65, 0xfe, 0x25, 0x65, 0xfe,
-	0x28, 0x67, 0xb6, 0xb2, 0xe2, 0xa3, 0xcc, 0x95, 0xff, 0x06, 0x00, 0x00, 0xff, 0xff, 0x48, 0x9b,
-	0xac, 0x09, 0xb0, 0x23, 0x00, 0x00,
+	0xcc, 0x13, 0x29, 0xf3, 0xbe, 0x94, 0xf9, 0x85, 0x94, 0x79, 0x2a, 0x65, 0xfe, 0x25, 0x49, 0x7f,
+	0x94, 0x33, 0x5b, 0x59, 0xf1, 0x51, 0xe6, 0xca, 0x7f, 0x03, 0x00, 0x00, 0xff, 0xff, 0x27, 0xd7,
+	0x09, 0x92, 0xb0, 0x23, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1756,30 +1841,36 @@ type KYCServiceServer interface {
 }
 
 // UnimplementedKYCServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedKYCServiceServer struct {
-}
+type UnimplementedKYCServiceServer struct{}
 
 func (*UnimplementedKYCServiceServer) AddKYCCheck(ctx context.Context, req *AddKYCCheckRequest) (*AddKYCCheckResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddKYCCheck not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) AddKYCDocument(ctx context.Context, req *AddKYCDocumentRequest) (*AddKYCDocumentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddKYCDocument not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) AddKYCMedia(ctx context.Context, req *AddKYCMediaRequest) (*AddKYCMediaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddKYCMedia not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) AddKYCStatus(ctx context.Context, req *AddKYCStatusRequest) (*AddKYCStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddKYCStatus not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) GetCustomerKYCCheck(ctx context.Context, req *GetCustomerKYCCheckRequest) (*GetCustomerKYCCheckResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerKYCCheck not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) GetCustomerKYCDocument(ctx context.Context, req *GetCustomerKYCDocumentRequest) (*GetCustomerKYCDocumentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerKYCDocument not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) GetCustomerKYCStatus(ctx context.Context, req *GetCustomerKYCStatusRequest) (*GetCustomerKYCStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerKYCStatus not implemented")
 }
+
 func (*UnimplementedKYCServiceServer) GetKYCMedia(ctx context.Context, req *GetKYCMediaRequest) (*GetKYCMediaResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetKYCMedia not implemented")
 }

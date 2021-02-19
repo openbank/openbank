@@ -6,6 +6,8 @@ package card
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -15,13 +17,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -70,15 +73,19 @@ func (*Card) Descriptor() ([]byte, []int) {
 func (m *Card) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Card.Unmarshal(m, b)
 }
+
 func (m *Card) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Card.Marshal(b, m, deterministic)
 }
+
 func (m *Card) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Card.Merge(m, src)
 }
+
 func (m *Card) XXX_Size() int {
 	return xxx_messageInfo_Card.Size(m)
 }
+
 func (m *Card) XXX_DiscardUnknown() {
 	xxx_messageInfo_Card.DiscardUnknown(m)
 }
@@ -191,15 +198,19 @@ func (*CardAttribute) Descriptor() ([]byte, []int) {
 func (m *CardAttribute) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CardAttribute.Unmarshal(m, b)
 }
+
 func (m *CardAttribute) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CardAttribute.Marshal(b, m, deterministic)
 }
+
 func (m *CardAttribute) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CardAttribute.Merge(m, src)
 }
+
 func (m *CardAttribute) XXX_Size() int {
 	return xxx_messageInfo_CardAttribute.Size(m)
 }
+
 func (m *CardAttribute) XXX_DiscardUnknown() {
 	xxx_messageInfo_CardAttribute.DiscardUnknown(m)
 }
@@ -260,15 +271,19 @@ func (*GetCardRequest) Descriptor() ([]byte, []int) {
 func (m *GetCardRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCardRequest.Unmarshal(m, b)
 }
+
 func (m *GetCardRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCardRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCardRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCardRequest.Merge(m, src)
 }
+
 func (m *GetCardRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCardRequest.Size(m)
 }
+
 func (m *GetCardRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCardRequest.DiscardUnknown(m)
 }
@@ -303,15 +318,19 @@ func (*UpdateCardStatusRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCardStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCardStatusRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCardStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCardStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCardStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCardStatusRequest.Merge(m, src)
 }
+
 func (m *UpdateCardStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCardStatusRequest.Size(m)
 }
+
 func (m *UpdateCardStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCardStatusRequest.DiscardUnknown(m)
 }
@@ -353,15 +372,19 @@ func (*UpdateCardAccessStatusRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCardAccessStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCardAccessStatusRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCardAccessStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCardAccessStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCardAccessStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCardAccessStatusRequest.Merge(m, src)
 }
+
 func (m *UpdateCardAccessStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCardAccessStatusRequest.Size(m)
 }
+
 func (m *UpdateCardAccessStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCardAccessStatusRequest.DiscardUnknown(m)
 }
@@ -405,15 +428,19 @@ func (*Result) Descriptor() ([]byte, []int) {
 func (m *Result) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Result.Unmarshal(m, b)
 }
+
 func (m *Result) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Result.Marshal(b, m, deterministic)
 }
+
 func (m *Result) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Result.Merge(m, src)
 }
+
 func (m *Result) XXX_Size() int {
 	return xxx_messageInfo_Result.Size(m)
 }
+
 func (m *Result) XXX_DiscardUnknown() {
 	xxx_messageInfo_Result.DiscardUnknown(m)
 }
@@ -468,15 +495,19 @@ func (*CreateCardRequest) Descriptor() ([]byte, []int) {
 func (m *CreateCardRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCardRequest.Unmarshal(m, b)
 }
+
 func (m *CreateCardRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCardRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCardRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCardRequest.Merge(m, src)
 }
+
 func (m *CreateCardRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateCardRequest.Size(m)
 }
+
 func (m *CreateCardRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCardRequest.DiscardUnknown(m)
 }
@@ -537,15 +568,19 @@ func (*CreateCardResponse) Descriptor() ([]byte, []int) {
 func (m *CreateCardResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCardResponse.Unmarshal(m, b)
 }
+
 func (m *CreateCardResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCardResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCardResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCardResponse.Merge(m, src)
 }
+
 func (m *CreateCardResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateCardResponse.Size(m)
 }
+
 func (m *CreateCardResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCardResponse.DiscardUnknown(m)
 }
@@ -586,15 +621,19 @@ func (*CreateCardAttributeRequest) Descriptor() ([]byte, []int) {
 func (m *CreateCardAttributeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCardAttributeRequest.Unmarshal(m, b)
 }
+
 func (m *CreateCardAttributeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCardAttributeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCardAttributeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCardAttributeRequest.Merge(m, src)
 }
+
 func (m *CreateCardAttributeRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateCardAttributeRequest.Size(m)
 }
+
 func (m *CreateCardAttributeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCardAttributeRequest.DiscardUnknown(m)
 }
@@ -647,15 +686,19 @@ func (*CreateCardAttributeResponse) Descriptor() ([]byte, []int) {
 func (m *CreateCardAttributeResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCardAttributeResponse.Unmarshal(m, b)
 }
+
 func (m *CreateCardAttributeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCardAttributeResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCardAttributeResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCardAttributeResponse.Merge(m, src)
 }
+
 func (m *CreateCardAttributeResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateCardAttributeResponse.Size(m)
 }
+
 func (m *CreateCardAttributeResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCardAttributeResponse.DiscardUnknown(m)
 }
@@ -693,15 +736,19 @@ func (*DeleteCardRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteCardRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteCardRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteCardRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteCardRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteCardRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteCardRequest.Merge(m, src)
 }
+
 func (m *DeleteCardRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteCardRequest.Size(m)
 }
+
 func (m *DeleteCardRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteCardRequest.DiscardUnknown(m)
 }
@@ -731,15 +778,19 @@ func (*GetUserCardsRequest) Descriptor() ([]byte, []int) {
 func (m *GetUserCardsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetUserCardsRequest.Unmarshal(m, b)
 }
+
 func (m *GetUserCardsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetUserCardsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetUserCardsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetUserCardsRequest.Merge(m, src)
 }
+
 func (m *GetUserCardsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetUserCardsRequest.Size(m)
 }
+
 func (m *GetUserCardsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetUserCardsRequest.DiscardUnknown(m)
 }
@@ -763,15 +814,19 @@ func (*GetUserCardsResponse) Descriptor() ([]byte, []int) {
 func (m *GetUserCardsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetUserCardsResponse.Unmarshal(m, b)
 }
+
 func (m *GetUserCardsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetUserCardsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetUserCardsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetUserCardsResponse.Merge(m, src)
 }
+
 func (m *GetUserCardsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetUserCardsResponse.Size(m)
 }
+
 func (m *GetUserCardsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetUserCardsResponse.DiscardUnknown(m)
 }
@@ -924,14 +979,16 @@ var fileDescriptor_41d7396a66589e9e = []byte{
 	0x87, 0x42, 0xfd, 0x94, 0x67, 0x09, 0x5d, 0x7c, 0xec, 0xa5, 0x23, 0xa3, 0x1c, 0x8d, 0xa0, 0x71,
 	0xda, 0x0d, 0x41, 0x97, 0x3e, 0x20, 0x01, 0xd9, 0xa7, 0x43, 0x7b, 0x5e, 0x12, 0x4c, 0xf9, 0x91,
 	0xd0, 0x53, 0x37, 0xff, 0x9e, 0xb1, 0x6b, 0x7c, 0xac, 0x7e, 0x3a, 0xfd, 0xc4, 0x28, 0x3d, 0x33,
-	0x4a, 0xcf, 0x8d, 0xd2, 0xaf, 0x8c, 0xd2, 0x9f, 0x8c, 0xd2, 0xbf, 0x8c, 0xd2, 0xef, 0xcd, 0x52,
-	0xbb, 0xaa, 0xae, 0xff, 0x5b, 0xff, 0x09, 0x00, 0x00, 0xff, 0xff, 0xde, 0x92, 0xac, 0x95, 0x8e,
+	0x4a, 0xcf, 0x8d, 0xd2, 0xaf, 0x8c, 0xd2, 0x9f, 0x8c, 0xd2, 0xbf, 0x0c, 0xe3, 0xf7, 0x66, 0xa9,
+	0x5d, 0x55, 0xd7, 0xff, 0xad, 0xff, 0x04, 0x00, 0x00, 0xff, 0xff, 0xb1, 0xde, 0x09, 0x0e, 0x8e,
 	0x15, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1047,27 +1104,32 @@ type CardServiceServer interface {
 }
 
 // UnimplementedCardServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedCardServiceServer struct {
-}
+type UnimplementedCardServiceServer struct{}
 
 func (*UnimplementedCardServiceServer) CreateCard(ctx context.Context, req *CreateCardRequest) (*CreateCardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCard not implemented")
 }
+
 func (*UnimplementedCardServiceServer) CreateCardAttribute(ctx context.Context, req *CreateCardAttributeRequest) (*CreateCardAttributeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCardAttribute not implemented")
 }
+
 func (*UnimplementedCardServiceServer) GetCard(ctx context.Context, req *GetCardRequest) (*Card, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCard not implemented")
 }
+
 func (*UnimplementedCardServiceServer) GetUserCards(ctx context.Context, req *GetUserCardsRequest) (*GetUserCardsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserCards not implemented")
 }
+
 func (*UnimplementedCardServiceServer) UpdateCardStatus(ctx context.Context, req *UpdateCardStatusRequest) (*Result, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCardStatus not implemented")
 }
+
 func (*UnimplementedCardServiceServer) UpdateCardAccessStatus(ctx context.Context, req *UpdateCardAccessStatusRequest) (*Result, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCardAccessStatus not implemented")
 }
+
 func (*UnimplementedCardServiceServer) DeleteCard(ctx context.Context, req *DeleteCardRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCard not implemented")
 }

@@ -25,12 +25,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_ATMService_GetATM_0(ctx context.Context, marshaler runtime.Marshaler, client ATMServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetATMRequest
@@ -56,7 +58,6 @@ func request_ATMService_GetATM_0(ctx context.Context, marshaler runtime.Marshale
 
 	msg, err := client.GetATM(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ATMService_GetATM_0(ctx context.Context, marshaler runtime.Marshaler, server ATMServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -83,7 +84,6 @@ func local_request_ATMService_GetATM_0(ctx context.Context, marshaler runtime.Ma
 
 	msg, err := server.GetATM(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ATMService_GetATMs_0(ctx context.Context, marshaler runtime.Marshaler, client ATMServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -92,7 +92,6 @@ func request_ATMService_GetATMs_0(ctx context.Context, marshaler runtime.Marshal
 
 	msg, err := client.GetATMs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ATMService_GetATMs_0(ctx context.Context, marshaler runtime.Marshaler, server ATMServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -101,7 +100,6 @@ func local_request_ATMService_GetATMs_0(ctx context.Context, marshaler runtime.M
 
 	msg, err := server.GetATMs(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ATMService_CreateATM_0(ctx context.Context, marshaler runtime.Marshaler, client ATMServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -118,7 +116,6 @@ func request_ATMService_CreateATM_0(ctx context.Context, marshaler runtime.Marsh
 
 	msg, err := client.CreateATM(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ATMService_CreateATM_0(ctx context.Context, marshaler runtime.Marshaler, server ATMServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -135,14 +132,12 @@ func local_request_ATMService_CreateATM_0(ctx context.Context, marshaler runtime
 
 	msg, err := server.CreateATM(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterATMServiceHandlerServer registers the http handlers for service ATMService to "mux".
 // UnaryRPC     :call ATMServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterATMServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ATMServiceServer) error {
-
 	mux.Handle("GET", pattern_ATMService_GetATM_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -160,7 +155,6 @@ func RegisterATMServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_ATMService_GetATM_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ATMService_GetATMs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -180,7 +174,6 @@ func RegisterATMServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_ATMService_GetATMs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_ATMService_CreateATM_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -200,7 +193,6 @@ func RegisterATMServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_ATMService_CreateATM_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -243,7 +235,6 @@ func RegisterATMServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn 
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "ATMServiceClient" to call the correct interceptors.
 func RegisterATMServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ATMServiceClient) error {
-
 	mux.Handle("GET", pattern_ATMService_GetATM_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -261,7 +252,6 @@ func RegisterATMServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_ATMService_GetATM_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ATMService_GetATMs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -281,7 +271,6 @@ func RegisterATMServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_ATMService_GetATMs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_ATMService_CreateATM_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -301,7 +290,6 @@ func RegisterATMServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_ATMService_CreateATM_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

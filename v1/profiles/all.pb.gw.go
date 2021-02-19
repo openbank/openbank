@@ -24,16 +24,16 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
-
 var (
-	filter_ProfileService_GetProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
 )
+
+var filter_ProfileService_GetProfile_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_ProfileService_GetProfile_0(ctx context.Context, marshaler runtime.Marshaler, client ProfileServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetProfileRequest
@@ -48,7 +48,6 @@ func request_ProfileService_GetProfile_0(ctx context.Context, marshaler runtime.
 
 	msg, err := client.GetProfile(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ProfileService_GetProfile_0(ctx context.Context, marshaler runtime.Marshaler, server ProfileServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -61,12 +60,9 @@ func local_request_ProfileService_GetProfile_0(ctx context.Context, marshaler ru
 
 	msg, err := server.GetProfile(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_ProfileService_GetProfileCard_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_ProfileService_GetProfileCard_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_ProfileService_GetProfileCard_0(ctx context.Context, marshaler runtime.Marshaler, client ProfileServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetProfileCardsRequest
@@ -81,7 +77,6 @@ func request_ProfileService_GetProfileCard_0(ctx context.Context, marshaler runt
 
 	msg, err := client.GetProfileCard(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ProfileService_GetProfileCard_0(ctx context.Context, marshaler runtime.Marshaler, server ProfileServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -94,14 +89,12 @@ func local_request_ProfileService_GetProfileCard_0(ctx context.Context, marshale
 
 	msg, err := server.GetProfileCard(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterProfileServiceHandlerServer registers the http handlers for service ProfileService to "mux".
 // UnaryRPC     :call ProfileServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterProfileServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ProfileServiceServer) error {
-
 	mux.Handle("GET", pattern_ProfileService_GetProfile_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -119,7 +112,6 @@ func RegisterProfileServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		}
 
 		forward_ProfileService_GetProfile_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ProfileService_GetProfileCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -139,7 +131,6 @@ func RegisterProfileServiceHandlerServer(ctx context.Context, mux *runtime.Serve
 		}
 
 		forward_ProfileService_GetProfileCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -182,7 +173,6 @@ func RegisterProfileServiceHandler(ctx context.Context, mux *runtime.ServeMux, c
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "ProfileServiceClient" to call the correct interceptors.
 func RegisterProfileServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ProfileServiceClient) error {
-
 	mux.Handle("GET", pattern_ProfileService_GetProfile_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -200,7 +190,6 @@ func RegisterProfileServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		}
 
 		forward_ProfileService_GetProfile_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ProfileService_GetProfileCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -220,7 +209,6 @@ func RegisterProfileServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 		}
 
 		forward_ProfileService_GetProfileCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

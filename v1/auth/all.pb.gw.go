@@ -24,16 +24,16 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
-
 var (
-	filter_AuthorizationService_GetAuthorizationCode_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
 )
+
+var filter_AuthorizationService_GetAuthorizationCode_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_AuthorizationService_GetAuthorizationCode_0(ctx context.Context, marshaler runtime.Marshaler, client AuthorizationServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAuthorizationCodeRequest
@@ -48,7 +48,6 @@ func request_AuthorizationService_GetAuthorizationCode_0(ctx context.Context, ma
 
 	msg, err := client.GetAuthorizationCode(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_AuthorizationService_GetAuthorizationCode_0(ctx context.Context, marshaler runtime.Marshaler, server AuthorizationServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -61,7 +60,6 @@ func local_request_AuthorizationService_GetAuthorizationCode_0(ctx context.Conte
 
 	msg, err := server.GetAuthorizationCode(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_AuthorizationService_CreateAccessToken_0(ctx context.Context, marshaler runtime.Marshaler, client AuthorizationServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -78,7 +76,6 @@ func request_AuthorizationService_CreateAccessToken_0(ctx context.Context, marsh
 
 	msg, err := client.CreateAccessToken(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_AuthorizationService_CreateAccessToken_0(ctx context.Context, marshaler runtime.Marshaler, server AuthorizationServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -95,14 +92,12 @@ func local_request_AuthorizationService_CreateAccessToken_0(ctx context.Context,
 
 	msg, err := server.CreateAccessToken(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterAuthorizationServiceHandlerServer registers the http handlers for service AuthorizationService to "mux".
 // UnaryRPC     :call AuthorizationServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterAuthorizationServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AuthorizationServiceServer) error {
-
 	mux.Handle("GET", pattern_AuthorizationService_GetAuthorizationCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -120,7 +115,6 @@ func RegisterAuthorizationServiceHandlerServer(ctx context.Context, mux *runtime
 		}
 
 		forward_AuthorizationService_GetAuthorizationCode_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_AuthorizationService_CreateAccessToken_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -140,7 +134,6 @@ func RegisterAuthorizationServiceHandlerServer(ctx context.Context, mux *runtime
 		}
 
 		forward_AuthorizationService_CreateAccessToken_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -183,7 +176,6 @@ func RegisterAuthorizationServiceHandler(ctx context.Context, mux *runtime.Serve
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "AuthorizationServiceClient" to call the correct interceptors.
 func RegisterAuthorizationServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AuthorizationServiceClient) error {
-
 	mux.Handle("GET", pattern_AuthorizationService_GetAuthorizationCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -201,7 +193,6 @@ func RegisterAuthorizationServiceHandlerClient(ctx context.Context, mux *runtime
 		}
 
 		forward_AuthorizationService_GetAuthorizationCode_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_AuthorizationService_CreateAccessToken_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -221,7 +212,6 @@ func RegisterAuthorizationServiceHandlerClient(ctx context.Context, mux *runtime
 		}
 
 		forward_AuthorizationService_CreateAccessToken_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

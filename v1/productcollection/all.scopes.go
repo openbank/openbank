@@ -4,15 +4,15 @@ package productcollection
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/productcollection.read": "View productcollection data",
+	"https://auth.bnk.to/productcollection.read":  "View productcollection data",
 	"https://auth.bnk.to/productcollection.write": "Manage productcollection data",
 }
 
 var AuthScopes = map[string][]string{
-	"/productcollection.ProductCollectionService/CreateProductCollection": []string{"https://auth.bnk.to/productcollection.write"},
-	"/productcollection.ProductCollectionService/DeleteProductCollection": []string{"https://auth.bnk.to/productcollection.write"},
-	"/productcollection.ProductCollectionService/GetProductCollection": []string{"https://auth.bnk.to/productcollection.read"},
-	"/productcollection.ProductCollectionService/UpdateProductCollection": []string{"https://auth.bnk.to/productcollection.write"},
+	"/productcollection.ProductCollectionService/CreateProductCollection": {"https://auth.bnk.to/productcollection.write"},
+	"/productcollection.ProductCollectionService/DeleteProductCollection": {"https://auth.bnk.to/productcollection.write"},
+	"/productcollection.ProductCollectionService/GetProductCollection":    {"https://auth.bnk.to/productcollection.read"},
+	"/productcollection.ProductCollectionService/UpdateProductCollection": {"https://auth.bnk.to/productcollection.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

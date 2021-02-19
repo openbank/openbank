@@ -6,6 +6,8 @@ package profiles
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	account "github.com/openbank/openbank/v1/account"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -46,15 +49,19 @@ func (*GetProfileRequest) Descriptor() ([]byte, []int) {
 func (m *GetProfileRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProfileRequest.Unmarshal(m, b)
 }
+
 func (m *GetProfileRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProfileRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetProfileRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProfileRequest.Merge(m, src)
 }
+
 func (m *GetProfileRequest) XXX_Size() int {
 	return xxx_messageInfo_GetProfileRequest.Size(m)
 }
+
 func (m *GetProfileRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProfileRequest.DiscardUnknown(m)
 }
@@ -87,15 +94,19 @@ func (*GetProfileResponse) Descriptor() ([]byte, []int) {
 func (m *GetProfileResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProfileResponse.Unmarshal(m, b)
 }
+
 func (m *GetProfileResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProfileResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetProfileResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProfileResponse.Merge(m, src)
 }
+
 func (m *GetProfileResponse) XXX_Size() int {
 	return xxx_messageInfo_GetProfileResponse.Size(m)
 }
+
 func (m *GetProfileResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProfileResponse.DiscardUnknown(m)
 }
@@ -134,15 +145,19 @@ func (*GetProfileCardsRequest) Descriptor() ([]byte, []int) {
 func (m *GetProfileCardsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProfileCardsRequest.Unmarshal(m, b)
 }
+
 func (m *GetProfileCardsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProfileCardsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetProfileCardsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProfileCardsRequest.Merge(m, src)
 }
+
 func (m *GetProfileCardsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetProfileCardsRequest.Size(m)
 }
+
 func (m *GetProfileCardsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProfileCardsRequest.DiscardUnknown(m)
 }
@@ -174,15 +189,19 @@ func (*GetProfileCardsResponse) Descriptor() ([]byte, []int) {
 func (m *GetProfileCardsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProfileCardsResponse.Unmarshal(m, b)
 }
+
 func (m *GetProfileCardsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProfileCardsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetProfileCardsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProfileCardsResponse.Merge(m, src)
 }
+
 func (m *GetProfileCardsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetProfileCardsResponse.Size(m)
 }
+
 func (m *GetProfileCardsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProfileCardsResponse.DiscardUnknown(m)
 }
@@ -223,15 +242,19 @@ func (*ProfileCard) Descriptor() ([]byte, []int) {
 func (m *ProfileCard) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProfileCard.Unmarshal(m, b)
 }
+
 func (m *ProfileCard) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ProfileCard.Marshal(b, m, deterministic)
 }
+
 func (m *ProfileCard) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ProfileCard.Merge(m, src)
 }
+
 func (m *ProfileCard) XXX_Size() int {
 	return xxx_messageInfo_ProfileCard.Size(m)
 }
+
 func (m *ProfileCard) XXX_DiscardUnknown() {
 	xxx_messageInfo_ProfileCard.DiscardUnknown(m)
 }
@@ -356,13 +379,15 @@ var fileDescriptor_01f74d04d9bd7b36 = []byte{
 	0xd4, 0x43, 0x66, 0x18, 0x7a, 0x03, 0x5d, 0x7c, 0x5e, 0xd8, 0x48, 0x71, 0x03, 0xf8, 0x85, 0x87,
 	0x4c, 0xb0, 0x3e, 0xcc, 0x47, 0x62, 0x23, 0x53, 0x34, 0x8b, 0x79, 0xf1, 0xc0, 0x7a, 0xd7, 0x6d,
 	0xbb, 0x3b, 0x93, 0x8f, 0xb1, 0xcf, 0x5d, 0xe7, 0xc0, 0x75, 0x0e, 0x5d, 0xe7, 0x5b, 0xd7, 0xf9,
-	0xc5, 0x75, 0xfe, 0x74, 0x9d, 0x9f, 0x3c, 0xa7, 0x5b, 0x4e, 0x3f, 0x7c, 0x6e, 0xfc, 0x1d, 0x00,
-	0x00, 0xff, 0xff, 0xaf, 0x9e, 0xdd, 0x14, 0xe8, 0x09, 0x00, 0x00,
+	0xc5, 0x75, 0xfe, 0x74, 0xdd, 0x9f, 0x3c, 0xa7, 0x5b, 0x4e, 0x3f, 0x7c, 0x6e, 0xfc, 0x1d, 0x00,
+	0x00, 0xff, 0xff, 0xc0, 0xd2, 0x78, 0x8f, 0xe8, 0x09, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -413,12 +438,12 @@ type ProfileServiceServer interface {
 }
 
 // UnimplementedProfileServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedProfileServiceServer struct {
-}
+type UnimplementedProfileServiceServer struct{}
 
 func (*UnimplementedProfileServiceServer) GetProfile(ctx context.Context, req *GetProfileRequest) (*GetProfileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfile not implemented")
 }
+
 func (*UnimplementedProfileServiceServer) GetProfileCard(ctx context.Context, req *GetProfileCardsRequest) (*GetProfileCardsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProfileCard not implemented")
 }

@@ -1,5 +1,4 @@
-Product API v1.0.0
-==================
+# Product API v1.0.0
 
 Provides CRUD operations on the Product resource.
 
@@ -7,8 +6,7 @@ Provides CRUD operations on the Product resource.
 
 * Base Path ``
 
-Create a product {#method-post-createproduct}
----------------------------------------------
+## Create a product {#method-post-createproduct}
 
 Creates a new product and returns the object.
 
@@ -201,8 +199,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a product attribute {#method-post-createproductattribute}
-----------------------------------------------------------------
+## Create a product attribute {#method-post-createproductattribute}
 
 Creates a new product attribute and returns the object.
 
@@ -316,8 +313,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a product {#method-delete-deleteproduct}
------------------------------------------------
+## Delete a product {#method-delete-deleteproduct}
 
 Permanently delete a product.
 
@@ -351,8 +347,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a product attribute {#method-delete-deleteproductattribute}
-------------------------------------------------------------------
+## Delete a product attribute {#method-delete-deleteproductattribute}
 
 Permanently delete a product attribute.
 
@@ -387,8 +382,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve product information {#method-get-getproduct}
------------------------------------------------------
+## Retrieve product information {#method-get-getproduct}
 
 Retrieve information about the product specified by the ID
 
@@ -499,8 +493,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve product attribute information {#method-get-getproductattribute}
-------------------------------------------------------------------------
+## Retrieve product attribute information {#method-get-getproductattribute}
 
 Retrieve information about the product specified by the ID
 
@@ -570,8 +563,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available products {#method-get-getproducts}
----------------------------------------------------------
+## Retrieve all available products {#method-get-getproducts}
 
 Retrieve information regarding all available products.
 
@@ -691,8 +683,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a product {#method-put-updateproduct}
---------------------------------------------
+## Update a product {#method-put-updateproduct}
 
 Updates a product's information
 
@@ -885,8 +876,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a product attribute {#method-put-updateproductattribute}
----------------------------------------------------------------
+## Update a product attribute {#method-put-updateproductattribute}
 
 Updates a product attribute's information
 

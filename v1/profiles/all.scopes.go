@@ -4,13 +4,13 @@ package profiles
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/profile.read": "View profile data",
+	"https://auth.bnk.to/profile.read":  "View profile data",
 	"https://auth.bnk.to/profile.write": "Manage profile data",
 }
 
 var AuthScopes = map[string][]string{
-	"/profiles.ProfileService/GetProfile": []string{"https://auth.bnk.to/profile.read"},
-	"/profiles.ProfileService/GetProfileCard": []string{"https://auth.bnk.to/profile.read"},
+	"/profiles.ProfileService/GetProfile":     {"https://auth.bnk.to/profile.read"},
+	"/profiles.ProfileService/GetProfileCard": {"https://auth.bnk.to/profile.read"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

@@ -6,6 +6,8 @@ package consumer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -49,15 +52,19 @@ func (*CreateByUser) Descriptor() ([]byte, []int) {
 func (m *CreateByUser) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateByUser.Unmarshal(m, b)
 }
+
 func (m *CreateByUser) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateByUser.Marshal(b, m, deterministic)
 }
+
 func (m *CreateByUser) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateByUser.Merge(m, src)
 }
+
 func (m *CreateByUser) XXX_Size() int {
 	return xxx_messageInfo_CreateByUser.Size(m)
 }
+
 func (m *CreateByUser) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateByUser.DiscardUnknown(m)
 }
@@ -125,15 +132,19 @@ func (*Consumer) Descriptor() ([]byte, []int) {
 func (m *Consumer) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Consumer.Unmarshal(m, b)
 }
+
 func (m *Consumer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Consumer.Marshal(b, m, deterministic)
 }
+
 func (m *Consumer) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Consumer.Merge(m, src)
 }
+
 func (m *Consumer) XXX_Size() int {
 	return xxx_messageInfo_Consumer.Size(m)
 }
+
 func (m *Consumer) XXX_DiscardUnknown() {
 	xxx_messageInfo_Consumer.DiscardUnknown(m)
 }
@@ -228,15 +239,19 @@ func (*EnableOrDisableConsumerRequest) Descriptor() ([]byte, []int) {
 func (m *EnableOrDisableConsumerRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EnableOrDisableConsumerRequest.Unmarshal(m, b)
 }
+
 func (m *EnableOrDisableConsumerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EnableOrDisableConsumerRequest.Marshal(b, m, deterministic)
 }
+
 func (m *EnableOrDisableConsumerRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EnableOrDisableConsumerRequest.Merge(m, src)
 }
+
 func (m *EnableOrDisableConsumerRequest) XXX_Size() int {
 	return xxx_messageInfo_EnableOrDisableConsumerRequest.Size(m)
 }
+
 func (m *EnableOrDisableConsumerRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_EnableOrDisableConsumerRequest.DiscardUnknown(m)
 }
@@ -274,15 +289,19 @@ func (*EnableOrDisableConsumerResponse) Descriptor() ([]byte, []int) {
 func (m *EnableOrDisableConsumerResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EnableOrDisableConsumerResponse.Unmarshal(m, b)
 }
+
 func (m *EnableOrDisableConsumerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EnableOrDisableConsumerResponse.Marshal(b, m, deterministic)
 }
+
 func (m *EnableOrDisableConsumerResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EnableOrDisableConsumerResponse.Merge(m, src)
 }
+
 func (m *EnableOrDisableConsumerResponse) XXX_Size() int {
 	return xxx_messageInfo_EnableOrDisableConsumerResponse.Size(m)
 }
+
 func (m *EnableOrDisableConsumerResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_EnableOrDisableConsumerResponse.DiscardUnknown(m)
 }
@@ -314,15 +333,19 @@ func (*State) Descriptor() ([]byte, []int) {
 func (m *State) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_State.Unmarshal(m, b)
 }
+
 func (m *State) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_State.Marshal(b, m, deterministic)
 }
+
 func (m *State) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_State.Merge(m, src)
 }
+
 func (m *State) XXX_Size() int {
 	return xxx_messageInfo_State.Size(m)
 }
+
 func (m *State) XXX_DiscardUnknown() {
 	xxx_messageInfo_State.DiscardUnknown(m)
 }
@@ -365,15 +388,19 @@ func (*CurrentState) Descriptor() ([]byte, []int) {
 func (m *CurrentState) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CurrentState.Unmarshal(m, b)
 }
+
 func (m *CurrentState) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CurrentState.Marshal(b, m, deterministic)
 }
+
 func (m *CurrentState) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CurrentState.Merge(m, src)
 }
+
 func (m *CurrentState) XXX_Size() int {
 	return xxx_messageInfo_CurrentState.Size(m)
 }
+
 func (m *CurrentState) XXX_DiscardUnknown() {
 	xxx_messageInfo_CurrentState.DiscardUnknown(m)
 }
@@ -439,15 +466,19 @@ func (*GetConsumerCallLimitsRequest) Descriptor() ([]byte, []int) {
 func (m *GetConsumerCallLimitsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsumerCallLimitsRequest.Unmarshal(m, b)
 }
+
 func (m *GetConsumerCallLimitsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsumerCallLimitsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsumerCallLimitsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsumerCallLimitsRequest.Merge(m, src)
 }
+
 func (m *GetConsumerCallLimitsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetConsumerCallLimitsRequest.Size(m)
 }
+
 func (m *GetConsumerCallLimitsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsumerCallLimitsRequest.DiscardUnknown(m)
 }
@@ -484,15 +515,19 @@ func (*GetConsumerCallLimitsResponse) Descriptor() ([]byte, []int) {
 func (m *GetConsumerCallLimitsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsumerCallLimitsResponse.Unmarshal(m, b)
 }
+
 func (m *GetConsumerCallLimitsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsumerCallLimitsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsumerCallLimitsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsumerCallLimitsResponse.Merge(m, src)
 }
+
 func (m *GetConsumerCallLimitsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetConsumerCallLimitsResponse.Size(m)
 }
+
 func (m *GetConsumerCallLimitsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsumerCallLimitsResponse.DiscardUnknown(m)
 }
@@ -565,15 +600,19 @@ func (*GetConsumerRequest) Descriptor() ([]byte, []int) {
 func (m *GetConsumerRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsumerRequest.Unmarshal(m, b)
 }
+
 func (m *GetConsumerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsumerRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsumerRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsumerRequest.Merge(m, src)
 }
+
 func (m *GetConsumerRequest) XXX_Size() int {
 	return xxx_messageInfo_GetConsumerRequest.Size(m)
 }
+
 func (m *GetConsumerRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsumerRequest.DiscardUnknown(m)
 }
@@ -604,15 +643,19 @@ func (*GetConsumerResponse) Descriptor() ([]byte, []int) {
 func (m *GetConsumerResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsumerResponse.Unmarshal(m, b)
 }
+
 func (m *GetConsumerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsumerResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsumerResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsumerResponse.Merge(m, src)
 }
+
 func (m *GetConsumerResponse) XXX_Size() int {
 	return xxx_messageInfo_GetConsumerResponse.Size(m)
 }
+
 func (m *GetConsumerResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsumerResponse.DiscardUnknown(m)
 }
@@ -643,15 +686,19 @@ func (*GetConsumersResponse) Descriptor() ([]byte, []int) {
 func (m *GetConsumersResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsumersResponse.Unmarshal(m, b)
 }
+
 func (m *GetConsumersResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsumersResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsumersResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsumersResponse.Merge(m, src)
 }
+
 func (m *GetConsumersResponse) XXX_Size() int {
 	return xxx_messageInfo_GetConsumersResponse.Size(m)
 }
+
 func (m *GetConsumersResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsumersResponse.DiscardUnknown(m)
 }
@@ -682,15 +729,19 @@ func (*GetConsumersForLoggedInUserResponse) Descriptor() ([]byte, []int) {
 func (m *GetConsumersForLoggedInUserResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsumersForLoggedInUserResponse.Unmarshal(m, b)
 }
+
 func (m *GetConsumersForLoggedInUserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsumersForLoggedInUserResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsumersForLoggedInUserResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsumersForLoggedInUserResponse.Merge(m, src)
 }
+
 func (m *GetConsumersForLoggedInUserResponse) XXX_Size() int {
 	return xxx_messageInfo_GetConsumersForLoggedInUserResponse.Size(m)
 }
+
 func (m *GetConsumersForLoggedInUserResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsumersForLoggedInUserResponse.DiscardUnknown(m)
 }
@@ -727,15 +778,19 @@ func (*SetConsumerCallsLimitRequest) Descriptor() ([]byte, []int) {
 func (m *SetConsumerCallsLimitRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SetConsumerCallsLimitRequest.Unmarshal(m, b)
 }
+
 func (m *SetConsumerCallsLimitRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SetConsumerCallsLimitRequest.Marshal(b, m, deterministic)
 }
+
 func (m *SetConsumerCallsLimitRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SetConsumerCallsLimitRequest.Merge(m, src)
 }
+
 func (m *SetConsumerCallsLimitRequest) XXX_Size() int {
 	return xxx_messageInfo_SetConsumerCallsLimitRequest.Size(m)
 }
+
 func (m *SetConsumerCallsLimitRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_SetConsumerCallsLimitRequest.DiscardUnknown(m)
 }
@@ -813,15 +868,19 @@ func (*SetConsumerCallsLimitResponse) Descriptor() ([]byte, []int) {
 func (m *SetConsumerCallsLimitResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_SetConsumerCallsLimitResponse.Unmarshal(m, b)
 }
+
 func (m *SetConsumerCallsLimitResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_SetConsumerCallsLimitResponse.Marshal(b, m, deterministic)
 }
+
 func (m *SetConsumerCallsLimitResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_SetConsumerCallsLimitResponse.Merge(m, src)
 }
+
 func (m *SetConsumerCallsLimitResponse) XXX_Size() int {
 	return xxx_messageInfo_SetConsumerCallsLimitResponse.Size(m)
 }
+
 func (m *SetConsumerCallsLimitResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_SetConsumerCallsLimitResponse.DiscardUnknown(m)
 }
@@ -888,15 +947,19 @@ func (*UpdateConsumerRedirectURLRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateConsumerRedirectURLRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateConsumerRedirectURLRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateConsumerRedirectURLRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateConsumerRedirectURLRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateConsumerRedirectURLRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateConsumerRedirectURLRequest.Merge(m, src)
 }
+
 func (m *UpdateConsumerRedirectURLRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateConsumerRedirectURLRequest.Size(m)
 }
+
 func (m *UpdateConsumerRedirectURLRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateConsumerRedirectURLRequest.DiscardUnknown(m)
 }
@@ -934,15 +997,19 @@ func (*UpdateConsumerRedirectURLResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateConsumerRedirectURLResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateConsumerRedirectURLResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateConsumerRedirectURLResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateConsumerRedirectURLResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateConsumerRedirectURLResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateConsumerRedirectURLResponse.Merge(m, src)
 }
+
 func (m *UpdateConsumerRedirectURLResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateConsumerRedirectURLResponse.Size(m)
 }
+
 func (m *UpdateConsumerRedirectURLResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateConsumerRedirectURLResponse.DiscardUnknown(m)
 }
@@ -980,7 +1047,7 @@ func init() {
 }
 
 var fileDescriptor_f673d8597f6a7f8e = []byte{
-	// 2109 bytes of a gzipped FileDescriptorProto
+	// 2108 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x59, 0xcb, 0x6f, 0x1c, 0x49,
 	0x19, 0x9f, 0xee, 0x89, 0xc7, 0xe3, 0xb2, 0xb3, 0x09, 0x95, 0xc7, 0xce, 0xf6, 0xe6, 0x51, 0xeb,
 	0xec, 0x26, 0x8e, 0x13, 0xf7, 0x4c, 0x26, 0x09, 0x26, 0xce, 0x46, 0xbb, 0x13, 0x3b, 0xc9, 0xda,
@@ -1111,13 +1178,15 @@ var fileDescriptor_f673d8597f6a7f8e = []byte{
 	0x5c, 0x18, 0x3f, 0xb6, 0x61, 0xbb, 0x7b, 0xc4, 0x44, 0x0b, 0x7b, 0xe9, 0x34, 0x7c, 0x7c, 0x35,
 	0x68, 0xae, 0x5d, 0xb1, 0xc7, 0x04, 0x0d, 0xfc, 0x0d, 0xcf, 0x4e, 0x8e, 0xb2, 0x0f, 0x94, 0x35,
 	0xe5, 0xa3, 0xe4, 0x73, 0xf6, 0x47, 0x4a, 0xe6, 0x99, 0x92, 0xf9, 0x44, 0xc9, 0xfc, 0x41, 0xc9,
-	0x3c, 0x57, 0x32, 0xff, 0x51, 0x32, 0x7f, 0x55, 0x33, 0xf5, 0x5c, 0x30, 0x93, 0x5c, 0xfd, 0x7f,
-	0x00, 0x00, 0x00, 0xff, 0xff, 0x07, 0xfd, 0x08, 0x84, 0x19, 0x1d, 0x00, 0x00,
+	0x3c, 0x57, 0x32, 0xff, 0x51, 0x94, 0xbf, 0xaa, 0x99, 0x7a, 0x2e, 0x98, 0x49, 0xae, 0xfe, 0x3f,
+	0x00, 0x00, 0xff, 0xff, 0x68, 0xb1, 0xad, 0x1f, 0x19, 0x1d, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1233,27 +1302,32 @@ type ConsumerServiceServer interface {
 }
 
 // UnimplementedConsumerServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedConsumerServiceServer struct {
-}
+type UnimplementedConsumerServiceServer struct{}
 
 func (*UnimplementedConsumerServiceServer) EnableOrDisableConsumer(ctx context.Context, req *EnableOrDisableConsumerRequest) (*EnableOrDisableConsumerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnableOrDisableConsumer not implemented")
 }
+
 func (*UnimplementedConsumerServiceServer) GetConsumerCallLimits(ctx context.Context, req *GetConsumerCallLimitsRequest) (*GetConsumerCallLimitsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConsumerCallLimits not implemented")
 }
+
 func (*UnimplementedConsumerServiceServer) GetConsumer(ctx context.Context, req *GetConsumerRequest) (*GetConsumerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConsumer not implemented")
 }
+
 func (*UnimplementedConsumerServiceServer) GetConsumers(ctx context.Context, req *empty.Empty) (*GetConsumersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConsumers not implemented")
 }
+
 func (*UnimplementedConsumerServiceServer) GetConsumersForLoggedInUser(ctx context.Context, req *empty.Empty) (*GetConsumersForLoggedInUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConsumersForLoggedInUser not implemented")
 }
+
 func (*UnimplementedConsumerServiceServer) SetConsumerCallsLimit(ctx context.Context, req *SetConsumerCallsLimitRequest) (*SetConsumerCallsLimitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetConsumerCallsLimit not implemented")
 }
+
 func (*UnimplementedConsumerServiceServer) UpdateConsumerRedirectURL(ctx context.Context, req *UpdateConsumerRedirectURLRequest) (*UpdateConsumerRedirectURLResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateConsumerRedirectURL not implemented")
 }

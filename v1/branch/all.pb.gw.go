@@ -25,12 +25,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_BranchService_GetBranch_0(ctx context.Context, marshaler runtime.Marshaler, client BranchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetBranchRequest
@@ -56,7 +58,6 @@ func request_BranchService_GetBranch_0(ctx context.Context, marshaler runtime.Ma
 
 	msg, err := client.GetBranch(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BranchService_GetBranch_0(ctx context.Context, marshaler runtime.Marshaler, server BranchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -83,7 +84,6 @@ func local_request_BranchService_GetBranch_0(ctx context.Context, marshaler runt
 
 	msg, err := server.GetBranch(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BranchService_GetBranches_0(ctx context.Context, marshaler runtime.Marshaler, client BranchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -92,7 +92,6 @@ func request_BranchService_GetBranches_0(ctx context.Context, marshaler runtime.
 
 	msg, err := client.GetBranches(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BranchService_GetBranches_0(ctx context.Context, marshaler runtime.Marshaler, server BranchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -101,7 +100,6 @@ func local_request_BranchService_GetBranches_0(ctx context.Context, marshaler ru
 
 	msg, err := server.GetBranches(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BranchService_CreateBranch_0(ctx context.Context, marshaler runtime.Marshaler, client BranchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -118,7 +116,6 @@ func request_BranchService_CreateBranch_0(ctx context.Context, marshaler runtime
 
 	msg, err := client.CreateBranch(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BranchService_CreateBranch_0(ctx context.Context, marshaler runtime.Marshaler, server BranchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -135,7 +132,6 @@ func local_request_BranchService_CreateBranch_0(ctx context.Context, marshaler r
 
 	msg, err := server.CreateBranch(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BranchService_UpdateBranch_0(ctx context.Context, marshaler runtime.Marshaler, client BranchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -170,7 +166,6 @@ func request_BranchService_UpdateBranch_0(ctx context.Context, marshaler runtime
 
 	msg, err := client.UpdateBranch(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BranchService_UpdateBranch_0(ctx context.Context, marshaler runtime.Marshaler, server BranchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -205,7 +200,6 @@ func local_request_BranchService_UpdateBranch_0(ctx context.Context, marshaler r
 
 	msg, err := server.UpdateBranch(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BranchService_DeleteBranch_0(ctx context.Context, marshaler runtime.Marshaler, client BranchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -232,7 +226,6 @@ func request_BranchService_DeleteBranch_0(ctx context.Context, marshaler runtime
 
 	msg, err := client.DeleteBranch(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BranchService_DeleteBranch_0(ctx context.Context, marshaler runtime.Marshaler, server BranchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -259,14 +252,12 @@ func local_request_BranchService_DeleteBranch_0(ctx context.Context, marshaler r
 
 	msg, err := server.DeleteBranch(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterBranchServiceHandlerServer registers the http handlers for service BranchService to "mux".
 // UnaryRPC     :call BranchServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterBranchServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server BranchServiceServer) error {
-
 	mux.Handle("GET", pattern_BranchService_GetBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -284,7 +275,6 @@ func RegisterBranchServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_GetBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_BranchService_GetBranches_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -304,7 +294,6 @@ func RegisterBranchServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_GetBranches_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_BranchService_CreateBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -324,7 +313,6 @@ func RegisterBranchServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_CreateBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_BranchService_UpdateBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -344,7 +332,6 @@ func RegisterBranchServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_UpdateBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_BranchService_DeleteBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -364,7 +351,6 @@ func RegisterBranchServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_DeleteBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -407,7 +393,6 @@ func RegisterBranchServiceHandler(ctx context.Context, mux *runtime.ServeMux, co
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "BranchServiceClient" to call the correct interceptors.
 func RegisterBranchServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client BranchServiceClient) error {
-
 	mux.Handle("GET", pattern_BranchService_GetBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -425,7 +410,6 @@ func RegisterBranchServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_GetBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_BranchService_GetBranches_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -445,7 +429,6 @@ func RegisterBranchServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_GetBranches_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_BranchService_CreateBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -465,7 +448,6 @@ func RegisterBranchServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_CreateBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_BranchService_UpdateBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -485,7 +467,6 @@ func RegisterBranchServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_UpdateBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_BranchService_DeleteBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -505,7 +486,6 @@ func RegisterBranchServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 		}
 
 		forward_BranchService_DeleteBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

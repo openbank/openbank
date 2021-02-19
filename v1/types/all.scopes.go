@@ -3,11 +3,9 @@ package types
 
 type ServiceScope struct{}
 
-var Scopes = map[string]string{
-}
+var Scopes = map[string]string{}
 
-var AuthScopes = map[string][]string{
-}
+var AuthScopes = map[string][]string{}
 
 // Any allows a loose challenge, for claims containing any of the method scopes.
 //

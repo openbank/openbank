@@ -6,6 +6,8 @@ package branch
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -61,15 +64,19 @@ func (*Branch) Descriptor() ([]byte, []int) {
 func (m *Branch) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Branch.Unmarshal(m, b)
 }
+
 func (m *Branch) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Branch.Marshal(b, m, deterministic)
 }
+
 func (m *Branch) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Branch.Merge(m, src)
 }
+
 func (m *Branch) XXX_Size() int {
 	return xxx_messageInfo_Branch.Size(m)
 }
+
 func (m *Branch) XXX_DiscardUnknown() {
 	xxx_messageInfo_Branch.DiscardUnknown(m)
 }
@@ -163,15 +170,19 @@ func (*CreateBranchRequest) Descriptor() ([]byte, []int) {
 func (m *CreateBranchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateBranchRequest.Unmarshal(m, b)
 }
+
 func (m *CreateBranchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateBranchRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateBranchRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateBranchRequest.Merge(m, src)
 }
+
 func (m *CreateBranchRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateBranchRequest.Size(m)
 }
+
 func (m *CreateBranchRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateBranchRequest.DiscardUnknown(m)
 }
@@ -246,15 +257,19 @@ func (*CreateBranchResponse) Descriptor() ([]byte, []int) {
 func (m *CreateBranchResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateBranchResponse.Unmarshal(m, b)
 }
+
 func (m *CreateBranchResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateBranchResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateBranchResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateBranchResponse.Merge(m, src)
 }
+
 func (m *CreateBranchResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateBranchResponse.Size(m)
 }
+
 func (m *CreateBranchResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateBranchResponse.DiscardUnknown(m)
 }
@@ -299,15 +314,19 @@ func (*UpdateBranchRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateBranchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateBranchRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateBranchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateBranchRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateBranchRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateBranchRequest.Merge(m, src)
 }
+
 func (m *UpdateBranchRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateBranchRequest.Size(m)
 }
+
 func (m *UpdateBranchRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateBranchRequest.DiscardUnknown(m)
 }
@@ -382,15 +401,19 @@ func (*DeleteBranchRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteBranchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteBranchRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteBranchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteBranchRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteBranchRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteBranchRequest.Merge(m, src)
 }
+
 func (m *DeleteBranchRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteBranchRequest.Size(m)
 }
+
 func (m *DeleteBranchRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteBranchRequest.DiscardUnknown(m)
 }
@@ -423,15 +446,19 @@ func (*GetBranchRequest) Descriptor() ([]byte, []int) {
 func (m *GetBranchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetBranchRequest.Unmarshal(m, b)
 }
+
 func (m *GetBranchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetBranchRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetBranchRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetBranchRequest.Merge(m, src)
 }
+
 func (m *GetBranchRequest) XXX_Size() int {
 	return xxx_messageInfo_GetBranchRequest.Size(m)
 }
+
 func (m *GetBranchRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetBranchRequest.DiscardUnknown(m)
 }
@@ -464,15 +491,19 @@ func (*GetBranchesResponse) Descriptor() ([]byte, []int) {
 func (m *GetBranchesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetBranchesResponse.Unmarshal(m, b)
 }
+
 func (m *GetBranchesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetBranchesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetBranchesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetBranchesResponse.Merge(m, src)
 }
+
 func (m *GetBranchesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetBranchesResponse.Size(m)
 }
+
 func (m *GetBranchesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetBranchesResponse.DiscardUnknown(m)
 }
@@ -589,13 +620,15 @@ var fileDescriptor_0c1d5fc3994e55fa = []byte{
 	0x1c, 0xb8, 0x38, 0xf0, 0xf8, 0x2d, 0xb7, 0x3d, 0xa7, 0xc3, 0x7f, 0x0e, 0xd1, 0xa5, 0xc1, 0x8f,
 	0x06, 0xe3, 0x6b, 0x94, 0xd1, 0x1a, 0x74, 0xf9, 0x9d, 0x56, 0x3c, 0xb2, 0xa5, 0xbe, 0x9b, 0x0c,
 	0x87, 0xb7, 0xf5, 0x92, 0x7e, 0x3b, 0xf9, 0xd8, 0xbe, 0xab, 0x6b, 0xf7, 0x74, 0xed, 0x81, 0xae,
-	0x7d, 0xa5, 0x6b, 0x3f, 0xeb, 0xda, 0x9f, 0xba, 0xf6, 0x83, 0xa1, 0x55, 0xd2, 0xd1, 0x84, 0xb8,
-	0xf8, 0x4f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x36, 0x70, 0x5c, 0x9a, 0xc4, 0x0f, 0x00, 0x00,
+	0x7d, 0xa5, 0x6b, 0x3f, 0xeb, 0xda, 0x9f, 0xba, 0xfe, 0x83, 0xa1, 0x55, 0xd2, 0xd1, 0x84, 0xb8,
+	0xf8, 0x4f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x59, 0x3c, 0xf9, 0x01, 0xc4, 0x0f, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -685,21 +718,24 @@ type BranchServiceServer interface {
 }
 
 // UnimplementedBranchServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedBranchServiceServer struct {
-}
+type UnimplementedBranchServiceServer struct{}
 
 func (*UnimplementedBranchServiceServer) GetBranch(ctx context.Context, req *GetBranchRequest) (*Branch, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBranch not implemented")
 }
+
 func (*UnimplementedBranchServiceServer) GetBranches(ctx context.Context, req *empty.Empty) (*GetBranchesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBranches not implemented")
 }
+
 func (*UnimplementedBranchServiceServer) CreateBranch(ctx context.Context, req *CreateBranchRequest) (*CreateBranchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBranch not implemented")
 }
+
 func (*UnimplementedBranchServiceServer) UpdateBranch(ctx context.Context, req *UpdateBranchRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBranch not implemented")
 }
+
 func (*UnimplementedBranchServiceServer) DeleteBranch(ctx context.Context, req *DeleteBranchRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBranch not implemented")
 }

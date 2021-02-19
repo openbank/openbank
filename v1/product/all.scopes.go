@@ -4,20 +4,20 @@ package product
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/product.read": "View product data",
+	"https://auth.bnk.to/product.read":  "View product data",
 	"https://auth.bnk.to/product.write": "Manage product data",
 }
 
 var AuthScopes = map[string][]string{
-	"/product.ProductService/CreateProduct": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/CreateProductAttribute": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/DeleteProduct": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/DeleteProductAttribute": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/GetProduct": []string{"https://auth.bnk.to/product.read"},
-	"/product.ProductService/GetProductAttribute": []string{"https://auth.bnk.to/product.read"},
-	"/product.ProductService/GetProducts": []string{"https://auth.bnk.to/product.read"},
-	"/product.ProductService/UpdateProduct": []string{"https://auth.bnk.to/product.write"},
-	"/product.ProductService/UpdateProductAttribute": []string{"https://auth.bnk.to/product.write"},
+	"/product.ProductService/CreateProduct":          {"https://auth.bnk.to/product.write"},
+	"/product.ProductService/CreateProductAttribute": {"https://auth.bnk.to/product.write"},
+	"/product.ProductService/DeleteProduct":          {"https://auth.bnk.to/product.write"},
+	"/product.ProductService/DeleteProductAttribute": {"https://auth.bnk.to/product.write"},
+	"/product.ProductService/GetProduct":             {"https://auth.bnk.to/product.read"},
+	"/product.ProductService/GetProductAttribute":    {"https://auth.bnk.to/product.read"},
+	"/product.ProductService/GetProducts":            {"https://auth.bnk.to/product.read"},
+	"/product.ProductService/UpdateProduct":          {"https://auth.bnk.to/product.write"},
+	"/product.ProductService/UpdateProductAttribute": {"https://auth.bnk.to/product.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

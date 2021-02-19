@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_CustomerService_AddAddressToCustomer_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AddAddressToCustomerRequest
@@ -63,7 +65,6 @@ func request_CustomerService_AddAddressToCustomer_0(ctx context.Context, marshal
 
 	msg, err := client.AddAddressToCustomer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_AddAddressToCustomer_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -98,7 +99,6 @@ func local_request_CustomerService_AddAddressToCustomer_0(ctx context.Context, m
 
 	msg, err := server.AddAddressToCustomer(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_AddSocialMediaHandle_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -133,7 +133,6 @@ func request_CustomerService_AddSocialMediaHandle_0(ctx context.Context, marshal
 
 	msg, err := client.AddSocialMediaHandle(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_AddSocialMediaHandle_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -168,7 +167,6 @@ func local_request_CustomerService_AddSocialMediaHandle_0(ctx context.Context, m
 
 	msg, err := server.AddSocialMediaHandle(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_CreateCustomer_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -185,7 +183,6 @@ func request_CustomerService_CreateCustomer_0(ctx context.Context, marshaler run
 
 	msg, err := client.CreateCustomer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_CreateCustomer_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -202,7 +199,6 @@ func local_request_CustomerService_CreateCustomer_0(ctx context.Context, marshal
 
 	msg, err := server.CreateCustomer(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -248,7 +244,6 @@ func request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context, marsh
 
 	msg, err := client.CreateCreditLimitOrder(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -294,7 +289,6 @@ func local_request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context,
 
 	msg, err := server.CreateCreditLimitOrder(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_CreateUserCustomerLink_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -329,7 +323,6 @@ func request_CustomerService_CreateUserCustomerLink_0(ctx context.Context, marsh
 
 	msg, err := client.CreateUserCustomerLink(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_CreateUserCustomerLink_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -364,7 +357,6 @@ func local_request_CustomerService_CreateUserCustomerLink_0(ctx context.Context,
 
 	msg, err := server.CreateUserCustomerLink(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -413,7 +405,6 @@ func request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, marsha
 
 	msg, err := client.DeleteCustomerAddress(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -462,7 +453,6 @@ func local_request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, 
 
 	msg, err := server.DeleteCustomerAddress(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_DeleteTaxResidence_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -511,7 +501,6 @@ func request_CustomerService_DeleteTaxResidence_0(ctx context.Context, marshaler
 
 	msg, err := client.DeleteTaxResidence(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_DeleteTaxResidence_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -560,7 +549,6 @@ func local_request_CustomerService_DeleteTaxResidence_0(ctx context.Context, mar
 
 	msg, err := server.DeleteTaxResidence(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCRMEvents_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -587,7 +575,6 @@ func request_CustomerService_GetCRMEvents_0(ctx context.Context, marshaler runti
 
 	msg, err := client.GetCRMEvents(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCRMEvents_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -614,7 +601,6 @@ func local_request_CustomerService_GetCRMEvents_0(ctx context.Context, marshaler
 
 	msg, err := server.GetCRMEvents(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -663,7 +649,6 @@ func request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context, mars
 
 	msg, err := client.GetCreditLimitOrderByID(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -712,7 +697,6 @@ func local_request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context
 
 	msg, err := server.GetCreditLimitOrderByID(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -750,7 +734,6 @@ func request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, marshale
 
 	msg, err := client.GetCreditLimitOrder(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -788,7 +771,6 @@ func local_request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, ma
 
 	msg, err := server.GetCreditLimitOrder(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCustomerAddresses_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -826,7 +808,6 @@ func request_CustomerService_GetCustomerAddresses_0(ctx context.Context, marshal
 
 	msg, err := client.GetCustomerAddresses(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCustomerAddresses_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -864,7 +845,6 @@ func local_request_CustomerService_GetCustomerAddresses_0(ctx context.Context, m
 
 	msg, err := server.GetCustomerAddresses(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -902,7 +882,6 @@ func request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.Context
 
 	msg, err := client.GetCustomerSocialMediaHandles(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -940,7 +919,6 @@ func local_request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.C
 
 	msg, err := server.GetCustomerSocialMediaHandles(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -978,7 +956,6 @@ func request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context, mars
 
 	msg, err := client.GetCustomerByCustomerID(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1016,7 +993,6 @@ func local_request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context
 
 	msg, err := server.GetCustomerByCustomerID(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1065,7 +1041,6 @@ func request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Context, 
 
 	msg, err := client.GetCustomerByCustomerNumber(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1114,7 +1089,6 @@ func local_request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Con
 
 	msg, err := server.GetCustomerByCustomerNumber(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCustomersForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1123,7 +1097,6 @@ func request_CustomerService_GetCustomersForCurrentUser_0(ctx context.Context, m
 
 	msg, err := client.GetCustomersForCurrentUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCustomersForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1132,7 +1105,6 @@ func local_request_CustomerService_GetCustomersForCurrentUser_0(ctx context.Cont
 
 	msg, err := server.GetCustomersForCurrentUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1159,7 +1131,6 @@ func request_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx context.Cont
 
 	msg, err := client.GetCustomersForCurrentUserAtBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1186,12 +1157,9 @@ func local_request_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx contex
 
 	msg, err := server.GetCustomersForCurrentUserAtBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_CustomerService_GetFirehoseCustomer_0 = &utilities.DoubleArray{Encoding: map[string]int{"BankID": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-)
+var filter_CustomerService_GetFirehoseCustomer_0 = &utilities.DoubleArray{Encoding: map[string]int{"BankID": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
 func request_CustomerService_GetFirehoseCustomer_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetFirehoseCustomerRequest
@@ -1224,7 +1192,6 @@ func request_CustomerService_GetFirehoseCustomer_0(ctx context.Context, marshale
 
 	msg, err := client.GetFirehoseCustomer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetFirehoseCustomer_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1255,7 +1222,6 @@ func local_request_CustomerService_GetFirehoseCustomer_0(ctx context.Context, ma
 
 	msg, err := server.GetFirehoseCustomer(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1293,7 +1259,6 @@ func request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Context, ma
 
 	msg, err := client.GetTaxResidenceOfCustomer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1331,7 +1296,6 @@ func local_request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Conte
 
 	msg, err := server.GetTaxResidenceOfCustomer(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1388,7 +1352,6 @@ func request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, marsha
 
 	msg, err := client.UpdateCustomerAddress(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1445,7 +1408,6 @@ func local_request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, 
 
 	msg, err := server.UpdateCustomerAddress(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1491,7 +1453,6 @@ func request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, marshal
 
 	msg, err := client.UpdateCustomerBranch(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1537,7 +1498,6 @@ func local_request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, m
 
 	msg, err := server.UpdateCustomerBranch(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1583,7 +1543,6 @@ func request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Context, ma
 
 	msg, err := client.UpdateCustomerCreditLimit(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1629,7 +1588,6 @@ func local_request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Conte
 
 	msg, err := server.UpdateCustomerCreditLimit(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1675,7 +1633,6 @@ func request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx context.C
 
 	msg, err := client.UpdateCustomerCreditRatingAndSource(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1721,7 +1678,6 @@ func local_request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx con
 
 	msg, err := server.UpdateCustomerCreditRatingAndSource(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1767,7 +1723,6 @@ func request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, marshale
 
 	msg, err := client.UpdateCustomerEmail(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1813,7 +1768,6 @@ func local_request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, ma
 
 	msg, err := server.UpdateCustomerEmail(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1859,7 +1813,6 @@ func request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context, marsh
 
 	msg, err := client.UpdateCustomerIdentity(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1905,7 +1858,6 @@ func local_request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context,
 
 	msg, err := server.UpdateCustomerIdentity(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1951,7 +1903,6 @@ func request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Context, m
 
 	msg, err := client.UpdateCustomerMobileNumber(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1997,7 +1948,6 @@ func local_request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Cont
 
 	msg, err := server.UpdateCustomerMobileNumber(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2043,7 +1993,6 @@ func request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, marshal
 
 	msg, err := client.UpdateCustomerNumber(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2089,7 +2038,6 @@ func local_request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, m
 
 	msg, err := server.UpdateCustomerNumber(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2135,7 +2083,6 @@ func request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context, mars
 
 	msg, err := client.UpdateCustomerOtherData(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context, marshaler runtime.Marshaler, server CustomerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2181,14 +2128,12 @@ func local_request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context
 
 	msg, err := server.UpdateCustomerOtherData(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterCustomerServiceHandlerServer registers the http handlers for service CustomerService to "mux".
 // UnaryRPC     :call CustomerServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CustomerServiceServer) error {
-
 	mux.Handle("POST", pattern_CustomerService_AddAddressToCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -2206,7 +2151,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_AddAddressToCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_AddSocialMediaHandle_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2226,7 +2170,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_AddSocialMediaHandle_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_CreateCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2246,7 +2189,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_CreateCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_CreateCreditLimitOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2266,7 +2208,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_CreateCreditLimitOrder_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_CreateUserCustomerLink_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2286,7 +2227,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_CreateUserCustomerLink_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CustomerService_DeleteCustomerAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2306,7 +2246,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_DeleteCustomerAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CustomerService_DeleteTaxResidence_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2326,7 +2265,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_DeleteTaxResidence_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCRMEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2346,7 +2284,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCRMEvents_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCreditLimitOrderByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2366,7 +2303,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCreditLimitOrderByID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCreditLimitOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2386,7 +2322,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCreditLimitOrder_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerAddresses_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2406,7 +2341,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerAddresses_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerSocialMediaHandles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2426,7 +2360,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerSocialMediaHandles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerByCustomerID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2446,7 +2379,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerByCustomerID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerByCustomerNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2466,7 +2398,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerByCustomerNumber_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomersForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2486,7 +2417,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomersForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomersForCurrentUserAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2506,7 +2436,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetFirehoseCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2526,7 +2455,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetFirehoseCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetTaxResidenceOfCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2546,7 +2474,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetTaxResidenceOfCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2566,7 +2493,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2586,7 +2512,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerCreditLimit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2606,7 +2531,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerCreditLimit_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerCreditRatingAndSource_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2626,7 +2550,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerEmail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2646,7 +2569,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerEmail_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerIdentity_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2666,7 +2588,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerIdentity_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerMobileNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2686,7 +2607,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerMobileNumber_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2706,7 +2626,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerNumber_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerOtherData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2726,7 +2645,6 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerOtherData_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -2769,7 +2687,6 @@ func RegisterCustomerServiceHandler(ctx context.Context, mux *runtime.ServeMux, 
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "CustomerServiceClient" to call the correct interceptors.
 func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CustomerServiceClient) error {
-
 	mux.Handle("POST", pattern_CustomerService_AddAddressToCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -2787,7 +2704,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_AddAddressToCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_AddSocialMediaHandle_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2807,7 +2723,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_AddSocialMediaHandle_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_CreateCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2827,7 +2742,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_CreateCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_CreateCreditLimitOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2847,7 +2761,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_CreateCreditLimitOrder_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CustomerService_CreateUserCustomerLink_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2867,7 +2780,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_CreateUserCustomerLink_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CustomerService_DeleteCustomerAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2887,7 +2799,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_DeleteCustomerAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CustomerService_DeleteTaxResidence_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2907,7 +2818,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_DeleteTaxResidence_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCRMEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2927,7 +2837,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCRMEvents_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCreditLimitOrderByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2947,7 +2856,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCreditLimitOrderByID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCreditLimitOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2967,7 +2875,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCreditLimitOrder_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerAddresses_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2987,7 +2894,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerAddresses_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerSocialMediaHandles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3007,7 +2913,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerSocialMediaHandles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerByCustomerID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3027,7 +2932,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerByCustomerID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomerByCustomerNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3047,7 +2951,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomerByCustomerNumber_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomersForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3067,7 +2970,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomersForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetCustomersForCurrentUserAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3087,7 +2989,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetFirehoseCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3107,7 +3008,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetFirehoseCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CustomerService_GetTaxResidenceOfCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3127,7 +3027,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_GetTaxResidenceOfCustomer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3147,7 +3046,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3167,7 +3065,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerBranch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerCreditLimit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3187,7 +3084,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerCreditLimit_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerCreditRatingAndSource_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3207,7 +3103,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerEmail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3227,7 +3122,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerEmail_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerIdentity_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3247,7 +3141,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerIdentity_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerMobileNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3267,7 +3160,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerMobileNumber_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3287,7 +3179,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerNumber_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerOtherData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3307,7 +3198,6 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_CustomerService_UpdateCustomerOtherData_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

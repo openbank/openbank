@@ -1,5 +1,4 @@
-KYC API v1.0.0
-==============
+# KYC API v1.0.0
 
 Provides create and read operations on the KYC resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the KYC resource.
 
 * Base Path ``
 
-Add KYC check {#method-put-addkyccheck}
----------------------------------------
+## Add KYC check {#method-put-addkyccheck}
 
 Add KYC check for the customer specified
 
@@ -123,8 +121,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Add KYC document {#method-put-addkycdocument}
----------------------------------------------
+## Add KYC document {#method-put-addkycdocument}
 
 Add KYC document for the customer specified
 
@@ -241,8 +238,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Add KYC media {#method-put-addkycmedia}
----------------------------------------
+## Add KYC media {#method-put-addkycmedia}
 
 Add KYC media for the customer specified
 
@@ -353,8 +349,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Add KYC status {#method-put-addkycstatus}
------------------------------------------
+## Add KYC status {#method-put-addkycstatus}
 
 Add KYC status for the customer specified
 
@@ -446,8 +441,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get Customer KYC check {#method-get-getcustomerkyccheck}
---------------------------------------------------------
+## Get Customer KYC check {#method-get-getcustomerkyccheck}
 
 Get Customer KYC check fot the customer
 
@@ -534,8 +528,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get Customer KYC documents {#method-get-getcustomerkycdocument}
----------------------------------------------------------------
+## Get Customer KYC documents {#method-get-getcustomerkycdocument}
 
 Get Customer KYC documents fot the customer
 
@@ -623,8 +616,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get Customer KYC statuses {#method-get-getcustomerkycstatus}
-------------------------------------------------------------
+## Get Customer KYC statuses {#method-get-getcustomerkycstatus}
 
 Get Customer KYC statuses fot the customer
 
@@ -699,8 +691,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get Customer KYC media {#method-get-getkycmedia}
-------------------------------------------------
+## Get Customer KYC media {#method-get-getkycmedia}
 
 Get Customer KYC media fot the customer
 

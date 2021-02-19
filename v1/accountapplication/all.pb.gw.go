@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_AccountApplicationService_CreateAccountApplication_0(ctx context.Context, marshaler runtime.Marshaler, client AccountApplicationServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateAccountApplicationRequest
@@ -45,7 +47,6 @@ func request_AccountApplicationService_CreateAccountApplication_0(ctx context.Co
 
 	msg, err := client.CreateAccountApplication(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_AccountApplicationService_CreateAccountApplication_0(ctx context.Context, marshaler runtime.Marshaler, server AccountApplicationServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -62,7 +63,6 @@ func local_request_AccountApplicationService_CreateAccountApplication_0(ctx cont
 
 	msg, err := server.CreateAccountApplication(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_AccountApplicationService_GetAccountApplication_0(ctx context.Context, marshaler runtime.Marshaler, client AccountApplicationServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -89,7 +89,6 @@ func request_AccountApplicationService_GetAccountApplication_0(ctx context.Conte
 
 	msg, err := client.GetAccountApplication(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_AccountApplicationService_GetAccountApplication_0(ctx context.Context, marshaler runtime.Marshaler, server AccountApplicationServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -116,12 +115,9 @@ func local_request_AccountApplicationService_GetAccountApplication_0(ctx context
 
 	msg, err := server.GetAccountApplication(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_AccountApplicationService_GetAccountApplications_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_AccountApplicationService_GetAccountApplications_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_AccountApplicationService_GetAccountApplications_0(ctx context.Context, marshaler runtime.Marshaler, client AccountApplicationServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAccountApplicationsRequest
@@ -136,7 +132,6 @@ func request_AccountApplicationService_GetAccountApplications_0(ctx context.Cont
 
 	msg, err := client.GetAccountApplications(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_AccountApplicationService_GetAccountApplications_0(ctx context.Context, marshaler runtime.Marshaler, server AccountApplicationServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -149,7 +144,6 @@ func local_request_AccountApplicationService_GetAccountApplications_0(ctx contex
 
 	msg, err := server.GetAccountApplications(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_AccountApplicationService_UpdateAccountApplicationStatus_0(ctx context.Context, marshaler runtime.Marshaler, client AccountApplicationServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -184,7 +178,6 @@ func request_AccountApplicationService_UpdateAccountApplicationStatus_0(ctx cont
 
 	msg, err := client.UpdateAccountApplicationStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_AccountApplicationService_UpdateAccountApplicationStatus_0(ctx context.Context, marshaler runtime.Marshaler, server AccountApplicationServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -219,14 +212,12 @@ func local_request_AccountApplicationService_UpdateAccountApplicationStatus_0(ct
 
 	msg, err := server.UpdateAccountApplicationStatus(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterAccountApplicationServiceHandlerServer registers the http handlers for service AccountApplicationService to "mux".
 // UnaryRPC     :call AccountApplicationServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterAccountApplicationServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AccountApplicationServiceServer) error {
-
 	mux.Handle("POST", pattern_AccountApplicationService_CreateAccountApplication_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -244,7 +235,6 @@ func RegisterAccountApplicationServiceHandlerServer(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_CreateAccountApplication_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_AccountApplicationService_GetAccountApplication_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -264,7 +254,6 @@ func RegisterAccountApplicationServiceHandlerServer(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_GetAccountApplication_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_AccountApplicationService_GetAccountApplications_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -284,7 +273,6 @@ func RegisterAccountApplicationServiceHandlerServer(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_GetAccountApplications_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_AccountApplicationService_UpdateAccountApplicationStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -304,7 +292,6 @@ func RegisterAccountApplicationServiceHandlerServer(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_UpdateAccountApplicationStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -347,7 +334,6 @@ func RegisterAccountApplicationServiceHandler(ctx context.Context, mux *runtime.
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "AccountApplicationServiceClient" to call the correct interceptors.
 func RegisterAccountApplicationServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AccountApplicationServiceClient) error {
-
 	mux.Handle("POST", pattern_AccountApplicationService_CreateAccountApplication_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -365,7 +351,6 @@ func RegisterAccountApplicationServiceHandlerClient(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_CreateAccountApplication_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_AccountApplicationService_GetAccountApplication_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -385,7 +370,6 @@ func RegisterAccountApplicationServiceHandlerClient(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_GetAccountApplication_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_AccountApplicationService_GetAccountApplications_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -405,7 +389,6 @@ func RegisterAccountApplicationServiceHandlerClient(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_GetAccountApplications_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_AccountApplicationService_UpdateAccountApplicationStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -425,7 +408,6 @@ func RegisterAccountApplicationServiceHandlerClient(ctx context.Context, mux *ru
 		}
 
 		forward_AccountApplicationService_UpdateAccountApplicationStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

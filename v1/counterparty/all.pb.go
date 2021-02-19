@@ -6,6 +6,8 @@ package counterparty
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	types "github.com/openbank/openbank/v1/types"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -101,15 +104,19 @@ func (*CounterParty) Descriptor() ([]byte, []int) {
 func (m *CounterParty) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CounterParty.Unmarshal(m, b)
 }
+
 func (m *CounterParty) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CounterParty.Marshal(b, m, deterministic)
 }
+
 func (m *CounterParty) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CounterParty.Merge(m, src)
 }
+
 func (m *CounterParty) XXX_Size() int {
 	return xxx_messageInfo_CounterParty.Size(m)
 }
+
 func (m *CounterParty) XXX_DiscardUnknown() {
 	xxx_messageInfo_CounterParty.DiscardUnknown(m)
 }
@@ -228,15 +235,19 @@ func (*Bespoke) Descriptor() ([]byte, []int) {
 func (m *Bespoke) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Bespoke.Unmarshal(m, b)
 }
+
 func (m *Bespoke) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Bespoke.Marshal(b, m, deterministic)
 }
+
 func (m *Bespoke) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Bespoke.Merge(m, src)
 }
+
 func (m *Bespoke) XXX_Size() int {
 	return xxx_messageInfo_Bespoke.Size(m)
 }
+
 func (m *Bespoke) XXX_DiscardUnknown() {
 	xxx_messageInfo_Bespoke.DiscardUnknown(m)
 }
@@ -282,15 +293,19 @@ func (*Metadata) Descriptor() ([]byte, []int) {
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Metadata.Unmarshal(m, b)
 }
+
 func (m *Metadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Metadata.Marshal(b, m, deterministic)
 }
+
 func (m *Metadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Metadata.Merge(m, src)
 }
+
 func (m *Metadata) XXX_Size() int {
 	return xxx_messageInfo_Metadata.Size(m)
 }
+
 func (m *Metadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_Metadata.DiscardUnknown(m)
 }
@@ -382,15 +397,19 @@ func (*CreateCounterPartyRequest) Descriptor() ([]byte, []int) {
 func (m *CreateCounterPartyRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCounterPartyRequest.Unmarshal(m, b)
 }
+
 func (m *CreateCounterPartyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCounterPartyRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCounterPartyRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCounterPartyRequest.Merge(m, src)
 }
+
 func (m *CreateCounterPartyRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateCounterPartyRequest.Size(m)
 }
+
 func (m *CreateCounterPartyRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCounterPartyRequest.DiscardUnknown(m)
 }
@@ -502,15 +521,19 @@ func (*CreateCounterPartyResponse) Descriptor() ([]byte, []int) {
 func (m *CreateCounterPartyResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCounterPartyResponse.Unmarshal(m, b)
 }
+
 func (m *CreateCounterPartyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCounterPartyResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCounterPartyResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCounterPartyResponse.Merge(m, src)
 }
+
 func (m *CreateCounterPartyResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateCounterPartyResponse.Size(m)
 }
+
 func (m *CreateCounterPartyResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCounterPartyResponse.DiscardUnknown(m)
 }
@@ -563,15 +586,19 @@ func (*GetCounterPartyRequest) Descriptor() ([]byte, []int) {
 func (m *GetCounterPartyRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCounterPartyRequest.Unmarshal(m, b)
 }
+
 func (m *GetCounterPartyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCounterPartyRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCounterPartyRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCounterPartyRequest.Merge(m, src)
 }
+
 func (m *GetCounterPartyRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCounterPartyRequest.Size(m)
 }
+
 func (m *GetCounterPartyRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCounterPartyRequest.DiscardUnknown(m)
 }
@@ -606,15 +633,19 @@ func (*GetCounterPartiesRequest) Descriptor() ([]byte, []int) {
 func (m *GetCounterPartiesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCounterPartiesRequest.Unmarshal(m, b)
 }
+
 func (m *GetCounterPartiesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCounterPartiesRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCounterPartiesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCounterPartiesRequest.Merge(m, src)
 }
+
 func (m *GetCounterPartiesRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCounterPartiesRequest.Size(m)
 }
+
 func (m *GetCounterPartiesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCounterPartiesRequest.DiscardUnknown(m)
 }
@@ -654,15 +685,19 @@ func (*GetCounterPartiesResponse) Descriptor() ([]byte, []int) {
 func (m *GetCounterPartiesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCounterPartiesResponse.Unmarshal(m, b)
 }
+
 func (m *GetCounterPartiesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCounterPartiesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCounterPartiesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCounterPartiesResponse.Merge(m, src)
 }
+
 func (m *GetCounterPartiesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCounterPartiesResponse.Size(m)
 }
+
 func (m *GetCounterPartiesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCounterPartiesResponse.DiscardUnknown(m)
 }
@@ -694,15 +729,19 @@ func (*GetOtherAccountByIDRequest) Descriptor() ([]byte, []int) {
 func (m *GetOtherAccountByIDRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetOtherAccountByIDRequest.Unmarshal(m, b)
 }
+
 func (m *GetOtherAccountByIDRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetOtherAccountByIDRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetOtherAccountByIDRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetOtherAccountByIDRequest.Merge(m, src)
 }
+
 func (m *GetOtherAccountByIDRequest) XXX_Size() int {
 	return xxx_messageInfo_GetOtherAccountByIDRequest.Size(m)
 }
+
 func (m *GetOtherAccountByIDRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetOtherAccountByIDRequest.DiscardUnknown(m)
 }
@@ -740,15 +779,19 @@ func (*GetOtherAccountByIDResponse) Descriptor() ([]byte, []int) {
 func (m *GetOtherAccountByIDResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetOtherAccountByIDResponse.Unmarshal(m, b)
 }
+
 func (m *GetOtherAccountByIDResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetOtherAccountByIDResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetOtherAccountByIDResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetOtherAccountByIDResponse.Merge(m, src)
 }
+
 func (m *GetOtherAccountByIDResponse) XXX_Size() int {
 	return xxx_messageInfo_GetOtherAccountByIDResponse.Size(m)
 }
+
 func (m *GetOtherAccountByIDResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetOtherAccountByIDResponse.DiscardUnknown(m)
 }
@@ -783,15 +826,19 @@ func (*OtherAccount) Descriptor() ([]byte, []int) {
 func (m *OtherAccount) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_OtherAccount.Unmarshal(m, b)
 }
+
 func (m *OtherAccount) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_OtherAccount.Marshal(b, m, deterministic)
 }
+
 func (m *OtherAccount) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_OtherAccount.Merge(m, src)
 }
+
 func (m *OtherAccount) XXX_Size() int {
 	return xxx_messageInfo_OtherAccount.Size(m)
 }
+
 func (m *OtherAccount) XXX_DiscardUnknown() {
 	xxx_messageInfo_OtherAccount.DiscardUnknown(m)
 }
@@ -850,15 +897,19 @@ func (*GetOtherAccountsRequest) Descriptor() ([]byte, []int) {
 func (m *GetOtherAccountsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetOtherAccountsRequest.Unmarshal(m, b)
 }
+
 func (m *GetOtherAccountsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetOtherAccountsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetOtherAccountsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetOtherAccountsRequest.Merge(m, src)
 }
+
 func (m *GetOtherAccountsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetOtherAccountsRequest.Size(m)
 }
+
 func (m *GetOtherAccountsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetOtherAccountsRequest.DiscardUnknown(m)
 }
@@ -889,15 +940,19 @@ func (*GetOtherAccountsResponse) Descriptor() ([]byte, []int) {
 func (m *GetOtherAccountsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetOtherAccountsResponse.Unmarshal(m, b)
 }
+
 func (m *GetOtherAccountsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetOtherAccountsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetOtherAccountsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetOtherAccountsResponse.Merge(m, src)
 }
+
 func (m *GetOtherAccountsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetOtherAccountsResponse.Size(m)
 }
+
 func (m *GetOtherAccountsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetOtherAccountsResponse.DiscardUnknown(m)
 }
@@ -929,15 +984,19 @@ func (*Holder) Descriptor() ([]byte, []int) {
 func (m *Holder) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Holder.Unmarshal(m, b)
 }
+
 func (m *Holder) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Holder.Marshal(b, m, deterministic)
 }
+
 func (m *Holder) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Holder.Merge(m, src)
 }
+
 func (m *Holder) XXX_Size() int {
 	return xxx_messageInfo_Holder.Size(m)
 }
+
 func (m *Holder) XXX_DiscardUnknown() {
 	xxx_messageInfo_Holder.DiscardUnknown(m)
 }
@@ -976,15 +1035,19 @@ func (*BankRouting) Descriptor() ([]byte, []int) {
 func (m *BankRouting) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BankRouting.Unmarshal(m, b)
 }
+
 func (m *BankRouting) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BankRouting.Marshal(b, m, deterministic)
 }
+
 func (m *BankRouting) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BankRouting.Merge(m, src)
 }
+
 func (m *BankRouting) XXX_Size() int {
 	return xxx_messageInfo_BankRouting.Size(m)
 }
+
 func (m *BankRouting) XXX_DiscardUnknown() {
 	xxx_messageInfo_BankRouting.DiscardUnknown(m)
 }
@@ -1023,15 +1086,19 @@ func (*AccountRoutings) Descriptor() ([]byte, []int) {
 func (m *AccountRoutings) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AccountRoutings.Unmarshal(m, b)
 }
+
 func (m *AccountRoutings) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AccountRoutings.Marshal(b, m, deterministic)
 }
+
 func (m *AccountRoutings) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AccountRoutings.Merge(m, src)
 }
+
 func (m *AccountRoutings) XXX_Size() int {
 	return xxx_messageInfo_AccountRoutings.Size(m)
 }
+
 func (m *AccountRoutings) XXX_DiscardUnknown() {
 	xxx_messageInfo_AccountRoutings.DiscardUnknown(m)
 }
@@ -1070,15 +1137,19 @@ func (*User) Descriptor() ([]byte, []int) {
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
 }
+
 func (m *User) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_User.Marshal(b, m, deterministic)
 }
+
 func (m *User) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_User.Merge(m, src)
 }
+
 func (m *User) XXX_Size() int {
 	return xxx_messageInfo_User.Size(m)
 }
+
 func (m *User) XXX_DiscardUnknown() {
 	xxx_messageInfo_User.DiscardUnknown(m)
 }
@@ -1263,13 +1334,15 @@ var fileDescriptor_01531cfc5c40089a = []byte{
 	0xcf, 0xc0, 0xda, 0x49, 0x17, 0x51, 0x58, 0x7c, 0x80, 0x4d, 0xdc, 0x21, 0x29, 0x18, 0xe7, 0x6d,
 	0xe6, 0xda, 0x61, 0x8b, 0x46, 0x1a, 0xde, 0xfd, 0x6c, 0x3d, 0xfb, 0x61, 0xe4, 0xa3, 0xe7, 0xf7,
 	0xb2, 0x99, 0xe7, 0xd9, 0xcc, 0x8b, 0x6c, 0xe6, 0x67, 0xd9, 0xcc, 0x1f, 0xb2, 0x99, 0xbf, 0x67,
-	0x33, 0xbf, 0x53, 0x32, 0xad, 0xbc, 0xfb, 0x4d, 0xf2, 0xc6, 0x3f, 0x03, 0x00, 0x00, 0xff, 0xff,
-	0xa9, 0x00, 0xaa, 0x34, 0x58, 0x1d, 0x00, 0x00,
+	0xb3, 0xbf, 0x53, 0x32, 0xad, 0xbc, 0xfb, 0x4d, 0xf2, 0xc6, 0x3f, 0x03, 0x00, 0x00, 0xff, 0xff,
+	0xc6, 0x4c, 0x0f, 0xaf, 0x58, 0x1d, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1359,21 +1432,24 @@ type CounterPartyServiceServer interface {
 }
 
 // UnimplementedCounterPartyServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedCounterPartyServiceServer struct {
-}
+type UnimplementedCounterPartyServiceServer struct{}
 
 func (*UnimplementedCounterPartyServiceServer) CreateCounterParty(ctx context.Context, req *CreateCounterPartyRequest) (*CreateCounterPartyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCounterParty not implemented")
 }
+
 func (*UnimplementedCounterPartyServiceServer) GetCounterParty(ctx context.Context, req *GetCounterPartyRequest) (*CounterParty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCounterParty not implemented")
 }
+
 func (*UnimplementedCounterPartyServiceServer) GetCounterParties(ctx context.Context, req *GetCounterPartiesRequest) (*GetCounterPartiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCounterParties not implemented")
 }
+
 func (*UnimplementedCounterPartyServiceServer) GetOtherAccountByID(ctx context.Context, req *GetOtherAccountByIDRequest) (*GetOtherAccountByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOtherAccountByID not implemented")
 }
+
 func (*UnimplementedCounterPartyServiceServer) GetOtherAccounts(ctx context.Context, req *GetOtherAccountsRequest) (*GetOtherAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOtherAccounts not implemented")
 }

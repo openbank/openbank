@@ -4,15 +4,15 @@ package accountapplication
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/accountapplication.read": "View accountapplication data",
+	"https://auth.bnk.to/accountapplication.read":  "View accountapplication data",
 	"https://auth.bnk.to/accountapplication.write": "Manage accountapplication data",
 }
 
 var AuthScopes = map[string][]string{
-	"/accountapplication.AccountApplicationService/CreateAccountApplication": []string{"https://auth.bnk.to/accountapplication.write"},
-	"/accountapplication.AccountApplicationService/GetAccountApplication": []string{"https://auth.bnk.to/accountapplication.read"},
-	"/accountapplication.AccountApplicationService/GetAccountApplications": []string{"https://auth.bnk.to/accountapplication.read"},
-	"/accountapplication.AccountApplicationService/UpdateAccountApplicationStatus": []string{"https://auth.bnk.to/accountapplication.write"},
+	"/accountapplication.AccountApplicationService/CreateAccountApplication":       {"https://auth.bnk.to/accountapplication.write"},
+	"/accountapplication.AccountApplicationService/GetAccountApplication":          {"https://auth.bnk.to/accountapplication.read"},
+	"/accountapplication.AccountApplicationService/GetAccountApplications":         {"https://auth.bnk.to/accountapplication.read"},
+	"/accountapplication.AccountApplicationService/UpdateAccountApplicationStatus": {"https://auth.bnk.to/accountapplication.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_CounterPartyService_CreateCounterParty_0(ctx context.Context, marshaler runtime.Marshaler, client CounterPartyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateCounterPartyRequest
@@ -45,7 +47,6 @@ func request_CounterPartyService_CreateCounterParty_0(ctx context.Context, marsh
 
 	msg, err := client.CreateCounterParty(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterPartyService_CreateCounterParty_0(ctx context.Context, marshaler runtime.Marshaler, server CounterPartyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -62,7 +63,6 @@ func local_request_CounterPartyService_CreateCounterParty_0(ctx context.Context,
 
 	msg, err := server.CreateCounterParty(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterPartyService_GetCounterParty_0(ctx context.Context, marshaler runtime.Marshaler, client CounterPartyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -89,7 +89,6 @@ func request_CounterPartyService_GetCounterParty_0(ctx context.Context, marshale
 
 	msg, err := client.GetCounterParty(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterPartyService_GetCounterParty_0(ctx context.Context, marshaler runtime.Marshaler, server CounterPartyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -116,12 +115,9 @@ func local_request_CounterPartyService_GetCounterParty_0(ctx context.Context, ma
 
 	msg, err := server.GetCounterParty(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_CounterPartyService_GetCounterParties_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_CounterPartyService_GetCounterParties_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_CounterPartyService_GetCounterParties_0(ctx context.Context, marshaler runtime.Marshaler, client CounterPartyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCounterPartiesRequest
@@ -136,7 +132,6 @@ func request_CounterPartyService_GetCounterParties_0(ctx context.Context, marsha
 
 	msg, err := client.GetCounterParties(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterPartyService_GetCounterParties_0(ctx context.Context, marshaler runtime.Marshaler, server CounterPartyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -149,7 +144,6 @@ func local_request_CounterPartyService_GetCounterParties_0(ctx context.Context, 
 
 	msg, err := server.GetCounterParties(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context, marshaler runtime.Marshaler, client CounterPartyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -187,7 +181,6 @@ func request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context, mars
 
 	msg, err := client.GetOtherAccountByID(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context, marshaler runtime.Marshaler, server CounterPartyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -225,7 +218,6 @@ func local_request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context
 
 	msg, err := server.GetOtherAccountByID(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, marshaler runtime.Marshaler, client CounterPartyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -252,7 +244,6 @@ func request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, marshal
 
 	msg, err := client.GetOtherAccounts(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, marshaler runtime.Marshaler, server CounterPartyServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -279,14 +270,12 @@ func local_request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, m
 
 	msg, err := server.GetOtherAccounts(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterCounterPartyServiceHandlerServer registers the http handlers for service CounterPartyService to "mux".
 // UnaryRPC     :call CounterPartyServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CounterPartyServiceServer) error {
-
 	mux.Handle("POST", pattern_CounterPartyService_CreateCounterParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -304,7 +293,6 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_CreateCounterParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetCounterParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -324,7 +312,6 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetCounterParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetCounterParties_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -344,7 +331,6 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetCounterParties_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetOtherAccountByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -364,7 +350,6 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetOtherAccountByID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetOtherAccounts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -384,7 +369,6 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetOtherAccounts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -427,7 +411,6 @@ func RegisterCounterPartyServiceHandler(ctx context.Context, mux *runtime.ServeM
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "CounterPartyServiceClient" to call the correct interceptors.
 func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CounterPartyServiceClient) error {
-
 	mux.Handle("POST", pattern_CounterPartyService_CreateCounterParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -445,7 +428,6 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_CreateCounterParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetCounterParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -465,7 +447,6 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetCounterParty_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetCounterParties_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -485,7 +466,6 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetCounterParties_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetOtherAccountByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -505,7 +485,6 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetOtherAccountByID_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterPartyService_GetOtherAccounts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -525,7 +504,6 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		}
 
 		forward_CounterPartyService_GetOtherAccounts_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

@@ -6,6 +6,8 @@ package transactions
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -166,15 +169,19 @@ func (*Transaction) Descriptor() ([]byte, []int) {
 func (m *Transaction) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Transaction.Unmarshal(m, b)
 }
+
 func (m *Transaction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Transaction.Marshal(b, m, deterministic)
 }
+
 func (m *Transaction) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Transaction.Merge(m, src)
 }
+
 func (m *Transaction) XXX_Size() int {
 	return xxx_messageInfo_Transaction.Size(m)
 }
+
 func (m *Transaction) XXX_DiscardUnknown() {
 	xxx_messageInfo_Transaction.DiscardUnknown(m)
 }
@@ -290,15 +297,19 @@ func (*BankAccountInfo) Descriptor() ([]byte, []int) {
 func (m *BankAccountInfo) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BankAccountInfo.Unmarshal(m, b)
 }
+
 func (m *BankAccountInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BankAccountInfo.Marshal(b, m, deterministic)
 }
+
 func (m *BankAccountInfo) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BankAccountInfo.Merge(m, src)
 }
+
 func (m *BankAccountInfo) XXX_Size() int {
 	return xxx_messageInfo_BankAccountInfo.Size(m)
 }
+
 func (m *BankAccountInfo) XXX_DiscardUnknown() {
 	xxx_messageInfo_BankAccountInfo.DiscardUnknown(m)
 }
@@ -352,15 +363,19 @@ func (*GetTransactionRequest) Descriptor() ([]byte, []int) {
 func (m *GetTransactionRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTransactionRequest.Unmarshal(m, b)
 }
+
 func (m *GetTransactionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTransactionRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetTransactionRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTransactionRequest.Merge(m, src)
 }
+
 func (m *GetTransactionRequest) XXX_Size() int {
 	return xxx_messageInfo_GetTransactionRequest.Size(m)
 }
+
 func (m *GetTransactionRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTransactionRequest.DiscardUnknown(m)
 }
@@ -406,15 +421,19 @@ func (*GetTransactionsRequest) Descriptor() ([]byte, []int) {
 func (m *GetTransactionsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTransactionsRequest.Unmarshal(m, b)
 }
+
 func (m *GetTransactionsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTransactionsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetTransactionsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTransactionsRequest.Merge(m, src)
 }
+
 func (m *GetTransactionsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetTransactionsRequest.Size(m)
 }
+
 func (m *GetTransactionsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTransactionsRequest.DiscardUnknown(m)
 }
@@ -493,15 +512,19 @@ func (*GetTransactionsResponse) Descriptor() ([]byte, []int) {
 func (m *GetTransactionsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTransactionsResponse.Unmarshal(m, b)
 }
+
 func (m *GetTransactionsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTransactionsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetTransactionsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTransactionsResponse.Merge(m, src)
 }
+
 func (m *GetTransactionsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetTransactionsResponse.Size(m)
 }
+
 func (m *GetTransactionsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTransactionsResponse.DiscardUnknown(m)
 }
@@ -558,15 +581,19 @@ func (*GetTransactionsByAccountRequest) Descriptor() ([]byte, []int) {
 func (m *GetTransactionsByAccountRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTransactionsByAccountRequest.Unmarshal(m, b)
 }
+
 func (m *GetTransactionsByAccountRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTransactionsByAccountRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetTransactionsByAccountRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTransactionsByAccountRequest.Merge(m, src)
 }
+
 func (m *GetTransactionsByAccountRequest) XXX_Size() int {
 	return xxx_messageInfo_GetTransactionsByAccountRequest.Size(m)
 }
+
 func (m *GetTransactionsByAccountRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTransactionsByAccountRequest.DiscardUnknown(m)
 }
@@ -636,15 +663,19 @@ func (*GetTransactionsByAccountResponse) Descriptor() ([]byte, []int) {
 func (m *GetTransactionsByAccountResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTransactionsByAccountResponse.Unmarshal(m, b)
 }
+
 func (m *GetTransactionsByAccountResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTransactionsByAccountResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetTransactionsByAccountResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTransactionsByAccountResponse.Merge(m, src)
 }
+
 func (m *GetTransactionsByAccountResponse) XXX_Size() int {
 	return xxx_messageInfo_GetTransactionsByAccountResponse.Size(m)
 }
+
 func (m *GetTransactionsByAccountResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTransactionsByAccountResponse.DiscardUnknown(m)
 }
@@ -695,15 +726,19 @@ func (*CreateTransactionRequest) Descriptor() ([]byte, []int) {
 func (m *CreateTransactionRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateTransactionRequest.Unmarshal(m, b)
 }
+
 func (m *CreateTransactionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateTransactionRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateTransactionRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateTransactionRequest.Merge(m, src)
 }
+
 func (m *CreateTransactionRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateTransactionRequest.Size(m)
 }
+
 func (m *CreateTransactionRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateTransactionRequest.DiscardUnknown(m)
 }
@@ -773,15 +808,19 @@ func (*CreateTransactionResponse) Descriptor() ([]byte, []int) {
 func (m *CreateTransactionResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateTransactionResponse.Unmarshal(m, b)
 }
+
 func (m *CreateTransactionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateTransactionResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateTransactionResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateTransactionResponse.Merge(m, src)
 }
+
 func (m *CreateTransactionResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateTransactionResponse.Size(m)
 }
+
 func (m *CreateTransactionResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateTransactionResponse.DiscardUnknown(m)
 }
@@ -825,15 +864,19 @@ func (*ApprovePaymentRequest) Descriptor() ([]byte, []int) {
 func (m *ApprovePaymentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ApprovePaymentRequest.Unmarshal(m, b)
 }
+
 func (m *ApprovePaymentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ApprovePaymentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *ApprovePaymentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ApprovePaymentRequest.Merge(m, src)
 }
+
 func (m *ApprovePaymentRequest) XXX_Size() int {
 	return xxx_messageInfo_ApprovePaymentRequest.Size(m)
 }
+
 func (m *ApprovePaymentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_ApprovePaymentRequest.DiscardUnknown(m)
 }
@@ -883,15 +926,19 @@ func (*ApprovePaymentResponse) Descriptor() ([]byte, []int) {
 func (m *ApprovePaymentResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ApprovePaymentResponse.Unmarshal(m, b)
 }
+
 func (m *ApprovePaymentResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ApprovePaymentResponse.Marshal(b, m, deterministic)
 }
+
 func (m *ApprovePaymentResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ApprovePaymentResponse.Merge(m, src)
 }
+
 func (m *ApprovePaymentResponse) XXX_Size() int {
 	return xxx_messageInfo_ApprovePaymentResponse.Size(m)
 }
+
 func (m *ApprovePaymentResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ApprovePaymentResponse.DiscardUnknown(m)
 }
@@ -937,15 +984,19 @@ func (*TFARequest) Descriptor() ([]byte, []int) {
 func (m *TFARequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TFARequest.Unmarshal(m, b)
 }
+
 func (m *TFARequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TFARequest.Marshal(b, m, deterministic)
 }
+
 func (m *TFARequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TFARequest.Merge(m, src)
 }
+
 func (m *TFARequest) XXX_Size() int {
 	return xxx_messageInfo_TFARequest.Size(m)
 }
+
 func (m *TFARequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_TFARequest.DiscardUnknown(m)
 }
@@ -999,15 +1050,19 @@ func (*TFAResponse) Descriptor() ([]byte, []int) {
 func (m *TFAResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TFAResponse.Unmarshal(m, b)
 }
+
 func (m *TFAResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TFAResponse.Marshal(b, m, deterministic)
 }
+
 func (m *TFAResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TFAResponse.Merge(m, src)
 }
+
 func (m *TFAResponse) XXX_Size() int {
 	return xxx_messageInfo_TFAResponse.Size(m)
 }
+
 func (m *TFAResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_TFAResponse.DiscardUnknown(m)
 }
@@ -1042,15 +1097,19 @@ func (*ResendTFARequest) Descriptor() ([]byte, []int) {
 func (m *ResendTFARequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ResendTFARequest.Unmarshal(m, b)
 }
+
 func (m *ResendTFARequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ResendTFARequest.Marshal(b, m, deterministic)
 }
+
 func (m *ResendTFARequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ResendTFARequest.Merge(m, src)
 }
+
 func (m *ResendTFARequest) XXX_Size() int {
 	return xxx_messageInfo_ResendTFARequest.Size(m)
 }
+
 func (m *ResendTFARequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_ResendTFARequest.DiscardUnknown(m)
 }
@@ -1088,15 +1147,19 @@ func (*ResendTFAResponse) Descriptor() ([]byte, []int) {
 func (m *ResendTFAResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ResendTFAResponse.Unmarshal(m, b)
 }
+
 func (m *ResendTFAResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ResendTFAResponse.Marshal(b, m, deterministic)
 }
+
 func (m *ResendTFAResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ResendTFAResponse.Merge(m, src)
 }
+
 func (m *ResendTFAResponse) XXX_Size() int {
 	return xxx_messageInfo_ResendTFAResponse.Size(m)
 }
+
 func (m *ResendTFAResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ResendTFAResponse.DiscardUnknown(m)
 }
@@ -1285,13 +1348,15 @@ var fileDescriptor_1bfcd2b6d09f78a1 = []byte{
 	0x85, 0xcd, 0x23, 0xee, 0x38, 0xb4, 0x38, 0x32, 0x6e, 0xa4, 0xf8, 0x92, 0xa7, 0x3c, 0x9c, 0x55,
 	0xdc, 0x04, 0x22, 0x5d, 0x3f, 0x7e, 0x60, 0xbd, 0x62, 0x6d, 0x58, 0xb7, 0x13, 0x7f, 0x94, 0x7f,
 	0xd7, 0x4a, 0x7d, 0x60, 0xa5, 0x3e, 0xb4, 0x52, 0x3f, 0xb3, 0x52, 0xbf, 0xb3, 0x52, 0x9f, 0x58,
-	0xa9, 0x8f, 0xec, 0x54, 0x3d, 0x6b, 0x7e, 0xb7, 0xbf, 0xf4, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff,
-	0xda, 0xd7, 0x18, 0x2b, 0xf7, 0x1f, 0x00, 0x00,
+	0xd6, 0x47, 0x76, 0xaa, 0x9e, 0x35, 0xbf, 0xdb, 0x5f, 0xfa, 0x6f, 0x00, 0x00, 0x00, 0xff, 0xff,
+	0xb5, 0x9b, 0xbd, 0xb0, 0xf7, 0x1f, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1407,27 +1472,32 @@ type TransactionServiceServer interface {
 }
 
 // UnimplementedTransactionServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedTransactionServiceServer struct {
-}
+type UnimplementedTransactionServiceServer struct{}
 
 func (*UnimplementedTransactionServiceServer) GetTransaction(ctx context.Context, req *GetTransactionRequest) (*Transaction, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransaction not implemented")
 }
+
 func (*UnimplementedTransactionServiceServer) GetTransactions(ctx context.Context, req *GetTransactionsRequest) (*GetTransactionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransactions not implemented")
 }
+
 func (*UnimplementedTransactionServiceServer) GetTransactionsByAccount(ctx context.Context, req *GetTransactionsByAccountRequest) (*GetTransactionsByAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTransactionsByAccount not implemented")
 }
+
 func (*UnimplementedTransactionServiceServer) CreateTransaction(ctx context.Context, req *CreateTransactionRequest) (*CreateTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTransaction not implemented")
 }
+
 func (*UnimplementedTransactionServiceServer) ApprovePayment(ctx context.Context, req *ApprovePaymentRequest) (*ApprovePaymentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ApprovePayment not implemented")
 }
+
 func (*UnimplementedTransactionServiceServer) TFA(ctx context.Context, req *TFARequest) (*TFAResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TFA not implemented")
 }
+
 func (*UnimplementedTransactionServiceServer) ResendTFA(ctx context.Context, req *ResendTFARequest) (*ResendTFAResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ResendTFA not implemented")
 }

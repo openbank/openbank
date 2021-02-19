@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateTagRequest
@@ -85,7 +87,6 @@ func request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshal
 
 	msg, err := client.CreateTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -142,7 +143,6 @@ func local_request_TransactionMetadataService_CreateTag_0(ctx context.Context, m
 
 	msg, err := server.CreateTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -202,7 +202,6 @@ func request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler 
 
 	msg, err := client.GetTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -262,7 +261,6 @@ func local_request_TransactionMetadataService_GetTag_0(ctx context.Context, mars
 
 	msg, err := server.GetTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetTags_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -311,7 +309,6 @@ func request_TransactionMetadataService_GetTags_0(ctx context.Context, marshaler
 
 	msg, err := client.GetTags(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetTags_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -360,7 +357,6 @@ func local_request_TransactionMetadataService_GetTags_0(ctx context.Context, mar
 
 	msg, err := server.GetTags(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_UpdateTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -417,7 +413,6 @@ func request_TransactionMetadataService_UpdateTag_0(ctx context.Context, marshal
 
 	msg, err := client.UpdateTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_UpdateTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -474,7 +469,6 @@ func local_request_TransactionMetadataService_UpdateTag_0(ctx context.Context, m
 
 	msg, err := server.UpdateTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -534,7 +528,6 @@ func request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshal
 
 	msg, err := client.DeleteTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -594,7 +587,6 @@ func local_request_TransactionMetadataService_DeleteTag_0(ctx context.Context, m
 
 	msg, err := server.DeleteTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_CreateImage_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -651,7 +643,6 @@ func request_TransactionMetadataService_CreateImage_0(ctx context.Context, marsh
 
 	msg, err := client.CreateImage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_CreateImage_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -708,7 +699,6 @@ func local_request_TransactionMetadataService_CreateImage_0(ctx context.Context,
 
 	msg, err := server.CreateImage(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetImage_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -768,7 +758,6 @@ func request_TransactionMetadataService_GetImage_0(ctx context.Context, marshale
 
 	msg, err := client.GetImage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetImage_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -828,7 +817,6 @@ func local_request_TransactionMetadataService_GetImage_0(ctx context.Context, ma
 
 	msg, err := server.GetImage(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetImages_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -877,7 +865,6 @@ func request_TransactionMetadataService_GetImages_0(ctx context.Context, marshal
 
 	msg, err := client.GetImages(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetImages_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -926,7 +913,6 @@ func local_request_TransactionMetadataService_GetImages_0(ctx context.Context, m
 
 	msg, err := server.GetImages(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_UpdateImage_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -983,7 +969,6 @@ func request_TransactionMetadataService_UpdateImage_0(ctx context.Context, marsh
 
 	msg, err := client.UpdateImage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_UpdateImage_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1040,7 +1025,6 @@ func local_request_TransactionMetadataService_UpdateImage_0(ctx context.Context,
 
 	msg, err := server.UpdateImage(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1100,7 +1084,6 @@ func request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marsh
 
 	msg, err := client.DeleteImage(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1160,7 +1143,6 @@ func local_request_TransactionMetadataService_DeleteImage_0(ctx context.Context,
 
 	msg, err := server.DeleteImage(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_CreateComment_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1217,7 +1199,6 @@ func request_TransactionMetadataService_CreateComment_0(ctx context.Context, mar
 
 	msg, err := client.CreateComment(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_CreateComment_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1274,7 +1255,6 @@ func local_request_TransactionMetadataService_CreateComment_0(ctx context.Contex
 
 	msg, err := server.CreateComment(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetComment_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1334,7 +1314,6 @@ func request_TransactionMetadataService_GetComment_0(ctx context.Context, marsha
 
 	msg, err := client.GetComment(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetComment_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1394,7 +1373,6 @@ func local_request_TransactionMetadataService_GetComment_0(ctx context.Context, 
 
 	msg, err := server.GetComment(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetComments_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1443,7 +1421,6 @@ func request_TransactionMetadataService_GetComments_0(ctx context.Context, marsh
 
 	msg, err := client.GetComments(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetComments_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1492,7 +1469,6 @@ func local_request_TransactionMetadataService_GetComments_0(ctx context.Context,
 
 	msg, err := server.GetComments(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_UpdateComment_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1549,7 +1525,6 @@ func request_TransactionMetadataService_UpdateComment_0(ctx context.Context, mar
 
 	msg, err := client.UpdateComment(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_UpdateComment_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1606,7 +1581,6 @@ func local_request_TransactionMetadataService_UpdateComment_0(ctx context.Contex
 
 	msg, err := server.UpdateComment(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_DeleteComment_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1666,7 +1640,6 @@ func request_TransactionMetadataService_DeleteComment_0(ctx context.Context, mar
 
 	msg, err := client.DeleteComment(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_DeleteComment_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1726,7 +1699,6 @@ func local_request_TransactionMetadataService_DeleteComment_0(ctx context.Contex
 
 	msg, err := server.DeleteComment(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_CreateNarrative_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1783,7 +1755,6 @@ func request_TransactionMetadataService_CreateNarrative_0(ctx context.Context, m
 
 	msg, err := client.CreateNarrative(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_CreateNarrative_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1840,7 +1811,6 @@ func local_request_TransactionMetadataService_CreateNarrative_0(ctx context.Cont
 
 	msg, err := server.CreateNarrative(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetNarrative_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1900,7 +1870,6 @@ func request_TransactionMetadataService_GetNarrative_0(ctx context.Context, mars
 
 	msg, err := client.GetNarrative(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetNarrative_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1960,7 +1929,6 @@ func local_request_TransactionMetadataService_GetNarrative_0(ctx context.Context
 
 	msg, err := server.GetNarrative(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetNarratives_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2009,7 +1977,6 @@ func request_TransactionMetadataService_GetNarratives_0(ctx context.Context, mar
 
 	msg, err := client.GetNarratives(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetNarratives_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2058,7 +2025,6 @@ func local_request_TransactionMetadataService_GetNarratives_0(ctx context.Contex
 
 	msg, err := server.GetNarratives(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_UpdateNarrative_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2115,7 +2081,6 @@ func request_TransactionMetadataService_UpdateNarrative_0(ctx context.Context, m
 
 	msg, err := client.UpdateNarrative(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_UpdateNarrative_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2172,7 +2137,6 @@ func local_request_TransactionMetadataService_UpdateNarrative_0(ctx context.Cont
 
 	msg, err := server.UpdateNarrative(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2232,7 +2196,6 @@ func request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, m
 
 	msg, err := client.DeleteNarrative(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2292,7 +2255,6 @@ func local_request_TransactionMetadataService_DeleteNarrative_0(ctx context.Cont
 
 	msg, err := server.DeleteNarrative(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_CreateWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2349,7 +2311,6 @@ func request_TransactionMetadataService_CreateWhereTag_0(ctx context.Context, ma
 
 	msg, err := client.CreateWhereTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_CreateWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2406,7 +2367,6 @@ func local_request_TransactionMetadataService_CreateWhereTag_0(ctx context.Conte
 
 	msg, err := server.CreateWhereTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2466,7 +2426,6 @@ func request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marsh
 
 	msg, err := client.GetWhereTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2526,7 +2485,6 @@ func local_request_TransactionMetadataService_GetWhereTag_0(ctx context.Context,
 
 	msg, err := server.GetWhereTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_GetWhereTags_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2575,7 +2533,6 @@ func request_TransactionMetadataService_GetWhereTags_0(ctx context.Context, mars
 
 	msg, err := client.GetWhereTags(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_GetWhereTags_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2624,7 +2581,6 @@ func local_request_TransactionMetadataService_GetWhereTags_0(ctx context.Context
 
 	msg, err := server.GetWhereTags(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2681,7 +2637,6 @@ func request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Context, ma
 
 	msg, err := client.UpdateWhereTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2738,7 +2693,6 @@ func local_request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Conte
 
 	msg, err := server.UpdateWhereTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2798,7 +2752,6 @@ func request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, ma
 
 	msg, err := client.DeleteWhereTag(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2858,14 +2811,12 @@ func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Conte
 
 	msg, err := server.DeleteWhereTag(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterTransactionMetadataServiceHandlerServer registers the http handlers for service TransactionMetadataService to "mux".
 // UnaryRPC     :call TransactionMetadataServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server TransactionMetadataServiceServer) error {
-
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -2883,7 +2834,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2903,7 +2853,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetTags_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2923,7 +2872,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetTags_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2943,7 +2891,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2963,7 +2910,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -2983,7 +2929,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3003,7 +2948,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetImages_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3023,7 +2967,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetImages_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3043,7 +2986,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3063,7 +3005,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3083,7 +3024,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3103,7 +3043,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetComments_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3123,7 +3062,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetComments_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3143,7 +3081,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3163,7 +3100,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3183,7 +3119,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3203,7 +3138,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetNarratives_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3223,7 +3157,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetNarratives_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3243,7 +3176,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3263,7 +3195,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3283,7 +3214,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3303,7 +3233,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetWhereTags_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3323,7 +3252,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetWhereTags_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3343,7 +3271,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3363,7 +3290,6 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -3406,7 +3332,6 @@ func RegisterTransactionMetadataServiceHandler(ctx context.Context, mux *runtime
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "TransactionMetadataServiceClient" to call the correct interceptors.
 func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client TransactionMetadataServiceClient) error {
-
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -3424,7 +3349,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3444,7 +3368,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetTags_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3464,7 +3387,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetTags_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3484,7 +3406,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3504,7 +3425,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3524,7 +3444,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3544,7 +3463,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetImages_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3564,7 +3482,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetImages_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3584,7 +3501,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3604,7 +3520,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteImage_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3624,7 +3539,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3644,7 +3558,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetComments_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3664,7 +3577,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetComments_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3684,7 +3596,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3704,7 +3615,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteComment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3724,7 +3634,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3744,7 +3653,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetNarratives_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3764,7 +3672,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetNarratives_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3784,7 +3691,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3804,7 +3710,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteNarrative_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3824,7 +3729,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_CreateWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3844,7 +3748,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionMetadataService_GetWhereTags_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3864,7 +3767,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_GetWhereTags_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3884,7 +3786,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_UpdateWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -3904,7 +3805,6 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		}
 
 		forward_TransactionMetadataService_DeleteWhereTag_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

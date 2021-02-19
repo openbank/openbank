@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_CardService_CreateCard_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateCardRequest
@@ -45,7 +47,6 @@ func request_CardService_CreateCard_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.CreateCard(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_CreateCard_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -62,7 +63,6 @@ func local_request_CardService_CreateCard_0(ctx context.Context, marshaler runti
 
 	msg, err := server.CreateCard(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CardService_CreateCardAttribute_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -79,7 +79,6 @@ func request_CardService_CreateCardAttribute_0(ctx context.Context, marshaler ru
 
 	msg, err := client.CreateCardAttribute(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_CreateCardAttribute_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -96,7 +95,6 @@ func local_request_CardService_CreateCardAttribute_0(ctx context.Context, marsha
 
 	msg, err := server.CreateCardAttribute(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CardService_GetCard_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -123,7 +121,6 @@ func request_CardService_GetCard_0(ctx context.Context, marshaler runtime.Marsha
 
 	msg, err := client.GetCard(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_GetCard_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -150,7 +147,6 @@ func local_request_CardService_GetCard_0(ctx context.Context, marshaler runtime.
 
 	msg, err := server.GetCard(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CardService_GetUserCards_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -159,7 +155,6 @@ func request_CardService_GetUserCards_0(ctx context.Context, marshaler runtime.M
 
 	msg, err := client.GetUserCards(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_GetUserCards_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -168,7 +163,6 @@ func local_request_CardService_GetUserCards_0(ctx context.Context, marshaler run
 
 	msg, err := server.GetUserCards(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CardService_UpdateCardStatus_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -203,7 +197,6 @@ func request_CardService_UpdateCardStatus_0(ctx context.Context, marshaler runti
 
 	msg, err := client.UpdateCardStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_UpdateCardStatus_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -238,7 +231,6 @@ func local_request_CardService_UpdateCardStatus_0(ctx context.Context, marshaler
 
 	msg, err := server.UpdateCardStatus(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CardService_UpdateCardAccessStatus_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -273,7 +265,6 @@ func request_CardService_UpdateCardAccessStatus_0(ctx context.Context, marshaler
 
 	msg, err := client.UpdateCardAccessStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_UpdateCardAccessStatus_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -308,7 +299,6 @@ func local_request_CardService_UpdateCardAccessStatus_0(ctx context.Context, mar
 
 	msg, err := server.UpdateCardAccessStatus(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CardService_DeleteCard_0(ctx context.Context, marshaler runtime.Marshaler, client CardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -335,7 +325,6 @@ func request_CardService_DeleteCard_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.DeleteCard(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CardService_DeleteCard_0(ctx context.Context, marshaler runtime.Marshaler, server CardServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -362,14 +351,12 @@ func local_request_CardService_DeleteCard_0(ctx context.Context, marshaler runti
 
 	msg, err := server.DeleteCard(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterCardServiceHandlerServer registers the http handlers for service CardService to "mux".
 // UnaryRPC     :call CardServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CardServiceServer) error {
-
 	mux.Handle("POST", pattern_CardService_CreateCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -387,7 +374,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_CreateCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CardService_CreateCardAttribute_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -407,7 +393,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_CreateCardAttribute_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CardService_GetCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -427,7 +412,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_GetCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CardService_GetUserCards_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -447,7 +431,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_GetUserCards_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CardService_UpdateCardStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -467,7 +450,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_UpdateCardStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CardService_UpdateCardAccessStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -487,7 +469,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_UpdateCardAccessStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CardService_DeleteCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -507,7 +488,6 @@ func RegisterCardServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_DeleteCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -550,7 +530,6 @@ func RegisterCardServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "CardServiceClient" to call the correct interceptors.
 func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CardServiceClient) error {
-
 	mux.Handle("POST", pattern_CardService_CreateCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -568,7 +547,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_CreateCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CardService_CreateCardAttribute_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -588,7 +566,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_CreateCardAttribute_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CardService_GetCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -608,7 +585,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_GetCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CardService_GetUserCards_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -628,7 +604,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_GetUserCards_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CardService_UpdateCardStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -648,7 +623,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_UpdateCardStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CardService_UpdateCardAccessStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -668,7 +642,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_UpdateCardAccessStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CardService_DeleteCard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -688,7 +661,6 @@ func RegisterCardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_CardService_DeleteCard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

@@ -1,5 +1,4 @@
-ATM API v1.0.0
-==============
+# ATM API v1.0.0
 
 Provides create and read operations on the ATM resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the ATM resource.
 
 * Base Path ``
 
-Create an ATM {#method-post-createatm}
---------------------------------------
+## Create an ATM {#method-post-createatm}
 
 Creates a new ATM and returns its id.
 
@@ -64,10 +62,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-post-createatm}
 
@@ -96,8 +94,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve an ATM {#method-get-getatm}
-------------------------------------
+## Retrieve an ATM {#method-get-getatm}
 
 Retrieves information regarding a specific ATM, selected by the supplied ID.
 
@@ -145,10 +142,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -185,8 +182,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available ATMs {#method-get-getatms}
--------------------------------------------------
+## Retrieve all available ATMs {#method-get-getatms}
 
 Retrieves information regarding all the available ATMs.
 
@@ -234,10 +230,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 

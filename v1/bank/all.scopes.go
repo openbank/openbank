@@ -4,17 +4,17 @@ package bank
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/bank.read": "View bank data",
+	"https://auth.bnk.to/bank.read":  "View bank data",
 	"https://auth.bnk.to/bank.write": "Manage bank data",
 }
 
 var AuthScopes = map[string][]string{
-	"/bank.BankService/CreateBank": []string{"https://auth.bnk.to/bank.write"},
-	"/bank.BankService/CreateTranscationTypeAtBank": []string{"https://auth.bnk.to/bank.write"},
-	"/bank.BankService/DeleteBank": []string{"https://auth.bnk.to/bank.write"},
-	"/bank.BankService/GetBank": []string{"https://auth.bnk.to/bank.read"},
-	"/bank.BankService/GetBanks": []string{"https://auth.bnk.to/bank.read"},
-	"/bank.BankService/UpdateBank": []string{"https://auth.bnk.to/bank.write"},
+	"/bank.BankService/CreateBank":                  {"https://auth.bnk.to/bank.write"},
+	"/bank.BankService/CreateTranscationTypeAtBank": {"https://auth.bnk.to/bank.write"},
+	"/bank.BankService/DeleteBank":                  {"https://auth.bnk.to/bank.write"},
+	"/bank.BankService/GetBank":                     {"https://auth.bnk.to/bank.read"},
+	"/bank.BankService/GetBanks":                    {"https://auth.bnk.to/bank.read"},
+	"/bank.BankService/UpdateBank":                  {"https://auth.bnk.to/bank.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

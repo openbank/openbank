@@ -4,18 +4,18 @@ package card
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/card.read": "View card data",
+	"https://auth.bnk.to/card.read":  "View card data",
 	"https://auth.bnk.to/card.write": "Manage card data",
 }
 
 var AuthScopes = map[string][]string{
-	"/card.CardService/CreateCard": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/CreateCardAttribute": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/DeleteCard": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/GetCard": []string{"https://auth.bnk.to/card.read"},
-	"/card.CardService/GetUserCards": []string{"https://auth.bnk.to/card.read"},
-	"/card.CardService/UpdateCardAccessStatus": []string{"https://auth.bnk.to/card.write"},
-	"/card.CardService/UpdateCardStatus": []string{"https://auth.bnk.to/card.write"},
+	"/card.CardService/CreateCard":             {"https://auth.bnk.to/card.write"},
+	"/card.CardService/CreateCardAttribute":    {"https://auth.bnk.to/card.write"},
+	"/card.CardService/DeleteCard":             {"https://auth.bnk.to/card.write"},
+	"/card.CardService/GetCard":                {"https://auth.bnk.to/card.read"},
+	"/card.CardService/GetUserCards":           {"https://auth.bnk.to/card.read"},
+	"/card.CardService/UpdateCardAccessStatus": {"https://auth.bnk.to/card.write"},
+	"/card.CardService/UpdateCardStatus":       {"https://auth.bnk.to/card.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

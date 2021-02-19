@@ -1,5 +1,4 @@
-Statements API v1.0.0
-=====================
+# Statements API v1.0.0
 
 Provides CRUD operations on the statement resource.
 
@@ -7,8 +6,7 @@ Provides CRUD operations on the statement resource.
 
 * Base Path ``
 
-Retrieve a statement {#method-get-getstatement}
------------------------------------------------
+## Retrieve a statement {#method-get-getstatement}
 
 GetStatement retrieves a specific statement, specified by its ID.
 

@@ -1,15 +1,19 @@
+strip_enum_type_names=true
+
 [protoc]
 version=v3.9.1
 
 [generate go]
 plugins=grpc
 json_tag_postproc=true
+plugin_version=v1.3.2
 
-[generate]
-command=protoc-gen-grpc-gateway
+[generate grpc-gateway]
+plugin_version=v1.11.3
 
 [generate swagger]
 json_names_for_fields=true
+plugin_version=v1.11.3
 
 [generate]
 command=docgen

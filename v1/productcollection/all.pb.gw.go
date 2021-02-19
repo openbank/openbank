@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_ProductCollectionService_CreateProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, client ProductCollectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateProductCollectionRequest
@@ -74,7 +76,6 @@ func request_ProductCollectionService_CreateProductCollection_0(ctx context.Cont
 
 	msg, err := client.CreateProductCollection(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ProductCollectionService_CreateProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, server ProductCollectionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -120,7 +121,6 @@ func local_request_ProductCollectionService_CreateProductCollection_0(ctx contex
 
 	msg, err := server.CreateProductCollection(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ProductCollectionService_GetProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, client ProductCollectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -158,7 +158,6 @@ func request_ProductCollectionService_GetProductCollection_0(ctx context.Context
 
 	msg, err := client.GetProductCollection(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ProductCollectionService_GetProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, server ProductCollectionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -196,7 +195,6 @@ func local_request_ProductCollectionService_GetProductCollection_0(ctx context.C
 
 	msg, err := server.GetProductCollection(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ProductCollectionService_UpdateProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, client ProductCollectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -242,7 +240,6 @@ func request_ProductCollectionService_UpdateProductCollection_0(ctx context.Cont
 
 	msg, err := client.UpdateProductCollection(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ProductCollectionService_UpdateProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, server ProductCollectionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -288,7 +285,6 @@ func local_request_ProductCollectionService_UpdateProductCollection_0(ctx contex
 
 	msg, err := server.UpdateProductCollection(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ProductCollectionService_DeleteProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, client ProductCollectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -326,7 +322,6 @@ func request_ProductCollectionService_DeleteProductCollection_0(ctx context.Cont
 
 	msg, err := client.DeleteProductCollection(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ProductCollectionService_DeleteProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, server ProductCollectionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -364,14 +359,12 @@ func local_request_ProductCollectionService_DeleteProductCollection_0(ctx contex
 
 	msg, err := server.DeleteProductCollection(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterProductCollectionServiceHandlerServer registers the http handlers for service ProductCollectionService to "mux".
 // UnaryRPC     :call ProductCollectionServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ProductCollectionServiceServer) error {
-
 	mux.Handle("POST", pattern_ProductCollectionService_CreateProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -389,7 +382,6 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_CreateProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ProductCollectionService_GetProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -409,7 +401,6 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_GetProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_ProductCollectionService_UpdateProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -429,7 +420,6 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_UpdateProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_ProductCollectionService_DeleteProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -449,7 +439,6 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_DeleteProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -492,7 +481,6 @@ func RegisterProductCollectionServiceHandler(ctx context.Context, mux *runtime.S
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "ProductCollectionServiceClient" to call the correct interceptors.
 func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ProductCollectionServiceClient) error {
-
 	mux.Handle("POST", pattern_ProductCollectionService_CreateProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -510,7 +498,6 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_CreateProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ProductCollectionService_GetProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -530,7 +517,6 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_GetProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_ProductCollectionService_UpdateProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -550,7 +536,6 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_UpdateProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_ProductCollectionService_DeleteProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -570,7 +555,6 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		}
 
 		forward_ProductCollectionService_DeleteProductCollection_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

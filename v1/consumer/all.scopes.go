@@ -4,18 +4,18 @@ package consumer
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/consumer.read": "View consumer data",
+	"https://auth.bnk.to/consumer.read":  "View consumer data",
 	"https://auth.bnk.to/consumer.write": "Manage consumer data",
 }
 
 var AuthScopes = map[string][]string{
-	"/consumer.ConsumerService/EnableOrDisableConsumer": []string{"https://auth.bnk.to/consumer.write"},
-	"/consumer.ConsumerService/GetConsumer": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/GetConsumerCallLimits": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/GetConsumers": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/GetConsumersForLoggedInUser": []string{"https://auth.bnk.to/consumer.read"},
-	"/consumer.ConsumerService/SetConsumerCallsLimit": []string{"https://auth.bnk.to/consumer.write"},
-	"/consumer.ConsumerService/UpdateConsumerRedirectURL": []string{"https://auth.bnk.to/consumer.write"},
+	"/consumer.ConsumerService/EnableOrDisableConsumer":     {"https://auth.bnk.to/consumer.write"},
+	"/consumer.ConsumerService/GetConsumer":                 {"https://auth.bnk.to/consumer.read"},
+	"/consumer.ConsumerService/GetConsumerCallLimits":       {"https://auth.bnk.to/consumer.read"},
+	"/consumer.ConsumerService/GetConsumers":                {"https://auth.bnk.to/consumer.read"},
+	"/consumer.ConsumerService/GetConsumersForLoggedInUser": {"https://auth.bnk.to/consumer.read"},
+	"/consumer.ConsumerService/SetConsumerCallsLimit":       {"https://auth.bnk.to/consumer.write"},
+	"/consumer.ConsumerService/UpdateConsumerRedirectURL":   {"https://auth.bnk.to/consumer.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

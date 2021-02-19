@@ -6,6 +6,8 @@ package bank
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -48,15 +51,19 @@ func (*BankRouting) Descriptor() ([]byte, []int) {
 func (m *BankRouting) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_BankRouting.Unmarshal(m, b)
 }
+
 func (m *BankRouting) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_BankRouting.Marshal(b, m, deterministic)
 }
+
 func (m *BankRouting) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_BankRouting.Merge(m, src)
 }
+
 func (m *BankRouting) XXX_Size() int {
 	return xxx_messageInfo_BankRouting.Size(m)
 }
+
 func (m *BankRouting) XXX_DiscardUnknown() {
 	xxx_messageInfo_BankRouting.DiscardUnknown(m)
 }
@@ -110,15 +117,19 @@ func (*Bank) Descriptor() ([]byte, []int) {
 func (m *Bank) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Bank.Unmarshal(m, b)
 }
+
 func (m *Bank) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Bank.Marshal(b, m, deterministic)
 }
+
 func (m *Bank) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Bank.Merge(m, src)
 }
+
 func (m *Bank) XXX_Size() int {
 	return xxx_messageInfo_Bank.Size(m)
 }
+
 func (m *Bank) XXX_DiscardUnknown() {
 	xxx_messageInfo_Bank.DiscardUnknown(m)
 }
@@ -212,15 +223,19 @@ func (*TransactionType) Descriptor() ([]byte, []int) {
 func (m *TransactionType) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TransactionType.Unmarshal(m, b)
 }
+
 func (m *TransactionType) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TransactionType.Marshal(b, m, deterministic)
 }
+
 func (m *TransactionType) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TransactionType.Merge(m, src)
 }
+
 func (m *TransactionType) XXX_Size() int {
 	return xxx_messageInfo_TransactionType.Size(m)
 }
+
 func (m *TransactionType) XXX_DiscardUnknown() {
 	xxx_messageInfo_TransactionType.DiscardUnknown(m)
 }
@@ -295,15 +310,19 @@ func (*CreateBankRequest) Descriptor() ([]byte, []int) {
 func (m *CreateBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateBankRequest.Unmarshal(m, b)
 }
+
 func (m *CreateBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateBankRequest.Merge(m, src)
 }
+
 func (m *CreateBankRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateBankRequest.Size(m)
 }
+
 func (m *CreateBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateBankRequest.DiscardUnknown(m)
 }
@@ -336,15 +355,19 @@ func (*UpdateBankRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateBankRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateBankRequest.Merge(m, src)
 }
+
 func (m *UpdateBankRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateBankRequest.Size(m)
 }
+
 func (m *UpdateBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateBankRequest.DiscardUnknown(m)
 }
@@ -377,15 +400,19 @@ func (*DeleteBankRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteBankRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteBankRequest.Merge(m, src)
 }
+
 func (m *DeleteBankRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteBankRequest.Size(m)
 }
+
 func (m *DeleteBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteBankRequest.DiscardUnknown(m)
 }
@@ -424,15 +451,19 @@ func (*GetBankRequest) Descriptor() ([]byte, []int) {
 func (m *GetBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetBankRequest.Unmarshal(m, b)
 }
+
 func (m *GetBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetBankRequest.Merge(m, src)
 }
+
 func (m *GetBankRequest) XXX_Size() int {
 	return xxx_messageInfo_GetBankRequest.Size(m)
 }
+
 func (m *GetBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetBankRequest.DiscardUnknown(m)
 }
@@ -486,15 +517,19 @@ func (*GetBanksResponse) Descriptor() ([]byte, []int) {
 func (m *GetBanksResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetBanksResponse.Unmarshal(m, b)
 }
+
 func (m *GetBanksResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetBanksResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetBanksResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetBanksResponse.Merge(m, src)
 }
+
 func (m *GetBanksResponse) XXX_Size() int {
 	return xxx_messageInfo_GetBanksResponse.Size(m)
 }
+
 func (m *GetBanksResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetBanksResponse.DiscardUnknown(m)
 }
@@ -528,15 +563,19 @@ func (*CreateTransactionTypeAtBankRequest) Descriptor() ([]byte, []int) {
 func (m *CreateTransactionTypeAtBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateTransactionTypeAtBankRequest.Unmarshal(m, b)
 }
+
 func (m *CreateTransactionTypeAtBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateTransactionTypeAtBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateTransactionTypeAtBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateTransactionTypeAtBankRequest.Merge(m, src)
 }
+
 func (m *CreateTransactionTypeAtBankRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateTransactionTypeAtBankRequest.Size(m)
 }
+
 func (m *CreateTransactionTypeAtBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateTransactionTypeAtBankRequest.DiscardUnknown(m)
 }
@@ -668,13 +707,15 @@ var fileDescriptor_0f46d22d7586d6ab = []byte{
 	0xfa, 0x94, 0x8d, 0x8b, 0x97, 0xdf, 0x88, 0x47, 0xfb, 0x2f, 0xa2, 0x8a, 0xa2, 0xfa, 0xd3, 0x1a,
 	0x06, 0xaf, 0x7c, 0x9b, 0x32, 0xda, 0x85, 0x09, 0x9f, 0xe7, 0x14, 0x37, 0x38, 0x9a, 0xc6, 0x66,
 	0xe6, 0x3c, 0x70, 0xf7, 0xdd, 0x37, 0xcd, 0x17, 0xc4, 0x3b, 0xae, 0xf3, 0xc4, 0x75, 0xde, 0x73,
-	0x9d, 0x3f, 0xb8, 0xce, 0x3f, 0x5d, 0xe7, 0x43, 0xd7, 0xf9, 0xab, 0xe7, 0xb4, 0x8b, 0x66, 0x38,
-	0xdf, 0xfd, 0x6f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x31, 0x53, 0x66, 0x89, 0x8d, 0x10, 0x00, 0x00,
+	0x9d, 0x3f, 0xb8, 0xce, 0x3f, 0x5d, 0xe7, 0x43, 0xd7, 0xfd, 0xab, 0xe7, 0xb4, 0x8b, 0x66, 0x38,
+	0xdf, 0xfd, 0x6f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x5e, 0x1f, 0xc3, 0x12, 0x8d, 0x10, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -779,24 +820,28 @@ type BankServiceServer interface {
 }
 
 // UnimplementedBankServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedBankServiceServer struct {
-}
+type UnimplementedBankServiceServer struct{}
 
 func (*UnimplementedBankServiceServer) GetBank(ctx context.Context, req *GetBankRequest) (*Bank, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBank not implemented")
 }
+
 func (*UnimplementedBankServiceServer) GetBanks(ctx context.Context, req *empty.Empty) (*GetBanksResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBanks not implemented")
 }
+
 func (*UnimplementedBankServiceServer) CreateBank(ctx context.Context, req *CreateBankRequest) (*Bank, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateBank not implemented")
 }
+
 func (*UnimplementedBankServiceServer) UpdateBank(ctx context.Context, req *UpdateBankRequest) (*Bank, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateBank not implemented")
 }
+
 func (*UnimplementedBankServiceServer) DeleteBank(ctx context.Context, req *DeleteBankRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteBank not implemented")
 }
+
 func (*UnimplementedBankServiceServer) CreateTranscationTypeAtBank(ctx context.Context, req *CreateTransactionTypeAtBankRequest) (*TransactionType, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTranscationTypeAtBank not implemented")
 }
