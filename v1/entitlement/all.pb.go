@@ -6,6 +6,8 @@ package entitlement
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -39,6 +42,7 @@ type AddEntitlementRequestForCurrentUserRequest struct {
 func (m *AddEntitlementRequestForCurrentUserRequest) Reset() {
 	*m = AddEntitlementRequestForCurrentUserRequest{}
 }
+
 func (m *AddEntitlementRequestForCurrentUserRequest) String() string {
 	return proto.CompactTextString(m)
 }
@@ -50,15 +54,19 @@ func (*AddEntitlementRequestForCurrentUserRequest) Descriptor() ([]byte, []int) 
 func (m *AddEntitlementRequestForCurrentUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddEntitlementRequestForCurrentUserRequest.Unmarshal(m, b)
 }
+
 func (m *AddEntitlementRequestForCurrentUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddEntitlementRequestForCurrentUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddEntitlementRequestForCurrentUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddEntitlementRequestForCurrentUserRequest.Merge(m, src)
 }
+
 func (m *AddEntitlementRequestForCurrentUserRequest) XXX_Size() int {
 	return xxx_messageInfo_AddEntitlementRequestForCurrentUserRequest.Size(m)
 }
+
 func (m *AddEntitlementRequestForCurrentUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddEntitlementRequestForCurrentUserRequest.DiscardUnknown(m)
 }
@@ -100,15 +108,19 @@ func (*EntitlementRequest) Descriptor() ([]byte, []int) {
 func (m *EntitlementRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EntitlementRequest.Unmarshal(m, b)
 }
+
 func (m *EntitlementRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EntitlementRequest.Marshal(b, m, deterministic)
 }
+
 func (m *EntitlementRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EntitlementRequest.Merge(m, src)
 }
+
 func (m *EntitlementRequest) XXX_Size() int {
 	return xxx_messageInfo_EntitlementRequest.Size(m)
 }
+
 func (m *EntitlementRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_EntitlementRequest.DiscardUnknown(m)
 }
@@ -167,15 +179,19 @@ func (*EntitlementRequests) Descriptor() ([]byte, []int) {
 func (m *EntitlementRequests) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_EntitlementRequests.Unmarshal(m, b)
 }
+
 func (m *EntitlementRequests) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_EntitlementRequests.Marshal(b, m, deterministic)
 }
+
 func (m *EntitlementRequests) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_EntitlementRequests.Merge(m, src)
 }
+
 func (m *EntitlementRequests) XXX_Size() int {
 	return xxx_messageInfo_EntitlementRequests.Size(m)
 }
+
 func (m *EntitlementRequests) XXX_DiscardUnknown() {
 	xxx_messageInfo_EntitlementRequests.DiscardUnknown(m)
 }
@@ -208,15 +224,19 @@ func (*List) Descriptor() ([]byte, []int) {
 func (m *List) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_List.Unmarshal(m, b)
 }
+
 func (m *List) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_List.Marshal(b, m, deterministic)
 }
+
 func (m *List) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_List.Merge(m, src)
 }
+
 func (m *List) XXX_Size() int {
 	return xxx_messageInfo_List.Size(m)
 }
+
 func (m *List) XXX_DiscardUnknown() {
 	xxx_messageInfo_List.DiscardUnknown(m)
 }
@@ -261,15 +281,19 @@ func (*Entitlements) Descriptor() ([]byte, []int) {
 func (m *Entitlements) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Entitlements.Unmarshal(m, b)
 }
+
 func (m *Entitlements) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Entitlements.Marshal(b, m, deterministic)
 }
+
 func (m *Entitlements) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Entitlements.Merge(m, src)
 }
+
 func (m *Entitlements) XXX_Size() int {
 	return xxx_messageInfo_Entitlements.Size(m)
 }
+
 func (m *Entitlements) XXX_DiscardUnknown() {
 	xxx_messageInfo_Entitlements.DiscardUnknown(m)
 }
@@ -305,15 +329,19 @@ func (*User) Descriptor() ([]byte, []int) {
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
 }
+
 func (m *User) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_User.Marshal(b, m, deterministic)
 }
+
 func (m *User) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_User.Merge(m, src)
 }
+
 func (m *User) XXX_Size() int {
 	return xxx_messageInfo_User.Size(m)
 }
+
 func (m *User) XXX_DiscardUnknown() {
 	xxx_messageInfo_User.DiscardUnknown(m)
 }
@@ -381,15 +409,19 @@ func (*AddEntitlementRequestForUserRequest) Descriptor() ([]byte, []int) {
 func (m *AddEntitlementRequestForUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddEntitlementRequestForUserRequest.Unmarshal(m, b)
 }
+
 func (m *AddEntitlementRequestForUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddEntitlementRequestForUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddEntitlementRequestForUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddEntitlementRequestForUserRequest.Merge(m, src)
 }
+
 func (m *AddEntitlementRequestForUserRequest) XXX_Size() int {
 	return xxx_messageInfo_AddEntitlementRequestForUserRequest.Size(m)
 }
+
 func (m *AddEntitlementRequestForUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddEntitlementRequestForUserRequest.DiscardUnknown(m)
 }
@@ -437,15 +469,19 @@ func (*AddEntitlementRequestForUserResponse) Descriptor() ([]byte, []int) {
 func (m *AddEntitlementRequestForUserResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddEntitlementRequestForUserResponse.Unmarshal(m, b)
 }
+
 func (m *AddEntitlementRequestForUserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddEntitlementRequestForUserResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddEntitlementRequestForUserResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddEntitlementRequestForUserResponse.Merge(m, src)
 }
+
 func (m *AddEntitlementRequestForUserResponse) XXX_Size() int {
 	return xxx_messageInfo_AddEntitlementRequestForUserResponse.Size(m)
 }
+
 func (m *AddEntitlementRequestForUserResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddEntitlementRequestForUserResponse.DiscardUnknown(m)
 }
@@ -498,15 +534,19 @@ func (*DeleteEntitlementRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteEntitlementRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteEntitlementRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteEntitlementRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteEntitlementRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteEntitlementRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteEntitlementRequest.Merge(m, src)
 }
+
 func (m *DeleteEntitlementRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteEntitlementRequest.Size(m)
 }
+
 func (m *DeleteEntitlementRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteEntitlementRequest.DiscardUnknown(m)
 }
@@ -544,15 +584,19 @@ func (*DeleteEntitlementRequestRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteEntitlementRequestRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteEntitlementRequestRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteEntitlementRequestRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteEntitlementRequestRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteEntitlementRequestRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteEntitlementRequestRequest.Merge(m, src)
 }
+
 func (m *DeleteEntitlementRequestRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteEntitlementRequestRequest.Size(m)
 }
+
 func (m *DeleteEntitlementRequestRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteEntitlementRequestRequest.DiscardUnknown(m)
 }
@@ -583,15 +627,19 @@ func (*GetEntitlementRequestForUserRequest) Descriptor() ([]byte, []int) {
 func (m *GetEntitlementRequestForUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementRequestForUserRequest.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementRequestForUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementRequestForUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementRequestForUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementRequestForUserRequest.Merge(m, src)
 }
+
 func (m *GetEntitlementRequestForUserRequest) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementRequestForUserRequest.Size(m)
 }
+
 func (m *GetEntitlementRequestForUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementRequestForUserRequest.DiscardUnknown(m)
 }
@@ -622,15 +670,19 @@ func (*GetEntitlementRequestForUserResponse) Descriptor() ([]byte, []int) {
 func (m *GetEntitlementRequestForUserResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementRequestForUserResponse.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementRequestForUserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementRequestForUserResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementRequestForUserResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementRequestForUserResponse.Merge(m, src)
 }
+
 func (m *GetEntitlementRequestForUserResponse) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementRequestForUserResponse.Size(m)
 }
+
 func (m *GetEntitlementRequestForUserResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementRequestForUserResponse.DiscardUnknown(m)
 }
@@ -653,6 +705,7 @@ type GetEntitlementRequestForCurrentUserRequest struct {
 func (m *GetEntitlementRequestForCurrentUserRequest) Reset() {
 	*m = GetEntitlementRequestForCurrentUserRequest{}
 }
+
 func (m *GetEntitlementRequestForCurrentUserRequest) String() string {
 	return proto.CompactTextString(m)
 }
@@ -664,15 +717,19 @@ func (*GetEntitlementRequestForCurrentUserRequest) Descriptor() ([]byte, []int) 
 func (m *GetEntitlementRequestForCurrentUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementRequestForCurrentUserRequest.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementRequestForCurrentUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementRequestForCurrentUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementRequestForCurrentUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementRequestForCurrentUserRequest.Merge(m, src)
 }
+
 func (m *GetEntitlementRequestForCurrentUserRequest) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementRequestForCurrentUserRequest.Size(m)
 }
+
 func (m *GetEntitlementRequestForCurrentUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementRequestForCurrentUserRequest.DiscardUnknown(m)
 }
@@ -689,6 +746,7 @@ type GetEntitlementRequestForCurrentUserResponse struct {
 func (m *GetEntitlementRequestForCurrentUserResponse) Reset() {
 	*m = GetEntitlementRequestForCurrentUserResponse{}
 }
+
 func (m *GetEntitlementRequestForCurrentUserResponse) String() string {
 	return proto.CompactTextString(m)
 }
@@ -700,15 +758,19 @@ func (*GetEntitlementRequestForCurrentUserResponse) Descriptor() ([]byte, []int)
 func (m *GetEntitlementRequestForCurrentUserResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementRequestForCurrentUserResponse.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementRequestForCurrentUserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementRequestForCurrentUserResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementRequestForCurrentUserResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementRequestForCurrentUserResponse.Merge(m, src)
 }
+
 func (m *GetEntitlementRequestForCurrentUserResponse) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementRequestForCurrentUserResponse.Size(m)
 }
+
 func (m *GetEntitlementRequestForCurrentUserResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementRequestForCurrentUserResponse.DiscardUnknown(m)
 }
@@ -740,15 +802,19 @@ func (*GetEntitlementForUserAtBankRequest) Descriptor() ([]byte, []int) {
 func (m *GetEntitlementForUserAtBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementForUserAtBankRequest.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementForUserAtBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementForUserAtBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementForUserAtBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementForUserAtBankRequest.Merge(m, src)
 }
+
 func (m *GetEntitlementForUserAtBankRequest) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementForUserAtBankRequest.Size(m)
 }
+
 func (m *GetEntitlementForUserAtBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementForUserAtBankRequest.DiscardUnknown(m)
 }
@@ -786,15 +852,19 @@ func (*GetEntitlementForUserRequest) Descriptor() ([]byte, []int) {
 func (m *GetEntitlementForUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementForUserRequest.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementForUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementForUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementForUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementForUserRequest.Merge(m, src)
 }
+
 func (m *GetEntitlementForUserRequest) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementForUserRequest.Size(m)
 }
+
 func (m *GetEntitlementForUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementForUserRequest.DiscardUnknown(m)
 }
@@ -824,15 +894,19 @@ func (*GetEntitlementForCurrentUserRequest) Descriptor() ([]byte, []int) {
 func (m *GetEntitlementForCurrentUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetEntitlementForCurrentUserRequest.Unmarshal(m, b)
 }
+
 func (m *GetEntitlementForCurrentUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetEntitlementForCurrentUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetEntitlementForCurrentUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetEntitlementForCurrentUserRequest.Merge(m, src)
 }
+
 func (m *GetEntitlementForCurrentUserRequest) XXX_Size() int {
 	return xxx_messageInfo_GetEntitlementForCurrentUserRequest.Size(m)
 }
+
 func (m *GetEntitlementForCurrentUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetEntitlementForCurrentUserRequest.DiscardUnknown(m)
 }
@@ -859,15 +933,19 @@ func (*GetAllEntitlementsRequest) Descriptor() ([]byte, []int) {
 func (m *GetAllEntitlementsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetAllEntitlementsRequest.Unmarshal(m, b)
 }
+
 func (m *GetAllEntitlementsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetAllEntitlementsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetAllEntitlementsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetAllEntitlementsRequest.Merge(m, src)
 }
+
 func (m *GetAllEntitlementsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetAllEntitlementsRequest.Size(m)
 }
+
 func (m *GetAllEntitlementsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetAllEntitlementsRequest.DiscardUnknown(m)
 }
@@ -908,15 +986,19 @@ func (*GetAllEntitlementRequestRequest) Descriptor() ([]byte, []int) {
 func (m *GetAllEntitlementRequestRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetAllEntitlementRequestRequest.Unmarshal(m, b)
 }
+
 func (m *GetAllEntitlementRequestRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetAllEntitlementRequestRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetAllEntitlementRequestRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetAllEntitlementRequestRequest.Merge(m, src)
 }
+
 func (m *GetAllEntitlementRequestRequest) XXX_Size() int {
 	return xxx_messageInfo_GetAllEntitlementRequestRequest.Size(m)
 }
+
 func (m *GetAllEntitlementRequestRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetAllEntitlementRequestRequest.DiscardUnknown(m)
 }
@@ -954,15 +1036,19 @@ func (*GetRolesResponse) Descriptor() ([]byte, []int) {
 func (m *GetRolesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetRolesResponse.Unmarshal(m, b)
 }
+
 func (m *GetRolesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetRolesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetRolesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetRolesResponse.Merge(m, src)
 }
+
 func (m *GetRolesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetRolesResponse.Size(m)
 }
+
 func (m *GetRolesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetRolesResponse.DiscardUnknown(m)
 }
@@ -994,15 +1080,19 @@ func (*Roles) Descriptor() ([]byte, []int) {
 func (m *Roles) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Roles.Unmarshal(m, b)
 }
+
 func (m *Roles) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Roles.Marshal(b, m, deterministic)
 }
+
 func (m *Roles) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Roles.Merge(m, src)
 }
+
 func (m *Roles) XXX_Size() int {
 	return xxx_messageInfo_Roles.Size(m)
 }
+
 func (m *Roles) XXX_DiscardUnknown() {
 	xxx_messageInfo_Roles.DiscardUnknown(m)
 }
@@ -1043,15 +1133,19 @@ func (*GetRolesRequest) Descriptor() ([]byte, []int) {
 func (m *GetRolesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetRolesRequest.Unmarshal(m, b)
 }
+
 func (m *GetRolesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetRolesRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetRolesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetRolesRequest.Merge(m, src)
 }
+
 func (m *GetRolesRequest) XXX_Size() int {
 	return xxx_messageInfo_GetRolesRequest.Size(m)
 }
+
 func (m *GetRolesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetRolesRequest.DiscardUnknown(m)
 }
@@ -1237,13 +1331,15 @@ var fileDescriptor_59f4165e77126d0f = []byte{
 	0xea, 0x5c, 0x07, 0x17, 0x72, 0x3e, 0xfa, 0xc0, 0x2f, 0xbc, 0xa2, 0x3b, 0xfa, 0x16, 0x4e, 0x7b,
 	0x38, 0xc2, 0x89, 0x37, 0x4b, 0x77, 0xad, 0x68, 0x59, 0x7a, 0x59, 0x5a, 0x97, 0x6e, 0x45, 0xff,
 	0xf3, 0xe7, 0xeb, 0x52, 0x61, 0x4f, 0x2a, 0x3c, 0x90, 0x0a, 0xbf, 0x95, 0x0a, 0x7f, 0x95, 0x0a,
-	0xff, 0x97, 0x0a, 0x7f, 0x92, 0x0b, 0xcd, 0x29, 0xef, 0x89, 0xec, 0xdc, 0xc7, 0x01, 0x00, 0x00,
-	0xff, 0xff, 0x0f, 0x28, 0x58, 0x1a, 0x5b, 0x24, 0x00, 0x00,
+	0xff, 0x97, 0xa4, 0x3f, 0xc9, 0x85, 0xe6, 0x94, 0xf7, 0x44, 0x76, 0xee, 0xe3, 0x00, 0x00, 0x00,
+	0xff, 0xff, 0x60, 0x64, 0xfd, 0x81, 0x5b, 0x24, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1424,42 +1520,52 @@ type EntitlementServiceServer interface {
 }
 
 // UnimplementedEntitlementServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedEntitlementServiceServer struct {
-}
+type UnimplementedEntitlementServiceServer struct{}
 
 func (*UnimplementedEntitlementServiceServer) AddEntitlementRequestForCurrentUser(ctx context.Context, req *AddEntitlementRequestForCurrentUserRequest) (*EntitlementRequest, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddEntitlementRequestForCurrentUser not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) AddEntitlementRequestForUser(ctx context.Context, req *AddEntitlementRequestForUserRequest) (*AddEntitlementRequestForUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddEntitlementRequestForUser not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) DeleteEntitlement(ctx context.Context, req *DeleteEntitlementRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteEntitlement not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) DeleteEntitlementRequest(ctx context.Context, req *DeleteEntitlementRequestRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteEntitlementRequest not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetEntitlementRequestForUser(ctx context.Context, req *GetEntitlementRequestForUserRequest) (*GetEntitlementRequestForUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEntitlementRequestForUser not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetEntitlementRequestForCurrentUser(ctx context.Context, req *GetEntitlementRequestForCurrentUserRequest) (*GetEntitlementRequestForCurrentUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEntitlementRequestForCurrentUser not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetEntitlementForUser(ctx context.Context, req *GetEntitlementForUserRequest) (*Entitlements, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEntitlementForUser not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetEntitlementForCurrentUser(ctx context.Context, req *GetEntitlementForCurrentUserRequest) (*Entitlements, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEntitlementForCurrentUser not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetEntitlementForUserAtBank(ctx context.Context, req *GetEntitlementForUserAtBankRequest) (*Entitlements, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetEntitlementForUserAtBank not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetAllEntitlementRequests(ctx context.Context, req *GetAllEntitlementRequestRequest) (*EntitlementRequests, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllEntitlementRequests not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetAllEntitlements(ctx context.Context, req *GetAllEntitlementsRequest) (*Entitlements, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllEntitlements not implemented")
 }
+
 func (*UnimplementedEntitlementServiceServer) GetRoles(ctx context.Context, req *GetRolesRequest) (*GetRolesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRoles not implemented")
 }

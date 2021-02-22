@@ -6,6 +6,8 @@ package accountpublic
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -47,15 +50,19 @@ func (*Owner) Descriptor() ([]byte, []int) {
 func (m *Owner) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Owner.Unmarshal(m, b)
 }
+
 func (m *Owner) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Owner.Marshal(b, m, deterministic)
 }
+
 func (m *Owner) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Owner.Merge(m, src)
 }
+
 func (m *Owner) XXX_Size() int {
 	return xxx_messageInfo_Owner.Size(m)
 }
+
 func (m *Owner) XXX_DiscardUnknown() {
 	xxx_messageInfo_Owner.DiscardUnknown(m)
 }
@@ -101,15 +108,19 @@ func (*AccountRouting) Descriptor() ([]byte, []int) {
 func (m *AccountRouting) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AccountRouting.Unmarshal(m, b)
 }
+
 func (m *AccountRouting) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AccountRouting.Marshal(b, m, deterministic)
 }
+
 func (m *AccountRouting) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AccountRouting.Merge(m, src)
 }
+
 func (m *AccountRouting) XXX_Size() int {
 	return xxx_messageInfo_AccountRouting.Size(m)
 }
+
 func (m *AccountRouting) XXX_DiscardUnknown() {
 	xxx_messageInfo_AccountRouting.DiscardUnknown(m)
 }
@@ -148,15 +159,19 @@ func (*AccountRule) Descriptor() ([]byte, []int) {
 func (m *AccountRule) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AccountRule.Unmarshal(m, b)
 }
+
 func (m *AccountRule) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AccountRule.Marshal(b, m, deterministic)
 }
+
 func (m *AccountRule) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AccountRule.Merge(m, src)
 }
+
 func (m *AccountRule) XXX_Size() int {
 	return xxx_messageInfo_AccountRule.Size(m)
 }
+
 func (m *AccountRule) XXX_DiscardUnknown() {
 	xxx_messageInfo_AccountRule.DiscardUnknown(m)
 }
@@ -196,15 +211,19 @@ func (*GetPublicAccountByIDRequest) Descriptor() ([]byte, []int) {
 func (m *GetPublicAccountByIDRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetPublicAccountByIDRequest.Unmarshal(m, b)
 }
+
 func (m *GetPublicAccountByIDRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetPublicAccountByIDRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetPublicAccountByIDRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetPublicAccountByIDRequest.Merge(m, src)
 }
+
 func (m *GetPublicAccountByIDRequest) XXX_Size() int {
 	return xxx_messageInfo_GetPublicAccountByIDRequest.Size(m)
 }
+
 func (m *GetPublicAccountByIDRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetPublicAccountByIDRequest.DiscardUnknown(m)
 }
@@ -257,15 +276,19 @@ func (*GetPublicAccountByIDResponse) Descriptor() ([]byte, []int) {
 func (m *GetPublicAccountByIDResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetPublicAccountByIDResponse.Unmarshal(m, b)
 }
+
 func (m *GetPublicAccountByIDResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetPublicAccountByIDResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetPublicAccountByIDResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetPublicAccountByIDResponse.Merge(m, src)
 }
+
 func (m *GetPublicAccountByIDResponse) XXX_Size() int {
 	return xxx_messageInfo_GetPublicAccountByIDResponse.Size(m)
 }
+
 func (m *GetPublicAccountByIDResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetPublicAccountByIDResponse.DiscardUnknown(m)
 }
@@ -354,15 +377,19 @@ func (*ViewAvailable) Descriptor() ([]byte, []int) {
 func (m *ViewAvailable) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ViewAvailable.Unmarshal(m, b)
 }
+
 func (m *ViewAvailable) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ViewAvailable.Marshal(b, m, deterministic)
 }
+
 func (m *ViewAvailable) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ViewAvailable.Merge(m, src)
 }
+
 func (m *ViewAvailable) XXX_Size() int {
 	return xxx_messageInfo_ViewAvailable.Size(m)
 }
+
 func (m *ViewAvailable) XXX_DiscardUnknown() {
 	xxx_messageInfo_ViewAvailable.DiscardUnknown(m)
 }
@@ -410,15 +437,19 @@ func (*PublicAccount) Descriptor() ([]byte, []int) {
 func (m *PublicAccount) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PublicAccount.Unmarshal(m, b)
 }
+
 func (m *PublicAccount) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_PublicAccount.Marshal(b, m, deterministic)
 }
+
 func (m *PublicAccount) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_PublicAccount.Merge(m, src)
 }
+
 func (m *PublicAccount) XXX_Size() int {
 	return xxx_messageInfo_PublicAccount.Size(m)
 }
+
 func (m *PublicAccount) XXX_DiscardUnknown() {
 	xxx_messageInfo_PublicAccount.DiscardUnknown(m)
 }
@@ -470,15 +501,19 @@ func (*GetBankPublicAccountRequest) Descriptor() ([]byte, []int) {
 func (m *GetBankPublicAccountRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetBankPublicAccountRequest.Unmarshal(m, b)
 }
+
 func (m *GetBankPublicAccountRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetBankPublicAccountRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetBankPublicAccountRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetBankPublicAccountRequest.Merge(m, src)
 }
+
 func (m *GetBankPublicAccountRequest) XXX_Size() int {
 	return xxx_messageInfo_GetBankPublicAccountRequest.Size(m)
 }
+
 func (m *GetBankPublicAccountRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetBankPublicAccountRequest.DiscardUnknown(m)
 }
@@ -509,15 +544,19 @@ func (*GetBankPublicAccountResponse) Descriptor() ([]byte, []int) {
 func (m *GetBankPublicAccountResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetBankPublicAccountResponse.Unmarshal(m, b)
 }
+
 func (m *GetBankPublicAccountResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetBankPublicAccountResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetBankPublicAccountResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetBankPublicAccountResponse.Merge(m, src)
 }
+
 func (m *GetBankPublicAccountResponse) XXX_Size() int {
 	return xxx_messageInfo_GetBankPublicAccountResponse.Size(m)
 }
+
 func (m *GetBankPublicAccountResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetBankPublicAccountResponse.DiscardUnknown(m)
 }
@@ -548,15 +587,19 @@ func (*GetPublicAccountAtAllBanksResponse) Descriptor() ([]byte, []int) {
 func (m *GetPublicAccountAtAllBanksResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetPublicAccountAtAllBanksResponse.Unmarshal(m, b)
 }
+
 func (m *GetPublicAccountAtAllBanksResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetPublicAccountAtAllBanksResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetPublicAccountAtAllBanksResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetPublicAccountAtAllBanksResponse.Merge(m, src)
 }
+
 func (m *GetPublicAccountAtAllBanksResponse) XXX_Size() int {
 	return xxx_messageInfo_GetPublicAccountAtAllBanksResponse.Size(m)
 }
+
 func (m *GetPublicAccountAtAllBanksResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetPublicAccountAtAllBanksResponse.DiscardUnknown(m)
 }
@@ -681,13 +724,15 @@ var fileDescriptor_5387bf3777cfc660 = []byte{
 	0x8b, 0x90, 0x4c, 0x80, 0xb8, 0x54, 0x52, 0xd4, 0x46, 0x57, 0x8e, 0xa7, 0xd8, 0xe1, 0x9e, 0x04,
 	0x7c, 0xf6, 0x67, 0x34, 0xa0, 0x03, 0xc8, 0x63, 0xa9, 0x4a, 0xa6, 0x4f, 0xd2, 0xd0, 0xcb, 0x3e,
 	0xb6, 0x7e, 0x62, 0x6e, 0x9a, 0xcf, 0xb3, 0xbf, 0xb8, 0x7f, 0x67, 0x1a, 0xbb, 0xa6, 0xf1, 0xd6,
-	0x34, 0xfe, 0x6e, 0x1a, 0xff, 0x33, 0x8d, 0x4f, 0x4d, 0xe3, 0x3f, 0x05, 0xa3, 0x57, 0xd6, 0x8f,
-	0xbf, 0x1b, 0x5f, 0x04, 0x00, 0x00, 0xff, 0xff, 0x42, 0x1e, 0x81, 0x4d, 0xd7, 0x0f, 0x00, 0x00,
+	0x34, 0xfe, 0x6e, 0x1a, 0xff, 0x33, 0x8d, 0x4f, 0x4d, 0xf3, 0x3f, 0x05, 0xa3, 0x57, 0xd6, 0x8f,
+	0xbf, 0x1b, 0x5f, 0x04, 0x00, 0x00, 0xff, 0xff, 0x2d, 0x52, 0x24, 0xd6, 0xd7, 0x0f, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -751,15 +796,16 @@ type AccountPublicServiceServer interface {
 }
 
 // UnimplementedAccountPublicServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedAccountPublicServiceServer struct {
-}
+type UnimplementedAccountPublicServiceServer struct{}
 
 func (*UnimplementedAccountPublicServiceServer) GetPublicAccountByID(ctx context.Context, req *GetPublicAccountByIDRequest) (*GetPublicAccountByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPublicAccountByID not implemented")
 }
+
 func (*UnimplementedAccountPublicServiceServer) GetBankPublicAccount(ctx context.Context, req *GetBankPublicAccountRequest) (*GetBankPublicAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBankPublicAccount not implemented")
 }
+
 func (*UnimplementedAccountPublicServiceServer) GetPublicAccountAtAllBanks(ctx context.Context, req *empty.Empty) (*GetPublicAccountAtAllBanksResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPublicAccountAtAllBanks not implemented")
 }

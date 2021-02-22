@@ -6,6 +6,8 @@ package product
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -79,15 +82,19 @@ func (*License) Descriptor() ([]byte, []int) {
 func (m *License) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_License.Unmarshal(m, b)
 }
+
 func (m *License) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_License.Marshal(b, m, deterministic)
 }
+
 func (m *License) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_License.Merge(m, src)
 }
+
 func (m *License) XXX_Size() int {
 	return xxx_messageInfo_License.Size(m)
 }
+
 func (m *License) XXX_DiscardUnknown() {
 	xxx_messageInfo_License.DiscardUnknown(m)
 }
@@ -125,15 +132,19 @@ func (*Metadata) Descriptor() ([]byte, []int) {
 func (m *Metadata) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Metadata.Unmarshal(m, b)
 }
+
 func (m *Metadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Metadata.Marshal(b, m, deterministic)
 }
+
 func (m *Metadata) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Metadata.Merge(m, src)
 }
+
 func (m *Metadata) XXX_Size() int {
 	return xxx_messageInfo_Metadata.Size(m)
 }
+
 func (m *Metadata) XXX_DiscardUnknown() {
 	xxx_messageInfo_Metadata.DiscardUnknown(m)
 }
@@ -168,15 +179,19 @@ func (*ProductAttribute) Descriptor() ([]byte, []int) {
 func (m *ProductAttribute) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProductAttribute.Unmarshal(m, b)
 }
+
 func (m *ProductAttribute) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ProductAttribute.Marshal(b, m, deterministic)
 }
+
 func (m *ProductAttribute) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ProductAttribute.Merge(m, src)
 }
+
 func (m *ProductAttribute) XXX_Size() int {
 	return xxx_messageInfo_ProductAttribute.Size(m)
 }
+
 func (m *ProductAttribute) XXX_DiscardUnknown() {
 	xxx_messageInfo_ProductAttribute.DiscardUnknown(m)
 }
@@ -246,15 +261,19 @@ func (*Product) Descriptor() ([]byte, []int) {
 func (m *Product) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Product.Unmarshal(m, b)
 }
+
 func (m *Product) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Product.Marshal(b, m, deterministic)
 }
+
 func (m *Product) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Product.Merge(m, src)
 }
+
 func (m *Product) XXX_Size() int {
 	return xxx_messageInfo_Product.Size(m)
 }
+
 func (m *Product) XXX_DiscardUnknown() {
 	xxx_messageInfo_Product.DiscardUnknown(m)
 }
@@ -364,15 +383,19 @@ func (*CreateProductRequest) Descriptor() ([]byte, []int) {
 func (m *CreateProductRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateProductRequest.Unmarshal(m, b)
 }
+
 func (m *CreateProductRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateProductRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateProductRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateProductRequest.Merge(m, src)
 }
+
 func (m *CreateProductRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateProductRequest.Size(m)
 }
+
 func (m *CreateProductRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateProductRequest.DiscardUnknown(m)
 }
@@ -419,15 +442,19 @@ func (*UpdateProductRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateProductRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateProductRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateProductRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateProductRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateProductRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateProductRequest.Merge(m, src)
 }
+
 func (m *UpdateProductRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateProductRequest.Size(m)
 }
+
 func (m *UpdateProductRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateProductRequest.DiscardUnknown(m)
 }
@@ -473,15 +500,19 @@ func (*DeleteProductRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteProductRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteProductRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteProductRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteProductRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteProductRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteProductRequest.Merge(m, src)
 }
+
 func (m *DeleteProductRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteProductRequest.Size(m)
 }
+
 func (m *DeleteProductRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteProductRequest.DiscardUnknown(m)
 }
@@ -520,15 +551,19 @@ func (*GetProductRequest) Descriptor() ([]byte, []int) {
 func (m *GetProductRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProductRequest.Unmarshal(m, b)
 }
+
 func (m *GetProductRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProductRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetProductRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProductRequest.Merge(m, src)
 }
+
 func (m *GetProductRequest) XXX_Size() int {
 	return xxx_messageInfo_GetProductRequest.Size(m)
 }
+
 func (m *GetProductRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProductRequest.DiscardUnknown(m)
 }
@@ -566,15 +601,19 @@ func (*GetProductsRequest) Descriptor() ([]byte, []int) {
 func (m *GetProductsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProductsRequest.Unmarshal(m, b)
 }
+
 func (m *GetProductsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProductsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetProductsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProductsRequest.Merge(m, src)
 }
+
 func (m *GetProductsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetProductsRequest.Size(m)
 }
+
 func (m *GetProductsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProductsRequest.DiscardUnknown(m)
 }
@@ -605,15 +644,19 @@ func (*GetProductsResponse) Descriptor() ([]byte, []int) {
 func (m *GetProductsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProductsResponse.Unmarshal(m, b)
 }
+
 func (m *GetProductsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProductsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetProductsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProductsResponse.Merge(m, src)
 }
+
 func (m *GetProductsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetProductsResponse.Size(m)
 }
+
 func (m *GetProductsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProductsResponse.DiscardUnknown(m)
 }
@@ -647,15 +690,19 @@ func (*CreateProductAttributeRequest) Descriptor() ([]byte, []int) {
 func (m *CreateProductAttributeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateProductAttributeRequest.Unmarshal(m, b)
 }
+
 func (m *CreateProductAttributeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateProductAttributeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateProductAttributeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateProductAttributeRequest.Merge(m, src)
 }
+
 func (m *CreateProductAttributeRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateProductAttributeRequest.Size(m)
 }
+
 func (m *CreateProductAttributeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateProductAttributeRequest.DiscardUnknown(m)
 }
@@ -710,15 +757,19 @@ func (*UpdateProductAttributeRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateProductAttributeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateProductAttributeRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateProductAttributeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateProductAttributeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateProductAttributeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateProductAttributeRequest.Merge(m, src)
 }
+
 func (m *UpdateProductAttributeRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateProductAttributeRequest.Size(m)
 }
+
 func (m *UpdateProductAttributeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateProductAttributeRequest.DiscardUnknown(m)
 }
@@ -772,15 +823,19 @@ func (*DeleteProductAttributeRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteProductAttributeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteProductAttributeRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteProductAttributeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteProductAttributeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteProductAttributeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteProductAttributeRequest.Merge(m, src)
 }
+
 func (m *DeleteProductAttributeRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteProductAttributeRequest.Size(m)
 }
+
 func (m *DeleteProductAttributeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteProductAttributeRequest.DiscardUnknown(m)
 }
@@ -827,15 +882,19 @@ func (*GetProductAttributeRequest) Descriptor() ([]byte, []int) {
 func (m *GetProductAttributeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProductAttributeRequest.Unmarshal(m, b)
 }
+
 func (m *GetProductAttributeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProductAttributeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetProductAttributeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProductAttributeRequest.Merge(m, src)
 }
+
 func (m *GetProductAttributeRequest) XXX_Size() int {
 	return xxx_messageInfo_GetProductAttributeRequest.Size(m)
 }
+
 func (m *GetProductAttributeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProductAttributeRequest.DiscardUnknown(m)
 }
@@ -1008,14 +1067,16 @@ var fileDescriptor_15abd2347b909af4 = []byte{
 	0xc4, 0x5e, 0x7e, 0x0b, 0xbc, 0x7a, 0xbc, 0x6e, 0xc0, 0xc9, 0xc7, 0x66, 0xec, 0x56, 0x63, 0x60,
 	0x81, 0xc1, 0xdd, 0x13, 0xb4, 0x18, 0xbc, 0xf8, 0x10, 0xdb, 0xb8, 0x4d, 0x92, 0x91, 0x50, 0x50,
 	0xdf, 0x1b, 0x3b, 0x66, 0x7f, 0xf0, 0xdc, 0x93, 0x37, 0xe5, 0x27, 0xfd, 0x1f, 0x93, 0xbf, 0x29,
-	0x4b, 0x4f, 0x65, 0xe9, 0x03, 0x59, 0xfa, 0xb9, 0x2c, 0xfd, 0x45, 0x96, 0xfe, 0x2d, 0x4b, 0x7f,
-	0x52, 0xa4, 0x66, 0xd6, 0x1f, 0x3a, 0xaf, 0xfc, 0x27, 0x00, 0x00, 0xff, 0xff, 0x59, 0xdb, 0x36,
-	0x2c, 0x2b, 0x1c, 0x00, 0x00,
+	0x4b, 0x4f, 0x65, 0xe9, 0x03, 0x59, 0xfa, 0xb9, 0x2c, 0xfd, 0x45, 0x96, 0xfe, 0x2d, 0xcb, 0x7f,
+	0x52, 0xa4, 0x66, 0xd6, 0x1f, 0x3a, 0xaf, 0xfc, 0x27, 0x00, 0x00, 0xff, 0xff, 0x36, 0x97, 0x93,
+	0xb7, 0x2b, 0x1c, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1157,33 +1218,40 @@ type ProductServiceServer interface {
 }
 
 // UnimplementedProductServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedProductServiceServer struct {
-}
+type UnimplementedProductServiceServer struct{}
 
 func (*UnimplementedProductServiceServer) CreateProduct(ctx context.Context, req *CreateProductRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateProduct not implemented")
 }
+
 func (*UnimplementedProductServiceServer) GetProduct(ctx context.Context, req *GetProductRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProduct not implemented")
 }
+
 func (*UnimplementedProductServiceServer) GetProducts(ctx context.Context, req *GetProductsRequest) (*GetProductsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProducts not implemented")
 }
+
 func (*UnimplementedProductServiceServer) UpdateProduct(ctx context.Context, req *UpdateProductRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProduct not implemented")
 }
+
 func (*UnimplementedProductServiceServer) DeleteProduct(ctx context.Context, req *DeleteProductRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProduct not implemented")
 }
+
 func (*UnimplementedProductServiceServer) CreateProductAttribute(ctx context.Context, req *CreateProductAttributeRequest) (*ProductAttribute, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateProductAttribute not implemented")
 }
+
 func (*UnimplementedProductServiceServer) GetProductAttribute(ctx context.Context, req *GetProductAttributeRequest) (*ProductAttribute, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProductAttribute not implemented")
 }
+
 func (*UnimplementedProductServiceServer) UpdateProductAttribute(ctx context.Context, req *UpdateProductAttributeRequest) (*ProductAttribute, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProductAttribute not implemented")
 }
+
 func (*UnimplementedProductServiceServer) DeleteProductAttribute(ctx context.Context, req *DeleteProductAttributeRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProductAttribute not implemented")
 }

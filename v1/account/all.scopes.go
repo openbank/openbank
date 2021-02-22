@@ -4,19 +4,19 @@ package accounts
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/account.read": "View account data",
+	"https://auth.bnk.to/account.read":  "View account data",
 	"https://auth.bnk.to/account.write": "Manage account data",
 }
 
 var AuthScopes = map[string][]string{
-	"/accounts.AccountService/CheckAccount": []string{"https://auth.bnk.to/account.read"},
-	"/accounts.AccountService/CreateAccount": []string{"https://auth.bnk.to/account.write"},
-	"/accounts.AccountService/DeleteAccount": []string{"https://auth.bnk.to/account.write"},
-	"/accounts.AccountService/GetAccount": []string{"https://auth.bnk.to/account.read"},
-	"/accounts.AccountService/GetAccountStatus": []string{"https://auth.bnk.to/account.read"},
-	"/accounts.AccountService/GetAccounts": []string{"https://auth.bnk.to/account.read"},
-	"/accounts.AccountService/UpdateAccount": []string{"https://auth.bnk.to/account.write"},
-	"/accounts.AccountService/UpdateAccountStatus": []string{"https://auth.bnk.to/account.write"},
+	"/accounts.AccountService/CheckAccount":        {"https://auth.bnk.to/account.read"},
+	"/accounts.AccountService/CreateAccount":       {"https://auth.bnk.to/account.write"},
+	"/accounts.AccountService/DeleteAccount":       {"https://auth.bnk.to/account.write"},
+	"/accounts.AccountService/GetAccount":          {"https://auth.bnk.to/account.read"},
+	"/accounts.AccountService/GetAccountStatus":    {"https://auth.bnk.to/account.read"},
+	"/accounts.AccountService/GetAccounts":         {"https://auth.bnk.to/account.read"},
+	"/accounts.AccountService/UpdateAccount":       {"https://auth.bnk.to/account.write"},
+	"/accounts.AccountService/UpdateAccountStatus": {"https://auth.bnk.to/account.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

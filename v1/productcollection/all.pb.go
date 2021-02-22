@@ -6,6 +6,8 @@ package productcollection
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -46,15 +49,19 @@ func (*ProductCollection) Descriptor() ([]byte, []int) {
 func (m *ProductCollection) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ProductCollection.Unmarshal(m, b)
 }
+
 func (m *ProductCollection) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ProductCollection.Marshal(b, m, deterministic)
 }
+
 func (m *ProductCollection) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ProductCollection.Merge(m, src)
 }
+
 func (m *ProductCollection) XXX_Size() int {
 	return xxx_messageInfo_ProductCollection.Size(m)
 }
+
 func (m *ProductCollection) XXX_DiscardUnknown() {
 	xxx_messageInfo_ProductCollection.DiscardUnknown(m)
 }
@@ -94,15 +101,19 @@ func (*CreateProductCollectionRequest) Descriptor() ([]byte, []int) {
 func (m *CreateProductCollectionRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateProductCollectionRequest.Unmarshal(m, b)
 }
+
 func (m *CreateProductCollectionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateProductCollectionRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateProductCollectionRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateProductCollectionRequest.Merge(m, src)
 }
+
 func (m *CreateProductCollectionRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateProductCollectionRequest.Size(m)
 }
+
 func (m *CreateProductCollectionRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateProductCollectionRequest.DiscardUnknown(m)
 }
@@ -149,15 +160,19 @@ func (*UpdateProductCollectionRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateProductCollectionRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateProductCollectionRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateProductCollectionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateProductCollectionRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateProductCollectionRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateProductCollectionRequest.Merge(m, src)
 }
+
 func (m *UpdateProductCollectionRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateProductCollectionRequest.Size(m)
 }
+
 func (m *UpdateProductCollectionRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateProductCollectionRequest.DiscardUnknown(m)
 }
@@ -203,15 +218,19 @@ func (*DeleteProductCollectionRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteProductCollectionRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteProductCollectionRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteProductCollectionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteProductCollectionRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteProductCollectionRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteProductCollectionRequest.Merge(m, src)
 }
+
 func (m *DeleteProductCollectionRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteProductCollectionRequest.Size(m)
 }
+
 func (m *DeleteProductCollectionRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteProductCollectionRequest.DiscardUnknown(m)
 }
@@ -250,15 +269,19 @@ func (*GetProductCollectionRequest) Descriptor() ([]byte, []int) {
 func (m *GetProductCollectionRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetProductCollectionRequest.Unmarshal(m, b)
 }
+
 func (m *GetProductCollectionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetProductCollectionRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetProductCollectionRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetProductCollectionRequest.Merge(m, src)
 }
+
 func (m *GetProductCollectionRequest) XXX_Size() int {
 	return xxx_messageInfo_GetProductCollectionRequest.Size(m)
 }
+
 func (m *GetProductCollectionRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetProductCollectionRequest.DiscardUnknown(m)
 }
@@ -368,13 +391,15 @@ var fileDescriptor_62bb3483d57949fb = []byte{
 	0x78, 0x65, 0x0d, 0x9d, 0xc7, 0x67, 0x9a, 0xa1, 0x2b, 0x4f, 0x55, 0x8f, 0xf8, 0xd5, 0x0f, 0x18,
 	0x67, 0x1d, 0x18, 0x85, 0x76, 0x52, 0x8b, 0x04, 0x81, 0x45, 0x41, 0xbe, 0xa5, 0xbd, 0x6f, 0x37,
 	0xec, 0xeb, 0xf9, 0xff, 0x69, 0xef, 0xda, 0xd6, 0x7d, 0xdb, 0x7a, 0x68, 0x5b, 0xdf, 0xdb, 0xd6,
-	0xef, 0xb6, 0xf5, 0x8f, 0x6d, 0xfd, 0xea, 0x58, 0xad, 0xb1, 0xa4, 0xaf, 0x9d, 0xfd, 0x2f, 0x00,
-	0x00, 0xff, 0xff, 0xdf, 0xe8, 0x0b, 0xa9, 0x41, 0x0f, 0x00, 0x00,
+	0xef, 0xb6, 0xf5, 0x8f, 0x6d, 0xff, 0xea, 0x58, 0xad, 0xb1, 0xa4, 0xaf, 0x9d, 0xfd, 0x2f, 0x00,
+	0x00, 0xff, 0xff, 0xb0, 0xa4, 0xae, 0x32, 0x41, 0x0f, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -451,18 +476,20 @@ type ProductCollectionServiceServer interface {
 }
 
 // UnimplementedProductCollectionServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedProductCollectionServiceServer struct {
-}
+type UnimplementedProductCollectionServiceServer struct{}
 
 func (*UnimplementedProductCollectionServiceServer) CreateProductCollection(ctx context.Context, req *CreateProductCollectionRequest) (*ProductCollection, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateProductCollection not implemented")
 }
+
 func (*UnimplementedProductCollectionServiceServer) GetProductCollection(ctx context.Context, req *GetProductCollectionRequest) (*ProductCollection, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProductCollection not implemented")
 }
+
 func (*UnimplementedProductCollectionServiceServer) UpdateProductCollection(ctx context.Context, req *UpdateProductCollectionRequest) (*ProductCollection, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateProductCollection not implemented")
 }
+
 func (*UnimplementedProductCollectionServiceServer) DeleteProductCollection(ctx context.Context, req *DeleteProductCollectionRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteProductCollection not implemented")
 }

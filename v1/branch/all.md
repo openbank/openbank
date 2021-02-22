@@ -1,5 +1,4 @@
-Branch API v1.0.0
-=================
+# Branch API v1.0.0
 
 Provides create and read operations on the branch resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the branch resource.
 
 * Base Path ``
 
-Create a branch {#method-post-createbranch}
--------------------------------------------
+## Create a branch {#method-post-createbranch}
 
 Creates a new branch and returns its id.
 
@@ -66,10 +64,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-post-createbranch}
 
@@ -98,8 +96,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a branch {#method-delete-deletebranch}
----------------------------------------------
+## Delete a branch {#method-delete-deletebranch}
 
 Permanently delete a branch.
 
@@ -132,8 +129,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve branch information {#method-get-getbranch}
----------------------------------------------------
+## Retrieve branch information {#method-get-getbranch}
 
 Retrieve information about the branch specified by the ID
 
@@ -182,10 +178,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -223,8 +219,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available branches {#method-get-getbranches}
----------------------------------------------------------
+## Retrieve all available branches {#method-get-getbranches}
 
 Retrieve information regarding all available branches.
 
@@ -273,10 +268,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -318,8 +313,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a branch {#method-put-updatebranch}
-------------------------------------------
+## Update a branch {#method-put-updatebranch}
 
 Updates a branch's information
 
@@ -383,10 +377,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-put-updatebranch}
 

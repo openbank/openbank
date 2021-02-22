@@ -1,5 +1,4 @@
-Auth API v1.0.0
-===============
+# Auth API v1.0.0
 
 In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token.
 
@@ -7,8 +6,7 @@ In order to interact with openbank APIs, you must be authenticated. This API pro
 
 * Base Path ``
 
-Create an access token {#method-post-createaccesstoken}
--------------------------------------------------------
+## Create an access token {#method-post-createaccesstoken}
 
 Then you can exchange the authorization code with an access token. This endpoint is also used to refresh your tokens.
 
@@ -82,8 +80,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve an authorization code {#method-get-getauthorizationcode}
------------------------------------------------------------------
+## Retrieve an authorization code {#method-get-getauthorizationcode}
 
 First you need to retrieve an authorization code.
 

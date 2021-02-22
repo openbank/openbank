@@ -6,6 +6,8 @@ package customer
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -15,13 +17,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -47,15 +50,19 @@ func (*FaceImage) Descriptor() ([]byte, []int) {
 func (m *FaceImage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FaceImage.Unmarshal(m, b)
 }
+
 func (m *FaceImage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FaceImage.Marshal(b, m, deterministic)
 }
+
 func (m *FaceImage) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FaceImage.Merge(m, src)
 }
+
 func (m *FaceImage) XXX_Size() int {
 	return xxx_messageInfo_FaceImage.Size(m)
 }
+
 func (m *FaceImage) XXX_DiscardUnknown() {
 	xxx_messageInfo_FaceImage.DiscardUnknown(m)
 }
@@ -94,15 +101,19 @@ func (*CreditRating) Descriptor() ([]byte, []int) {
 func (m *CreditRating) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreditRating.Unmarshal(m, b)
 }
+
 func (m *CreditRating) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreditRating.Marshal(b, m, deterministic)
 }
+
 func (m *CreditRating) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreditRating.Merge(m, src)
 }
+
 func (m *CreditRating) XXX_Size() int {
 	return xxx_messageInfo_CreditRating.Size(m)
 }
+
 func (m *CreditRating) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreditRating.DiscardUnknown(m)
 }
@@ -156,15 +167,19 @@ func (*Customer) Descriptor() ([]byte, []int) {
 func (m *Customer) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Customer.Unmarshal(m, b)
 }
+
 func (m *Customer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Customer.Marshal(b, m, deterministic)
 }
+
 func (m *Customer) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Customer.Merge(m, src)
 }
+
 func (m *Customer) XXX_Size() int {
 	return xxx_messageInfo_Customer.Size(m)
 }
+
 func (m *Customer) XXX_DiscardUnknown() {
 	xxx_messageInfo_Customer.DiscardUnknown(m)
 }
@@ -321,15 +336,19 @@ func (*CreateCustomerRequest) Descriptor() ([]byte, []int) {
 func (m *CreateCustomerRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCustomerRequest.Unmarshal(m, b)
 }
+
 func (m *CreateCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCustomerRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCustomerRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCustomerRequest.Merge(m, src)
 }
+
 func (m *CreateCustomerRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateCustomerRequest.Size(m)
 }
+
 func (m *CreateCustomerRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCustomerRequest.DiscardUnknown(m)
 }
@@ -459,15 +478,19 @@ func (*CreateCustomerResponse) Descriptor() ([]byte, []int) {
 func (m *CreateCustomerResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCustomerResponse.Unmarshal(m, b)
 }
+
 func (m *CreateCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCustomerResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCustomerResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCustomerResponse.Merge(m, src)
 }
+
 func (m *CreateCustomerResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateCustomerResponse.Size(m)
 }
+
 func (m *CreateCustomerResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCustomerResponse.DiscardUnknown(m)
 }
@@ -515,15 +538,19 @@ func (*AddAddressToCustomerRequest) Descriptor() ([]byte, []int) {
 func (m *AddAddressToCustomerRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddAddressToCustomerRequest.Unmarshal(m, b)
 }
+
 func (m *AddAddressToCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddAddressToCustomerRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddAddressToCustomerRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddAddressToCustomerRequest.Merge(m, src)
 }
+
 func (m *AddAddressToCustomerRequest) XXX_Size() int {
 	return xxx_messageInfo_AddAddressToCustomerRequest.Size(m)
 }
+
 func (m *AddAddressToCustomerRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddAddressToCustomerRequest.DiscardUnknown(m)
 }
@@ -636,15 +663,19 @@ func (*AddAddressToCustomerResponse) Descriptor() ([]byte, []int) {
 func (m *AddAddressToCustomerResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddAddressToCustomerResponse.Unmarshal(m, b)
 }
+
 func (m *AddAddressToCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddAddressToCustomerResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddAddressToCustomerResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddAddressToCustomerResponse.Merge(m, src)
 }
+
 func (m *AddAddressToCustomerResponse) XXX_Size() int {
 	return xxx_messageInfo_AddAddressToCustomerResponse.Size(m)
 }
+
 func (m *AddAddressToCustomerResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddAddressToCustomerResponse.DiscardUnknown(m)
 }
@@ -764,15 +795,19 @@ func (*AddSocialMediaHandleRequest) Descriptor() ([]byte, []int) {
 func (m *AddSocialMediaHandleRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddSocialMediaHandleRequest.Unmarshal(m, b)
 }
+
 func (m *AddSocialMediaHandleRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddSocialMediaHandleRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AddSocialMediaHandleRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddSocialMediaHandleRequest.Merge(m, src)
 }
+
 func (m *AddSocialMediaHandleRequest) XXX_Size() int {
 	return xxx_messageInfo_AddSocialMediaHandleRequest.Size(m)
 }
+
 func (m *AddSocialMediaHandleRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddSocialMediaHandleRequest.DiscardUnknown(m)
 }
@@ -838,15 +873,19 @@ func (*AddSocialMediaHandleResponse) Descriptor() ([]byte, []int) {
 func (m *AddSocialMediaHandleResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AddSocialMediaHandleResponse.Unmarshal(m, b)
 }
+
 func (m *AddSocialMediaHandleResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AddSocialMediaHandleResponse.Marshal(b, m, deterministic)
 }
+
 func (m *AddSocialMediaHandleResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AddSocialMediaHandleResponse.Merge(m, src)
 }
+
 func (m *AddSocialMediaHandleResponse) XXX_Size() int {
 	return xxx_messageInfo_AddSocialMediaHandleResponse.Size(m)
 }
+
 func (m *AddSocialMediaHandleResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_AddSocialMediaHandleResponse.DiscardUnknown(m)
 }
@@ -885,15 +924,19 @@ func (*CreateCreditLimitOrderRequest) Descriptor() ([]byte, []int) {
 func (m *CreateCreditLimitOrderRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCreditLimitOrderRequest.Unmarshal(m, b)
 }
+
 func (m *CreateCreditLimitOrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCreditLimitOrderRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCreditLimitOrderRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCreditLimitOrderRequest.Merge(m, src)
 }
+
 func (m *CreateCreditLimitOrderRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateCreditLimitOrderRequest.Size(m)
 }
+
 func (m *CreateCreditLimitOrderRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCreditLimitOrderRequest.DiscardUnknown(m)
 }
@@ -980,15 +1023,19 @@ func (*CreateCreditLimitOrderResponse) Descriptor() ([]byte, []int) {
 func (m *CreateCreditLimitOrderResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCreditLimitOrderResponse.Unmarshal(m, b)
 }
+
 func (m *CreateCreditLimitOrderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCreditLimitOrderResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCreditLimitOrderResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCreditLimitOrderResponse.Merge(m, src)
 }
+
 func (m *CreateCreditLimitOrderResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateCreditLimitOrderResponse.Size(m)
 }
+
 func (m *CreateCreditLimitOrderResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCreditLimitOrderResponse.DiscardUnknown(m)
 }
@@ -1021,15 +1068,19 @@ func (*CreateUserCustomerLinkRequest) Descriptor() ([]byte, []int) {
 func (m *CreateUserCustomerLinkRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateUserCustomerLinkRequest.Unmarshal(m, b)
 }
+
 func (m *CreateUserCustomerLinkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateUserCustomerLinkRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateUserCustomerLinkRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateUserCustomerLinkRequest.Merge(m, src)
 }
+
 func (m *CreateUserCustomerLinkRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateUserCustomerLinkRequest.Size(m)
 }
+
 func (m *CreateUserCustomerLinkRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateUserCustomerLinkRequest.DiscardUnknown(m)
 }
@@ -1078,15 +1129,19 @@ func (*CreateUserCustomerLinkResponse) Descriptor() ([]byte, []int) {
 func (m *CreateUserCustomerLinkResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateUserCustomerLinkResponse.Unmarshal(m, b)
 }
+
 func (m *CreateUserCustomerLinkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateUserCustomerLinkResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateUserCustomerLinkResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateUserCustomerLinkResponse.Merge(m, src)
 }
+
 func (m *CreateUserCustomerLinkResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateUserCustomerLinkResponse.Size(m)
 }
+
 func (m *CreateUserCustomerLinkResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateUserCustomerLinkResponse.DiscardUnknown(m)
 }
@@ -1147,15 +1202,19 @@ func (*DeleteCustomerAddressRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteCustomerAddressRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteCustomerAddressRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteCustomerAddressRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteCustomerAddressRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteCustomerAddressRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteCustomerAddressRequest.Merge(m, src)
 }
+
 func (m *DeleteCustomerAddressRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteCustomerAddressRequest.Size(m)
 }
+
 func (m *DeleteCustomerAddressRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteCustomerAddressRequest.DiscardUnknown(m)
 }
@@ -1202,15 +1261,19 @@ func (*DeleteTaxResidenceRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteTaxResidenceRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteTaxResidenceRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteTaxResidenceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteTaxResidenceRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteTaxResidenceRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteTaxResidenceRequest.Merge(m, src)
 }
+
 func (m *DeleteTaxResidenceRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteTaxResidenceRequest.Size(m)
 }
+
 func (m *DeleteTaxResidenceRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteTaxResidenceRequest.DiscardUnknown(m)
 }
@@ -1264,15 +1327,19 @@ func (*CRMEvent) Descriptor() ([]byte, []int) {
 func (m *CRMEvent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CRMEvent.Unmarshal(m, b)
 }
+
 func (m *CRMEvent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CRMEvent.Marshal(b, m, deterministic)
 }
+
 func (m *CRMEvent) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CRMEvent.Merge(m, src)
 }
+
 func (m *CRMEvent) XXX_Size() int {
 	return xxx_messageInfo_CRMEvent.Size(m)
 }
+
 func (m *CRMEvent) XXX_DiscardUnknown() {
 	xxx_messageInfo_CRMEvent.DiscardUnknown(m)
 }
@@ -1366,15 +1433,19 @@ func (*GetCRMEventsRequest) Descriptor() ([]byte, []int) {
 func (m *GetCRMEventsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCRMEventsRequest.Unmarshal(m, b)
 }
+
 func (m *GetCRMEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCRMEventsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCRMEventsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCRMEventsRequest.Merge(m, src)
 }
+
 func (m *GetCRMEventsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCRMEventsRequest.Size(m)
 }
+
 func (m *GetCRMEventsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCRMEventsRequest.DiscardUnknown(m)
 }
@@ -1406,15 +1477,19 @@ func (*GetCRMEventsResponse) Descriptor() ([]byte, []int) {
 func (m *GetCRMEventsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCRMEventsResponse.Unmarshal(m, b)
 }
+
 func (m *GetCRMEventsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCRMEventsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCRMEventsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCRMEventsResponse.Merge(m, src)
 }
+
 func (m *GetCRMEventsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCRMEventsResponse.Size(m)
 }
+
 func (m *GetCRMEventsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCRMEventsResponse.DiscardUnknown(m)
 }
@@ -1455,15 +1530,19 @@ func (*CreditLimitOrder) Descriptor() ([]byte, []int) {
 func (m *CreditLimitOrder) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreditLimitOrder.Unmarshal(m, b)
 }
+
 func (m *CreditLimitOrder) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreditLimitOrder.Marshal(b, m, deterministic)
 }
+
 func (m *CreditLimitOrder) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreditLimitOrder.Merge(m, src)
 }
+
 func (m *CreditLimitOrder) XXX_Size() int {
 	return xxx_messageInfo_CreditLimitOrder.Size(m)
 }
+
 func (m *CreditLimitOrder) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreditLimitOrder.DiscardUnknown(m)
 }
@@ -1517,15 +1596,19 @@ func (*GetCreditLimitOrderByIDRequest) Descriptor() ([]byte, []int) {
 func (m *GetCreditLimitOrderByIDRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCreditLimitOrderByIDRequest.Unmarshal(m, b)
 }
+
 func (m *GetCreditLimitOrderByIDRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCreditLimitOrderByIDRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCreditLimitOrderByIDRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCreditLimitOrderByIDRequest.Merge(m, src)
 }
+
 func (m *GetCreditLimitOrderByIDRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCreditLimitOrderByIDRequest.Size(m)
 }
+
 func (m *GetCreditLimitOrderByIDRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCreditLimitOrderByIDRequest.DiscardUnknown(m)
 }
@@ -1570,15 +1653,19 @@ func (*GetCreditLimitOrderByIDResponse) Descriptor() ([]byte, []int) {
 func (m *GetCreditLimitOrderByIDResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCreditLimitOrderByIDResponse.Unmarshal(m, b)
 }
+
 func (m *GetCreditLimitOrderByIDResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCreditLimitOrderByIDResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCreditLimitOrderByIDResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCreditLimitOrderByIDResponse.Merge(m, src)
 }
+
 func (m *GetCreditLimitOrderByIDResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCreditLimitOrderByIDResponse.Size(m)
 }
+
 func (m *GetCreditLimitOrderByIDResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCreditLimitOrderByIDResponse.DiscardUnknown(m)
 }
@@ -1610,15 +1697,19 @@ func (*GetCreditLimitOrderRequest) Descriptor() ([]byte, []int) {
 func (m *GetCreditLimitOrderRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCreditLimitOrderRequest.Unmarshal(m, b)
 }
+
 func (m *GetCreditLimitOrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCreditLimitOrderRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCreditLimitOrderRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCreditLimitOrderRequest.Merge(m, src)
 }
+
 func (m *GetCreditLimitOrderRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCreditLimitOrderRequest.Size(m)
 }
+
 func (m *GetCreditLimitOrderRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCreditLimitOrderRequest.DiscardUnknown(m)
 }
@@ -1656,15 +1747,19 @@ func (*GetCreditLimitOrderResponse) Descriptor() ([]byte, []int) {
 func (m *GetCreditLimitOrderResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCreditLimitOrderResponse.Unmarshal(m, b)
 }
+
 func (m *GetCreditLimitOrderResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCreditLimitOrderResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCreditLimitOrderResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCreditLimitOrderResponse.Merge(m, src)
 }
+
 func (m *GetCreditLimitOrderResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCreditLimitOrderResponse.Size(m)
 }
+
 func (m *GetCreditLimitOrderResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCreditLimitOrderResponse.DiscardUnknown(m)
 }
@@ -1707,15 +1802,19 @@ func (*Address) Descriptor() ([]byte, []int) {
 func (m *Address) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Address.Unmarshal(m, b)
 }
+
 func (m *Address) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Address.Marshal(b, m, deterministic)
 }
+
 func (m *Address) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Address.Merge(m, src)
 }
+
 func (m *Address) XXX_Size() int {
 	return xxx_messageInfo_Address.Size(m)
 }
+
 func (m *Address) XXX_DiscardUnknown() {
 	xxx_messageInfo_Address.DiscardUnknown(m)
 }
@@ -1831,15 +1930,19 @@ func (*GetCustomerAddressesRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerAddressesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerAddressesRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerAddressesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerAddressesRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerAddressesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerAddressesRequest.Merge(m, src)
 }
+
 func (m *GetCustomerAddressesRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerAddressesRequest.Size(m)
 }
+
 func (m *GetCustomerAddressesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerAddressesRequest.DiscardUnknown(m)
 }
@@ -1877,15 +1980,19 @@ func (*GetCustomerAddressesResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomerAddressesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerAddressesResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomerAddressesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerAddressesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerAddressesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerAddressesResponse.Merge(m, src)
 }
+
 func (m *GetCustomerAddressesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerAddressesResponse.Size(m)
 }
+
 func (m *GetCustomerAddressesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerAddressesResponse.DiscardUnknown(m)
 }
@@ -1920,15 +2027,19 @@ func (*Check) Descriptor() ([]byte, []int) {
 func (m *Check) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Check.Unmarshal(m, b)
 }
+
 func (m *Check) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Check.Marshal(b, m, deterministic)
 }
+
 func (m *Check) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Check.Merge(m, src)
 }
+
 func (m *Check) XXX_Size() int {
 	return xxx_messageInfo_Check.Size(m)
 }
+
 func (m *Check) XXX_DiscardUnknown() {
 	xxx_messageInfo_Check.DiscardUnknown(m)
 }
@@ -1988,15 +2099,19 @@ func (*GetCustomerSocialMediaHandlesRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerSocialMediaHandlesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerSocialMediaHandlesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerSocialMediaHandlesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Merge(m, src)
 }
+
 func (m *GetCustomerSocialMediaHandlesRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.Size(m)
 }
+
 func (m *GetCustomerSocialMediaHandlesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerSocialMediaHandlesRequest.DiscardUnknown(m)
 }
@@ -2034,15 +2149,19 @@ func (*GetCustomerSocialMediaHandlesResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomerSocialMediaHandlesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomerSocialMediaHandlesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerSocialMediaHandlesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Merge(m, src)
 }
+
 func (m *GetCustomerSocialMediaHandlesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.Size(m)
 }
+
 func (m *GetCustomerSocialMediaHandlesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerSocialMediaHandlesResponse.DiscardUnknown(m)
 }
@@ -2074,15 +2193,19 @@ func (*GetCustomerByCustomerIDRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerByCustomerIDRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerByCustomerIDRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerByCustomerIDRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerByCustomerIDRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerByCustomerIDRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerByCustomerIDRequest.Merge(m, src)
 }
+
 func (m *GetCustomerByCustomerIDRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerByCustomerIDRequest.Size(m)
 }
+
 func (m *GetCustomerByCustomerIDRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerByCustomerIDRequest.DiscardUnknown(m)
 }
@@ -2122,15 +2245,19 @@ func (*GetCustomerByCustomerNumberRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomerByCustomerNumberRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomerByCustomerNumberRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomerByCustomerNumberRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomerByCustomerNumberRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomerByCustomerNumberRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomerByCustomerNumberRequest.Merge(m, src)
 }
+
 func (m *GetCustomerByCustomerNumberRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomerByCustomerNumberRequest.Size(m)
 }
+
 func (m *GetCustomerByCustomerNumberRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomerByCustomerNumberRequest.DiscardUnknown(m)
 }
@@ -2174,15 +2301,19 @@ func (*GetCustomersForCurrentUserRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomersForCurrentUserRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomersForCurrentUserRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomersForCurrentUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomersForCurrentUserRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomersForCurrentUserRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomersForCurrentUserRequest.Merge(m, src)
 }
+
 func (m *GetCustomersForCurrentUserRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomersForCurrentUserRequest.Size(m)
 }
+
 func (m *GetCustomersForCurrentUserRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomersForCurrentUserRequest.DiscardUnknown(m)
 }
@@ -2206,15 +2337,19 @@ func (*GetCustomersForCurrentUserResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomersForCurrentUserResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomersForCurrentUserResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomersForCurrentUserResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomersForCurrentUserResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomersForCurrentUserResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomersForCurrentUserResponse.Merge(m, src)
 }
+
 func (m *GetCustomersForCurrentUserResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomersForCurrentUserResponse.Size(m)
 }
+
 func (m *GetCustomersForCurrentUserResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomersForCurrentUserResponse.DiscardUnknown(m)
 }
@@ -2247,15 +2382,19 @@ func (*GetCustomersForCurrentUserAtBankRequest) Descriptor() ([]byte, []int) {
 func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Unmarshal(m, b)
 }
+
 func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Merge(m, src)
 }
+
 func (m *GetCustomersForCurrentUserAtBankRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.Size(m)
 }
+
 func (m *GetCustomersForCurrentUserAtBankRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomersForCurrentUserAtBankRequest.DiscardUnknown(m)
 }
@@ -2288,15 +2427,19 @@ func (*GetCustomersForCurrentUserAtBankResponse) Descriptor() ([]byte, []int) {
 func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Unmarshal(m, b)
 }
+
 func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Merge(m, src)
 }
+
 func (m *GetCustomersForCurrentUserAtBankResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.Size(m)
 }
+
 func (m *GetCustomersForCurrentUserAtBankResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCustomersForCurrentUserAtBankResponse.DiscardUnknown(m)
 }
@@ -2332,15 +2475,19 @@ func (*GetFirehoseCustomerRequest) Descriptor() ([]byte, []int) {
 func (m *GetFirehoseCustomerRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetFirehoseCustomerRequest.Unmarshal(m, b)
 }
+
 func (m *GetFirehoseCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetFirehoseCustomerRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetFirehoseCustomerRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetFirehoseCustomerRequest.Merge(m, src)
 }
+
 func (m *GetFirehoseCustomerRequest) XXX_Size() int {
 	return xxx_messageInfo_GetFirehoseCustomerRequest.Size(m)
 }
+
 func (m *GetFirehoseCustomerRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetFirehoseCustomerRequest.DiscardUnknown(m)
 }
@@ -2406,15 +2553,19 @@ func (*GetFirehoseCustomerResponse) Descriptor() ([]byte, []int) {
 func (m *GetFirehoseCustomerResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetFirehoseCustomerResponse.Unmarshal(m, b)
 }
+
 func (m *GetFirehoseCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetFirehoseCustomerResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetFirehoseCustomerResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetFirehoseCustomerResponse.Merge(m, src)
 }
+
 func (m *GetFirehoseCustomerResponse) XXX_Size() int {
 	return xxx_messageInfo_GetFirehoseCustomerResponse.Size(m)
 }
+
 func (m *GetFirehoseCustomerResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetFirehoseCustomerResponse.DiscardUnknown(m)
 }
@@ -2447,15 +2598,19 @@ func (*TaxResidence) Descriptor() ([]byte, []int) {
 func (m *TaxResidence) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_TaxResidence.Unmarshal(m, b)
 }
+
 func (m *TaxResidence) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_TaxResidence.Marshal(b, m, deterministic)
 }
+
 func (m *TaxResidence) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_TaxResidence.Merge(m, src)
 }
+
 func (m *TaxResidence) XXX_Size() int {
 	return xxx_messageInfo_TaxResidence.Size(m)
 }
+
 func (m *TaxResidence) XXX_DiscardUnknown() {
 	xxx_messageInfo_TaxResidence.DiscardUnknown(m)
 }
@@ -2501,15 +2656,19 @@ func (*GetTaxResidenceOfCustomerRequest) Descriptor() ([]byte, []int) {
 func (m *GetTaxResidenceOfCustomerRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Unmarshal(m, b)
 }
+
 func (m *GetTaxResidenceOfCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetTaxResidenceOfCustomerRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Merge(m, src)
 }
+
 func (m *GetTaxResidenceOfCustomerRequest) XXX_Size() int {
 	return xxx_messageInfo_GetTaxResidenceOfCustomerRequest.Size(m)
 }
+
 func (m *GetTaxResidenceOfCustomerRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTaxResidenceOfCustomerRequest.DiscardUnknown(m)
 }
@@ -2547,15 +2706,19 @@ func (*GetTaxResidenceOfCustomerResponse) Descriptor() ([]byte, []int) {
 func (m *GetTaxResidenceOfCustomerResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Unmarshal(m, b)
 }
+
 func (m *GetTaxResidenceOfCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetTaxResidenceOfCustomerResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Merge(m, src)
 }
+
 func (m *GetTaxResidenceOfCustomerResponse) XXX_Size() int {
 	return xxx_messageInfo_GetTaxResidenceOfCustomerResponse.Size(m)
 }
+
 func (m *GetTaxResidenceOfCustomerResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTaxResidenceOfCustomerResponse.DiscardUnknown(m)
 }
@@ -2598,15 +2761,19 @@ func (*UpdateCustomerAddressRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerAddressRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerAddressRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerAddressRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerAddressRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerAddressRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerAddressRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerAddressRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerAddressRequest.Size(m)
 }
+
 func (m *UpdateCustomerAddressRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerAddressRequest.DiscardUnknown(m)
 }
@@ -2733,15 +2900,19 @@ func (*UpdateCustomerAddressResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerAddressResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerAddressResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerAddressResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerAddressResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerAddressResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerAddressResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerAddressResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerAddressResponse.Size(m)
 }
+
 func (m *UpdateCustomerAddressResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerAddressResponse.DiscardUnknown(m)
 }
@@ -2858,15 +3029,19 @@ func (*UpdateCustomerBranchRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerBranchRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerBranchRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerBranchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerBranchRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerBranchRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerBranchRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerBranchRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerBranchRequest.Size(m)
 }
+
 func (m *UpdateCustomerBranchRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerBranchRequest.DiscardUnknown(m)
 }
@@ -2911,15 +3086,19 @@ func (*UpdateCustomerBranchResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerBranchResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerBranchResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerBranchResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerBranchResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerBranchResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerBranchResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerBranchResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerBranchResponse.Size(m)
 }
+
 func (m *UpdateCustomerBranchResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerBranchResponse.DiscardUnknown(m)
 }
@@ -2952,15 +3131,19 @@ func (*UpdateCustomerCreditLimitRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerCreditLimitRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerCreditLimitRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerCreditLimitRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerCreditLimitRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerCreditLimitRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerCreditLimitRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerCreditLimitRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerCreditLimitRequest.Size(m)
 }
+
 func (m *UpdateCustomerCreditLimitRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerCreditLimitRequest.DiscardUnknown(m)
 }
@@ -3005,15 +3188,19 @@ func (*UpdateCustomerCreditLimitResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerCreditLimitResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerCreditLimitResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerCreditLimitResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerCreditLimitResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerCreditLimitResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerCreditLimitResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerCreditLimitResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerCreditLimitResponse.Size(m)
 }
+
 func (m *UpdateCustomerCreditLimitResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerCreditLimitResponse.DiscardUnknown(m)
 }
@@ -3039,6 +3226,7 @@ type UpdateCustomerCreditRatingAndSourceRequest struct {
 func (m *UpdateCustomerCreditRatingAndSourceRequest) Reset() {
 	*m = UpdateCustomerCreditRatingAndSourceRequest{}
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceRequest) String() string {
 	return proto.CompactTextString(m)
 }
@@ -3050,15 +3238,19 @@ func (*UpdateCustomerCreditRatingAndSourceRequest) Descriptor() ([]byte, []int) 
 func (m *UpdateCustomerCreditRatingAndSourceRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerCreditRatingAndSourceRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerCreditRatingAndSourceRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerCreditRatingAndSourceRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerCreditRatingAndSourceRequest.Size(m)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerCreditRatingAndSourceRequest.DiscardUnknown(m)
 }
@@ -3096,6 +3288,7 @@ type UpdateCustomerCreditRatingAndSourceResponse struct {
 func (m *UpdateCustomerCreditRatingAndSourceResponse) Reset() {
 	*m = UpdateCustomerCreditRatingAndSourceResponse{}
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceResponse) String() string {
 	return proto.CompactTextString(m)
 }
@@ -3107,15 +3300,19 @@ func (*UpdateCustomerCreditRatingAndSourceResponse) Descriptor() ([]byte, []int)
 func (m *UpdateCustomerCreditRatingAndSourceResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerCreditRatingAndSourceResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerCreditRatingAndSourceResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerCreditRatingAndSourceResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerCreditRatingAndSourceResponse.Size(m)
 }
+
 func (m *UpdateCustomerCreditRatingAndSourceResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerCreditRatingAndSourceResponse.DiscardUnknown(m)
 }
@@ -3148,15 +3345,19 @@ func (*UpdateCustomerEmailRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerEmailRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerEmailRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerEmailRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerEmailRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerEmailRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerEmailRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerEmailRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerEmailRequest.Size(m)
 }
+
 func (m *UpdateCustomerEmailRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerEmailRequest.DiscardUnknown(m)
 }
@@ -3201,15 +3402,19 @@ func (*UpdateCustomerEmailResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerEmailResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerEmailResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerEmailResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerEmailResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerEmailResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerEmailResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerEmailResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerEmailResponse.Size(m)
 }
+
 func (m *UpdateCustomerEmailResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerEmailResponse.DiscardUnknown(m)
 }
@@ -3244,15 +3449,19 @@ func (*UpdateCustomerIdentityRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerIdentityRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerIdentityRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerIdentityRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerIdentityRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerIdentityRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerIdentityRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerIdentityRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerIdentityRequest.Size(m)
 }
+
 func (m *UpdateCustomerIdentityRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerIdentityRequest.DiscardUnknown(m)
 }
@@ -3311,15 +3520,19 @@ func (*UpdateCustomerIdentityResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerIdentityResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerIdentityResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerIdentityResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerIdentityResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerIdentityResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerIdentityResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerIdentityResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerIdentityResponse.Size(m)
 }
+
 func (m *UpdateCustomerIdentityResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerIdentityResponse.DiscardUnknown(m)
 }
@@ -3352,15 +3565,19 @@ func (*UpdateCustomerMobileNumberRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerMobileNumberRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerMobileNumberRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerMobileNumberRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerMobileNumberRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerMobileNumberRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerMobileNumberRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerMobileNumberRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerMobileNumberRequest.Size(m)
 }
+
 func (m *UpdateCustomerMobileNumberRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerMobileNumberRequest.DiscardUnknown(m)
 }
@@ -3405,15 +3622,19 @@ func (*UpdateCustomerMobileNumberResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerMobileNumberResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerMobileNumberResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerMobileNumberResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerMobileNumberResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerMobileNumberResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerMobileNumberResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerMobileNumberResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerMobileNumberResponse.Size(m)
 }
+
 func (m *UpdateCustomerMobileNumberResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerMobileNumberResponse.DiscardUnknown(m)
 }
@@ -3446,15 +3667,19 @@ func (*UpdateCustomerNumberRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerNumberRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerNumberRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerNumberRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerNumberRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerNumberRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerNumberRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerNumberRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerNumberRequest.Size(m)
 }
+
 func (m *UpdateCustomerNumberRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerNumberRequest.DiscardUnknown(m)
 }
@@ -3499,15 +3724,19 @@ func (*UpdateCustomerNumberResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerNumberResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerNumberResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerNumberResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerNumberResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerNumberResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerNumberResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerNumberResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerNumberResponse.Size(m)
 }
+
 func (m *UpdateCustomerNumberResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerNumberResponse.DiscardUnknown(m)
 }
@@ -3544,15 +3773,19 @@ func (*UpdateCustomerOtherDataRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerOtherDataRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerOtherDataRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerOtherDataRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerOtherDataRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerOtherDataRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerOtherDataRequest.Merge(m, src)
 }
+
 func (m *UpdateCustomerOtherDataRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerOtherDataRequest.Size(m)
 }
+
 func (m *UpdateCustomerOtherDataRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerOtherDataRequest.DiscardUnknown(m)
 }
@@ -3625,15 +3858,19 @@ func (*UpdateCustomerOtherDataResponse) Descriptor() ([]byte, []int) {
 func (m *UpdateCustomerOtherDataResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCustomerOtherDataResponse.Unmarshal(m, b)
 }
+
 func (m *UpdateCustomerOtherDataResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCustomerOtherDataResponse.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCustomerOtherDataResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCustomerOtherDataResponse.Merge(m, src)
 }
+
 func (m *UpdateCustomerOtherDataResponse) XXX_Size() int {
 	return xxx_messageInfo_UpdateCustomerOtherDataResponse.Size(m)
 }
+
 func (m *UpdateCustomerOtherDataResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCustomerOtherDataResponse.DiscardUnknown(m)
 }
@@ -4033,13 +4270,15 @@ var fileDescriptor_738180ea6f18b813 = []byte{
 	0x26, 0x9b, 0x01, 0x58, 0xc8, 0x13, 0x5c, 0xd2, 0x91, 0x1b, 0xd0, 0x84, 0xdb, 0xb1, 0x8d, 0x04,
 	0x1c, 0x76, 0x2d, 0x22, 0x0f, 0x9b, 0x46, 0xb0, 0x77, 0x5d, 0x2f, 0xdc, 0x2a, 0xbc, 0x12, 0xfc,
 	0x1a, 0xe1, 0x53, 0x85, 0x81, 0xb7, 0x0a, 0x03, 0x9f, 0x29, 0x0c, 0x7c, 0xa5, 0x30, 0xf0, 0x57,
-	0x85, 0x81, 0xff, 0x2c, 0x0c, 0x7c, 0x5b, 0x18, 0xd8, 0x2c, 0x12, 0x62, 0xdc, 0x85, 0xff, 0x0d,
-	0x00, 0x00, 0xff, 0xff, 0xe7, 0x71, 0x5f, 0x11, 0x45, 0x65, 0x00, 0x00,
+	0x85, 0x81, 0xff, 0x2c, 0x14, 0xbe, 0x2d, 0x0c, 0x6c, 0x16, 0x09, 0x31, 0xee, 0xc2, 0xff, 0x06,
+	0x00, 0x00, 0xff, 0xff, 0x88, 0x3d, 0xfa, 0x8a, 0x45, 0x65, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -4415,87 +4654,112 @@ type CustomerServiceServer interface {
 }
 
 // UnimplementedCustomerServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedCustomerServiceServer struct {
-}
+type UnimplementedCustomerServiceServer struct{}
 
 func (*UnimplementedCustomerServiceServer) AddAddressToCustomer(ctx context.Context, req *AddAddressToCustomerRequest) (*AddAddressToCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddAddressToCustomer not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) AddSocialMediaHandle(ctx context.Context, req *AddSocialMediaHandleRequest) (*AddSocialMediaHandleResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddSocialMediaHandle not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) CreateCustomer(ctx context.Context, req *CreateCustomerRequest) (*CreateCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCustomer not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) CreateCreditLimitOrder(ctx context.Context, req *CreateCreditLimitOrderRequest) (*CreateCreditLimitOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCreditLimitOrder not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) CreateUserCustomerLink(ctx context.Context, req *CreateUserCustomerLinkRequest) (*CreateUserCustomerLinkResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUserCustomerLink not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) DeleteCustomerAddress(ctx context.Context, req *DeleteCustomerAddressRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCustomerAddress not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) DeleteTaxResidence(ctx context.Context, req *DeleteTaxResidenceRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTaxResidence not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCRMEvents(ctx context.Context, req *GetCRMEventsRequest) (*GetCRMEventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCRMEvents not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCreditLimitOrderByID(ctx context.Context, req *GetCreditLimitOrderByIDRequest) (*GetCreditLimitOrderByIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCreditLimitOrderByID not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCreditLimitOrder(ctx context.Context, req *GetCreditLimitOrderRequest) (*GetCreditLimitOrderResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCreditLimitOrder not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCustomerAddresses(ctx context.Context, req *GetCustomerAddressesRequest) (*GetCustomerAddressesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerAddresses not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCustomerSocialMediaHandles(ctx context.Context, req *GetCustomerSocialMediaHandlesRequest) (*GetCustomerSocialMediaHandlesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerSocialMediaHandles not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCustomerByCustomerID(ctx context.Context, req *GetCustomerByCustomerIDRequest) (*Customer, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerByCustomerID not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCustomerByCustomerNumber(ctx context.Context, req *GetCustomerByCustomerNumberRequest) (*Customer, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerByCustomerNumber not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCustomersForCurrentUser(ctx context.Context, req *GetCustomersForCurrentUserRequest) (*GetCustomersForCurrentUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomersForCurrentUser not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetCustomersForCurrentUserAtBank(ctx context.Context, req *GetCustomersForCurrentUserAtBankRequest) (*GetCustomersForCurrentUserAtBankResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCustomersForCurrentUserAtBank not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetFirehoseCustomer(ctx context.Context, req *GetFirehoseCustomerRequest) (*GetFirehoseCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFirehoseCustomer not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) GetTaxResidenceOfCustomer(ctx context.Context, req *GetTaxResidenceOfCustomerRequest) (*GetTaxResidenceOfCustomerResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTaxResidenceOfCustomer not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerAddress(ctx context.Context, req *UpdateCustomerAddressRequest) (*UpdateCustomerAddressResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerAddress not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerBranch(ctx context.Context, req *UpdateCustomerBranchRequest) (*UpdateCustomerBranchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerBranch not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerCreditLimit(ctx context.Context, req *UpdateCustomerCreditLimitRequest) (*UpdateCustomerCreditLimitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerCreditLimit not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerCreditRatingAndSource(ctx context.Context, req *UpdateCustomerCreditRatingAndSourceRequest) (*UpdateCustomerCreditRatingAndSourceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerCreditRatingAndSource not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerEmail(ctx context.Context, req *UpdateCustomerEmailRequest) (*UpdateCustomerEmailResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerEmail not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerIdentity(ctx context.Context, req *UpdateCustomerIdentityRequest) (*UpdateCustomerIdentityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerIdentity not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerMobileNumber(ctx context.Context, req *UpdateCustomerMobileNumberRequest) (*UpdateCustomerMobileNumberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerMobileNumber not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerNumber(ctx context.Context, req *UpdateCustomerNumberRequest) (*UpdateCustomerNumberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerNumber not implemented")
 }
+
 func (*UnimplementedCustomerServiceServer) UpdateCustomerOtherData(ctx context.Context, req *UpdateCustomerOtherDataRequest) (*UpdateCustomerOtherDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateCustomerOtherData not implemented")
 }

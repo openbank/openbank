@@ -1,5 +1,4 @@
-Consent API v1.0.0
-==================
+# Consent API v1.0.0
 
 Provides CRUD operations on the consent part resource.
 
@@ -7,8 +6,7 @@ Provides CRUD operations on the consent part resource.
 
 * Base Path ``
 
-Answer the consent reqeust challenge {#method-post-answerconsentchallenge}
---------------------------------------------------------------------------
+## Answer the consent reqeust challenge {#method-post-answerconsentchallenge}
 
 Answer the consent request challenge
 
@@ -90,8 +88,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create an email consent {#method-post-createconsentemail}
----------------------------------------------------------
+## Create an email consent {#method-post-createconsentemail}
 
 Creates a new email consent
 
@@ -174,8 +171,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create an sms consent {#method-post-createconsentsms}
------------------------------------------------------
+## Create an sms consent {#method-post-createconsentsms}
 
 Creates a new sms consent
 
@@ -258,8 +254,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all consents {#method-get-getconsents}
--------------------------------------------
+## List all consents {#method-get-getconsents}
 
 Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.
 
@@ -339,8 +334,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Revoke the consent {#method-post-revokeconsent}
------------------------------------------------
+## Revoke the consent {#method-post-revokeconsent}
 
 Revoke the consent
 

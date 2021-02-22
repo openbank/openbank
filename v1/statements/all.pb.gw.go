@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_StatementService_GetStatement_0(ctx context.Context, marshaler runtime.Marshaler, client StatementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetStatementRequest
@@ -55,7 +57,6 @@ func request_StatementService_GetStatement_0(ctx context.Context, marshaler runt
 
 	msg, err := client.GetStatement(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_StatementService_GetStatement_0(ctx context.Context, marshaler runtime.Marshaler, server StatementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -82,14 +83,12 @@ func local_request_StatementService_GetStatement_0(ctx context.Context, marshale
 
 	msg, err := server.GetStatement(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterStatementServiceHandlerServer registers the http handlers for service StatementService to "mux".
 // UnaryRPC     :call StatementServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterStatementServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server StatementServiceServer) error {
-
 	mux.Handle("GET", pattern_StatementService_GetStatement_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -107,7 +106,6 @@ func RegisterStatementServiceHandlerServer(ctx context.Context, mux *runtime.Ser
 		}
 
 		forward_StatementService_GetStatement_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -150,7 +148,6 @@ func RegisterStatementServiceHandler(ctx context.Context, mux *runtime.ServeMux,
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "StatementServiceClient" to call the correct interceptors.
 func RegisterStatementServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client StatementServiceClient) error {
-
 	mux.Handle("GET", pattern_StatementService_GetStatement_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -168,16 +165,11 @@ func RegisterStatementServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 		}
 
 		forward_StatementService_GetStatement_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
 }
 
-var (
-	pattern_StatementService_GetStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "statement", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
-)
+var pattern_StatementService_GetStatement_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "statement", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
 
-var (
-	forward_StatementService_GetStatement_0 = runtime.ForwardResponseMessage
-)
+var forward_StatementService_GetStatement_0 = runtime.ForwardResponseMessage

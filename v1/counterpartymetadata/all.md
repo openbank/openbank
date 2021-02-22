@@ -1,5 +1,4 @@
-Counterparty Metadata API v1.0.0
-================================
+# Counterparty Metadata API v1.0.0
 
 Provides the access and availability to the counterparty metadata API.
 
@@ -7,8 +6,7 @@ Provides the access and availability to the counterparty metadata API.
 
 * Base Path ``
 
-Create a corporate_location {#method-post-createcorporatelocation}
-------------------------------------------------------------------
+## Create a corporate_location {#method-post-createcorporatelocation}
 
 Creates a new corporate_location and returns the object.
 
@@ -60,10 +58,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-post-createcorporatelocation}
 
@@ -77,10 +75,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -104,8 +102,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a image_url {#method-post-createimageurl}
-------------------------------------------------
+## Create a image_url {#method-post-createimageurl}
 
 Creates a new image_url and returns the object.
 
@@ -179,8 +176,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a more_info {#method-post-createmoreinfo}
-------------------------------------------------
+## Create a more_info {#method-post-createmoreinfo}
 
 Creates a new more_info and returns the object.
 
@@ -254,8 +250,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a open_corporates_url {#method-post-createopencorporatesurl}
--------------------------------------------------------------------
+## Create a open_corporates_url {#method-post-createopencorporatesurl}
 
 Creates a new open_corporates_url and returns the object.
 
@@ -329,8 +324,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a physical_location {#method-post-createphysicallocation}
-----------------------------------------------------------------
+## Create a physical_location {#method-post-createphysicallocation}
 
 Creates a new physical_location and returns the object.
 
@@ -382,10 +376,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-post-createphysicallocation}
 
@@ -399,10 +393,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -426,8 +420,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a private_alias {#method-post-createprivatealias}
---------------------------------------------------------
+## Create a private_alias {#method-post-createprivatealias}
 
 Creates a new private_alias and returns the object.
 
@@ -501,8 +494,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a public_alias {#method-post-createpublicalias}
-------------------------------------------------------
+## Create a public_alias {#method-post-createpublicalias}
 
 Creates a new public_alias and returns the object.
 
@@ -576,8 +568,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a url {#method-post-createurl}
--------------------------------------
+## Create a url {#method-post-createurl}
 
 Creates a new url and returns the object.
 
@@ -651,8 +642,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a corporate location {#method-delete-deletecorporatelocation}
---------------------------------------------------------------------
+## Delete a corporate location {#method-delete-deletecorporatelocation}
 
 Permanently delete a corporate location.
 
@@ -687,8 +677,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a image url {#method-delete-deleteimageurl}
---------------------------------------------------
+## Delete a image url {#method-delete-deleteimageurl}
 
 Permanently delete a image url.
 
@@ -723,8 +712,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a more info {#method-delete-deletemoreinfo}
---------------------------------------------------
+## Delete a more info {#method-delete-deletemoreinfo}
 
 Permanently delete a more info.
 
@@ -759,8 +747,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a open corporates url {#method-delete-deleteopencorporatesurl}
----------------------------------------------------------------------
+## Delete a open corporates url {#method-delete-deleteopencorporatesurl}
 
 Permanently delete a open corporates url.
 
@@ -795,8 +782,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a physical location {#method-delete-deletephysicallocation}
-------------------------------------------------------------------
+## Delete a physical location {#method-delete-deletephysicallocation}
 
 Permanently delete a physical location.
 
@@ -831,8 +817,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a private alias {#method-delete-deleteprivatealias}
-----------------------------------------------------------
+## Delete a private alias {#method-delete-deleteprivatealias}
 
 Permanently delete a private alias.
 
@@ -867,8 +852,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a public alias {#method-delete-deletepublicalias}
---------------------------------------------------------
+## Delete a public alias {#method-delete-deletepublicalias}
 
 Permanently delete a public alias.
 
@@ -903,8 +887,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a url {#method-delete-deleteurl}
----------------------------------------
+## Delete a url {#method-delete-deleteurl}
 
 Permanently delete a url.
 
@@ -939,8 +922,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve corporate location information {#method-get-getcorporatelocation}
---------------------------------------------------------------------------
+## Retrieve corporate location information {#method-get-getcorporatelocation}
 
 Retrieve information about the corporate location specified by the ID
 
@@ -974,10 +956,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -1002,8 +984,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available corporate locations {#method-get-getcorporatelocations}
-------------------------------------------------------------------------------
+## Retrieve all available corporate locations {#method-get-getcorporatelocations}
 
 Retrieve information regarding all available corporate locations.
 
@@ -1046,10 +1027,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -1081,8 +1062,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve image url information {#method-get-getimageurl}
---------------------------------------------------------
+## Retrieve image url information {#method-get-getimageurl}
 
 Retrieve information about the image url specified by the ID
 
@@ -1132,8 +1112,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available image urls {#method-get-getimageurls}
-------------------------------------------------------------
+## Retrieve all available image urls {#method-get-getimageurls}
 
 Retrieve information regarding all available image urls.
 
@@ -1201,8 +1180,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve more info information {#method-get-getmoreinfo}
---------------------------------------------------------
+## Retrieve more info information {#method-get-getmoreinfo}
 
 Retrieve information about the more info specified by the ID
 
@@ -1252,8 +1230,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available more infos {#method-get-getmoreinfos}
-------------------------------------------------------------
+## Retrieve all available more infos {#method-get-getmoreinfos}
 
 Retrieve information regarding all available more infos.
 
@@ -1321,8 +1298,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve open corporates url information {#method-get-getopencorporatesurl}
----------------------------------------------------------------------------
+## Retrieve open corporates url information {#method-get-getopencorporatesurl}
 
 Retrieve information about the open corporates url specified by the ID
 
@@ -1372,8 +1348,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available open corporates urls {#method-get-getopencorporatesurls}
--------------------------------------------------------------------------------
+## Retrieve all available open corporates urls {#method-get-getopencorporatesurls}
 
 Retrieve information regarding all available open corporates urls.
 
@@ -1441,8 +1416,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve other account metadata information {#method-get-getotheraccountmetadata}
----------------------------------------------------------------------------------
+## Retrieve other account metadata information {#method-get-getotheraccountmetadata}
 
 Retrieve information about the other account metadata specified by the ID
 
@@ -1495,10 +1469,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -1537,8 +1511,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve physical location information {#method-get-getphysicallocation}
-------------------------------------------------------------------------
+## Retrieve physical location information {#method-get-getphysicallocation}
 
 Retrieve information about the physical location specified by the ID
 
@@ -1572,10 +1545,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -1600,8 +1573,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available physical locations {#method-get-getphysicallocations}
-----------------------------------------------------------------------------
+## Retrieve all available physical locations {#method-get-getphysicallocations}
 
 Retrieve information regarding all available physical locations.
 
@@ -1644,10 +1616,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -1679,8 +1651,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve private alias information {#method-get-getprivatealias}
-----------------------------------------------------------------
+## Retrieve private alias information {#method-get-getprivatealias}
 
 Retrieve information about the private alias specified by the ID
 
@@ -1730,8 +1701,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available private aliases {#method-get-getprivatealiases}
-----------------------------------------------------------------------
+## Retrieve all available private aliases {#method-get-getprivatealiases}
 
 Retrieve information regarding all available private aliases.
 
@@ -1799,8 +1769,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve public alias information {#method-get-getpublicalias}
---------------------------------------------------------------
+## Retrieve public alias information {#method-get-getpublicalias}
 
 Retrieve information about the public alias specified by the ID
 
@@ -1850,8 +1819,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available public aliases {#method-get-getpublicaliases}
---------------------------------------------------------------------
+## Retrieve all available public aliases {#method-get-getpublicaliases}
 
 Retrieve information regarding all available public aliases.
 
@@ -1919,8 +1887,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve url information {#method-get-geturl}
----------------------------------------------
+## Retrieve url information {#method-get-geturl}
 
 Retrieve information about the url specified by the ID
 
@@ -1970,8 +1937,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available urls {#method-get-geturls}
--------------------------------------------------
+## Retrieve all available urls {#method-get-geturls}
 
 Retrieve information regarding all available urls.
 
@@ -2039,8 +2005,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a corporate location {#method-put-updatecorporatelocation}
------------------------------------------------------------------
+## Update a corporate location {#method-put-updatecorporatelocation}
 
 Updates a corporate location's information
 
@@ -2092,10 +2057,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-put-updatecorporatelocation}
 
@@ -2109,10 +2074,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -2136,8 +2101,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a image url {#method-put-updateimageurl}
------------------------------------------------
+## Update a image url {#method-put-updateimageurl}
 
 Updates a image url's information
 
@@ -2211,8 +2175,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a more info {#method-put-updatemoreinfo}
------------------------------------------------
+## Update a more info {#method-put-updatemoreinfo}
 
 Updates a more info's information
 
@@ -2286,8 +2249,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a open corporates url {#method-put-updateopencorporatesurl}
-------------------------------------------------------------------
+## Update a open corporates url {#method-put-updateopencorporatesurl}
 
 Updates a open corporates url's information
 
@@ -2361,8 +2323,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a physical location {#method-put-updatephysicallocation}
----------------------------------------------------------------
+## Update a physical location {#method-put-updatephysicallocation}
 
 Updates a physical location's information
 
@@ -2414,10 +2375,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ### Responses {#responses-method-put-updatephysicallocation}
 
@@ -2431,10 +2392,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -2458,8 +2419,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a private alias {#method-put-updateprivatealias}
--------------------------------------------------------
+## Update a private alias {#method-put-updateprivatealias}
 
 Updates a private alias's information
 
@@ -2533,8 +2493,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a public alias {#method-put-updatepublicalias}
------------------------------------------------------
+## Update a public alias {#method-put-updatepublicalias}
 
 Updates a public alias's information
 
@@ -2608,8 +2567,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a url {#method-put-updateurl}
-------------------------------------
+## Update a url {#method-put-updateurl}
 
 Updates a url's information
 

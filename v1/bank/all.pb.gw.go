@@ -25,16 +25,16 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
-
 var (
-	filter_BankService_GetBank_0 = &utilities.DoubleArray{Encoding: map[string]int{"ID": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
 )
+
+var filter_BankService_GetBank_0 = &utilities.DoubleArray{Encoding: map[string]int{"ID": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
 func request_BankService_GetBank_0(ctx context.Context, marshaler runtime.Marshaler, client BankServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetBankRequest
@@ -67,7 +67,6 @@ func request_BankService_GetBank_0(ctx context.Context, marshaler runtime.Marsha
 
 	msg, err := client.GetBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BankService_GetBank_0(ctx context.Context, marshaler runtime.Marshaler, server BankServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -98,7 +97,6 @@ func local_request_BankService_GetBank_0(ctx context.Context, marshaler runtime.
 
 	msg, err := server.GetBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BankService_GetBanks_0(ctx context.Context, marshaler runtime.Marshaler, client BankServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -107,7 +105,6 @@ func request_BankService_GetBanks_0(ctx context.Context, marshaler runtime.Marsh
 
 	msg, err := client.GetBanks(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BankService_GetBanks_0(ctx context.Context, marshaler runtime.Marshaler, server BankServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -116,7 +113,6 @@ func local_request_BankService_GetBanks_0(ctx context.Context, marshaler runtime
 
 	msg, err := server.GetBanks(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BankService_CreateBank_0(ctx context.Context, marshaler runtime.Marshaler, client BankServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -133,7 +129,6 @@ func request_BankService_CreateBank_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.CreateBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BankService_CreateBank_0(ctx context.Context, marshaler runtime.Marshaler, server BankServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -150,7 +145,6 @@ func local_request_BankService_CreateBank_0(ctx context.Context, marshaler runti
 
 	msg, err := server.CreateBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BankService_UpdateBank_0(ctx context.Context, marshaler runtime.Marshaler, client BankServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -167,7 +161,6 @@ func request_BankService_UpdateBank_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.UpdateBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BankService_UpdateBank_0(ctx context.Context, marshaler runtime.Marshaler, server BankServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -184,7 +177,6 @@ func local_request_BankService_UpdateBank_0(ctx context.Context, marshaler runti
 
 	msg, err := server.UpdateBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BankService_DeleteBank_0(ctx context.Context, marshaler runtime.Marshaler, client BankServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -211,7 +203,6 @@ func request_BankService_DeleteBank_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.DeleteBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BankService_DeleteBank_0(ctx context.Context, marshaler runtime.Marshaler, server BankServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -238,7 +229,6 @@ func local_request_BankService_DeleteBank_0(ctx context.Context, marshaler runti
 
 	msg, err := server.DeleteBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_BankService_CreateTranscationTypeAtBank_0(ctx context.Context, marshaler runtime.Marshaler, client BankServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -255,7 +245,6 @@ func request_BankService_CreateTranscationTypeAtBank_0(ctx context.Context, mars
 
 	msg, err := client.CreateTranscationTypeAtBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_BankService_CreateTranscationTypeAtBank_0(ctx context.Context, marshaler runtime.Marshaler, server BankServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -272,14 +261,12 @@ func local_request_BankService_CreateTranscationTypeAtBank_0(ctx context.Context
 
 	msg, err := server.CreateTranscationTypeAtBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterBankServiceHandlerServer registers the http handlers for service BankService to "mux".
 // UnaryRPC     :call BankServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server BankServiceServer) error {
-
 	mux.Handle("GET", pattern_BankService_GetBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -297,7 +284,6 @@ func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_GetBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_BankService_GetBanks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -317,7 +303,6 @@ func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_GetBanks_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_BankService_CreateBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -337,7 +322,6 @@ func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_CreateBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_BankService_UpdateBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -357,7 +341,6 @@ func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_UpdateBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_BankService_DeleteBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -377,7 +360,6 @@ func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_DeleteBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_BankService_CreateTranscationTypeAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -397,7 +379,6 @@ func RegisterBankServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_CreateTranscationTypeAtBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -440,7 +421,6 @@ func RegisterBankServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "BankServiceClient" to call the correct interceptors.
 func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client BankServiceClient) error {
-
 	mux.Handle("GET", pattern_BankService_GetBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -458,7 +438,6 @@ func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_GetBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_BankService_GetBanks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -478,7 +457,6 @@ func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_GetBanks_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_BankService_CreateBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -498,7 +476,6 @@ func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_CreateBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_BankService_UpdateBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -518,7 +495,6 @@ func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_UpdateBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_BankService_DeleteBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -538,7 +514,6 @@ func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_DeleteBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_BankService_CreateTranscationTypeAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -558,7 +533,6 @@ func RegisterBankServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		}
 
 		forward_BankService_CreateTranscationTypeAtBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

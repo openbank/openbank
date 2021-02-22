@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq CreateCorporateLocationRequest
@@ -85,7 +87,6 @@ func request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.C
 
 	msg, err := client.CreateCorporateLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -142,7 +143,6 @@ func local_request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx con
 
 	msg, err := server.CreateCorporateLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -191,7 +191,6 @@ func request_CounterpartyMetadataService_GetCorporateLocation_0(ctx context.Cont
 
 	msg, err := client.GetCorporateLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -240,7 +239,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocation_0(ctx contex
 
 	msg, err := server.GetCorporateLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetCorporateLocations_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -289,7 +287,6 @@ func request_CounterpartyMetadataService_GetCorporateLocations_0(ctx context.Con
 
 	msg, err := client.GetCorporateLocations(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetCorporateLocations_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -338,7 +335,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocations_0(ctx conte
 
 	msg, err := server.GetCorporateLocations(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -395,7 +391,6 @@ func request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx context.C
 
 	msg, err := client.UpdateCorporateLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -452,7 +447,6 @@ func local_request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx con
 
 	msg, err := server.UpdateCorporateLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -501,7 +495,6 @@ func request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx context.C
 
 	msg, err := client.DeleteCorporateLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -550,7 +543,6 @@ func local_request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx con
 
 	msg, err := server.DeleteCorporateLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -607,7 +599,6 @@ func request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Context, m
 
 	msg, err := client.CreateMoreInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -664,7 +655,6 @@ func local_request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Cont
 
 	msg, err := server.CreateMoreInfo(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -713,7 +703,6 @@ func request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context, mars
 
 	msg, err := client.GetMoreInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -762,7 +751,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context
 
 	msg, err := server.GetMoreInfo(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -811,7 +799,6 @@ func request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Context, mar
 
 	msg, err := client.GetMoreInfos(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -860,7 +847,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Contex
 
 	msg, err := server.GetMoreInfos(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -917,7 +903,6 @@ func request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Context, m
 
 	msg, err := client.UpdateMoreInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -974,7 +959,6 @@ func local_request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Cont
 
 	msg, err := server.UpdateMoreInfo(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1023,7 +1007,6 @@ func request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Context, m
 
 	msg, err := client.DeleteMoreInfo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1072,7 +1055,6 @@ func local_request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Cont
 
 	msg, err := server.DeleteMoreInfo(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1129,7 +1111,6 @@ func request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx context.C
 
 	msg, err := client.CreateOpenCorporatesURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1186,7 +1167,6 @@ func local_request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx con
 
 	msg, err := server.CreateOpenCorporatesURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1235,7 +1215,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx context.Cont
 
 	msg, err := client.GetOpenCorporatesURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1284,7 +1263,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx contex
 
 	msg, err := server.GetOpenCorporatesURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1333,7 +1311,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx context.Con
 
 	msg, err := client.GetOpenCorporatesURLs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1382,7 +1359,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx conte
 
 	msg, err := server.GetOpenCorporatesURLs(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1439,7 +1415,6 @@ func request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx context.C
 
 	msg, err := client.UpdateOpenCorporatesURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1496,7 +1471,6 @@ func local_request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx con
 
 	msg, err := server.UpdateOpenCorporatesURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1545,7 +1519,6 @@ func request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx context.C
 
 	msg, err := client.DeleteOpenCorporatesURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1594,7 +1567,6 @@ func local_request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx con
 
 	msg, err := server.DeleteOpenCorporatesURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1651,7 +1623,6 @@ func request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, marsha
 
 	msg, err := client.CreateURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1708,7 +1679,6 @@ func local_request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, 
 
 	msg, err := server.CreateURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1757,7 +1727,6 @@ func request_CounterpartyMetadataService_GetURL_0(ctx context.Context, marshaler
 
 	msg, err := client.GetURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1806,7 +1775,6 @@ func local_request_CounterpartyMetadataService_GetURL_0(ctx context.Context, mar
 
 	msg, err := server.GetURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1855,7 +1823,6 @@ func request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, marshale
 
 	msg, err := client.GetURLs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1904,7 +1871,6 @@ func local_request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, ma
 
 	msg, err := server.GetURLs(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -1961,7 +1927,6 @@ func request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, marsha
 
 	msg, err := client.UpdateURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2018,7 +1983,6 @@ func local_request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, 
 
 	msg, err := server.UpdateURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2067,7 +2031,6 @@ func request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, marsha
 
 	msg, err := client.DeleteURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2116,7 +2079,6 @@ func local_request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, 
 
 	msg, err := server.DeleteURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2173,7 +2135,6 @@ func request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Context, m
 
 	msg, err := client.CreateImageURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2230,7 +2191,6 @@ func local_request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Cont
 
 	msg, err := server.CreateImageURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2279,7 +2239,6 @@ func request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context, mars
 
 	msg, err := client.GetImageURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2328,7 +2287,6 @@ func local_request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context
 
 	msg, err := server.GetImageURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2377,7 +2335,6 @@ func request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Context, mar
 
 	msg, err := client.GetImageURLs(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2426,7 +2383,6 @@ func local_request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Contex
 
 	msg, err := server.GetImageURLs(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2483,7 +2439,6 @@ func request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Context, m
 
 	msg, err := client.UpdateImageURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2540,7 +2495,6 @@ func local_request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Cont
 
 	msg, err := server.UpdateImageURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2589,7 +2543,6 @@ func request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Context, m
 
 	msg, err := client.DeleteImageURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2638,7 +2591,6 @@ func local_request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Cont
 
 	msg, err := server.DeleteImageURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2695,7 +2647,6 @@ func request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx context.Co
 
 	msg, err := client.CreatePhysicalLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2752,7 +2703,6 @@ func local_request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx cont
 
 	msg, err := server.CreatePhysicalLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2801,7 +2751,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context.Conte
 
 	msg, err := client.GetPhysicalLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2850,7 +2799,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context
 
 	msg, err := server.GetPhysicalLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2899,7 +2847,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx context.Cont
 
 	msg, err := client.GetPhysicalLocations(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2948,7 +2895,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx contex
 
 	msg, err := server.GetPhysicalLocations(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3005,7 +2951,6 @@ func request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx context.Co
 
 	msg, err := client.UpdatePhysicalLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3062,7 +3007,6 @@ func local_request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx cont
 
 	msg, err := server.UpdatePhysicalLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3111,7 +3055,6 @@ func request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx context.Co
 
 	msg, err := client.DeletePhysicalLocation(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3160,7 +3103,6 @@ func local_request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx cont
 
 	msg, err := server.DeletePhysicalLocation(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3217,7 +3159,6 @@ func request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.Context
 
 	msg, err := client.CreatePublicAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3274,7 +3215,6 @@ func local_request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.C
 
 	msg, err := server.CreatePublicAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3323,7 +3263,6 @@ func request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Context, m
 
 	msg, err := client.GetPublicAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3372,7 +3311,6 @@ func local_request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Cont
 
 	msg, err := server.GetPublicAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3421,7 +3359,6 @@ func request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Context,
 
 	msg, err := client.GetPublicAliases(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3470,7 +3407,6 @@ func local_request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Co
 
 	msg, err := server.GetPublicAliases(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3527,7 +3463,6 @@ func request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.Context
 
 	msg, err := client.UpdatePublicAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3584,7 +3519,6 @@ func local_request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.C
 
 	msg, err := server.UpdatePublicAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3633,7 +3567,6 @@ func request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.Context
 
 	msg, err := client.DeletePublicAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3682,7 +3615,6 @@ func local_request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.C
 
 	msg, err := server.DeletePublicAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3739,7 +3671,6 @@ func request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.Contex
 
 	msg, err := client.CreatePrivateAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3796,7 +3727,6 @@ func local_request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.
 
 	msg, err := server.CreatePrivateAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3845,7 +3775,6 @@ func request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Context, 
 
 	msg, err := client.GetPrivateAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3894,7 +3823,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Con
 
 	msg, err := server.GetPrivateAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3943,7 +3871,6 @@ func request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.Context
 
 	msg, err := client.GetPrivateAliases(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -3992,7 +3919,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.C
 
 	msg, err := server.GetPrivateAliases(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4049,7 +3975,6 @@ func request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.Contex
 
 	msg, err := client.UpdatePrivateAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4106,7 +4031,6 @@ func local_request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.
 
 	msg, err := server.UpdatePrivateAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4155,7 +4079,6 @@ func request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.Contex
 
 	msg, err := client.DeletePrivateAlias(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4204,7 +4127,6 @@ func local_request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.
 
 	msg, err := server.DeletePrivateAlias(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4253,7 +4175,6 @@ func request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx context.C
 
 	msg, err := client.GetOtherAccountMetadata(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx context.Context, marshaler runtime.Marshaler, server CounterpartyMetadataServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -4302,14 +4223,12 @@ func local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx con
 
 	msg, err := server.GetOtherAccountMetadata(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterCounterpartyMetadataServiceHandlerServer registers the http handlers for service CounterpartyMetadataService to "mux".
 // UnaryRPC     :call CounterpartyMetadataServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CounterpartyMetadataServiceServer) error {
-
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -4327,7 +4246,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4347,7 +4265,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetCorporateLocations_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4367,7 +4284,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetCorporateLocations_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4387,7 +4303,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4407,7 +4322,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4427,7 +4341,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4447,7 +4360,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetMoreInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4467,7 +4379,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetMoreInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4487,7 +4398,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4507,7 +4417,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4527,7 +4436,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4547,7 +4455,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOpenCorporatesURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4567,7 +4474,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4587,7 +4493,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4607,7 +4512,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4627,7 +4531,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4647,7 +4550,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4667,7 +4569,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetURLs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4687,7 +4588,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4707,7 +4607,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4727,7 +4626,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4747,7 +4645,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetImageURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4767,7 +4664,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetImageURLs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4787,7 +4683,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4807,7 +4702,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4827,7 +4721,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4847,7 +4740,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPhysicalLocations_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4867,7 +4759,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPhysicalLocations_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4887,7 +4778,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4907,7 +4797,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4927,7 +4816,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreatePublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4947,7 +4835,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPublicAliases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4967,7 +4854,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPublicAliases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -4987,7 +4873,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdatePublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5007,7 +4892,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeletePublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5027,7 +4911,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreatePrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5047,7 +4930,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPrivateAliases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5067,7 +4949,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPrivateAliases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5087,7 +4968,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5107,7 +4987,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeletePrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOtherAccountMetadata_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5127,7 +5006,6 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -5170,7 +5048,6 @@ func RegisterCounterpartyMetadataServiceHandler(ctx context.Context, mux *runtim
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "CounterpartyMetadataServiceClient" to call the correct interceptors.
 func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CounterpartyMetadataServiceClient) error {
-
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -5188,7 +5065,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5208,7 +5084,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetCorporateLocations_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5228,7 +5103,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetCorporateLocations_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5248,7 +5122,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5268,7 +5141,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5288,7 +5160,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5308,7 +5179,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetMoreInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5328,7 +5198,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetMoreInfos_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5348,7 +5217,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5368,7 +5236,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteMoreInfo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5388,7 +5255,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5408,7 +5274,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOpenCorporatesURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5428,7 +5293,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5448,7 +5312,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5468,7 +5331,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5488,7 +5350,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5508,7 +5369,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5528,7 +5388,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetURLs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5548,7 +5407,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5568,7 +5426,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5588,7 +5445,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreateImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5608,7 +5464,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetImageURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5628,7 +5483,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetImageURLs_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5648,7 +5502,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdateImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5668,7 +5521,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeleteImageURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5688,7 +5540,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5708,7 +5559,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPhysicalLocations_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5728,7 +5578,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPhysicalLocations_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5748,7 +5597,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5768,7 +5616,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5788,7 +5635,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreatePublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5808,7 +5654,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPublicAliases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5828,7 +5673,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPublicAliases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5848,7 +5692,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdatePublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5868,7 +5711,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeletePublicAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5888,7 +5730,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_CreatePrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5908,7 +5749,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPrivateAliases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5928,7 +5768,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetPrivateAliases_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5948,7 +5787,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5968,7 +5806,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_DeletePrivateAlias_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOtherAccountMetadata_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -5988,7 +5825,6 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		}
 
 		forward_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

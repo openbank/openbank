@@ -4,16 +4,16 @@ package branch
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/branch.read": "View branch data",
+	"https://auth.bnk.to/branch.read":  "View branch data",
 	"https://auth.bnk.to/branch.write": "Manage branch data",
 }
 
 var AuthScopes = map[string][]string{
-	"/branch.BranchService/CreateBranch": []string{"https://auth.bnk.to/branch.write"},
-	"/branch.BranchService/DeleteBranch": []string{"https://auth.bnk.to/branch.write"},
-	"/branch.BranchService/GetBranch": []string{"https://auth.bnk.to/branch.read"},
-	"/branch.BranchService/GetBranches": []string{"https://auth.bnk.to/branch.read"},
-	"/branch.BranchService/UpdateBranch": []string{"https://auth.bnk.to/branch.write"},
+	"/branch.BranchService/CreateBranch": {"https://auth.bnk.to/branch.write"},
+	"/branch.BranchService/DeleteBranch": {"https://auth.bnk.to/branch.write"},
+	"/branch.BranchService/GetBranch":    {"https://auth.bnk.to/branch.read"},
+	"/branch.BranchService/GetBranches":  {"https://auth.bnk.to/branch.read"},
+	"/branch.BranchService/UpdateBranch": {"https://auth.bnk.to/branch.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

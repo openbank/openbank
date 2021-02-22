@@ -1,5 +1,4 @@
-Transaction Metadata API v1.0.0
-===============================
+# Transaction Metadata API v1.0.0
 
 Provides the access and availability to the transaction metadata API.
 
@@ -7,8 +6,7 @@ Provides the access and availability to the transaction metadata API.
 
 * Base Path ``
 
-Create a comment {#method-post-createcomment}
----------------------------------------------
+## Create a comment {#method-post-createcomment}
 
 Creates a new comment and returns the object.
 
@@ -140,8 +138,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a image {#method-post-createimage}
------------------------------------------
+## Create a image {#method-post-createimage}
 
 Creates a new image and returns the object.
 
@@ -277,8 +274,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a narrative {#method-post-createnarrative}
--------------------------------------------------
+## Create a narrative {#method-post-createnarrative}
 
 Creates a new narrative and returns the object.
 
@@ -352,8 +348,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a tag {#method-post-createtag}
--------------------------------------
+## Create a tag {#method-post-createtag}
 
 Creates a new tag and returns the object.
 
@@ -485,8 +480,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a where tag {#method-post-createwheretag}
-------------------------------------------------
+## Create a where tag {#method-post-createwheretag}
 
 Creates a new where tag and returns the object.
 
@@ -549,10 +543,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Timestamp
 
@@ -583,10 +577,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Timestamp
 
@@ -634,8 +628,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a comment {#method-delete-deletecomment}
------------------------------------------------
+## Delete a comment {#method-delete-deletecomment}
 
 Permanently delete a comment.
 
@@ -682,8 +675,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a image {#method-delete-deleteimage}
--------------------------------------------
+## Delete a image {#method-delete-deleteimage}
 
 Permanently delete a image.
 
@@ -730,8 +722,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a narrative {#method-delete-deletenarrative}
----------------------------------------------------
+## Delete a narrative {#method-delete-deletenarrative}
 
 Permanently delete a narrative.
 
@@ -778,8 +769,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a tag {#method-delete-deletetag}
----------------------------------------
+## Delete a tag {#method-delete-deletetag}
 
 Permanently delete a tag.
 
@@ -826,8 +816,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a where tag {#method-delete-deletewheretag}
---------------------------------------------------
+## Delete a where tag {#method-delete-deletewheretag}
 
 Permanently delete a where tag.
 
@@ -874,8 +863,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve comment information {#method-get-getcomment}
------------------------------------------------------
+## Retrieve comment information {#method-get-getcomment}
 
 Retrieve information about the comment specified by the ID
 
@@ -956,8 +944,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available comments {#method-get-getcomments}
----------------------------------------------------------
+## Retrieve all available comments {#method-get-getcomments}
 
 Retrieve information regarding all available comments.
 
@@ -1053,8 +1040,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve image information {#method-get-getimage}
--------------------------------------------------
+## Retrieve image information {#method-get-getimage}
 
 Retrieve information about the image specified by the ID
 
@@ -1137,8 +1123,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available images {#method-get-getimages}
------------------------------------------------------
+## Retrieve all available images {#method-get-getimages}
 
 Retrieve information regarding all available images.
 
@@ -1236,8 +1221,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve narrative information {#method-get-getnarrative}
----------------------------------------------------------
+## Retrieve narrative information {#method-get-getnarrative}
 
 Retrieve information about the narrative specified by the ID
 
@@ -1288,8 +1272,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available narratives {#method-get-getnarratives}
--------------------------------------------------------------
+## Retrieve all available narratives {#method-get-getnarratives}
 
 Retrieve information regarding all available narratives.
 
@@ -1357,8 +1340,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve tag information {#method-get-gettag}
----------------------------------------------
+## Retrieve tag information {#method-get-gettag}
 
 Retrieve information about the tag specified by the ID
 
@@ -1439,8 +1421,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available tags {#method-get-gettags}
--------------------------------------------------
+## Retrieve all available tags {#method-get-gettags}
 
 Retrieve information regarding all available tags.
 
@@ -1536,8 +1517,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve where tag information {#method-get-getwheretag}
---------------------------------------------------------
+## Retrieve where tag information {#method-get-getwheretag}
 
 Retrieve information about the where tag specified by the ID
 
@@ -1574,10 +1554,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Timestamp
 
@@ -1626,8 +1606,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available where tags {#method-get-getwheretags}
-------------------------------------------------------------
+## Retrieve all available where tags {#method-get-getwheretags}
 
 Retrieve information regarding all available where tags.
 
@@ -1672,10 +1651,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Timestamp
 
@@ -1731,8 +1710,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a comment {#method-put-updatecomment}
---------------------------------------------
+## Update a comment {#method-put-updatecomment}
 
 Updates a comment's information
 
@@ -1864,8 +1842,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a image {#method-put-updateimage}
-----------------------------------------
+## Update a image {#method-put-updateimage}
 
 Updates a image's information
 
@@ -2001,8 +1978,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a narrative {#method-put-updatenarrative}
-------------------------------------------------
+## Update a narrative {#method-put-updatenarrative}
 
 Updates a narrative's information
 
@@ -2076,8 +2052,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a tag {#method-put-updatetag}
-------------------------------------
+## Update a tag {#method-put-updatetag}
 
 Updates a tag's information
 
@@ -2209,8 +2184,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a where tag {#method-put-updatewheretag}
------------------------------------------------
+## Update a where tag {#method-put-updatewheretag}
 
 Updates a where tag's information
 
@@ -2273,10 +2247,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Timestamp
 
@@ -2307,10 +2281,10 @@ curl -X PUT \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Timestamp
 

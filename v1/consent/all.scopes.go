@@ -4,16 +4,16 @@ package consent
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/consent.read": "View consent data",
+	"https://auth.bnk.to/consent.read":  "View consent data",
 	"https://auth.bnk.to/consent.write": "Manage consent data",
 }
 
 var AuthScopes = map[string][]string{
-	"/consent.ConsentService/AnswerConsentChallenge": []string{"https://auth.bnk.to/consent.write"},
-	"/consent.ConsentService/CreateConsentEmail": []string{"https://auth.bnk.to/consent.write"},
-	"/consent.ConsentService/CreateConsentSMS": []string{"https://auth.bnk.to/consent.write"},
-	"/consent.ConsentService/GetConsents": []string{"https://auth.bnk.to/consent.read"},
-	"/consent.ConsentService/RevokeConsent": []string{"https://auth.bnk.to/consent.write"},
+	"/consent.ConsentService/AnswerConsentChallenge": {"https://auth.bnk.to/consent.write"},
+	"/consent.ConsentService/CreateConsentEmail":     {"https://auth.bnk.to/consent.write"},
+	"/consent.ConsentService/CreateConsentSMS":       {"https://auth.bnk.to/consent.write"},
+	"/consent.ConsentService/GetConsents":            {"https://auth.bnk.to/consent.read"},
+	"/consent.ConsentService/RevokeConsent":          {"https://auth.bnk.to/consent.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

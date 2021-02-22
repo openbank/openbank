@@ -4,14 +4,14 @@ package fx
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/fx.read": "View fx data",
+	"https://auth.bnk.to/fx.read":  "View fx data",
 	"https://auth.bnk.to/fx.write": "Manage fx data",
 }
 
 var AuthScopes = map[string][]string{
-	"/fx.FXService/CreateFX": []string{"https://auth.bnk.to/fx.write"},
-	"/fx.FXService/GetCurrentFXRate": []string{"https://auth.bnk.to/fx.read"},
-	"/fx.FXService/UpdateFX": []string{"https://auth.bnk.to/fx.write"},
+	"/fx.FXService/CreateFX":         {"https://auth.bnk.to/fx.write"},
+	"/fx.FXService/GetCurrentFXRate": {"https://auth.bnk.to/fx.read"},
+	"/fx.FXService/UpdateFX":         {"https://auth.bnk.to/fx.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

@@ -6,6 +6,8 @@ package fx
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -56,15 +59,19 @@ func (*FX) Descriptor() ([]byte, []int) {
 func (m *FX) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_FX.Unmarshal(m, b)
 }
+
 func (m *FX) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_FX.Marshal(b, m, deterministic)
 }
+
 func (m *FX) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_FX.Merge(m, src)
 }
+
 func (m *FX) XXX_Size() int {
 	return xxx_messageInfo_FX.Size(m)
 }
+
 func (m *FX) XXX_DiscardUnknown() {
 	xxx_messageInfo_FX.DiscardUnknown(m)
 }
@@ -132,15 +139,19 @@ func (*CreateFXRequest) Descriptor() ([]byte, []int) {
 func (m *CreateFXRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateFXRequest.Unmarshal(m, b)
 }
+
 func (m *CreateFXRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateFXRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateFXRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateFXRequest.Merge(m, src)
 }
+
 func (m *CreateFXRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateFXRequest.Size(m)
 }
+
 func (m *CreateFXRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateFXRequest.DiscardUnknown(m)
 }
@@ -173,15 +184,19 @@ func (*UpdateFXRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateFXRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateFXRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateFXRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateFXRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateFXRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateFXRequest.Merge(m, src)
 }
+
 func (m *UpdateFXRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateFXRequest.Size(m)
 }
+
 func (m *UpdateFXRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateFXRequest.DiscardUnknown(m)
 }
@@ -216,15 +231,19 @@ func (*GetCurrentFXRateRequest) Descriptor() ([]byte, []int) {
 func (m *GetCurrentFXRateRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCurrentFXRateRequest.Unmarshal(m, b)
 }
+
 func (m *GetCurrentFXRateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCurrentFXRateRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCurrentFXRateRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCurrentFXRateRequest.Merge(m, src)
 }
+
 func (m *GetCurrentFXRateRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCurrentFXRateRequest.Size(m)
 }
+
 func (m *GetCurrentFXRateRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCurrentFXRateRequest.DiscardUnknown(m)
 }
@@ -330,13 +349,15 @@ var fileDescriptor_e3bdb6bf3dbfaace = []byte{
 	0x06, 0x24, 0x64, 0x86, 0x21, 0xfa, 0xfc, 0xd9, 0xc0, 0xe7, 0xde, 0x61, 0x82, 0xb5, 0x60, 0x84,
 	0x3f, 0x6b, 0x64, 0x8a, 0x61, 0x31, 0xa7, 0xd1, 0xe0, 0x2d, 0x77, 0xcb, 0xbd, 0xef, 0x45, 0x83,
 	0x4f, 0x5c, 0xe7, 0xb1, 0xeb, 0x3c, 0x71, 0x9d, 0x9f, 0x5c, 0xe7, 0x37, 0xd7, 0xf9, 0xcb, 0x75,
-	0x9e, 0x7a, 0x4e, 0xb3, 0x98, 0xae, 0x84, 0x6b, 0xff, 0x04, 0x00, 0x00, 0xff, 0xff, 0x9f, 0x62,
-	0x7f, 0x43, 0xc8, 0x09, 0x00, 0x00,
+	0x9f, 0x7a, 0x4e, 0xb3, 0x98, 0xae, 0x84, 0x6b, 0xff, 0x04, 0x00, 0x00, 0xff, 0xff, 0xf0, 0x2e,
+	0xda, 0xd8, 0xc8, 0x09, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -402,15 +423,16 @@ type FXServiceServer interface {
 }
 
 // UnimplementedFXServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedFXServiceServer struct {
-}
+type UnimplementedFXServiceServer struct{}
 
 func (*UnimplementedFXServiceServer) GetCurrentFXRate(ctx context.Context, req *GetCurrentFXRateRequest) (*FX, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCurrentFXRate not implemented")
 }
+
 func (*UnimplementedFXServiceServer) CreateFX(ctx context.Context, req *CreateFXRequest) (*FX, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFX not implemented")
 }
+
 func (*UnimplementedFXServiceServer) UpdateFX(ctx context.Context, req *UpdateFXRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFX not implemented")
 }

@@ -4,18 +4,18 @@ package transactions
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/transaction.read": "Allow application to view transaction history",
+	"https://auth.bnk.to/transaction.read":  "Allow application to view transaction history",
 	"https://auth.bnk.to/transaction.write": "Allow application to execute a transaction",
 }
 
 var AuthScopes = map[string][]string{
-	"/transactions.TransactionService/ApprovePayment": []string{"https://auth.bnk.to/transaction.write"},
-	"/transactions.TransactionService/CreateTransaction": []string{"https://auth.bnk.to/transaction.write"},
-	"/transactions.TransactionService/GetTransaction": []string{"https://auth.bnk.to/transaction.read"},
-	"/transactions.TransactionService/GetTransactions": []string{"https://auth.bnk.to/transaction.read"},
-	"/transactions.TransactionService/GetTransactionsByAccount": []string{"https://auth.bnk.to/transaction.read"},
-	"/transactions.TransactionService/ResendTFA": []string{"https://auth.bnk.to/transaction.write"},
-	"/transactions.TransactionService/TFA": []string{"https://auth.bnk.to/transaction.write"},
+	"/transactions.TransactionService/ApprovePayment":           {"https://auth.bnk.to/transaction.write"},
+	"/transactions.TransactionService/CreateTransaction":        {"https://auth.bnk.to/transaction.write"},
+	"/transactions.TransactionService/GetTransaction":           {"https://auth.bnk.to/transaction.read"},
+	"/transactions.TransactionService/GetTransactions":          {"https://auth.bnk.to/transaction.read"},
+	"/transactions.TransactionService/GetTransactionsByAccount": {"https://auth.bnk.to/transaction.read"},
+	"/transactions.TransactionService/ResendTFA":                {"https://auth.bnk.to/transaction.write"},
+	"/transactions.TransactionService/TFA":                      {"https://auth.bnk.to/transaction.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

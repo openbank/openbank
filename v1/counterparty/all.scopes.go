@@ -4,16 +4,16 @@ package counterparty
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/counterparty.read": "View counterparty data",
+	"https://auth.bnk.to/counterparty.read":  "View counterparty data",
 	"https://auth.bnk.to/counterparty.write": "Manage counterparty data",
 }
 
 var AuthScopes = map[string][]string{
-	"/counterparty.CounterPartyService/CreateCounterParty": []string{"https://auth.bnk.to/counterparty.write"},
-	"/counterparty.CounterPartyService/GetCounterParties": []string{"https://auth.bnk.to/counterparty.read"},
-	"/counterparty.CounterPartyService/GetCounterParty": []string{"https://auth.bnk.to/counterparty.read"},
-	"/counterparty.CounterPartyService/GetOtherAccountByID": []string{"https://auth.bnk.to/counterparty.read"},
-	"/counterparty.CounterPartyService/GetOtherAccounts": []string{"https://auth.bnk.to/counterparty.read"},
+	"/counterparty.CounterPartyService/CreateCounterParty":  {"https://auth.bnk.to/counterparty.write"},
+	"/counterparty.CounterPartyService/GetCounterParties":   {"https://auth.bnk.to/counterparty.read"},
+	"/counterparty.CounterPartyService/GetCounterParty":     {"https://auth.bnk.to/counterparty.read"},
+	"/counterparty.CounterPartyService/GetOtherAccountByID": {"https://auth.bnk.to/counterparty.read"},
+	"/counterparty.CounterPartyService/GetOtherAccounts":    {"https://auth.bnk.to/counterparty.read"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

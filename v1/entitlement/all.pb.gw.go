@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_EntitlementService_AddEntitlementRequestForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AddEntitlementRequestForCurrentUserRequest
@@ -45,7 +47,6 @@ func request_EntitlementService_AddEntitlementRequestForCurrentUser_0(ctx contex
 
 	msg, err := client.AddEntitlementRequestForCurrentUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_AddEntitlementRequestForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -62,7 +63,6 @@ func local_request_EntitlementService_AddEntitlementRequestForCurrentUser_0(ctx 
 
 	msg, err := server.AddEntitlementRequestForCurrentUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_AddEntitlementRequestForUser_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -97,7 +97,6 @@ func request_EntitlementService_AddEntitlementRequestForUser_0(ctx context.Conte
 
 	msg, err := client.AddEntitlementRequestForUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_AddEntitlementRequestForUser_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -132,7 +131,6 @@ func local_request_EntitlementService_AddEntitlementRequestForUser_0(ctx context
 
 	msg, err := server.AddEntitlementRequestForUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_DeleteEntitlement_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -170,7 +168,6 @@ func request_EntitlementService_DeleteEntitlement_0(ctx context.Context, marshal
 
 	msg, err := client.DeleteEntitlement(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_DeleteEntitlement_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -208,7 +205,6 @@ func local_request_EntitlementService_DeleteEntitlement_0(ctx context.Context, m
 
 	msg, err := server.DeleteEntitlement(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_DeleteEntitlementRequest_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -235,7 +231,6 @@ func request_EntitlementService_DeleteEntitlementRequest_0(ctx context.Context, 
 
 	msg, err := client.DeleteEntitlementRequest(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_DeleteEntitlementRequest_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -262,7 +257,6 @@ func local_request_EntitlementService_DeleteEntitlementRequest_0(ctx context.Con
 
 	msg, err := server.DeleteEntitlementRequest(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_GetEntitlementRequestForUser_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -289,7 +283,6 @@ func request_EntitlementService_GetEntitlementRequestForUser_0(ctx context.Conte
 
 	msg, err := client.GetEntitlementRequestForUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetEntitlementRequestForUser_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -316,7 +309,6 @@ func local_request_EntitlementService_GetEntitlementRequestForUser_0(ctx context
 
 	msg, err := server.GetEntitlementRequestForUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_GetEntitlementRequestForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -325,7 +317,6 @@ func request_EntitlementService_GetEntitlementRequestForCurrentUser_0(ctx contex
 
 	msg, err := client.GetEntitlementRequestForCurrentUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetEntitlementRequestForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -334,7 +325,6 @@ func local_request_EntitlementService_GetEntitlementRequestForCurrentUser_0(ctx 
 
 	msg, err := server.GetEntitlementRequestForCurrentUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_GetEntitlementForUser_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -361,7 +351,6 @@ func request_EntitlementService_GetEntitlementForUser_0(ctx context.Context, mar
 
 	msg, err := client.GetEntitlementForUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetEntitlementForUser_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -388,7 +377,6 @@ func local_request_EntitlementService_GetEntitlementForUser_0(ctx context.Contex
 
 	msg, err := server.GetEntitlementForUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_GetEntitlementForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -397,7 +385,6 @@ func request_EntitlementService_GetEntitlementForCurrentUser_0(ctx context.Conte
 
 	msg, err := client.GetEntitlementForCurrentUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetEntitlementForCurrentUser_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -406,7 +393,6 @@ func local_request_EntitlementService_GetEntitlementForCurrentUser_0(ctx context
 
 	msg, err := server.GetEntitlementForCurrentUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_EntitlementService_GetEntitlementForUserAtBank_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -444,7 +430,6 @@ func request_EntitlementService_GetEntitlementForUserAtBank_0(ctx context.Contex
 
 	msg, err := client.GetEntitlementForUserAtBank(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetEntitlementForUserAtBank_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -482,12 +467,9 @@ func local_request_EntitlementService_GetEntitlementForUserAtBank_0(ctx context.
 
 	msg, err := server.GetEntitlementForUserAtBank(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_EntitlementService_GetAllEntitlementRequests_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_EntitlementService_GetAllEntitlementRequests_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_EntitlementService_GetAllEntitlementRequests_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAllEntitlementRequestRequest
@@ -502,7 +484,6 @@ func request_EntitlementService_GetAllEntitlementRequests_0(ctx context.Context,
 
 	msg, err := client.GetAllEntitlementRequests(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetAllEntitlementRequests_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -515,12 +496,9 @@ func local_request_EntitlementService_GetAllEntitlementRequests_0(ctx context.Co
 
 	msg, err := server.GetAllEntitlementRequests(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_EntitlementService_GetAllEntitlements_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_EntitlementService_GetAllEntitlements_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_EntitlementService_GetAllEntitlements_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetAllEntitlementsRequest
@@ -535,7 +513,6 @@ func request_EntitlementService_GetAllEntitlements_0(ctx context.Context, marsha
 
 	msg, err := client.GetAllEntitlements(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetAllEntitlements_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -548,12 +525,9 @@ func local_request_EntitlementService_GetAllEntitlements_0(ctx context.Context, 
 
 	msg, err := server.GetAllEntitlements(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_EntitlementService_GetRoles_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_EntitlementService_GetRoles_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_EntitlementService_GetRoles_0(ctx context.Context, marshaler runtime.Marshaler, client EntitlementServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRolesRequest
@@ -568,7 +542,6 @@ func request_EntitlementService_GetRoles_0(ctx context.Context, marshaler runtim
 
 	msg, err := client.GetRoles(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_EntitlementService_GetRoles_0(ctx context.Context, marshaler runtime.Marshaler, server EntitlementServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -581,14 +554,12 @@ func local_request_EntitlementService_GetRoles_0(ctx context.Context, marshaler 
 
 	msg, err := server.GetRoles(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterEntitlementServiceHandlerServer registers the http handlers for service EntitlementService to "mux".
 // UnaryRPC     :call EntitlementServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server EntitlementServiceServer) error {
-
 	mux.Handle("POST", pattern_EntitlementService_AddEntitlementRequestForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -606,7 +577,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_AddEntitlementRequestForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_EntitlementService_AddEntitlementRequestForUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -626,7 +596,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_AddEntitlementRequestForUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_EntitlementService_DeleteEntitlement_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -646,7 +615,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_DeleteEntitlement_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_EntitlementService_DeleteEntitlementRequest_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -666,7 +634,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_DeleteEntitlementRequest_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementRequestForUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -686,7 +653,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementRequestForUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementRequestForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -706,7 +672,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementRequestForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementForUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -726,7 +691,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementForUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -746,7 +710,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementForUserAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -766,7 +729,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementForUserAtBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetAllEntitlementRequests_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -786,7 +748,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetAllEntitlementRequests_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetAllEntitlements_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -806,7 +767,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetAllEntitlements_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -826,7 +786,6 @@ func RegisterEntitlementServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -869,7 +828,6 @@ func RegisterEntitlementServiceHandler(ctx context.Context, mux *runtime.ServeMu
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "EntitlementServiceClient" to call the correct interceptors.
 func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client EntitlementServiceClient) error {
-
 	mux.Handle("POST", pattern_EntitlementService_AddEntitlementRequestForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -887,7 +845,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_AddEntitlementRequestForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_EntitlementService_AddEntitlementRequestForUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -907,7 +864,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_AddEntitlementRequestForUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_EntitlementService_DeleteEntitlement_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -927,7 +883,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_DeleteEntitlement_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("DELETE", pattern_EntitlementService_DeleteEntitlementRequest_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -947,7 +902,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_DeleteEntitlementRequest_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementRequestForUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -967,7 +921,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementRequestForUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementRequestForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -987,7 +940,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementRequestForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementForUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -1007,7 +959,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementForUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -1027,7 +978,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementForCurrentUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetEntitlementForUserAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -1047,7 +997,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetEntitlementForUserAtBank_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetAllEntitlementRequests_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -1067,7 +1016,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetAllEntitlementRequests_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetAllEntitlements_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -1087,7 +1035,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetAllEntitlements_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_EntitlementService_GetRoles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -1107,7 +1054,6 @@ func RegisterEntitlementServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_EntitlementService_GetRoles_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

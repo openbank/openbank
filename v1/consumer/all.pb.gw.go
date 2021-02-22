@@ -25,12 +25,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_ConsumerService_EnableOrDisableConsumer_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq EnableOrDisableConsumerRequest
@@ -64,7 +66,6 @@ func request_ConsumerService_EnableOrDisableConsumer_0(ctx context.Context, mars
 
 	msg, err := client.EnableOrDisableConsumer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_EnableOrDisableConsumer_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -99,7 +100,6 @@ func local_request_ConsumerService_EnableOrDisableConsumer_0(ctx context.Context
 
 	msg, err := server.EnableOrDisableConsumer(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ConsumerService_GetConsumerCallLimits_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -126,7 +126,6 @@ func request_ConsumerService_GetConsumerCallLimits_0(ctx context.Context, marsha
 
 	msg, err := client.GetConsumerCallLimits(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_GetConsumerCallLimits_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -153,7 +152,6 @@ func local_request_ConsumerService_GetConsumerCallLimits_0(ctx context.Context, 
 
 	msg, err := server.GetConsumerCallLimits(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ConsumerService_GetConsumer_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -180,7 +178,6 @@ func request_ConsumerService_GetConsumer_0(ctx context.Context, marshaler runtim
 
 	msg, err := client.GetConsumer(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_GetConsumer_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -207,7 +204,6 @@ func local_request_ConsumerService_GetConsumer_0(ctx context.Context, marshaler 
 
 	msg, err := server.GetConsumer(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ConsumerService_GetConsumers_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -216,7 +212,6 @@ func request_ConsumerService_GetConsumers_0(ctx context.Context, marshaler runti
 
 	msg, err := client.GetConsumers(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_GetConsumers_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -225,7 +220,6 @@ func local_request_ConsumerService_GetConsumers_0(ctx context.Context, marshaler
 
 	msg, err := server.GetConsumers(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ConsumerService_GetConsumersForLoggedInUser_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -234,7 +228,6 @@ func request_ConsumerService_GetConsumersForLoggedInUser_0(ctx context.Context, 
 
 	msg, err := client.GetConsumersForLoggedInUser(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_GetConsumersForLoggedInUser_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -243,7 +236,6 @@ func local_request_ConsumerService_GetConsumersForLoggedInUser_0(ctx context.Con
 
 	msg, err := server.GetConsumersForLoggedInUser(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ConsumerService_SetConsumerCallsLimit_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -278,7 +270,6 @@ func request_ConsumerService_SetConsumerCallsLimit_0(ctx context.Context, marsha
 
 	msg, err := client.SetConsumerCallsLimit(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_SetConsumerCallsLimit_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -313,7 +304,6 @@ func local_request_ConsumerService_SetConsumerCallsLimit_0(ctx context.Context, 
 
 	msg, err := server.SetConsumerCallsLimit(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_ConsumerService_UpdateConsumerRedirectURL_0(ctx context.Context, marshaler runtime.Marshaler, client ConsumerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -348,7 +338,6 @@ func request_ConsumerService_UpdateConsumerRedirectURL_0(ctx context.Context, ma
 
 	msg, err := client.UpdateConsumerRedirectURL(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_ConsumerService_UpdateConsumerRedirectURL_0(ctx context.Context, marshaler runtime.Marshaler, server ConsumerServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -383,14 +372,12 @@ func local_request_ConsumerService_UpdateConsumerRedirectURL_0(ctx context.Conte
 
 	msg, err := server.UpdateConsumerRedirectURL(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterConsumerServiceHandlerServer registers the http handlers for service ConsumerService to "mux".
 // UnaryRPC     :call ConsumerServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ConsumerServiceServer) error {
-
 	mux.Handle("PUT", pattern_ConsumerService_EnableOrDisableConsumer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -408,7 +395,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_EnableOrDisableConsumer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumerCallLimits_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -428,7 +414,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumerCallLimits_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -448,7 +433,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -468,7 +452,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumersForLoggedInUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -488,7 +471,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumersForLoggedInUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_ConsumerService_SetConsumerCallsLimit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -508,7 +490,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_SetConsumerCallsLimit_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_ConsumerService_UpdateConsumerRedirectURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -528,7 +509,6 @@ func RegisterConsumerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_UpdateConsumerRedirectURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -571,7 +551,6 @@ func RegisterConsumerServiceHandler(ctx context.Context, mux *runtime.ServeMux, 
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "ConsumerServiceClient" to call the correct interceptors.
 func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ConsumerServiceClient) error {
-
 	mux.Handle("PUT", pattern_ConsumerService_EnableOrDisableConsumer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -589,7 +568,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_EnableOrDisableConsumer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumerCallLimits_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -609,7 +587,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumerCallLimits_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -629,7 +606,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumer_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -649,7 +625,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumers_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_ConsumerService_GetConsumersForLoggedInUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -669,7 +644,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_GetConsumersForLoggedInUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_ConsumerService_SetConsumerCallsLimit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -689,7 +663,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_SetConsumerCallsLimit_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_ConsumerService_UpdateConsumerRedirectURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -709,7 +682,6 @@ func RegisterConsumerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_ConsumerService_UpdateConsumerRedirectURL_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

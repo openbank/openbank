@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_TransactionService_GetTransaction_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetTransactionRequest
@@ -55,7 +57,6 @@ func request_TransactionService_GetTransaction_0(ctx context.Context, marshaler 
 
 	msg, err := client.GetTransaction(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_GetTransaction_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -82,12 +83,9 @@ func local_request_TransactionService_GetTransaction_0(ctx context.Context, mars
 
 	msg, err := server.GetTransaction(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_TransactionService_GetTransactions_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
+var filter_TransactionService_GetTransactions_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
 func request_TransactionService_GetTransactions_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetTransactionsRequest
@@ -102,7 +100,6 @@ func request_TransactionService_GetTransactions_0(ctx context.Context, marshaler
 
 	msg, err := client.GetTransactions(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_GetTransactions_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -115,12 +112,9 @@ func local_request_TransactionService_GetTransactions_0(ctx context.Context, mar
 
 	msg, err := server.GetTransactions(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
-var (
-	filter_TransactionService_GetTransactionsByAccount_0 = &utilities.DoubleArray{Encoding: map[string]int{"AccountID": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-)
+var filter_TransactionService_GetTransactionsByAccount_0 = &utilities.DoubleArray{Encoding: map[string]int{"AccountID": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
 func request_TransactionService_GetTransactionsByAccount_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetTransactionsByAccountRequest
@@ -153,7 +147,6 @@ func request_TransactionService_GetTransactionsByAccount_0(ctx context.Context, 
 
 	msg, err := client.GetTransactionsByAccount(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_GetTransactionsByAccount_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -184,7 +177,6 @@ func local_request_TransactionService_GetTransactionsByAccount_0(ctx context.Con
 
 	msg, err := server.GetTransactionsByAccount(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionService_CreateTransaction_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -201,7 +193,6 @@ func request_TransactionService_CreateTransaction_0(ctx context.Context, marshal
 
 	msg, err := client.CreateTransaction(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_CreateTransaction_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -218,7 +209,6 @@ func local_request_TransactionService_CreateTransaction_0(ctx context.Context, m
 
 	msg, err := server.CreateTransaction(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionService_ApprovePayment_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -235,7 +225,6 @@ func request_TransactionService_ApprovePayment_0(ctx context.Context, marshaler 
 
 	msg, err := client.ApprovePayment(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_ApprovePayment_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -252,7 +241,6 @@ func local_request_TransactionService_ApprovePayment_0(ctx context.Context, mars
 
 	msg, err := server.ApprovePayment(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionService_TFA_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -269,7 +257,6 @@ func request_TransactionService_TFA_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.TFA(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_TFA_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -286,7 +273,6 @@ func local_request_TransactionService_TFA_0(ctx context.Context, marshaler runti
 
 	msg, err := server.TFA(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_TransactionService_ResendTFA_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -303,7 +289,6 @@ func request_TransactionService_ResendTFA_0(ctx context.Context, marshaler runti
 
 	msg, err := client.ResendTFA(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_TransactionService_ResendTFA_0(ctx context.Context, marshaler runtime.Marshaler, server TransactionServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -320,14 +305,12 @@ func local_request_TransactionService_ResendTFA_0(ctx context.Context, marshaler
 
 	msg, err := server.ResendTFA(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterTransactionServiceHandlerServer registers the http handlers for service TransactionService to "mux".
 // UnaryRPC     :call TransactionServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server TransactionServiceServer) error {
-
 	mux.Handle("GET", pattern_TransactionService_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -345,7 +328,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_GetTransaction_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionService_GetTransactions_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -365,7 +347,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_GetTransactions_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionService_GetTransactionsByAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -385,7 +366,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_GetTransactionsByAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_CreateTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -405,7 +385,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_CreateTransaction_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_ApprovePayment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -425,7 +404,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_ApprovePayment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_TFA_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -445,7 +423,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_TFA_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_ResendTFA_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -465,7 +442,6 @@ func RegisterTransactionServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_ResendTFA_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -508,7 +484,6 @@ func RegisterTransactionServiceHandler(ctx context.Context, mux *runtime.ServeMu
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "TransactionServiceClient" to call the correct interceptors.
 func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client TransactionServiceClient) error {
-
 	mux.Handle("GET", pattern_TransactionService_GetTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -526,7 +501,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_GetTransaction_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionService_GetTransactions_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -546,7 +520,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_GetTransactions_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_TransactionService_GetTransactionsByAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -566,7 +539,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_GetTransactionsByAccount_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_CreateTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -586,7 +558,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_CreateTransaction_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_ApprovePayment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -606,7 +577,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_ApprovePayment_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_TFA_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -626,7 +596,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_TFA_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_TransactionService_ResendTFA_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -646,7 +615,6 @@ func RegisterTransactionServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 
 		forward_TransactionService_ResendTFA_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

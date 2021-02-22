@@ -1,5 +1,4 @@
-Entitlement API v1.0.0
-======================
+# Entitlement API v1.0.0
 
 Provides CRUD operations on the entitlement part resource.
 
@@ -7,8 +6,7 @@ Provides CRUD operations on the entitlement part resource.
 
 * Base Path ``
 
-Add an entitlement request for current user {#method-post-addentitlementrequestforcurrentuser}
-----------------------------------------------------------------------------------------------
+## Add an entitlement request for current user {#method-post-addentitlementrequestforcurrentuser}
 
 Add an entitlement request for current user
 
@@ -120,8 +118,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Add the entitlement request for user {#method-post-addentitlementrequestforuser}
---------------------------------------------------------------------------------
+## Add the entitlement request for user {#method-post-addentitlementrequestforuser}
 
 Add the entitlement entitlement request for user
 
@@ -187,8 +184,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete an entitlement {#method-delete-deleteentitlement}
---------------------------------------------------------
+## Delete an entitlement {#method-delete-deleteentitlement}
 
 Permanently delete an entitlement.
 
@@ -233,8 +229,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a entitlement request {#method-delete-deleteentitlementrequest}
-----------------------------------------------------------------------
+## Delete a entitlement request {#method-delete-deleteentitlementrequest}
 
 Permanently delete an entitlement request.
 
@@ -278,8 +273,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all entitlements {#method-get-getallentitlementrequests}
--------------------------------------------------------------
+## List all entitlements {#method-get-getallentitlementrequests}
 
 Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
@@ -390,8 +384,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all entitlements {#method-get-getallentitlements}
-------------------------------------------------------
+## List all entitlements {#method-get-getallentitlements}
 
 Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 
@@ -448,8 +441,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve entitlement information {#method-get-getentitlementforcurrentuser}
----------------------------------------------------------------------------
+## Retrieve entitlement information {#method-get-getentitlementforcurrentuser}
 
 Retrieve information about the entitlement specified for current user
 
@@ -507,8 +499,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve entitlement information {#method-get-getentitlementforuser}
---------------------------------------------------------------------
+## Retrieve entitlement information {#method-get-getentitlementforuser}
 
 Retrieve information about the entitlement specified by the User ID
 
@@ -572,8 +563,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve entitlement information {#method-get-getentitlementforuseratbank}
---------------------------------------------------------------------------
+## Retrieve entitlement information {#method-get-getentitlementforuseratbank}
 
 Retrieve information about the entitlement specified by the User ID at bank
 
@@ -638,8 +628,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve entitlement request information {#method-get-getentitlementrequestforcurrentuser}
-------------------------------------------------------------------------------------------
+## Retrieve entitlement request information {#method-get-getentitlementrequestforcurrentuser}
 
 Retrieve information about the entitlement request specified for current user
 
@@ -751,8 +740,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve entitlement request information {#method-get-getentitlementrequestforuser}
------------------------------------------------------------------------------------
+## Retrieve entitlement request information {#method-get-getentitlementrequestforuser}
 
 Retrieve information about the entitlement request specified by the User ID
 
@@ -870,8 +858,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all entitlements {#method-get-getroles}
---------------------------------------------
+## List all entitlements {#method-get-getroles}
 
 Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.
 

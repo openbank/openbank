@@ -6,6 +6,8 @@ package accountapplications
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -15,13 +17,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -83,15 +86,19 @@ func (*User) Descriptor() ([]byte, []int) {
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
 }
+
 func (m *User) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_User.Marshal(b, m, deterministic)
 }
+
 func (m *User) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_User.Merge(m, src)
 }
+
 func (m *User) XXX_Size() int {
 	return xxx_messageInfo_User.Size(m)
 }
+
 func (m *User) XXX_DiscardUnknown() {
 	xxx_messageInfo_User.DiscardUnknown(m)
 }
@@ -142,15 +149,19 @@ func (*AccountApplication) Descriptor() ([]byte, []int) {
 func (m *AccountApplication) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AccountApplication.Unmarshal(m, b)
 }
+
 func (m *AccountApplication) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AccountApplication.Marshal(b, m, deterministic)
 }
+
 func (m *AccountApplication) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AccountApplication.Merge(m, src)
 }
+
 func (m *AccountApplication) XXX_Size() int {
 	return xxx_messageInfo_AccountApplication.Size(m)
 }
+
 func (m *AccountApplication) XXX_DiscardUnknown() {
 	xxx_messageInfo_AccountApplication.DiscardUnknown(m)
 }
@@ -219,15 +230,19 @@ func (*CreateAccountApplicationRequest) Descriptor() ([]byte, []int) {
 func (m *CreateAccountApplicationRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateAccountApplicationRequest.Unmarshal(m, b)
 }
+
 func (m *CreateAccountApplicationRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateAccountApplicationRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateAccountApplicationRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateAccountApplicationRequest.Merge(m, src)
 }
+
 func (m *CreateAccountApplicationRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateAccountApplicationRequest.Size(m)
 }
+
 func (m *CreateAccountApplicationRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateAccountApplicationRequest.DiscardUnknown(m)
 }
@@ -278,15 +293,19 @@ func (*CreateAccountApplicationResponse) Descriptor() ([]byte, []int) {
 func (m *CreateAccountApplicationResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateAccountApplicationResponse.Unmarshal(m, b)
 }
+
 func (m *CreateAccountApplicationResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateAccountApplicationResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateAccountApplicationResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateAccountApplicationResponse.Merge(m, src)
 }
+
 func (m *CreateAccountApplicationResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateAccountApplicationResponse.Size(m)
 }
+
 func (m *CreateAccountApplicationResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateAccountApplicationResponse.DiscardUnknown(m)
 }
@@ -356,15 +375,19 @@ func (*CreditRating) Descriptor() ([]byte, []int) {
 func (m *CreditRating) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreditRating.Unmarshal(m, b)
 }
+
 func (m *CreditRating) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreditRating.Marshal(b, m, deterministic)
 }
+
 func (m *CreditRating) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreditRating.Merge(m, src)
 }
+
 func (m *CreditRating) XXX_Size() int {
 	return xxx_messageInfo_CreditRating.Size(m)
 }
+
 func (m *CreditRating) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreditRating.DiscardUnknown(m)
 }
@@ -403,15 +426,19 @@ func (*GetAccountApplicationRequest) Descriptor() ([]byte, []int) {
 func (m *GetAccountApplicationRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetAccountApplicationRequest.Unmarshal(m, b)
 }
+
 func (m *GetAccountApplicationRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetAccountApplicationRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetAccountApplicationRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetAccountApplicationRequest.Merge(m, src)
 }
+
 func (m *GetAccountApplicationRequest) XXX_Size() int {
 	return xxx_messageInfo_GetAccountApplicationRequest.Size(m)
 }
+
 func (m *GetAccountApplicationRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetAccountApplicationRequest.DiscardUnknown(m)
 }
@@ -446,15 +473,19 @@ func (*GetAccountApplicationsRequest) Descriptor() ([]byte, []int) {
 func (m *GetAccountApplicationsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetAccountApplicationsRequest.Unmarshal(m, b)
 }
+
 func (m *GetAccountApplicationsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetAccountApplicationsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetAccountApplicationsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetAccountApplicationsRequest.Merge(m, src)
 }
+
 func (m *GetAccountApplicationsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetAccountApplicationsRequest.Size(m)
 }
+
 func (m *GetAccountApplicationsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetAccountApplicationsRequest.DiscardUnknown(m)
 }
@@ -494,15 +525,19 @@ func (*GetAccountApplicationsResponse) Descriptor() ([]byte, []int) {
 func (m *GetAccountApplicationsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetAccountApplicationsResponse.Unmarshal(m, b)
 }
+
 func (m *GetAccountApplicationsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetAccountApplicationsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetAccountApplicationsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetAccountApplicationsResponse.Merge(m, src)
 }
+
 func (m *GetAccountApplicationsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetAccountApplicationsResponse.Size(m)
 }
+
 func (m *GetAccountApplicationsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetAccountApplicationsResponse.DiscardUnknown(m)
 }
@@ -537,15 +572,19 @@ func (*UpdateAccountApplicationStatusRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateAccountApplicationStatusRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateAccountApplicationStatusRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateAccountApplicationStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateAccountApplicationStatusRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateAccountApplicationStatusRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateAccountApplicationStatusRequest.Merge(m, src)
 }
+
 func (m *UpdateAccountApplicationStatusRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateAccountApplicationStatusRequest.Size(m)
 }
+
 func (m *UpdateAccountApplicationStatusRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateAccountApplicationStatusRequest.DiscardUnknown(m)
 }
@@ -686,13 +725,15 @@ var fileDescriptor_a69271d88e859e2b = []byte{
 	0x6c, 0x52, 0xb9, 0xe6, 0xa6, 0x47, 0xdf, 0xbb, 0xda, 0x28, 0xe2, 0x3b, 0xdf, 0xa5, 0x9c, 0xf6,
 	0x61, 0x2a, 0xde, 0x92, 0x16, 0x09, 0x06, 0x8d, 0x58, 0x81, 0xe1, 0xbd, 0x61, 0xef, 0xd9, 0xef,
 	0x16, 0xfd, 0x42, 0xf5, 0x13, 0xdb, 0x7a, 0x62, 0x5b, 0x1f, 0xd9, 0xd6, 0x1f, 0x6c, 0xeb, 0x13,
-	0xdb, 0xfa, 0x9f, 0x6d, 0xfd, 0xd5, 0xb1, 0xba, 0xe5, 0xc4, 0xef, 0xee, 0xfd, 0x3f, 0x00, 0x00,
-	0xff, 0xff, 0x5d, 0x42, 0xb1, 0x58, 0x13, 0x13, 0x00, 0x00,
+	0xdb, 0xfa, 0x9f, 0x6d, 0xff, 0xd5, 0xb1, 0xba, 0xe5, 0xc4, 0xef, 0xee, 0xfd, 0x3f, 0x00, 0x00,
+	0xff, 0xff, 0x32, 0x0e, 0x14, 0xc3, 0x13, 0x13, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -769,18 +810,20 @@ type AccountApplicationServiceServer interface {
 }
 
 // UnimplementedAccountApplicationServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedAccountApplicationServiceServer struct {
-}
+type UnimplementedAccountApplicationServiceServer struct{}
 
 func (*UnimplementedAccountApplicationServiceServer) CreateAccountApplication(ctx context.Context, req *CreateAccountApplicationRequest) (*CreateAccountApplicationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccountApplication not implemented")
 }
+
 func (*UnimplementedAccountApplicationServiceServer) GetAccountApplication(ctx context.Context, req *GetAccountApplicationRequest) (*AccountApplication, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccountApplication not implemented")
 }
+
 func (*UnimplementedAccountApplicationServiceServer) GetAccountApplications(ctx context.Context, req *GetAccountApplicationsRequest) (*GetAccountApplicationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccountApplications not implemented")
 }
+
 func (*UnimplementedAccountApplicationServiceServer) UpdateAccountApplicationStatus(ctx context.Context, req *UpdateAccountApplicationStatusRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateAccountApplicationStatus not implemented")
 }

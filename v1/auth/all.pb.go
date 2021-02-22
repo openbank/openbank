@@ -6,19 +6,22 @@ package auth
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -78,15 +81,19 @@ func (*GetAuthorizationCodeRequest) Descriptor() ([]byte, []int) {
 func (m *GetAuthorizationCodeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetAuthorizationCodeRequest.Unmarshal(m, b)
 }
+
 func (m *GetAuthorizationCodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetAuthorizationCodeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetAuthorizationCodeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetAuthorizationCodeRequest.Merge(m, src)
 }
+
 func (m *GetAuthorizationCodeRequest) XXX_Size() int {
 	return xxx_messageInfo_GetAuthorizationCodeRequest.Size(m)
 }
+
 func (m *GetAuthorizationCodeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetAuthorizationCodeRequest.DiscardUnknown(m)
 }
@@ -124,15 +131,19 @@ func (*Empty) Descriptor() ([]byte, []int) {
 func (m *Empty) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Empty.Unmarshal(m, b)
 }
+
 func (m *Empty) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Empty.Marshal(b, m, deterministic)
 }
+
 func (m *Empty) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Empty.Merge(m, src)
 }
+
 func (m *Empty) XXX_Size() int {
 	return xxx_messageInfo_Empty.Size(m)
 }
+
 func (m *Empty) XXX_DiscardUnknown() {
 	xxx_messageInfo_Empty.DiscardUnknown(m)
 }
@@ -166,15 +177,19 @@ func (*CreateAccessTokenRequest) Descriptor() ([]byte, []int) {
 func (m *CreateAccessTokenRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateAccessTokenRequest.Unmarshal(m, b)
 }
+
 func (m *CreateAccessTokenRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateAccessTokenRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateAccessTokenRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateAccessTokenRequest.Merge(m, src)
 }
+
 func (m *CreateAccessTokenRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateAccessTokenRequest.Size(m)
 }
+
 func (m *CreateAccessTokenRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateAccessTokenRequest.DiscardUnknown(m)
 }
@@ -234,15 +249,19 @@ func (*CreateAccessTokenResponse) Descriptor() ([]byte, []int) {
 func (m *CreateAccessTokenResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateAccessTokenResponse.Unmarshal(m, b)
 }
+
 func (m *CreateAccessTokenResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateAccessTokenResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateAccessTokenResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateAccessTokenResponse.Merge(m, src)
 }
+
 func (m *CreateAccessTokenResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateAccessTokenResponse.Size(m)
 }
+
 func (m *CreateAccessTokenResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateAccessTokenResponse.DiscardUnknown(m)
 }
@@ -355,14 +374,16 @@ var fileDescriptor_de11ea8f1977712d = []byte{
 	0x4c, 0x97, 0x50, 0x4e, 0x32, 0x3e, 0x51, 0x00, 0xa4, 0x14, 0x92, 0x88, 0x28, 0xca, 0xa4, 0x91,
 	0x2b, 0xef, 0xa8, 0x40, 0x0e, 0x41, 0x12, 0xc5, 0x62, 0x08, 0xd0, 0x4d, 0x2d, 0x82, 0x2e, 0x3f,
 	0x08, 0x68, 0xca, 0xec, 0x03, 0xfe, 0xa1, 0xbb, 0xeb, 0x3e, 0xb7, 0xdf, 0x11, 0x5f, 0xb9, 0xce,
-	0xb1, 0xeb, 0xbc, 0x70, 0x9d, 0x9f, 0x5c, 0xe7, 0x0f, 0xd7, 0x79, 0xe9, 0x3a, 0xbf, 0x79, 0x4e,
-	0xf7, 0x8a, 0xfd, 0x2e, 0xb8, 0xf7, 0x5f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x50, 0x1e, 0x43, 0xcc,
+	0xb1, 0xeb, 0xbc, 0x70, 0x9d, 0x9f, 0x5c, 0xe7, 0x0f, 0xd7, 0x79, 0xe9, 0xba, 0xbf, 0x79, 0x4e,
+	0xf7, 0x8a, 0xfd, 0x2e, 0xb8, 0xf7, 0x5f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x3f, 0x52, 0xe6, 0x57,
 	0x9b, 0x08, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -413,12 +434,12 @@ type AuthorizationServiceServer interface {
 }
 
 // UnimplementedAuthorizationServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedAuthorizationServiceServer struct {
-}
+type UnimplementedAuthorizationServiceServer struct{}
 
 func (*UnimplementedAuthorizationServiceServer) GetAuthorizationCode(ctx context.Context, req *GetAuthorizationCodeRequest) (*Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAuthorizationCode not implemented")
 }
+
 func (*UnimplementedAuthorizationServiceServer) CreateAccessToken(ctx context.Context, req *CreateAccessTokenRequest) (*CreateAccessTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAccessToken not implemented")
 }

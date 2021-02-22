@@ -1,5 +1,4 @@
-Card API v1.0.0
-===============
+# Card API v1.0.0
 
 Provides create and read operations on the card resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the card resource.
 
 * Base Path ``
 
-Create new card {#method-post-createcard}
------------------------------------------
+## Create new card {#method-post-createcard}
 
 Create new card
 
@@ -68,8 +66,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create new card attribute {#method-post-createcardattribute}
-------------------------------------------------------------
+## Create new card attribute {#method-post-createcardattribute}
 
 Create new card attribute
 
@@ -127,8 +124,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a card {#method-delete-deletecard}
------------------------------------------
+## Delete a card {#method-delete-deletecard}
 
 Permanently delete a card.
 
@@ -172,8 +168,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve card information {#method-get-getcard}
------------------------------------------------
+## Retrieve card information {#method-get-getcard}
 
 Retrieves all data from a card, selected by the card_token you supplied.
 
@@ -284,8 +279,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieves all available cards {#method-get-getusercards}
---------------------------------------------------------
+## Retrieves all available cards {#method-get-getusercards}
 
 Retrieves all available cards for specific user, selected by the user_id
 
@@ -400,8 +394,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update card access status. {#method-put-updatecardaccessstatus}
----------------------------------------------------------------
+## Update card access status. {#method-put-updatecardaccessstatus}
 
 Update card access status.
 
@@ -474,8 +467,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update card status {#method-put-updatecardstatus}
--------------------------------------------------
+## Update card status {#method-put-updatecardstatus}
 
 Update Card status.
 

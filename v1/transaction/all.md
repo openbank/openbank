@@ -1,5 +1,4 @@
-Transactions API v1.0.0
-=======================
+# Transactions API v1.0.0
 
 Provides create and read operations on the transaction resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the transaction resource.
 
 * Base Path ``
 
-Approve a pending transaction {#method-post-approvepayment}
------------------------------------------------------------
+## Approve a pending transaction {#method-post-approvepayment}
 
 Approve a pending transaction.
 
@@ -75,8 +73,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a transaction {#method-post-createtransaction}
------------------------------------------------------
+## Create a transaction {#method-post-createtransaction}
 
 Creates a new transaction and returns its id.
 
@@ -168,10 +165,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ##### Enums {#enums-CreateTransactionRequest}
 
@@ -218,8 +215,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve a transaction {#method-get-gettransaction}
----------------------------------------------------
+## Retrieve a transaction {#method-get-gettransaction}
 
 Retrieves all data from a transaction, selected by the transaction_id you supplied.
 
@@ -296,10 +292,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ##### Enums {#enums-Transaction}
 
@@ -405,8 +401,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all transactions {#method-get-gettransactions}
----------------------------------------------------
+## List all transactions {#method-get-gettransactions}
 
 Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.
 
@@ -485,10 +480,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ##### Enums {#enums-GetTransactionsResponse}
 
@@ -602,8 +597,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all transactions for given account id {#method-get-gettransactionsbyaccount}
----------------------------------------------------------------------------------
+## List all transactions for given account id {#method-get-gettransactionsbyaccount}
 
 Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.
 
@@ -687,10 +681,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ##### Enums {#enums-GetTransactionsByAccountResponse}
 
@@ -803,8 +797,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Resend OTP/TFA code for the transaction {#method-post-resendtfa}
-----------------------------------------------------------------
+## Resend OTP/TFA code for the transaction {#method-post-resendtfa}
 
 Resend OTP/TFA code for the transaction
 
@@ -864,8 +857,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Authorize a transaction with 2FA {#method-post-tfa}
----------------------------------------------------
+## Authorize a transaction with 2FA {#method-post-tfa}
 
 Authorization allows execution of transactions with 2-factor authentication (2FA).
 

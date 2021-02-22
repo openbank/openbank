@@ -4,14 +4,14 @@ package atm
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/atm.read": "View atm data",
+	"https://auth.bnk.to/atm.read":  "View atm data",
 	"https://auth.bnk.to/atm.write": "Manage atm data",
 }
 
 var AuthScopes = map[string][]string{
-	"/atm.ATMService/CreateATM": []string{"https://auth.bnk.to/atm.write"},
-	"/atm.ATMService/GetATM": []string{"https://auth.bnk.to/atm.read"},
-	"/atm.ATMService/GetATMs": []string{"https://auth.bnk.to/atm.read"},
+	"/atm.ATMService/CreateATM": {"https://auth.bnk.to/atm.write"},
+	"/atm.ATMService/GetATM":    {"https://auth.bnk.to/atm.read"},
+	"/atm.ATMService/GetATMs":   {"https://auth.bnk.to/atm.read"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

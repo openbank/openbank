@@ -6,19 +6,22 @@ package consent
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -95,15 +98,19 @@ func (*AnswerConsentChallengeRequest) Descriptor() ([]byte, []int) {
 func (m *AnswerConsentChallengeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AnswerConsentChallengeRequest.Unmarshal(m, b)
 }
+
 func (m *AnswerConsentChallengeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_AnswerConsentChallengeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *AnswerConsentChallengeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AnswerConsentChallengeRequest.Merge(m, src)
 }
+
 func (m *AnswerConsentChallengeRequest) XXX_Size() int {
 	return xxx_messageInfo_AnswerConsentChallengeRequest.Size(m)
 }
+
 func (m *AnswerConsentChallengeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AnswerConsentChallengeRequest.DiscardUnknown(m)
 }
@@ -151,15 +158,19 @@ func (*Consent) Descriptor() ([]byte, []int) {
 func (m *Consent) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Consent.Unmarshal(m, b)
 }
+
 func (m *Consent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Consent.Marshal(b, m, deterministic)
 }
+
 func (m *Consent) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Consent.Merge(m, src)
 }
+
 func (m *Consent) XXX_Size() int {
 	return xxx_messageInfo_Consent.Size(m)
 }
+
 func (m *Consent) XXX_DiscardUnknown() {
 	xxx_messageInfo_Consent.DiscardUnknown(m)
 }
@@ -208,15 +219,19 @@ func (*CreateConsentEmailRequest) Descriptor() ([]byte, []int) {
 func (m *CreateConsentEmailRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateConsentEmailRequest.Unmarshal(m, b)
 }
+
 func (m *CreateConsentEmailRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateConsentEmailRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateConsentEmailRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateConsentEmailRequest.Merge(m, src)
 }
+
 func (m *CreateConsentEmailRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateConsentEmailRequest.Size(m)
 }
+
 func (m *CreateConsentEmailRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateConsentEmailRequest.DiscardUnknown(m)
 }
@@ -272,15 +287,19 @@ func (*CreateConsentSMSRequest) Descriptor() ([]byte, []int) {
 func (m *CreateConsentSMSRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateConsentSMSRequest.Unmarshal(m, b)
 }
+
 func (m *CreateConsentSMSRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateConsentSMSRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateConsentSMSRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateConsentSMSRequest.Merge(m, src)
 }
+
 func (m *CreateConsentSMSRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateConsentSMSRequest.Size(m)
 }
+
 func (m *CreateConsentSMSRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateConsentSMSRequest.DiscardUnknown(m)
 }
@@ -334,15 +353,19 @@ func (*GetConsentsRequest) Descriptor() ([]byte, []int) {
 func (m *GetConsentsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsentsRequest.Unmarshal(m, b)
 }
+
 func (m *GetConsentsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsentsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsentsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsentsRequest.Merge(m, src)
 }
+
 func (m *GetConsentsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetConsentsRequest.Size(m)
 }
+
 func (m *GetConsentsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsentsRequest.DiscardUnknown(m)
 }
@@ -381,15 +404,19 @@ func (*GetConsentsResponse) Descriptor() ([]byte, []int) {
 func (m *GetConsentsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetConsentsResponse.Unmarshal(m, b)
 }
+
 func (m *GetConsentsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetConsentsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetConsentsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetConsentsResponse.Merge(m, src)
 }
+
 func (m *GetConsentsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetConsentsResponse.Size(m)
 }
+
 func (m *GetConsentsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetConsentsResponse.DiscardUnknown(m)
 }
@@ -422,15 +449,19 @@ func (*RevokeConsentRequest) Descriptor() ([]byte, []int) {
 func (m *RevokeConsentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RevokeConsentRequest.Unmarshal(m, b)
 }
+
 func (m *RevokeConsentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_RevokeConsentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *RevokeConsentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_RevokeConsentRequest.Merge(m, src)
 }
+
 func (m *RevokeConsentRequest) XXX_Size() int {
 	return xxx_messageInfo_RevokeConsentRequest.Size(m)
 }
+
 func (m *RevokeConsentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_RevokeConsentRequest.DiscardUnknown(m)
 }
@@ -564,13 +595,15 @@ var fileDescriptor_955aa7c027ca6560 = []byte{
 	0x82, 0x98, 0xba, 0x89, 0x05, 0x06, 0x9f, 0xbd, 0xc2, 0x03, 0x05, 0x17, 0xf7, 0x30, 0xc5, 0x5d,
 	0x32, 0x1e, 0x09, 0x05, 0xf3, 0xd1, 0xd8, 0xb1, 0xa2, 0xad, 0xf1, 0x85, 0xda, 0x54, 0xef, 0x45,
 	0x5f, 0xc2, 0xdf, 0x55, 0x95, 0xa7, 0xaa, 0xf2, 0x4c, 0x55, 0x7e, 0xad, 0x2a, 0x7f, 0x55, 0x95,
-	0x17, 0xaa, 0xf2, 0x47, 0x4d, 0x69, 0xa7, 0xfd, 0x2f, 0xdb, 0xcd, 0xff, 0x04, 0x00, 0x00, 0xff,
-	0xff, 0xb2, 0x44, 0xd1, 0x84, 0x63, 0x0f, 0x00, 0x00,
+	0x17, 0xaa, 0xfa, 0x47, 0x4d, 0x69, 0xa7, 0xfd, 0x2f, 0xdb, 0xcd, 0xff, 0x04, 0x00, 0x00, 0xff,
+	0xff, 0xdd, 0x08, 0x74, 0x1f, 0x63, 0x0f, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -660,21 +693,24 @@ type ConsentServiceServer interface {
 }
 
 // UnimplementedConsentServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedConsentServiceServer struct {
-}
+type UnimplementedConsentServiceServer struct{}
 
 func (*UnimplementedConsentServiceServer) AnswerConsentChallenge(ctx context.Context, req *AnswerConsentChallengeRequest) (*Consent, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AnswerConsentChallenge not implemented")
 }
+
 func (*UnimplementedConsentServiceServer) CreateConsentEmail(ctx context.Context, req *CreateConsentEmailRequest) (*Consent, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateConsentEmail not implemented")
 }
+
 func (*UnimplementedConsentServiceServer) CreateConsentSMS(ctx context.Context, req *CreateConsentSMSRequest) (*Consent, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateConsentSMS not implemented")
 }
+
 func (*UnimplementedConsentServiceServer) GetConsents(ctx context.Context, req *GetConsentsRequest) (*GetConsentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConsents not implemented")
 }
+
 func (*UnimplementedConsentServiceServer) RevokeConsent(ctx context.Context, req *RevokeConsentRequest) (*Consent, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RevokeConsent not implemented")
 }

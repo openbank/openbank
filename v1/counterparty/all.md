@@ -1,5 +1,4 @@
-Counterpart API v1.0.0
-======================
+# Counterpart API v1.0.0
 
 Provides CRUD operations on the counter part resource.
 
@@ -7,8 +6,7 @@ Provides CRUD operations on the counter part resource.
 
 * Base Path ``
 
-Create an counter party {#method-post-createcounterparty}
----------------------------------------------------------
+## Create an counter party {#method-post-createcounterparty}
 
 Creates a new counter party
 
@@ -86,11 +84,11 @@ curl -X POST \
 |-----------------------------------------|------------|-----------------------------------------------------------------------------|
 | name                                    | string     | The human readable name (e.g. John Bravo)                                   |
 | description                             | string     | The description of the about counter party                                  |
-| other_account_routing_scheme            | string     | Account routing schme such as AccountId or AccountNumber or any strings     |
+| other_account_routing_scheme            | string     | Account routing schme such as AccountId or AccountNumber or any  strings    |
 | other_account_routing_address           | string     | Account routing address is a valid account identifier                       |
 | other_account_secondary_routing_scheme  | string     | Account secondary routing address such as IBan                              |
 | other_account_secondary_routing_address | string     | IBan it should be unique for each counterparty.                             |
-| other_bank_routing_scheme               | string     | Bank routing scheme such as bankId or bankCode or any strings               |
+| other_bank_routing_scheme               | string     | Bank routing scheme such as bankId or bankCode or any  strings              |
 | other_bank_routing_address              | string     | Bank routing address such as eg: testsandbox, must be valid sandbox bankIds |
 | other_branch_routing_scheme             | string     | Branch routing scheme such as branchId or any other strings                 |
 | other_branch_routing_address            | string     | Branch routing address like branch-id-765 or you can leave it empty         |
@@ -113,10 +111,10 @@ curl -X POST \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 ###### Bespoke
 
@@ -199,8 +197,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-List all accounts {#method-get-getcounterparties}
--------------------------------------------------
+## List all accounts {#method-get-getcounterparties}
 
 Returns a list containing up to 20 accounts. `after_index` can be used for pagination.
 
@@ -230,11 +227,11 @@ curl -X GET \
 |-----------------------------------------|------------|-----------------------------------------------------------------------------|
 | name                                    | string     | The human readable name (e.g. John Bravo)                                   |
 | description                             | string     | The description of the about counter party                                  |
-| other_account_routing_scheme            | string     | Account routing schme such as AccountId or AccountNumber or any strings     |
+| other_account_routing_scheme            | string     | Account routing schme such as AccountId or AccountNumber or any  strings    |
 | other_account_routing_address           | string     | Account routing address is a valid account identifier                       |
 | other_account_secondary_routing_scheme  | string     | Account secondary routing address such as IBan                              |
 | other_account_secondary_routing_address | string     | IBan it should be unique for each counterparty.                             |
-| other_bank_routing_scheme               | string     | Bank routing scheme such as bankId or bankCode or any strings               |
+| other_bank_routing_scheme               | string     | Bank routing scheme such as bankId or bankCode or any  strings              |
 | other_bank_routing_address              | string     | Bank routing address such as eg: testsandbox, must be valid sandbox bankIds |
 | other_branch_routing_scheme             | string     | Branch routing scheme such as branchId or any other strings                 |
 | other_branch_routing_address            | string     | Branch routing address like branch-id-765 or you can leave it empty         |
@@ -264,10 +261,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -324,8 +321,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve an counter party {#method-get-getcounterparty}
--------------------------------------------------------
+## Retrieve an counter party {#method-get-getcounterparty}
 
 Retrieves all data from an counter party selected by the supplied counter_party_id.
 
@@ -353,11 +349,11 @@ curl -X GET \
 |-----------------------------------------|------------|-----------------------------------------------------------------------------|
 | name                                    | string     | The human readable name (e.g. John Bravo)                                   |
 | description                             | string     | The description of the about counter party                                  |
-| other_account_routing_scheme            | string     | Account routing schme such as AccountId or AccountNumber or any strings     |
+| other_account_routing_scheme            | string     | Account routing schme such as AccountId or AccountNumber or any  strings    |
 | other_account_routing_address           | string     | Account routing address is a valid account identifier                       |
 | other_account_secondary_routing_scheme  | string     | Account secondary routing address such as IBan                              |
 | other_account_secondary_routing_address | string     | IBan it should be unique for each counterparty.                             |
-| other_bank_routing_scheme               | string     | Bank routing scheme such as bankId or bankCode or any strings               |
+| other_bank_routing_scheme               | string     | Bank routing scheme such as bankId or bankCode or any  strings              |
 | other_bank_routing_address              | string     | Bank routing address such as eg: testsandbox, must be valid sandbox bankIds |
 | other_branch_routing_scheme             | string     | Branch routing scheme such as branchId or any other strings                 |
 | other_branch_routing_address            | string     | Branch routing address like branch-id-765 or you can leave it empty         |
@@ -389,10 +385,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -446,8 +442,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve an account with other account id {#method-get-getotheraccountbyid}
----------------------------------------------------------------------------
+## Retrieve an account with other account id {#method-get-getotheraccountbyid}
 
 Retrieves other account (counter party) by other account id
 
@@ -524,10 +519,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 
@@ -581,8 +576,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all other account with account id {#method-get-getotheraccounts}
--------------------------------------------------------------------------
+## Retrieve all other account with account id {#method-get-getotheraccounts}
 
 Retrieves all other accounts (counter party) for an account id
 
@@ -658,10 +652,10 @@ curl -X GET \
 
 ###### Location
 
-| Name      | Type   | Description                                                         |
-|-----------|--------|---------------------------------------------------------------------|
-| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].    |
-| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0\] |
+| Name      | Type   | Description                                                        |
+|-----------|--------|--------------------------------------------------------------------|
+| latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
+| longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
 
 Example:
 

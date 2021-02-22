@@ -6,6 +6,8 @@ package statement
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
 	types "github.com/openbank/openbank/v1/types"
@@ -13,13 +15,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -87,15 +90,19 @@ func (*Statement) Descriptor() ([]byte, []int) {
 func (m *Statement) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Statement.Unmarshal(m, b)
 }
+
 func (m *Statement) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Statement.Marshal(b, m, deterministic)
 }
+
 func (m *Statement) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Statement.Merge(m, src)
 }
+
 func (m *Statement) XXX_Size() int {
 	return xxx_messageInfo_Statement.Size(m)
 }
+
 func (m *Statement) XXX_DiscardUnknown() {
 	xxx_messageInfo_Statement.DiscardUnknown(m)
 }
@@ -163,15 +170,19 @@ func (*GetStatementRequest) Descriptor() ([]byte, []int) {
 func (m *GetStatementRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetStatementRequest.Unmarshal(m, b)
 }
+
 func (m *GetStatementRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetStatementRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetStatementRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetStatementRequest.Merge(m, src)
 }
+
 func (m *GetStatementRequest) XXX_Size() int {
 	return xxx_messageInfo_GetStatementRequest.Size(m)
 }
+
 func (m *GetStatementRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetStatementRequest.DiscardUnknown(m)
 }
@@ -208,15 +219,19 @@ func (*GetStatementsRequest) Descriptor() ([]byte, []int) {
 func (m *GetStatementsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetStatementsRequest.Unmarshal(m, b)
 }
+
 func (m *GetStatementsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetStatementsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetStatementsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetStatementsRequest.Merge(m, src)
 }
+
 func (m *GetStatementsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetStatementsRequest.Size(m)
 }
+
 func (m *GetStatementsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetStatementsRequest.DiscardUnknown(m)
 }
@@ -265,15 +280,19 @@ func (*GetStatementsResponse) Descriptor() ([]byte, []int) {
 func (m *GetStatementsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetStatementsResponse.Unmarshal(m, b)
 }
+
 func (m *GetStatementsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetStatementsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetStatementsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetStatementsResponse.Merge(m, src)
 }
+
 func (m *GetStatementsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetStatementsResponse.Size(m)
 }
+
 func (m *GetStatementsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetStatementsResponse.DiscardUnknown(m)
 }
@@ -382,13 +401,15 @@ var fileDescriptor_c89daa553f255808 = []byte{
 	0x30, 0x9a, 0xa2, 0x1f, 0x30, 0xc3, 0xd0, 0x3b, 0xe8, 0xdc, 0xf3, 0x53, 0x47, 0x8a, 0x1b, 0xc0,
 	0x67, 0x6e, 0x33, 0xc1, 0x7a, 0xf0, 0x6c, 0xf6, 0x8a, 0x91, 0x69, 0x06, 0x8b, 0xf8, 0xe4, 0x12,
 	0xba, 0x61, 0xb7, 0xed, 0xfb, 0x93, 0x17, 0xdc, 0x43, 0xdb, 0x7a, 0x64, 0x5b, 0x8f, 0x6d, 0xeb,
-	0x57, 0xdb, 0xfa, 0xd3, 0xb6, 0xfe, 0xb1, 0xad, 0xdf, 0x1d, 0xab, 0x53, 0x4c, 0x1f, 0x58, 0x1b,
-	0xff, 0x05, 0x00, 0x00, 0xff, 0xff, 0x66, 0x51, 0xa1, 0x62, 0x1f, 0x0a, 0x00, 0x00,
+	0x57, 0xdb, 0xfa, 0xd3, 0xb6, 0xfe, 0xb1, 0xed, 0xdf, 0x1d, 0xab, 0x53, 0x4c, 0x1f, 0x58, 0x1b,
+	0xff, 0x05, 0x00, 0x00, 0xff, 0xff, 0x09, 0x1d, 0x04, 0xf9, 0x1f, 0x0a, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -437,12 +458,12 @@ type StatementServiceServer interface {
 }
 
 // UnimplementedStatementServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedStatementServiceServer struct {
-}
+type UnimplementedStatementServiceServer struct{}
 
 func (*UnimplementedStatementServiceServer) GetStatement(ctx context.Context, req *GetStatementRequest) (*Statement, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatement not implemented")
 }
+
 func (*UnimplementedStatementServiceServer) GetStatements(ctx context.Context, req *GetStatementsRequest) (*GetStatementsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStatements not implemented")
 }

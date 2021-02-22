@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_FXService_GetCurrentFXRate_0(ctx context.Context, marshaler runtime.Marshaler, client FXServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCurrentFXRateRequest
@@ -66,7 +68,6 @@ func request_FXService_GetCurrentFXRate_0(ctx context.Context, marshaler runtime
 
 	msg, err := client.GetCurrentFXRate(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_FXService_GetCurrentFXRate_0(ctx context.Context, marshaler runtime.Marshaler, server FXServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -104,7 +105,6 @@ func local_request_FXService_GetCurrentFXRate_0(ctx context.Context, marshaler r
 
 	msg, err := server.GetCurrentFXRate(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_FXService_CreateFX_0(ctx context.Context, marshaler runtime.Marshaler, client FXServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -121,7 +121,6 @@ func request_FXService_CreateFX_0(ctx context.Context, marshaler runtime.Marshal
 
 	msg, err := client.CreateFX(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_FXService_CreateFX_0(ctx context.Context, marshaler runtime.Marshaler, server FXServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -138,7 +137,6 @@ func local_request_FXService_CreateFX_0(ctx context.Context, marshaler runtime.M
 
 	msg, err := server.CreateFX(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_FXService_UpdateFX_0(ctx context.Context, marshaler runtime.Marshaler, client FXServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -155,7 +153,6 @@ func request_FXService_UpdateFX_0(ctx context.Context, marshaler runtime.Marshal
 
 	msg, err := client.UpdateFX(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_FXService_UpdateFX_0(ctx context.Context, marshaler runtime.Marshaler, server FXServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -172,14 +169,12 @@ func local_request_FXService_UpdateFX_0(ctx context.Context, marshaler runtime.M
 
 	msg, err := server.UpdateFX(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterFXServiceHandlerServer registers the http handlers for service FXService to "mux".
 // UnaryRPC     :call FXServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterFXServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server FXServiceServer) error {
-
 	mux.Handle("GET", pattern_FXService_GetCurrentFXRate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -197,7 +192,6 @@ func RegisterFXServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_FXService_GetCurrentFXRate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_FXService_CreateFX_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -217,7 +211,6 @@ func RegisterFXServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_FXService_CreateFX_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_FXService_UpdateFX_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -237,7 +230,6 @@ func RegisterFXServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_FXService_UpdateFX_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -280,7 +272,6 @@ func RegisterFXServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "FXServiceClient" to call the correct interceptors.
 func RegisterFXServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client FXServiceClient) error {
-
 	mux.Handle("GET", pattern_FXService_GetCurrentFXRate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -298,7 +289,6 @@ func RegisterFXServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_FXService_GetCurrentFXRate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("POST", pattern_FXService_CreateFX_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -318,7 +308,6 @@ func RegisterFXServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_FXService_CreateFX_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_FXService_UpdateFX_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -338,7 +327,6 @@ func RegisterFXServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 		}
 
 		forward_FXService_UpdateFX_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil

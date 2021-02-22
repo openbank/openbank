@@ -1,5 +1,4 @@
-Consumer API v1.0.0
-===================
+# Consumer API v1.0.0
 
 Provides create and read operations on the consumer resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the consumer resource.
 
 * Base Path ``
 
-Set consumer enable or disable. {#method-put-enableordisableconsumer}
----------------------------------------------------------------------
+## Set consumer enable or disable. {#method-put-enableordisableconsumer}
 
 Set enable or disable consumer
 
@@ -67,8 +65,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get consumer {#method-get-getconsumer}
---------------------------------------
+## Get consumer {#method-get-getconsumer}
 
 Returns consumer data by it's ID
 
@@ -169,8 +166,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get consumer call lists {#method-get-getconsumercalllimits}
------------------------------------------------------------
+## Get consumer call lists {#method-get-getconsumercalllimits}
 
 Returns a list up to 20 consumer call limits data.
 
@@ -274,8 +270,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get consumers {#method-get-getconsumers}
-----------------------------------------
+## Get consumers {#method-get-getconsumers}
 
 Returns all consumers data up to 20 consumers data.
 
@@ -372,8 +367,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Get consumers for logged in user {#method-get-getconsumersforloggedinuser}
---------------------------------------------------------------------------
+## Get consumers for logged in user {#method-get-getconsumersforloggedinuser}
 
 Returns all consumers for logged in user data up to 20 consumers data.
 
@@ -470,8 +464,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Set consumer call limits. {#method-put-setconsumercallslimit}
--------------------------------------------------------------
+## Set consumer call limits. {#method-put-setconsumercallslimit}
 
 Set consumer call limits.
 
@@ -550,8 +543,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Set consumer redirect url. {#method-put-updateconsumerredirecturl}
-------------------------------------------------------------------
+## Set consumer redirect url. {#method-put-updateconsumerredirecturl}
 
 Set consumer redirect url.
 

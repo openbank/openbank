@@ -6,6 +6,8 @@ package transactionmetadata
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -15,13 +17,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -51,15 +54,19 @@ func (*User) Descriptor() ([]byte, []int) {
 func (m *User) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_User.Unmarshal(m, b)
 }
+
 func (m *User) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_User.Marshal(b, m, deterministic)
 }
+
 func (m *User) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_User.Merge(m, src)
 }
+
 func (m *User) XXX_Size() int {
 	return xxx_messageInfo_User.Size(m)
 }
+
 func (m *User) XXX_DiscardUnknown() {
 	xxx_messageInfo_User.DiscardUnknown(m)
 }
@@ -111,15 +118,19 @@ func (*Tag) Descriptor() ([]byte, []int) {
 func (m *Tag) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Tag.Unmarshal(m, b)
 }
+
 func (m *Tag) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Tag.Marshal(b, m, deterministic)
 }
+
 func (m *Tag) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Tag.Merge(m, src)
 }
+
 func (m *Tag) XXX_Size() int {
 	return xxx_messageInfo_Tag.Size(m)
 }
+
 func (m *Tag) XXX_DiscardUnknown() {
 	xxx_messageInfo_Tag.DiscardUnknown(m)
 }
@@ -180,15 +191,19 @@ func (*Image) Descriptor() ([]byte, []int) {
 func (m *Image) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Image.Unmarshal(m, b)
 }
+
 func (m *Image) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Image.Marshal(b, m, deterministic)
 }
+
 func (m *Image) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Image.Merge(m, src)
 }
+
 func (m *Image) XXX_Size() int {
 	return xxx_messageInfo_Image.Size(m)
 }
+
 func (m *Image) XXX_DiscardUnknown() {
 	xxx_messageInfo_Image.DiscardUnknown(m)
 }
@@ -254,15 +269,19 @@ func (*Comment) Descriptor() ([]byte, []int) {
 func (m *Comment) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Comment.Unmarshal(m, b)
 }
+
 func (m *Comment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Comment.Marshal(b, m, deterministic)
 }
+
 func (m *Comment) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Comment.Merge(m, src)
 }
+
 func (m *Comment) XXX_Size() int {
 	return xxx_messageInfo_Comment.Size(m)
 }
+
 func (m *Comment) XXX_DiscardUnknown() {
 	xxx_messageInfo_Comment.DiscardUnknown(m)
 }
@@ -315,15 +334,19 @@ func (*Narrative) Descriptor() ([]byte, []int) {
 func (m *Narrative) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Narrative.Unmarshal(m, b)
 }
+
 func (m *Narrative) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_Narrative.Marshal(b, m, deterministic)
 }
+
 func (m *Narrative) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_Narrative.Merge(m, src)
 }
+
 func (m *Narrative) XXX_Size() int {
 	return xxx_messageInfo_Narrative.Size(m)
 }
+
 func (m *Narrative) XXX_DiscardUnknown() {
 	xxx_messageInfo_Narrative.DiscardUnknown(m)
 }
@@ -359,15 +382,19 @@ func (*WhereTag) Descriptor() ([]byte, []int) {
 func (m *WhereTag) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_WhereTag.Unmarshal(m, b)
 }
+
 func (m *WhereTag) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_WhereTag.Marshal(b, m, deterministic)
 }
+
 func (m *WhereTag) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_WhereTag.Merge(m, src)
 }
+
 func (m *WhereTag) XXX_Size() int {
 	return xxx_messageInfo_WhereTag.Size(m)
 }
+
 func (m *WhereTag) XXX_DiscardUnknown() {
 	xxx_messageInfo_WhereTag.DiscardUnknown(m)
 }
@@ -419,15 +446,19 @@ func (*CreateTagRequest) Descriptor() ([]byte, []int) {
 func (m *CreateTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateTagRequest.Unmarshal(m, b)
 }
+
 func (m *CreateTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateTagRequest.Merge(m, src)
 }
+
 func (m *CreateTagRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateTagRequest.Size(m)
 }
+
 func (m *CreateTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateTagRequest.DiscardUnknown(m)
 }
@@ -486,15 +517,19 @@ func (*UpdateTagRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateTagRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateTagRequest.Merge(m, src)
 }
+
 func (m *UpdateTagRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateTagRequest.Size(m)
 }
+
 func (m *UpdateTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateTagRequest.DiscardUnknown(m)
 }
@@ -553,15 +588,19 @@ func (*DeleteTagRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteTagRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteTagRequest.Merge(m, src)
 }
+
 func (m *DeleteTagRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteTagRequest.Size(m)
 }
+
 func (m *DeleteTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteTagRequest.DiscardUnknown(m)
 }
@@ -620,15 +659,19 @@ func (*GetTagRequest) Descriptor() ([]byte, []int) {
 func (m *GetTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTagRequest.Unmarshal(m, b)
 }
+
 func (m *GetTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTagRequest.Merge(m, src)
 }
+
 func (m *GetTagRequest) XXX_Size() int {
 	return xxx_messageInfo_GetTagRequest.Size(m)
 }
+
 func (m *GetTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTagRequest.DiscardUnknown(m)
 }
@@ -685,15 +728,19 @@ func (*GetTagsRequest) Descriptor() ([]byte, []int) {
 func (m *GetTagsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTagsRequest.Unmarshal(m, b)
 }
+
 func (m *GetTagsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTagsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetTagsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTagsRequest.Merge(m, src)
 }
+
 func (m *GetTagsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetTagsRequest.Size(m)
 }
+
 func (m *GetTagsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTagsRequest.DiscardUnknown(m)
 }
@@ -745,15 +792,19 @@ func (*GetTagsResponse) Descriptor() ([]byte, []int) {
 func (m *GetTagsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetTagsResponse.Unmarshal(m, b)
 }
+
 func (m *GetTagsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetTagsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetTagsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetTagsResponse.Merge(m, src)
 }
+
 func (m *GetTagsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetTagsResponse.Size(m)
 }
+
 func (m *GetTagsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetTagsResponse.DiscardUnknown(m)
 }
@@ -812,15 +863,19 @@ func (*CreateImageRequest) Descriptor() ([]byte, []int) {
 func (m *CreateImageRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateImageRequest.Unmarshal(m, b)
 }
+
 func (m *CreateImageRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateImageRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateImageRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateImageRequest.Merge(m, src)
 }
+
 func (m *CreateImageRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateImageRequest.Size(m)
 }
+
 func (m *CreateImageRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateImageRequest.DiscardUnknown(m)
 }
@@ -879,15 +934,19 @@ func (*UpdateImageRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateImageRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateImageRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateImageRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateImageRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateImageRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateImageRequest.Merge(m, src)
 }
+
 func (m *UpdateImageRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateImageRequest.Size(m)
 }
+
 func (m *UpdateImageRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateImageRequest.DiscardUnknown(m)
 }
@@ -946,15 +1005,19 @@ func (*DeleteImageRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteImageRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteImageRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteImageRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteImageRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteImageRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteImageRequest.Merge(m, src)
 }
+
 func (m *DeleteImageRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteImageRequest.Size(m)
 }
+
 func (m *DeleteImageRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteImageRequest.DiscardUnknown(m)
 }
@@ -1013,15 +1076,19 @@ func (*GetImageRequest) Descriptor() ([]byte, []int) {
 func (m *GetImageRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetImageRequest.Unmarshal(m, b)
 }
+
 func (m *GetImageRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetImageRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetImageRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetImageRequest.Merge(m, src)
 }
+
 func (m *GetImageRequest) XXX_Size() int {
 	return xxx_messageInfo_GetImageRequest.Size(m)
 }
+
 func (m *GetImageRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetImageRequest.DiscardUnknown(m)
 }
@@ -1078,15 +1145,19 @@ func (*GetImagesRequest) Descriptor() ([]byte, []int) {
 func (m *GetImagesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetImagesRequest.Unmarshal(m, b)
 }
+
 func (m *GetImagesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetImagesRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetImagesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetImagesRequest.Merge(m, src)
 }
+
 func (m *GetImagesRequest) XXX_Size() int {
 	return xxx_messageInfo_GetImagesRequest.Size(m)
 }
+
 func (m *GetImagesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetImagesRequest.DiscardUnknown(m)
 }
@@ -1138,15 +1209,19 @@ func (*GetImagesResponse) Descriptor() ([]byte, []int) {
 func (m *GetImagesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetImagesResponse.Unmarshal(m, b)
 }
+
 func (m *GetImagesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetImagesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetImagesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetImagesResponse.Merge(m, src)
 }
+
 func (m *GetImagesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetImagesResponse.Size(m)
 }
+
 func (m *GetImagesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetImagesResponse.DiscardUnknown(m)
 }
@@ -1205,15 +1280,19 @@ func (*CreateCommentRequest) Descriptor() ([]byte, []int) {
 func (m *CreateCommentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateCommentRequest.Unmarshal(m, b)
 }
+
 func (m *CreateCommentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateCommentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateCommentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateCommentRequest.Merge(m, src)
 }
+
 func (m *CreateCommentRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateCommentRequest.Size(m)
 }
+
 func (m *CreateCommentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateCommentRequest.DiscardUnknown(m)
 }
@@ -1272,15 +1351,19 @@ func (*UpdateCommentRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateCommentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateCommentRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateCommentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateCommentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateCommentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateCommentRequest.Merge(m, src)
 }
+
 func (m *UpdateCommentRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateCommentRequest.Size(m)
 }
+
 func (m *UpdateCommentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateCommentRequest.DiscardUnknown(m)
 }
@@ -1339,15 +1422,19 @@ func (*DeleteCommentRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteCommentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteCommentRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteCommentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteCommentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteCommentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteCommentRequest.Merge(m, src)
 }
+
 func (m *DeleteCommentRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteCommentRequest.Size(m)
 }
+
 func (m *DeleteCommentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteCommentRequest.DiscardUnknown(m)
 }
@@ -1406,15 +1493,19 @@ func (*GetCommentRequest) Descriptor() ([]byte, []int) {
 func (m *GetCommentRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCommentRequest.Unmarshal(m, b)
 }
+
 func (m *GetCommentRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCommentRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCommentRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCommentRequest.Merge(m, src)
 }
+
 func (m *GetCommentRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCommentRequest.Size(m)
 }
+
 func (m *GetCommentRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCommentRequest.DiscardUnknown(m)
 }
@@ -1471,15 +1562,19 @@ func (*GetCommentsRequest) Descriptor() ([]byte, []int) {
 func (m *GetCommentsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCommentsRequest.Unmarshal(m, b)
 }
+
 func (m *GetCommentsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCommentsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetCommentsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCommentsRequest.Merge(m, src)
 }
+
 func (m *GetCommentsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetCommentsRequest.Size(m)
 }
+
 func (m *GetCommentsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCommentsRequest.DiscardUnknown(m)
 }
@@ -1531,15 +1626,19 @@ func (*GetCommentsResponse) Descriptor() ([]byte, []int) {
 func (m *GetCommentsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetCommentsResponse.Unmarshal(m, b)
 }
+
 func (m *GetCommentsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetCommentsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetCommentsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetCommentsResponse.Merge(m, src)
 }
+
 func (m *GetCommentsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetCommentsResponse.Size(m)
 }
+
 func (m *GetCommentsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetCommentsResponse.DiscardUnknown(m)
 }
@@ -1598,15 +1697,19 @@ func (*CreateNarrativeRequest) Descriptor() ([]byte, []int) {
 func (m *CreateNarrativeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateNarrativeRequest.Unmarshal(m, b)
 }
+
 func (m *CreateNarrativeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateNarrativeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateNarrativeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateNarrativeRequest.Merge(m, src)
 }
+
 func (m *CreateNarrativeRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateNarrativeRequest.Size(m)
 }
+
 func (m *CreateNarrativeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateNarrativeRequest.DiscardUnknown(m)
 }
@@ -1665,15 +1768,19 @@ func (*UpdateNarrativeRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateNarrativeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateNarrativeRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateNarrativeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateNarrativeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateNarrativeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateNarrativeRequest.Merge(m, src)
 }
+
 func (m *UpdateNarrativeRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateNarrativeRequest.Size(m)
 }
+
 func (m *UpdateNarrativeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateNarrativeRequest.DiscardUnknown(m)
 }
@@ -1732,15 +1839,19 @@ func (*DeleteNarrativeRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteNarrativeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteNarrativeRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteNarrativeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteNarrativeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteNarrativeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteNarrativeRequest.Merge(m, src)
 }
+
 func (m *DeleteNarrativeRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteNarrativeRequest.Size(m)
 }
+
 func (m *DeleteNarrativeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteNarrativeRequest.DiscardUnknown(m)
 }
@@ -1799,15 +1910,19 @@ func (*GetNarrativeRequest) Descriptor() ([]byte, []int) {
 func (m *GetNarrativeRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetNarrativeRequest.Unmarshal(m, b)
 }
+
 func (m *GetNarrativeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetNarrativeRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetNarrativeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetNarrativeRequest.Merge(m, src)
 }
+
 func (m *GetNarrativeRequest) XXX_Size() int {
 	return xxx_messageInfo_GetNarrativeRequest.Size(m)
 }
+
 func (m *GetNarrativeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetNarrativeRequest.DiscardUnknown(m)
 }
@@ -1864,15 +1979,19 @@ func (*GetNarrativesRequest) Descriptor() ([]byte, []int) {
 func (m *GetNarrativesRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetNarrativesRequest.Unmarshal(m, b)
 }
+
 func (m *GetNarrativesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetNarrativesRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetNarrativesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetNarrativesRequest.Merge(m, src)
 }
+
 func (m *GetNarrativesRequest) XXX_Size() int {
 	return xxx_messageInfo_GetNarrativesRequest.Size(m)
 }
+
 func (m *GetNarrativesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetNarrativesRequest.DiscardUnknown(m)
 }
@@ -1924,15 +2043,19 @@ func (*GetNarrativesResponse) Descriptor() ([]byte, []int) {
 func (m *GetNarrativesResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetNarrativesResponse.Unmarshal(m, b)
 }
+
 func (m *GetNarrativesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetNarrativesResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetNarrativesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetNarrativesResponse.Merge(m, src)
 }
+
 func (m *GetNarrativesResponse) XXX_Size() int {
 	return xxx_messageInfo_GetNarrativesResponse.Size(m)
 }
+
 func (m *GetNarrativesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetNarrativesResponse.DiscardUnknown(m)
 }
@@ -1991,15 +2114,19 @@ func (*CreateWhereTagRequest) Descriptor() ([]byte, []int) {
 func (m *CreateWhereTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateWhereTagRequest.Unmarshal(m, b)
 }
+
 func (m *CreateWhereTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateWhereTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateWhereTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateWhereTagRequest.Merge(m, src)
 }
+
 func (m *CreateWhereTagRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateWhereTagRequest.Size(m)
 }
+
 func (m *CreateWhereTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateWhereTagRequest.DiscardUnknown(m)
 }
@@ -2058,15 +2185,19 @@ func (*UpdateWhereTagRequest) Descriptor() ([]byte, []int) {
 func (m *UpdateWhereTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_UpdateWhereTagRequest.Unmarshal(m, b)
 }
+
 func (m *UpdateWhereTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_UpdateWhereTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *UpdateWhereTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_UpdateWhereTagRequest.Merge(m, src)
 }
+
 func (m *UpdateWhereTagRequest) XXX_Size() int {
 	return xxx_messageInfo_UpdateWhereTagRequest.Size(m)
 }
+
 func (m *UpdateWhereTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_UpdateWhereTagRequest.DiscardUnknown(m)
 }
@@ -2125,15 +2256,19 @@ func (*DeleteWhereTagRequest) Descriptor() ([]byte, []int) {
 func (m *DeleteWhereTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DeleteWhereTagRequest.Unmarshal(m, b)
 }
+
 func (m *DeleteWhereTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_DeleteWhereTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *DeleteWhereTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_DeleteWhereTagRequest.Merge(m, src)
 }
+
 func (m *DeleteWhereTagRequest) XXX_Size() int {
 	return xxx_messageInfo_DeleteWhereTagRequest.Size(m)
 }
+
 func (m *DeleteWhereTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_DeleteWhereTagRequest.DiscardUnknown(m)
 }
@@ -2192,15 +2327,19 @@ func (*GetWhereTagRequest) Descriptor() ([]byte, []int) {
 func (m *GetWhereTagRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetWhereTagRequest.Unmarshal(m, b)
 }
+
 func (m *GetWhereTagRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetWhereTagRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetWhereTagRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetWhereTagRequest.Merge(m, src)
 }
+
 func (m *GetWhereTagRequest) XXX_Size() int {
 	return xxx_messageInfo_GetWhereTagRequest.Size(m)
 }
+
 func (m *GetWhereTagRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetWhereTagRequest.DiscardUnknown(m)
 }
@@ -2257,15 +2396,19 @@ func (*GetWhereTagsRequest) Descriptor() ([]byte, []int) {
 func (m *GetWhereTagsRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetWhereTagsRequest.Unmarshal(m, b)
 }
+
 func (m *GetWhereTagsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetWhereTagsRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetWhereTagsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetWhereTagsRequest.Merge(m, src)
 }
+
 func (m *GetWhereTagsRequest) XXX_Size() int {
 	return xxx_messageInfo_GetWhereTagsRequest.Size(m)
 }
+
 func (m *GetWhereTagsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetWhereTagsRequest.DiscardUnknown(m)
 }
@@ -2317,15 +2460,19 @@ func (*GetWhereTagsResponse) Descriptor() ([]byte, []int) {
 func (m *GetWhereTagsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetWhereTagsResponse.Unmarshal(m, b)
 }
+
 func (m *GetWhereTagsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetWhereTagsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetWhereTagsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetWhereTagsResponse.Merge(m, src)
 }
+
 func (m *GetWhereTagsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetWhereTagsResponse.Size(m)
 }
+
 func (m *GetWhereTagsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetWhereTagsResponse.DiscardUnknown(m)
 }
@@ -2603,13 +2750,15 @@ var fileDescriptor_3aa067b964032073 = []byte{
 	0x9d, 0x51, 0xc9, 0x92, 0x14, 0xd3, 0x2d, 0xd9, 0xff, 0x80, 0xc9, 0x26, 0xdf, 0x31, 0xea, 0x3b,
 	0x89, 0x35, 0x5c, 0x20, 0xec, 0x15, 0xf7, 0x58, 0xba, 0xb3, 0x0a, 0x2e, 0xab, 0x71, 0x74, 0x77,
 	0x1b, 0x37, 0xc9, 0x9d, 0x8e, 0xfb, 0x2b, 0x67, 0x0f, 0x73, 0xa9, 0xf3, 0x5c, 0xea, 0x02, 0x97,
-	0xfa, 0x0e, 0x97, 0xfa, 0x1d, 0x97, 0x7a, 0x9f, 0x4b, 0xfd, 0x82, 0x4f, 0x65, 0xdb, 0x1d, 0xfa,
-	0xbb, 0xee, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x8b, 0x82, 0x85, 0xb0, 0x57, 0x4d, 0x00, 0x00,
+	0xfa, 0x0e, 0x97, 0xfa, 0x1d, 0x97, 0x7a, 0x9f, 0xe3, 0x7e, 0xc1, 0xa7, 0xb2, 0xed, 0x0e, 0xfd,
+	0x5d, 0xf7, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xe4, 0xce, 0x20, 0x2b, 0x57, 0x4d, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -2959,81 +3108,104 @@ type TransactionMetadataServiceServer interface {
 }
 
 // UnimplementedTransactionMetadataServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedTransactionMetadataServiceServer struct {
-}
+type UnimplementedTransactionMetadataServiceServer struct{}
 
 func (*UnimplementedTransactionMetadataServiceServer) CreateTag(ctx context.Context, req *CreateTagRequest) (*Tag, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetTag(ctx context.Context, req *GetTagRequest) (*Tag, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetTags(ctx context.Context, req *GetTagsRequest) (*GetTagsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTags not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) UpdateTag(ctx context.Context, req *UpdateTagRequest) (*Tag, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) DeleteTag(ctx context.Context, req *DeleteTagRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) CreateImage(ctx context.Context, req *CreateImageRequest) (*Image, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateImage not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetImage(ctx context.Context, req *GetImageRequest) (*Image, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetImage not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetImages(ctx context.Context, req *GetImagesRequest) (*GetImagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetImages not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) UpdateImage(ctx context.Context, req *UpdateImageRequest) (*Image, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateImage not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) DeleteImage(ctx context.Context, req *DeleteImageRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteImage not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) CreateComment(ctx context.Context, req *CreateCommentRequest) (*Comment, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateComment not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetComment(ctx context.Context, req *GetCommentRequest) (*Comment, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetComment not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetComments(ctx context.Context, req *GetCommentsRequest) (*GetCommentsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetComments not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) UpdateComment(ctx context.Context, req *UpdateCommentRequest) (*Comment, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateComment not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) DeleteComment(ctx context.Context, req *DeleteCommentRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteComment not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) CreateNarrative(ctx context.Context, req *CreateNarrativeRequest) (*Narrative, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNarrative not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetNarrative(ctx context.Context, req *GetNarrativeRequest) (*Narrative, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNarrative not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetNarratives(ctx context.Context, req *GetNarrativesRequest) (*GetNarrativesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetNarratives not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) UpdateNarrative(ctx context.Context, req *UpdateNarrativeRequest) (*Narrative, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateNarrative not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) DeleteNarrative(ctx context.Context, req *DeleteNarrativeRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNarrative not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) CreateWhereTag(ctx context.Context, req *CreateWhereTagRequest) (*WhereTag, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateWhereTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetWhereTag(ctx context.Context, req *GetWhereTagRequest) (*WhereTag, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWhereTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) GetWhereTags(ctx context.Context, req *GetWhereTagsRequest) (*GetWhereTagsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWhereTags not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) UpdateWhereTag(ctx context.Context, req *UpdateWhereTagRequest) (*WhereTag, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateWhereTag not implemented")
 }
+
 func (*UnimplementedTransactionMetadataServiceServer) DeleteWhereTag(ctx context.Context, req *DeleteWhereTagRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteWhereTag not implemented")
 }

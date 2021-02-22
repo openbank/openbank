@@ -6,6 +6,8 @@ package atm
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
@@ -14,13 +16,14 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -59,15 +62,19 @@ func (*ATM) Descriptor() ([]byte, []int) {
 func (m *ATM) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ATM.Unmarshal(m, b)
 }
+
 func (m *ATM) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_ATM.Marshal(b, m, deterministic)
 }
+
 func (m *ATM) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ATM.Merge(m, src)
 }
+
 func (m *ATM) XXX_Size() int {
 	return xxx_messageInfo_ATM.Size(m)
 }
+
 func (m *ATM) XXX_DiscardUnknown() {
 	xxx_messageInfo_ATM.DiscardUnknown(m)
 }
@@ -152,15 +159,19 @@ func (*CreateATMRequest) Descriptor() ([]byte, []int) {
 func (m *CreateATMRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateATMRequest.Unmarshal(m, b)
 }
+
 func (m *CreateATMRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateATMRequest.Marshal(b, m, deterministic)
 }
+
 func (m *CreateATMRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateATMRequest.Merge(m, src)
 }
+
 func (m *CreateATMRequest) XXX_Size() int {
 	return xxx_messageInfo_CreateATMRequest.Size(m)
 }
+
 func (m *CreateATMRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateATMRequest.DiscardUnknown(m)
 }
@@ -228,15 +239,19 @@ func (*CreateATMResponse) Descriptor() ([]byte, []int) {
 func (m *CreateATMResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_CreateATMResponse.Unmarshal(m, b)
 }
+
 func (m *CreateATMResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_CreateATMResponse.Marshal(b, m, deterministic)
 }
+
 func (m *CreateATMResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CreateATMResponse.Merge(m, src)
 }
+
 func (m *CreateATMResponse) XXX_Size() int {
 	return xxx_messageInfo_CreateATMResponse.Size(m)
 }
+
 func (m *CreateATMResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CreateATMResponse.DiscardUnknown(m)
 }
@@ -269,15 +284,19 @@ func (*GetATMRequest) Descriptor() ([]byte, []int) {
 func (m *GetATMRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetATMRequest.Unmarshal(m, b)
 }
+
 func (m *GetATMRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetATMRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetATMRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetATMRequest.Merge(m, src)
 }
+
 func (m *GetATMRequest) XXX_Size() int {
 	return xxx_messageInfo_GetATMRequest.Size(m)
 }
+
 func (m *GetATMRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetATMRequest.DiscardUnknown(m)
 }
@@ -310,15 +329,19 @@ func (*GetATMsResponse) Descriptor() ([]byte, []int) {
 func (m *GetATMsResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetATMsResponse.Unmarshal(m, b)
 }
+
 func (m *GetATMsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetATMsResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetATMsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetATMsResponse.Merge(m, src)
 }
+
 func (m *GetATMsResponse) XXX_Size() int {
 	return xxx_messageInfo_GetATMsResponse.Size(m)
 }
+
 func (m *GetATMsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetATMsResponse.DiscardUnknown(m)
 }
@@ -424,13 +447,15 @@ var fileDescriptor_80fee59d76a66276 = []byte{
 	0x3c, 0x7b, 0x87, 0xc1, 0x2e, 0xa1, 0x3a, 0x22, 0xe6, 0xfb, 0x18, 0xd5, 0x8f, 0x78, 0x17, 0x78,
 	0xae, 0x49, 0x39, 0xed, 0xc1, 0x28, 0xe2, 0x84, 0x16, 0xa9, 0x17, 0x8d, 0x99, 0xd9, 0x06, 0xef,
 	0xda, 0x9b, 0xf6, 0x5d, 0xf3, 0x1b, 0xf6, 0x81, 0x6d, 0x3d, 0xb2, 0xad, 0x27, 0xb6, 0xf5, 0xbd,
-	0x6d, 0xfd, 0x62, 0x5b, 0x7f, 0xda, 0xd6, 0x8f, 0x8e, 0xd5, 0x29, 0xa6, 0x4b, 0xfa, 0xf2, 0xdf,
-	0x01, 0x00, 0x00, 0xff, 0xff, 0x0b, 0x39, 0xf1, 0x4c, 0x15, 0x0b, 0x00, 0x00,
+	0x6d, 0xfd, 0x62, 0x5b, 0x7f, 0xda, 0xf6, 0x8f, 0x8e, 0xd5, 0x29, 0xa6, 0x4b, 0xfa, 0xf2, 0xdf,
+	0x01, 0x00, 0x00, 0xff, 0xff, 0x64, 0x75, 0x54, 0xd7, 0x15, 0x0b, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -494,15 +519,16 @@ type ATMServiceServer interface {
 }
 
 // UnimplementedATMServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedATMServiceServer struct {
-}
+type UnimplementedATMServiceServer struct{}
 
 func (*UnimplementedATMServiceServer) GetATM(ctx context.Context, req *GetATMRequest) (*ATM, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetATM not implemented")
 }
+
 func (*UnimplementedATMServiceServer) GetATMs(ctx context.Context, req *empty.Empty) (*GetATMsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetATMs not implemented")
 }
+
 func (*UnimplementedATMServiceServer) CreateATM(ctx context.Context, req *CreateATMRequest) (*CreateATMResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateATM not implemented")
 }

@@ -4,21 +4,21 @@ package transactionrequest
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/transactionrequest.read": "View transactionrequest data",
+	"https://auth.bnk.to/transactionrequest.read":  "View transactionrequest data",
 	"https://auth.bnk.to/transactionrequest.write": "Manage transactionrequest data",
 }
 
 var AuthScopes = map[string][]string{
-	"/transactionrequest.TransactionRequestService/AnswerTransactionRequestChallenge": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateAccountOTPTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateAccountTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateCounterPartyTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateFreeFormTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/CreateSEPATransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
-	"/transactionrequest.TransactionRequestService/GetSupportedTransactionRequestTypes": []string{"https://auth.bnk.to/transactionrequest.read"},
-	"/transactionrequest.TransactionRequestService/GetTransactionRequestTypes": []string{"https://auth.bnk.to/transactionrequest.read"},
-	"/transactionrequest.TransactionRequestService/GetTransactionRequests": []string{"https://auth.bnk.to/transactionrequest.read"},
-	"/transactionrequest.TransactionRequestService/SaveHistoricTransaction": []string{"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/AnswerTransactionRequestChallenge":   {"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/CreateAccountOTPTransaction":         {"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/CreateAccountTransaction":            {"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/CreateCounterPartyTransaction":       {"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/CreateFreeFormTransaction":           {"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/CreateSEPATransaction":               {"https://auth.bnk.to/transactionrequest.write"},
+	"/transactionrequest.TransactionRequestService/GetSupportedTransactionRequestTypes": {"https://auth.bnk.to/transactionrequest.read"},
+	"/transactionrequest.TransactionRequestService/GetTransactionRequestTypes":          {"https://auth.bnk.to/transactionrequest.read"},
+	"/transactionrequest.TransactionRequestService/GetTransactionRequests":              {"https://auth.bnk.to/transactionrequest.read"},
+	"/transactionrequest.TransactionRequestService/SaveHistoricTransaction":             {"https://auth.bnk.to/transactionrequest.write"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

@@ -1,5 +1,4 @@
-Bank API v1.0.0
-===============
+# Bank API v1.0.0
 
 Provides create and read operations on the bank resource.
 
@@ -7,8 +6,7 @@ Provides create and read operations on the bank resource.
 
 * Base Path ``
 
-Create a bank {#method-post-createbank}
----------------------------------------
+## Create a bank {#method-post-createbank}
 
 Creates a new bank and returns its id.
 
@@ -118,8 +116,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Create a new transaction type at a bank {#method-post-createtranscationtypeatbank}
-----------------------------------------------------------------------------------
+## Create a new transaction type at a bank {#method-post-createtranscationtypeatbank}
 
 Creates a new transaction type at a bank and returns its transaction type response.
 
@@ -203,8 +200,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Delete a bank {#method-delete-deletebank}
------------------------------------------
+## Delete a bank {#method-delete-deletebank}
 
 Permanently delete a bank.
 
@@ -237,8 +233,7 @@ curl -X DELETE \
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve bank information {#method-get-getbank}
------------------------------------------------
+## Retrieve bank information {#method-get-getbank}
 
 Retrieve information about the bank specified by the ID
 
@@ -312,8 +307,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Retrieve all available banks {#method-get-getbanks}
----------------------------------------------------
+## Retrieve all available banks {#method-get-getbanks}
 
 Retrieve information regarding all available banks.
 
@@ -391,8 +385,7 @@ Example:
 | 404    | Returned when the resource is not found.                                               |
 | 500    | Returned when an unexpected error occured on the server side.                          |
 
-Update a bank {#method-put-updatebank}
---------------------------------------
+## Update a bank {#method-put-updatebank}
 
 Updates a bank's information
 

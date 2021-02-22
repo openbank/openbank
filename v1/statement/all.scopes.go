@@ -4,13 +4,13 @@ package statement
 type ServiceScope struct{}
 
 var Scopes = map[string]string{
-	"https://auth.bnk.to/statement.read": "View statement data",
+	"https://auth.bnk.to/statement.read":  "View statement data",
 	"https://auth.bnk.to/statement.write": "Manage statement data",
 }
 
 var AuthScopes = map[string][]string{
-	"/statement.StatementService/GetStatement": []string{"https://auth.bnk.to/statement.read"},
-	"/statement.StatementService/GetStatements": []string{"https://auth.bnk.to/statement.read"},
+	"/statement.StatementService/GetStatement":  {"https://auth.bnk.to/statement.read"},
+	"/statement.StatementService/GetStatements": {"https://auth.bnk.to/statement.read"},
 }
 
 // Any allows a loose challenge, for claims containing any of the method scopes.

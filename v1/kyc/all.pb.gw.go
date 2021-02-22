@@ -24,12 +24,14 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = descriptor.ForMessage
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = descriptor.ForMessage
+)
 
 func request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AddKYCCheckRequest
@@ -74,7 +76,6 @@ func request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.AddKYCCheck(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -120,7 +121,6 @@ func local_request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runti
 
 	msg, err := server.AddKYCCheck(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -166,7 +166,6 @@ func request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler runtime.
 
 	msg, err := client.AddKYCDocument(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -212,7 +211,6 @@ func local_request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler ru
 
 	msg, err := server.AddKYCDocument(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -258,7 +256,6 @@ func request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.AddKYCMedia(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -304,7 +301,6 @@ func local_request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runti
 
 	msg, err := server.AddKYCMedia(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_AddKYCStatus_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -339,7 +335,6 @@ func request_KYCService_AddKYCStatus_0(ctx context.Context, marshaler runtime.Ma
 
 	msg, err := client.AddKYCStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_AddKYCStatus_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -374,7 +369,6 @@ func local_request_KYCService_AddKYCStatus_0(ctx context.Context, marshaler runt
 
 	msg, err := server.AddKYCStatus(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_GetCustomerKYCCheck_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -401,7 +395,6 @@ func request_KYCService_GetCustomerKYCCheck_0(ctx context.Context, marshaler run
 
 	msg, err := client.GetCustomerKYCCheck(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_GetCustomerKYCCheck_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -428,7 +421,6 @@ func local_request_KYCService_GetCustomerKYCCheck_0(ctx context.Context, marshal
 
 	msg, err := server.GetCustomerKYCCheck(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_GetCustomerKYCDocument_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -455,7 +447,6 @@ func request_KYCService_GetCustomerKYCDocument_0(ctx context.Context, marshaler 
 
 	msg, err := client.GetCustomerKYCDocument(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_GetCustomerKYCDocument_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -482,7 +473,6 @@ func local_request_KYCService_GetCustomerKYCDocument_0(ctx context.Context, mars
 
 	msg, err := server.GetCustomerKYCDocument(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_GetCustomerKYCStatus_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -509,7 +499,6 @@ func request_KYCService_GetCustomerKYCStatus_0(ctx context.Context, marshaler ru
 
 	msg, err := client.GetCustomerKYCStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_GetCustomerKYCStatus_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -536,7 +525,6 @@ func local_request_KYCService_GetCustomerKYCStatus_0(ctx context.Context, marsha
 
 	msg, err := server.GetCustomerKYCStatus(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -563,7 +551,6 @@ func request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runtime.Mar
 
 	msg, err := client.GetKYCMedia(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runtime.Marshaler, server KYCServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -590,14 +577,12 @@ func local_request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runti
 
 	msg, err := server.GetKYCMedia(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterKYCServiceHandlerServer registers the http handlers for service KYCService to "mux".
 // UnaryRPC     :call KYCServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server KYCServiceServer) error {
-
 	mux.Handle("PUT", pattern_KYCService_AddKYCCheck_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -615,7 +600,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCCheck_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_KYCService_AddKYCDocument_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -635,7 +619,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCDocument_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_KYCService_AddKYCMedia_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -655,7 +638,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCMedia_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_KYCService_AddKYCStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -675,7 +657,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCCheck_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -695,7 +676,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetCustomerKYCCheck_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCDocument_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -715,7 +695,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetCustomerKYCDocument_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -735,7 +714,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetCustomerKYCStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetKYCMedia_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -755,7 +733,6 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetKYCMedia_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -798,7 +775,6 @@ func RegisterKYCServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn 
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
 // "KYCServiceClient" to call the correct interceptors.
 func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client KYCServiceClient) error {
-
 	mux.Handle("PUT", pattern_KYCService_AddKYCCheck_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -816,7 +792,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCCheck_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_KYCService_AddKYCDocument_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -836,7 +811,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCDocument_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_KYCService_AddKYCMedia_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -856,7 +830,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCMedia_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("PUT", pattern_KYCService_AddKYCStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -876,7 +849,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_AddKYCStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCCheck_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -896,7 +868,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetCustomerKYCCheck_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCDocument_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -916,7 +887,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetCustomerKYCDocument_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -936,7 +906,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetCustomerKYCStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	mux.Handle("GET", pattern_KYCService_GetKYCMedia_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
@@ -956,7 +925,6 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		}
 
 		forward_KYCService_GetKYCMedia_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
