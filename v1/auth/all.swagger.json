@@ -5,6 +5,11 @@
     "description": "In order to interact with openbank APIs, you must be authenticated. This API provides the needed endpoints to retrieve an authorization code, exchange it against an access token and refresh an access token.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "AuthorizationService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Retrieve an authorization code",
         "description": "First you need to retrieve an authorization code.",
-        "operationId": "GetAuthorizationCode",
+        "operationId": "AuthorizationService_GetAuthorizationCode",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -73,7 +84,7 @@
       "post": {
         "summary": "Create an access token",
         "description": "Then you can exchange the authorization code with an access token. This endpoint is also used to refresh your tokens.",
-        "operationId": "CreateAccessToken",
+        "operationId": "AuthorizationService_CreateAccessToken",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -106,6 +117,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -183,6 +200,36 @@
       ],
       "default": "UnknownGrantType",
       "description": "GrantType defines the grant type when requesting a token.\n\n - AuthorizationCode: GrantType_AuthorizationCode is the grant type used to exchange an authorization code with an access token.\n - RefreshToken: GrantType_RefreshToken is the grant type used to refresh an access token."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     }
   }
 }

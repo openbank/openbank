@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the account application resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "AccountApplicationService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "List all accounts",
         "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
-        "operationId": "GetAccountApplications",
+        "operationId": "AccountApplicationService_GetAccountApplications",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -79,7 +90,7 @@
       "post": {
         "summary": "Create an account application",
         "description": "Creates a new account application",
-        "operationId": "CreateAccountApplication",
+        "operationId": "AccountApplicationService_CreateAccountApplication",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -112,6 +123,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -136,11 +153,11 @@
         ]
       }
     },
-    "/v1/account-applications/{iD}": {
+    "/v1/account-applications/{id}": {
       "get": {
         "summary": "Retrieve an account application",
         "description": "Retrieves all data from an account application selected by the supplied account_application_id.",
-        "operationId": "GetAccountApplication",
+        "operationId": "AccountApplicationService_GetAccountApplication",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -167,11 +184,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "iD",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -191,7 +214,7 @@
       "put": {
         "summary": "Update an account application",
         "description": "Updates an account application with the given status",
-        "operationId": "UpdateAccountApplicationStatus",
+        "operationId": "AccountApplicationService_UpdateAccountApplicationStatus",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -222,11 +245,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "iD",
+            "name": "id",
             "description": "ID is the unique identifier of the account application to update.",
             "in": "path",
             "required": true,
@@ -376,6 +405,36 @@
       },
       "title": "Structure of user information"
     },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "typesAddress": {
       "type": "object",
       "properties": {
@@ -461,7 +520,6 @@
         },
         "email_verified": {
           "type": "boolean",
-          "format": "boolean",
           "title": "True if email is verified, otherwise False"
         },
         "mobile": {
@@ -531,7 +589,6 @@
         },
         "kyc_status": {
           "type": "boolean",
-          "format": "boolean",
           "title": "Know Your Customer status"
         },
         "branchId": {

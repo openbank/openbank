@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the entitlement part resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "EntitlementService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/users/{userID}/entitlements": {
+    "/v1/banks/{bank_id}/users/{user_id}/entitlements": {
       "get": {
         "summary": "Retrieve entitlement information",
         "description": "Retrieve information about the entitlement specified by the User ID at bank",
-        "operationId": "GetEntitlementForUserAtBank",
+        "operationId": "EntitlementService_GetEntitlementForUserAtBank",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,17 +51,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "userID",
+            "name": "user_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -78,7 +89,7 @@
       "get": {
         "summary": "List all entitlements",
         "description": "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
-        "operationId": "GetAllEntitlementRequests",
+        "operationId": "EntitlementService_GetAllEntitlementRequests",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -105,6 +116,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -138,7 +155,7 @@
       "post": {
         "summary": "Add an entitlement request for current user",
         "description": "Add an entitlement request for current user",
-        "operationId": "AddEntitlementRequestForCurrentUser",
+        "operationId": "EntitlementService_AddEntitlementRequestForCurrentUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -171,6 +188,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -195,11 +218,11 @@
         ]
       }
     },
-    "/v1/entitlement-requests/{entitlementRequestID}": {
+    "/v1/entitlement-requests/{entitlement_request_id}": {
       "delete": {
         "summary": "Delete a entitlement request",
         "description": "Permanently delete an entitlement request.",
-        "operationId": "DeleteEntitlementRequest",
+        "operationId": "EntitlementService_DeleteEntitlementRequest",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -230,11 +253,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "entitlementRequestID",
+            "name": "entitlement_request_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -256,7 +285,7 @@
       "get": {
         "summary": "List all entitlements",
         "description": "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
-        "operationId": "GetAllEntitlements",
+        "operationId": "EntitlementService_GetAllEntitlements",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -283,6 +312,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -318,7 +353,7 @@
       "get": {
         "summary": "List all entitlements",
         "description": "Returns a list containing up to 20 entitlements. `after_index` can be used for pagination.",
-        "operationId": "GetRoles",
+        "operationId": "EntitlementService_GetRoles",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -345,6 +380,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -380,7 +421,7 @@
       "get": {
         "summary": "Retrieve entitlement request information",
         "description": "Retrieve information about the entitlement request specified for current user",
-        "operationId": "GetEntitlementRequestForCurrentUser",
+        "operationId": "EntitlementService_GetEntitlementRequestForCurrentUser",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -407,6 +448,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -425,7 +472,7 @@
       "get": {
         "summary": "Retrieve entitlement information",
         "description": "Retrieve information about the entitlement specified for current user",
-        "operationId": "GetEntitlementForCurrentUser",
+        "operationId": "EntitlementService_GetEntitlementForCurrentUser",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -452,6 +499,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -466,11 +519,11 @@
         ]
       }
     },
-    "/v1/users/{userID}/entitlement-requests": {
+    "/v1/users/{user_id}/entitlement-requests": {
       "get": {
         "summary": "Retrieve entitlement request information",
         "description": "Retrieve information about the entitlement request specified by the User ID",
-        "operationId": "GetEntitlementRequestForUser",
+        "operationId": "EntitlementService_GetEntitlementRequestForUser",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -497,11 +550,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "userID",
+            "name": "user_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -519,11 +578,11 @@
         ]
       }
     },
-    "/v1/users/{userID}/entitlements": {
+    "/v1/users/{user_id}/entitlements": {
       "get": {
         "summary": "Retrieve entitlement information",
         "description": "Retrieve information about the entitlement specified by the User ID",
-        "operationId": "GetEntitlementForUser",
+        "operationId": "EntitlementService_GetEntitlementForUser",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -550,11 +609,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "userID",
+            "name": "user_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -574,7 +639,7 @@
       "post": {
         "summary": "Add the entitlement request for user",
         "description": "Add the entitlement entitlement request for user",
-        "operationId": "AddEntitlementRequestForUser",
+        "operationId": "EntitlementService_AddEntitlementRequestForUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -607,11 +672,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "userID",
+            "name": "user_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -637,11 +708,11 @@
         ]
       }
     },
-    "/v1/users/{userID}/entitlements/{entitlementID}": {
+    "/v1/users/{user_id}/entitlements/{entitlement_id}": {
       "delete": {
         "summary": "Delete an entitlement",
         "description": "Permanently delete an entitlement.",
-        "operationId": "DeleteEntitlement",
+        "operationId": "EntitlementService_DeleteEntitlement",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -672,17 +743,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "userID",
+            "name": "user_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "entitlementID",
+            "name": "entitlement_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -841,8 +918,7 @@
           "type": "string"
         },
         "requires_bank_id": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         }
       }
     },
@@ -866,6 +942,36 @@
         },
         "entitlements": {
           "$ref": "#/definitions/entitlementEntitlements"
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     }

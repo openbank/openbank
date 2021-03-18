@@ -5,6 +5,11 @@
     "description": "Provides the access and availability to the counterparty metadata API.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "CounterpartyMetadataService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata": {
       "get": {
         "summary": "Retrieve other account metadata information",
         "description": "Retrieve information about the other account metadata specified by the ID",
-        "operationId": "GetOtherAccountMetadata",
+        "operationId": "CounterpartyMetadataService_GetOtherAccountMetadata",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,25 +51,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -83,11 +94,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/corporate_location": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/corporate_location": {
       "get": {
         "summary": "Retrieve corporate location information",
         "description": "Retrieve information about the corporate location specified by the ID",
-        "operationId": "GetCorporateLocation",
+        "operationId": "CounterpartyMetadataService_GetCorporateLocation",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -114,25 +125,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -153,7 +170,7 @@
       "delete": {
         "summary": "Delete a corporate location",
         "description": "Permanently delete a corporate location.",
-        "operationId": "DeleteCorporateLocation",
+        "operationId": "CounterpartyMetadataService_DeleteCorporateLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -184,25 +201,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -223,7 +246,7 @@
       "post": {
         "summary": "Create a corporate_location",
         "description": "Creates a new corporate_location and returns the object.",
-        "operationId": "CreateCorporateLocation",
+        "operationId": "CounterpartyMetadataService_CreateCorporateLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -256,25 +279,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -303,7 +332,7 @@
       "put": {
         "summary": "Update a corporate location",
         "description": "Updates a corporate location's information",
-        "operationId": "UpdateCorporateLocation",
+        "operationId": "CounterpartyMetadataService_UpdateCorporateLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -336,25 +365,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -381,11 +416,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/corporate_locations": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/corporate_locations": {
       "get": {
         "summary": "Retrieve all available corporate locations",
         "description": "Retrieve information regarding all available corporate locations.",
-        "operationId": "GetCorporateLocations",
+        "operationId": "CounterpartyMetadataService_GetCorporateLocations",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -412,25 +447,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -449,11 +490,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/image_url": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/image_url": {
       "get": {
         "summary": "Retrieve image url information",
         "description": "Retrieve information about the image url specified by the ID",
-        "operationId": "GetImageURL",
+        "operationId": "CounterpartyMetadataService_GetImageURL",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -480,25 +521,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -519,7 +566,7 @@
       "delete": {
         "summary": "Delete a image url",
         "description": "Permanently delete a image url.",
-        "operationId": "DeleteImageURL",
+        "operationId": "CounterpartyMetadataService_DeleteImageURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -550,25 +597,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -589,7 +642,7 @@
       "post": {
         "summary": "Create a image_url",
         "description": "Creates a new image_url and returns the object.",
-        "operationId": "CreateImageURL",
+        "operationId": "CounterpartyMetadataService_CreateImageURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -622,25 +675,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -669,7 +728,7 @@
       "put": {
         "summary": "Update a image url",
         "description": "Updates a image url's information",
-        "operationId": "UpdateImageURL",
+        "operationId": "CounterpartyMetadataService_UpdateImageURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -702,25 +761,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -747,11 +812,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/image_urls": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/image_urls": {
       "get": {
         "summary": "Retrieve all available image urls",
         "description": "Retrieve information regarding all available image urls.",
-        "operationId": "GetImageURLs",
+        "operationId": "CounterpartyMetadataService_GetImageURLs",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -778,25 +843,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -815,11 +886,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/more_info": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/more_info": {
       "get": {
         "summary": "Retrieve more info information",
         "description": "Retrieve information about the more info specified by the ID",
-        "operationId": "GetMoreInfo",
+        "operationId": "CounterpartyMetadataService_GetMoreInfo",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -846,25 +917,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -885,7 +962,7 @@
       "delete": {
         "summary": "Delete a more info",
         "description": "Permanently delete a more info.",
-        "operationId": "DeleteMoreInfo",
+        "operationId": "CounterpartyMetadataService_DeleteMoreInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -916,25 +993,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -955,7 +1038,7 @@
       "post": {
         "summary": "Create a more_info",
         "description": "Creates a new more_info and returns the object.",
-        "operationId": "CreateMoreInfo",
+        "operationId": "CounterpartyMetadataService_CreateMoreInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -988,25 +1071,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1035,7 +1124,7 @@
       "put": {
         "summary": "Update a more info",
         "description": "Updates a more info's information",
-        "operationId": "UpdateMoreInfo",
+        "operationId": "CounterpartyMetadataService_UpdateMoreInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1068,25 +1157,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1113,11 +1208,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/more_infos": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/more_infos": {
       "get": {
         "summary": "Retrieve all available more infos",
         "description": "Retrieve information regarding all available more infos.",
-        "operationId": "GetMoreInfos",
+        "operationId": "CounterpartyMetadataService_GetMoreInfos",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1144,25 +1239,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1181,11 +1282,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/open_corporates_url": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/open_corporates_url": {
       "get": {
         "summary": "Retrieve open corporates url information",
         "description": "Retrieve information about the open corporates url specified by the ID",
-        "operationId": "GetOpenCorporatesURL",
+        "operationId": "CounterpartyMetadataService_GetOpenCorporatesURL",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1212,25 +1313,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1251,7 +1358,7 @@
       "delete": {
         "summary": "Delete a open corporates url",
         "description": "Permanently delete a open corporates url.",
-        "operationId": "DeleteOpenCorporatesURL",
+        "operationId": "CounterpartyMetadataService_DeleteOpenCorporatesURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1282,25 +1389,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1321,7 +1434,7 @@
       "post": {
         "summary": "Create a open_corporates_url",
         "description": "Creates a new open_corporates_url and returns the object.",
-        "operationId": "CreateOpenCorporatesURL",
+        "operationId": "CounterpartyMetadataService_CreateOpenCorporatesURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1354,25 +1467,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1401,7 +1520,7 @@
       "put": {
         "summary": "Update a open corporates url",
         "description": "Updates a open corporates url's information",
-        "operationId": "UpdateOpenCorporatesURL",
+        "operationId": "CounterpartyMetadataService_UpdateOpenCorporatesURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1434,25 +1553,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1479,11 +1604,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/open_corporates_urls": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/open_corporates_urls": {
       "get": {
         "summary": "Retrieve all available open corporates urls",
         "description": "Retrieve information regarding all available open corporates urls.",
-        "operationId": "GetOpenCorporatesURLs",
+        "operationId": "CounterpartyMetadataService_GetOpenCorporatesURLs",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1510,25 +1635,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1547,11 +1678,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/physical_location": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/physical_location": {
       "get": {
         "summary": "Retrieve physical location information",
         "description": "Retrieve information about the physical location specified by the ID",
-        "operationId": "GetPhysicalLocation",
+        "operationId": "CounterpartyMetadataService_GetPhysicalLocation",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1578,25 +1709,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1617,7 +1754,7 @@
       "delete": {
         "summary": "Delete a physical location",
         "description": "Permanently delete a physical location.",
-        "operationId": "DeletePhysicalLocation",
+        "operationId": "CounterpartyMetadataService_DeletePhysicalLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1648,25 +1785,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1687,7 +1830,7 @@
       "post": {
         "summary": "Create a physical_location",
         "description": "Creates a new physical_location and returns the object.",
-        "operationId": "CreatePhysicalLocation",
+        "operationId": "CounterpartyMetadataService_CreatePhysicalLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1720,25 +1863,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1767,7 +1916,7 @@
       "put": {
         "summary": "Update a physical location",
         "description": "Updates a physical location's information",
-        "operationId": "UpdatePhysicalLocation",
+        "operationId": "CounterpartyMetadataService_UpdatePhysicalLocation",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1800,25 +1949,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1845,11 +2000,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/physical_locations": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/physical_locations": {
       "get": {
         "summary": "Retrieve all available physical locations",
         "description": "Retrieve information regarding all available physical locations.",
-        "operationId": "GetPhysicalLocations",
+        "operationId": "CounterpartyMetadataService_GetPhysicalLocations",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1876,25 +2031,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1913,11 +2074,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/private_alias": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/private_alias": {
       "get": {
         "summary": "Retrieve private alias information",
         "description": "Retrieve information about the private alias specified by the ID",
-        "operationId": "GetPrivateAlias",
+        "operationId": "CounterpartyMetadataService_GetPrivateAlias",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1944,25 +2105,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -1983,7 +2150,7 @@
       "delete": {
         "summary": "Delete a private alias",
         "description": "Permanently delete a private alias.",
-        "operationId": "DeletePrivateAlias",
+        "operationId": "CounterpartyMetadataService_DeletePrivateAlias",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2014,25 +2181,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2053,7 +2226,7 @@
       "post": {
         "summary": "Create a private_alias",
         "description": "Creates a new private_alias and returns the object.",
-        "operationId": "CreatePrivateAlias",
+        "operationId": "CounterpartyMetadataService_CreatePrivateAlias",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2086,25 +2259,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2133,7 +2312,7 @@
       "put": {
         "summary": "Update a private alias",
         "description": "Updates a private alias's information",
-        "operationId": "UpdatePrivateAlias",
+        "operationId": "CounterpartyMetadataService_UpdatePrivateAlias",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2166,25 +2345,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2211,11 +2396,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/private_aliases": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/private_aliases": {
       "get": {
         "summary": "Retrieve all available private aliases",
         "description": "Retrieve information regarding all available private aliases.",
-        "operationId": "GetPrivateAliases",
+        "operationId": "CounterpartyMetadataService_GetPrivateAliases",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -2242,25 +2427,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2279,11 +2470,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/public_alias": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/public_alias": {
       "get": {
         "summary": "Retrieve public alias information",
         "description": "Retrieve information about the public alias specified by the ID",
-        "operationId": "GetPublicAlias",
+        "operationId": "CounterpartyMetadataService_GetPublicAlias",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -2310,25 +2501,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2349,7 +2546,7 @@
       "delete": {
         "summary": "Delete a public alias",
         "description": "Permanently delete a public alias.",
-        "operationId": "DeletePublicAlias",
+        "operationId": "CounterpartyMetadataService_DeletePublicAlias",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2380,25 +2577,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2419,7 +2622,7 @@
       "post": {
         "summary": "Create a public_alias",
         "description": "Creates a new public_alias and returns the object.",
-        "operationId": "CreatePublicAlias",
+        "operationId": "CounterpartyMetadataService_CreatePublicAlias",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2452,25 +2655,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2499,7 +2708,7 @@
       "put": {
         "summary": "Update a public alias",
         "description": "Updates a public alias's information",
-        "operationId": "UpdatePublicAlias",
+        "operationId": "CounterpartyMetadataService_UpdatePublicAlias",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2532,25 +2741,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2577,11 +2792,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/public_aliases": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/public_aliases": {
       "get": {
         "summary": "Retrieve all available public aliases",
         "description": "Retrieve information regarding all available public aliases.",
-        "operationId": "GetPublicAliases",
+        "operationId": "CounterpartyMetadataService_GetPublicAliases",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -2608,25 +2823,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2645,11 +2866,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/url": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/url": {
       "get": {
         "summary": "Retrieve url information",
         "description": "Retrieve information about the url specified by the ID",
-        "operationId": "GetURL",
+        "operationId": "CounterpartyMetadataService_GetURL",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -2676,25 +2897,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2715,7 +2942,7 @@
       "delete": {
         "summary": "Delete a url",
         "description": "Permanently delete a url.",
-        "operationId": "DeleteURL",
+        "operationId": "CounterpartyMetadataService_DeleteURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2746,25 +2973,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2785,7 +3018,7 @@
       "post": {
         "summary": "Create a url",
         "description": "Creates a new url and returns the object.",
-        "operationId": "CreateURL",
+        "operationId": "CounterpartyMetadataService_CreateURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2818,25 +3051,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2865,7 +3104,7 @@
       "put": {
         "summary": "Update a url",
         "description": "Updates a url's information",
-        "operationId": "UpdateURL",
+        "operationId": "CounterpartyMetadataService_UpdateURL",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -2898,25 +3137,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -2943,11 +3188,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/other_accounts/{otherAccountID}/metadata/urls": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/other_accounts/{other_account_id}/metadata/urls": {
       "get": {
         "summary": "Retrieve all available urls",
         "description": "Retrieve information regarding all available urls.",
-        "operationId": "GetURLs",
+        "operationId": "CounterpartyMetadataService_GetURLs",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -2974,25 +3219,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "description": "OtherAccountID is the other_account identifier.",
             "in": "path",
             "required": true,
@@ -3631,6 +3882,36 @@
         "other_account_id": {
           "type": "string",
           "description": "OtherAccountID is the other_account identifier."
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },

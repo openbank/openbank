@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_CustomerService_AddAddressToCustomer_0(ctx context.Context, marshaler runtime.Marshaler, client CustomerServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -58,7 +58,6 @@ func request_CustomerService_AddAddressToCustomer_0(ctx context.Context, marshal
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -92,7 +91,6 @@ func local_request_CustomerService_AddAddressToCustomer_0(ctx context.Context, m
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -126,7 +124,6 @@ func request_CustomerService_AddSocialMediaHandle_0(ctx context.Context, marshal
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -160,7 +157,6 @@ func local_request_CustomerService_AddSocialMediaHandle_0(ctx context.Context, m
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -226,7 +222,6 @@ func request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -237,7 +232,6 @@ func request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context, marsh
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -271,7 +265,6 @@ func local_request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -282,7 +275,6 @@ func local_request_CustomerService_CreateCreditLimitOrder_0(ctx context.Context,
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -316,7 +308,6 @@ func request_CustomerService_CreateUserCustomerLink_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -350,7 +341,6 @@ func local_request_CustomerService_CreateUserCustomerLink_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -376,7 +366,6 @@ func request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, marsha
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -387,7 +376,6 @@ func request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, marsha
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -398,7 +386,6 @@ func request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, marsha
 	}
 
 	protoReq.CustomerAddressID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerAddressID", err)
 	}
@@ -424,7 +411,6 @@ func local_request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -435,7 +421,6 @@ func local_request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, 
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -446,7 +431,6 @@ func local_request_CustomerService_DeleteCustomerAddress_0(ctx context.Context, 
 	}
 
 	protoReq.CustomerAddressID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerAddressID", err)
 	}
@@ -472,7 +456,6 @@ func request_CustomerService_DeleteTaxResidence_0(ctx context.Context, marshaler
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -483,7 +466,6 @@ func request_CustomerService_DeleteTaxResidence_0(ctx context.Context, marshaler
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -494,7 +476,6 @@ func request_CustomerService_DeleteTaxResidence_0(ctx context.Context, marshaler
 	}
 
 	protoReq.TaxResidenceID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TaxResidenceID", err)
 	}
@@ -520,7 +501,6 @@ func local_request_CustomerService_DeleteTaxResidence_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -531,7 +511,6 @@ func local_request_CustomerService_DeleteTaxResidence_0(ctx context.Context, mar
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -542,7 +521,6 @@ func local_request_CustomerService_DeleteTaxResidence_0(ctx context.Context, mar
 	}
 
 	protoReq.TaxResidenceID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TaxResidenceID", err)
 	}
@@ -568,7 +546,6 @@ func request_CustomerService_GetCRMEvents_0(ctx context.Context, marshaler runti
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -594,7 +571,6 @@ func local_request_CustomerService_GetCRMEvents_0(ctx context.Context, marshaler
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -620,7 +596,6 @@ func request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -631,7 +606,6 @@ func request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context, mars
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -642,7 +616,6 @@ func request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context, mars
 	}
 
 	protoReq.RequestID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "RequestID", err)
 	}
@@ -668,7 +641,6 @@ func local_request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -679,7 +651,6 @@ func local_request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -690,7 +661,6 @@ func local_request_CustomerService_GetCreditLimitOrderByID_0(ctx context.Context
 	}
 
 	protoReq.RequestID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "RequestID", err)
 	}
@@ -716,7 +686,6 @@ func request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, marshale
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -727,7 +696,6 @@ func request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, marshale
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -753,7 +721,6 @@ func local_request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -764,7 +731,6 @@ func local_request_CustomerService_GetCreditLimitOrder_0(ctx context.Context, ma
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -790,7 +756,6 @@ func request_CustomerService_GetCustomerAddresses_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -801,7 +766,6 @@ func request_CustomerService_GetCustomerAddresses_0(ctx context.Context, marshal
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -827,7 +791,6 @@ func local_request_CustomerService_GetCustomerAddresses_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -838,7 +801,6 @@ func local_request_CustomerService_GetCustomerAddresses_0(ctx context.Context, m
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -864,7 +826,6 @@ func request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -875,7 +836,6 @@ func request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.Context
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -901,7 +861,6 @@ func local_request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -912,7 +871,6 @@ func local_request_CustomerService_GetCustomerSocialMediaHandles_0(ctx context.C
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -938,7 +896,6 @@ func request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -949,7 +906,6 @@ func request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context, mars
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -975,7 +931,6 @@ func local_request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -986,7 +941,6 @@ func local_request_CustomerService_GetCustomerByCustomerID_0(ctx context.Context
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1012,7 +966,6 @@ func request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1023,7 +976,6 @@ func request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Context, 
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1034,7 +986,6 @@ func request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Context, 
 	}
 
 	protoReq.CustomerNumber, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerNumber", err)
 	}
@@ -1060,7 +1011,6 @@ func local_request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1071,7 +1021,6 @@ func local_request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Con
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1082,7 +1031,6 @@ func local_request_CustomerService_GetCustomerByCustomerNumber_0(ctx context.Con
 	}
 
 	protoReq.CustomerNumber, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerNumber", err)
 	}
@@ -1124,7 +1072,6 @@ func request_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1150,7 +1097,6 @@ func local_request_CustomerService_GetCustomersForCurrentUserAtBank_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1178,7 +1124,6 @@ func request_CustomerService_GetFirehoseCustomer_0(ctx context.Context, marshale
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1211,12 +1156,14 @@ func local_request_CustomerService_GetFirehoseCustomer_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
 
-	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_CustomerService_GetFirehoseCustomer_0); err != nil {
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CustomerService_GetFirehoseCustomer_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -1241,7 +1188,6 @@ func request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1252,7 +1198,6 @@ func request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Context, ma
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1278,7 +1223,6 @@ func local_request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1289,7 +1233,6 @@ func local_request_CustomerService_GetTaxResidenceOfCustomer_0(ctx context.Conte
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1323,7 +1266,6 @@ func request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, marsha
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1334,7 +1276,6 @@ func request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, marsha
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1345,7 +1286,6 @@ func request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, marsha
 	}
 
 	protoReq.CustomerAddressID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerAddressID", err)
 	}
@@ -1379,7 +1319,6 @@ func local_request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1390,7 +1329,6 @@ func local_request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, 
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1401,7 +1339,6 @@ func local_request_CustomerService_UpdateCustomerAddress_0(ctx context.Context, 
 	}
 
 	protoReq.CustomerAddressID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerAddressID", err)
 	}
@@ -1435,7 +1372,6 @@ func request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1446,7 +1382,6 @@ func request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, marshal
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1480,7 +1415,6 @@ func local_request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1491,7 +1425,6 @@ func local_request_CustomerService_UpdateCustomerBranch_0(ctx context.Context, m
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1525,7 +1458,6 @@ func request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1536,7 +1468,6 @@ func request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Context, ma
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1570,7 +1501,6 @@ func local_request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1581,7 +1511,6 @@ func local_request_CustomerService_UpdateCustomerCreditLimit_0(ctx context.Conte
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1615,7 +1544,6 @@ func request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1626,7 +1554,6 @@ func request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx context.C
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1660,7 +1587,6 @@ func local_request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1671,7 +1597,6 @@ func local_request_CustomerService_UpdateCustomerCreditRatingAndSource_0(ctx con
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1705,7 +1630,6 @@ func request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, marshale
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1716,7 +1640,6 @@ func request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, marshale
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1750,7 +1673,6 @@ func local_request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1761,7 +1683,6 @@ func local_request_CustomerService_UpdateCustomerEmail_0(ctx context.Context, ma
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1795,7 +1716,6 @@ func request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1806,7 +1726,6 @@ func request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context, marsh
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1840,7 +1759,6 @@ func local_request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1851,7 +1769,6 @@ func local_request_CustomerService_UpdateCustomerIdentity_0(ctx context.Context,
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1885,7 +1802,6 @@ func request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1896,7 +1812,6 @@ func request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Context, m
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1930,7 +1845,6 @@ func local_request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1941,7 +1855,6 @@ func local_request_CustomerService_UpdateCustomerMobileNumber_0(ctx context.Cont
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -1975,7 +1888,6 @@ func request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1986,7 +1898,6 @@ func request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, marshal
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -2020,7 +1931,6 @@ func local_request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2031,7 +1941,6 @@ func local_request_CustomerService_UpdateCustomerNumber_0(ctx context.Context, m
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -2065,7 +1974,6 @@ func request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2076,7 +1984,6 @@ func request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context, mars
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -2110,7 +2017,6 @@ func local_request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2121,7 +2027,6 @@ func local_request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -2133,17 +2038,21 @@ func local_request_CustomerService_UpdateCustomerOtherData_0(ctx context.Context
 // RegisterCustomerServiceHandlerServer registers the http handlers for service CustomerService to "mux".
 // UnaryRPC     :call CustomerServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterCustomerServiceHandlerFromEndpoint instead.
 func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CustomerServiceServer) error {
 	mux.Handle("POST", pattern_CustomerService_AddAddressToCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/AddAddressToCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_AddAddressToCustomer_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2156,13 +2065,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("POST", pattern_CustomerService_AddSocialMediaHandle_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/AddSocialMediaHandle")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_AddSocialMediaHandle_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2175,13 +2087,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("POST", pattern_CustomerService_CreateCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/CreateCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_CreateCustomer_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2194,13 +2109,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("POST", pattern_CustomerService_CreateCreditLimitOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/CreateCreditLimitOrder")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_CreateCreditLimitOrder_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2213,13 +2131,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("POST", pattern_CustomerService_CreateUserCustomerLink_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/CreateUserCustomerLink")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_CreateUserCustomerLink_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2232,13 +2153,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("DELETE", pattern_CustomerService_DeleteCustomerAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/DeleteCustomerAddress")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_DeleteCustomerAddress_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2251,13 +2175,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("DELETE", pattern_CustomerService_DeleteTaxResidence_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/DeleteTaxResidence")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_DeleteTaxResidence_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2270,13 +2197,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCRMEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCRMEvents")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCRMEvents_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2289,13 +2219,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCreditLimitOrderByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCreditLimitOrderByID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCreditLimitOrderByID_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2308,13 +2241,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCreditLimitOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCreditLimitOrder")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCreditLimitOrder_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2327,13 +2263,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCustomerAddresses_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCustomerAddresses")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCustomerAddresses_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2346,13 +2285,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCustomerSocialMediaHandles_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCustomerSocialMediaHandles")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCustomerSocialMediaHandles_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2365,13 +2307,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCustomerByCustomerID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCustomerByCustomerID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCustomerByCustomerID_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2384,13 +2329,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCustomerByCustomerNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCustomerByCustomerNumber")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCustomerByCustomerNumber_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2403,13 +2351,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCustomersForCurrentUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCustomersForCurrentUser")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCustomersForCurrentUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2422,13 +2373,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetCustomersForCurrentUserAtBank_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetCustomersForCurrentUserAtBank")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetCustomersForCurrentUserAtBank_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2441,13 +2395,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetFirehoseCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetFirehoseCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetFirehoseCustomer_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2460,13 +2417,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("GET", pattern_CustomerService_GetTaxResidenceOfCustomer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/GetTaxResidenceOfCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_GetTaxResidenceOfCustomer_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2479,13 +2439,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerAddress")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerAddress_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2498,13 +2461,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerBranch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerBranch")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerBranch_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2517,13 +2483,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerCreditLimit_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerCreditLimit")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerCreditLimit_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2536,13 +2505,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerCreditRatingAndSource_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerCreditRatingAndSource")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerCreditRatingAndSource_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2555,13 +2527,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerEmail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerEmail")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerEmail_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2574,13 +2549,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerIdentity_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerIdentity")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerIdentity_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2593,13 +2571,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerMobileNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerMobileNumber")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerMobileNumber_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2612,13 +2593,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerNumber")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerNumber_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2631,13 +2615,16 @@ func RegisterCustomerServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 	mux.Handle("PUT", pattern_CustomerService_UpdateCustomerOtherData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerOtherData")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CustomerService_UpdateCustomerOtherData_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2691,7 +2678,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/AddAddressToCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2710,7 +2697,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/AddSocialMediaHandle")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2729,7 +2716,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/CreateCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2748,7 +2735,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/CreateCreditLimitOrder")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2767,7 +2754,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/CreateUserCustomerLink")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2786,7 +2773,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/DeleteCustomerAddress")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2805,7 +2792,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/DeleteTaxResidence")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2824,7 +2811,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCRMEvents")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2843,7 +2830,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCreditLimitOrderByID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2862,7 +2849,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCreditLimitOrder")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2881,7 +2868,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCustomerAddresses")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2900,7 +2887,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCustomerSocialMediaHandles")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2919,7 +2906,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCustomerByCustomerID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2938,7 +2925,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCustomerByCustomerNumber")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2957,7 +2944,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCustomersForCurrentUser")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2976,7 +2963,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetCustomersForCurrentUserAtBank")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -2995,7 +2982,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetFirehoseCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3014,7 +3001,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/GetTaxResidenceOfCustomer")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3033,7 +3020,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerAddress")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3052,7 +3039,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerBranch")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3071,7 +3058,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerCreditLimit")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3090,7 +3077,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerCreditRatingAndSource")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3109,7 +3096,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerEmail")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3128,7 +3115,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerIdentity")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3147,7 +3134,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerMobileNumber")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3166,7 +3153,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerNumber")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3185,7 +3172,7 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/customer.CustomerService/UpdateCustomerOtherData")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3204,59 +3191,59 @@ func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 }
 
 var (
-	pattern_CustomerService_AddAddressToCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "address"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_AddAddressToCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "address"}, ""))
 
-	pattern_CustomerService_AddSocialMediaHandle_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "social_media_handles"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_AddSocialMediaHandle_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "social_media_handles"}, ""))
 
-	pattern_CustomerService_CreateCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "customers"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_CreateCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "customers"}, ""))
 
-	pattern_CustomerService_CreateCreditLimitOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit_limit", "requests"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_CreateCreditLimitOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit_limit", "requests"}, ""))
 
-	pattern_CustomerService_CreateUserCustomerLink_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "user_customer_links"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_CreateUserCustomerLink_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "user_customer_links"}, ""))
 
-	pattern_CustomerService_DeleteCustomerAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "addresses", "CustomerAddressID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_DeleteCustomerAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "addresses", "CustomerAddressID"}, ""))
 
-	pattern_CustomerService_DeleteTaxResidence_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "tax_residencies", "TaxResidenceID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_DeleteTaxResidence_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "tax_residencies", "TaxResidenceID"}, ""))
 
-	pattern_CustomerService_GetCRMEvents_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "crm-events"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCRMEvents_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "crm-events"}, ""))
 
-	pattern_CustomerService_GetCreditLimitOrderByID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 1, 0, 4, 1, 5, 7}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit_limit", "request", "RequestID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCreditLimitOrderByID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 1, 0, 4, 1, 5, 7}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit_limit", "request", "RequestID"}, ""))
 
-	pattern_CustomerService_GetCreditLimitOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit_limit", "requests"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCreditLimitOrder_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit_limit", "requests"}, ""))
 
-	pattern_CustomerService_GetCustomerAddresses_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "addresses"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCustomerAddresses_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "addresses"}, ""))
 
-	pattern_CustomerService_GetCustomerSocialMediaHandles_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "social_media_handles"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCustomerSocialMediaHandles_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "social_media_handles"}, ""))
 
-	pattern_CustomerService_GetCustomerByCustomerID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "customers", "CustomerID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCustomerByCustomerID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "customers", "CustomerID"}, ""))
 
-	pattern_CustomerService_GetCustomerByCustomerNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "customer-number", "CustomerNumber"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCustomerByCustomerNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "customer-number", "CustomerNumber"}, ""))
 
-	pattern_CustomerService_GetCustomersForCurrentUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "users", "current", "customers"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCustomersForCurrentUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"v1", "users", "current", "customers"}, ""))
 
-	pattern_CustomerService_GetCustomersForCurrentUserAtBank_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "customers"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetCustomersForCurrentUserAtBank_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "customers"}, ""))
 
-	pattern_CustomerService_GetFirehoseCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4}, []string{"v1", "banks", "BankID", "firehose", "customers"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetFirehoseCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4}, []string{"v1", "banks", "BankID", "firehose", "customers"}, ""))
 
-	pattern_CustomerService_GetTaxResidenceOfCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "tax-residences"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_GetTaxResidenceOfCustomer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "tax-residences"}, ""))
 
-	pattern_CustomerService_UpdateCustomerAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "addresses", "CustomerAddressID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "addresses", "CustomerAddressID"}, ""))
 
-	pattern_CustomerService_UpdateCustomerBranch_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "branch"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerBranch_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "branch"}, ""))
 
-	pattern_CustomerService_UpdateCustomerCreditLimit_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit-limit"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerCreditLimit_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit-limit"}, ""))
 
-	pattern_CustomerService_UpdateCustomerCreditRatingAndSource_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit-rating-and-source"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerCreditRatingAndSource_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "credit-rating-and-source"}, ""))
 
-	pattern_CustomerService_UpdateCustomerEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "email"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "email"}, ""))
 
-	pattern_CustomerService_UpdateCustomerIdentity_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "identity"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerIdentity_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "identity"}, ""))
 
-	pattern_CustomerService_UpdateCustomerMobileNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "mobile-number"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerMobileNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "mobile-number"}, ""))
 
-	pattern_CustomerService_UpdateCustomerNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "number"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "number"}, ""))
 
-	pattern_CustomerService_UpdateCustomerOtherData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "data"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CustomerService_UpdateCustomerOtherData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "customers", "CustomerID", "data"}, ""))
 )
 
 var (

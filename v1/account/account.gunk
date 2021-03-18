@@ -5,7 +5,7 @@
 //                 Description: "Provides CRUD operations on the accounts resource.",
 //                 Version:     "1.0.0",
 //         },
-//         Schemes: []openapiv2.SwaggerScheme{
+//         Schemes: []openapiv2.Scheme{
 //                 openapiv2.HTTPS,
 //         },
 //         Consumes: []string{

@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the card resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "CardService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Retrieves all available cards",
         "description": "Retrieves all available cards for specific user, selected by the user_id",
-        "operationId": "GetUserCards",
+        "operationId": "CardService_GetUserCards",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -62,7 +73,7 @@
       "post": {
         "summary": "Create new card",
         "description": "Create new card",
-        "operationId": "CreateCard",
+        "operationId": "CardService_CreateCard",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -95,6 +106,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -119,11 +136,11 @@
         ]
       }
     },
-    "/v1/card/access_status/{cardToken}": {
+    "/v1/card/access_status/{card_token}": {
       "put": {
         "summary": "Update card access status.",
         "description": "Update card access status.",
-        "operationId": "UpdateCardAccessStatus",
+        "operationId": "CardService_UpdateCardAccessStatus",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -150,11 +167,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "cardToken",
+            "name": "card_token",
             "description": "CardToken is the identifier to get the card information.",
             "in": "path",
             "required": true,
@@ -185,7 +208,7 @@
       "post": {
         "summary": "Create new card attribute",
         "description": "Create new card attribute",
-        "operationId": "CreateCardAttribute",
+        "operationId": "CardService_CreateCardAttribute",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -218,6 +241,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -242,11 +271,11 @@
         ]
       }
     },
-    "/v1/card/status/{cardToken}": {
+    "/v1/card/status/{card_token}": {
       "put": {
         "summary": "Update card status",
         "description": "Update Card status.",
-        "operationId": "UpdateCardStatus",
+        "operationId": "CardService_UpdateCardStatus",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -273,11 +302,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "cardToken",
+            "name": "card_token",
             "description": "CardToken is the identifier to get the card information.",
             "in": "path",
             "required": true,
@@ -304,11 +339,11 @@
         ]
       }
     },
-    "/v1/card/{cardID}": {
+    "/v1/card/{card_id}": {
       "delete": {
         "summary": "Delete a card",
         "description": "Permanently delete a card.",
-        "operationId": "DeleteCard",
+        "operationId": "CardService_DeleteCard",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -339,11 +374,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "cardID",
+            "name": "card_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -361,11 +402,11 @@
         ]
       }
     },
-    "/v1/card/{cardToken}": {
+    "/v1/card/{card_token}": {
       "get": {
         "summary": "Retrieve card information",
         "description": "Retrieves all data from a card, selected by the card_token you supplied.",
-        "operationId": "GetCard",
+        "operationId": "CardService_GetCard",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -392,11 +433,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "cardToken",
+            "name": "card_token",
             "description": "CardToken is the identifier to get the card information.",
             "in": "path",
             "required": true,
@@ -554,7 +601,6 @@
       "properties": {
         "success": {
           "type": "boolean",
-          "format": "boolean",
           "description": "Success is a boolean indicating the success of the operation."
         },
         "error_code": {
@@ -595,6 +641,36 @@
         }
       },
       "description": "UpdateCardStatusRequest is the request envelope to update card status."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "typesAmount": {
       "type": "object",

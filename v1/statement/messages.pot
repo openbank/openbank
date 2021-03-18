@@ -43,6 +43,9 @@ msgstr ""
 msgid "HTTP Request"
 msgstr ""
 
+msgid "HasMore indicates if there are more statement available."
+msgstr ""
+
 msgid "Host"
 msgstr ""
 
@@ -82,7 +85,13 @@ msgstr ""
 msgid "Responses"
 msgstr ""
 
+msgid "Result is a list containing the statement."
+msgstr ""
+
 msgid "Retrieve a statement"
+msgstr ""
+
+msgid "Retrieve multiple statement"
 msgstr ""
 
 msgid "Returned when an unexpected error occured on the server side."
@@ -98,6 +107,9 @@ msgid "Returned when the resource is not found."
 msgstr ""
 
 msgid "Returned when the user does not have permission to access the resource."
+msgstr ""
+
+msgid "Returns a list containing up to 20 statement. `next_starting_index` can be specified for pagination."
 msgstr ""
 
 msgid "Statements API"

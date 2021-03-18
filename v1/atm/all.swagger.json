@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the ATM resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "ATMService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Retrieve all available ATMs",
         "description": "Retrieves information regarding all the available ATMs.",
-        "operationId": "GetATMs",
+        "operationId": "ATMService_GetATMs",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -62,7 +73,7 @@
       "post": {
         "summary": "Create an ATM",
         "description": "Creates a new ATM and returns its id.",
-        "operationId": "CreateATM",
+        "operationId": "ATMService_CreateATM",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -95,6 +106,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -119,11 +136,11 @@
         ]
       }
     },
-    "/v1/atms/{aTM_ID}": {
+    "/v1/atms/{atm_id}": {
       "get": {
         "summary": "Retrieve an ATM",
         "description": "Retrieves information regarding a specific ATM, selected by the supplied ID.",
-        "operationId": "GetATM",
+        "operationId": "ATMService_GetATM",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -150,11 +167,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "aTM_ID",
+            "name": "atm_id",
             "description": "ATM_ID is a unique identifier of the ATM.",
             "in": "path",
             "required": true,
@@ -261,6 +284,36 @@
         }
       },
       "description": "GetATMsResponse is the response envelope for retrieving ATM information."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "typesAddress": {
       "type": "object",

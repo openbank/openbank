@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the customer resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "CustomerService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/crm-events": {
+    "/v1/banks/{bank_id}/crm-events": {
       "get": {
         "summary": "List all CRM events",
         "description": "Returns a list containing up to 20 crm events.",
-        "operationId": "GetCRMEvents",
+        "operationId": "CustomerService_GetCRMEvents",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,11 +51,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -68,11 +79,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers": {
+    "/v1/banks/{bank_id}/customers": {
       "get": {
         "summary": "Get customers data by bank id",
         "description": "Returns the current user customers data by bank ID",
-        "operationId": "GetCustomersForCurrentUserAtBank",
+        "operationId": "CustomerService_GetCustomersForCurrentUserAtBank",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -99,11 +110,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -121,11 +138,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}": {
+    "/v1/banks/{bank_id}/customers/{customer_id}": {
       "get": {
         "summary": "Get Customer By ID",
         "description": "Returns the customer data based on it's id",
-        "operationId": "GetCustomerByCustomerID",
+        "operationId": "CustomerService_GetCustomerByCustomerID",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -152,17 +169,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -180,11 +203,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/addresses": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/addresses": {
       "get": {
         "summary": "List all customer adddresses",
         "description": "Returns a list containing up to 20 customer addresses.",
-        "operationId": "GetCustomerAddresses",
+        "operationId": "CustomerService_GetCustomerAddresses",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -211,17 +234,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -239,11 +268,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/addresses/{customerAddressID}": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/addresses/{customer_address_id}": {
       "delete": {
         "summary": "Delete customer address",
         "description": "Permanently delete customer address.",
-        "operationId": "DeleteCustomerAddress",
+        "operationId": "CustomerService_DeleteCustomerAddress",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -274,23 +303,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerAddressID",
+            "name": "customer_address_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -310,7 +345,7 @@
       "put": {
         "summary": "Update customer addresses.",
         "description": "Update customer addresses information.",
-        "operationId": "UpdateCustomerAddress",
+        "operationId": "CustomerService_UpdateCustomerAddress",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -337,23 +372,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerAddressID",
+            "name": "customer_address_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -379,11 +420,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/branch": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/branch": {
       "put": {
         "summary": "Update customer branch.",
         "description": "Update customer branch information.",
-        "operationId": "UpdateCustomerBranch",
+        "operationId": "CustomerService_UpdateCustomerBranch",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -410,17 +451,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -446,11 +493,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/credit-limit": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/credit-limit": {
       "put": {
         "summary": "Update customer credit limit.",
         "description": "Update customer credit limit information.",
-        "operationId": "UpdateCustomerCreditLimit",
+        "operationId": "CustomerService_UpdateCustomerCreditLimit",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -477,17 +524,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -513,11 +566,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/credit-rating-and-source": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/credit-rating-and-source": {
       "put": {
         "summary": "Update customer credut rating and source.",
         "description": "Update customer credit rating and source information.",
-        "operationId": "UpdateCustomerCreditRatingAndSource",
+        "operationId": "CustomerService_UpdateCustomerCreditRatingAndSource",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -544,17 +597,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -580,11 +639,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/credit_limit/request/{requestID}": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/credit_limit/request/{request_id}": {
       "get": {
         "summary": "Get credit limit order by id",
         "description": "Returns Credit limit order by id",
-        "operationId": "GetCreditLimitOrderByID",
+        "operationId": "CustomerService_GetCreditLimitOrderByID",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -611,23 +670,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "requestID",
+            "name": "request_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -645,11 +710,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/credit_limit/requests": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/credit_limit/requests": {
       "get": {
         "summary": "List all credit limit order",
         "description": "Returns a list containing up to 20 CreditLimitOrder.",
-        "operationId": "GetCreditLimitOrder",
+        "operationId": "CustomerService_GetCreditLimitOrder",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -676,17 +741,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -706,7 +777,7 @@
       "post": {
         "summary": "Create credit limit order",
         "description": "Create Credit limit order for the customer on specific bank",
-        "operationId": "CreateCreditLimitOrder",
+        "operationId": "CustomerService_CreateCreditLimitOrder",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -739,17 +810,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -775,11 +852,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/customer-number/{customerNumber}": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/customer-number/{customer_number}": {
       "get": {
         "summary": "Get Customer By CustomerNumber",
         "description": "Returns the customer data based on the customer number",
-        "operationId": "GetCustomerByCustomerNumber",
+        "operationId": "CustomerService_GetCustomerByCustomerNumber",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -806,23 +883,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerNumber",
+            "name": "customer_number",
             "in": "path",
             "required": true,
             "type": "string"
@@ -840,11 +923,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/data": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/data": {
       "put": {
         "summary": "Update customer data.",
         "description": "Update customer data information.",
-        "operationId": "UpdateCustomerOtherData",
+        "operationId": "CustomerService_UpdateCustomerOtherData",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -871,17 +954,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -907,11 +996,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/email": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/email": {
       "put": {
         "summary": "Update customer email.",
         "description": "Update customer email information.",
-        "operationId": "UpdateCustomerEmail",
+        "operationId": "CustomerService_UpdateCustomerEmail",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -938,17 +1027,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -974,11 +1069,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/identity": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/identity": {
       "put": {
         "summary": "Update customer identity.",
         "description": "Update customer identity information.",
-        "operationId": "UpdateCustomerIdentity",
+        "operationId": "CustomerService_UpdateCustomerIdentity",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1005,17 +1100,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1041,11 +1142,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/mobile-number": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/mobile-number": {
       "put": {
         "summary": "Update customer mobile number.",
         "description": "Update customer mobile number information.",
-        "operationId": "UpdateCustomerMobileNumber",
+        "operationId": "CustomerService_UpdateCustomerMobileNumber",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1072,17 +1173,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1108,11 +1215,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/number": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/number": {
       "put": {
         "summary": "Update customer number.",
         "description": "Update customer number information.",
-        "operationId": "UpdateCustomerNumber",
+        "operationId": "CustomerService_UpdateCustomerNumber",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1139,17 +1246,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1175,11 +1288,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/social_media_handles": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/social_media_handles": {
       "get": {
         "summary": "List all customer social media handles",
         "description": "Returns a list containing up to 20 customer social media handles",
-        "operationId": "GetCustomerSocialMediaHandles",
+        "operationId": "CustomerService_GetCustomerSocialMediaHandles",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1206,17 +1319,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1234,11 +1353,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/tax-residences": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/tax-residences": {
       "get": {
         "summary": "Get customers tax_residencies",
         "description": "Returns the user tax_residencies",
-        "operationId": "GetTaxResidenceOfCustomer",
+        "operationId": "CustomerService_GetTaxResidenceOfCustomer",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1265,17 +1384,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1293,11 +1418,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/customers/{customerID}/tax_residencies/{taxResidenceID}": {
+    "/v1/banks/{bank_id}/customers/{customer_id}/tax_residencies/{tax_residence_id}": {
       "delete": {
         "summary": "Delete tax residence",
         "description": "Permanently delete tax residence.",
-        "operationId": "DeleteTaxResidence",
+        "operationId": "CustomerService_DeleteTaxResidence",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1328,23 +1453,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "taxResidenceID",
+            "name": "tax_residence_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1362,11 +1493,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/firehose/customers": {
+    "/v1/banks/{bank_id}/firehose/customers": {
       "get": {
         "summary": "Return customer firehose",
         "description": "Returns the list of customer firehose",
-        "operationId": "GetFirehoseCustomer",
+        "operationId": "CustomerService_GetFirehoseCustomer",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1393,11 +1524,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1456,11 +1593,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/user_customer_links": {
+    "/v1/banks/{bank_id}/user_customer_links": {
       "post": {
         "summary": "Create user customer link",
         "description": "Creare user customer link",
-        "operationId": "CreateUserCustomerLink",
+        "operationId": "CustomerService_CreateUserCustomerLink",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1493,11 +1630,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1527,7 +1670,7 @@
       "post": {
         "summary": "Create a customer",
         "description": "Creates a new customer",
-        "operationId": "CreateCustomer",
+        "operationId": "CustomerService_CreateCustomer",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1560,6 +1703,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -1584,11 +1733,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/address": {
+    "/v1/customers/{customer_id}/address": {
       "post": {
         "summary": "Add address to the customer.",
         "description": "Add address to the customer.",
-        "operationId": "AddAddressToCustomer",
+        "operationId": "CustomerService_AddAddressToCustomer",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1621,11 +1770,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1651,11 +1806,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/social_media_handles": {
+    "/v1/customers/{customer_id}/social_media_handles": {
       "post": {
         "summary": "Add social media handle",
         "description": "Add social media handle for the customer",
-        "operationId": "AddSocialMediaHandle",
+        "operationId": "CustomerService_AddSocialMediaHandle",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1688,11 +1843,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -1722,7 +1883,7 @@
       "get": {
         "summary": "Get customers data for current user",
         "description": "Returns the current user customers data",
-        "operationId": "GetCustomersForCurrentUser",
+        "operationId": "CustomerService_GetCustomersForCurrentUser",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1749,6 +1910,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -2132,8 +2299,7 @@
           "format": "date-time"
         },
         "is_active": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         }
       }
     },
@@ -2209,8 +2375,7 @@
           "type": "string"
         },
         "kyc_status": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "last_ok_data": {
           "type": "string",
@@ -2246,8 +2411,7 @@
           }
         },
         "has_more": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         }
       }
     },
@@ -2637,6 +2801,36 @@
       "properties": {
         "customer": {
           "$ref": "#/definitions/customerCustomer"
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },

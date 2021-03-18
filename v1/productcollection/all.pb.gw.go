@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_ProductCollectionService_CreateProductCollection_0(ctx context.Context, marshaler runtime.Marshaler, client ProductCollectionServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -58,7 +58,6 @@ func request_ProductCollectionService_CreateProductCollection_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -69,7 +68,6 @@ func request_ProductCollectionService_CreateProductCollection_0(ctx context.Cont
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -103,7 +101,6 @@ func local_request_ProductCollectionService_CreateProductCollection_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -114,7 +111,6 @@ func local_request_ProductCollectionService_CreateProductCollection_0(ctx contex
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -140,7 +136,6 @@ func request_ProductCollectionService_GetProductCollection_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -151,7 +146,6 @@ func request_ProductCollectionService_GetProductCollection_0(ctx context.Context
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -177,7 +171,6 @@ func local_request_ProductCollectionService_GetProductCollection_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -188,7 +181,6 @@ func local_request_ProductCollectionService_GetProductCollection_0(ctx context.C
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -222,7 +214,6 @@ func request_ProductCollectionService_UpdateProductCollection_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -233,7 +224,6 @@ func request_ProductCollectionService_UpdateProductCollection_0(ctx context.Cont
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -267,7 +257,6 @@ func local_request_ProductCollectionService_UpdateProductCollection_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -278,7 +267,6 @@ func local_request_ProductCollectionService_UpdateProductCollection_0(ctx contex
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -304,7 +292,6 @@ func request_ProductCollectionService_DeleteProductCollection_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -315,7 +302,6 @@ func request_ProductCollectionService_DeleteProductCollection_0(ctx context.Cont
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -341,7 +327,6 @@ func local_request_ProductCollectionService_DeleteProductCollection_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -352,7 +337,6 @@ func local_request_ProductCollectionService_DeleteProductCollection_0(ctx contex
 	}
 
 	protoReq.CollectionCode, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CollectionCode", err)
 	}
@@ -364,17 +348,21 @@ func local_request_ProductCollectionService_DeleteProductCollection_0(ctx contex
 // RegisterProductCollectionServiceHandlerServer registers the http handlers for service ProductCollectionService to "mux".
 // UnaryRPC     :call ProductCollectionServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterProductCollectionServiceHandlerFromEndpoint instead.
 func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ProductCollectionServiceServer) error {
 	mux.Handle("POST", pattern_ProductCollectionService_CreateProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/productcollection.ProductCollectionService/CreateProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_ProductCollectionService_CreateProductCollection_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -387,13 +375,16 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 	mux.Handle("GET", pattern_ProductCollectionService_GetProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/productcollection.ProductCollectionService/GetProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_ProductCollectionService_GetProductCollection_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -406,13 +397,16 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 	mux.Handle("PUT", pattern_ProductCollectionService_UpdateProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/productcollection.ProductCollectionService/UpdateProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_ProductCollectionService_UpdateProductCollection_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -425,13 +419,16 @@ func RegisterProductCollectionServiceHandlerServer(ctx context.Context, mux *run
 	mux.Handle("DELETE", pattern_ProductCollectionService_DeleteProductCollection_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/productcollection.ProductCollectionService/DeleteProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_ProductCollectionService_DeleteProductCollection_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -485,7 +482,7 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/productcollection.ProductCollectionService/CreateProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -504,7 +501,7 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/productcollection.ProductCollectionService/GetProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -523,7 +520,7 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/productcollection.ProductCollectionService/UpdateProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -542,7 +539,7 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/productcollection.ProductCollectionService/DeleteProductCollection")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -561,13 +558,13 @@ func RegisterProductCollectionServiceHandlerClient(ctx context.Context, mux *run
 }
 
 var (
-	pattern_ProductCollectionService_CreateProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_ProductCollectionService_CreateProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, ""))
 
-	pattern_ProductCollectionService_GetProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_ProductCollectionService_GetProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, ""))
 
-	pattern_ProductCollectionService_UpdateProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_ProductCollectionService_UpdateProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, ""))
 
-	pattern_ProductCollectionService_DeleteProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_ProductCollectionService_DeleteProductCollection_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "banks", "BankID", "product-collections", "CollectionCode"}, ""))
 )
 
 var (

@@ -5,7 +5,7 @@
 //                 Description: "Provides CRUD operations on the statement resource.",
 //                 Version:     "1.0.0",
 //         },
-//         Schemes: []openapiv2.SwaggerScheme{
+//         Schemes: []openapiv2.Scheme{
 //                 openapiv2.HTTPS,
 //         },
 //         Consumes: []string{
@@ -157,7 +157,6 @@ type StatementService interface {
 	//	Method: "GET",
 	//	Path: "/v1/statement",
 	// }
-
 	// +gunk openapiv2.Operation{
 	//         Tags:        []string{"Statement"},
 	//         Description: "Returns a list containing up to 20 statement. `next_starting_index` can be specified for pagination.",

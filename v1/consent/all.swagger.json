@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the consent part resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "ConsentService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/consents": {
+    "/v1/banks/{bank_id}/consents": {
       "get": {
         "summary": "List all consents",
         "description": "Returns a list containing up to 20 consents. `next_starting_index` can be used for pagination.",
-        "operationId": "GetConsents",
+        "operationId": "ConsentService_GetConsents",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,11 +51,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -74,11 +85,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/consents/email": {
+    "/v1/banks/{bank_id}/consents/email": {
       "post": {
         "summary": "Create an email consent",
         "description": "Creates a new email consent",
-        "operationId": "CreateConsentEmail",
+        "operationId": "ConsentService_CreateConsentEmail",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -111,11 +122,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -141,11 +158,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/consents/sms": {
+    "/v1/banks/{bank_id}/consents/sms": {
       "post": {
         "summary": "Create an sms consent",
         "description": "Creates a new sms consent",
-        "operationId": "CreateConsentSMS",
+        "operationId": "ConsentService_CreateConsentSMS",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -178,11 +195,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -208,11 +231,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/consents/{consentID}/challenge": {
+    "/v1/banks/{bank_id}/consents/{consent_id}/challenge": {
       "post": {
         "summary": "Answer the consent reqeust challenge",
         "description": "Answer the consent request challenge",
-        "operationId": "AnswerConsentChallenge",
+        "operationId": "ConsentService_AnswerConsentChallenge",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -245,17 +268,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "consentID",
+            "name": "consent_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -281,11 +310,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/consents/{consentID}/revoke": {
+    "/v1/banks/{bank_id}/consents/{consent_id}/revoke": {
       "post": {
         "summary": "Revoke the  consent",
         "description": "Revoke the consent",
-        "operationId": "RevokeConsent",
+        "operationId": "ConsentService_RevokeConsent",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -318,17 +347,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "consentID",
+            "name": "consent_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -461,6 +496,36 @@
         "TERMINATEDBYTPP"
       ],
       "default": "UnknownStatus"
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     }
   },
   "securityDefinitions": {

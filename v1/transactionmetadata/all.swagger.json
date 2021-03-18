@@ -5,6 +5,11 @@
     "description": "Provides the access and availability to the transaction metadata API.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "TransactionMetadataService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/comment/{iD}": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/comment/{comment}": {
       "delete": {
         "summary": "Delete a comment",
         "description": "Permanently delete a comment.",
-        "operationId": "DeleteComment",
+        "operationId": "TransactionMetadataService_DeleteComment",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -50,32 +55,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "comment",
             "description": "ID is the comment id that will be deleted.",
             "in": "path",
             "required": true,
@@ -94,11 +105,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/comments": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/comments": {
       "get": {
         "summary": "Retrieve all available comments",
         "description": "Retrieve information regarding all available comments.",
-        "operationId": "GetComments",
+        "operationId": "TransactionMetadataService_GetComments",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -125,25 +136,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -164,7 +181,7 @@
       "post": {
         "summary": "Create a comment",
         "description": "Creates a new comment and returns the object.",
-        "operationId": "CreateComment",
+        "operationId": "TransactionMetadataService_CreateComment",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -197,25 +214,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -244,7 +267,7 @@
       "put": {
         "summary": "Update a comment",
         "description": "Updates a comment's information",
-        "operationId": "UpdateComment",
+        "operationId": "TransactionMetadataService_UpdateComment",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -277,25 +300,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -322,11 +351,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/image/{iD}": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/image/{image}": {
       "delete": {
         "summary": "Delete a image",
         "description": "Permanently delete a image.",
-        "operationId": "DeleteImage",
+        "operationId": "TransactionMetadataService_DeleteImage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -357,32 +386,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "image",
             "description": "ID is the image id that will be deleted.",
             "in": "path",
             "required": true,
@@ -401,11 +436,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/images": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/images": {
       "get": {
         "summary": "Retrieve all available images",
         "description": "Retrieve information regarding all available images.",
-        "operationId": "GetImages",
+        "operationId": "TransactionMetadataService_GetImages",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -432,25 +467,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -471,7 +512,7 @@
       "post": {
         "summary": "Create a image",
         "description": "Creates a new image and returns the object.",
-        "operationId": "CreateImage",
+        "operationId": "TransactionMetadataService_CreateImage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -504,25 +545,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -551,7 +598,7 @@
       "put": {
         "summary": "Update a image",
         "description": "Updates a image's information",
-        "operationId": "UpdateImage",
+        "operationId": "TransactionMetadataService_UpdateImage",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -584,25 +631,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -629,11 +682,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/narratives": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/narratives": {
       "get": {
         "summary": "Retrieve all available narratives",
         "description": "Retrieve information regarding all available narratives.",
-        "operationId": "GetNarratives",
+        "operationId": "TransactionMetadataService_GetNarratives",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -660,25 +713,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -699,7 +758,7 @@
       "post": {
         "summary": "Create a narrative",
         "description": "Creates a new narrative and returns the object.",
-        "operationId": "CreateNarrative",
+        "operationId": "TransactionMetadataService_CreateNarrative",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -732,25 +791,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -779,7 +844,7 @@
       "put": {
         "summary": "Update a narrative",
         "description": "Updates a narrative's information",
-        "operationId": "UpdateNarrative",
+        "operationId": "TransactionMetadataService_UpdateNarrative",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -812,25 +877,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -857,11 +928,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/tag/{iD}": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/tag/{tag}": {
       "delete": {
         "summary": "Delete a tag",
         "description": "Permanently delete a tag.",
-        "operationId": "DeleteTag",
+        "operationId": "TransactionMetadataService_DeleteTag",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -892,32 +963,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "tag",
             "description": "ID is the tag id that will be deleted.",
             "in": "path",
             "required": true,
@@ -936,11 +1013,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/tags": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/tags": {
       "get": {
         "summary": "Retrieve all available tags",
         "description": "Retrieve information regarding all available tags.",
-        "operationId": "GetTags",
+        "operationId": "TransactionMetadataService_GetTags",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -967,25 +1044,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1006,7 +1089,7 @@
       "post": {
         "summary": "Create a tag",
         "description": "Creates a new tag and returns the object.",
-        "operationId": "CreateTag",
+        "operationId": "TransactionMetadataService_CreateTag",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1039,25 +1122,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1086,7 +1175,7 @@
       "put": {
         "summary": "Update a tag",
         "description": "Updates a tag's information",
-        "operationId": "UpdateTag",
+        "operationId": "TransactionMetadataService_UpdateTag",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1119,25 +1208,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1164,11 +1259,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/where_tag/{iD}": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/where_tag/{where_tag}": {
       "get": {
         "summary": "Retrieve where tag information",
         "description": "Retrieve information about the where tag specified by the ID",
-        "operationId": "GetWhereTag",
+        "operationId": "TransactionMetadataService_GetWhereTag",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1195,32 +1290,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "where_tag",
             "description": "ID is the where tag unique identifier.",
             "in": "path",
             "required": true,
@@ -1241,7 +1342,7 @@
       "delete": {
         "summary": "Delete a where tag",
         "description": "Permanently delete a where tag.",
-        "operationId": "DeleteWhereTag",
+        "operationId": "TransactionMetadataService_DeleteWhereTag",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1272,32 +1373,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "where_tag",
             "description": "ID is the where tag id that will be deleted.",
             "in": "path",
             "required": true,
@@ -1316,11 +1423,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/where_tags": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/where_tags": {
       "get": {
         "summary": "Retrieve all available where tags",
         "description": "Retrieve information regarding all available where tags.",
-        "operationId": "GetWhereTags",
+        "operationId": "TransactionMetadataService_GetWhereTags",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1347,25 +1454,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1386,7 +1499,7 @@
       "post": {
         "summary": "Create a where tag",
         "description": "Creates a new where tag and returns the object.",
-        "operationId": "CreateWhereTag",
+        "operationId": "TransactionMetadataService_CreateWhereTag",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1419,25 +1532,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1466,7 +1585,7 @@
       "put": {
         "summary": "Update a where tag",
         "description": "Updates a where tag's information",
-        "operationId": "UpdateWhereTag",
+        "operationId": "TransactionMetadataService_UpdateWhereTag",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1499,25 +1618,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
@@ -1544,11 +1669,11 @@
         ]
       }
     },
-    "/v1/comments/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/comment/{iD}": {
+    "/v1/comments/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/comment/{comment}": {
       "get": {
         "summary": "Retrieve comment information",
         "description": "Retrieve information about the comment specified by the ID",
-        "operationId": "GetComment",
+        "operationId": "TransactionMetadataService_GetComment",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1575,32 +1700,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "comment",
             "description": "ID is the comment unique identifier.",
             "in": "path",
             "required": true,
@@ -1619,11 +1750,11 @@
         ]
       }
     },
-    "/v1/images/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/image/{iD}": {
+    "/v1/images/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/image/{image}": {
       "get": {
         "summary": "Retrieve image information",
         "description": "Retrieve information about the image specified by the ID",
-        "operationId": "GetImage",
+        "operationId": "TransactionMetadataService_GetImage",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1650,32 +1781,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "image",
             "description": "ID is the image unique identifier.",
             "in": "path",
             "required": true,
@@ -1694,11 +1831,11 @@
         ]
       }
     },
-    "/v1/narratives/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/narrative/{iD}": {
+    "/v1/narratives/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/narrative/{narrative}": {
       "get": {
         "summary": "Retrieve narrative information",
         "description": "Retrieve information about the narrative specified by the ID",
-        "operationId": "GetNarrative",
+        "operationId": "TransactionMetadataService_GetNarrative",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1725,32 +1862,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "narrative",
             "description": "ID is the narrative unique identifier.",
             "in": "path",
             "required": true,
@@ -1771,7 +1914,7 @@
       "delete": {
         "summary": "Delete a narrative",
         "description": "Permanently delete a narrative.",
-        "operationId": "DeleteNarrative",
+        "operationId": "TransactionMetadataService_DeleteNarrative",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1802,32 +1945,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "narrative",
             "description": "ID is the narrative id that will be deleted.",
             "in": "path",
             "required": true,
@@ -1846,11 +1995,11 @@
         ]
       }
     },
-    "/v1/tags/{bankID}/accounts/{accountID}/transactions/{transactionID}/metadata/tag/{iD}": {
+    "/v1/tags/{bank_id}/accounts/{account_id}/transactions/{transaction_id}/metadata/tag/{tag}": {
       "get": {
         "summary": "Retrieve tag information",
         "description": "Retrieve information about the tag specified by the ID",
-        "operationId": "GetTag",
+        "operationId": "TransactionMetadataService_GetTag",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -1877,32 +2026,38 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "description": "BankID is the bank identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the transaction identifier.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "iD",
+            "name": "tag",
             "description": "ID is the tag unique identifier.",
             "in": "path",
             "required": true,
@@ -1923,6 +2078,36 @@
     }
   },
   "definitions": {
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "transactionmetadataComment": {
       "type": "object",
       "properties": {

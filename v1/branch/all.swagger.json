@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the branch resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "BranchService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Retrieve all available branches",
         "description": "Retrieve information regarding all available branches.",
-        "operationId": "GetBranches",
+        "operationId": "BranchService_GetBranches",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -62,7 +73,7 @@
       "post": {
         "summary": "Create a branch",
         "description": "Creates a new branch and returns its id.",
-        "operationId": "CreateBranch",
+        "operationId": "BranchService_CreateBranch",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -95,6 +106,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -119,11 +136,11 @@
         ]
       }
     },
-    "/v1/branches/{branchID}": {
+    "/v1/branches/{branch_id}": {
       "get": {
         "summary": "Retrieve branch information",
         "description": "Retrieve information about the branch specified by the ID",
-        "operationId": "GetBranch",
+        "operationId": "BranchService_GetBranch",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -150,11 +167,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "branchID",
+            "name": "branch_id",
             "description": "BranchID is the branch unique identifier.",
             "in": "path",
             "required": true,
@@ -175,7 +198,7 @@
       "delete": {
         "summary": "Delete a branch",
         "description": "Permanently delete a branch.",
-        "operationId": "DeleteBranch",
+        "operationId": "BranchService_DeleteBranch",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -206,11 +229,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "branchID",
+            "name": "branch_id",
             "description": "BranchID is the branch unique identifier.",
             "in": "path",
             "required": true,
@@ -231,7 +260,7 @@
       "put": {
         "summary": "Update a branch",
         "description": "Updates a branch's information",
-        "operationId": "UpdateBranch",
+        "operationId": "BranchService_UpdateBranch",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -262,11 +291,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "branchID",
+            "name": "branch_id",
             "description": "BranchID is the branch unique identifier.",
             "in": "path",
             "required": true,
@@ -423,6 +458,36 @@
         }
       },
       "description": "UpdateBranchRequest is the request envelope to update a branch."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "typesAddress": {
       "type": "object",

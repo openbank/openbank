@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_CounterPartyService_CreateCounterParty_0(ctx context.Context, marshaler runtime.Marshaler, client CounterPartyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -82,7 +82,6 @@ func request_CounterPartyService_GetCounterParty_0(ctx context.Context, marshale
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -108,7 +107,6 @@ func local_request_CounterPartyService_GetCounterParty_0(ctx context.Context, ma
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -138,7 +136,10 @@ func local_request_CounterPartyService_GetCounterParties_0(ctx context.Context, 
 	var protoReq GetCounterPartiesRequest
 	var metadata runtime.ServerMetadata
 
-	if err := runtime.PopulateQueryParameters(&protoReq, req.URL.Query(), filter_CounterPartyService_GetCounterParties_0); err != nil {
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CounterPartyService_GetCounterParties_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -163,7 +164,6 @@ func request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context, mars
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -174,7 +174,6 @@ func request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context, mars
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -200,7 +199,6 @@ func local_request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -211,7 +209,6 @@ func local_request_CounterPartyService_GetOtherAccountByID_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -237,7 +234,6 @@ func request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, marshal
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -263,7 +259,6 @@ func local_request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -275,17 +270,21 @@ func local_request_CounterPartyService_GetOtherAccounts_0(ctx context.Context, m
 // RegisterCounterPartyServiceHandlerServer registers the http handlers for service CounterPartyService to "mux".
 // UnaryRPC     :call CounterPartyServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterCounterPartyServiceHandlerFromEndpoint instead.
 func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CounterPartyServiceServer) error {
 	mux.Handle("POST", pattern_CounterPartyService_CreateCounterParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterparty.CounterPartyService/CreateCounterParty")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterPartyService_CreateCounterParty_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -298,13 +297,16 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 	mux.Handle("GET", pattern_CounterPartyService_GetCounterParty_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterparty.CounterPartyService/GetCounterParty")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterPartyService_GetCounterParty_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -317,13 +319,16 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 	mux.Handle("GET", pattern_CounterPartyService_GetCounterParties_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterparty.CounterPartyService/GetCounterParties")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterPartyService_GetCounterParties_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -336,13 +341,16 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 	mux.Handle("GET", pattern_CounterPartyService_GetOtherAccountByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterparty.CounterPartyService/GetOtherAccountByID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterPartyService_GetOtherAccountByID_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -355,13 +363,16 @@ func RegisterCounterPartyServiceHandlerServer(ctx context.Context, mux *runtime.
 	mux.Handle("GET", pattern_CounterPartyService_GetOtherAccounts_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterparty.CounterPartyService/GetOtherAccounts")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterPartyService_GetOtherAccounts_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -415,7 +426,7 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterparty.CounterPartyService/CreateCounterParty")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -434,7 +445,7 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterparty.CounterPartyService/GetCounterParty")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -453,7 +464,7 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterparty.CounterPartyService/GetCounterParties")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -472,7 +483,7 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterparty.CounterPartyService/GetOtherAccountByID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -491,7 +502,7 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterparty.CounterPartyService/GetOtherAccounts")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -510,15 +521,15 @@ func RegisterCounterPartyServiceHandlerClient(ctx context.Context, mux *runtime.
 }
 
 var (
-	pattern_CounterPartyService_CreateCounterParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "counterparty"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterPartyService_CreateCounterParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "counterparty"}, ""))
 
-	pattern_CounterPartyService_GetCounterParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "counterparty", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterPartyService_GetCounterParty_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "counterparty", "ID"}, ""))
 
-	pattern_CounterPartyService_GetCounterParties_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "counterparties"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterPartyService_GetCounterParties_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "counterparties"}, ""))
 
-	pattern_CounterPartyService_GetOtherAccountByID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "accounts", "AccountID", "otheraccounts", "OtherAccountID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterPartyService_GetOtherAccountByID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "accounts", "AccountID", "otheraccounts", "OtherAccountID"}, ""))
 
-	pattern_CounterPartyService_GetOtherAccounts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "accounts", "AccountID", "otheraccounts"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterPartyService_GetOtherAccounts_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "accounts", "AccountID", "otheraccounts"}, ""))
 )
 
 var (

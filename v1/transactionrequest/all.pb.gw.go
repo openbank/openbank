@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_TransactionRequestService_AnswerTransactionRequestChallenge_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionRequestServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -58,7 +58,6 @@ func request_TransactionRequestService_AnswerTransactionRequestChallenge_0(ctx c
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -69,7 +68,6 @@ func request_TransactionRequestService_AnswerTransactionRequestChallenge_0(ctx c
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -80,7 +78,6 @@ func request_TransactionRequestService_AnswerTransactionRequestChallenge_0(ctx c
 	}
 
 	protoReq.TransactionRequestType, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionRequestType", err)
 	}
@@ -91,7 +88,6 @@ func request_TransactionRequestService_AnswerTransactionRequestChallenge_0(ctx c
 	}
 
 	protoReq.TransactionRequestID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionRequestID", err)
 	}
@@ -125,7 +121,6 @@ func local_request_TransactionRequestService_AnswerTransactionRequestChallenge_0
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -136,7 +131,6 @@ func local_request_TransactionRequestService_AnswerTransactionRequestChallenge_0
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -147,7 +141,6 @@ func local_request_TransactionRequestService_AnswerTransactionRequestChallenge_0
 	}
 
 	protoReq.TransactionRequestType, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionRequestType", err)
 	}
@@ -158,7 +151,6 @@ func local_request_TransactionRequestService_AnswerTransactionRequestChallenge_0
 	}
 
 	protoReq.TransactionRequestID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionRequestID", err)
 	}
@@ -192,7 +184,6 @@ func request_TransactionRequestService_CreateAccountTransaction_0(ctx context.Co
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -203,7 +194,6 @@ func request_TransactionRequestService_CreateAccountTransaction_0(ctx context.Co
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -237,7 +227,6 @@ func local_request_TransactionRequestService_CreateAccountTransaction_0(ctx cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -248,7 +237,6 @@ func local_request_TransactionRequestService_CreateAccountTransaction_0(ctx cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -282,7 +270,6 @@ func request_TransactionRequestService_CreateAccountOTPTransaction_0(ctx context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -293,7 +280,6 @@ func request_TransactionRequestService_CreateAccountOTPTransaction_0(ctx context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -327,7 +313,6 @@ func local_request_TransactionRequestService_CreateAccountOTPTransaction_0(ctx c
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -338,7 +323,6 @@ func local_request_TransactionRequestService_CreateAccountOTPTransaction_0(ctx c
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -372,7 +356,6 @@ func request_TransactionRequestService_CreateCounterPartyTransaction_0(ctx conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -383,7 +366,6 @@ func request_TransactionRequestService_CreateCounterPartyTransaction_0(ctx conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -417,7 +399,6 @@ func local_request_TransactionRequestService_CreateCounterPartyTransaction_0(ctx
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -428,7 +409,6 @@ func local_request_TransactionRequestService_CreateCounterPartyTransaction_0(ctx
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -462,7 +442,6 @@ func request_TransactionRequestService_CreateFreeFormTransaction_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -473,7 +452,6 @@ func request_TransactionRequestService_CreateFreeFormTransaction_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -507,7 +485,6 @@ func local_request_TransactionRequestService_CreateFreeFormTransaction_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -518,7 +495,6 @@ func local_request_TransactionRequestService_CreateFreeFormTransaction_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -552,7 +528,6 @@ func request_TransactionRequestService_CreateSEPATransaction_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -563,7 +538,6 @@ func request_TransactionRequestService_CreateSEPATransaction_0(ctx context.Conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -597,7 +571,6 @@ func local_request_TransactionRequestService_CreateSEPATransaction_0(ctx context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -608,7 +581,6 @@ func local_request_TransactionRequestService_CreateSEPATransaction_0(ctx context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -634,7 +606,6 @@ func request_TransactionRequestService_GetTransactionRequestTypes_0(ctx context.
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -645,7 +616,6 @@ func request_TransactionRequestService_GetTransactionRequestTypes_0(ctx context.
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -671,7 +641,6 @@ func local_request_TransactionRequestService_GetTransactionRequestTypes_0(ctx co
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -682,7 +651,6 @@ func local_request_TransactionRequestService_GetTransactionRequestTypes_0(ctx co
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -708,7 +676,6 @@ func request_TransactionRequestService_GetSupportedTransactionRequestTypes_0(ctx
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -734,7 +701,6 @@ func local_request_TransactionRequestService_GetSupportedTransactionRequestTypes
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -760,7 +726,6 @@ func request_TransactionRequestService_GetTransactionRequests_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -771,7 +736,6 @@ func request_TransactionRequestService_GetTransactionRequests_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -797,7 +761,6 @@ func local_request_TransactionRequestService_GetTransactionRequests_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -808,7 +771,6 @@ func local_request_TransactionRequestService_GetTransactionRequests_0(ctx contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -852,17 +814,21 @@ func local_request_TransactionRequestService_SaveHistoricTransaction_0(ctx conte
 // RegisterTransactionRequestServiceHandlerServer registers the http handlers for service TransactionRequestService to "mux".
 // UnaryRPC     :call TransactionRequestServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterTransactionRequestServiceHandlerFromEndpoint instead.
 func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server TransactionRequestServiceServer) error {
 	mux.Handle("POST", pattern_TransactionRequestService_AnswerTransactionRequestChallenge_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/AnswerTransactionRequestChallenge")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_AnswerTransactionRequestChallenge_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -875,13 +841,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("POST", pattern_TransactionRequestService_CreateAccountTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateAccountTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_CreateAccountTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -894,13 +863,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("POST", pattern_TransactionRequestService_CreateAccountOTPTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateAccountOTPTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_CreateAccountOTPTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -913,13 +885,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("POST", pattern_TransactionRequestService_CreateCounterPartyTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateCounterPartyTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_CreateCounterPartyTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -932,13 +907,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("POST", pattern_TransactionRequestService_CreateFreeFormTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateFreeFormTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_CreateFreeFormTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -951,13 +929,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("POST", pattern_TransactionRequestService_CreateSEPATransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateSEPATransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_CreateSEPATransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -970,13 +951,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("GET", pattern_TransactionRequestService_GetTransactionRequestTypes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/GetTransactionRequestTypes")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_GetTransactionRequestTypes_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -989,13 +973,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("GET", pattern_TransactionRequestService_GetSupportedTransactionRequestTypes_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/GetSupportedTransactionRequestTypes")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_GetSupportedTransactionRequestTypes_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1008,13 +995,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("GET", pattern_TransactionRequestService_GetTransactionRequests_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/GetTransactionRequests")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_GetTransactionRequests_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1027,13 +1017,16 @@ func RegisterTransactionRequestServiceHandlerServer(ctx context.Context, mux *ru
 	mux.Handle("POST", pattern_TransactionRequestService_SaveHistoricTransaction_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/SaveHistoricTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionRequestService_SaveHistoricTransaction_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -1087,7 +1080,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/AnswerTransactionRequestChallenge")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1106,7 +1099,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateAccountTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1125,7 +1118,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateAccountOTPTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1144,7 +1137,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateCounterPartyTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1163,7 +1156,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateFreeFormTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1182,7 +1175,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/CreateSEPATransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1201,7 +1194,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/GetTransactionRequestTypes")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1220,7 +1213,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/GetSupportedTransactionRequestTypes")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1239,7 +1232,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/GetTransactionRequests")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1258,7 +1251,7 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionrequest.TransactionRequestService/SaveHistoricTransaction")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -1277,25 +1270,25 @@ func RegisterTransactionRequestServiceHandlerClient(ctx context.Context, mux *ru
 }
 
 var (
-	pattern_TransactionRequestService_AnswerTransactionRequestChallenge_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 1, 0, 4, 1, 5, 8, 2, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "TransactionRequestType", "transactionrequest", "TransactionRequestID", "challenge"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_AnswerTransactionRequestChallenge_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 1, 0, 4, 1, 5, 8, 2, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "TransactionRequestType", "transactionrequest", "TransactionRequestID", "challenge"}, ""))
 
-	pattern_TransactionRequestService_CreateAccountTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "ACCOUNT", "transactionrequest"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_CreateAccountTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "ACCOUNT", "transactionrequest"}, ""))
 
-	pattern_TransactionRequestService_CreateAccountOTPTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "ACCOUNT_OTP", "transactionrequest"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_CreateAccountOTPTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "ACCOUNT_OTP", "transactionrequest"}, ""))
 
-	pattern_TransactionRequestService_CreateCounterPartyTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "COUNTERPARTY", "transactionrequest"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_CreateCounterPartyTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "COUNTERPARTY", "transactionrequest"}, ""))
 
-	pattern_TransactionRequestService_CreateFreeFormTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "FREE_FORM", "transactionrequest"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_CreateFreeFormTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "FREE_FORM", "transactionrequest"}, ""))
 
-	pattern_TransactionRequestService_CreateSEPATransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "SEPA", "transactionrequest"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_CreateSEPATransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 2, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types", "SEPA", "transactionrequest"}, ""))
 
-	pattern_TransactionRequestService_GetTransactionRequestTypes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_GetTransactionRequestTypes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transaction-request-types"}, ""))
 
-	pattern_TransactionRequestService_GetSupportedTransactionRequestTypes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "transaction-request-types"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_GetSupportedTransactionRequestTypes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "banks", "BankID", "transaction-request-types"}, ""))
 
-	pattern_TransactionRequestService_GetTransactionRequests_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactionrequests"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_GetTransactionRequests_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactionrequests"}, ""))
 
-	pattern_TransactionRequestService_SaveHistoricTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "transactionrequest", "import"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionRequestService_SaveHistoricTransaction_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "transactionrequest", "import"}, ""))
 )
 
 var (

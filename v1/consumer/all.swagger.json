@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the consumer resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "ConsumerService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Get consumers",
         "description": "Returns all consumers data up to 20 consumers data.",
-        "operationId": "GetConsumers",
+        "operationId": "ConsumerService_GetConsumers",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -60,11 +71,11 @@
         ]
       }
     },
-    "/v1/management/consumers/{consumerID}": {
+    "/v1/management/consumers/{consumer_id}": {
       "get": {
         "summary": "Get consumer",
         "description": "Returns consumer data by it's ID",
-        "operationId": "GetConsumer",
+        "operationId": "ConsumerService_GetConsumer",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -91,11 +102,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "consumerID",
+            "name": "consumer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -115,7 +132,7 @@
       "put": {
         "summary": "Set consumer enable or disable.",
         "description": "Set enable or disable consumer",
-        "operationId": "EnableOrDisableConsumer",
+        "operationId": "ConsumerService_EnableOrDisableConsumer",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -142,11 +159,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "consumerID",
+            "name": "consumer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -172,11 +195,11 @@
         ]
       }
     },
-    "/v1/management/consumers/{consumerID}/consumer/call-limits": {
+    "/v1/management/consumers/{consumer_id}/consumer/call-limits": {
       "get": {
         "summary": "Get consumer call lists",
         "description": "Returns a list up to 20 consumer call limits data.",
-        "operationId": "GetConsumerCallLimits",
+        "operationId": "ConsumerService_GetConsumerCallLimits",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -203,11 +226,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "consumerID",
+            "name": "consumer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -227,7 +256,7 @@
       "put": {
         "summary": "Set consumer call limits.",
         "description": "Set consumer call limits.",
-        "operationId": "SetConsumerCallsLimit",
+        "operationId": "ConsumerService_SetConsumerCallsLimit",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -254,11 +283,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "consumerID",
+            "name": "consumer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -284,11 +319,11 @@
         ]
       }
     },
-    "/v1/management/consumers/{consumerID}/consumer/redirect_url": {
+    "/v1/management/consumers/{consumer_id}/consumer/redirect_url": {
       "put": {
         "summary": "Set consumer redirect url.",
         "description": "Set consumer redirect url.",
-        "operationId": "UpdateConsumerRedirectURL",
+        "operationId": "ConsumerService_UpdateConsumerRedirectURL",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -315,11 +350,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "consumerID",
+            "name": "consumer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -349,7 +390,7 @@
       "get": {
         "summary": "Get consumers for logged in user",
         "description": "Returns all consumers for logged in user data up to 20 consumers data.",
-        "operationId": "GetConsumersForLoggedInUser",
+        "operationId": "ConsumerService_GetConsumersForLoggedInUser",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -376,6 +417,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -421,8 +468,7 @@
           "$ref": "#/definitions/consumerCreateByUser"
         },
         "enabled": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "created": {
           "type": "string",
@@ -480,8 +526,7 @@
           "type": "string"
         },
         "enable": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         }
       }
     },
@@ -489,8 +534,7 @@
       "type": "object",
       "properties": {
         "enable": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         }
       }
     },
@@ -628,6 +672,36 @@
       "properties": {
         "consumer": {
           "$ref": "#/definitions/consumerConsumer"
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     }
