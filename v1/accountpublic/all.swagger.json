@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the account public resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "AccountPublicService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Get public account at all banks.",
         "description": "Return public account at all banks.",
-        "operationId": "GetPublicAccountAtAllBanks",
+        "operationId": "AccountPublicService_GetPublicAccountAtAllBanks",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -60,11 +71,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/public": {
+    "/v1/banks/{bank_id}/accounts/public": {
       "get": {
         "summary": "Get bank public account.",
         "description": "Return customer public account for specific bank.",
-        "operationId": "GetBankPublicAccount",
+        "operationId": "AccountPublicService_GetBankPublicAccount",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -91,11 +102,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -113,11 +130,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/public/accounts/{accountID}/{viewID}/account": {
+    "/v1/banks/{bank_id}/public/accounts/{account_id}/{}/account": {
       "get": {
         "summary": "Get Public Account By ID.",
         "description": "Return customer public account for specific bank.",
-        "operationId": "GetPublicAccountByID",
+        "operationId": "AccountPublicService_GetPublicAccountByID",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -144,25 +161,31 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "viewID",
+            "name": "",
             "in": "path",
             "required": true,
             "type": "integer",
@@ -309,8 +332,37 @@
           "type": "string"
         },
         "is_public": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },

@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.Context, marshaler runtime.Marshaler, client CounterpartyMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -58,7 +58,6 @@ func request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -69,7 +68,6 @@ func request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -80,7 +78,6 @@ func request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -114,7 +111,6 @@ func local_request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -125,7 +121,6 @@ func local_request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -136,7 +131,6 @@ func local_request_CounterpartyMetadataService_CreateCorporateLocation_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -162,7 +156,6 @@ func request_CounterpartyMetadataService_GetCorporateLocation_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -173,7 +166,6 @@ func request_CounterpartyMetadataService_GetCorporateLocation_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -184,7 +176,6 @@ func request_CounterpartyMetadataService_GetCorporateLocation_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -210,7 +201,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocation_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -221,7 +211,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocation_0(ctx contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -232,7 +221,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocation_0(ctx contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -258,7 +246,6 @@ func request_CounterpartyMetadataService_GetCorporateLocations_0(ctx context.Con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -269,7 +256,6 @@ func request_CounterpartyMetadataService_GetCorporateLocations_0(ctx context.Con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -280,7 +266,6 @@ func request_CounterpartyMetadataService_GetCorporateLocations_0(ctx context.Con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -306,7 +291,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocations_0(ctx conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -317,7 +301,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocations_0(ctx conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -328,7 +311,6 @@ func local_request_CounterpartyMetadataService_GetCorporateLocations_0(ctx conte
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -362,7 +344,6 @@ func request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -373,7 +354,6 @@ func request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -384,7 +364,6 @@ func request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -418,7 +397,6 @@ func local_request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -429,7 +407,6 @@ func local_request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -440,7 +417,6 @@ func local_request_CounterpartyMetadataService_UpdateCorporateLocation_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -466,7 +442,6 @@ func request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -477,7 +452,6 @@ func request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -488,7 +462,6 @@ func request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -514,7 +487,6 @@ func local_request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -525,7 +497,6 @@ func local_request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -536,7 +507,6 @@ func local_request_CounterpartyMetadataService_DeleteCorporateLocation_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -570,7 +540,6 @@ func request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -581,7 +550,6 @@ func request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -592,7 +560,6 @@ func request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -626,7 +593,6 @@ func local_request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -637,7 +603,6 @@ func local_request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -648,7 +613,6 @@ func local_request_CounterpartyMetadataService_CreateMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -674,7 +638,6 @@ func request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -685,7 +648,6 @@ func request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context, mars
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -696,7 +658,6 @@ func request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context, mars
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -722,7 +683,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -733,7 +693,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -744,7 +703,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfo_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -770,7 +728,6 @@ func request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -781,7 +738,6 @@ func request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -792,7 +748,6 @@ func request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Context, mar
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -818,7 +773,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -829,7 +783,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -840,7 +793,6 @@ func local_request_CounterpartyMetadataService_GetMoreInfos_0(ctx context.Contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -874,7 +826,6 @@ func request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -885,7 +836,6 @@ func request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -896,7 +846,6 @@ func request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -930,7 +879,6 @@ func local_request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -941,7 +889,6 @@ func local_request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -952,7 +899,6 @@ func local_request_CounterpartyMetadataService_UpdateMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -978,7 +924,6 @@ func request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -989,7 +934,6 @@ func request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1000,7 +944,6 @@ func request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1026,7 +969,6 @@ func local_request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1037,7 +979,6 @@ func local_request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1048,7 +989,6 @@ func local_request_CounterpartyMetadataService_DeleteMoreInfo_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1082,7 +1022,6 @@ func request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1093,7 +1032,6 @@ func request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1104,7 +1042,6 @@ func request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1138,7 +1075,6 @@ func local_request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1149,7 +1085,6 @@ func local_request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1160,7 +1095,6 @@ func local_request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1186,7 +1120,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1197,7 +1130,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1208,7 +1140,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1234,7 +1165,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1245,7 +1175,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1256,7 +1185,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURL_0(ctx contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1282,7 +1210,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx context.Con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1293,7 +1220,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx context.Con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1304,7 +1230,6 @@ func request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx context.Con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1330,7 +1255,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1341,7 +1265,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1352,7 +1275,6 @@ func local_request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(ctx conte
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1386,7 +1308,6 @@ func request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1397,7 +1318,6 @@ func request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1408,7 +1328,6 @@ func request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1442,7 +1361,6 @@ func local_request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1453,7 +1371,6 @@ func local_request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1464,7 +1381,6 @@ func local_request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1490,7 +1406,6 @@ func request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1501,7 +1416,6 @@ func request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1512,7 +1426,6 @@ func request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1538,7 +1451,6 @@ func local_request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1549,7 +1461,6 @@ func local_request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1560,7 +1471,6 @@ func local_request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1594,7 +1504,6 @@ func request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1605,7 +1514,6 @@ func request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1616,7 +1524,6 @@ func request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1650,7 +1557,6 @@ func local_request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1661,7 +1567,6 @@ func local_request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, 
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1672,7 +1577,6 @@ func local_request_CounterpartyMetadataService_CreateURL_0(ctx context.Context, 
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1698,7 +1602,6 @@ func request_CounterpartyMetadataService_GetURL_0(ctx context.Context, marshaler
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1709,7 +1612,6 @@ func request_CounterpartyMetadataService_GetURL_0(ctx context.Context, marshaler
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1720,7 +1622,6 @@ func request_CounterpartyMetadataService_GetURL_0(ctx context.Context, marshaler
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1746,7 +1647,6 @@ func local_request_CounterpartyMetadataService_GetURL_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1757,7 +1657,6 @@ func local_request_CounterpartyMetadataService_GetURL_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1768,7 +1667,6 @@ func local_request_CounterpartyMetadataService_GetURL_0(ctx context.Context, mar
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1794,7 +1692,6 @@ func request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, marshale
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1805,7 +1702,6 @@ func request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, marshale
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1816,7 +1712,6 @@ func request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, marshale
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1842,7 +1737,6 @@ func local_request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1853,7 +1747,6 @@ func local_request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, ma
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1864,7 +1757,6 @@ func local_request_CounterpartyMetadataService_GetURLs_0(ctx context.Context, ma
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1898,7 +1790,6 @@ func request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1909,7 +1800,6 @@ func request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1920,7 +1810,6 @@ func request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -1954,7 +1843,6 @@ func local_request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1965,7 +1853,6 @@ func local_request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, 
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1976,7 +1863,6 @@ func local_request_CounterpartyMetadataService_UpdateURL_0(ctx context.Context, 
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2002,7 +1888,6 @@ func request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2013,7 +1898,6 @@ func request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2024,7 +1908,6 @@ func request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, marsha
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2050,7 +1933,6 @@ func local_request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2061,7 +1943,6 @@ func local_request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, 
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2072,7 +1953,6 @@ func local_request_CounterpartyMetadataService_DeleteURL_0(ctx context.Context, 
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2106,7 +1986,6 @@ func request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2117,7 +1996,6 @@ func request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2128,7 +2006,6 @@ func request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2162,7 +2039,6 @@ func local_request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2173,7 +2049,6 @@ func local_request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2184,7 +2059,6 @@ func local_request_CounterpartyMetadataService_CreateImageURL_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2210,7 +2084,6 @@ func request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2221,7 +2094,6 @@ func request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context, mars
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2232,7 +2104,6 @@ func request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context, mars
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2258,7 +2129,6 @@ func local_request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2269,7 +2139,6 @@ func local_request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2280,7 +2149,6 @@ func local_request_CounterpartyMetadataService_GetImageURL_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2306,7 +2174,6 @@ func request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2317,7 +2184,6 @@ func request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2328,7 +2194,6 @@ func request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Context, mar
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2354,7 +2219,6 @@ func local_request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2365,7 +2229,6 @@ func local_request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2376,7 +2239,6 @@ func local_request_CounterpartyMetadataService_GetImageURLs_0(ctx context.Contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2410,7 +2272,6 @@ func request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2421,7 +2282,6 @@ func request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2432,7 +2292,6 @@ func request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2466,7 +2325,6 @@ func local_request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2477,7 +2335,6 @@ func local_request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2488,7 +2345,6 @@ func local_request_CounterpartyMetadataService_UpdateImageURL_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2514,7 +2370,6 @@ func request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2525,7 +2380,6 @@ func request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2536,7 +2390,6 @@ func request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2562,7 +2415,6 @@ func local_request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2573,7 +2425,6 @@ func local_request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2584,7 +2435,6 @@ func local_request_CounterpartyMetadataService_DeleteImageURL_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2618,7 +2468,6 @@ func request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2629,7 +2478,6 @@ func request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2640,7 +2488,6 @@ func request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2674,7 +2521,6 @@ func local_request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2685,7 +2531,6 @@ func local_request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2696,7 +2541,6 @@ func local_request_CounterpartyMetadataService_CreatePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2722,7 +2566,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2733,7 +2576,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context.Conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2744,7 +2586,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context.Conte
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2770,7 +2611,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2781,7 +2621,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2792,7 +2631,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocation_0(ctx context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2818,7 +2656,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2829,7 +2666,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2840,7 +2676,6 @@ func request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2866,7 +2701,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2877,7 +2711,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2888,7 +2721,6 @@ func local_request_CounterpartyMetadataService_GetPhysicalLocations_0(ctx contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2922,7 +2754,6 @@ func request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2933,7 +2764,6 @@ func request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2944,7 +2774,6 @@ func request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -2978,7 +2807,6 @@ func local_request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2989,7 +2817,6 @@ func local_request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3000,7 +2827,6 @@ func local_request_CounterpartyMetadataService_UpdatePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3026,7 +2852,6 @@ func request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3037,7 +2862,6 @@ func request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3048,7 +2872,6 @@ func request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx context.Co
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3074,7 +2897,6 @@ func local_request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3085,7 +2907,6 @@ func local_request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3096,7 +2917,6 @@ func local_request_CounterpartyMetadataService_DeletePhysicalLocation_0(ctx cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3130,7 +2950,6 @@ func request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3141,7 +2960,6 @@ func request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3152,7 +2970,6 @@ func request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3186,7 +3003,6 @@ func local_request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3197,7 +3013,6 @@ func local_request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3208,7 +3023,6 @@ func local_request_CounterpartyMetadataService_CreatePublicAlias_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3234,7 +3048,6 @@ func request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3245,7 +3058,6 @@ func request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3256,7 +3068,6 @@ func request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Context, m
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3282,7 +3093,6 @@ func local_request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3293,7 +3103,6 @@ func local_request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3304,7 +3113,6 @@ func local_request_CounterpartyMetadataService_GetPublicAlias_0(ctx context.Cont
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3330,7 +3138,6 @@ func request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3341,7 +3148,6 @@ func request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Context,
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3352,7 +3158,6 @@ func request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Context,
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3378,7 +3183,6 @@ func local_request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Co
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3389,7 +3193,6 @@ func local_request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Co
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3400,7 +3203,6 @@ func local_request_CounterpartyMetadataService_GetPublicAliases_0(ctx context.Co
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3434,7 +3236,6 @@ func request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3445,7 +3246,6 @@ func request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3456,7 +3256,6 @@ func request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3490,7 +3289,6 @@ func local_request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3501,7 +3299,6 @@ func local_request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3512,7 +3309,6 @@ func local_request_CounterpartyMetadataService_UpdatePublicAlias_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3538,7 +3334,6 @@ func request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3549,7 +3344,6 @@ func request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3560,7 +3354,6 @@ func request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3586,7 +3379,6 @@ func local_request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3597,7 +3389,6 @@ func local_request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3608,7 +3399,6 @@ func local_request_CounterpartyMetadataService_DeletePublicAlias_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3642,7 +3432,6 @@ func request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3653,7 +3442,6 @@ func request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3664,7 +3452,6 @@ func request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3698,7 +3485,6 @@ func local_request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3709,7 +3495,6 @@ func local_request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3720,7 +3505,6 @@ func local_request_CounterpartyMetadataService_CreatePrivateAlias_0(ctx context.
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3746,7 +3530,6 @@ func request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3757,7 +3540,6 @@ func request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Context, 
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3768,7 +3550,6 @@ func request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Context, 
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3794,7 +3575,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3805,7 +3585,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3816,7 +3595,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAlias_0(ctx context.Con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3842,7 +3620,6 @@ func request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3853,7 +3630,6 @@ func request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3864,7 +3640,6 @@ func request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.Context
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3890,7 +3665,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3901,7 +3675,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3912,7 +3685,6 @@ func local_request_CounterpartyMetadataService_GetPrivateAliases_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -3946,7 +3718,6 @@ func request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -3957,7 +3728,6 @@ func request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -3968,7 +3738,6 @@ func request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -4002,7 +3771,6 @@ func local_request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -4013,7 +3781,6 @@ func local_request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -4024,7 +3791,6 @@ func local_request_CounterpartyMetadataService_UpdatePrivateAlias_0(ctx context.
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -4050,7 +3816,6 @@ func request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -4061,7 +3826,6 @@ func request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -4072,7 +3836,6 @@ func request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.Contex
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -4098,7 +3861,6 @@ func local_request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -4109,7 +3871,6 @@ func local_request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -4120,7 +3881,6 @@ func local_request_CounterpartyMetadataService_DeletePrivateAlias_0(ctx context.
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -4146,7 +3906,6 @@ func request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx context.C
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -4157,7 +3916,6 @@ func request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx context.C
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -4168,7 +3926,6 @@ func request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx context.C
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -4194,7 +3951,6 @@ func local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx con
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -4205,7 +3961,6 @@ func local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx con
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -4216,7 +3971,6 @@ func local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx con
 	}
 
 	protoReq.OtherAccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "OtherAccountID", err)
 	}
@@ -4228,17 +3982,21 @@ func local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(ctx con
 // RegisterCounterpartyMetadataServiceHandlerServer registers the http handlers for service CounterpartyMetadataService to "mux".
 // UnaryRPC     :call CounterpartyMetadataServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterCounterpartyMetadataServiceHandlerFromEndpoint instead.
 func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CounterpartyMetadataServiceServer) error {
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreateCorporateLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4251,13 +4009,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetCorporateLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4270,13 +4031,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetCorporateLocations_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetCorporateLocations")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetCorporateLocations_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4289,13 +4053,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdateCorporateLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4308,13 +4075,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteCorporateLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeleteCorporateLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4327,13 +4097,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreateMoreInfo_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4346,13 +4119,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetMoreInfo_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4365,13 +4141,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetMoreInfos_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetMoreInfos")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetMoreInfos_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4384,13 +4163,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdateMoreInfo_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4403,13 +4185,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteMoreInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeleteMoreInfo_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4422,13 +4207,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreateOpenCorporatesURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4441,13 +4229,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetOpenCorporatesURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4460,13 +4251,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOpenCorporatesURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetOpenCorporatesURLs")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetOpenCorporatesURLs_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4479,13 +4273,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdateOpenCorporatesURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4498,13 +4295,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteOpenCorporatesURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeleteOpenCorporatesURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4517,13 +4317,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreateURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4536,13 +4339,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4555,13 +4361,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetURLs")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetURLs_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4574,13 +4383,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdateURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4593,13 +4405,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeleteURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4612,13 +4427,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreateImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreateImageURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4631,13 +4449,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetImageURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4650,13 +4471,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetImageURLs_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetImageURLs")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetImageURLs_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4669,13 +4493,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdateImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdateImageURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4688,13 +4515,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeleteImageURL_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeleteImageURL_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4707,13 +4537,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreatePhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreatePhysicalLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4726,13 +4559,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetPhysicalLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4745,13 +4581,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPhysicalLocations_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPhysicalLocations")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetPhysicalLocations_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4764,13 +4603,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdatePhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdatePhysicalLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4783,13 +4625,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePhysicalLocation_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeletePhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeletePhysicalLocation_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4802,13 +4647,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreatePublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreatePublicAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4821,13 +4669,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetPublicAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4840,13 +4691,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPublicAliases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPublicAliases")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetPublicAliases_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4859,13 +4713,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdatePublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdatePublicAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4878,13 +4735,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePublicAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeletePublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeletePublicAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4897,13 +4757,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("POST", pattern_CounterpartyMetadataService_CreatePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreatePrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_CreatePrivateAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4916,13 +4779,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetPrivateAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4935,13 +4801,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetPrivateAliases_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPrivateAliases")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetPrivateAliases_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4954,13 +4823,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("PUT", pattern_CounterpartyMetadataService_UpdatePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdatePrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_UpdatePrivateAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4973,13 +4845,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("DELETE", pattern_CounterpartyMetadataService_DeletePrivateAlias_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeletePrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_DeletePrivateAlias_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -4992,13 +4867,16 @@ func RegisterCounterpartyMetadataServiceHandlerServer(ctx context.Context, mux *
 	mux.Handle("GET", pattern_CounterpartyMetadataService_GetOtherAccountMetadata_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetOtherAccountMetadata")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_CounterpartyMetadataService_GetOtherAccountMetadata_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -5052,7 +4930,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5071,7 +4949,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5090,7 +4968,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetCorporateLocations")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5109,7 +4987,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5128,7 +5006,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteCorporateLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5147,7 +5025,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5166,7 +5044,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5185,7 +5063,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetMoreInfos")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5204,7 +5082,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5223,7 +5101,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteMoreInfo")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5242,7 +5120,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5261,7 +5139,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5280,7 +5158,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetOpenCorporatesURLs")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5299,7 +5177,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5318,7 +5196,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteOpenCorporatesURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5337,7 +5215,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5356,7 +5234,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5375,7 +5253,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetURLs")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5394,7 +5272,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5413,7 +5291,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5432,7 +5310,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreateImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5451,7 +5329,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5470,7 +5348,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetImageURLs")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5489,7 +5367,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdateImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5508,7 +5386,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeleteImageURL")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5527,7 +5405,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreatePhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5546,7 +5424,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5565,7 +5443,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPhysicalLocations")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5584,7 +5462,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdatePhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5603,7 +5481,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeletePhysicalLocation")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5622,7 +5500,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreatePublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5641,7 +5519,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5660,7 +5538,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPublicAliases")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5679,7 +5557,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdatePublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5698,7 +5576,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeletePublicAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5717,7 +5595,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/CreatePrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5736,7 +5614,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5755,7 +5633,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetPrivateAliases")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5774,7 +5652,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/UpdatePrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5793,7 +5671,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/DeletePrivateAlias")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5812,7 +5690,7 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/counterpartymetadata.CounterpartyMetadataService/GetOtherAccountMetadata")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -5831,87 +5709,87 @@ func RegisterCounterpartyMetadataServiceHandlerClient(ctx context.Context, mux *
 }
 
 var (
-	pattern_CounterpartyMetadataService_CreateCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreateCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, ""))
 
-	pattern_CounterpartyMetadataService_GetCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, ""))
 
-	pattern_CounterpartyMetadataService_GetCorporateLocations_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_locations"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetCorporateLocations_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_locations"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdateCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdateCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, ""))
 
-	pattern_CounterpartyMetadataService_DeleteCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeleteCorporateLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "corporate_location"}, ""))
 
-	pattern_CounterpartyMetadataService_CreateMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreateMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, ""))
 
-	pattern_CounterpartyMetadataService_GetMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, ""))
 
-	pattern_CounterpartyMetadataService_GetMoreInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_infos"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetMoreInfos_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_infos"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdateMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdateMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, ""))
 
-	pattern_CounterpartyMetadataService_DeleteMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeleteMoreInfo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "more_info"}, ""))
 
-	pattern_CounterpartyMetadataService_CreateOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreateOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, ""))
 
-	pattern_CounterpartyMetadataService_GetOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, ""))
 
-	pattern_CounterpartyMetadataService_GetOpenCorporatesURLs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_urls"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetOpenCorporatesURLs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_urls"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdateOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdateOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, ""))
 
-	pattern_CounterpartyMetadataService_DeleteOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeleteOpenCorporatesURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "open_corporates_url"}, ""))
 
-	pattern_CounterpartyMetadataService_CreateURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreateURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, ""))
 
-	pattern_CounterpartyMetadataService_GetURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, ""))
 
-	pattern_CounterpartyMetadataService_GetURLs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "urls"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetURLs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "urls"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdateURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdateURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, ""))
 
-	pattern_CounterpartyMetadataService_DeleteURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeleteURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "url"}, ""))
 
-	pattern_CounterpartyMetadataService_CreateImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreateImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, ""))
 
-	pattern_CounterpartyMetadataService_GetImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, ""))
 
-	pattern_CounterpartyMetadataService_GetImageURLs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_urls"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetImageURLs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_urls"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdateImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdateImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, ""))
 
-	pattern_CounterpartyMetadataService_DeleteImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeleteImageURL_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "image_url"}, ""))
 
-	pattern_CounterpartyMetadataService_CreatePhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreatePhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, ""))
 
-	pattern_CounterpartyMetadataService_GetPhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetPhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, ""))
 
-	pattern_CounterpartyMetadataService_GetPhysicalLocations_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_locations"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetPhysicalLocations_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_locations"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdatePhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdatePhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, ""))
 
-	pattern_CounterpartyMetadataService_DeletePhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeletePhysicalLocation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "physical_location"}, ""))
 
-	pattern_CounterpartyMetadataService_CreatePublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreatePublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_GetPublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetPublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_GetPublicAliases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_aliases"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetPublicAliases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_aliases"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdatePublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdatePublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_DeletePublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeletePublicAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "public_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_CreatePrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_CreatePrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_GetPrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetPrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_GetPrivateAliases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_aliases"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetPrivateAliases_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_aliases"}, ""))
 
-	pattern_CounterpartyMetadataService_UpdatePrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_UpdatePrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_DeletePrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_DeletePrivateAlias_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata", "private_alias"}, ""))
 
-	pattern_CounterpartyMetadataService_GetOtherAccountMetadata_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_CounterpartyMetadataService_GetOtherAccountMetadata_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "other_accounts", "OtherAccountID", "metadata"}, ""))
 )
 
 var (

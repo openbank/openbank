@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the transaction resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "TransactionService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/accounts/{accountID}/transactions": {
+    "/v1/accounts/{account_id}/transactions": {
       "get": {
         "summary": "List all transactions for given account id",
         "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
-        "operationId": "GetTransactionsByAccount",
+        "operationId": "TransactionService_GetTransactionsByAccount",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,11 +51,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the unique identifier of an account.",
             "in": "path",
             "required": true,
@@ -117,7 +128,7 @@
       "get": {
         "summary": "List all transactions",
         "description": "Returns a list containing up to 20 transactions. You can paginate through transactions by supplying next_starting_index in your subsequents calls. next_starting_index contains the transaction_id of the last transaction_id of the current page.",
-        "operationId": "GetTransactions",
+        "operationId": "TransactionService_GetTransactions",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -144,6 +155,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -220,7 +237,7 @@
       "post": {
         "summary": "Create a transaction",
         "description": "Creates a new transaction and returns its id.",
-        "operationId": "CreateTransaction",
+        "operationId": "TransactionService_CreateTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -253,6 +270,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -281,7 +304,7 @@
       "post": {
         "summary": "Approve a pending transaction",
         "description": "Approve a pending transaction.",
-        "operationId": "ApprovePayment",
+        "operationId": "TransactionService_ApprovePayment",
         "responses": {
           "200": {
             "description": "Transaction successfully approved.",
@@ -308,6 +331,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -336,7 +365,7 @@
       "post": {
         "summary": "Authorize a transaction with 2FA",
         "description": "Authorization allows execution of transactions with 2-factor authentication (2FA).",
-        "operationId": "TFA",
+        "operationId": "TransactionService_TFA",
         "responses": {
           "200": {
             "description": "Transaction authorized.",
@@ -363,6 +392,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -391,7 +426,7 @@
       "post": {
         "summary": "Resend OTP/TFA code for the transaction",
         "description": "Resend OTP/TFA code for the transaction",
-        "operationId": "ResendTFA",
+        "operationId": "TransactionService_ResendTFA",
         "responses": {
           "200": {
             "description": "Transaction authorized.",
@@ -418,6 +453,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -442,11 +483,11 @@
         ]
       }
     },
-    "/v1/transactions/{transactionID}": {
+    "/v1/transactions/{transaction_id}": {
       "get": {
         "summary": "Retrieve a transaction",
         "description": "Retrieves all data from a transaction, selected by the transaction_id you supplied.",
-        "operationId": "GetTransaction",
+        "operationId": "TransactionService_GetTransaction",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -473,11 +514,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "transactionID",
+            "name": "transaction_id",
             "description": "TransactionID is the unique identifier of a transaction.",
             "in": "path",
             "required": true,
@@ -498,6 +545,36 @@
     }
   },
   "definitions": {
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "transactionsApprovePaymentRequest": {
       "type": "object",
       "properties": {
@@ -507,7 +584,6 @@
         },
         "approve": {
           "type": "boolean",
-          "format": "boolean",
           "description": "Approve is Boolean value of approval action."
         },
         "tfa_type": {
@@ -627,7 +703,6 @@
         },
         "has_more": {
           "type": "boolean",
-          "format": "boolean",
           "description": "HasMore indicates if there are more transactions available."
         },
         "last_running_balance": {

@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the accounts resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "AccountService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "List all accounts",
         "description": "Returns a list containing up to 20 accounts. `next_starting_index` can be used for pagination.",
-        "operationId": "GetAccounts",
+        "operationId": "AccountService_GetAccounts",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -86,7 +97,7 @@
       "post": {
         "summary": "Create an account",
         "description": "Creates a new account",
-        "operationId": "CreateAccount",
+        "operationId": "AccountService_CreateAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -119,6 +130,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -143,11 +160,11 @@
         ]
       }
     },
-    "/v1/accounts/{accountID}": {
+    "/v1/accounts/{account_id}": {
       "get": {
         "summary": "Retrieve an account",
         "description": "Retrieves all data from an account selected by the supplied account_id.",
-        "operationId": "GetAccount",
+        "operationId": "AccountService_GetAccount",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -174,11 +191,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -198,7 +221,7 @@
       "delete": {
         "summary": "Delete an account",
         "description": "Permanently delete an account.",
-        "operationId": "DeleteAccount",
+        "operationId": "AccountService_DeleteAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -229,11 +252,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account unique identifier.",
             "in": "path",
             "required": true,
@@ -254,7 +283,7 @@
       "put": {
         "summary": "Update an account",
         "description": "Updates an account with all the fields supplied.",
-        "operationId": "UpdateAccount",
+        "operationId": "AccountService_UpdateAccount",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -285,11 +314,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the unique identifier of the account to update.",
             "in": "path",
             "required": true,
@@ -316,11 +351,11 @@
         ]
       }
     },
-    "/v1/accounts/{accountID}/check": {
+    "/v1/accounts/{account_id}/check": {
       "get": {
         "summary": "Verify account existence",
         "description": "Verify whether or not an account exists.",
-        "operationId": "CheckAccount",
+        "operationId": "AccountService_CheckAccount",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -347,11 +382,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account unique identifier.",
             "in": "path",
             "required": true,
@@ -370,11 +411,11 @@
         ]
       }
     },
-    "/v1/accounts/{accountID}/status": {
+    "/v1/accounts/{account_id}/status": {
       "get": {
         "summary": "Retrieve an account's status",
         "description": "Retrieves status of the account, selected by the account_id you supplied.",
-        "operationId": "GetAccountStatus",
+        "operationId": "AccountService_GetAccountStatus",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -401,11 +442,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the unique identifier of the account.",
             "in": "path",
             "required": true,
@@ -426,7 +473,7 @@
       "put": {
         "summary": "Update an account status",
         "description": "Updates the status of an account.",
-        "operationId": "UpdateAccountStatus",
+        "operationId": "AccountService_UpdateAccountStatus",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -457,11 +504,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "description": "AccountID is the account unique identifier.",
             "in": "path",
             "required": true,
@@ -723,7 +776,6 @@
         },
         "is_fx": {
           "type": "boolean",
-          "format": "boolean",
           "description": "IsFx is a boolean indicating whether the transaction required foreign exchange."
         }
       },
@@ -774,7 +826,6 @@
         },
         "has_more": {
           "type": "boolean",
-          "format": "boolean",
           "description": "HasMore indicates if there are more accounts available."
         }
       },
@@ -807,6 +858,36 @@
         }
       },
       "description": "UpdateAccountStatusRequest is the request envelope to update\nthe account status."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "typesAmount": {
       "type": "object",

@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the KYC resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "KYCService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/customers/{customerID}/kyc_check/{kYCCheckID}": {
+    "/v1/customers/{customer_id}/kyc_check/{kyc_check_id}": {
       "put": {
         "summary": "Add KYC check",
         "description": "Add KYC check for the customer specified",
-        "operationId": "AddKYCCheck",
+        "operationId": "KYCService_AddKYCCheck",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -52,17 +57,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "kYCCheckID",
+            "name": "kyc_check_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -88,11 +99,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/kyc_check/{kYCDocumentID}": {
+    "/v1/customers/{customer_id}/kyc_check/{kyc_document_id}": {
       "put": {
         "summary": "Add KYC document",
         "description": "Add KYC document for the customer specified",
-        "operationId": "AddKYCDocument",
+        "operationId": "KYCService_AddKYCDocument",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -125,17 +136,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "kYCDocumentID",
+            "name": "kyc_document_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -161,11 +178,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/kyc_check/{kYCMediaID}": {
+    "/v1/customers/{customer_id}/kyc_check/{kyc_media_id}": {
       "put": {
         "summary": "Add KYC media",
         "description": "Add KYC media for the customer specified",
-        "operationId": "AddKYCMedia",
+        "operationId": "KYCService_AddKYCMedia",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -198,17 +215,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "kYCMediaID",
+            "name": "kyc_media_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -234,11 +257,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/kyc_checks": {
+    "/v1/customers/{customer_id}/kyc_checks": {
       "get": {
         "summary": "Get Customer KYC check",
         "description": "Get Customer KYC check fot the customer",
-        "operationId": "GetCustomerKYCCheck",
+        "operationId": "KYCService_GetCustomerKYCCheck",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -271,11 +294,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -293,11 +322,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/kyc_documents": {
+    "/v1/customers/{customer_id}/kyc_documents": {
       "get": {
         "summary": "Get Customer KYC documents",
         "description": "Get Customer KYC documents fot the customer",
-        "operationId": "GetCustomerKYCDocument",
+        "operationId": "KYCService_GetCustomerKYCDocument",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -330,11 +359,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -352,11 +387,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/kyc_media": {
+    "/v1/customers/{customer_id}/kyc_media": {
       "get": {
         "summary": "Get Customer KYC media",
         "description": "Get Customer KYC media fot the customer",
-        "operationId": "GetKYCMedia",
+        "operationId": "KYCService_GetKYCMedia",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -389,11 +424,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -411,11 +452,11 @@
         ]
       }
     },
-    "/v1/customers/{customerID}/kyc_statuses": {
+    "/v1/customers/{customer_id}/kyc_statuses": {
       "get": {
         "summary": "Get Customer KYC statuses",
         "description": "Get Customer KYC statuses fot the customer",
-        "operationId": "GetCustomerKYCStatus",
+        "operationId": "KYCService_GetCustomerKYCStatus",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -448,11 +489,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -472,7 +519,7 @@
       "put": {
         "summary": "Add KYC status",
         "description": "Add KYC status for the customer specified",
-        "operationId": "AddKYCStatus",
+        "operationId": "KYCService_AddKYCStatus",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -505,11 +552,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "customerID",
+            "name": "customer_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -537,6 +590,24 @@
     }
   },
   "definitions": {
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
     "kycAddKYCCheckRequest": {
       "type": "object",
       "properties": {
@@ -563,8 +634,7 @@
           "type": "string"
         },
         "satisfied": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "comments": {
           "type": "string"
@@ -600,8 +670,7 @@
           "type": "string"
         },
         "satisfied": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "comments": {
           "type": "string"
@@ -746,8 +815,7 @@
           "type": "string"
         },
         "ok": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "date": {
           "type": "string",
@@ -765,8 +833,7 @@
           "type": "string"
         },
         "ok": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "date": {
           "type": "string",
@@ -803,8 +870,7 @@
           "type": "string"
         },
         "satisfied": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "comments": {
           "type": "string"
@@ -932,12 +998,23 @@
           "type": "string"
         },
         "ok": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "date": {
           "type": "string",
           "format": "date-time"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     }

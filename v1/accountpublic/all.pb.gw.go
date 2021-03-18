@@ -13,15 +13,15 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/golang/protobuf/ptypes/empty"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
+	"google.golang.org/protobuf/types/known/emptypb"
 )
 
 // Suppress "imported and not used" errors
@@ -31,7 +31,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_AccountPublicService_GetPublicAccountByID_0(ctx context.Context, marshaler runtime.Marshaler, client AccountPublicServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -51,7 +51,6 @@ func request_AccountPublicService_GetPublicAccountByID_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.Int32(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -62,7 +61,6 @@ func request_AccountPublicService_GetPublicAccountByID_0(ctx context.Context, ma
 	}
 
 	protoReq.AccountID, err = runtime.Int32(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -73,7 +71,6 @@ func request_AccountPublicService_GetPublicAccountByID_0(ctx context.Context, ma
 	}
 
 	protoReq.ViewID, err = runtime.Int32(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ViewID", err)
 	}
@@ -99,7 +96,6 @@ func local_request_AccountPublicService_GetPublicAccountByID_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.Int32(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -110,7 +106,6 @@ func local_request_AccountPublicService_GetPublicAccountByID_0(ctx context.Conte
 	}
 
 	protoReq.AccountID, err = runtime.Int32(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -121,7 +116,6 @@ func local_request_AccountPublicService_GetPublicAccountByID_0(ctx context.Conte
 	}
 
 	protoReq.ViewID, err = runtime.Int32(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ViewID", err)
 	}
@@ -147,7 +141,6 @@ func request_AccountPublicService_GetBankPublicAccount_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -173,7 +166,6 @@ func local_request_AccountPublicService_GetBankPublicAccount_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -183,7 +175,7 @@ func local_request_AccountPublicService_GetBankPublicAccount_0(ctx context.Conte
 }
 
 func request_AccountPublicService_GetPublicAccountAtAllBanks_0(ctx context.Context, marshaler runtime.Marshaler, client AccountPublicServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq empty.Empty
+	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
 	msg, err := client.GetPublicAccountAtAllBanks(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -191,7 +183,7 @@ func request_AccountPublicService_GetPublicAccountAtAllBanks_0(ctx context.Conte
 }
 
 func local_request_AccountPublicService_GetPublicAccountAtAllBanks_0(ctx context.Context, marshaler runtime.Marshaler, server AccountPublicServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq empty.Empty
+	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
 	msg, err := server.GetPublicAccountAtAllBanks(ctx, &protoReq)
@@ -201,17 +193,21 @@ func local_request_AccountPublicService_GetPublicAccountAtAllBanks_0(ctx context
 // RegisterAccountPublicServiceHandlerServer registers the http handlers for service AccountPublicService to "mux".
 // UnaryRPC     :call AccountPublicServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterAccountPublicServiceHandlerFromEndpoint instead.
 func RegisterAccountPublicServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server AccountPublicServiceServer) error {
 	mux.Handle("GET", pattern_AccountPublicService_GetPublicAccountByID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/accountpublic.AccountPublicService/GetPublicAccountByID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_AccountPublicService_GetPublicAccountByID_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -224,13 +220,16 @@ func RegisterAccountPublicServiceHandlerServer(ctx context.Context, mux *runtime
 	mux.Handle("GET", pattern_AccountPublicService_GetBankPublicAccount_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/accountpublic.AccountPublicService/GetBankPublicAccount")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_AccountPublicService_GetBankPublicAccount_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -243,13 +242,16 @@ func RegisterAccountPublicServiceHandlerServer(ctx context.Context, mux *runtime
 	mux.Handle("GET", pattern_AccountPublicService_GetPublicAccountAtAllBanks_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/accountpublic.AccountPublicService/GetPublicAccountAtAllBanks")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_AccountPublicService_GetPublicAccountAtAllBanks_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -303,7 +305,7 @@ func RegisterAccountPublicServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/accountpublic.AccountPublicService/GetPublicAccountByID")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -322,7 +324,7 @@ func RegisterAccountPublicServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/accountpublic.AccountPublicService/GetBankPublicAccount")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -341,7 +343,7 @@ func RegisterAccountPublicServiceHandlerClient(ctx context.Context, mux *runtime
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/accountpublic.AccountPublicService/GetPublicAccountAtAllBanks")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -360,11 +362,11 @@ func RegisterAccountPublicServiceHandlerClient(ctx context.Context, mux *runtime
 }
 
 var (
-	pattern_AccountPublicService_GetPublicAccountByID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 2, 7}, []string{"v1", "banks", "BankID", "public", "accounts", "AccountID", "ViewID", "account"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_AccountPublicService_GetPublicAccountByID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 2, 7}, []string{"v1", "banks", "BankID", "public", "accounts", "AccountID", "ViewID", "account"}, ""))
 
-	pattern_AccountPublicService_GetBankPublicAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4}, []string{"v1", "banks", "BankID", "accounts", "public"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_AccountPublicService_GetBankPublicAccount_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4}, []string{"v1", "banks", "BankID", "accounts", "public"}, ""))
 
-	pattern_AccountPublicService_GetPublicAccountAtAllBanks_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "accounts", "public"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_AccountPublicService_GetPublicAccountAtAllBanks_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "accounts", "public"}, ""))
 )
 
 var (

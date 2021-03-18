@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the counter part resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "CounterPartyService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/accounts/{accountID}/otheraccounts": {
+    "/v1/accounts/{account_id}/otheraccounts": {
       "get": {
         "summary": "Retrieve all other account with account id",
         "description": "Retrieves all other accounts (counter party) for an account id",
-        "operationId": "GetOtherAccounts",
+        "operationId": "CounterPartyService_GetOtherAccounts",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,11 +51,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -68,11 +79,11 @@
         ]
       }
     },
-    "/v1/accounts/{accountID}/otheraccounts/{otherAccountID}": {
+    "/v1/accounts/{account_id}/otheraccounts/{other_account_id}": {
       "get": {
         "summary": "Retrieve an account with other account id",
         "description": "Retrieves other account (counter party) by other account id",
-        "operationId": "GetOtherAccountByID",
+        "operationId": "CounterPartyService_GetOtherAccountByID",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -99,17 +110,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "otherAccountID",
+            "name": "other_account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -131,7 +148,7 @@
       "get": {
         "summary": "List all accounts",
         "description": "Returns a list containing up to 20 accounts. `after_index` can be used for pagination.",
-        "operationId": "GetCounterParties",
+        "operationId": "CounterPartyService_GetCounterParties",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -158,6 +175,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -193,7 +216,7 @@
       "post": {
         "summary": "Create an counter party",
         "description": "Creates a new counter party",
-        "operationId": "CreateCounterParty",
+        "operationId": "CounterPartyService_CreateCounterParty",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -226,6 +249,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -250,11 +279,11 @@
         ]
       }
     },
-    "/v1/counterparty/{iD}": {
+    "/v1/counterparty/{id}": {
       "get": {
         "summary": "Retrieve an counter party",
         "description": "Retrieves all data from an counter party selected by the supplied counter_party_id.",
-        "operationId": "GetCounterParty",
+        "operationId": "CounterPartyService_GetCounterParty",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -281,11 +310,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "iD",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -386,7 +421,6 @@
         },
         "is_beneficiary": {
           "type": "boolean",
-          "format": "boolean",
           "title": "Must be set to true in order to send payments to this counterparty"
         },
         "bespoke": {
@@ -437,8 +471,7 @@
           "type": "string"
         },
         "is_beneficiary": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         },
         "bespoke": {
           "type": "array",
@@ -506,8 +539,7 @@
           "type": "string"
         },
         "is_alias": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "boolean"
         }
       }
     },
@@ -561,6 +593,36 @@
         },
         "metadata": {
           "$ref": "#/definitions/counterpartyMetadata"
+        }
+      }
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     },

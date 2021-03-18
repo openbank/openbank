@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the Product resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "ProductService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/products": {
+    "/v1/banks/{bank_id}/products": {
       "get": {
         "summary": "Retrieve all available products",
         "description": "Retrieve information regarding all available products.",
-        "operationId": "GetProducts",
+        "operationId": "ProductService_GetProducts",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,11 +51,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -68,11 +79,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/products/{productCode}": {
+    "/v1/banks/{bank_id}/products/{product_code}": {
       "get": {
         "summary": "Retrieve product information",
         "description": "Retrieve information about the product specified by the ID",
-        "operationId": "GetProduct",
+        "operationId": "ProductService_GetProduct",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -99,17 +110,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
@@ -129,7 +146,7 @@
       "delete": {
         "summary": "Delete a product",
         "description": "Permanently delete a product.",
-        "operationId": "DeleteProduct",
+        "operationId": "ProductService_DeleteProduct",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -160,17 +177,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
@@ -190,7 +213,7 @@
       "post": {
         "summary": "Create a product",
         "description": "Creates a new product and returns the object.",
-        "operationId": "CreateProduct",
+        "operationId": "ProductService_CreateProduct",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -223,17 +246,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
@@ -261,7 +290,7 @@
       "put": {
         "summary": "Update a product",
         "description": "Updates a product's information",
-        "operationId": "UpdateProduct",
+        "operationId": "ProductService_UpdateProduct",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -294,17 +323,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
@@ -330,11 +365,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/products/{productCode}/attributes/{productAttributeID}": {
+    "/v1/banks/{bank_id}/products/{product_code}/attributes/{product_attribute_id}": {
       "get": {
         "summary": "Retrieve product attribute information",
         "description": "Retrieve information about the product specified by the ID",
-        "operationId": "GetProductAttribute",
+        "operationId": "ProductService_GetProductAttribute",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -361,23 +396,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productAttributeID",
+            "name": "product_attribute_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -397,7 +438,7 @@
       "delete": {
         "summary": "Delete a product attribute",
         "description": "Permanently delete a product attribute.",
-        "operationId": "DeleteProductAttribute",
+        "operationId": "ProductService_DeleteProductAttribute",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -428,23 +469,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productAttributeID",
+            "name": "product_attribute_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -464,7 +511,7 @@
       "post": {
         "summary": "Create a product attribute",
         "description": "Creates a new product attribute and returns the object.",
-        "operationId": "CreateProductAttribute",
+        "operationId": "ProductService_CreateProductAttribute",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -497,23 +544,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productAttributeID",
+            "name": "product_attribute_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -541,7 +594,7 @@
       "put": {
         "summary": "Update a product attribute",
         "description": "Updates a product attribute's information",
-        "operationId": "UpdateProductAttribute",
+        "operationId": "ProductService_UpdateProductAttribute",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -574,23 +627,29 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productCode",
+            "name": "product_code",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "productAttributeID",
+            "name": "product_attribute_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -618,6 +677,24 @@
     }
   },
   "definitions": {
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
     "productAttributeType": {
       "type": "string",
       "enum": [
@@ -771,6 +848,18 @@
         },
         "product": {
           "$ref": "#/definitions/productProduct"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
         }
       }
     }

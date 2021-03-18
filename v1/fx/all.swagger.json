@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the foreign exchange resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "FXService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "post": {
         "summary": "Create a foreign exchange quote",
         "description": "Creates a new foreign exchange quote and returns it.",
-        "operationId": "CreateFX",
+        "operationId": "FXService_CreateFX",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -52,6 +57,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -78,7 +89,7 @@
       "put": {
         "summary": "Update a foreign exchange quote",
         "description": "Updates a foreign exchange quote",
-        "operationId": "UpdateFX",
+        "operationId": "FXService_UpdateFX",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -109,6 +120,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -133,11 +150,11 @@
         ]
       }
     },
-    "/v1/fx/{fromCurrencyCode}/{toCurrencyCode}": {
+    "/v1/fx/{from_currency_code}/{to_currency_code}": {
       "get": {
         "summary": "Retrieve exchange rate between two currencies",
         "description": "Retrieve the exchange rate from a currency to another",
-        "operationId": "GetCurrentFXRate",
+        "operationId": "FXService_GetCurrentFXRate",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -164,18 +181,24 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "fromCurrencyCode",
+            "name": "from_currency_code",
             "description": "FromCurrencyCode is the currency to transfer from.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "toCurrencyCode",
+            "name": "to_currency_code",
             "description": "ToCurrencyCode is the currency that we are transferring to.",
             "in": "path",
             "required": true,
@@ -245,6 +268,36 @@
         }
       },
       "description": "UpdateFXRequest is a request envelope to update a foreign exchange quote."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     }
   },
   "securityDefinitions": {

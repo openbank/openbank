@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshaler runtime.Marshaler, client TransactionMetadataServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -58,7 +58,6 @@ func request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -69,7 +68,6 @@ func request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -80,7 +78,6 @@ func request_TransactionMetadataService_CreateTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -114,7 +111,6 @@ func local_request_TransactionMetadataService_CreateTag_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -125,7 +121,6 @@ func local_request_TransactionMetadataService_CreateTag_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -136,7 +131,6 @@ func local_request_TransactionMetadataService_CreateTag_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -162,7 +156,6 @@ func request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -173,7 +166,6 @@ func request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler 
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -184,7 +176,6 @@ func request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler 
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -195,7 +186,6 @@ func request_TransactionMetadataService_GetTag_0(ctx context.Context, marshaler 
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -221,7 +211,6 @@ func local_request_TransactionMetadataService_GetTag_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -232,7 +221,6 @@ func local_request_TransactionMetadataService_GetTag_0(ctx context.Context, mars
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -243,7 +231,6 @@ func local_request_TransactionMetadataService_GetTag_0(ctx context.Context, mars
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -254,7 +241,6 @@ func local_request_TransactionMetadataService_GetTag_0(ctx context.Context, mars
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -280,7 +266,6 @@ func request_TransactionMetadataService_GetTags_0(ctx context.Context, marshaler
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -291,7 +276,6 @@ func request_TransactionMetadataService_GetTags_0(ctx context.Context, marshaler
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -302,7 +286,6 @@ func request_TransactionMetadataService_GetTags_0(ctx context.Context, marshaler
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -328,7 +311,6 @@ func local_request_TransactionMetadataService_GetTags_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -339,7 +321,6 @@ func local_request_TransactionMetadataService_GetTags_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -350,7 +331,6 @@ func local_request_TransactionMetadataService_GetTags_0(ctx context.Context, mar
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -384,7 +364,6 @@ func request_TransactionMetadataService_UpdateTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -395,7 +374,6 @@ func request_TransactionMetadataService_UpdateTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -406,7 +384,6 @@ func request_TransactionMetadataService_UpdateTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -440,7 +417,6 @@ func local_request_TransactionMetadataService_UpdateTag_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -451,7 +427,6 @@ func local_request_TransactionMetadataService_UpdateTag_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -462,7 +437,6 @@ func local_request_TransactionMetadataService_UpdateTag_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -488,7 +462,6 @@ func request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -499,7 +472,6 @@ func request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -510,7 +482,6 @@ func request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -521,7 +492,6 @@ func request_TransactionMetadataService_DeleteTag_0(ctx context.Context, marshal
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -547,7 +517,6 @@ func local_request_TransactionMetadataService_DeleteTag_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -558,7 +527,6 @@ func local_request_TransactionMetadataService_DeleteTag_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -569,7 +537,6 @@ func local_request_TransactionMetadataService_DeleteTag_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -580,7 +547,6 @@ func local_request_TransactionMetadataService_DeleteTag_0(ctx context.Context, m
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -614,7 +580,6 @@ func request_TransactionMetadataService_CreateImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -625,7 +590,6 @@ func request_TransactionMetadataService_CreateImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -636,7 +600,6 @@ func request_TransactionMetadataService_CreateImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -670,7 +633,6 @@ func local_request_TransactionMetadataService_CreateImage_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -681,7 +643,6 @@ func local_request_TransactionMetadataService_CreateImage_0(ctx context.Context,
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -692,7 +653,6 @@ func local_request_TransactionMetadataService_CreateImage_0(ctx context.Context,
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -718,7 +678,6 @@ func request_TransactionMetadataService_GetImage_0(ctx context.Context, marshale
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -729,7 +688,6 @@ func request_TransactionMetadataService_GetImage_0(ctx context.Context, marshale
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -740,7 +698,6 @@ func request_TransactionMetadataService_GetImage_0(ctx context.Context, marshale
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -751,7 +708,6 @@ func request_TransactionMetadataService_GetImage_0(ctx context.Context, marshale
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -777,7 +733,6 @@ func local_request_TransactionMetadataService_GetImage_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -788,7 +743,6 @@ func local_request_TransactionMetadataService_GetImage_0(ctx context.Context, ma
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -799,7 +753,6 @@ func local_request_TransactionMetadataService_GetImage_0(ctx context.Context, ma
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -810,7 +763,6 @@ func local_request_TransactionMetadataService_GetImage_0(ctx context.Context, ma
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -836,7 +788,6 @@ func request_TransactionMetadataService_GetImages_0(ctx context.Context, marshal
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -847,7 +798,6 @@ func request_TransactionMetadataService_GetImages_0(ctx context.Context, marshal
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -858,7 +808,6 @@ func request_TransactionMetadataService_GetImages_0(ctx context.Context, marshal
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -884,7 +833,6 @@ func local_request_TransactionMetadataService_GetImages_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -895,7 +843,6 @@ func local_request_TransactionMetadataService_GetImages_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -906,7 +853,6 @@ func local_request_TransactionMetadataService_GetImages_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -940,7 +886,6 @@ func request_TransactionMetadataService_UpdateImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -951,7 +896,6 @@ func request_TransactionMetadataService_UpdateImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -962,7 +906,6 @@ func request_TransactionMetadataService_UpdateImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -996,7 +939,6 @@ func local_request_TransactionMetadataService_UpdateImage_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1007,7 +949,6 @@ func local_request_TransactionMetadataService_UpdateImage_0(ctx context.Context,
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1018,7 +959,6 @@ func local_request_TransactionMetadataService_UpdateImage_0(ctx context.Context,
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1044,7 +984,6 @@ func request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1055,7 +994,6 @@ func request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1066,7 +1004,6 @@ func request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1077,7 +1014,6 @@ func request_TransactionMetadataService_DeleteImage_0(ctx context.Context, marsh
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1103,7 +1039,6 @@ func local_request_TransactionMetadataService_DeleteImage_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1114,7 +1049,6 @@ func local_request_TransactionMetadataService_DeleteImage_0(ctx context.Context,
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1125,7 +1059,6 @@ func local_request_TransactionMetadataService_DeleteImage_0(ctx context.Context,
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1136,7 +1069,6 @@ func local_request_TransactionMetadataService_DeleteImage_0(ctx context.Context,
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1170,7 +1102,6 @@ func request_TransactionMetadataService_CreateComment_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1181,7 +1112,6 @@ func request_TransactionMetadataService_CreateComment_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1192,7 +1122,6 @@ func request_TransactionMetadataService_CreateComment_0(ctx context.Context, mar
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1226,7 +1155,6 @@ func local_request_TransactionMetadataService_CreateComment_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1237,7 +1165,6 @@ func local_request_TransactionMetadataService_CreateComment_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1248,7 +1175,6 @@ func local_request_TransactionMetadataService_CreateComment_0(ctx context.Contex
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1274,7 +1200,6 @@ func request_TransactionMetadataService_GetComment_0(ctx context.Context, marsha
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1285,7 +1210,6 @@ func request_TransactionMetadataService_GetComment_0(ctx context.Context, marsha
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1296,7 +1220,6 @@ func request_TransactionMetadataService_GetComment_0(ctx context.Context, marsha
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1307,7 +1230,6 @@ func request_TransactionMetadataService_GetComment_0(ctx context.Context, marsha
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1333,7 +1255,6 @@ func local_request_TransactionMetadataService_GetComment_0(ctx context.Context, 
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1344,7 +1265,6 @@ func local_request_TransactionMetadataService_GetComment_0(ctx context.Context, 
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1355,7 +1275,6 @@ func local_request_TransactionMetadataService_GetComment_0(ctx context.Context, 
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1366,7 +1285,6 @@ func local_request_TransactionMetadataService_GetComment_0(ctx context.Context, 
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1392,7 +1310,6 @@ func request_TransactionMetadataService_GetComments_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1403,7 +1320,6 @@ func request_TransactionMetadataService_GetComments_0(ctx context.Context, marsh
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1414,7 +1330,6 @@ func request_TransactionMetadataService_GetComments_0(ctx context.Context, marsh
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1440,7 +1355,6 @@ func local_request_TransactionMetadataService_GetComments_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1451,7 +1365,6 @@ func local_request_TransactionMetadataService_GetComments_0(ctx context.Context,
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1462,7 +1375,6 @@ func local_request_TransactionMetadataService_GetComments_0(ctx context.Context,
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1496,7 +1408,6 @@ func request_TransactionMetadataService_UpdateComment_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1507,7 +1418,6 @@ func request_TransactionMetadataService_UpdateComment_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1518,7 +1428,6 @@ func request_TransactionMetadataService_UpdateComment_0(ctx context.Context, mar
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1552,7 +1461,6 @@ func local_request_TransactionMetadataService_UpdateComment_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1563,7 +1471,6 @@ func local_request_TransactionMetadataService_UpdateComment_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1574,7 +1481,6 @@ func local_request_TransactionMetadataService_UpdateComment_0(ctx context.Contex
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1600,7 +1506,6 @@ func request_TransactionMetadataService_DeleteComment_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1611,7 +1516,6 @@ func request_TransactionMetadataService_DeleteComment_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1622,7 +1526,6 @@ func request_TransactionMetadataService_DeleteComment_0(ctx context.Context, mar
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1633,7 +1536,6 @@ func request_TransactionMetadataService_DeleteComment_0(ctx context.Context, mar
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1659,7 +1561,6 @@ func local_request_TransactionMetadataService_DeleteComment_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1670,7 +1571,6 @@ func local_request_TransactionMetadataService_DeleteComment_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1681,7 +1581,6 @@ func local_request_TransactionMetadataService_DeleteComment_0(ctx context.Contex
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1692,7 +1591,6 @@ func local_request_TransactionMetadataService_DeleteComment_0(ctx context.Contex
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1726,7 +1624,6 @@ func request_TransactionMetadataService_CreateNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1737,7 +1634,6 @@ func request_TransactionMetadataService_CreateNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1748,7 +1644,6 @@ func request_TransactionMetadataService_CreateNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1782,7 +1677,6 @@ func local_request_TransactionMetadataService_CreateNarrative_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1793,7 +1687,6 @@ func local_request_TransactionMetadataService_CreateNarrative_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1804,7 +1697,6 @@ func local_request_TransactionMetadataService_CreateNarrative_0(ctx context.Cont
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1830,7 +1722,6 @@ func request_TransactionMetadataService_GetNarrative_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1841,7 +1732,6 @@ func request_TransactionMetadataService_GetNarrative_0(ctx context.Context, mars
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1852,7 +1742,6 @@ func request_TransactionMetadataService_GetNarrative_0(ctx context.Context, mars
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1863,7 +1752,6 @@ func request_TransactionMetadataService_GetNarrative_0(ctx context.Context, mars
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1889,7 +1777,6 @@ func local_request_TransactionMetadataService_GetNarrative_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1900,7 +1787,6 @@ func local_request_TransactionMetadataService_GetNarrative_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1911,7 +1797,6 @@ func local_request_TransactionMetadataService_GetNarrative_0(ctx context.Context
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1922,7 +1807,6 @@ func local_request_TransactionMetadataService_GetNarrative_0(ctx context.Context
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -1948,7 +1832,6 @@ func request_TransactionMetadataService_GetNarratives_0(ctx context.Context, mar
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -1959,7 +1842,6 @@ func request_TransactionMetadataService_GetNarratives_0(ctx context.Context, mar
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -1970,7 +1852,6 @@ func request_TransactionMetadataService_GetNarratives_0(ctx context.Context, mar
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -1996,7 +1877,6 @@ func local_request_TransactionMetadataService_GetNarratives_0(ctx context.Contex
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2007,7 +1887,6 @@ func local_request_TransactionMetadataService_GetNarratives_0(ctx context.Contex
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2018,7 +1897,6 @@ func local_request_TransactionMetadataService_GetNarratives_0(ctx context.Contex
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2052,7 +1930,6 @@ func request_TransactionMetadataService_UpdateNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2063,7 +1940,6 @@ func request_TransactionMetadataService_UpdateNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2074,7 +1950,6 @@ func request_TransactionMetadataService_UpdateNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2108,7 +1983,6 @@ func local_request_TransactionMetadataService_UpdateNarrative_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2119,7 +1993,6 @@ func local_request_TransactionMetadataService_UpdateNarrative_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2130,7 +2003,6 @@ func local_request_TransactionMetadataService_UpdateNarrative_0(ctx context.Cont
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2156,7 +2028,6 @@ func request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2167,7 +2038,6 @@ func request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2178,7 +2048,6 @@ func request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2189,7 +2058,6 @@ func request_TransactionMetadataService_DeleteNarrative_0(ctx context.Context, m
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -2215,7 +2083,6 @@ func local_request_TransactionMetadataService_DeleteNarrative_0(ctx context.Cont
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2226,7 +2093,6 @@ func local_request_TransactionMetadataService_DeleteNarrative_0(ctx context.Cont
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2237,7 +2103,6 @@ func local_request_TransactionMetadataService_DeleteNarrative_0(ctx context.Cont
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2248,7 +2113,6 @@ func local_request_TransactionMetadataService_DeleteNarrative_0(ctx context.Cont
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -2282,7 +2146,6 @@ func request_TransactionMetadataService_CreateWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2293,7 +2156,6 @@ func request_TransactionMetadataService_CreateWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2304,7 +2166,6 @@ func request_TransactionMetadataService_CreateWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2338,7 +2199,6 @@ func local_request_TransactionMetadataService_CreateWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2349,7 +2209,6 @@ func local_request_TransactionMetadataService_CreateWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2360,7 +2219,6 @@ func local_request_TransactionMetadataService_CreateWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2386,7 +2244,6 @@ func request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marsh
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2397,7 +2254,6 @@ func request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marsh
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2408,7 +2264,6 @@ func request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marsh
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2419,7 +2274,6 @@ func request_TransactionMetadataService_GetWhereTag_0(ctx context.Context, marsh
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -2445,7 +2299,6 @@ func local_request_TransactionMetadataService_GetWhereTag_0(ctx context.Context,
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2456,7 +2309,6 @@ func local_request_TransactionMetadataService_GetWhereTag_0(ctx context.Context,
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2467,7 +2319,6 @@ func local_request_TransactionMetadataService_GetWhereTag_0(ctx context.Context,
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2478,7 +2329,6 @@ func local_request_TransactionMetadataService_GetWhereTag_0(ctx context.Context,
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -2504,7 +2354,6 @@ func request_TransactionMetadataService_GetWhereTags_0(ctx context.Context, mars
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2515,7 +2364,6 @@ func request_TransactionMetadataService_GetWhereTags_0(ctx context.Context, mars
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2526,7 +2374,6 @@ func request_TransactionMetadataService_GetWhereTags_0(ctx context.Context, mars
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2552,7 +2399,6 @@ func local_request_TransactionMetadataService_GetWhereTags_0(ctx context.Context
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2563,7 +2409,6 @@ func local_request_TransactionMetadataService_GetWhereTags_0(ctx context.Context
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2574,7 +2419,6 @@ func local_request_TransactionMetadataService_GetWhereTags_0(ctx context.Context
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2608,7 +2452,6 @@ func request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2619,7 +2462,6 @@ func request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2630,7 +2472,6 @@ func request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2664,7 +2505,6 @@ func local_request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2675,7 +2515,6 @@ func local_request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2686,7 +2525,6 @@ func local_request_TransactionMetadataService_UpdateWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2712,7 +2550,6 @@ func request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2723,7 +2560,6 @@ func request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2734,7 +2570,6 @@ func request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2745,7 +2580,6 @@ func request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Context, ma
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -2771,7 +2605,6 @@ func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.BankID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "BankID", err)
 	}
@@ -2782,7 +2615,6 @@ func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.AccountID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "AccountID", err)
 	}
@@ -2793,7 +2625,6 @@ func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.TransactionID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "TransactionID", err)
 	}
@@ -2804,7 +2635,6 @@ func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Conte
 	}
 
 	protoReq.ID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "ID", err)
 	}
@@ -2816,17 +2646,21 @@ func local_request_TransactionMetadataService_DeleteWhereTag_0(ctx context.Conte
 // RegisterTransactionMetadataServiceHandlerServer registers the http handlers for service TransactionMetadataService to "mux".
 // UnaryRPC     :call TransactionMetadataServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterTransactionMetadataServiceHandlerFromEndpoint instead.
 func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server TransactionMetadataServiceServer) error {
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_CreateTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2839,13 +2673,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2858,13 +2695,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetTags_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetTags")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetTags_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2877,13 +2717,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_UpdateTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2896,13 +2739,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_DeleteTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2915,13 +2761,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_CreateImage_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2934,13 +2783,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetImage_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2953,13 +2805,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetImages_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetImages")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetImages_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2972,13 +2827,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_UpdateImage_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -2991,13 +2849,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteImage_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_DeleteImage_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3010,13 +2871,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_CreateComment_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3029,13 +2893,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetComment_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3048,13 +2915,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetComments_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetComments")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetComments_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3067,13 +2937,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_UpdateComment_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3086,13 +2959,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteComment_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_DeleteComment_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3105,13 +2981,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_CreateNarrative_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3124,13 +3003,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetNarrative_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3143,13 +3025,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetNarratives_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetNarratives")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetNarratives_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3162,13 +3047,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_UpdateNarrative_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3181,13 +3069,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteNarrative_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_DeleteNarrative_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3200,13 +3091,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("POST", pattern_TransactionMetadataService_CreateWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_CreateWhereTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3219,13 +3113,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetWhereTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3238,13 +3135,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("GET", pattern_TransactionMetadataService_GetWhereTags_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetWhereTags")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_GetWhereTags_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3257,13 +3157,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("PUT", pattern_TransactionMetadataService_UpdateWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_UpdateWhereTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3276,13 +3179,16 @@ func RegisterTransactionMetadataServiceHandlerServer(ctx context.Context, mux *r
 	mux.Handle("DELETE", pattern_TransactionMetadataService_DeleteWhereTag_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_TransactionMetadataService_DeleteWhereTag_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -3336,7 +3242,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3355,7 +3261,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3374,7 +3280,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetTags")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3393,7 +3299,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3412,7 +3318,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3431,7 +3337,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3450,7 +3356,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3469,7 +3375,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetImages")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3488,7 +3394,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3507,7 +3413,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteImage")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3526,7 +3432,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3545,7 +3451,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3564,7 +3470,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetComments")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3583,7 +3489,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3602,7 +3508,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteComment")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3621,7 +3527,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3640,7 +3546,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3659,7 +3565,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetNarratives")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3678,7 +3584,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3697,7 +3603,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteNarrative")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3716,7 +3622,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/CreateWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3735,7 +3641,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3754,7 +3660,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/GetWhereTags")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3773,7 +3679,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/UpdateWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3792,7 +3698,7 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/transactionmetadata.TransactionMetadataService/DeleteWhereTag")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -3811,55 +3717,55 @@ func RegisterTransactionMetadataServiceHandlerClient(ctx context.Context, mux *r
 }
 
 var (
-	pattern_TransactionMetadataService_CreateTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tags"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_CreateTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tags"}, ""))
 
-	pattern_TransactionMetadataService_GetTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "tags", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tag", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "tags", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tag", "ID"}, ""))
 
-	pattern_TransactionMetadataService_GetTags_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tags"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetTags_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tags"}, ""))
 
-	pattern_TransactionMetadataService_UpdateTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tags"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_UpdateTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tags"}, ""))
 
-	pattern_TransactionMetadataService_DeleteTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tag", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_DeleteTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "tag", "ID"}, ""))
 
-	pattern_TransactionMetadataService_CreateImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "images"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_CreateImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "images"}, ""))
 
-	pattern_TransactionMetadataService_GetImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "images", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "image", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "images", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "image", "ID"}, ""))
 
-	pattern_TransactionMetadataService_GetImages_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "images"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetImages_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "images"}, ""))
 
-	pattern_TransactionMetadataService_UpdateImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "images"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_UpdateImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "images"}, ""))
 
-	pattern_TransactionMetadataService_DeleteImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "image", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_DeleteImage_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "image", "ID"}, ""))
 
-	pattern_TransactionMetadataService_CreateComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comments"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_CreateComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comments"}, ""))
 
-	pattern_TransactionMetadataService_GetComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "comments", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comment", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "comments", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comment", "ID"}, ""))
 
-	pattern_TransactionMetadataService_GetComments_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comments"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetComments_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comments"}, ""))
 
-	pattern_TransactionMetadataService_UpdateComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comments"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_UpdateComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comments"}, ""))
 
-	pattern_TransactionMetadataService_DeleteComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comment", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_DeleteComment_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "comment", "ID"}, ""))
 
-	pattern_TransactionMetadataService_CreateNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narratives"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_CreateNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narratives"}, ""))
 
-	pattern_TransactionMetadataService_GetNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "narratives", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narrative", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "narratives", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narrative", "ID"}, ""))
 
-	pattern_TransactionMetadataService_GetNarratives_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narratives"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetNarratives_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narratives"}, ""))
 
-	pattern_TransactionMetadataService_UpdateNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narratives"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_UpdateNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narratives"}, ""))
 
-	pattern_TransactionMetadataService_DeleteNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "narratives", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narrative", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_DeleteNarrative_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "narratives", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "narrative", "ID"}, ""))
 
-	pattern_TransactionMetadataService_CreateWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tags"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_CreateWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tags"}, ""))
 
-	pattern_TransactionMetadataService_GetWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tag", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tag", "ID"}, ""))
 
-	pattern_TransactionMetadataService_GetWhereTags_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tags"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_GetWhereTags_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tags"}, ""))
 
-	pattern_TransactionMetadataService_UpdateWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tags"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_UpdateWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tags"}, ""))
 
-	pattern_TransactionMetadataService_DeleteWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tag", "ID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_TransactionMetadataService_DeleteWhereTag_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5, 1, 0, 4, 1, 5, 6, 2, 7, 2, 8, 1, 0, 4, 1, 5, 9}, []string{"v1", "banks", "BankID", "accounts", "AccountID", "transactions", "TransactionID", "metadata", "where_tag", "ID"}, ""))
 )
 
 var (

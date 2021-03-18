@@ -13,14 +13,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/golang/protobuf/descriptor"
-	"github.com/golang/protobuf/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
-	"github.com/grpc-ecosystem/grpc-gateway/utilities"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/proto"
 )
 
 // Suppress "imported and not used" errors
@@ -30,7 +30,7 @@ var (
 	_ status.Status
 	_ = runtime.String
 	_ = utilities.NewDoubleArray
-	_ = descriptor.ForMessage
+	_ = metadata.Join
 )
 
 func request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runtime.Marshaler, client KYCServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -58,7 +58,6 @@ func request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runtime.Mar
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -69,7 +68,6 @@ func request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runtime.Mar
 	}
 
 	protoReq.KYCCheckID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "KYCCheckID", err)
 	}
@@ -103,7 +101,6 @@ func local_request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runti
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -114,7 +111,6 @@ func local_request_KYCService_AddKYCCheck_0(ctx context.Context, marshaler runti
 	}
 
 	protoReq.KYCCheckID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "KYCCheckID", err)
 	}
@@ -148,7 +144,6 @@ func request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler runtime.
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -159,7 +154,6 @@ func request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler runtime.
 	}
 
 	protoReq.KYCDocumentID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "KYCDocumentID", err)
 	}
@@ -193,7 +187,6 @@ func local_request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler ru
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -204,7 +197,6 @@ func local_request_KYCService_AddKYCDocument_0(ctx context.Context, marshaler ru
 	}
 
 	protoReq.KYCDocumentID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "KYCDocumentID", err)
 	}
@@ -238,7 +230,6 @@ func request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runtime.Mar
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -249,7 +240,6 @@ func request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runtime.Mar
 	}
 
 	protoReq.KYCMediaID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "KYCMediaID", err)
 	}
@@ -283,7 +273,6 @@ func local_request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runti
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -294,7 +283,6 @@ func local_request_KYCService_AddKYCMedia_0(ctx context.Context, marshaler runti
 	}
 
 	protoReq.KYCMediaID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "KYCMediaID", err)
 	}
@@ -328,7 +316,6 @@ func request_KYCService_AddKYCStatus_0(ctx context.Context, marshaler runtime.Ma
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -362,7 +349,6 @@ func local_request_KYCService_AddKYCStatus_0(ctx context.Context, marshaler runt
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -388,7 +374,6 @@ func request_KYCService_GetCustomerKYCCheck_0(ctx context.Context, marshaler run
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -414,7 +399,6 @@ func local_request_KYCService_GetCustomerKYCCheck_0(ctx context.Context, marshal
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -440,7 +424,6 @@ func request_KYCService_GetCustomerKYCDocument_0(ctx context.Context, marshaler 
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -466,7 +449,6 @@ func local_request_KYCService_GetCustomerKYCDocument_0(ctx context.Context, mars
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -492,7 +474,6 @@ func request_KYCService_GetCustomerKYCStatus_0(ctx context.Context, marshaler ru
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -518,7 +499,6 @@ func local_request_KYCService_GetCustomerKYCStatus_0(ctx context.Context, marsha
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -544,7 +524,6 @@ func request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runtime.Mar
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -570,7 +549,6 @@ func local_request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runti
 	}
 
 	protoReq.CustomerID, err = runtime.String(val)
-
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "CustomerID", err)
 	}
@@ -582,17 +560,21 @@ func local_request_KYCService_GetKYCMedia_0(ctx context.Context, marshaler runti
 // RegisterKYCServiceHandlerServer registers the http handlers for service KYCService to "mux".
 // UnaryRPC     :call KYCServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterKYCServiceHandlerFromEndpoint instead.
 func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server KYCServiceServer) error {
 	mux.Handle("PUT", pattern_KYCService_AddKYCCheck_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/AddKYCCheck")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_AddKYCCheck_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -605,13 +587,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("PUT", pattern_KYCService_AddKYCDocument_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/AddKYCDocument")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_AddKYCDocument_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -624,13 +609,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("PUT", pattern_KYCService_AddKYCMedia_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/AddKYCMedia")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_AddKYCMedia_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -643,13 +631,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("PUT", pattern_KYCService_AddKYCStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/AddKYCStatus")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_AddKYCStatus_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -662,13 +653,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCCheck_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/GetCustomerKYCCheck")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_GetCustomerKYCCheck_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -681,13 +675,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCDocument_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/GetCustomerKYCDocument")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_GetCustomerKYCDocument_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -700,13 +697,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("GET", pattern_KYCService_GetCustomerKYCStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/GetCustomerKYCStatus")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_GetCustomerKYCStatus_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -719,13 +719,16 @@ func RegisterKYCServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux,
 	mux.Handle("GET", pattern_KYCService_GetKYCMedia_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/kyc.KYCService/GetKYCMedia")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 		resp, md, err := local_request_KYCService_GetKYCMedia_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
@@ -779,7 +782,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/AddKYCCheck")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -798,7 +801,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/AddKYCDocument")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -817,7 +820,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/AddKYCMedia")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -836,7 +839,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/AddKYCStatus")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -855,7 +858,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/GetCustomerKYCCheck")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -874,7 +877,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/GetCustomerKYCDocument")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -893,7 +896,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/GetCustomerKYCStatus")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -912,7 +915,7 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/kyc.KYCService/GetKYCMedia")
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -931,21 +934,21 @@ func RegisterKYCServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux,
 }
 
 var (
-	pattern_KYCService_AddKYCCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "customers", "CustomerID", "kyc_check", "KYCCheckID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_AddKYCCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "customers", "CustomerID", "kyc_check", "KYCCheckID"}, ""))
 
-	pattern_KYCService_AddKYCDocument_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "customers", "CustomerID", "kyc_check", "KYCDocumentID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_AddKYCDocument_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "customers", "CustomerID", "kyc_check", "KYCDocumentID"}, ""))
 
-	pattern_KYCService_AddKYCMedia_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "customers", "CustomerID", "kyc_check", "KYCMediaID"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_AddKYCMedia_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "customers", "CustomerID", "kyc_check", "KYCMediaID"}, ""))
 
-	pattern_KYCService_AddKYCStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_statuses"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_AddKYCStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_statuses"}, ""))
 
-	pattern_KYCService_GetCustomerKYCCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_checks"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_GetCustomerKYCCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_checks"}, ""))
 
-	pattern_KYCService_GetCustomerKYCDocument_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_documents"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_GetCustomerKYCDocument_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_documents"}, ""))
 
-	pattern_KYCService_GetCustomerKYCStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_statuses"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_GetCustomerKYCStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_statuses"}, ""))
 
-	pattern_KYCService_GetKYCMedia_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_media"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_KYCService_GetKYCMedia_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "customers", "CustomerID", "kyc_media"}, ""))
 )
 
 var (

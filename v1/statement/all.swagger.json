@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the statement resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "StatementService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,92 @@
     "application/json"
   ],
   "paths": {
-    "/v1/statement/{iD}": {
+    "/v1/statement": {
+      "get": {
+        "summary": "Retrieve multiple statement",
+        "description": "Returns a list containing up to 20 statement. `next_starting_index` can be specified for pagination.",
+        "operationId": "StatementService_GetStatements",
+        "responses": {
+          "200": {
+            "description": "Request executed successfully.",
+            "schema": {
+              "$ref": "#/definitions/statementGetStatementsResponse"
+            }
+          },
+          "400": {
+            "description": "Returned when the request body is malformatted or does not match the expected request.",
+            "schema": {}
+          },
+          "401": {
+            "description": "Returned when the request does not contains the user's credentials.",
+            "schema": {}
+          },
+          "403": {
+            "description": "Returned when the user does not have permission to access the resource.",
+            "schema": {}
+          },
+          "404": {
+            "description": "Returned when the resource is not found.",
+            "schema": {}
+          },
+          "500": {
+            "description": "Returned when an unexpected error occured on the server side.",
+            "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "bank_code",
+            "description": "BankCode is a bank code to get related statement.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "period_days",
+            "description": "PeriodDays is statement period to be query.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "status",
+            "description": "Status is status of the statement to be query.\n\n - Received: Status_Received is the value for a received statment.\n - Pending: Status_Pending is the value for a pending statement.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UnknownStatus",
+              "Received",
+              "Pending"
+            ],
+            "default": "UnknownStatus"
+          }
+        ],
+        "tags": [
+          "Statement"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "https://auth.bnk.to/statement.read"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/statement/{id}": {
       "get": {
         "summary": "Retrieve a statement",
         "description": "GetStatement retrieves a specific statement, specified by its ID.",
-        "operationId": "GetStatement",
+        "operationId": "StatementService_GetStatement",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,11 +132,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "iD",
+            "name": "id",
             "description": "ID is the unique identifier of the statement",
             "in": "path",
             "required": true,
@@ -71,6 +163,36 @@
     }
   },
   "definitions": {
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "statementGetStatementsResponse": {
       "type": "object",
       "properties": {
@@ -83,7 +205,6 @@
         },
         "has_more": {
           "type": "boolean",
-          "format": "boolean",
           "description": "HasMore indicates if there are more statement available."
         }
       },

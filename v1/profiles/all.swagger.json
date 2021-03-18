@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the Profile resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "ProfileService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Query profile",
         "description": "Returns the profile and associated accounts",
-        "operationId": "GetProfile",
+        "operationId": "ProfileService_GetProfile",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -72,7 +83,7 @@
       "get": {
         "summary": "Query cards",
         "description": "Returns an array of ProfileCard associated with the account for the profile based on profile identifier",
-        "operationId": "GetProfileCard",
+        "operationId": "ProfileService_GetProfileCard",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -99,6 +110,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -223,6 +240,24 @@
       },
       "description": "Account holds all details about a bank account."
     },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
     "profilesGetProfileCardsResponse": {
       "type": "object",
       "properties": {
@@ -275,6 +310,18 @@
         }
       },
       "description": "ProfileCard holds details about a customer's credit card."
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     },
     "typesAddress": {
       "type": "object",
@@ -385,7 +432,6 @@
         },
         "email_verified": {
           "type": "boolean",
-          "format": "boolean",
           "title": "True if email is verified, otherwise False"
         },
         "mobile": {
@@ -455,7 +501,6 @@
         },
         "kyc_status": {
           "type": "boolean",
-          "format": "boolean",
           "title": "Know Your Customer status"
         },
         "branchId": {

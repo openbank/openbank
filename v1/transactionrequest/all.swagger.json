@@ -5,6 +5,11 @@
     "description": "Provides CRUD operations on the transaction request resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "TransactionRequestService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -15,11 +20,11 @@
     "application/json"
   ],
   "paths": {
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types": {
       "get": {
         "summary": "Retrieve transaction types",
         "description": "Retrieves list of transaction request types for an account_id",
-        "operationId": "GetTransactionRequestTypes",
+        "operationId": "TransactionRequestService_GetTransactionRequestTypes",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,17 +51,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -74,11 +85,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/ACCOUNT/transactionrequest": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types/ACCOUNT/transactionrequest": {
       "post": {
         "summary": "Create an account transaction request",
         "description": "Creates a new account transaction request",
-        "operationId": "CreateAccountTransaction",
+        "operationId": "TransactionRequestService_CreateAccountTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -111,17 +122,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -147,11 +164,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/ACCOUNT_OTP/transactionrequest": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types/ACCOUNT_OTP/transactionrequest": {
       "post": {
         "summary": "Create an account otp transaction request",
         "description": "Creates a new account otp transaction request",
-        "operationId": "CreateAccountOTPTransaction",
+        "operationId": "TransactionRequestService_CreateAccountOTPTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -184,17 +201,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -220,11 +243,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/COUNTERPARTY/transactionrequest": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types/COUNTERPARTY/transactionrequest": {
       "post": {
         "summary": "Create an counter party transaction request",
         "description": "Creates a new counter party transaction request",
-        "operationId": "CreateCounterPartyTransaction",
+        "operationId": "TransactionRequestService_CreateCounterPartyTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -257,17 +280,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -293,11 +322,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/FREE_FORM/transactionrequest": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types/FREE_FORM/transactionrequest": {
       "post": {
         "summary": "Create an free form transaction request",
         "description": "Creates a new free form transaction request",
-        "operationId": "CreateFreeFormTransaction",
+        "operationId": "TransactionRequestService_CreateFreeFormTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -330,17 +359,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -366,11 +401,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/SEPA/transactionrequest": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types/SEPA/transactionrequest": {
       "post": {
         "summary": "Create an sepa transaction request",
         "description": "Creates a new sepa transaction request",
-        "operationId": "CreateSEPATransaction",
+        "operationId": "TransactionRequestService_CreateSEPATransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -403,17 +438,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -439,11 +480,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transaction-request-types/{transactionRequestType}/transactionrequest/{transactionRequestID}/challenge": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transaction-request-types/{transaction_request_type}/transactionrequest/{transaction_request_id}/challenge": {
       "post": {
         "summary": "Answer the transaction reqeust challenge",
         "description": "Answer the transaction request challenge",
-        "operationId": "AnswerTransactionRequestChallenge",
+        "operationId": "TransactionRequestService_AnswerTransactionRequestChallenge",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -476,29 +517,35 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionRequestType",
+            "name": "transaction_request_type",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "transactionRequestID",
+            "name": "transaction_request_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -524,11 +571,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/accounts/{accountID}/transactionrequests": {
+    "/v1/banks/{bank_id}/accounts/{account_id}/transactionrequests": {
       "get": {
         "summary": "Retrieve transaction requests",
         "description": "Retrieves list of transaction requests for an account_id",
-        "operationId": "GetTransactionRequests",
+        "operationId": "TransactionRequestService_GetTransactionRequests",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -555,17 +602,23 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "accountID",
+            "name": "account_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -583,11 +636,11 @@
         ]
       }
     },
-    "/v1/banks/{bankID}/transaction-request-types": {
+    "/v1/banks/{bank_id}/transaction-request-types": {
       "get": {
         "summary": "Retrieve transaction types",
         "description": "Retrieves list of transaction request types",
-        "operationId": "GetSupportedTransactionRequestTypes",
+        "operationId": "TransactionRequestService_GetSupportedTransactionRequestTypes",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -614,11 +667,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "bankID",
+            "name": "bank_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -640,7 +699,7 @@
       "post": {
         "summary": "Import a historic transaction",
         "description": "Import a historic transaction",
-        "operationId": "SaveHistoricTransaction",
+        "operationId": "TransactionRequestService_SaveHistoricTransaction",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -673,6 +732,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -699,6 +764,36 @@
     }
   },
   "definitions": {
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
     "transactionrequestAnswerTransactionRequestChallengeRequest": {
       "type": "object",
       "properties": {

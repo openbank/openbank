@@ -5,6 +5,11 @@
     "description": "Provides create and read operations on the bank resource.",
     "version": "1.0.0"
   },
+  "tags": [
+    {
+      "name": "BankService"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -19,7 +24,7 @@
       "get": {
         "summary": "Retrieve all available banks",
         "description": "Retrieve information regarding all available banks.",
-        "operationId": "GetBanks",
+        "operationId": "BankService_GetBanks",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -46,6 +51,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "tags": [
@@ -62,7 +73,7 @@
       "post": {
         "summary": "Create a bank",
         "description": "Creates a new bank and returns its id.",
-        "operationId": "CreateBank",
+        "operationId": "BankService_CreateBank",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -95,6 +106,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -121,7 +138,7 @@
       "put": {
         "summary": "Update a bank",
         "description": "Updates a bank's information",
-        "operationId": "UpdateBank",
+        "operationId": "BankService_UpdateBank",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -154,6 +171,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -182,7 +205,7 @@
       "post": {
         "summary": "Create a new transaction type at a bank",
         "description": "Creates a new transaction type at a bank and returns its transaction type response.",
-        "operationId": "CreateTranscationTypeAtBank",
+        "operationId": "BankService_CreateTranscationTypeAtBank",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -215,6 +238,12 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
@@ -239,11 +268,11 @@
         ]
       }
     },
-    "/v1/banks/{iD}": {
+    "/v1/banks/{id}": {
       "get": {
         "summary": "Retrieve bank information",
         "description": "Retrieve information about the bank specified by the ID",
-        "operationId": "GetBank",
+        "operationId": "BankService_GetBank",
         "responses": {
           "200": {
             "description": "Request executed successfully.",
@@ -270,11 +299,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "iD",
+            "name": "id",
             "description": "ID is the bank unique identifier.",
             "in": "path",
             "required": true,
@@ -316,7 +351,7 @@
       "delete": {
         "summary": "Delete a bank",
         "description": "Permanently delete a bank.",
-        "operationId": "DeleteBank",
+        "operationId": "BankService_DeleteBank",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -347,11 +382,17 @@
           "500": {
             "description": "Returned when an unexpected error occured on the server side.",
             "schema": {}
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
           }
         },
         "parameters": [
           {
-            "name": "iD",
+            "name": "id",
             "description": "ID is the bank unique identifier.",
             "in": "path",
             "required": true,
@@ -500,6 +541,36 @@
         }
       },
       "description": "UpdateBankRequest is the request envelope to update a bank."
+    },
+    "googlerpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
     }
   },
   "securityDefinitions": {
