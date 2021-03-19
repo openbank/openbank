@@ -3,7 +3,7 @@ version=v3.9.1
 
 [generate go]
 json_tag_postproc=true
-plugin_version=e471641
+plugin_version=v1.26.0
 
 [generate grpc-go]
 plugin_version=v1.1.0
