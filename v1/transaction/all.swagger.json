@@ -656,6 +656,14 @@
         "remarks": {
           "type": "string",
           "description": "Remarks is an informational note about the transaction."
+        },
+        "transaction_id": {
+          "type": "string",
+          "description": "TransactionID is the unique identifier of a transaction."
+        },
+        "settlement_rail": {
+          "type": "string",
+          "title": "SettlementRail is the value to allow multi-rail environments"
         }
       },
       "description": "CreateTransactionRequest is the request message for creating a transaction.\nOnly one of SourceOfflineUser and DestinationOfflineUser can be used to create a transaction."

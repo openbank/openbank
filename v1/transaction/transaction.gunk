@@ -240,6 +240,12 @@ type CreateTransactionRequest struct {
 
 	// Remarks is an informational note about the transaction.
 	Remarks string `pb:"4" json:"remarks"`
+
+	// TransactionID is the unique identifier of a transaction.
+	TransactionID string `pb:"7" json:"transaction_id"`
+
+	// SettlementRail is the value to allow multi-rail environments
+	SettlementRail string `pb:"8" json:"settlement_rail"`
 }
 
 // CreateTransactionResponse is the response message for a transaction creation.
