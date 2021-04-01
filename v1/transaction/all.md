@@ -115,7 +115,9 @@ curl -X POST \
 			"cur": "string",
 			"num": "string"
 		},
-		"remarks": "string"
+		"remarks": "string",
+		"transaction_id": "string",
+		"settlement_rail": "string"
 	}'
 ```
 
@@ -133,6 +135,8 @@ curl -X POST \
 | destination_offline_user | OfflineUserInfo | DestinationOfflineUser is the contact information for an offline user.     |
 | amount                   | Amount          | Amount holds the amount value and currency of the transaction.             |
 | remarks                  | string          | Remarks is an informational note about the transaction.                    |
+| transaction_id           | string          | TransactionID is the unique identifier of a transaction.                   |
+| settlement_rail          | string          | SettlementRail is the value to allow multi-rail environments               |
 
 ##### Objects {#objects-CreateTransactionRequest}
 

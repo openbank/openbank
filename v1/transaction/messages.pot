@@ -223,6 +223,9 @@ msgstr ""
 msgid "Saving account."
 msgstr ""
 
+msgid "SettlementRail is the value to allow multi-rail environments"
+msgstr ""
+
 msgid "SourceAccount is the account emitting the transaction."
 msgstr ""
 
