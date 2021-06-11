@@ -842,6 +842,10 @@
         "remarks": {
           "type": "string",
           "description": "Remarks is an informational note about the transaction."
+        },
+        "settlement_rail": {
+          "type": "string",
+          "title": "SettlementRail is the value to allow multi-rail environments"
         }
       },
       "description": "Transaction holds all details about a transaction."

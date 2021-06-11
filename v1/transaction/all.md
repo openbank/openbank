@@ -257,6 +257,7 @@ curl -X GET \
 | description              | string          | Description describes the transaction.                                 |
 | user_id                  | string          | UserID is the identifier of the issuer of the transaction.             |
 | remarks                  | string          | Remarks is an informational note about the transaction.                |
+| settlement_rail          | string          | SettlementRail is the value to allow multi-rail environments           |
 
 ##### Objects {#objects-Transaction}
 
@@ -389,7 +390,8 @@ Example:
   },
   "description": "string",
   "user_id": "string",
-  "remarks": "string"
+  "remarks": "string",
+  "settlement_rail": "string"
 }
 ```
 
@@ -447,6 +449,7 @@ curl -X GET \
 | description              | string          | Description describes the transaction.                                 |
 | user_id                  | string          | UserID is the identifier of the issuer of the transaction.             |
 | remarks                  | string          | Remarks is an informational note about the transaction.                |
+| settlement_rail          | string          | SettlementRail is the value to allow multi-rail environments           |
 
 ###### Amount
 
@@ -579,7 +582,8 @@ Example:
       },
       "description": "string",
       "user_id": "string",
-      "remarks": "string"
+      "remarks": "string",
+      "settlement_rail": "string"
     }
   ],
   "has_more": "bool",
@@ -648,6 +652,7 @@ curl -X GET \
 | description              | string          | Description describes the transaction.                                 |
 | user_id                  | string          | UserID is the identifier of the issuer of the transaction.             |
 | remarks                  | string          | Remarks is an informational note about the transaction.                |
+| settlement_rail          | string          | SettlementRail is the value to allow multi-rail environments           |
 
 ###### Amount
 
@@ -780,7 +785,8 @@ Example:
       },
       "description": "string",
       "user_id": "string",
-      "remarks": "string"
+      "remarks": "string",
+      "settlement_rail": "string"
     }
   ],
   "last_running_balance": {
