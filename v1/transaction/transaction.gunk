@@ -129,6 +129,9 @@ type Transaction struct {
 
 	// Remarks is an informational note about the transaction.
 	Remarks string `pb:"10" json:"remarks"`
+
+	// SettlementRail is the value to allow multi-rail environments
+    SettlementRail string `pb:"13" json:"settlement_rail"`
 }
 
 // BankAccountInfo holds lightweight account information.
