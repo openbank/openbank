@@ -447,6 +447,13 @@
         "bank_routing": {
           "$ref": "#/definitions/bankBankRouting",
           "description": "BankRouting is the routing information for the bank."
+        },
+        "settlement_rail": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/bankSettlementRail"
+          },
+          "title": "SettlementRail is the value to allow multi-rail environments"
         }
       },
       "description": "Bank holds all details about a bank."
@@ -497,6 +504,24 @@
         }
       },
       "title": "GetBanksResponse is the response for GetBanks"
+    },
+    "bankSettlementRail": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name of the rail"
+        },
+        "fee": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "Fee holds the fee value and currency of the rail."
+        },
+        "enabled": {
+          "type": "boolean",
+          "title": "Enabled indicates if the rail is enabled for that bank"
+        }
+      },
+      "title": "SettlementRail is the value to allow multi-rail environments"
     },
     "bankTransactionType": {
       "type": "object",
@@ -571,6 +596,20 @@
           "format": "byte"
         }
       }
+    },
+    "typesAmount": {
+      "type": "object",
+      "properties": {
+        "cur": {
+          "type": "string",
+          "description": "Cur is the currency of the amount."
+        },
+        "num": {
+          "type": "string",
+          "description": "Num is the value of the amount."
+        }
+      },
+      "description": "Amount defines a transaction amount."
     }
   },
   "securityDefinitions": {

@@ -70,6 +70,16 @@ type BankRouting struct {
 	Address string `pb:"2" json:"address"`
 }
 
+// SettlementRail is the value to allow multi-rail environments
+type SettlementRail struct {
+    // Name of the rail
+    Name string `pb:"1" json:"name"`
+    // Fee holds the fee value and currency of the rail.
+    Fee types.Amount `pb:"2" json:"fee"`
+    // Enabled indicates if the rail is enabled for that bank
+    Enabled bool `pb:"3" json:"enabled"`
+}
+
 // Bank holds all details about a bank.
 type Bank struct {
 	// ID is an identifier for the bank.
@@ -95,6 +105,9 @@ type Bank struct {
 
 	// BankRouting is the routing information for the bank.
 	BankRouting BankRouting `pb:"8" json:"bank_routing"`
+
+	// SettlementRail is the value to allow multi-rail environments
+    SettlementRail map[string]SettlementRail `pb:"9" json:"settlement_rail"`
 }
 
 // TransactionType is holds the information about transaction type at a bank.
