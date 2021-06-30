@@ -26,7 +26,8 @@ curl -X POST \
 			"bank_routing": {
 				"scheme": "string",
 				"address": "string"
-			}
+			},
+			"": "map[string]SettlementRail"
 		}
 	}'
 ```
@@ -45,16 +46,17 @@ curl -X POST \
 
 ###### Bank
 
-| Name                | Type        | Description                                          |
-|---------------------|-------------|------------------------------------------------------|
-| id                  | string      | ID is an identifier for the bank.                    |
-| full_name           | string      | FullName is the full name of the bank.               |
-| short_name          | string      | ShortName is the short name of the bank.             |
-| logo_url            | string      | LogoURL is the url for the bank's logo.              |
-| website_url         | string      | WebsiteURL is the url for the bank's website.        |
-| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| national_identifier | string      | NationalIdentifier is the national identifier code.  |
-| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                       | Type                                                         | Description                                          |
+|----------------------------|--------------------------------------------------------------|------------------------------------------------------|
+| id                         | string                                                       | ID is an identifier for the bank.                    |
+| full_name                  | string                                                       | FullName is the full name of the bank.               |
+| short_name                 | string                                                       | ShortName is the short name of the bank.             |
+| logo_url                   | string                                                       | LogoURL is the url for the bank's logo.              |
+| website_url                | string                                                       | WebsiteURL is the url for the bank's website.        |
+| swift_bic                  | string                                                       | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier        | string                                                       | NationalIdentifier is the national identifier code.  |
+| bank_routing               | BankRouting                                                  | BankRouting is the routing information for the bank. |
+| map\[string]SettlementRail | SettlementRail is the value to allow multi-rail environments |                                                      |
 
 ###### BankRouting
 
@@ -67,16 +69,17 @@ curl -X POST \
 
 #### Response body {#response-body-method-post-createbank}
 
-| Name                | Type        | Description                                          |
-|---------------------|-------------|------------------------------------------------------|
-| id                  | string      | ID is an identifier for the bank.                    |
-| full_name           | string      | FullName is the full name of the bank.               |
-| short_name          | string      | ShortName is the short name of the bank.             |
-| logo_url            | string      | LogoURL is the url for the bank's logo.              |
-| website_url         | string      | WebsiteURL is the url for the bank's website.        |
-| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| national_identifier | string      | NationalIdentifier is the national identifier code.  |
-| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                       | Type                                                         | Description                                          |
+|----------------------------|--------------------------------------------------------------|------------------------------------------------------|
+| id                         | string                                                       | ID is an identifier for the bank.                    |
+| full_name                  | string                                                       | FullName is the full name of the bank.               |
+| short_name                 | string                                                       | ShortName is the short name of the bank.             |
+| logo_url                   | string                                                       | LogoURL is the url for the bank's logo.              |
+| website_url                | string                                                       | WebsiteURL is the url for the bank's website.        |
+| swift_bic                  | string                                                       | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier        | string                                                       | NationalIdentifier is the national identifier code.  |
+| bank_routing               | BankRouting                                                  | BankRouting is the routing information for the bank. |
+| map\[string]SettlementRail | SettlementRail is the value to allow multi-rail environments |                                                      |
 
 ##### Objects {#objects-Bank}
 
@@ -101,7 +104,8 @@ Example:
   "bank_routing": {
     "scheme": "string",
     "address": "string"
-  }
+  },
+  "": "map[string]SettlementRail"
 }
 ```
 
@@ -257,16 +261,17 @@ curl -X GET \
 
 #### Response body {#response-body-method-get-getbank}
 
-| Name                | Type        | Description                                          |
-|---------------------|-------------|------------------------------------------------------|
-| id                  | string      | ID is an identifier for the bank.                    |
-| full_name           | string      | FullName is the full name of the bank.               |
-| short_name          | string      | ShortName is the short name of the bank.             |
-| logo_url            | string      | LogoURL is the url for the bank's logo.              |
-| website_url         | string      | WebsiteURL is the url for the bank's website.        |
-| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| national_identifier | string      | NationalIdentifier is the national identifier code.  |
-| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                       | Type                                                         | Description                                          |
+|----------------------------|--------------------------------------------------------------|------------------------------------------------------|
+| id                         | string                                                       | ID is an identifier for the bank.                    |
+| full_name                  | string                                                       | FullName is the full name of the bank.               |
+| short_name                 | string                                                       | ShortName is the short name of the bank.             |
+| logo_url                   | string                                                       | LogoURL is the url for the bank's logo.              |
+| website_url                | string                                                       | WebsiteURL is the url for the bank's website.        |
+| swift_bic                  | string                                                       | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier        | string                                                       | NationalIdentifier is the national identifier code.  |
+| bank_routing               | BankRouting                                                  | BankRouting is the routing information for the bank. |
+| map\[string]SettlementRail | SettlementRail is the value to allow multi-rail environments |                                                      |
 
 ##### Objects {#objects-Bank}
 
@@ -291,7 +296,8 @@ Example:
   "bank_routing": {
     "scheme": "string",
     "address": "string"
-  }
+  },
+  "": "map[string]SettlementRail"
 }
 ```
 
@@ -333,16 +339,17 @@ curl -X GET \
 
 ###### Bank
 
-| Name                | Type        | Description                                          |
-|---------------------|-------------|------------------------------------------------------|
-| id                  | string      | ID is an identifier for the bank.                    |
-| full_name           | string      | FullName is the full name of the bank.               |
-| short_name          | string      | ShortName is the short name of the bank.             |
-| logo_url            | string      | LogoURL is the url for the bank's logo.              |
-| website_url         | string      | WebsiteURL is the url for the bank's website.        |
-| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| national_identifier | string      | NationalIdentifier is the national identifier code.  |
-| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                       | Type                                                         | Description                                          |
+|----------------------------|--------------------------------------------------------------|------------------------------------------------------|
+| id                         | string                                                       | ID is an identifier for the bank.                    |
+| full_name                  | string                                                       | FullName is the full name of the bank.               |
+| short_name                 | string                                                       | ShortName is the short name of the bank.             |
+| logo_url                   | string                                                       | LogoURL is the url for the bank's logo.              |
+| website_url                | string                                                       | WebsiteURL is the url for the bank's website.        |
+| swift_bic                  | string                                                       | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier        | string                                                       | NationalIdentifier is the national identifier code.  |
+| bank_routing               | BankRouting                                                  | BankRouting is the routing information for the bank. |
+| map\[string]SettlementRail | SettlementRail is the value to allow multi-rail environments |                                                      |
 
 ###### BankRouting
 
@@ -367,7 +374,8 @@ Example:
       "bank_routing": {
         "scheme": "string",
         "address": "string"
-      }
+      },
+      "": "map[string]SettlementRail"
     }
   ]
 }
@@ -405,7 +413,8 @@ curl -X PUT \
 			"bank_routing": {
 				"scheme": "string",
 				"address": "string"
-			}
+			},
+			"": "map[string]SettlementRail"
 		}
 	}'
 ```
@@ -424,16 +433,17 @@ curl -X PUT \
 
 ###### Bank
 
-| Name                | Type        | Description                                          |
-|---------------------|-------------|------------------------------------------------------|
-| id                  | string      | ID is an identifier for the bank.                    |
-| full_name           | string      | FullName is the full name of the bank.               |
-| short_name          | string      | ShortName is the short name of the bank.             |
-| logo_url            | string      | LogoURL is the url for the bank's logo.              |
-| website_url         | string      | WebsiteURL is the url for the bank's website.        |
-| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| national_identifier | string      | NationalIdentifier is the national identifier code.  |
-| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                       | Type                                                         | Description                                          |
+|----------------------------|--------------------------------------------------------------|------------------------------------------------------|
+| id                         | string                                                       | ID is an identifier for the bank.                    |
+| full_name                  | string                                                       | FullName is the full name of the bank.               |
+| short_name                 | string                                                       | ShortName is the short name of the bank.             |
+| logo_url                   | string                                                       | LogoURL is the url for the bank's logo.              |
+| website_url                | string                                                       | WebsiteURL is the url for the bank's website.        |
+| swift_bic                  | string                                                       | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier        | string                                                       | NationalIdentifier is the national identifier code.  |
+| bank_routing               | BankRouting                                                  | BankRouting is the routing information for the bank. |
+| map\[string]SettlementRail | SettlementRail is the value to allow multi-rail environments |                                                      |
 
 ###### BankRouting
 
@@ -446,16 +456,17 @@ curl -X PUT \
 
 #### Response body {#response-body-method-put-updatebank}
 
-| Name                | Type        | Description                                          |
-|---------------------|-------------|------------------------------------------------------|
-| id                  | string      | ID is an identifier for the bank.                    |
-| full_name           | string      | FullName is the full name of the bank.               |
-| short_name          | string      | ShortName is the short name of the bank.             |
-| logo_url            | string      | LogoURL is the url for the bank's logo.              |
-| website_url         | string      | WebsiteURL is the url for the bank's website.        |
-| swift_bic           | string      | SwiftBIC is the SWIFT bank identifier code.          |
-| national_identifier | string      | NationalIdentifier is the national identifier code.  |
-| bank_routing        | BankRouting | BankRouting is the routing information for the bank. |
+| Name                       | Type                                                         | Description                                          |
+|----------------------------|--------------------------------------------------------------|------------------------------------------------------|
+| id                         | string                                                       | ID is an identifier for the bank.                    |
+| full_name                  | string                                                       | FullName is the full name of the bank.               |
+| short_name                 | string                                                       | ShortName is the short name of the bank.             |
+| logo_url                   | string                                                       | LogoURL is the url for the bank's logo.              |
+| website_url                | string                                                       | WebsiteURL is the url for the bank's website.        |
+| swift_bic                  | string                                                       | SwiftBIC is the SWIFT bank identifier code.          |
+| national_identifier        | string                                                       | NationalIdentifier is the national identifier code.  |
+| bank_routing               | BankRouting                                                  | BankRouting is the routing information for the bank. |
+| map\[string]SettlementRail | SettlementRail is the value to allow multi-rail environments |                                                      |
 
 ##### Objects {#objects-Bank}
 
@@ -480,7 +491,8 @@ Example:
   "bank_routing": {
     "scheme": "string",
     "address": "string"
-  }
+  },
+  "": "map[string]SettlementRail"
 }
 ```
 

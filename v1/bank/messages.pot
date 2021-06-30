@@ -151,6 +151,9 @@ msgstr ""
 msgid "Scheme is the routing scheme."
 msgstr ""
 
+msgid "SettlementRail is the value to allow multi-rail environments"
+msgstr ""
+
 msgid "ShortCode is the short code of the transaction type."
 msgstr ""
 
