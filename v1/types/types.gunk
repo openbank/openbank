@@ -290,6 +290,9 @@ type OfflineUserInfo struct {
 
 	// Location is the physical location of the interaction.
 	Location Location `pb:"6" json:"location"`
+
+	// Address is the place of the person lives.
+	Address Address `pb:"7" json:"address"`
 }
 
 // Structure of account information

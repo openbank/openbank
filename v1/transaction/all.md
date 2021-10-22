@@ -92,6 +92,13 @@ curl -X POST \
 			"location": {
 				"latitude": "double",
 				"longitude": "double"
+			},
+			"address": {
+				"country_name": "string",
+				"city_name": "string",
+				"state": "string",
+				"line_1": "string",
+				"postal_code": "string"
 			}
 		},
 		"destination_account": {
@@ -109,6 +116,13 @@ curl -X POST \
 			"location": {
 				"latitude": "double",
 				"longitude": "double"
+			},
+			"address": {
+				"country_name": "string",
+				"city_name": "string",
+				"state": "string",
+				"line_1": "string",
+				"postal_code": "string"
 			}
 		},
 		"amount": {
@@ -150,6 +164,7 @@ curl -X POST \
 | last_name   | string   | LastName or last names (space separated) of the person     |
 | mobile_no   | string   | MobileNo contact of the person                             |
 | location    | Location | Location is the physical location of the interaction.      |
+| address     | Address  | Address is the place of the person lives.                  |
 
 ###### BankAccountInfo
 
@@ -173,6 +188,16 @@ curl -X POST \
 |-----------|--------|--------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+
+###### Address
+
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ##### Enums {#enums-CreateTransactionRequest}
 
@@ -280,6 +305,7 @@ curl -X GET \
 | last_name   | string   | LastName or last names (space separated) of the person     |
 | mobile_no   | string   | MobileNo contact of the person                             |
 | location    | Location | Location is the physical location of the interaction.      |
+| address     | Address  | Address is the place of the person lives.                  |
 
 ###### Timestamp
 
@@ -301,6 +327,16 @@ curl -X GET \
 |-----------|--------|--------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+
+###### Address
+
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ##### Enums {#enums-Transaction}
 
@@ -359,6 +395,13 @@ Example:
     "location": {
       "latitude": "double",
       "longitude": "double"
+    },
+    "address": {
+      "country_name": "string",
+      "city_name": "string",
+      "state": "string",
+      "line_1": "string",
+      "postal_code": "string"
     }
   },
   "destination_account": {
@@ -376,6 +419,13 @@ Example:
     "location": {
       "latitude": "double",
       "longitude": "double"
+    },
+    "address": {
+      "country_name": "string",
+      "city_name": "string",
+      "state": "string",
+      "line_1": "string",
+      "postal_code": "string"
     }
   },
   "date": {
@@ -477,6 +527,7 @@ curl -X GET \
 | last_name   | string   | LastName or last names (space separated) of the person     |
 | mobile_no   | string   | MobileNo contact of the person                             |
 | location    | Location | Location is the physical location of the interaction.      |
+| address     | Address  | Address is the place of the person lives.                  |
 
 ###### Timestamp
 
@@ -491,6 +542,16 @@ curl -X GET \
 |-----------|--------|--------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+
+###### Address
+
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ##### Enums {#enums-GetTransactionsResponse}
 
@@ -551,6 +612,13 @@ Example:
         "location": {
           "latitude": "double",
           "longitude": "double"
+        },
+        "address": {
+          "country_name": "string",
+          "city_name": "string",
+          "state": "string",
+          "line_1": "string",
+          "postal_code": "string"
         }
       },
       "destination_account": {
@@ -568,6 +636,13 @@ Example:
         "location": {
           "latitude": "double",
           "longitude": "double"
+        },
+        "address": {
+          "country_name": "string",
+          "city_name": "string",
+          "state": "string",
+          "line_1": "string",
+          "postal_code": "string"
         }
       },
       "date": {
@@ -680,6 +755,7 @@ curl -X GET \
 | last_name   | string   | LastName or last names (space separated) of the person     |
 | mobile_no   | string   | MobileNo contact of the person                             |
 | location    | Location | Location is the physical location of the interaction.      |
+| address     | Address  | Address is the place of the person lives.                  |
 
 ###### Timestamp
 
@@ -694,6 +770,16 @@ curl -X GET \
 |-----------|--------|--------------------------------------------------------------------|
 | latitude  | double | The latitude in degrees. It must be in the range [-90.0, +90.0].   |
 | longitude | double | The longitude in degrees. It must be in the range [-180.0, +180.0] |
+
+###### Address
+
+| Name         | Type   | Description                                     |
+|--------------|--------|-------------------------------------------------|
+| country_name | string | CountryName holds the country name information. |
+| city_name    | string | CityName holds the city name information.       |
+| state        | string | State holds the state information.              |
+| line_1       | string | Street holds the street information.            |
+| postal_code  | string | PostalCode holds the postal code information.   |
 
 ##### Enums {#enums-GetTransactionsByAccountResponse}
 
@@ -754,6 +840,13 @@ Example:
         "location": {
           "latitude": "double",
           "longitude": "double"
+        },
+        "address": {
+          "country_name": "string",
+          "city_name": "string",
+          "state": "string",
+          "line_1": "string",
+          "postal_code": "string"
         }
       },
       "destination_account": {
@@ -771,6 +864,13 @@ Example:
         "location": {
           "latitude": "double",
           "longitude": "double"
+        },
+        "address": {
+          "country_name": "string",
+          "city_name": "string",
+          "state": "string",
+          "line_1": "string",
+          "postal_code": "string"
         }
       },
       "date": {

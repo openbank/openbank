@@ -860,6 +860,32 @@
       "default": "UnknownType",
       "description": "Type defines the type of a transaction.\n\n - Credit: Type_Credit is the value for a credit transaction.\n - Debit: Type_Debit is the value for a debit transaction."
     },
+    "typesAddress": {
+      "type": "object",
+      "properties": {
+        "country_name": {
+          "type": "string",
+          "description": "CountryName holds the country name information."
+        },
+        "city_name": {
+          "type": "string",
+          "description": "CityName holds the city name information."
+        },
+        "state": {
+          "type": "string",
+          "description": "State holds the state information."
+        },
+        "line_1": {
+          "type": "string",
+          "description": "Street holds the street information."
+        },
+        "postal_code": {
+          "type": "string",
+          "description": "PostalCode holds the postal code information."
+        }
+      },
+      "title": "Address hold all details about Address"
+    },
     "typesAmount": {
       "type": "object",
       "properties": {
@@ -930,6 +956,10 @@
         "location": {
           "$ref": "#/definitions/typesLocation",
           "description": "Location is the physical location of the interaction."
+        },
+        "address": {
+          "$ref": "#/definitions/typesAddress",
+          "description": "Address is the place of the person lives."
         }
       }
     }
