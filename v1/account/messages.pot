@@ -163,6 +163,9 @@ msgstr ""
 msgid "HasMore indicates if there are more accounts available."
 msgstr ""
 
+msgid "HoldBalance is the hold balance of the account."
+msgstr ""
+
 msgid "Host"
 msgstr ""
 
