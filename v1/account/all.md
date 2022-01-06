@@ -326,6 +326,7 @@ curl -X GET \
 | next_payment_due_date             | Timestamp     | Specify when payments are due on money borrowed                                       |
 | owner_name                        | string        | OwnerName is the name of the account's owner.                                         |
 | start_date                        | Timestamp     | Account opening date                                                                  |
+| hold_balance                      | Amount        | HoldBalance is the hold balance of the account.                                       |
 
 ##### Objects {#objects-Account}
 
@@ -421,6 +422,10 @@ Example:
   "start_date": {
     "seconds": "int64",
     "nanos": "int32"
+  },
+  "hold_balance": {
+    "cur": "string",
+    "num": "string"
   }
 }
 ```
@@ -554,6 +559,7 @@ curl -X GET \
 | next_payment_due_date             | Timestamp     | Specify when payments are due on money borrowed                                       |
 | owner_name                        | string        | OwnerName is the name of the account's owner.                                         |
 | start_date                        | Timestamp     | Account opening date                                                                  |
+| hold_balance                      | Amount        | HoldBalance is the hold balance of the account.                                       |
 
 ###### Timestamp
 
@@ -649,6 +655,10 @@ Example:
       "start_date": {
         "seconds": "int64",
         "nanos": "int32"
+      },
+      "hold_balance": {
+        "cur": "string",
+        "num": "string"
       }
     }
   ],

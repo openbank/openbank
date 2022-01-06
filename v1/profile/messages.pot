@@ -127,6 +127,9 @@ msgstr ""
 msgid "Highest education such as bachelor, masters etc"
 msgstr ""
 
+msgid "HoldBalance is the hold balance of the account."
+msgstr ""
+
 msgid "Host"
 msgstr ""
 

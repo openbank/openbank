@@ -56,8 +56,8 @@ package accounts
 import (
 	"time"
 
-	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/file/java"
+	"github.com/gunk/opt/http"
 	"github.com/gunk/opt/openapiv2"
 
 	types "github.com/openbank/openbank/v1/types"
@@ -130,6 +130,9 @@ type Account struct {
 
 	// Account opening date
 	StartDate time.Time `pb:"22" json:"start_date"`
+
+	// HoldBalance is the hold balance of the account.
+	HoldBalance types.Amount `pb:"23" json:"hold_balance"`
 }
 
 // GetAccountRequest is the request envelope to get an account by its identifier.
@@ -139,13 +142,13 @@ type GetAccountRequest struct {
 
 // GetAccountsRequest is the request envelope to get a list of filtered accounts.
 type GetAccountsRequest struct {
-    // NextStartingIndex is a cursor for pagination. It's an AccountID that defines
-    // the current place in the total list of Accounts.
-    NextStartingIndex string `pb:"1" json:"next_starting_index"`
-    // AfterID is a cursor for pagination.
-    AfterID string `pb:"2" json:"after_id"`
-    // Limit is maximum number of results to return.
-    Limit int `pb:"3" json:"limit"`
+	// NextStartingIndex is a cursor for pagination. It's an AccountID that defines
+	// the current place in the total list of Accounts.
+	NextStartingIndex string `pb:"1" json:"next_starting_index"`
+	// AfterID is a cursor for pagination.
+	AfterID string `pb:"2" json:"after_id"`
+	// Limit is maximum number of results to return.
+	Limit int `pb:"3" json:"limit"`
 }
 
 // GetAccountsResponse wraps the list of accounts.

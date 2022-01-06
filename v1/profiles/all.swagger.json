@@ -236,6 +236,10 @@
           "type": "string",
           "format": "date-time",
           "title": "Account opening date"
+        },
+        "hold_balance": {
+          "$ref": "#/definitions/typesAmount",
+          "description": "HoldBalance is the hold balance of the account."
         }
       },
       "description": "Account holds all details about a bank account."
